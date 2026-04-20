@@ -1,0 +1,13 @@
+# Run outputs (regenerate from HPC)
+*.out
+*.err
+*.pbs
+*.pvd
+*.vtu
+*.pvtu
+profile_*.txt
+
+# Python / editor junk
+__pycache__/
+*.pyc
+.DS_Store
