@@ -1,0 +1,167 @@
+{
+  "dt": 100.0,
+  "entries": [
+    {
+      "degree": 0,
+      "dx": 0.08333333333333333,
+      "family": "DQ",
+      "grid_points": 13,
+      "mass_error": 7.684132616227884e-11,
+      "wall_seconds": 5.218178987503052
+    },
+    {
+      "degree": 0,
+      "dx": 0.04,
+      "family": "DQ",
+      "grid_points": 26,
+      "mass_error": 6.981442995327575e-11,
+      "wall_seconds": 6.495866298675537
+    },
+    {
+      "degree": 0,
+      "dx": 0.02,
+      "family": "DQ",
+      "grid_points": 51,
+      "mass_error": 6.903618085182806e-11,
+      "wall_seconds": 13.850962162017822
+    },
+    {
+      "degree": 0,
+      "dx": 0.01,
+      "family": "DQ",
+      "grid_points": 101,
+      "mass_error": 6.99497287350026e-11,
+      "wall_seconds": 47.918270111083984
+    },
+    {
+      "degree": 1,
+      "dx": 0.08333333333333333,
+      "family": "DQ",
+      "grid_points": 13,
+      "mass_error": 6.804922033851191e-11,
+      "wall_seconds": 8.705621004104614
+    },
+    {
+      "degree": 1,
+      "dx": 0.04,
+      "family": "DQ",
+      "grid_points": 26,
+      "mass_error": 6.731375504741288e-11,
+      "wall_seconds": 23.501245975494385
+    },
+    {
+      "degree": 1,
+      "dx": 0.02,
+      "family": "DQ",
+      "grid_points": 51,
+      "mass_error": 6.833378871431983e-11,
+      "wall_seconds": 95.74685597419739
+    },
+    {
+      "degree": 1,
+      "dx": 0.01,
+      "family": "DQ",
+      "grid_points": 101,
+      "mass_error": 7.06655565226727e-11,
+      "wall_seconds": 423.8613438606262
+    },
+    {
+      "degree": 2,
+      "dx": 0.08333333333333333,
+      "family": "DQ",
+      "grid_points": 13,
+      "mass_error": 6.752293537672094e-11,
+      "wall_seconds": 22.584713220596313
+    },
+    {
+      "degree": 2,
+      "dx": 0.04,
+      "family": "DQ",
+      "grid_points": 26,
+      "mass_error": 6.820235272809311e-11,
+      "wall_seconds": 94.50701594352722
+    },
+    {
+      "degree": 2,
+      "dx": 0.02,
+      "family": "DQ",
+      "grid_points": 51,
+      "mass_error": 6.870705426039597e-11,
+      "wall_seconds": 409.7469880580902
+    },
+    {
+      "degree": 2,
+      "dx": 0.01,
+      "family": "DQ",
+      "grid_points": 101,
+      "mass_error": 7.327110803940357e-11,
+      "wall_seconds": 1873.3793683052063
+    },
+    {
+      "degree": 1,
+      "dx": 0.08333333333333333,
+      "family": "CG",
+      "grid_points": 13,
+      "mass_error": 0.0016659092347408306,
+      "wall_seconds": 4.715161085128784
+    },
+    {
+      "degree": 1,
+      "dx": 0.04,
+      "family": "CG",
+      "grid_points": 26,
+      "mass_error": 0.0006104718971627634,
+      "wall_seconds": 6.87955117225647
+    },
+    {
+      "degree": 1,
+      "dx": 0.02,
+      "family": "CG",
+      "grid_points": 51,
+      "mass_error": 0.00023345848643186134,
+      "wall_seconds": 17.409143924713135
+    },
+    {
+      "degree": 1,
+      "dx": 0.01,
+      "family": "CG",
+      "grid_points": 101,
+      "mass_error": 8.802503544275662e-05,
+      "wall_seconds": 59.9939239025116
+    },
+    {
+      "degree": 2,
+      "dx": 0.08333333333333333,
+      "family": "CG",
+      "grid_points": 13,
+      "mass_error": 0.0006038542462303744,
+      "wall_seconds": 7.204295873641968
+    },
+    {
+      "degree": 2,
+      "dx": 0.04,
+      "family": "CG",
+      "grid_points": 26,
+      "mass_error": 0.00023737799986283076,
+      "wall_seconds": 17.921022176742554
+    },
+    {
+      "degree": 2,
+      "dx": 0.02,
+      "family": "CG",
+      "grid_points": 51,
+      "mass_error": 9.424831696214708e-05,
+      "wall_seconds": 65.04721474647522
+    },
+    {
+      "degree": 2,
+      "dx": 0.01,
+      "family": "CG",
+      "grid_points": 101,
+      "mass_error": 3.375355695354218e-05,
+      "wall_seconds": 267.79585790634155
+    }
+  ],
+  "integrator": "BackwardEuler",
+  "t_final": 200000.0
+}
