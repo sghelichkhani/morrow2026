@@ -7,6 +7,10 @@
 *.pvtu
 profile_*.txt
 
+# Regenerated figures — source of truth is the parsed JSON in parsed/.
+# Rebuild with `python3 plot_results.py --parsedir parsed --outdir figures`.
+parallel_scaling/figures/
+
 # Python / editor junk
 __pycache__/
 *.pyc
