@@ -1,148 +1,78 @@
 {
-  "degree": 2,
+  "degree": 1,
   "entries": [
     {
       "dt": 400.0,
       "integrator": "BackwardEuler",
-      "mass_error": 5.6627431910261095e-11,
-      "stage_type": "value",
-      "wall_seconds": 29.56342387199402
+      "mass_error": 0.0008104589075883981,
+      "stage_type": "deriv",
+      "wall_seconds": 8.753222942352295
     },
     {
       "dt": 200.0,
       "integrator": "BackwardEuler",
-      "mass_error": 2.1433820777266854e-10,
-      "stage_type": "value",
-      "wall_seconds": 45.78174018859863
+      "mass_error": 0.0004182194299636641,
+      "stage_type": "deriv",
+      "wall_seconds": 12.826122999191284
     },
     {
       "dt": 100.0,
       "integrator": "BackwardEuler",
-      "mass_error": 6.819389963743511e-11,
-      "stage_type": "value",
-      "wall_seconds": 88.96194386482239
+      "mass_error": 0.00021201913106574596,
+      "stage_type": "deriv",
+      "wall_seconds": 23.332857131958008
     },
     {
       "dt": 50.0,
       "integrator": "BackwardEuler",
-      "mass_error": 2.7412028972672448e-11,
-      "stage_type": "value",
-      "wall_seconds": 173.07812476158142
+      "mass_error": 0.00010489896163408348,
+      "stage_type": "deriv",
+      "wall_seconds": 43.50571298599243
     },
     {
       "dt": 25.0,
       "integrator": "BackwardEuler",
-      "mass_error": 4.2663935643887096e-11,
-      "stage_type": "value",
-      "wall_seconds": 332.2116758823395
+      "mass_error": 5.3709748691901536e-05,
+      "stage_type": "deriv",
+      "wall_seconds": 81.13874697685242
     },
     {
       "dt": 400.0,
       "integrator": "BackwardEuler",
-      "mass_error": 0.0008347196222038187,
-      "stage_type": "deriv",
-      "wall_seconds": 26.390814781188965
+      "mass_error": 5.863395142677308e-11,
+      "stage_type": "value",
+      "wall_seconds": 12.758507013320923
     },
     {
       "dt": 200.0,
       "integrator": "BackwardEuler",
-      "mass_error": 0.0004206444474269453,
-      "stage_type": "deriv",
-      "wall_seconds": 29.633430004119873
+      "mass_error": 2.145779834199224e-10,
+      "stage_type": "value",
+      "wall_seconds": 19.9093599319458
     },
     {
       "dt": 100.0,
       "integrator": "BackwardEuler",
-      "mass_error": 0.00021328854603799516,
-      "stage_type": "deriv",
-      "wall_seconds": 52.85655903816223
+      "mass_error": 6.79326201411326e-11,
+      "stage_type": "value",
+      "wall_seconds": 37.575371980667114
     },
     {
       "dt": 50.0,
       "integrator": "BackwardEuler",
-      "mass_error": 0.00010527836507463702,
-      "stage_type": "deriv",
-      "wall_seconds": 97.12554407119751
+      "mass_error": 2.6685973201177882e-11,
+      "stage_type": "value",
+      "wall_seconds": 73.88786602020264
     },
     {
       "dt": 25.0,
       "integrator": "BackwardEuler",
-      "mass_error": 5.3759918526971156e-05,
-      "stage_type": "deriv",
-      "wall_seconds": 184.5264811515808
-    },
-    {
-      "dt": 400.0,
-      "integrator": "ImplicitMidpoint",
-      "mass_error": 0.00042546299268701737,
+      "mass_error": 4.4387473866836294e-11,
       "stage_type": "value",
-      "wall_seconds": 28.419577836990356
-    },
-    {
-      "dt": 200.0,
-      "integrator": "ImplicitMidpoint",
-      "mass_error": 0.00021078175267884303,
-      "stage_type": "value",
-      "wall_seconds": 45.384891748428345
-    },
-    {
-      "dt": 100.0,
-      "integrator": "ImplicitMidpoint",
-      "mass_error": 0.00010679920647218308,
-      "stage_type": "value",
-      "wall_seconds": 87.05296897888184
-    },
-    {
-      "dt": 50.0,
-      "integrator": "ImplicitMidpoint",
-      "mass_error": 5.2921980782891524e-05,
-      "stage_type": "value",
-      "wall_seconds": 172.3654477596283
-    },
-    {
-      "dt": 25.0,
-      "integrator": "ImplicitMidpoint",
-      "mass_error": 2.6443731421852247e-05,
-      "stage_type": "value",
-      "wall_seconds": 331.68348693847656
-    },
-    {
-      "dt": 400.0,
-      "integrator": "ImplicitMidpoint",
-      "mass_error": 4.682473514660418e-05,
-      "stage_type": "deriv",
-      "wall_seconds": 20.653013944625854
-    },
-    {
-      "dt": 200.0,
-      "integrator": "ImplicitMidpoint",
-      "mass_error": 2.7596488983564534e-05,
-      "stage_type": "deriv",
-      "wall_seconds": 35.166019916534424
-    },
-    {
-      "dt": 100.0,
-      "integrator": "ImplicitMidpoint",
-      "mass_error": 8.16859424742581e-06,
-      "stage_type": "deriv",
-      "wall_seconds": 52.844785928726196
-    },
-    {
-      "dt": 50.0,
-      "integrator": "ImplicitMidpoint",
-      "mass_error": 3.6438164984647654e-06,
-      "stage_type": "deriv",
-      "wall_seconds": 100.19278073310852
-    },
-    {
-      "dt": 25.0,
-      "integrator": "ImplicitMidpoint",
-      "mass_error": 1.8043030965672385e-06,
-      "stage_type": "deriv",
-      "wall_seconds": 195.9439299106598
+      "wall_seconds": 142.07110714912415
     }
   ],
   "family": "DQ",
-  "grid_points": 25,
+  "grid_points": 36,
   "t_final": 200000.0
 }
