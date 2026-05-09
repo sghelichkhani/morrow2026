@@ -14,6 +14,10 @@ from pathlib import Path
 import matplotlib.pyplot as plt
 import numpy as np
 
+plt.rcParams.update({'font.size': 18})
+plt.rcParams["font.family"] = "serif"
+plt.rcParams["font.serif"] = ["Times New Roman"]
+
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent.parent))
 from verification.common import FIGURE_ROOT, load_json  # noqa: E402
 
@@ -25,8 +29,12 @@ OUT.mkdir(parents=True, exist_ok=True)
 
 
 def _convergence(xs: np.ndarray, ys: np.ndarray) -> float:
-    """Least-squares fit of a power law on log-log."""
-    logx, logy = np.log(xs), np.log(ys)
+    """Slope from the last two points on a log-log scale."""
+    if len(xs) < 2 or len(ys) < 2:
+        raise ValueError("Need at least two data points to compute convergence.")
+
+    logx = np.log(xs[-2:])
+    logy = np.log(ys[-2:])
     slope, _ = np.polyfit(logx, logy, 1)
     return float(slope)
 
@@ -38,36 +46,32 @@ def plot_2d():
         return
     data = load_json(path)["cases"]
 
-    fig, axes = plt.subplots(1, 2, figsize=(10, 4.2), sharey=True)
-    bc_axes = {"specified_head": axes[0], "no_flux": axes[1]}
+    fig, ax = plt.subplots(figsize=(6, 5))
     for name, case in data.items():
-        # Filter out failed entries (those carry an 'error' key instead
-        # of l2error_h) so partial JSONs still plot.
         levels = [e for e in case["levels"] if "l2error_h" in e]
         if not levels:
             continue
         dxs = np.array([e["dx"] for e in levels])
         err = np.array([e["l2error_h"] / e["l2anal_h"] for e in levels])
-        ax = bc_axes[case["bc_type"]]
         p = case["degree"]
         rate = _convergence(dxs, err)
         ax.loglog(dxs, err, "o-", label=f"DQ{p} (fitted rate {rate:.2f})")
 
-    # theoretical reference lines
-    for ax in axes.flat:
-        xs = np.array([1e-2, 1e-1])
-        for p, style in [(1, "k--"), (2, "k:"), (3, "k-.")]:
-            ax.loglog(xs, 1e-2 * (xs / xs[0]) ** p, style,
-                      alpha=0.5, label=f"$O(h^{p})$")
-        ax.set_xlabel(r"$\Delta x$ (m)")
-        ax.grid(True, which="both", alpha=0.3)
-        ax.legend(fontsize=8, loc="best")
-    axes[0].set_ylabel(r"Relative $L^2$ error in $h$")
-    axes[0].set_title("Specified head")
-    axes[1].set_title("No flux")
-    fig.suptitle("Tracy (2006) 2D spatial convergence")
+        x_ref = dxs[-1]
+        y_ref = err[-1]
+        x = np.array([2e-2, 6e-1])
+        y = y_ref * (x / x_ref)**(p+1)
+
+        ax.loglog(x, y, 'k--', alpha=0.5)
+
+    ax.set_xlabel(r"$\Delta x$ (m)")
+    ax.set_ylabel(r"Relative $L^2$ error in $h$")
+    #ax.set_title("Tracy (2006) 2D spatial convergence")
+    fig.text(0.025, 0.95, '(a)', ha='left', va='top', fontsize=22)
+    ax.grid(True, which="both", alpha=0.0)
+    ax.legend(fontsize=12)
     fig.tight_layout()
-    out = OUT / "2d_spatial_error.pdf"
+    out = OUT / "2d_spatial_congergence.pdf"
     fig.savefig(out, bbox_inches="tight")
     print(f"wrote {out}")
 
@@ -79,7 +83,7 @@ def plot_3d():
         return
     data = load_json(path)["cases"]
 
-    fig, ax = plt.subplots(1, 1, figsize=(5, 4.2))
+    fig, ax = plt.subplots(figsize=(6, 5))
     for name, case in data.items():
         levels = [e for e in case["levels"] if "l2error_h" in e]
         if not levels:
@@ -89,15 +93,20 @@ def plot_3d():
         p = case["degree"]
         rate = _convergence(dxs, err)
         ax.loglog(dxs, err, "o-", label=f"DQ{p} (fitted rate {rate:.2f})")
-    xs = np.array([0.05, 0.3])
-    for p, style in [(1, "k--"), (2, "k:")]:
-        ax.loglog(xs, 5e-2 * (xs / xs[0]) ** p, style,
-                  alpha=0.5, label=f"$O(h^{p})$")
+
+        x_ref = dxs[-1]
+        y_ref = err[-1]
+        x = np.array([0.0435, 6e-1])
+        y = y_ref * (x / x_ref)**(p+1)
+
+        ax.loglog(x, y, 'k--', alpha=0.5)
+
     ax.set_xlabel(r"$\Delta x$ (m)")
     ax.set_ylabel(r"Relative $L^2$ error in $h$")
-    ax.set_title("Tracy (2006) 3D spatial convergence")
-    ax.grid(True, which="both", alpha=0.3)
-    ax.legend(fontsize=8)
+    #ax.set_title("Tracy (2006) 3D spatial convergence")
+    fig.text(0.025, 0.95, '(b)', ha='left', va='top', fontsize=22)
+    ax.grid(True, which="both", alpha=0.0)
+    ax.legend(fontsize=12)
     fig.tight_layout()
     out = OUT / "3d_spatial_congergence.pdf"
     fig.savefig(out, bbox_inches="tight")

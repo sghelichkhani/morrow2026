@@ -17,22 +17,22 @@ from pathlib import Path
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent.parent))
 from verification.common import save_json  # noqa: E402
 
-from tests.richards.tracy_2d import model  # noqa: E402
+from tracy_2d import model  # noqa: E402
 
 
 ALL_CASES = {
+    "specified_head_dg0": {"degree": 0, "bc_type": "specified_head",
+                        "levels": [32, 49, 74, 113, 172, 262, 400, 608]},
     "specified_head_dg1": {"degree": 1, "bc_type": "specified_head",
-                           "levels": [51, 101, 201, 401]},
+                           "levels": [32, 49, 74, 113, 172, 262, 400, 608]},
     "specified_head_dg2": {"degree": 2, "bc_type": "specified_head",
-                           "levels": [76, 151, 301]},
-    "no_flux_dg1":         {"degree": 1, "bc_type": "no_flux",
-                            "levels": [51, 101, 201, 401]},
+                           "levels": [32, 49, 74, 113, 172, 262, 400, 608]},
 }
 
 # DG2 runs need MPI (the g-adopt test_richards harness itself assigns
 # 2–32 cores per level); serial runs hit DIVERGED_MAX_IT. Run locally
 # with --cases to pick individual families; default skips DG2.
-DEFAULT_CASES = ["specified_head_dg1", "no_flux_dg1"]
+DEFAULT_CASES = ["specified_head_dg0", "specified_head_dg1", "specified_head_dg2"]
 
 
 def run(max_level: int | None = None,
@@ -52,15 +52,15 @@ def run(max_level: int | None = None,
                 continue
             t0 = time.time()
             try:
-                l2err_h, l2err_th, l2anal_h, l2anal_th = model(
+                l2err_h, l2anal_h = model(
                     nodes=nodes, degree=degree, bc_type=bc_type,
                 )
             except Exception as exc:  # noqa: BLE001
                 wall = time.time() - t0
-                print(f"[{name}] nodes={nodes} dq{degree} FAILED: {exc!r} "
-                      f"wall={wall:.1f}s")
+                PETSc.Sys.Print(f"[{name}] nodes={nodes} dq{degree} FAILED: {exc!r} "
+                     f"wall={wall:.1f}s")
                 entries.append({
-                    "nodes": nodes, "dx": 15.24 / nodes,
+                    "nodes": nodes, "dx": 15.24 / (nodes+1),
                     "error": repr(exc), "wall_seconds": wall,
                 })
                 if output is not None:
@@ -68,14 +68,12 @@ def run(max_level: int | None = None,
                 continue
             wall = time.time() - t0
             entries.append({
-                "nodes": nodes, "dx": 15.24 / nodes,
+                "nodes": nodes, "dx": 15.24 / (nodes+1),
                 "l2error_h": float(l2err_h),
-                "l2error_theta": float(l2err_th),
                 "l2anal_h": float(l2anal_h),
-                "l2anal_theta": float(l2anal_th),
                 "wall_seconds": wall,
             })
-            print(f"[{name}] nodes={nodes} dq{degree} "
+            PETSc.Sys.Print(f"[{name}] nodes={nodes} dq{degree} "
                   f"rel_err_h={l2err_h/l2anal_h:.3e} "
                   f"wall={wall:.1f}s")
             if output is not None:

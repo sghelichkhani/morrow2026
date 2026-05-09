@@ -22,7 +22,7 @@ import numpy as np
 import gwassess
 
 
-def model(nodes, degree=1, dt_value=5e4, t_final=5e5):
+def model(nodes, degree=1, dt_value=5e4, t_final=5e6):
     """Run Tracy 3D benchmark and return L2 errors.
 
     Args:
@@ -41,10 +41,25 @@ def model(nodes, degree=1, dt_value=5e4, t_final=5e5):
     theta_s = 0.45
     Ks = 1.0e-05
 
-    tracy = gwassess.TracyRichardsSolution3D(
-        alpha=alpha, hr=hr, L=L,
-        theta_r=theta_r, theta_s=theta_s, Ks=Ks,
-    )
+    def exact_solution(x, t):
+
+        # Exact solution from Tracy 2006
+        h0 = 1 - exp(alpha * hr)
+        beta = sqrt(alpha**2/4 + (pi/L)**2 + (pi/L)**2)
+        hss = h0*sin(pi*X[0]/L)*sin(pi*X[1]/L)*exp((alpha/2)*(L - X[2]))*sinh(beta*X[2])/sinh(beta*L)
+        c = alpha*(soil_curve.parameters["theta_s"] - soil_curve.parameters["theta_r"])/soil_curve.parameters["Ks"]
+
+        phi = 0
+        for k in range(1, 200):
+            lambdak = k*pi/L
+            gamma = (beta**2 + lambdak**2)/c
+            phi = phi + ((-1)**k)*(lambdak/gamma)*sin(lambdak*X[2])*exp(-gamma*t)
+        phi = phi*((2*h0)/(L*c))*sin(pi*X[0]/L)*sin(pi*X[1]/L)*exp(alpha*(L-X[2])/2)
+
+        hBar = hss + phi
+        hExact = ((1/alpha)*ln(exp(alpha*hr) + hBar))
+
+        return hExact
 
     soil_curve = ExponentialCurve(
         theta_r=theta_r, theta_s=theta_s,
@@ -63,23 +78,20 @@ def model(nodes, degree=1, dt_value=5e4, t_final=5e5):
     top_bc_expr = (1 / alpha) * ln(exp(alpha * hr) + h0_val * sin(pi * X[0] / L) * sin(pi * X[1] / L))
 
     richards_bcs = {
-        boundary_ids.left: {"h": hr},
-        boundary_ids.right: {"h": hr},
-        boundary_ids.front: {"h": hr},
-        boundary_ids.back: {"h": hr},
-        "bottom": {"h": hr},
-        "top": {"h": top_bc_expr},
+        boundary_ids.left:   {'h': -L},
+        boundary_ids.right:  {'h': -L},
+        boundary_ids.back:   {'h': -L},
+        boundary_ids.front:  {'h': -L},
+        boundary_ids.bottom: {'h': -L},
+        boundary_ids.top:    {'h': top_bc_expr},
     }
 
-    t_offset = 200000.0
+    t_offset = 2000000
     V_coords = VectorFunctionSpace(mesh, "DQ", degree)
     coords = Function(V_coords).interpolate(as_vector([X[0], X[1], X[2]]))
 
-    h = Function(V, name="PressureHead")
-    h.dat.data[:] = [
-        tracy.pressure_head_cartesian([c[0], c[1], c[2]], t_offset)
-        for c in coords.dat.data
-    ]
+    h = Function(V, name="PressureHead").interpolate(exact_solution(X, t_offset))
+    h_old = Function(V, name="PressureHeadOld").assign(h)
 
     dt = Constant(dt_value)
 
@@ -87,15 +99,13 @@ def model(nodes, degree=1, dt_value=5e4, t_final=5e5):
         h, soil_curve, dt,
         timestepper=BackwardEuler,
         bcs=richards_bcs,
-        solver_parameters_extra={
-            "snes_converged_reason": None,
-            "ksp_converged_reason": None,
-        },
+        solver_parameters='bjacobi',
     )
 
     time = 0.0
     step = 0
     while time < t_final:
+        h_old.assign(h)
         richards_solver.solve()
         time += float(dt)
         step += 1
@@ -104,13 +114,12 @@ def model(nodes, degree=1, dt_value=5e4, t_final=5e5):
         if step % 10 == 0:
             log(f"step {step} | t = {time:.0f} s | dt = {float(dt):.0f} s")
 
-    h_anal = Function(V, name="AnalyticalPressureHead")
-    h_anal.dat.data[:] = [
-        tracy.pressure_head_cartesian([c[0], c[1], c[2]], t_offset + time)
-        for c in coords.dat.data
-    ]
+    h_anal = exact_solution(X, time+t_offset)
 
-    dx_quad = dx(metadata={"quadrature_degree": 3})
+    if degree == 0:
+        dx_quad = dx(metadata={"quadrature_degree": 1})
+    else:
+        dx_quad = dx(metadata={"quadrature_degree": 3})
     l2_error = np.sqrt(assemble((h - h_anal)**2 * dx_quad))
     l2_anal = np.sqrt(assemble(h_anal**2 * dx_quad))
 
@@ -119,7 +128,6 @@ def model(nodes, degree=1, dt_value=5e4, t_final=5e5):
         f"dx = {L / nodes:.4f} | DOFs = {V.dim()}")
 
     return l2_error, l2_anal
-
 
 if __name__ == "__main__":
     import argparse
