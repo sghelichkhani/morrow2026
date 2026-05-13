@@ -31,26 +31,16 @@ T_TARGET = 28_800.0  # 8 h — paper's convergence target
 # run (one solve would be ~40 minutes on a laptop). Kept small by
 # default here so the rate can be demonstrated without Gadi; the full
 # paper figure should be produced on Gadi — see to-do-list.md.
-REFERENCE = {"nodes_x": 151, "nodes_y": 121, "degree": 2}
+REFERENCE = {"nodes_x": 61, "nodes_y": 41, "degree": 2}
 COARSE = [
+    {"nodes_x": 16,  "nodes_y": 11,  "degree": 0},
     {"nodes_x": 23,  "nodes_y": 16,  "degree": 0},
     {"nodes_x": 31,  "nodes_y": 21,  "degree": 0},
-    {"nodes_x": 37,  "nodes_y": 25,  "degree": 0},
     {"nodes_x": 46,  "nodes_y": 31,  "degree": 0},
-    {"nodes_x": 61,  "nodes_y": 41,  "degree": 0},
-    {"nodes_x": 76,  "nodes_y": 51,  "degree": 0},
-    {"nodes_x": 91,  "nodes_y": 61,  "degree": 0},
-    {"nodes_x": 121,  "nodes_y": 81,  "degree": 0},
-    {"nodes_x": 151,  "nodes_y": 101,  "degree": 0},
+    {"nodes_x": 16,  "nodes_y": 11,  "degree": 1},
     {"nodes_x": 23,  "nodes_y": 16,  "degree": 1},
     {"nodes_x": 31,  "nodes_y": 21,  "degree": 1},
-    {"nodes_x": 37,  "nodes_y": 25,  "degree": 1},
     {"nodes_x": 46,  "nodes_y": 31,  "degree": 1},
-    {"nodes_x": 61,  "nodes_y": 41,  "degree": 1},
-    {"nodes_x": 76,  "nodes_y": 51,  "degree": 1},
-    {"nodes_x": 91,  "nodes_y": 61,  "degree": 1},
-    {"nodes_x": 121,  "nodes_y": 81,  "degree": 1},
-    {"nodes_x": 151,  "nodes_y": 101,  "degree": 1},
 ]
 
 

@@ -25,8 +25,7 @@ def compute_mass_balance(*,
                          polynomial_degree: int,
                          time_integrator,
                          function_space: str,
-                         stage_type: str = "value",
-                         equation_type: str = "moisture_content") -> float:
+                         stage_type: str = "value") -> float:
     mesh = UnitSquareMesh(grid_points, grid_points, quadrilateral=True)
     V = FunctionSpace(mesh, function_space, polynomial_degree)
 
@@ -51,7 +50,6 @@ def compute_mass_balance(*,
         solver_parameters_extra={"snes_atol": 1e-15},
         bcs=bcs,
         timestepper_kwargs={"stage_type": stage_type},
-        solver_parameters='direct',
     )
 
     initial_mass = assemble(theta * dx)

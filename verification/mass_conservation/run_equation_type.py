@@ -15,19 +15,21 @@ sys.path.insert(0, str(Path(__file__).resolve().parent.parent.parent))
 from verification.common import save_json  # noqa: E402
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
-from gadopt import BackwardEuler, DIRK22, ImplicitMidpoint  # noqa: E402
+from gadopt import BackwardEuler, ImplicitMidpoint  # noqa: E402
 from mass_balance import compute_mass_balance  # noqa: E402
 
 
-GRID_POINTS = 36
-DEGREE = 1
+GRID_POINTS = 25
+DEGREE = 2
 FAMILY = "DQ"
 T_FINAL = 2e5
 DTS = [400.0, 200.0, 100.0, 50.0, 25.0]
 
 COMBINATIONS = [
-    ("BackwardEuler", BackwardEuler,   "deriv"),
     ("BackwardEuler", BackwardEuler,   "value"),
+    ("BackwardEuler", BackwardEuler,   "deriv"),
+    ("ImplicitMidpoint", ImplicitMidpoint, "value"),
+    ("ImplicitMidpoint", ImplicitMidpoint, "deriv"),
 ]
 
 

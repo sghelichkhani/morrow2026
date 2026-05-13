@@ -8,10 +8,6 @@ import matplotlib.pyplot as plt
 import numpy as np
 from scipy.interpolate import griddata
 
-plt.rcParams.update({'font.size': 12})
-plt.rcParams["font.family"] = "serif"
-plt.rcParams["font.serif"] = ["Times New Roman"]
-
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent.parent))
 from verification.common import FIGURE_ROOT  # noqa: E402
 
@@ -43,15 +39,15 @@ def main():
     _,  _,  H_anal = _regrid(d["x"], d["y"], d["h_anal"], L)
     _,  _,  Th_num = _regrid(d["x"], d["y"], d["theta_num"], L)
 
-    im0 = axes[0].pcolormesh(XI, YI, H_num, shading="nearest", cmap="viridis", edgecolor='face')
+    im0 = axes[0].pcolormesh(XI, YI, H_num, shading="auto", cmap="viridis")
     axes[0].set_title(r"Numerical $h$ (m)")
     fig.colorbar(im0, ax=axes[0], shrink=0.8)
 
-    im1 = axes[1].pcolormesh(XI, YI, H_anal, shading="nearest", cmap="viridis", edgecolor='face')
+    im1 = axes[1].pcolormesh(XI, YI, H_anal, shading="auto", cmap="viridis")
     axes[1].set_title(r"Analytical $h$ (m)")
     fig.colorbar(im1, ax=axes[1], shrink=0.8)
 
-    im2 = axes[2].pcolormesh(XI, YI, Th_num, shading="nearest", cmap="Blues", edgecolor='face')
+    im2 = axes[2].pcolormesh(XI, YI, Th_num, shading="auto", cmap="Blues")
     axes[2].set_title(r"Numerical $\theta$")
     fig.colorbar(im2, ax=axes[2], shrink=0.8)
 
@@ -60,7 +56,7 @@ def main():
         ax.set_aspect("equal")
     axes[0].set_ylabel("y (m)")
 
-    #fig.suptitle(f"Tracy 2D steady state (t = {float(d['t']):.2e} s)")
+    fig.suptitle(f"Tracy 2D steady state (t = {float(d['t']):.2e} s)")
     fig.tight_layout()
     out = OUT / "solution.pdf"
     fig.savefig(out, bbox_inches="tight")

@@ -2,8 +2,10 @@
 
 Convergence study against Tracy's 3D analytical solution for the Richards
 equation with exponential (Gardner) soil on a cubic domain L x L x L.
-Uses BackwardEuler with manual dt ramp-up to reach steady state, then
-computes L2 error against the analytical solution from gwassess.
+Steps with BackwardEuler and a geometric dt ramp until the L^2 norm of
+the pressure-head increment per step drops below ``steady_state_tolerance``
+(or ``t_final`` is hit as a safety cap), then computes the L^2 error
+against the analytical solution from gwassess.
 
 This is a longtest intended for Gadi: the finer meshes produce large 3D
 problems (e.g. 101^3 DQ1 ~ 8M DOFs).
@@ -14,7 +16,7 @@ Reference:
     Water Resources Research, 42(8). doi:10.1029/2005WR004638
 
 Usage:
-    mpiexec -n 48 python tracy_3d.py --nodes 51 --degree 1 --t-final 5e5
+    mpiexec -n 48 python tracy_3d.py --nodes 51 --degree 1
 """
 
 from gadopt import *
@@ -22,14 +24,21 @@ import numpy as np
 import gwassess
 
 
-def model(nodes, degree=1, dt_value=5e4, t_final=5e6):
+def model(nodes, degree=1, dt_value=5e4, t_final=5e6,
+          steady_state_tolerance=1e-3):
     """Run Tracy 3D benchmark and return L2 errors.
 
     Args:
         nodes: Number of cells per spatial dimension.
         degree: DQ polynomial degree.
         dt_value: Initial time step in seconds.
-        t_final: Final simulation time in seconds.
+        t_final: Upper cap on simulated time in seconds. The loop exits
+            earlier if ``steady_state_tolerance`` is met; this is a
+            safety net against a stalled convergence.
+        steady_state_tolerance: L^2 norm of the per-step pressure-head
+            increment ``||h - h_old||_L2`` (units: m * sqrt(m^3)) below
+            which the solution is considered to have reached steady
+            state.
 
     Returns:
         Tuple of (l2error_h, l2anal_h).
@@ -41,25 +50,10 @@ def model(nodes, degree=1, dt_value=5e4, t_final=5e6):
     theta_s = 0.45
     Ks = 1.0e-05
 
-    def exact_solution(x, t):
-
-        # Exact solution from Tracy 2006
-        h0 = 1 - exp(alpha * hr)
-        beta = sqrt(alpha**2/4 + (pi/L)**2 + (pi/L)**2)
-        hss = h0*sin(pi*X[0]/L)*sin(pi*X[1]/L)*exp((alpha/2)*(L - X[2]))*sinh(beta*X[2])/sinh(beta*L)
-        c = alpha*(soil_curve.parameters["theta_s"] - soil_curve.parameters["theta_r"])/soil_curve.parameters["Ks"]
-
-        phi = 0
-        for k in range(1, 200):
-            lambdak = k*pi/L
-            gamma = (beta**2 + lambdak**2)/c
-            phi = phi + ((-1)**k)*(lambdak/gamma)*sin(lambdak*X[2])*exp(-gamma*t)
-        phi = phi*((2*h0)/(L*c))*sin(pi*X[0]/L)*sin(pi*X[1]/L)*exp(alpha*(L-X[2])/2)
-
-        hBar = hss + phi
-        hExact = ((1/alpha)*ln(exp(alpha*hr) + hBar))
-
-        return hExact
+    tracy = gwassess.TracyRichardsSolution3D(
+        alpha=alpha, hr=hr, L=L,
+        theta_r=theta_r, theta_s=theta_s, Ks=Ks,
+    )
 
     soil_curve = ExponentialCurve(
         theta_r=theta_r, theta_s=theta_s,
@@ -78,20 +72,24 @@ def model(nodes, degree=1, dt_value=5e4, t_final=5e6):
     top_bc_expr = (1 / alpha) * ln(exp(alpha * hr) + h0_val * sin(pi * X[0] / L) * sin(pi * X[1] / L))
 
     richards_bcs = {
-        boundary_ids.left:   {'h': -L},
-        boundary_ids.right:  {'h': -L},
-        boundary_ids.back:   {'h': -L},
-        boundary_ids.front:  {'h': -L},
-        boundary_ids.bottom: {'h': -L},
-        boundary_ids.top:    {'h': top_bc_expr},
+        boundary_ids.left: {"h": hr},
+        boundary_ids.right: {"h": hr},
+        boundary_ids.front: {"h": hr},
+        boundary_ids.back: {"h": hr},
+        "bottom": {"h": hr},
+        "top": {"h": top_bc_expr},
     }
 
-    t_offset = 2000000
+    t_offset = 200000.0
     V_coords = VectorFunctionSpace(mesh, "DQ", degree)
     coords = Function(V_coords).interpolate(as_vector([X[0], X[1], X[2]]))
 
-    h = Function(V, name="PressureHead").interpolate(exact_solution(X, t_offset))
-    h_old = Function(V, name="PressureHeadOld").assign(h)
+    h = Function(V, name="PressureHead")
+    h.dat.data[:] = [
+        tracy.pressure_head_cartesian([c[0], c[1], c[2]], t_offset)
+        for c in coords.dat.data
+    ]
+    h_old = Function(V, name="PressureHeadPrevious").assign(h)
 
     dt = Constant(dt_value)
 
@@ -99,8 +97,14 @@ def model(nodes, degree=1, dt_value=5e4, t_final=5e6):
         h, soil_curve, dt,
         timestepper=BackwardEuler,
         bcs=richards_bcs,
-        solver_parameters='bjacobi',
+        solver_parameters='iterative',
+        solver_parameters_extra={
+            "snes_converged_reason": None,
+            "ksp_converged_reason": None,
+        },
     )
+
+    dx_quad = dx(metadata={"quadrature_degree": 3})
 
     time = 0.0
     step = 0
@@ -111,15 +115,25 @@ def model(nodes, degree=1, dt_value=5e4, t_final=5e6):
         step += 1
         dt.assign(min(float(dt) * 1.05, t_final / 10))
 
+        maxchange = np.sqrt(assemble((h - h_old)**2 * dx_quad))
         if step % 10 == 0:
-            log(f"step {step} | t = {time:.0f} s | dt = {float(dt):.0f} s")
-
-    h_anal = exact_solution(X, time+t_offset)
-
-    if degree == 0:
-        dx_quad = dx(metadata={"quadrature_degree": 1})
+            log(f"step {step} | t = {time:.0f} s | dt = {float(dt):.0f} s | "
+                f"||h - h_old||_L2 = {maxchange:.3e}")
+        if maxchange < steady_state_tolerance:
+            log(f"Steady state reached after {step} steps "
+                f"(||h - h_old||_L2 = {maxchange:.3e} < "
+                f"{steady_state_tolerance:.1e}); exiting")
+            break
     else:
-        dx_quad = dx(metadata={"quadrature_degree": 3})
+        log(f"Reached t_final = {t_final:.1e} s without meeting "
+            f"steady-state tolerance {steady_state_tolerance:.1e}")
+
+    h_anal = Function(V, name="AnalyticalPressureHead")
+    h_anal.dat.data[:] = [
+        tracy.pressure_head_cartesian([c[0], c[1], c[2]], t_offset + time)
+        for c in coords.dat.data
+    ]
+
     l2_error = np.sqrt(assemble((h - h_anal)**2 * dx_quad))
     l2_anal = np.sqrt(assemble(h_anal**2 * dx_quad))
 
@@ -129,6 +143,7 @@ def model(nodes, degree=1, dt_value=5e4, t_final=5e6):
 
     return l2_error, l2_anal
 
+
 if __name__ == "__main__":
     import argparse
 
@@ -136,7 +151,10 @@ if __name__ == "__main__":
     parser.add_argument("--nodes", type=int, required=True)
     parser.add_argument("--degree", type=int, default=1)
     parser.add_argument("--dt", type=float, default=5e4)
-    parser.add_argument("--t-final", type=float, default=5e5)
+    parser.add_argument("--t-final", type=float, default=5e6)
+    parser.add_argument("--steady-state-tolerance", type=float, default=1e-3)
     args = parser.parse_args()
 
-    model(args.nodes, degree=args.degree, dt_value=args.dt, t_final=args.t_final)
+    model(args.nodes, degree=args.degree, dt_value=args.dt,
+          t_final=args.t_final,
+          steady_state_tolerance=args.steady_state_tolerance)

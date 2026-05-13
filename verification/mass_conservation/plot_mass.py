@@ -17,10 +17,6 @@ from pathlib import Path
 import matplotlib.pyplot as plt
 import numpy as np
 
-plt.rcParams.update({'font.size': 18})
-plt.rcParams["font.family"] = "serif"
-plt.rcParams["font.serif"] = ["Times New Roman"]
-
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent.parent))
 from verification.common import FIGURE_ROOT, load_json  # noqa: E402
 
@@ -52,7 +48,7 @@ def plot_function_space():
         print(f"skip function_space: missing {path}")
         return
     data = load_json(path)
-    fig, ax = plt.subplots(figsize=(6, 5))
+    fig, ax = plt.subplots(figsize=(5.2, 4))
     families_present = set()
     for e in data["entries"]:
         families_present.add((e["family"], e["degree"]))
@@ -70,12 +66,11 @@ def plot_function_space():
                   color=_color_for(family, degree),
                   label=f"{family}{degree}")
     ax.set_xlabel(r"$\Delta x$ (m)")
-    ax.set_ylabel(r"Cumulative mass loss $M$ (m$^2$)")
-    ax.grid(True, which="both", alpha=0.0)
-    ax.legend(ncol=2, fontsize=12)
-    fig.text(0.025, 0.95, '(a)', ha='left', va='top', fontsize=22)
-    #ax.set_title(r"Mass conservation vs $\Delta x$ ($\Delta t = "
-    #             f"{data['dt']:g}$ s)")
+    ax.set_ylabel(r"Cumulative mass loss $M$ (m$^3$)")
+    ax.grid(True, which="both", alpha=0.3)
+    ax.legend(ncol=2, fontsize=8)
+    ax.set_title(r"Mass conservation vs $\Delta x$ ($\Delta t = "
+                 f"{data['dt']:g}$ s)")
     fig.tight_layout()
     out = OUT / "function_space.pdf"
     fig.savefig(out, bbox_inches="tight")
@@ -88,7 +83,7 @@ def plot_equation_type():
         print(f"skip equation_type: missing {path}")
         return
     data = load_json(path)
-    fig, ax = plt.subplots(figsize=(6, 5))
+    fig, ax = plt.subplots(figsize=(5.2, 4))
     styles = {"value": "-", "deriv": "--"}
     colors = {"BackwardEuler": "C0", "ImplicitMidpoint": "C3"}
     names = {"value": "mixed", "deriv": "head"}
@@ -106,14 +101,13 @@ def plot_equation_type():
                   color=colors[integrator],
                   label=f"{integrator}, {names[stage_type]}")
     ax.set_xlabel(r"$\Delta t$ (s)")
-    ax.set_ylabel(r"Cumulative mass loss $M$ (m$^2$)")
-    ax.grid(True, which="both", alpha=0.0)
-    ax.legend(fontsize=12)
-    fig.text(0.025, 0.95, '(b)', ha='left', va='top', fontsize=22)
-    #ax.set_title(
-    #    r"Mass conservation vs $\Delta t$ "
-    #    f"(DQ{data['degree']}, {data['grid_points']}² grid)"
-    #)
+    ax.set_ylabel(r"Cumulative mass loss $M$ (m$^3$)")
+    ax.grid(True, which="both", alpha=0.3)
+    ax.legend(fontsize=8)
+    ax.set_title(
+        r"Mass conservation vs $\Delta t$ "
+        f"(DQ{data['degree']}, {data['grid_points']}² grid)"
+    )
     fig.tight_layout()
     out = OUT / "equation_type.pdf"
     fig.savefig(out, bbox_inches="tight")

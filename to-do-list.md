@@ -1,6 +1,46 @@
 # Morrow et al. 2026 — paper-figure to-do list
 
-Last updated: 2026-04-21.
+Last updated: 2026-05-13.
+
+## Upstream change to fold in: Irksome PR #226
+
+Irksome now ships a conservative variational update for non-stiffly-accurate
+`stage_value`, so `ImplicitMidpoint`, `GaussLegendre(2)`, `QinZhang` etc. are
+mass-conservative to solver tolerance on the same form (`Dt(theta(h))`,
+`Ss = 0`) that BackwardEuler/DIRK22 already handled. The branch in
+`~/Workplace/firedrake-2026-03-03/Irksome` on
+`sghelichkhani/conservative-update-non-sa` is the reference. Consequences
+for this repo, all of which need a sweep:
+
+- The `Ss = 1e-4` regularisation in `verification/tracy/run_temporal_all_dirks.py`
+  was a workaround for a singular conservative-update Jacobian on the
+  exponential curve. PR #226 added a warm-start (`u_new <- u_0`) that defuses
+  the singularity, so the regularisation is no longer needed. Revert to
+  `Ss = 0` and rerun.
+- The `ExponentialCurve.saturation_potential` antiderivative that
+  `instructions.md` and `verification-design.md` rely on was reverted from
+  g-adopt (`sghelichkhani/richardson` head `48a8cf44`) — it only existed to
+  let `Ss * S * Dt(h)` go through Irksome's `expand_time_derivatives`. With
+  `Ss = 0` that whole branch is dead, so the antiderivative is gone and the
+  documentation references should be deleted.
+- The §3.2 narrative correction (item 10 below) flips sign: pre-fix Irksome
+  showed `O(Δt)` mass error on `ImplicitMidpoint`; post-fix it sits at
+  solver tolerance, matching what the paper text originally claimed. The
+  manuscript text can stay; the figure (`MassConservation/equation_type.pdf`)
+  must be regenerated against post-PR-#226 Irksome.
+- The temporal-convergence figure (item 10) likewise needs regeneration:
+  with the conservative-update path live, `ImplicitMidpoint` should now hit
+  its formal order-2 rate against a numerical reference without any
+  `Ss > 0` regularisation. g-adopt has a fresh
+  `tests/richards/test_temporal_convergence.py` that pins this with an
+  analytic MMS for BE/IM/GL(2) on a unit square; treat it as the laptop
+  proxy before submitting the Gadi 201²/301² production runs.
+
+If anything in `verification/tracy/` or `verification/mass_conservation/`
+still has `Ss = 1e-4` or `saturation_potential` in it after the sweep,
+that's a leftover hack that needs removing.
+
+## Pre-PR-#226 history
 
 Single source of truth for the state of every paper figure and what
 still needs a human.
@@ -34,9 +74,9 @@ Symbol key: ✅ done, ⏳ running, 📝 script ready / no run, 🌏 needs Gadi, 
 | Figure | Script | Status |
 |---|---|---|
 | `Tracy/solution.pdf` | `verification/tracy/run_solution.py` + `plot_solution.py` | ❌ **wrong figure.** Paper wants a 3-panel **time evolution** (t = 0, 5×10⁴, 2.5×10⁶ s) of pressure head. We produce a 3-panel (h_num, h_anal, θ_num) snapshot at a single time. `run_solution.py` needs a rewrite to save snapshots at the three paper times. |
-| `Tracy/2d_spatial_error.pdf` | `verification/tracy/run_spatial_2d.py` + `plot_spatial.py` | ⚠️ **missing polynomial degrees.** Paper sweeps p = 0, 1, 2; we have only DG1. Add DG0 and DG2 families to `ALL_CASES` (DG2 needs Gadi, DG0 is cheap and serial). The `no_flux_dg1` leg we run is extra beyond the paper — harmless but not in the published figure |
+| `Tracy/2d_spatial_error.pdf` | `verification/tracy/run_spatial_2d.py` + `plot_spatial.py` | ⚠️ **missing polynomial degrees.** Paper sweeps p = 0, 1, 2; current data covers DG1 (specified-head + no-flux). DG2 is in `ALL_CASES` but needs Gadi; DG0 also still to be added. Any prior DG0/DG2 entries from an alternate driver were discarded because their `dx` convention (`L/(n+1)`) did not match the canonical `dx = L/n` — re-run with the canonical driver before mixing |
 | `Tracy/2d_temporal_congergence.pdf` | `verification/tracy/run_temporal_2d.py` + `plot_temporal.py` | ❌ **wrong integrator set.** Paper uses BackwardEuler + ImplicitMidpoint + CrankNicolson. We swapped ImplicitMidpoint for DIRK22. Replace DIRK22 → ImplicitMidpoint in `INTEGRATORS` and rerun. Separately CrankNicolson is stuck at 0.68 for all Δt — Newton silently returns the IC. Root-cause is unknown; affects g-adopt, not just this driver |
-| `Tracy/3d_spatial_congergence.pdf` | `verification/tracy/run_spatial_3d.py` + `plot_spatial.py` | ⚠️ **missing polynomial degrees.** Paper covers p = 0, 1, 2 in 3D as well. We have only DG1. Add DG0 + DG2 sweeps; DG2 needs Gadi, DG0 + DG1 at small meshes is serial-feasible |
+| `Tracy/3d_spatial_congergence.pdf` | `verification/tracy/run_spatial_3d.py` + `plot_spatial.py` | ⚠️ **missing polynomial degrees.** Paper covers p = 0, 1, 2 in 3D as well. We have only DG1 up to 51³. Add DG0 + DG2 sweeps and extend DG1 to 71³ / 101³; DG2 + the fine DG1 meshes need Gadi, DG0 + DG1 at small meshes is serial-feasible. The driver now exits on an L² steady-state criterion (default `1e-3`); `t_final = 5e6` s is just the safety cap |
 
 Production spec for Tracy (per paper captions):
 - `solution.pdf` uses `L=15.24`, `α=0.25`, `θ_r=0.15`, `θ_s=0.45`, `S_s=0`, `K_s=10⁻⁵` (already match).
@@ -48,7 +88,7 @@ Production spec for Tracy (per paper captions):
 | Figure | Script | Status |
 |---|---|---|
 | `MassConservation/function_space.pdf` | `verification/mass_conservation/run_function_space.py` + `plot_mass.py` | ✅ Δx × {DQ0/1/2, CG1/CG2}. DQ ≲ 7e-11 (flat vs Δx); CG at 1.7e-3 (CG1, dx=1/12) down to 3.4e-5 (CG2, dx=1/100) with clear mesh convergence |
-| `MassConservation/equation_type.pdf` | `verification/mass_conservation/run_equation_type.py` + `plot_mass.py` | ⚠️ ImplicitMidpoint + `stage_type="value"` shows O(Δt) error (4.25e-4 → 2.6e-5), not the ~1e-10 the paper's narrative implies. The paper claim "both integrators yield excellent mass balance" holds only for stiffly accurate tableaux (BackwardEuler). See *Narrative check* below |
+| `MassConservation/equation_type.pdf` | `verification/mass_conservation/run_equation_type.py` + `plot_mass.py` | ⚠️ **regenerate against post-PR-#226 Irksome.** Old run showed ImplicitMidpoint+`stage_type="value"` at `O(Δt)` (4.25e-4 → 2.6e-5); with the conservative-update fix in place it should sit at solver tolerance like BackwardEuler. Once rerun, the §3.2 *Narrative check* edits below are no longer needed — paper text stands as written. |
 
 ### §3.3 Vauclin (1979)
 
@@ -163,11 +203,19 @@ curves per panel — just make sure DG0 and DG2 labels show up cleanly.
 ### 10. Restore ImplicitMidpoint + debug CrankNicolson (local)
 
 Swap `DIRK22` → `ImplicitMidpoint` in `run_temporal_2d.py::INTEGRATORS`
-to match the paper's integrator set. Then investigate why CrankNicolson
-returns the initial guess — likely a stage-ordering issue in g-adopt's
-`AbstractRKScheme` when combined with `stage_type="value"`. If it can't
-be fixed quickly, note in §3.1 caption which integrator is omitted and
-why.
+to match the paper's integrator set. With Irksome PR #226 in place the
+non-SA conservative-update path is honest, so ImplicitMidpoint should
+deliver its formal order-2 rate against the numerical reference (no
+`Ss > 0` regularisation, no `saturation_potential` rewrite — both
+were workarounds for the pre-fix Irksome and should be ripped out from
+`run_temporal_all_dirks.py` and from `instructions.md` /
+`verification-design.md`). Then investigate why CrankNicolson returns
+the initial guess — likely a stage-ordering issue in g-adopt's
+`AbstractRKScheme` when combined with `stage_type="value"`. If it
+can't be fixed quickly, note in §3.1 caption which integrator is
+omitted and why. The new
+`g-adopt:tests/richards/test_temporal_convergence.py` is the laptop
+proxy that should pass cleanly before submitting the production sweep.
 
 ### 11. Cross-check solver-options appendix against `parallel_scaling/solvers/`
 
@@ -205,18 +253,22 @@ test suite. Consider promoting `run_temporal_2d.py` into
 `g-adopt/tests/richards/tracy_2d_temporal.py` once the CrankNicolson
 bug is understood.
 
-**Discrepancy in §3.2 narrative (ImplicitMidpoint + mixed form).** The
-paper currently states: *"For the mixed form (solid lines), both time
-integrators yield excellent mass balance, with M ~ 10⁻¹⁰ for all tested
-Δt."* Our runs contradict this for ImplicitMidpoint: with
-`stage_type="value"` (the mixed form), ImplicitMidpoint records
-M = 4.25e-4 at Δt=400 s down to M = 2.6e-5 at Δt=25 s — a clean O(Δt)
-decay, not the solver-tolerance floor. The RichardsSolver docstring in
-g-adopt itself (`richards_solver.py:305`) warns that
-`stage_type="value"` conserves mass exactly only for stiffly-accurate
-tableaux (BackwardEuler, DIRK22, RadauIIA); ImplicitMidpoint is
-symplectic but not stiffly accurate, so the solver falls back to an
-approximate value formulation. Recommended edits to the manuscript:
+**Discrepancy in §3.2 narrative (ImplicitMidpoint + mixed form).**
+*Resolved upstream by Irksome PR #226* — keep this entry until the
+figure is regenerated. The paper currently states: *"For the mixed
+form (solid lines), both time integrators yield excellent mass
+balance, with M ~ 10⁻¹⁰ for all tested Δt."* On pre-#226 Irksome our
+runs contradicted this for ImplicitMidpoint: with `stage_type="value"`
+ImplicitMidpoint recorded M = 4.25e-4 at Δt=400 s down to M = 2.6e-5
+at Δt=25 s — clean O(Δt) decay, not solver tolerance — because the
+non-SA linear-combination update destroyed the per-stage conservation.
+PR #226 replaces that update with a conservative variational solve, so
+on the current Irksome ImplicitMidpoint sits at solver tolerance like
+BackwardEuler. The §3.2 figure regeneration (table item ⚠️ above) is
+what turns this discrepancy from a manuscript edit into a no-op.
+Until the figure lands, do not change the §3.2 prose. Recommended
+edits below are kept only as fallback if the regeneration is delayed
+past submission.
 
 - Change the §3.2(b) prose to "For the mixed form with a stiffly
   accurate integrator (Backward Euler here) mass is conserved to
