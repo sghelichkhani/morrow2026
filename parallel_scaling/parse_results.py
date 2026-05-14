@@ -338,6 +338,24 @@ EXPERIMENTS = {
             "h8": {"nodes": 8, "cpus": 832, "horiz_res": 620, "layers": 300, "dof_approx": "320M"},
         },
     },
+    "murr_strong": {
+        "dir": "murr_strong",
+        "scales": ["s1", "s2", "s4", "s8", "s16", "s32"],
+        "scale_meta": {
+            f"s{n}": {"nodes": n, "cpus": 104 * n, "horiz_res": 620,
+                       "layers": 300, "dof_approx": "320M"}
+            for n in (1, 2, 4, 8, 16, 32)
+        },
+    },
+    "murr_hierarchy": {
+        "dir": "murr_hierarchy",
+        "scales": ["L1", "L2", "L3", "L4"],
+        "scale_meta": {
+            f"L{lev}": {"nodes": 8, "cpus": 832, "horiz_res": 620,
+                        "layers": 300, "refinement_levels": lev}
+            for lev in (1, 2, 3, 4)
+        },
+    },
 }
 
 

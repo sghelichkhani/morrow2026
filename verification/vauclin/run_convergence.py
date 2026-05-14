@@ -27,12 +27,14 @@ from vauclin_2d import run  # noqa: E402
 
 
 T_TARGET = 28_800.0  # 8 h — paper's convergence target
-# The paper uses a DQ2 121x81 reference. That is too heavy for a local
-# run (one solve would be ~40 minutes on a laptop). Kept small by
-# default here so the rate can be demonstrated without Gadi; the full
-# paper figure should be produced on Gadi — see to-do-list.md.
+# Laptop-friendly default reference (61x41 DQ2 ~ 40 min). The paper
+# figure uses 121x81 DQ2; pass --paper-reference (or set
+# REFERENCE_OVERRIDE) for Gadi runs.
 REFERENCE = {"nodes_x": 61, "nodes_y": 41, "degree": 2}
-COARSE = [
+PAPER_REFERENCE = {"nodes_x": 121, "nodes_y": 81, "degree": 2}
+
+# Coarse spec used by the laptop demonstration.
+COARSE_LAPTOP = [
     {"nodes_x": 16,  "nodes_y": 11,  "degree": 0},
     {"nodes_x": 23,  "nodes_y": 16,  "degree": 0},
     {"nodes_x": 31,  "nodes_y": 21,  "degree": 0},
@@ -42,6 +44,27 @@ COARSE = [
     {"nodes_x": 31,  "nodes_y": 21,  "degree": 1},
     {"nodes_x": 46,  "nodes_y": 31,  "degree": 1},
 ]
+
+# Coarse spec used by the paper figure (Gadi). Adds DQ2 coarse curves
+# and several finer intermediate levels that are too slow for a
+# laptop.
+COARSE_PAPER = [
+    *COARSE_LAPTOP,
+    {"nodes_x": 61,  "nodes_y": 41,  "degree": 0},
+    {"nodes_x": 91,  "nodes_y": 61,  "degree": 0},
+    {"nodes_x": 61,  "nodes_y": 41,  "degree": 1},
+    {"nodes_x": 91,  "nodes_y": 61,  "degree": 1},
+    {"nodes_x": 23,  "nodes_y": 16,  "degree": 2},
+    {"nodes_x": 31,  "nodes_y": 21,  "degree": 2},
+    {"nodes_x": 46,  "nodes_y": 31,  "degree": 2},
+    {"nodes_x": 61,  "nodes_y": 41,  "degree": 2},
+    {"nodes_x": 91,  "nodes_y": 61,  "degree": 2},
+]
+
+# Selected by `main()` from CLI flags; kept module-level so the
+# existing import path (``from run_convergence import REFERENCE``) is
+# unaffected.
+COARSE = COARSE_LAPTOP
 
 
 def _l2_on_grid(x1, y1, z1, x2, y2, z2, Lx, Ly, n=241,
@@ -76,6 +99,31 @@ def _run(spec):
 
 
 def main():
+    import argparse
+    p = argparse.ArgumentParser()
+    p.add_argument("--paper-reference", action="store_true",
+                   help="Use the paper's 121x81 DQ2 reference and the "
+                        "extended coarse sweep including DQ2 curves "
+                        "(intended for Gadi).")
+    p.add_argument("--ref-nx", type=int, default=None,
+                   help="Override reference nodes_x (advanced).")
+    p.add_argument("--ref-ny", type=int, default=None,
+                   help="Override reference nodes_y (advanced).")
+    p.add_argument("--ref-degree", type=int, default=None,
+                   help="Override reference polynomial degree.")
+    args = p.parse_args()
+
+    global REFERENCE, COARSE
+    if args.paper_reference:
+        REFERENCE = dict(PAPER_REFERENCE)
+        COARSE = COARSE_PAPER
+    if args.ref_nx is not None:
+        REFERENCE["nodes_x"] = args.ref_nx
+    if args.ref_ny is not None:
+        REFERENCE["nodes_y"] = args.ref_ny
+    if args.ref_degree is not None:
+        REFERENCE["degree"] = args.ref_degree
+
     print(f"reference solution: {REFERENCE}")
     ref_result, ref_wall = _run(REFERENCE)
     print(f"  wall = {ref_wall:.1f}s")

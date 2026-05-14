@@ -23,9 +23,11 @@ from tracy_3d import model  # noqa: E402
 
 CASES = {
     "specified_head_dg0": {"degree": 0,
-                           "levels": [21, 31, 51]},
+                           "levels": [21, 31, 51, 71, 101]},
     "specified_head_dg1": {"degree": 1,
                            "levels": [21, 31, 51, 71, 101]},
+    "specified_head_dg2": {"degree": 2,
+                           "levels": [21, 31, 51, 71]},
 }
 
 

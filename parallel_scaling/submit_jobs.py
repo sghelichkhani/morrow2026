@@ -136,6 +136,45 @@ def murrumbidgee_cases():
     }
 
 
+def murr_strong_cases():
+    """Murrumbidgee strong scaling: fixed problem size, vary node count.
+
+    Paper Fig. strong_scaling: fixed Δx = 620 m, 300 layers
+    (~320M DOFs total), sweep node count 1 → 2 → 4 → 8 → 16 → 32 to
+    measure parallel efficiency. All entries use the production solver
+    preset (vlumping_inexact).
+
+    The 1-node point is the same as ROUND3_MURR_HORIZ_SOLVERS' h8, so
+    it may already exist on disk; the parser will pick it up either
+    way.
+    """
+    return {
+        "s1":  {"nodes": 1,  "horiz_res": 620, "layers": 300},
+        "s2":  {"nodes": 2,  "horiz_res": 620, "layers": 300},
+        "s4":  {"nodes": 4,  "horiz_res": 620, "layers": 300},
+        "s8":  {"nodes": 8,  "horiz_res": 620, "layers": 300},
+        "s16": {"nodes": 16, "horiz_res": 620, "layers": 300},
+        "s32": {"nodes": 32, "horiz_res": 620, "layers": 300},
+    }
+
+
+def murr_hierarchy_cases():
+    """Murrumbidgee hierarchy-depth sweep for the paper's two-curve story.
+
+    Paper Fig. hierarchy_levels: fix a production scale (h8 = 8 nodes,
+    Δx = 620 m, 300 layers) and sweep refinement levels in
+    {1, 2, 3, 4} for the GMG-based solvers (gmg, vlumping_hmg). The
+    plotter then picks the depth that minimises linear iterations and
+    the depth that minimises wall-clock time per step, drawing them as
+    the paper's two purple curves.
+    """
+    return {
+        f"L{lev}": {"nodes": 8, "horiz_res": 620, "layers": 300,
+                    "refinement_levels": lev}
+        for lev in (1, 2, 3, 4)
+    }
+
+
 def murr_horiz_cases():
     """Paper's horizontal weak scaling: fixed 300 layers, vary horizontal resolution.
 
@@ -211,6 +250,36 @@ def generate_pbs_script(case, solver, scale, output_dir):
         ref_levels = 2 if solver in GMG_SOLVERS else 0
 
         # Adaptive dt ramp-up, same as vertical scaling.
+        run_cmd = (
+            f"mpiexec -np $PBS_NCPUS python {SCALING_DIR}/murrumbidgee_3d.py "
+            f"--horiz-res {params['horiz_res']} --layers {params['layers']} "
+            f"--solver {solver} --refinement-levels {ref_levels} "
+            f"--dt-init 60 --dt-max 43200 --dt-growth 1.5 --dt-shrink 0.5 "
+            f"--t-final 2592000 "
+            f"--data-dir {DATA_DIR}"
+        )
+
+    elif case == "murr_strong":
+        params = murr_strong_cases()[scale]
+        cpus = CPUS_PER_NODE if params["nodes"] > 1 else CPUS_SINGLE_NODE
+        ncpus = params["nodes"] * cpus
+        mem_gb = params["nodes"] * 500
+        ref_levels = 2 if solver in GMG_SOLVERS else 0
+        run_cmd = (
+            f"mpiexec -np $PBS_NCPUS python {SCALING_DIR}/murrumbidgee_3d.py "
+            f"--horiz-res {params['horiz_res']} --layers {params['layers']} "
+            f"--solver {solver} --refinement-levels {ref_levels} "
+            f"--dt-init 60 --dt-max 43200 --dt-growth 1.5 --dt-shrink 0.5 "
+            f"--t-final 2592000 "
+            f"--data-dir {DATA_DIR}"
+        )
+
+    elif case == "murr_hierarchy":
+        params = murr_hierarchy_cases()[scale]
+        cpus = CPUS_PER_NODE if params["nodes"] > 1 else CPUS_SINGLE_NODE
+        ncpus = params["nodes"] * cpus
+        mem_gb = params["nodes"] * 500
+        ref_levels = params["refinement_levels"]
         run_cmd = (
             f"mpiexec -np $PBS_NCPUS python {SCALING_DIR}/murrumbidgee_3d.py "
             f"--horiz-res {params['horiz_res']} --layers {params['layers']} "
@@ -334,6 +403,20 @@ def get_phase_runs(phase):
         # Horizontal scaling smoke test: 6 solvers at h1 (1 node, 1775m)
         for solver in ROUND3_MURR_HORIZ_SOLVERS:
             runs.append(("murr_horiz", solver, "h1"))
+
+    elif phase == "strong":
+        # Murrumbidgee strong scaling: fixed Δx=620m, 300 layers,
+        # sweep nodes 1->32 with the production solver preset.
+        for scale in ("s1", "s2", "s4", "s8", "s16", "s32"):
+            runs.append(("murr_strong", "vlumping_inexact", scale))
+
+    elif phase == "hierarchy":
+        # Murrumbidgee hierarchy-depth study at h8 (production scale)
+        # for the two GMG-based solvers; downstream plotter picks the
+        # min-iterations and min-wall-clock depth for each.
+        for solver in ("gmg", "vlumping_hmg"):
+            for scale in ("L1", "L2", "L3", "L4"):
+                runs.append(("murr_hierarchy", solver, scale))
 
     elif phase == "all":
         # Everything: smoke + sweep + scaling

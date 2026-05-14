@@ -1,12 +1,18 @@
 """
 Plot Richards solver scaling results from parsed JSON files.
 
-Produces one multi-panel PDF per experiment, plus a combined VLumping
-parameter-sweep figure for Cockett.
+Two layers of output:
+
+* **Paper figures**, one panel per file, named to match the manuscript
+  ``\\includegraphics`` calls. Written into ``../figures/Cockett2018/``
+  and ``../figures/Murrumbidgee/`` (relative to this directory).
+* **Diagnostic consolidated figures**, multi-panel PNGs in
+  ``parallel_scaling/figures/`` (gitignored), useful for quick sweeps
+  through a benchmark.
 
 Usage:
-    python plot_results.py                         # generate PDFs
-    python plot_results.py --show                  # also display interactively
+    python plot_results.py                         # generate both
+    python plot_results.py --paper-only            # skip diagnostic PNGs
     python plot_results.py --parsedir ./parsed     # custom JSON directory
 """
 
@@ -17,6 +23,9 @@ from pathlib import Path
 import matplotlib
 import matplotlib.pyplot as plt
 import numpy as np
+
+
+PAPER_FIGURE_ROOT = Path(__file__).resolve().parent.parent / "figures"
 
 # ── Solver visual style ─────────────────────────────────────────────────────
 
@@ -174,6 +183,57 @@ def plot_panel(ax, x, data, solvers, scales, metric_fn, ylabel,
                         fontweight="bold", color=color)
 
 
+def save_single_panel(data, solvers, scales, x, xticklabels, xlabel,
+                       metric_fn, ylabel, title, outfile,
+                       log_y=False, figsize=(6.0, 4.5)):
+    """Render one metric across scales for multiple solvers as a single-panel figure.
+
+    Used for the per-panel paper figures (one PDF per metric); see
+    ``make_figure`` for the consolidated diagnostic layout.
+    """
+    outfile = Path(outfile)
+    outfile.parent.mkdir(parents=True, exist_ok=True)
+    fig, ax = plt.subplots(figsize=figsize)
+    plot_panel(ax, x, data, solvers, scales, metric_fn, ylabel,
+               xticklabels=xticklabels, xlabel=xlabel,
+               log_y=log_y, title=title)
+    # Legend below the axes so the panel stays clean.
+    handles, labels = ax.get_legend_handles_labels()
+    if handles:
+        fig.legend(handles, labels, loc="lower center",
+                   ncol=min(4, len(labels)), fontsize=8,
+                   bbox_to_anchor=(0.5, -0.02))
+    fig.subplots_adjust(left=0.16, right=0.97, top=0.92, bottom=0.32)
+    fig.savefig(outfile, bbox_inches="tight")
+    plt.close(fig)
+    print(f"  Saved {outfile}")
+
+
+# Panel definitions: (metric_fn, ylabel, panel_title, log_y).
+PAPER_METRICS = {
+    "wall":      (mean_wall,     "Wall time per step (s)",     "Wall time per time-step", True),
+    "iters":     (linear_per_nl, "Linear iters / Newton step", "Linear iterations",       False),
+    "memory":    (peak_rss,      "Peak RSS per rank (MB)",     "Peak memory per rank",    True),
+}
+
+
+def emit_paper_panels(data, solvers, scales, x, xticklabels, xlabel,
+                       outdir, *, filename_map):
+    """Emit each metric as its own single-panel PDF.
+
+    ``filename_map`` is a dict ``{metric_key: filename_stem}`` choosing
+    which panels to emit and what to call them on disk. ``metric_key``
+    must be a key of ``PAPER_METRICS``.
+    """
+    for metric_key, stem in filename_map.items():
+        metric_fn, ylabel, title, log_y = PAPER_METRICS[metric_key]
+        save_single_panel(
+            data, solvers, scales, x, xticklabels, xlabel,
+            metric_fn, ylabel, title, outdir / f"{stem}.pdf",
+            log_y=log_y,
+        )
+
+
 def make_figure(data, solvers, scales, x, xticklabels, xlabel, suptitle, figsize=(14, 9)):
     """Create a 2x3 panel figure for an experiment."""
     fig, axes = plt.subplots(2, 3, figsize=figsize, sharex=True)
@@ -213,7 +273,7 @@ def make_figure(data, solvers, scales, x, xticklabels, xlabel, suptitle, figsize
 
 # ── Experiment-specific figures ─────────────────────────────────────────────
 
-def fig_cockett(data, outdir):
+def fig_cockett(data, outdir, paper_outdir=None):
     """Cockett Round 3: main solver comparison (sweep/medium/large)."""
     scales = ["sweep", "medium", "large"]
     solvers = [
@@ -223,12 +283,30 @@ def fig_cockett(data, outdir):
     ]
     x = np.arange(len(scales))
     xlabels = ["1N / 18M", "2N / 36M", "8N / 144M"]
+    if paper_outdir is not None:
+        _cockett_emit_paper_panels(data, solvers, scales, x, xlabels,
+                                    paper_outdir)
+    if outdir is None:
+        return None
     fig = make_figure(data, solvers, scales, x, xlabels,
                       "Scale (nodes / DOF)",
                       "Cockett 3D — isotropic box, cell AR \u2248 1:1")
     fig.savefig(outdir / "cockett_solvers.png", bbox_inches="tight")
     print(f"  Saved {outdir / 'cockett_solvers.png'}")
     return fig
+
+
+def _cockett_emit_paper_panels(data, solvers, scales, x, xlabels, paper_outdir):
+    emit_paper_panels(
+        data, solvers, scales, x, xlabels,
+        "Scale (nodes / DOF)",
+        paper_outdir / "Cockett2018",
+        filename_map={
+            "wall":   "simulation_time",
+            "iters":  "iterations",
+            "memory": "memory",
+        },
+    )
 
 
 def fig_cockett_vlumping(data, outdir):
@@ -249,7 +327,7 @@ def fig_cockett_vlumping(data, outdir):
     return fig
 
 
-def fig_murr_vertical(data, outdir):
+def fig_murr_vertical(data, outdir, paper_outdir=None):
     """Murrumbidgee vertical weak scaling."""
     scales = ["smoke", "sweep", "medium", "large"]
     solvers = ["vlumping_inexact", "vlumping", "vlumping_linesmooth",
@@ -257,6 +335,19 @@ def fig_murr_vertical(data, outdir):
     x = np.arange(len(scales))
     xlabels = ["1N\n150L\nAR 500:1", "2N\n300L\nAR 1000:1",
                "4N\n600L\nAR 2000:1", "8N\n1200L\nAR 4000:1"]
+    if paper_outdir is not None:
+        emit_paper_panels(
+            data, solvers, scales, x, xlabels,
+            "Nodes / Layers / Cell aspect ratio",
+            paper_outdir / "Murrumbidgee",
+            filename_map={
+                "wall":   "time_per_timestep_layers",
+                "iters":  "linear_iterations_layers",
+                "memory": "memory_layers",
+            },
+        )
+    if outdir is None:
+        return None
     fig = make_figure(data, solvers, scales, x, xlabels,
                       "Nodes / Layers / Cell aspect ratio",
                       "Murrumbidgee — vertical weak scaling, \u0394x = 1775 m fixed")
@@ -265,7 +356,85 @@ def fig_murr_vertical(data, outdir):
     return fig
 
 
-def fig_murr_horizontal(data, outdir):
+def fig_murr_strong(data, outdir, paper_outdir=None):
+    """Murrumbidgee strong scaling (fixed Δx=620 m, 300 layers, nodes 1→32)."""
+    scales = ["s1", "s2", "s4", "s8", "s16", "s32"]
+    solvers = ["vlumping_inexact"]
+    x = np.log2([1, 2, 4, 8, 16, 32])
+    xlabels = ["1", "2", "4", "8", "16", "32"]
+    if paper_outdir is not None:
+        outpath = paper_outdir / "Murrumbidgee" / "strong_scaling.pdf"
+        outpath.parent.mkdir(parents=True, exist_ok=True)
+        fig, ax = plt.subplots(figsize=(6, 4.5))
+        plot_panel(ax, x, data, solvers, scales, mean_wall,
+                   "Wall time per step (s)",
+                   xticklabels=xlabels, xlabel="Nodes",
+                   log_y=True, title="Strong scaling: 320M DOF total")
+        # Ideal 1/N reference anchored on the first successful point.
+        runs = get_runs(data, solvers[0], scales)
+        ok_idx, ok_val, _, _ = extract_metric(runs, mean_wall)
+        if ok_val:
+            ideal = np.array(ok_val[0]) * (2 ** -np.asarray(x))
+            # rescale so the first ideal point coincides with the
+            # first data point
+            ideal = ok_val[0] * 2.0 ** -(x - x[ok_idx[0]])
+            ax.plot(x, ideal, "k--", alpha=0.6, label="Ideal 1/N")
+            ax.legend(fontsize=9)
+        fig.tight_layout()
+        fig.savefig(outpath, bbox_inches="tight")
+        plt.close(fig)
+        print(f"  Saved {outpath}")
+    if outdir is None:
+        return None
+    return None  # consolidated PNG not needed; per-panel is the paper figure
+
+
+def fig_murr_hierarchy(data, outdir, paper_outdir=None):
+    """GMG hierarchy-depth study (paper Fig. hierarchy_levels)."""
+    scales = ["L1", "L2", "L3", "L4"]
+    solvers = ["gmg", "vlumping_hmg"]
+    x = np.array([1, 2, 3, 4])
+    xlabels = ["1", "2", "3", "4"]
+    if paper_outdir is not None:
+        outpath = paper_outdir / "Murrumbidgee" / "hierarchy_levels.pdf"
+        outpath.parent.mkdir(parents=True, exist_ok=True)
+        fig, axes = plt.subplots(1, 2, figsize=(11, 4.5))
+        plot_panel(axes[0], x, data, solvers, scales, linear_per_nl,
+                   "Linear iters / Newton step",
+                   xticklabels=xlabels, xlabel="Hierarchy levels",
+                   title="(a) Iterations")
+        plot_panel(axes[1], x, data, solvers, scales, mean_wall,
+                   "Wall time per step (s)",
+                   xticklabels=xlabels, xlabel="Hierarchy levels",
+                   log_y=True, title="(b) Wall time")
+        # Annotate the minima for each solver in each panel: solid for
+        # min-iters, dotted for min-wall (matches the paper caption).
+        for solver in solvers:
+            color, marker, label = _style(solver)
+            runs = get_runs(data, solver, scales)
+            for ax, metric_fn, style in [(axes[0], linear_per_nl, "-"),
+                                          (axes[1], mean_wall, ":")]:
+                ok_idx, ok_val, _, _ = extract_metric(runs, metric_fn)
+                if not ok_val:
+                    continue
+                best = int(np.argmin(ok_val))
+                ax.plot(x[ok_idx[best]], ok_val[best], marker=marker,
+                        markersize=14, markerfacecolor="none",
+                        markeredgewidth=2, color=color, zorder=4,
+                        linestyle=style)
+        handles, labels = axes[0].get_legend_handles_labels()
+        fig.legend(handles, labels, loc="lower center", ncol=2,
+                   fontsize=10, bbox_to_anchor=(0.5, -0.04))
+        fig.tight_layout()
+        fig.savefig(outpath, bbox_inches="tight")
+        plt.close(fig)
+        print(f"  Saved {outpath}")
+    if outdir is None:
+        return None
+    return None
+
+
+def fig_murr_horizontal(data, outdir, paper_outdir=None):
     """Murrumbidgee horizontal weak scaling."""
     scales = ["h1", "h2", "h4", "h8"]
     solvers = ["vlumping_inexact", "vlumping", "vlumping_linesmooth",
@@ -273,6 +442,19 @@ def fig_murr_horizontal(data, outdir):
     x = np.arange(len(scales))
     xlabels = ["1N\n1775 m\nAR 1000:1", "2N\n1250 m\nAR 700:1",
                "4N\n880 m\nAR 500:1", "8N\n620 m\nAR 350:1"]
+    if paper_outdir is not None:
+        emit_paper_panels(
+            data, solvers, scales, x, xlabels,
+            "Nodes / Δx / Cell aspect ratio",
+            paper_outdir / "Murrumbidgee",
+            filename_map={
+                "wall":   "time_per_timestep",
+                "iters":  "linear_iterations",
+                "memory": "memory",
+            },
+        )
+    if outdir is None:
+        return None
     fig = make_figure(data, solvers, scales, x, xlabels,
                       "Nodes / \u0394x / Cell aspect ratio",
                       "Murrumbidgee — horizontal weak scaling, 300 layers fixed")
@@ -286,7 +468,12 @@ def fig_murr_horizontal(data, outdir):
 def main():
     parser = argparse.ArgumentParser(description="Plot Richards scaling results")
     parser.add_argument("--parsedir", default="parsed", help="Directory with JSON files")
-    parser.add_argument("--outdir", default="figures", help="Output directory for PDFs")
+    parser.add_argument("--outdir", default="figures",
+                        help="Output dir for diagnostic consolidated PNGs "
+                             "(set to '' to skip them).")
+    parser.add_argument("--paper-outdir", default=str(PAPER_FIGURE_ROOT),
+                        help="Output root for paper per-panel PDFs "
+                             "(set to '' to skip them).")
     parser.add_argument("--show", action="store_true", help="Display plots interactively")
     args = parser.parse_args()
 
@@ -294,8 +481,10 @@ def main():
         matplotlib.use("Agg")
 
     parsedir = Path(args.parsedir)
-    outdir = Path(args.outdir)
-    outdir.mkdir(parents=True, exist_ok=True)
+    outdir = Path(args.outdir) if args.outdir else None
+    if outdir is not None:
+        outdir.mkdir(parents=True, exist_ok=True)
+    paper_outdir = Path(args.paper_outdir) if args.paper_outdir else None
 
     figs = []
 
@@ -305,8 +494,9 @@ def main():
         print("=== Cockett ===")
         with open(cockett_path) as f:
             cockett = json.load(f)
-        figs.append(fig_cockett(cockett, outdir))
-        figs.append(fig_cockett_vlumping(cockett, outdir))
+        figs.append(fig_cockett(cockett, outdir, paper_outdir=paper_outdir))
+        if outdir is not None:
+            figs.append(fig_cockett_vlumping(cockett, outdir))
 
     # Murrumbidgee vertical
     mv_path = parsedir / "murr_vertical.json"
@@ -314,7 +504,7 @@ def main():
         print("=== Murrumbidgee Vertical ===")
         with open(mv_path) as f:
             mv = json.load(f)
-        figs.append(fig_murr_vertical(mv, outdir))
+        figs.append(fig_murr_vertical(mv, outdir, paper_outdir=paper_outdir))
 
     # Murrumbidgee horizontal
     mh_path = parsedir / "murr_horizontal.json"
@@ -322,7 +512,23 @@ def main():
         print("=== Murrumbidgee Horizontal ===")
         with open(mh_path) as f:
             mh = json.load(f)
-        figs.append(fig_murr_horizontal(mh, outdir))
+        figs.append(fig_murr_horizontal(mh, outdir, paper_outdir=paper_outdir))
+
+    # Murrumbidgee strong scaling
+    ms_path = parsedir / "murr_strong.json"
+    if ms_path.exists():
+        print("=== Murrumbidgee Strong ===")
+        with open(ms_path) as f:
+            ms = json.load(f)
+        figs.append(fig_murr_strong(ms, outdir, paper_outdir=paper_outdir))
+
+    # Murrumbidgee hierarchy-depth study
+    mhier_path = parsedir / "murr_hierarchy.json"
+    if mhier_path.exists():
+        print("=== Murrumbidgee Hierarchy ===")
+        with open(mhier_path) as f:
+            mhier = json.load(f)
+        figs.append(fig_murr_hierarchy(mhier, outdir, paper_outdir=paper_outdir))
 
     if args.show:
         plt.show()
