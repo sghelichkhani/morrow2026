@@ -359,7 +359,7 @@ def fig_murr_vertical(data, outdir, paper_outdir=None):
 def fig_murr_strong(data, outdir, paper_outdir=None):
     """Murrumbidgee strong scaling (fixed Δx=620 m, 300 layers, nodes 1→32)."""
     scales = ["s1", "s2", "s4", "s8", "s16", "s32"]
-    solvers = ["vlumping_inexact"]
+    solvers = ["vlumping_inexact", "vlumping_hmg"]
     x = np.log2([1, 2, 4, 8, 16, 32])
     xlabels = ["1", "2", "4", "8", "16", "32"]
     if paper_outdir is not None:

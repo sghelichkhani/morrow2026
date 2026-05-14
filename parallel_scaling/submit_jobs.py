@@ -411,9 +411,13 @@ def get_phase_runs(phase):
 
     elif phase == "strong":
         # Murrumbidgee strong scaling: fixed Δx=620m, 300 layers,
-        # sweep nodes 1->32 with the production solver preset.
+        # sweep nodes 1->32. vlumping_inexact carries the curve up to
+        # 16 nodes (its coarse solve diverges at 3328 cores); at 32
+        # nodes only vlumping_hmg's nested geometric MG coarse path is
+        # well-conditioned enough to converge.
         for scale in ("s1", "s2", "s4", "s8", "s16", "s32"):
             runs.append(("murr_strong", "vlumping_inexact", scale))
+        runs.append(("murr_strong", "vlumping_hmg", "s32"))
 
     elif phase == "hierarchy":
         # Murrumbidgee hierarchy-depth study at h8 (production scale)
