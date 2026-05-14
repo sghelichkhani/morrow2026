@@ -92,7 +92,12 @@ LOCAL_PACKAGES = "/scratch/xd2/sg8812/local/firedrake-main-20260401/lib/python3.
 IRKSOME_OVERRIDE = "/scratch/xd2/sg8812/Irksome"
 FIREDRAKE_OVERRIDE = "/scratch/xd2/sg8812/firedrake-override"
 GWASSESS_PATH = "/scratch/xd2/sg8812/gwassess"
-SCALING_DIR = f"{GADOPT_PATH}/tests/parallel_scaling_richards"
+# The scaling drivers (with the full solver-preset inventory under
+# parallel_scaling/solvers/) live in *this* repo, not the g-adopt
+# richardson worktree — the g-adopt copy was pruned to the four
+# canonical presets when they moved to the public API.
+MORROW_REPO = "/scratch/xd2/sg8812/morrow2026"
+SCALING_DIR = f"{MORROW_REPO}/parallel_scaling"
 DATA_DIR = f"{SCALING_DIR}/murrumbidgee_data"
 
 
