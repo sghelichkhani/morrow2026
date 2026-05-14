@@ -1,4 +1,4 @@
-"""Plot the Tracy 2D steady-state snapshot."""
+"""Plot the three Tracy 2D pressure-head snapshots."""
 from __future__ import annotations
 
 import sys
@@ -17,12 +17,24 @@ OUT = FIGURE_ROOT / "Tracy"
 OUT.mkdir(parents=True, exist_ok=True)
 
 
-def _regrid(x, y, z, L, n=200):
+def _regrid(x, y, z, L, n=300):
     xi = np.linspace(0, L, n)
     yi = np.linspace(0, L, n)
     XI, YI = np.meshgrid(xi, yi)
     Z = griddata((x, y), z, (XI, YI), method="linear")
     return XI, YI, Z
+
+
+def _format_time(t):
+    if t == 0.0:
+        return "$t = 0$ s"
+    exp_part = int(np.floor(np.log10(t)))
+    coeff = t / 10 ** exp_part
+    if abs(coeff - round(coeff)) < 1e-6:
+        coeff = int(round(coeff))
+    if coeff == 1:
+        return rf"$t = 10^{{{exp_part}}}$ s"
+    return rf"$t = {coeff} \times 10^{{{exp_part}}}$ s"
 
 
 def main():
@@ -32,35 +44,39 @@ def main():
         return
     d = np.load(path)
     L = float(d["L"])
+    times = np.asarray(d["times"])
+    hs = np.asarray(d["h"])
+    n_panels = len(times)
 
-    fig, axes = plt.subplots(1, 3, figsize=(13, 4), sharey=True)
+    fig, axes = plt.subplots(1, n_panels, figsize=(4.2 * n_panels, 4.0),
+                              sharey=True)
+    if n_panels == 1:
+        axes = [axes]
 
-    XI, YI, H_num  = _regrid(d["x"], d["y"], d["h_num"],  L)
-    _,  _,  H_anal = _regrid(d["x"], d["y"], d["h_anal"], L)
-    _,  _,  Th_num = _regrid(d["x"], d["y"], d["theta_num"], L)
+    h_min = float(np.nanmin(hs))
+    h_max = float(np.nanmax(hs))
 
-    im0 = axes[0].pcolormesh(XI, YI, H_num, shading="auto", cmap="viridis")
-    axes[0].set_title(r"Numerical $h$ (m)")
-    fig.colorbar(im0, ax=axes[0], shrink=0.8)
-
-    im1 = axes[1].pcolormesh(XI, YI, H_anal, shading="auto", cmap="viridis")
-    axes[1].set_title(r"Analytical $h$ (m)")
-    fig.colorbar(im1, ax=axes[1], shrink=0.8)
-
-    im2 = axes[2].pcolormesh(XI, YI, Th_num, shading="auto", cmap="Blues")
-    axes[2].set_title(r"Numerical $\theta$")
-    fig.colorbar(im2, ax=axes[2], shrink=0.8)
-
-    for ax in axes:
+    last_im = None
+    for ax, t_val, h_arr in zip(axes, times, hs):
+        XI, YI, H = _regrid(d["x"], d["y"], h_arr, L)
+        last_im = ax.pcolormesh(XI, YI, H, shading="auto", cmap="viridis",
+                                vmin=h_min, vmax=h_max, rasterized=True)
+        ax.set_title(_format_time(t_val))
         ax.set_xlabel("x (m)")
         ax.set_aspect("equal")
     axes[0].set_ylabel("y (m)")
 
-    fig.suptitle(f"Tracy 2D steady state (t = {float(d['t']):.2e} s)")
-    fig.tight_layout()
-    out = OUT / "solution.pdf"
-    fig.savefig(out, bbox_inches="tight")
-    print(f"wrote {out}")
+    cbar = fig.colorbar(last_im, ax=axes, shrink=0.85, pad=0.02)
+    cbar.set_label(r"Pressure head $h$ (m)")
+
+    out_png = OUT / "solution.png"
+    fig.savefig(out_png, dpi=180, bbox_inches="tight")
+    print(f"wrote {out_png}")
+    # Also save a small vector PDF wrapper of the same rasterised art
+    # so the manuscript can stay on .pdf if preferred.
+    out_pdf = OUT / "solution.pdf"
+    fig.savefig(out_pdf, dpi=180, bbox_inches="tight")
+    print(f"wrote {out_pdf}")
 
 
 if __name__ == "__main__":

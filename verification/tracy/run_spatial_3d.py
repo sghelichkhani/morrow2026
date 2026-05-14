@@ -15,13 +15,15 @@ import time
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent.parent))
-from verification.common import save_json  # noqa: E402
+from verification.common import save_json, load_json  # noqa: E402
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 from tracy_3d import model  # noqa: E402
 
 
 CASES = {
+    "specified_head_dg0": {"degree": 0,
+                           "levels": [21, 31, 51]},
     "specified_head_dg1": {"degree": 1,
                            "levels": [21, 31, 51, 71, 101]},
 }
@@ -30,6 +32,13 @@ CASES = {
 def run(max_nodes: int | None = None,
         output: Path | None = None) -> dict:
     payload: dict = {"cases": {}}
+    if output is not None and Path(output).exists():
+        try:
+            existing = load_json(output)
+            if isinstance(existing.get("cases"), dict):
+                payload["cases"] = existing["cases"]
+        except Exception:
+            pass
     for name, spec in CASES.items():
         degree = spec["degree"]
         entries = []

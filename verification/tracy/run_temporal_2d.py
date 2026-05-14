@@ -4,7 +4,8 @@ Fix a mesh fine enough that spatial error is negligible and march the
 analytical IC at ``t_offset`` forward to a target time. Sweep over
 ``Δt`` and time integrators; the L² error at the final time is then a
 clean estimate of the temporal truncation error. We expect
-``O(Δt)`` for BackwardEuler and ``O(Δt²)`` for DIRK22 / CrankNicolson.
+``O(Δt)`` for BackwardEuler and ``O(Δt²)`` for ImplicitMidpoint and
+CrankNicolson.
 
 This experiment is not in the current g-adopt tree — we implement it
 here so the Tracy temporal figure in §3.1 is reproducible.
@@ -21,17 +22,17 @@ from verification.common import save_json  # noqa: E402
 import numpy as np  # noqa: E402
 import gwassess  # noqa: E402
 from gadopt import (  # noqa: E402
-    BackwardEuler, CrankNicolson, DIRK22, ExponentialCurve, Function,
-    FunctionSpace, RectangleMesh, RichardsSolver, SpatialCoordinate,
+    BackwardEuler, CrankNicolson, ExponentialCurve, Function,
+    FunctionSpace, ImplicitMidpoint, RectangleMesh, RichardsSolver, SpatialCoordinate,
     VectorFunctionSpace, Constant, as_vector, assemble, dx, exp, get_boundary_ids,
     ln, pi, sin,
 )
 
 
 INTEGRATORS = {
-    "BackwardEuler": (BackwardEuler, 1),
-    "CrankNicolson": (CrankNicolson, 2),
-    "DIRK22":        (DIRK22, 2),
+    "BackwardEuler":    (BackwardEuler, 1),
+    "CrankNicolson":    (CrankNicolson, 2),
+    "ImplicitMidpoint": (ImplicitMidpoint, 2),
 }
 
 # The paper's Fig. Temp (§3.1) is DQ2 on 301² up to t = 1e5 s. That is

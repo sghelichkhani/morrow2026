@@ -15,12 +15,14 @@ import time
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent.parent))
-from verification.common import save_json  # noqa: E402
+from verification.common import save_json, load_json  # noqa: E402
 
 from tests.richards.tracy_2d import model  # noqa: E402
 
 
 ALL_CASES = {
+    "specified_head_dg0": {"degree": 0, "bc_type": "specified_head",
+                           "levels": [51, 101, 201, 401]},
     "specified_head_dg1": {"degree": 1, "bc_type": "specified_head",
                            "levels": [51, 101, 201, 401]},
     "specified_head_dg2": {"degree": 2, "bc_type": "specified_head",
@@ -32,14 +34,23 @@ ALL_CASES = {
 # DG2 runs need MPI (the g-adopt test_richards harness itself assigns
 # 2–32 cores per level); serial runs hit DIVERGED_MAX_IT. Run locally
 # with --cases to pick individual families; default skips DG2.
-DEFAULT_CASES = ["specified_head_dg1", "no_flux_dg1"]
+DEFAULT_CASES = ["specified_head_dg0", "specified_head_dg1", "no_flux_dg1"]
 
 
 def run(max_level: int | None = None,
         output: Path | None = None,
         case_names: list[str] | None = None) -> dict:
     selected = case_names or DEFAULT_CASES
+    # Preserve any pre-existing cases in the JSON so running ``--cases``
+    # for a subset does not delete the others.
     payload: dict = {"cases": {}}
+    if output is not None and Path(output).exists():
+        try:
+            existing = load_json(output)
+            if isinstance(existing.get("cases"), dict):
+                payload["cases"] = existing["cases"]
+        except Exception:
+            pass
     for name in selected:
         spec = ALL_CASES[name]
         degree = spec["degree"]
