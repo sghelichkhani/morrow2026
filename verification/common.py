@@ -26,7 +26,17 @@ FIGURE_ROOT = REPO_ROOT / "figures"
 
 
 def save_json(path: os.PathLike, payload: dict) -> None:
-    """Write ``payload`` as pretty JSON to ``path``, creating parents."""
+    """Write ``payload`` as pretty JSON to ``path``, creating parents.
+
+    Under MPI (Firedrake/PETSc), only rank 0 writes. Other ranks return
+    a no-op so concurrent writes can't corrupt the JSON.
+    """
+    try:
+        from mpi4py import MPI
+        if MPI.COMM_WORLD.Get_rank() != 0:
+            return
+    except ImportError:
+        pass
     path = Path(path)
     path.parent.mkdir(parents=True, exist_ok=True)
     path.write_text(json.dumps(payload, indent=2, sort_keys=True))
