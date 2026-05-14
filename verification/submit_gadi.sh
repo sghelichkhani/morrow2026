@@ -72,8 +72,13 @@ case "${CASE:-}" in
     mpiexec -n "${NCPUS}" python3 verification/tracy/run_spatial_3d.py
     ;;
   vauclin_paper)
-    mpiexec -n "${NCPUS}" python3 verification/vauclin/run_convergence.py \
-        --paper-reference
+    # Single-process: the convergence driver gathers coordinates and
+    # field values via scipy.griddata, which only sees rank-local data
+    # under MPI. Firedrake itself is happy in serial here (60k DOFs
+    # max), so we just stay on one process. The PBS request still
+    # asks for a full node so the reference run has all 500 GB at its
+    # disposal in case the dt-ramp picks a momentarily large state.
+    python3 verification/vauclin/run_convergence.py --paper-reference
     ;;
   *)
     echo "Unknown CASE='${CASE:-}'. Valid: tracy_2d_dg2, tracy_3d, vauclin_paper." >&2
