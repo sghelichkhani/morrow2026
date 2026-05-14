@@ -438,7 +438,8 @@ def main():
         choices=["smoke", "sweep", "scaling", "all",
                  "round3", "round3_smoke",
                  "round3_murr", "round3_murr_smoke",
-                 "round3_murr_horiz", "round3_murr_horiz_smoke"],
+                 "round3_murr_horiz", "round3_murr_horiz_smoke",
+                 "strong", "hierarchy"],
         help="Which set of jobs to generate/submit"
     )
     parser.add_argument(
@@ -456,7 +457,8 @@ def main():
     )
     parser.add_argument(
         "--cases", nargs="+", default=None,
-        choices=["cockett", "murrumbidgee", "murr_horiz"],
+        choices=["cockett", "murrumbidgee", "murr_horiz",
+                 "murr_strong", "murr_hierarchy"],
         help="Override case list (default: both)"
     )
     args = parser.parse_args()
