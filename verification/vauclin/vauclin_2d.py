@@ -74,7 +74,7 @@ def run(nodes_x: int, nodes_y: int, degree: int = 2,
     theta = Function(V, name="MoistureContent").interpolate(
         soil.moisture_content(h)
     )
-    K = Function(V).interpolate(soil.relative_permeability(h))
+    K = Function(V).interpolate(soil.hydraulic_conductivity(h))
     q = Function(W, name="VolumetricFlux")
 
     time_var = Constant(0.0)
@@ -113,7 +113,7 @@ def run(nodes_x: int, nodes_y: int, degree: int = 2,
     targets = list(snapshot_times)
 
     def _capture(t_val: float):
-        K.interpolate(soil.relative_permeability((h + h_old) / 2))
+        K.interpolate(soil.hydraulic_conductivity((h + h_old) / 2))
         q.interpolate(-K * grad((h + h_old) / 2 + X[1]))
         snapshots.append(Snapshot(
             t=t_val, x=xs, y=ys,
@@ -139,7 +139,7 @@ def run(nodes_x: int, nodes_y: int, degree: int = 2,
         solver.solve()
         t += step
         theta.interpolate(soil.moisture_content(h))
-        K.interpolate(soil.relative_permeability((h + h_old) / 2))
+        K.interpolate(soil.hydraulic_conductivity((h + h_old) / 2))
         q.interpolate(-K * grad((h + h_old) / 2 + X[1]))
         external_flux += assemble(step * dot(q, -FacetNormal(mesh)) * ds_mesh)
 
