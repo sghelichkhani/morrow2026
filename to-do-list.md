@@ -75,7 +75,7 @@ Symbol key: ✅ done, ⏳ running, 📝 script ready / no run, 🌏 needs Gadi, 
 |---|---|---|
 | `Tracy/solution.pdf` | `verification/tracy/run_solution.py` + `plot_solution.py` | ❌ **wrong figure.** Paper wants a 3-panel **time evolution** (t = 0, 5×10⁴, 2.5×10⁶ s) of pressure head. We produce a 3-panel (h_num, h_anal, θ_num) snapshot at a single time. `run_solution.py` needs a rewrite to save snapshots at the three paper times. |
 | `Tracy/2d_spatial_error.pdf` | `verification/tracy/run_spatial_2d.py` + `plot_spatial.py` | ⚠️ **missing polynomial degrees.** Paper sweeps p = 0, 1, 2; current data covers DG1 (specified-head + no-flux). DG2 is in `ALL_CASES` but needs Gadi; DG0 also still to be added. Any prior DG0/DG2 entries from an alternate driver were discarded because their `dx` convention (`L/(n+1)`) did not match the canonical `dx = L/n` — re-run with the canonical driver before mixing |
-| `Tracy/2d_temporal_congergence.pdf` | `verification/tracy/run_temporal_2d.py` + `plot_temporal.py` | ❌ **wrong integrator set.** Paper uses BackwardEuler + ImplicitMidpoint + CrankNicolson. We swapped ImplicitMidpoint for DIRK22. Replace DIRK22 → ImplicitMidpoint in `INTEGRATORS` and rerun. Separately CrankNicolson is stuck at 0.68 for all Δt — Newton silently returns the IC. Root-cause is unknown; affects g-adopt, not just this driver |
+| `Tracy/2d_temporal_congergence.pdf` | `verification/tracy/run_temporal_2d.py` + `plot_temporal.py` | ✅ **BE only by editorial choice.** The sweep still runs `BackwardEuler + CrankNicolson + ImplicitMidpoint` (all 4 dts each) and stores them in `results/temporal_2d.json`; the plotter is gated to `BackwardEuler` only via `PLOT_INTEGRATORS`. Higher-order curves held back for a follow-up paper. |
 | `Tracy/3d_spatial_congergence.pdf` | `verification/tracy/run_spatial_3d.py` + `plot_spatial.py` | ⚠️ **missing polynomial degrees.** Paper covers p = 0, 1, 2 in 3D as well. We have only DG1 up to 51³. Add DG0 + DG2 sweeps and extend DG1 to 71³ / 101³; DG2 + the fine DG1 meshes need Gadi, DG0 + DG1 at small meshes is serial-feasible. The driver now exits on an L² steady-state criterion (default `1e-3`); `t_final = 5e6` s is just the safety cap |
 
 Production spec for Tracy (per paper captions):
@@ -88,7 +88,7 @@ Production spec for Tracy (per paper captions):
 | Figure | Script | Status |
 |---|---|---|
 | `MassConservation/function_space.pdf` | `verification/mass_conservation/run_function_space.py` + `plot_mass.py` | ✅ Δx × {DQ0/1/2, CG1/CG2}. DQ ≲ 7e-11 (flat vs Δx); CG at 1.7e-3 (CG1, dx=1/12) down to 3.4e-5 (CG2, dx=1/100) with clear mesh convergence |
-| `MassConservation/equation_type.pdf` | `verification/mass_conservation/run_equation_type.py` + `plot_mass.py` | ⚠️ **regenerate against post-PR-#226 Irksome.** Old run showed ImplicitMidpoint+`stage_type="value"` at `O(Δt)` (4.25e-4 → 2.6e-5); with the conservative-update fix in place it should sit at solver tolerance like BackwardEuler. Once rerun, the §3.2 *Narrative check* edits below are no longer needed — paper text stands as written. |
+| `MassConservation/equation_type.pdf` | `verification/mass_conservation/run_equation_type.py` + `plot_mass.py` | ✅ **BE only by editorial choice.** Sweep still runs `BackwardEuler + ImplicitMidpoint` × `{value, deriv}` × 5 dts and stores everything in `results/equation_type.json`; plotter is gated to `BackwardEuler` via `PLOT_INTEGRATORS`. The IM+value combination hits a Jacobian zero-pivot in saturated cells under the non-SA conservative-update path (see §3.2 issue note below) — held back for a follow-up paper. |
 
 ### §3.3 Vauclin (1979)
 
@@ -245,6 +245,35 @@ Add `--phase strong` in `parallel_scaling/submit_jobs.py`. Fix
 1→2→4→8→16→32 with the production solver preset. Parse into
 `parsed/murr_strong.json`, plot with a `plot_murr_strong` call in
 `plot_results.py`.
+
+### 15. Held back: ImplicitMidpoint + mixed form for §3.2 (Irksome PR territory)
+
+`run_equation_type.py` sweep runs `ImplicitMidpoint × {value, deriv}` but the
+`value` (mixed) leg hits a Jacobian zero-pivot the moment any cell crosses
+the saturation cap (`h ≥ 0`). The conservative-update solver Irksome's
+`sghelichkhani/conservative-update-non-sa` branch introduces for non-SA
+tableaux solves `(θ(u_new) - θ(u_0)) v dx + dt Σ B_i F_rem v dx = 0`; in
+saturated cells `θ(u_new) = θ_s` constant ⇒ Jacobian row is identically
+zero ⇒ MUMPS `FACTOR_NUMERIC_ZEROPIVOT`. Worse, when a saturated cell still
+has net inflow the equation has *no* solution because no `h` gives
+`θ > θ_s`. Stiffly-accurate tableaux (BE, DIRK22, RadauIIA) sidestep this
+because they reconstruct `u_new` from the last stage directly with no
+separate update solve. Three reasonable fixes (all out-of-scope for the
+Morrow 2026 paper, parked here):
+
+1. `Ss > 0` (even tiny) — regularises the saturated-cell Jacobian via
+   elastic storage; physical and clean but contradicts the paper's
+   `Ss = 0` design choice.
+2. Algorithm change in Irksome: detect saturated cells before the update
+   solve, fall back to algebraic stage extrapolation for `u_new` there.
+3. Soil-curve change: smooth the `θ_s` plateau into an asymptotic
+   approach. Changes physics, invertible.
+
+Solver-level workarounds (`mat_mumps_icntl_24=1`, `pc_type=svd`,
+iterative on the update solve) prevent the crash but introduce
+~`O(10⁻⁵)` mass leak because the equation is genuinely inconsistent in
+saturated cells. Picked up for a follow-up paper on non-SA mass
+conservation under saturated Richards flow.
 
 ## Narrative check vs. the manuscript
 

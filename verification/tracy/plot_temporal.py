@@ -28,11 +28,19 @@ def main():
         return
     data = load_json(path)
 
+    # The paper's §3.1 temporal figure shows BackwardEuler only.
+    # ImplicitMidpoint / CrankNicolson sweeps are still run and stored in
+    # the JSON for future higher-order work; just not plotted here.
+    PLOT_INTEGRATORS = ("BackwardEuler",)
+
     fig, ax = plt.subplots(figsize=(5, 4.2))
     for name, case in data["integrators"].items():
+        if name not in PLOT_INTEGRATORS:
+            continue
         entries = case["dts"]
-        dts = np.array([e["dt"] for e in entries])
-        rel = np.array([e["l2error_h"] / e["l2anal_h"] for e in entries])
+        dts = np.array([e["dt"] for e in entries if "l2error_h" in e])
+        rel = np.array([e["l2error_h"] / e["l2anal_h"]
+                        for e in entries if "l2error_h" in e])
         order = case["expected_order"]
         slope, _ = np.polyfit(np.log(dts), np.log(rel), 1)
         ax.loglog(dts, rel, "o-",

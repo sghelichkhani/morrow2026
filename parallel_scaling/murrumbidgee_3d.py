@@ -42,7 +42,9 @@ if __name__ == "__main__":
                         help="Shrink factor on solver failure (default 0.5)")
     parser.add_argument("--t-final", type=float, default=None,
                         help="Final simulation time in seconds (overrides --steps)")
-    parser.add_argument("--solver", type=str, default="gamg")
+    parser.add_argument("--solver", type=str, default="vlumping",
+                        help="Solver preset (default: vlumping, the "
+                             "canonical g-adopt preset for extruded 3D).")
     parser.add_argument("--refinement-levels", type=int, default=0)
     parser.add_argument("--data-dir", type=str, default="./murrumbidgee_data")
     _ARGS = parser.parse_args()
@@ -111,7 +113,7 @@ def load_spatial_field(V, V_cg, mesh_xy, csv_path, name):
 
 
 def model(horiz_res, n_layers, degree=1, dt_value=43200.0, steps=20,
-          solver="gamg", refinement_levels=0, data_dir="./murrumbidgee_data",
+          solver="vlumping", refinement_levels=0, data_dir="./murrumbidgee_data",
           dt_init=None, dt_max=43200.0, dt_growth=1.5, dt_shrink=0.5,
           t_final=None):
     """Run Lower Murrumbidgee scaling benchmark.

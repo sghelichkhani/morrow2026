@@ -87,8 +87,14 @@ def plot_equation_type():
     styles = {"value": "-", "deriv": "--"}
     colors = {"BackwardEuler": "C0", "ImplicitMidpoint": "C3"}
     names = {"value": "mixed", "deriv": "head"}
+    # The paper's §3.2 figure shows BackwardEuler only. Higher-order
+    # tableaux (ImplicitMidpoint, DIRK22, ...) are still swept and stored
+    # in the JSON for future work; not plotted here.
+    PLOT_INTEGRATORS = ("BackwardEuler",)
     combos = sorted({(e["integrator"], e["stage_type"]) for e in data["entries"]})
     for integrator, stage_type in combos:
+        if integrator not in PLOT_INTEGRATORS:
+            continue
         rows = [e for e in data["entries"]
                 if e["integrator"] == integrator and e["stage_type"] == stage_type
                 and "mass_error" in e]
