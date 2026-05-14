@@ -150,11 +150,38 @@ def run(nodes_x: int, nodes_y: int, degree: int = 2,
     mass_balance = (final_mass - initial_mass) / external_flux \
         if external_flux != 0 else 0.0
 
+    # Gather rank-local coordinate and field arrays to rank 0 so the
+    # downstream scipy.griddata interpolation in run_convergence sees
+    # the whole domain. Other ranks return empty arrays and don't
+    # contribute to the comparison.
+    try:
+        from mpi4py import MPI
+        comm = MPI.COMM_WORLD
+        h_local = np.asarray(h.dat.data).copy()
+        theta_local = np.asarray(theta.dat.data).copy()
+        all_x = comm.gather(xs, root=0)
+        all_y = comm.gather(ys, root=0)
+        all_h = comm.gather(h_local, root=0)
+        all_theta = comm.gather(theta_local, root=0)
+        if comm.Get_rank() == 0:
+            final_x = np.concatenate(all_x)
+            final_y = np.concatenate(all_y)
+            final_h = np.concatenate(all_h)
+            final_theta = np.concatenate(all_theta)
+        else:
+            final_x = np.empty(0)
+            final_y = np.empty(0)
+            final_h = np.empty(0)
+            final_theta = np.empty(0)
+    except ImportError:
+        final_x, final_y = xs, ys
+        final_h = np.asarray(h.dat.data).copy()
+        final_theta = np.asarray(theta.dat.data).copy()
+
     return {
         "snapshots": [s.__dict__ for s in snapshots],
-        "final": {"x": xs, "y": ys,
-                  "h": np.asarray(h.dat.data).copy(),
-                  "theta": np.asarray(theta.dat.data).copy(),
+        "final": {"x": final_x, "y": final_y,
+                  "h": final_h, "theta": final_theta,
                   "t": t},
         "mass_balance": float(mass_balance),
         "external_flux": float(external_flux),

@@ -124,17 +124,32 @@ def main():
     if args.ref_degree is not None:
         REFERENCE["degree"] = args.ref_degree
 
-    print(f"reference solution: {REFERENCE}")
+    # Under MPI, vauclin_2d.run() gathers coordinate and field arrays
+    # to rank 0. The scipy.griddata comparison below is therefore only
+    # meaningful on rank 0; other ranks see empty arrays and would
+    # raise "No points given" if they tried to interpolate.
+    try:
+        from mpi4py import MPI
+        rank = MPI.COMM_WORLD.Get_rank()
+    except ImportError:
+        rank = 0
+
+    if rank == 0:
+        print(f"reference solution: {REFERENCE}")
     ref_result, ref_wall = _run(REFERENCE)
-    print(f"  wall = {ref_wall:.1f}s")
+    if rank == 0:
+        print(f"  wall = {ref_wall:.1f}s")
 
     ref_final = ref_result["final"]
     entries = []
     Lx, Ly = ref_result["mesh"]["Lx"], ref_result["mesh"]["Ly"]
 
     for spec in COARSE:
-        print(f"coarse: {spec}")
+        if rank == 0:
+            print(f"coarse: {spec}")
         res, wall = _run(spec)
+        if rank != 0:
+            continue
         fx, fy, fh = res["final"]["x"], res["final"]["y"], res["final"]["h"]
         # DQ0 is piecewise-constant; linear interpolation smears the
         # step structure and flatters the convergence rate. Nearest-
