@@ -29,11 +29,10 @@
 #PBS -j oe
 #PBS -N richards_verification
 
-set -euo pipefail
+# Strict mode is set *after* sourcing /etc/profile because the system
+# lang.sh on Gadi references LANG without a default and trips ``set -u``.
+set -eo pipefail
 
-# Environment — module-based Firedrake plus user overrides for
-# richardson g-adopt + Irksome + gwassess, matching the production
-# setup in /scratch/xd2/sg8812/submit_longtest.sh.
 source /etc/profile
 module use /g/data/fp50/modules
 module load firedrake/main-20260401
