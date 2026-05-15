@@ -1,399 +1,349 @@
-# Morrow et al. 2026 — paper-figure to-do list
+# Morrow et al. 2026 — outstanding work
 
-Last updated: 2026-05-13.
+Last updated: 2026-05-15.
 
-## Upstream change to fold in: Irksome PR #226
+**Status:** every figure cited by the manuscript has a generating script
+in this repo and the data it ingests also in this repo (or
+`parallel_scaling/parsed/*.json`). The Gadi data is current as of
+2026-05-15 (commits `6daca9b`, `74cfd63`, `2130f46`). One figure — the
+Murrumbidgee `example_solution.pdf` — and a handful of manuscript-text
+fixes are still pending. Then there are items flagged below as
+**must-revisit** for the next agent to scrutinise.
 
-Irksome now ships a conservative variational update for non-stiffly-accurate
-`stage_value`, so `ImplicitMidpoint`, `GaussLegendre(2)`, `QinZhang` etc. are
-mass-conservative to solver tolerance on the same form (`Dt(theta(h))`,
-`Ss = 0`) that BackwardEuler/DIRK22 already handled. The branch in
-`~/Workplace/firedrake-2026-03-03/Irksome` on
-`sghelichkhani/conservative-update-non-sa` is the reference. Consequences
-for this repo, all of which need a sweep:
+---
 
-- The `Ss = 1e-4` regularisation in `verification/tracy/run_temporal_all_dirks.py`
-  was a workaround for a singular conservative-update Jacobian on the
-  exponential curve. PR #226 added a warm-start (`u_new <- u_0`) that defuses
-  the singularity, so the regularisation is no longer needed. Revert to
-  `Ss = 0` and rerun.
-- The `ExponentialCurve.saturation_potential` antiderivative that
-  `instructions.md` and `verification-design.md` rely on was reverted from
-  g-adopt (`sghelichkhani/richardson` head `48a8cf44`) — it only existed to
-  let `Ss * S * Dt(h)` go through Irksome's `expand_time_derivatives`. With
-  `Ss = 0` that whole branch is dead, so the antiderivative is gone and the
-  documentation references should be deleted.
-- The §3.2 narrative correction (item 10 below) flips sign: pre-fix Irksome
-  showed `O(Δt)` mass error on `ImplicitMidpoint`; post-fix it sits at
-  solver tolerance, matching what the paper text originally claimed. The
-  manuscript text can stay; the figure (`MassConservation/equation_type.pdf`)
-  must be regenerated against post-PR-#226 Irksome.
-- The temporal-convergence figure (item 10) likewise needs regeneration:
-  with the conservative-update path live, `ImplicitMidpoint` should now hit
-  its formal order-2 rate against a numerical reference without any
-  `Ss > 0` regularisation. g-adopt has a fresh
-  `tests/richards/test_temporal_convergence.py` that pins this with an
-  analytic MMS for BE/IM/GL(2) on a unit square; treat it as the laptop
-  proxy before submitting the Gadi 201²/301² production runs.
+## 1. Outstanding figure work (C1)
 
-If anything in `verification/tracy/` or `verification/mass_conservation/`
-still has `Ss = 1e-4` or `saturation_potential` in it after the sweep,
-that's a leftover hack that needs removing.
+### `Murrumbidgee/example_solution.pdf`
 
-## Pre-PR-#226 history
+Paper §4 wants two production runs (with / without water extraction)
+at Δx = 1 km, 300 vertical layers, snapshots of the water-table
+surface at a handful of times, rendered side-by-side. Not yet done
+because the extraction-site data isn't in the repo.
 
-Single source of truth for the state of every paper figure and what
-still needs a human.
+Five sub-tasks:
 
-## Layout
+1. **Import** `parallel_scaling/murrumbidgee_data/extraction_sites.csv`
+   (columns: `x`, `y`, `rate`) from wherever the bore-data lives.
+2. **Add** `--scenario {extraction|no_extraction}` to
+   `parallel_scaling/murrumbidgee_3d.py`. When `extraction`, read the
+   CSV and add a Gaussian sink term concentrated at each site to the
+   residual.
+3. **Snapshot output**: add a `--snapshot-times` flag + VTK output of
+   the water table at chosen times.
+4. **Write** `parallel_scaling/plot_murr_example_solution.py` that
+   reads the VTKs, extracts the water table as the `h = 0` level set
+   on the surface mesh, and renders the with/without panels side by
+   side into `figures/Murrumbidgee/example_solution.pdf`.
+5. **Submit** two production Gadi jobs (Δx = 1 km, 300 layers,
+   `vlumping` or `vlumping_inexact`).
 
-```
-morrow2026/
-├── verification/                    # §3.1–§3.3, runnable locally
-│   ├── env.sh                       # activates Firedrake venv + paths
-│   ├── common.py                    # save_json, load_json, FIGURE_ROOT
-│   ├── tracy/                       # §3.1
-│   ├── mass_conservation/           # §3.2
-│   └── vauclin/                     # §3.3
-├── parallel_scaling/                # §3.4 + §4, Gadi only
-├── figures/                         # paper-ready PDFs (mirrors manuscript Figures/)
-│   ├── Tracy/
-│   ├── Vauclin1979/
-│   ├── MassConservation/
-│   ├── Cockett2018/                 # not yet populated — see §3.4 below
-│   └── Murrumbidgee/                # not yet populated — see §4 below
-└── to-do-list.md                    # this file
-```
+Once this is done, the placeholder in `plot_murr_icbc.py` panel (c)
+should be replaced with a scatter of the extraction sites on the
+polygon.
 
-Symbol key: ✅ done, ⏳ running, 📝 script ready / no run, 🌏 needs Gadi, ❌ not yet started, ⚠️ known issue.
+Rough estimate: a day of code work, plus Gadi queue time.
 
-## Paper figure status
+---
 
-### §3.1 Tracy (2006)
+## 2. Manuscript text reconciliations (paper repo, no code)
 
-| Figure | Script | Status |
-|---|---|---|
-| `Tracy/solution.pdf` | `verification/tracy/run_solution.py` + `plot_solution.py` | ❌ **wrong figure.** Paper wants a 3-panel **time evolution** (t = 0, 5×10⁴, 2.5×10⁶ s) of pressure head. We produce a 3-panel (h_num, h_anal, θ_num) snapshot at a single time. `run_solution.py` needs a rewrite to save snapshots at the three paper times. |
-| `Tracy/2d_spatial_error.pdf` | `verification/tracy/run_spatial_2d.py` + `plot_spatial.py` | ⚠️ **missing polynomial degrees.** Paper sweeps p = 0, 1, 2; current data covers DG1 (specified-head + no-flux). DG2 is in `ALL_CASES` but needs Gadi; DG0 also still to be added. Any prior DG0/DG2 entries from an alternate driver were discarded because their `dx` convention (`L/(n+1)`) did not match the canonical `dx = L/n` — re-run with the canonical driver before mixing |
-| `Tracy/2d_temporal_congergence.pdf` | `verification/tracy/run_temporal_2d.py` + `plot_temporal.py` | ✅ **BE only by editorial choice.** The sweep still runs `BackwardEuler + CrankNicolson + ImplicitMidpoint` (all 4 dts each) and stores them in `results/temporal_2d.json`; the plotter is gated to `BackwardEuler` only via `PLOT_INTEGRATORS`. Higher-order curves held back for a follow-up paper. |
-| `Tracy/3d_spatial_congergence.pdf` | `verification/tracy/run_spatial_3d.py` + `plot_spatial.py` | ⚠️ **missing polynomial degrees.** Paper covers p = 0, 1, 2 in 3D as well. We have only DG1 up to 51³. Add DG0 + DG2 sweeps and extend DG1 to 71³ / 101³; DG2 + the fine DG1 meshes need Gadi, DG0 + DG1 at small meshes is serial-feasible. The driver now exits on an L² steady-state criterion (default `1e-3`); `t_final = 5e6` s is just the safety cap |
+LaTeX-only touch-ups in `~/Workplace/papers/richards-morrow-2026/`:
 
-Production spec for Tracy (per paper captions):
-- `solution.pdf` uses `L=15.24`, `α=0.25`, `θ_r=0.15`, `θ_s=0.45`, `S_s=0`, `K_s=10⁻⁵` (already match).
-- `2d_temporal_congergence.pdf` specifies 301² DQ2 up to t=10⁵ s. **That's Gadi-only.** Our local data uses 201² DQ1 — acceptable for dev, must be overridden by a Gadi run before submission.
-- Spatial figure captions explicitly claim rate p+1; current local DG1 fit is 1.8 not 2.0 (still acceptable but on the edge). Gadi sweep with DG0 + DG2 should show cleaner rates.
+- **`\codedataavailability{TEXT}`** placeholder near acknowledgements.
+  Fill with this repo's GitHub URL, the g-adopt richardson worktree
+  pointer, the gwassess pointer (`g-adopt/gwassess`), and the Gadi
+  project number (`xd2`).
+- **Vauclin reference resolution**: `main.tex:333` says 151×101 in the
+  body, caption at `:338` says 121×81. We now produce 121×81 DQ2 (see
+  `verification/vauclin/results/convergence.json`); update the body to
+  match the caption.
+- **"48 CPU cores per node"** in §4 weak-scaling text → 104 (the
+  Sapphire Rapids `normalsr` queue). Adjust DOF-per-core arithmetic
+  accordingly.
+- **`main.tex:483`** commented `memory_layers.pdf` — the file now
+  exists (`figures/Murrumbidgee/memory_layers.pdf`). Decide to
+  un-comment or strike.
+- **`main.tex:389`** `\includegraphics{...Murrumbidgee/elevation}`
+  has no extension. Both `elevation.pdf` and `elevation.png` exist;
+  add `.pdf` explicitly.
+- **`main.tex:462`** "point-Jacobi (not shown)" — either drop the
+  aside or back it with a curve.
 
-### §3.2 Mass conservation
+Suggested caption additions (optional, but honest):
 
-| Figure | Script | Status |
-|---|---|---|
-| `MassConservation/function_space.pdf` | `verification/mass_conservation/run_function_space.py` + `plot_mass.py` | ✅ Δx × {DQ0/1/2, CG1/CG2}. DQ ≲ 7e-11 (flat vs Δx); CG at 1.7e-3 (CG1, dx=1/12) down to 3.4e-5 (CG2, dx=1/100) with clear mesh convergence |
-| `MassConservation/equation_type.pdf` | `verification/mass_conservation/run_equation_type.py` + `plot_mass.py` | ✅ **BE only by editorial choice.** Sweep still runs `BackwardEuler + ImplicitMidpoint` × `{value, deriv}` × 5 dts and stores everything in `results/equation_type.json`; plotter is gated to `BackwardEuler` via `PLOT_INTEGRATORS`. The IM+value combination hits a Jacobian zero-pivot in saturated cells under the non-SA conservative-update path (see §3.2 issue note below) — held back for a follow-up paper. |
+- **§3.1 temporal** caption: "BackwardEuler shown; higher-order
+  tableaux deferred to a follow-up paper."
+- **§3.2 equation-type** caption: "BackwardEuler shown; the
+  conservative-update path for non-stiffly-accurate tableaux at
+  `Ss = 0` is degenerate in saturated cells and is examined
+  separately."
+- **§4 strong scaling** caption: "vlumping_inexact carries the curve
+  to 8 nodes (832 cores); at 32 nodes (3328 cores) its coarse solve
+  diverges, so the vlumping_hmg variant — whose nested geometric MG
+  remains well-conditioned on the small base mesh — is used to
+  extend the curve to the full 320 M DOF / 32-node point."
 
-### §3.3 Vauclin (1979)
+---
 
-| Figure | Script | Status |
-|---|---|---|
-| `Vauclin1979/solution.pdf` | `verification/vauclin/run_solution.py` + `plot_solution.py` | ✅ 46×31 DQ2, dt=25, snapshots at 0/3/6/9 h with streamlines. Mass balance 1.003 |
-| `Vauclin1979/convergence_rate.pdf` | `verification/vauclin/run_convergence.py` + `plot_convergence.py` | ✅ local: DQ0 rate 0.58, DQ1 rate 1.76 against a 61×41 DQ2 reference. 🌏 Paper figure wants a 121×81 DQ2 reference — submit on Gadi for publication-quality plot |
+## 3. Must-revisit items (handover scrutiny)
 
-### §3.4 Cockett 3D heterogeneous scaling
+These are decisions / numbers / artefacts I'm not fully confident
+about. The next person on this should sanity-check each one before
+freezing the paper.
 
-| Figure | Script | Status |
-|---|---|---|
-| `Cockett2018/cockett_2018.pdf` (soil + snapshots) | `parallel_scaling/plot_cockett_snapshots.py` | ❌ **plotting script missing.** VTK output already exists in `~/Workplace/g-adopt-worktrees/sghelichkhani/richardson/demos/groundwater/3d_cockett/3d_cockett/*.vtu`. Needs a PyVista/VTK reader that extracts moisture at t = 0, 24, 48, 72 h and a side-by-side 4-panel render |
-| `Cockett2018/simulation_time.pdf` | `parallel_scaling/plot_results.py` | ✅ 🌏 Data in `parallel_scaling/parsed/cockett.json`, figure regenerable offline |
-| `Cockett2018/iterations.pdf` | `parallel_scaling/plot_results.py` | ✅ 🌏 |
-| `Cockett2018/memory.pdf` | `parallel_scaling/plot_results.py` | ✅ 🌏 |
+### M1. Tracy 3D DG1 fitted rate
 
-### §4 Lower Murrumbidgee
+The Gadi sweep shows DG1 reaching ~O(h^1.8) at the finest meshes
+(nodes 71 → 101) but the fitted rate over the whole sweep is lower
+because the coarse end is in a pre-asymptotic regime. The §3.1 3D
+caption currently claims the textbook p+1 rate. Two options:
 
-| Figure | Script | Status |
-|---|---|---|
-| `Murrumbidgee/elevation.pdf` | `parallel_scaling/plot_murr_elevation.py` | ❌ plotting script missing. Source: `tests/parallel_scaling_richards/murrumbidgee_data/*.csv` on Gadi (elevation grid + polygon) |
-| `Murrumbidgee/mesh.pdf` | `parallel_scaling/plot_murr_mesh.py` | ❌ plotting script missing. Render the 2D surface mesh + a vertical slice |
-| `Murrumbidgee/stratigraphy.pdf` | `parallel_scaling/plot_murr_stratigraphy.py` | ❌ plotting script missing. Bore-hole measurements + 3-layer schematic |
-| `Murrumbidgee/ICBC.pdf` | `parallel_scaling/plot_murr_icbc.py` | ❌ plotting script missing. Three-panel: initial head, rainfall map, extraction points |
-| `Murrumbidgee/example_solution.pdf` | `parallel_scaling/plot_murr_solution.py` | ❌ 🌏 needs two Gadi runs (with / without extraction) at Δx=1 km, 300 layers. Dump water-table surface at a few timesteps |
-| `Murrumbidgee/time_per_timestep.pdf`, `linear_iterations.pdf`, `memory.pdf`, `hierarchy_levels.pdf` | `parallel_scaling/plot_results.py` (horizontal weak) | ✅ 🌏 |
-| `Murrumbidgee/linear_iterations_layers.pdf`, `time_per_timestep_layers.pdf` | `parallel_scaling/plot_results.py` (vertical weak) | ✅ 🌏 |
-| `Murrumbidgee/memory_layers.pdf` | currently **commented out** in `main.tex:483` | ⚠️ decide: remove the LaTeX line or add the script + data. If strong scaling also collects per-node memory, the same parse could feed both figures |
-| `Murrumbidgee/strong_scaling.pdf` | new strong-scaling phase in `parallel_scaling/submit_jobs.py` | ❌ 🌏 **driver + submission not yet implemented.** Needs a `--phase strong` mode fixing Δx=620 m + 300 layers, varying node count 1→2→4→8→16→32, parsing into `parsed/murr_strong.json` and a `plot_murr_strong` path |
-| `Murrumbidgee/hierarchy_levels.pdf` | `parallel_scaling/plot_results.py` | ⚠️ paper narrative describes **two GMG variants** shown on the same plot: one that minimises iteration count, one that minimises wall-clock time. Verify the plotter actually produces both curves (needs the submission to sweep GMG hierarchy depth, not just pick one). |
+- Restrict the fitted-rate computation in `plot_spatial.py` to the
+  two finest points and report that.
+- Soften the caption to "approaches O(h^{p+1})" or "approaches the
+  expected rate at the resolved end of the sweep".
 
-### §3.1-§3.3 physical-parameter cross-check
+**Action:** verify whether the asymptotic rate is really 2 (would
+need a 151³ or 201³ DG1 run on Gadi — not currently in `CASES`) or
+whether something else is limiting the rate (BCs? steady-state
+stopper tolerance interaction?).
 
-Paper captions quote specific parameter values; these should match what the drivers use via `gwassess`:
+### M2. Strong-scaling gap at 16 nodes
 
-- **Tracy**: L=15.24, α=0.25 m⁻¹, θ_r=0.15, θ_s=0.45, K_s=10⁻⁵ m/s, S_s=0. Matches drivers ✅.
-- **Vauclin (fig:VauchlinSolution caption)**: α=400, β=2.90, A=2.99×10⁴, γ=5, K_s=9.722×10⁻⁵ m/s, θ_r=0, θ_s=0.37. Needs verification against `gwassess.VauclinRichardsSolution2D.get_soil_parameters()`. If they don't match, either the caption or the driver is wrong.
-- **Mass-conservation (paper §3.2)**: α=0.5 m, β=1.3, A=0.01 m, γ=1.5, θ_r=0.05, θ_s=0.40, K_s=10⁻⁵ m/s. Matches `mass_balance.py` ✅.
+`s16` (vlumping_inexact at 1664 cores) was killed after 1h40m stuck
+at Newton iter 0. Cause unclear — possibly `dt_init = 60 s` too
+aggressive for the parallel-decomposition pattern, or coarse-solver
+slowness. The strong-scaling figure currently has a visible gap
+between 8 nodes and 32 nodes. Worth one more attempt:
 
-## Pending work (ordered)
+- Retry with `--dt-init 30` or `--dt-init 600` (overshoot then
+  shrink) and `--snes-max-it` bumped.
+- Or try `vlumping_hmg` at s16 instead of `vlumping_inexact`.
 
-### 1. Fix CrankNicolson temporal convergence bug (local, ≤ 30 min)
+If neither helps, the figure can ship as-is but the caption should
+say "vlumping_inexact remains tractable up to 8 nodes; at 16 nodes
+and above the inexact-Newton coarse solve hangs, motivating the
+switch to vlumping_hmg above".
 
-`verification/tracy/run_temporal_2d.py` produced identical errors of
-~0.68 for CrankNicolson at all Δt — the DIRK stepper is returning the
-initial guess. BackwardEuler and DIRK22 are fine. Either drop
-CrankNicolson from the figure or debug the integrator. If the bug is
-real it affects g-adopt, not just this driver.
+### M3. Hierarchy L4 points dropped
 
-### 2. Tracy 2D spatial, DG2 leg (Gadi)
+L4 corresponds to coarsening the 620 m base mesh four times to
+9.9 km, leaving ~360 base triangles for 832 ranks (1 cell per ~2.3
+ranks). Both `gmg L4` and `vlumping_hmg L4` hung. Either rerun at
+16+ nodes (so the coarsest ranks-to-cells ratio works) or accept
+that the hierarchy figure tops out at L=3. Currently the figure
+shows L=1, 2, 3; caption can note "L=4 dropped because the
+9.9-km-coarsest mesh has too few cells for the 832-rank decomposition".
 
-DG2 at nodes=76 diverged locally after 50 Newton iterations (matches
-g-adopt's own `tests/richards/test_richards.py` which marks DG2 as
-longtest and allocates 2–32 cores per level). Submit on Gadi via a PBS
-wrapper around `verification/tracy/run_spatial_2d.py --cases specified_head_dg2`
-and append into the existing `spatial_2d.json` (the driver merges
-cases rather than overwriting).
+### M4. Murrumbidgee mesh figure substitution
 
-### 3. Tracy 3D spatial, fine meshes (Gadi)
+`parallel_scaling/plot_murr_mesh.py` uses
+`scipy.spatial.Delaunay` to triangulate seed points inside the
+polygon — a stand-in for the omega-built production mesh, because
+omega isn't in the default plotting env. The visual triangle count
+is right but the mesh isn't pixel-identical to what the production
+runs use. Two options:
 
-Submit `verification/tracy/run_spatial_3d.py --max-nodes 101` on Gadi.
-The 51³ run already works locally (~10 min); 71³ and 101³ need the
-compute. Wrap `verification/tracy/tracy_3d.py::model` in a PBS script
-that follows the same pattern as `parallel_scaling/submit_jobs.py`.
+- Accept as-is (good enough for a methods figure).
+- Rerun the plotter inside the Firedrake venv on a machine with
+  omega and replace the Delaunay block with the actual production
+  mesh.
 
-### 4. Vauclin 121×81 DQ2 reference for the paper figure (Gadi)
+### M5. ICBC panel (c) placeholder
 
-`verification/vauclin/run_convergence.py` currently uses a 61×41 DQ2
-reference (local constraint). The paper cites 121×81. Run once on Gadi
-with the paper-spec reference and regenerate `convergence_rate.pdf`.
-Also add DQ2 coarse cases so the fitted rate 3.0 is visible alongside
-the existing DQ0/DQ1 rates.
+`plot_murr_icbc.py` panel (c) currently renders "extraction-site CSV
+not yet imported" in the polygon. Replace with a real scatter once
+C1's extraction-sites CSV lands.
 
-### 5. §3.4 Cockett snapshot figure (local)
+### M6. Strong-scaling baseline interpretation
 
-Write `parallel_scaling/plot_cockett_snapshots.py` to read the
-existing `.vtu` files from the g-adopt demo directory and produce
-`figures/Cockett2018/cockett_2018.pdf`. PyVista is in the Firedrake
-venv.
+The strong-scaling figure has only three on-curve points
+(`s2`, `s4`, `s8`) plus the off-curve `s32` (vlumping_hmg). A
+3-point fit gives a slope estimate but doesn't pin down the
+super-linear region clearly. If the §4 prose makes a quantitative
+efficiency claim (e.g. "X % parallel efficiency at 8 nodes"),
+double-check that against the JSON numbers in
+`parallel_scaling/parsed/murr_strong.json` rather than trusting the
+visual fit.
 
-### 6. §4 Murrumbidgee geographic figures (local + Gadi)
+### M7. Vauclin DQ2 rate
 
-Four scripts to write (elevation, mesh, stratigraphy, ICBC). Source
-data under `tests/parallel_scaling_richards/murrumbidgee_data/` on
-Gadi; copy the CSVs back to `verification/vauclin/...`—sorry,
-`parallel_scaling/murrumbidgee_data/` once, then everything can be
-rendered locally.
+Fitted DQ2 rate is 2.24. For an L² error on `h` the textbook rate is
+p+1 = 3, but in practice initial-condition smoothness and
+time-discretisation error often pull this down. 2.24 is not
+egregious but if the caption claims O(Δx^3) it should be softened.
 
-### 7. §4 Murrumbidgee example-solution runs (Gadi)
+### M8. Tracy 2D DG2 — only 3 levels
 
-Two 300-layer runs (with / without extraction) on the horizontal weak
-`large` scale, each saving the water-table surface at a handful of
-timesteps. Add a `--scenario extraction|no_extraction` flag to
-`murrumbidgee_3d.py` or drive from `submit_jobs.py`.
+The Gadi sweep produced 3 successful DG2 levels (76, 151, 301). The
+fit over 3 points is rough. If a fourth coarser level (e.g.
+nodes=51 DG2) would help the pre-asymptotic story, add it to
+`run_spatial_2d.py::ALL_CASES` and re-run.
 
-### 8. Fix Tracy solution snapshot figure (local, ≤ 1 h)
+---
 
-`run_solution.py` currently returns *one* time slice with three fields
-(h_num, h_anal, θ_num). The paper's `fig:TracySteadyState` needs **three
-time slices of pressure head** at t = 0, 5×10⁴ and 2.5×10⁶ s.
-Extend `run_solution.py` to capture snapshots along the trajectory and
-rewrite `plot_solution.py` as a 3-column time-evolution figure.
+## 4. Parked for a follow-up paper
 
-### 9. Extend Tracy spatial sweeps to p = 0, 1, 2 (partly local)
+These are real limitations of the current setup that we agreed to
+exclude from the Morrow 2026 paper. The data is in this repo, the
+narrative is held back.
 
-Add `specified_head_dg0` (cheap, serial) and `specified_head_dg2`
-(Gadi) to both `run_spatial_2d.py::ALL_CASES` and
-`run_spatial_3d.py::CASES`. `plot_spatial.py` already handles multiple
-curves per panel — just make sure DG0 and DG2 labels show up cleanly.
+### P1. ImplicitMidpoint + mixed form mass conservation
 
-### 10. Restore ImplicitMidpoint + debug CrankNicolson (local)
-
-Swap `DIRK22` → `ImplicitMidpoint` in `run_temporal_2d.py::INTEGRATORS`
-to match the paper's integrator set. With Irksome PR #226 in place the
-non-SA conservative-update path is honest, so ImplicitMidpoint should
-deliver its formal order-2 rate against the numerical reference (no
-`Ss > 0` regularisation, no `saturation_potential` rewrite — both
-were workarounds for the pre-fix Irksome and should be ripped out from
-`run_temporal_all_dirks.py` and from `instructions.md` /
-`verification-design.md`). Then investigate why CrankNicolson returns
-the initial guess — likely a stage-ordering issue in g-adopt's
-`AbstractRKScheme` when combined with `stage_type="value"`. If it
-can't be fixed quickly, note in §3.1 caption which integrator is
-omitted and why. The new
-`g-adopt:tests/richards/test_temporal_convergence.py` is the laptop
-proxy that should pass cleanly before submitting the production sweep.
-
-### 11. Cross-check solver-options appendix against `parallel_scaling/solvers/`
-
-Paper's appendix lists exact PETSc parameter dicts for Direct,
-GMRES/BJacobi, GMRES/AMG, GMRES/GMG. Confirm each block matches the
-corresponding file in `parallel_scaling/solvers/`
-(`direct.py`, `bjacobi.py`, `gamg.py`, `gmg.py`). Any divergence
-between paper and code should be fixed in one or the other.
-
-### 12. Paper placeholder: `\codedataavailability{TEXT}`
-
-`main.tex` around the acknowledgements section has a placeholder
-`\codedataavailability{TEXT}`. Fill in with a pointer to this repo and
-to the g-adopt `richardson` worktree (or its merge target once it
-lands). Include a Gadi project number for reproducibility.
-
-### 13. `Figures/Murrumbidgee/elevation` has no file extension
-
-`main.tex:389` has `\includegraphics{...Murrumbidgee/elevation}` with
-no `.pdf`. LaTeX will pick whichever extension exists. When the
-plotting script lands, emit `.pdf` to be safe.
-
-### 14. §4 Murrumbidgee strong-scaling phase (Gadi)
-
-Add `--phase strong` in `parallel_scaling/submit_jobs.py`. Fix
-Δx=620 m and 300 layers (~320 M DOF total) and sweep node count
-1→2→4→8→16→32 with the production solver preset. Parse into
-`parsed/murr_strong.json`, plot with a `plot_murr_strong` call in
-`plot_results.py`.
-
-### 15. Held back: ImplicitMidpoint + mixed form for §3.2 (Irksome PR territory)
-
-`run_equation_type.py` sweep runs `ImplicitMidpoint × {value, deriv}` but the
-`value` (mixed) leg hits a Jacobian zero-pivot the moment any cell crosses
-the saturation cap (`h ≥ 0`). The conservative-update solver Irksome's
-`sghelichkhani/conservative-update-non-sa` branch introduces for non-SA
-tableaux solves `(θ(u_new) - θ(u_0)) v dx + dt Σ B_i F_rem v dx = 0`; in
-saturated cells `θ(u_new) = θ_s` constant ⇒ Jacobian row is identically
-zero ⇒ MUMPS `FACTOR_NUMERIC_ZEROPIVOT`. Worse, when a saturated cell still
-has net inflow the equation has *no* solution because no `h` gives
-`θ > θ_s`. Stiffly-accurate tableaux (BE, DIRK22, RadauIIA) sidestep this
-because they reconstruct `u_new` from the last stage directly with no
-separate update solve. Three reasonable fixes (all out-of-scope for the
-Morrow 2026 paper, parked here):
-
-1. `Ss > 0` (even tiny) — regularises the saturated-cell Jacobian via
-   elastic storage; physical and clean but contradicts the paper's
-   `Ss = 0` design choice.
-2. Algorithm change in Irksome: detect saturated cells before the update
-   solve, fall back to algebraic stage extrapolation for `u_new` there.
-3. Soil-curve change: smooth the `θ_s` plateau into an asymptotic
-   approach. Changes physics, invertible.
+The §3.2 `run_equation_type.py` sweep runs `ImplicitMidpoint × {value,
+deriv}` but the `value` (mixed) leg hits a Jacobian zero-pivot the
+moment any cell crosses the saturation cap (`h ≥ 0`). The
+conservative-update solver Irksome's `sghelichkhani/conservative-update-non-sa`
+branch introduces for non-SA tableaux is genuinely under-determined
+in saturated cells when `Ss = 0` — no `h` gives `θ > θ_s`.
+Stiffly-accurate tableaux (BE, DIRK22, RadauIIA) sidestep this
+because they reconstruct `u_new` from the last stage directly with
+no separate update solve.
 
 Solver-level workarounds (`mat_mumps_icntl_24=1`, `pc_type=svd`,
 iterative on the update solve) prevent the crash but introduce
-~`O(10⁻⁵)` mass leak because the equation is genuinely inconsistent in
-saturated cells. Picked up for a follow-up paper on non-SA mass
-conservation under saturated Richards flow.
+~`O(10⁻⁵)` mass leak because the equation is inconsistent in
+saturated cells. Real fixes:
 
-## Narrative check vs. the manuscript
+1. `Ss > 0` (even tiny) — regularises the Jacobian via elastic
+   storage; physical and clean, but contradicts the paper's `Ss = 0`
+   design choice.
+2. Irksome algorithm change: detect saturated cells before the
+   update solve, fall back to algebraic stage extrapolation for
+   `u_new` there.
+3. Soil-curve change: smooth the `θ_s` plateau into an asymptotic
+   approach. Changes physics, invertible.
 
-The temporal-convergence experiment is new — it is not in g-adopt's
-test suite. Consider promoting `run_temporal_2d.py` into
-`g-adopt/tests/richards/tracy_2d_temporal.py` once the CrankNicolson
-bug is understood.
+The current §3.2 figure plots BackwardEuler only. The ImplicitMidpoint
+entries are still in `verification/mass_conservation/results/equation_type.json`
+for the next paper.
 
-**Discrepancy in §3.2 narrative (ImplicitMidpoint + mixed form).**
-*Resolved upstream by Irksome PR #226* — keep this entry until the
-figure is regenerated. The paper currently states: *"For the mixed
-form (solid lines), both time integrators yield excellent mass
-balance, with M ~ 10⁻¹⁰ for all tested Δt."* On pre-#226 Irksome our
-runs contradicted this for ImplicitMidpoint: with `stage_type="value"`
-ImplicitMidpoint recorded M = 4.25e-4 at Δt=400 s down to M = 2.6e-5
-at Δt=25 s — clean O(Δt) decay, not solver tolerance — because the
-non-SA linear-combination update destroyed the per-stage conservation.
-PR #226 replaces that update with a conservative variational solve, so
-on the current Irksome ImplicitMidpoint sits at solver tolerance like
-BackwardEuler. The §3.2 figure regeneration (table item ⚠️ above) is
-what turns this discrepancy from a manuscript edit into a no-op.
-Until the figure lands, do not change the §3.2 prose. Recommended
-edits below are kept only as fallback if the regeneration is delayed
-past submission.
+### P2. Tracy 2D temporal at the paper-spec 301² DQ2
 
-- Change the §3.2(b) prose to "For the mixed form with a stiffly
-  accurate integrator (Backward Euler here) mass is conserved to
-  solver tolerance; ImplicitMidpoint, being symplectic but not stiffly
-  accurate, exhibits an O(Δt) imbalance. For the head-based form both
-  integrators show at-least first-order decay of M with Δt (BE ~
-  O(Δt), IM closer to O(Δt^{1.4}) on our data), with ImplicitMidpoint
-  delivering about an order of magnitude better conservation at each
-  Δt."
-- The existing figure (now `equation_type.pdf`) captures this story
-  directly — four curves, two slopes and one flat at tolerance.
+The current temporal figure uses 201² DQ1 from the laptop. The
+paper text quotes 301² DQ2. A Gadi run with the right mesh would be
+a small follow-up: bump `DEFAULT_NODES` and `DEFAULT_DEGREE` in
+`verification/tracy/run_temporal_2d.py`, run via `submit_gadi.sh`
+with a new `tracy_temporal_paper` case. Held back because the
+BE-only editorial decision already removed the higher-order curves
+that motivated the heavier mesh.
 
-**Temporal convergence setup.** The BC in `run_temporal_2d.py` is
-pinned at the Tracy *steady-state* value (time-independent), so the
-problem relaxes toward the steady state from the transient IC. This
-matches how g-adopt's own Tracy tests drive the solver and is fine as
-long as `t_offset + t_elapsed` is well inside the transient regime —
-which at these parameters (decay time ~7e5 s) it is. If the CrankNicolson
-integrator is replaced or debugged, regenerate the figure and verify
-the BackwardEuler/DIRK22 rates are unchanged.
+### P3. Tracy CrankNicolson temporal investigation
 
-The Vauclin convergence setup uses interpolation onto a common grid
-via `scipy.interpolate.griddata` instead of Firedrake's cross-mesh
-projection. This is cheaper and perfectly adequate for a convergence
-figure but should be documented in the caption (something like: "L² error
-computed on a regular 241×N grid after bilinear interpolation from each
-DQ mesh").
+`run_temporal_2d.py` includes CrankNicolson in `INTEGRATORS` and the
+post-PR-#226 Irksome path makes it converge cleanly (it used to
+flatline at 0.68 returning the IC). The data is in
+`results/temporal_2d.json` but the BE-only plotter doesn't show it.
+For the follow-up paper, the curve is publishable.
 
-§4 strong-scaling figure is cited in the paper but no submission phase
-exists in `parallel_scaling/submit_jobs.py`. Either add phase 8 above
-or remove the reference from the manuscript.
+---
 
-The legacy `tracy/` directory was superseded by `verification/tracy/`
-and has been removed. `tracy_3d.py` now lives in `verification/tracy/`.
+## 5. Reproducing every figure in this repo
 
-**Paper inconsistencies surfaced during the review.**
+Two halves: verification (laptop, ≤ 2 h) and scaling (Gadi-only
+data, plot locally).
 
-- `main.tex:333` says the Vauclin reference is 151×101, `main.tex:338`
-  (figure caption) says 121×81. Pick one and unify both. The Gadi
-  submission for item 4 should match the picked resolution.
-- `main.tex:272` says the temporal-convergence figure is DQ2 on 301².
-  Our local proxy is DQ1 on 201². The production figure is Gadi-only;
-  track as Gadi task 2 below. Don't ship the local PDF as the paper
-  figure without a caption note.
-- `main.tex:483` has `%\includegraphics{...memory_layers.pdf}`
-  commented out — intentional omission or forgotten figure? Decide.
-- Paper mentions "point-Jacobi (not shown)" at `main.tex:462`. If
-  there's data for this, consider including the curve as a dashed
-  "not scalable" reference; otherwise remove the aside.
-- Paper's §4 weak-scaling text asserts "approximately 40 million DOF
-  per node, 48 CPU cores" — our Sapphire Rapids runs use 104 CPU/node
-  (CLAUDE.md). The paper numbers target Cascade Lake. Reconcile in the
-  caption or redo on Cascade if it still exists at NCI.
-- Paper §4 describes "two GMG variants (solid purple: minimise
-  iterations; dotted purple: minimise wall-clock time)". The current
-  scaling submission picks one GMG depth per run. Either submit a
-  hierarchy-depth sweep and post-process to pick two curves per node
-  count, or change the narrative.
-- Paper §4 mentions "GMG-H" (horizontal-only coarsening) as the
-  preconditioner used. Verify `parallel_scaling/solvers/gmg.py` sets
-  the Firedrake mesh hierarchy to coarsen only in x,y.
-
-## Reproducing everything locally
+### Verification (laptop)
 
 ```bash
-source verification/env.sh
+source verification/env.sh   # Firedrake venv + PYTHONPATH
 
-# ~15 min + ~10 min
+# §3.1 Tracy
+python verification/tracy/run_solution.py
+python verification/tracy/plot_solution.py
+python verification/tracy/run_spatial_2d.py            # DG0 + DG1
+python verification/tracy/run_spatial_3d.py --max-nodes 51
+python verification/tracy/plot_spatial.py
+python verification/tracy/run_temporal_2d.py
+python verification/tracy/plot_temporal.py
+
+# §3.2 mass conservation
 python verification/mass_conservation/run_function_space.py
 python verification/mass_conservation/run_equation_type.py
 python verification/mass_conservation/plot_mass.py
 
-# ~10 min
-python verification/tracy/run_solution.py
-python verification/tracy/plot_solution.py
-
-# ~15 min
-python verification/tracy/run_spatial_2d.py
-python verification/tracy/plot_spatial.py
-
-# ~15 min (3 integrators × 4 dts)
-python verification/tracy/run_temporal_2d.py
-python verification/tracy/plot_temporal.py
-
-# ~15 min (nodes up to 51³)
-python verification/tracy/run_spatial_3d.py --max-nodes 51
-python verification/tracy/plot_spatial.py
-
-# ~15 min
+# §3.3 Vauclin
 python verification/vauclin/run_solution.py
 python verification/vauclin/plot_solution.py
-
-# ~60 min
 python verification/vauclin/run_convergence.py
+python verification/vauclin/plot_convergence.py
+
+# §3.4 Cockett snapshot
+python verification/cockett/run_solution.py
+python verification/cockett/plot_solution.py
+```
+
+Total ~2 h on an Apple M1-class laptop.
+
+### Gadi-only data (already on disk; rerun only if drivers change)
+
+```bash
+# Tracy DG2 + fine DG1 in 3D + Vauclin paper-spec
+qsub -v CASE=tracy_2d_dg2  verification/submit_gadi.sh
+qsub -v CASE=tracy_3d      verification/submit_gadi.sh
+qsub -v CASE=vauclin_paper verification/submit_gadi.sh
+
+# Strong scaling + hierarchy
+python parallel_scaling/submit_jobs.py --phase strong
+python parallel_scaling/submit_jobs.py --phase hierarchy
+```
+
+After the runs land on Gadi, rsync the JSONs / .out files back and
+regenerate:
+
+```bash
+rsync -av gadi:/scratch/xd2/sg8812/morrow2026/verification/{tracy,vauclin}/results/ \
+  ~/Workplace/morrow2026/verification/{tracy,vauclin}/results/
+rsync -av gadi:/scratch/xd2/sg8812/morrow2026/parallel_scaling/results/ \
+  ~/Workplace/morrow2026/parallel_scaling/results/
+python parallel_scaling/parse_results.py
+python parallel_scaling/plot_results.py
+python verification/tracy/plot_spatial.py
 python verification/vauclin/plot_convergence.py
 ```
 
-Total runtime for everything in this tree is about 2 hours on an Apple
-M1-class laptop.
+### Scaling figures from existing parsed JSON only
+
+```bash
+python parallel_scaling/plot_results.py
+```
+
+Emits per-panel PDFs into `figures/Cockett2018/` and
+`figures/Murrumbidgee/`, plus the consolidated diagnostic PNGs into
+`parallel_scaling/figures/` (gitignored).
+
+### Geographic figures
+
+```bash
+cd parallel_scaling
+python plot_murr_elevation.py
+python plot_murr_mesh.py
+python plot_murr_stratigraphy.py
+python plot_murr_icbc.py
+```
+
+No Firedrake needed — pure matplotlib + scipy.
+
+---
+
+## 6. Pointers
+
+| Where | What |
+|---|---|
+| `~/Workplace/papers/richards-morrow-2026/` | Paper draft (LaTeX, Copernicus). Update `main.tex` text per §2 above. |
+| `~/Workplace/g-adopt-worktrees/sghelichkhani/richardson/` | Richards solver source. Public API ships `direct`, `iterative`, `vlumping`, `vlumping_hmg` in `gadopt/richards_solver.py`. |
+| `~/Workplace/firedrake-2026-03-03/Irksome` (branch `sghelichkhani/conservative-update-non-sa`) | Time-stepping override used in §3.2 / §3.1 — relevant only for the parked items P1, P3. |
+| `~/Workplace/gwassess` (`g-adopt/gwassess`) | Analytical Tracy / Vauclin / Cockett solutions used by the verification drivers. |
+| Gadi: `/scratch/xd2/sg8812/morrow2026` | This repo's Gadi clone — production runs read CSVs from `parallel_scaling/murrumbidgee_data/`. |
+| Gadi: `/scratch/xd2/sg8812/g-adopt-worktrees/sghelichkhani/richardson` | Richardson g-adopt worktree on Gadi. Driver paths in `submit_jobs.py` reference `morrow2026/parallel_scaling/` (the version with the full solver inventory), **not** the pruned g-adopt copy. |
+
+---
+
+## Archive — pre-2026-05-15 history
+
+Earlier states of this list (Irksome PR #226 fold-in, restoration of
+the verification tree, the Murrumbidgee `--solver gamg` → `vlumping`
+default, etc.) are now reflected in the code. See `REPORT.md`
+(2026-05-13) and `REPORT-2.md` (2026-05-14) for the per-day
+walkthroughs.
