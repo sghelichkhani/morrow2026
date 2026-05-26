@@ -21,7 +21,7 @@ from pathlib import Path
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent.parent))
 
 from gadopt import (  # noqa: E402
-    Constant, DIRK22, ExtrudedMesh, Function, FunctionSpace, PETSc,
+    Constant, ImplicitMidpoint, ExtrudedMesh, Function, FunctionSpace, PETSc,
     RectangleMesh, RichardsSolver, SpatialCoordinate, VTKFile,
     VanGenuchtenCurve, exp, get_boundary_ids, log, sin, tanh,
 )
@@ -35,7 +35,7 @@ OUT.mkdir(parents=True, exist_ok=True)
 SNAPSHOT_TIMES_H = (0.0, 24.0, 48.0, 72.0)
 
 
-def model(nx: int = 20, ny: int = 20, nz: int = 26,
+def model(nx: int = 20, ny: int = 20, nz: int = 24,
           dt_value: float = 600.0):
     Lx, Ly, Lz = 2.0, 2.0, 2.6
 
@@ -93,8 +93,8 @@ def model(nx: int = 20, ny: int = 20, nz: int = 26,
     t_final = max(SNAPSHOT_TIMES_H) * 3600.0
     richards_solver = RichardsSolver(
         h, soil_curve, delta_t=dt,
-        timestepper=DIRK22, bcs=richards_bcs,
-        solver_parameters="direct",
+        timestepper=ImplicitMidpoint, bcs=richards_bcs,
+        #solver_parameters="direct",
     )
 
     snapshot_writer = VTKFile(str(OUT / "cockett_snapshots.pvd"))
@@ -130,9 +130,9 @@ def model(nx: int = 20, ny: int = 20, nz: int = 26,
 if __name__ == "__main__":
     import argparse
     p = argparse.ArgumentParser()
-    p.add_argument("--nx", type=int, default=20)
-    p.add_argument("--ny", type=int, default=20)
-    p.add_argument("--nz", type=int, default=26)
+    p.add_argument("--nx", type=int, default=80)
+    p.add_argument("--ny", type=int, default=80)
+    p.add_argument("--nz", type=int, default=104)
     p.add_argument("--dt", type=float, default=600.0)
     args = p.parse_args()
     model(nx=args.nx, ny=args.ny, nz=args.nz, dt_value=args.dt)
