@@ -18,7 +18,7 @@ import gwassess  # noqa: E402
 from gadopt import (  # noqa: E402
     BackwardEuler, ExponentialCurve, Function, FunctionSpace, RectangleMesh,
     RichardsSolver, SpatialCoordinate, VectorFunctionSpace, Constant,
-    as_vector, exp, get_boundary_ids, ln, pi, sin,
+    as_vector, exp, get_boundary_ids, ln, pi, sin, VTKFile, PETSc,
 )
 
 
@@ -32,6 +32,9 @@ SNAPSHOT_TIMES = (0.0, 5.0e4, 2.5e6)
 # t_offset > 0 (same convention as the g-adopt richards Tracy 2D test).
 T_OFFSET = 2000.0
 
+HERE = Path(__file__).parent
+OUT = HERE / "results"
+OUT.mkdir(parents=True, exist_ok=True)
 
 def model(nodes: int = 201, degree: int = 1,
           snapshot_times=SNAPSHOT_TIMES):
@@ -69,13 +72,15 @@ def model(nodes: int = 201, degree: int = 1,
         for xy in coords.dat.data
     ]
 
+    snapshot_writer = VTKFile(str(OUT / "tracy_solution.pvd"))
+
     xs = np.asarray(coords.dat.data[:, 0])
     ys = np.asarray(coords.dat.data[:, 1])
 
     targets = sorted(float(s) for s in snapshot_times)
     snapshots: list[dict] = []
-    if targets[0] <= 0.0:
-        snapshots.append({"t": 0.0, "h": np.asarray(h.dat.data).copy()})
+    if targets[0] == 0.0:
+        snapshot_writer.write(h, time=0.0)
         targets = targets[1:]
 
     dt = Constant(min(5e3, targets[0] / 4) if targets else 5e4)
@@ -83,23 +88,24 @@ def model(nodes: int = 201, degree: int = 1,
                             bcs=bcs, solver_parameters="direct",
                             quad_degree=3, interior_penalty=0.5)
 
-    t = 0.0
-    for target in targets:
-        # Step until ``t`` reaches ``target``; clamp the final step so
-        # the snapshot lands exactly on the requested time.
-        while t < target - 1e-9:
-            step_dt = min(float(dt), target - t)
-            dt.assign(step_dt)
-            solver.solve()
-            t += step_dt
-            # Grow ``dt`` between snapshots so the long t = 2.5e6 leg
-            # does not crawl.
-            dt.assign(min(float(dt) * 1.4, target / 6))
-        snapshots.append({"t": t, "h": np.asarray(h.dat.data).copy()})
-        # Reset ``dt`` for the next leg so the integrator does not
-        # overshoot at the start.
-        dt.assign(min(5e3, max(target / 20, 100.0)))
-        print(f"snapshot at t = {t:.3e} s captured")
+    time = 0.0
+    t_final = 2.6e6
+    step = 0
+    next_target = targets.pop(0) if targets else None
+    while time < t_final - 1e-9:
+        # Clamp the last step before each snapshot so we land exactly.
+        step_dt = float(dt)
+        if next_target is not None and time + step_dt > next_target:
+            step_dt = next_target - time
+        dt.assign(step_dt)
+        solver.solve()
+        time += step_dt
+        step += 1
+
+        if next_target is not None and abs(time - next_target) < 1e-6:
+            snapshot_writer.write(h, time=time)
+            PETSc.Sys.Print(f"snapshot at t = {time:.1f} s (step {step})")
+            next_target = targets.pop(0) if targets else None
 
     return dict(
         x=xs, y=ys, L=L,
@@ -115,12 +121,3 @@ if __name__ == "__main__":
     p.add_argument("--degree", type=int, default=1)
     args = p.parse_args()
     data = model(args.nodes, args.degree)
-
-    out = Path(__file__).parent / "results" / "solution_2d.npz"
-    out.parent.mkdir(parents=True, exist_ok=True)
-    times = np.array([s["t"] for s in data["snapshots"]])
-    hs = np.stack([s["h"] for s in data["snapshots"]], axis=0)
-    np.savez(out, x=data["x"], y=data["y"], L=data["L"],
-             times=times, h=hs,
-             nodes=data["nodes"], degree=data["degree"])
-    print(f"wrote {out}")
