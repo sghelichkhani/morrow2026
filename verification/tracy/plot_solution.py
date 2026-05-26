@@ -1,136 +1,222 @@
-"""Plot the Tracy 2D steady-state snapshot."""
-from __future__ import annotations
+"""3x3 snapshot panel of the Tracy 2D solution (the paper's solution figure).
+
+Reads the time-series VTK collection written by ``run_solution.py``
+(``results/solution.pvd`` + ``results/solution/*.vtu``) and builds a 3x3 figure:
+
+    rows    = fields   (moisture content / pressure head / hydraulic conductivity)
+    columns = the snapshot times stored in the PVD
+
+PyVista renders each field panel off-screen to an RGB image (it owns the
+unstructured-grid colouring); matplotlib then composes the grid, so we get the
+attached (gap-free) panels, Times typeface, rotated boxed row labels, and one
+vertical colour bar per row spanning the full row height. The colour scale is
+shared along each row, so the three times are directly comparable. The result
+is written straight to ``figures/Tracy/solution.pdf`` (the path the manuscript
+includes).
+
+Run from the Firedrake venv (pyvista lives there):
+
+    ~/Workplace/firedrake-2026-03-03/venv-firedrake/bin/python3 plot_solution.py
+"""
 
 import sys
-import xml.etree.ElementTree as ET
 from pathlib import Path
 
+import matplotlib
+
+matplotlib.use("Agg")
 import matplotlib.pyplot as plt
-from matplotlib.colors import ListedColormap
-import numpy as np
 import pyvista as pv
-
-font_size = 18
-colour_map = 'coolwarm'
-plt.rcParams.update({'font.size': font_size})
-plt.rcParams["font.family"] = "serif"
-plt.rcParams["font.serif"] = ["Times New Roman"]
-
+from matplotlib.cm import ScalarMappable
+from matplotlib.colors import LogNorm, Normalize
+from matplotlib.patches import FancyArrowPatch
 
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent.parent))
 from verification.common import FIGURE_ROOT  # noqa: E402
 
+# Times everywhere (text and math).
+plt.rcParams["font.family"] = "serif"
+plt.rcParams["font.serif"] = ["Times New Roman", "Times", "DejaVu Serif"]
+plt.rcParams["mathtext.fontset"] = "stix"
 
-HERE = Path(__file__).parent
-RESULTS = HERE / "results"
-OUT = FIGURE_ROOT / "Tracy"
-OUT.mkdir(parents=True, exist_ok=True)
+HERE = Path(__file__).resolve().parent
+PVD = HERE / "results" / "solution.pvd"
+OUT = FIGURE_ROOT / "Tracy" / "solution.pdf"
 
-pv.OFF_SCREEN = True
+SECONDS_PER_DAY = 86400.0
+PANEL_PX = 900  # off-screen render resolution per panel
+N_LEVELS = 10  # discrete colour bands (panels and colour bars)
+
+# (array name, row label, colour-bar label, colormap, log?) -- top to bottom.
+FIELDS = [
+    ("MoistureContent", "Moisture content  $\\theta$", r"$\theta$", "Blues", False),
+    ("PressureHead", "Pressure head  $\\psi$ [m]", r"$\psi$ [m]", "Reds", False),
+    ("HydraulicConductivity", "Hydraulic conductivity  $K$", r"$K$", "turbo_r", True),
+]
 
 
-def _pvd_datasets(pvd_path: Path):
-    """Yield (timestep, absolute_vtu_path) for each DataSet in a PVD."""
-    tree = ET.parse(pvd_path)
-    base = pvd_path.parent
-    for ds in tree.getroot().iter("DataSet"):
-        ts = float(ds.get("timestep"))
-        file_path = base / ds.get("file")
-        yield ts, file_path
+def load_snapshots(pvd_path):
+    """Return (times, meshes) for every timestep in the PVD collection."""
+    reader = pv.get_reader(str(pvd_path))
+    times = list(reader.time_values)
+    meshes = []
+    for t in times:
+        reader.set_active_time_value(t)
+        meshes.append(reader.read()[0])  # single block per timestep
+    return times, meshes
 
-def _render(mesh: pv.UnstructuredGrid, scalars: str, *,
-            cmap: str, clim: tuple, window_size=(10000, 10000)) -> np.ndarray:
-    """Render a 2D mesh flat field with visible physical axis bounds."""
-    plotter = pv.Plotter(off_screen=True, window_size=window_size)
-    
-    # Render raw, unshaded values uniformly
-    plotter.add_mesh(mesh, scalars=scalars, cmap=cmap, clim=clim,
-                     show_edges=False, show_scalar_bar=False,
-                     lighting=False)
-    
-    # Align view to the flat XY plane
+
+def row_clim(meshes, field):
+    """Shared colour limits for one field across all snapshots."""
+    lo = min(float(m.point_data[field].min()) for m in meshes)
+    hi = max(float(m.point_data[field].max()) for m in meshes)
+    return lo, hi
+
+
+def render_panel(mesh, field, cmap, clim, log=False, px=PANEL_PX):
+    """Render one field on one mesh to an RGB image array.
+
+    The mesh is deep-copied because the actor's mapper draws the dataset's
+    *active* scalars; sharing a mesh across fields would let one field bleed
+    into another panel. Lighting is off so the flat 2D field is not shaded.
+    """
+    panel = mesh.copy(deep=True)
+    plotter = pv.Plotter(off_screen=True, window_size=(px, px))
+    plotter.add_mesh(
+        panel,
+        scalars=field,
+        cmap=cmap,
+        clim=clim,
+        lighting=False,
+        show_scalar_bar=False,
+        show_edges=False,
+        log_scale=log,
+        n_colors=N_LEVELS,  # discrete bands instead of a smooth 256-colour ramp
+    )
     plotter.view_xy()
-    
-    plotter.show_bounds(
-            grid=False,                 # Keeps the background completely clear
-            location='outer',           # Positions ticks on the bottom and left outer edges
-            all_edges=False,            # Prevents wrapping labels onto the top/right edges
-            xtitle="X (m)",             # Explicitly sets your horizontal axis title
-            ytitle="Y (m)",             # Explicitly sets your vertical axis title
-            font_size=14,               # Increases text scale so it's sharp and readable
-            color='black'               # Enforces crisp black text
-        )
-    
-    # Recalculate camera bounds to encompass both the mesh and the new axis labels
-    plotter.reset_camera(render=False)
-    plotter.camera.zoom(1.5)
-    
-    # Pull the camera back slightly further to ensure the new axis titles don't get cut off
-    plotter.camera.zoom(0.90)
-    
-    img = plotter.screenshot(return_img=True)
+    plotter.camera.tight(padding=0.0)  # domain fills the frame, no margin
+    plotter.set_background("white")
+    img = plotter.screenshot(return_img=True, transparent_background=False)
     plotter.close()
     return img
 
 
 def main():
-    pvd_path = RESULTS / "tracy_solution.pvd"
-    if not pvd_path.exists():
-        print(f"missing {pvd_path} — run run_solution.py first")
-        return
+    OUT.parent.mkdir(parents=True, exist_ok=True)
+    times, meshes = load_snapshots(PVD)
+    ncols = len(meshes)
+    nrows = len(FIELDS)
 
-    entries = list(_pvd_datasets(pvd_path))
-    if not entries:
-        print("No datasets found in PVD file.")
-        return
-    
-    entries = list(_pvd_datasets(pvd_path))
-    if len(entries) < 3:
-        print(f"Expected at least 3 timesteps in PVD, found {len(entries)}.")
-        return
-    
-    indices = [0, len(entries) // 2, -1]
-    selected_entries = [entries[i] for i in indices]
+    days = [t / SECONDS_PER_DAY for t in times]
+    col_titles = [f"$t = {d:.3g}$ d" for d in days]
 
-    # Pre-load meshes to compute a unified global colour limit (clim)
-    loaded_meshes = []
-    field_name = "PressureHead"
+    # Square panels, attached. Reserve margins for the time strip on top,
+    # row labels on the left, and colour bars on the right.
+    left, right, top, bottom = 0.07, 0.88, 0.86, 0.02
+    pa_w, pa_h = right - left, top - bottom  # panel-area fractions
+    fig_w = 12.0
+    fig_h = fig_w * (pa_w / pa_h)  # makes each gridded cell square
+    fig, axes = plt.subplots(nrows, ncols, figsize=(fig_w, fig_h))
+    fig.subplots_adjust(
+        left=left, right=right, top=top, bottom=bottom, wspace=0.04, hspace=0.04
+    )
 
-    for ts, vtu_path in selected_entries:
-        mesh = pv.read(vtu_path)
-        loaded_meshes.append((ts, mesh))
+    for r, (field, row_label, bar_label, cmap, log) in enumerate(FIELDS):
+        clim = row_clim(meshes, field)
+        norm = (
+            LogNorm(vmin=clim[0], vmax=clim[1])
+            if log
+            else Normalize(vmin=clim[0], vmax=clim[1])
+        )
 
-    # Find global vmin and vmax across all selected times for a consistent scale
-    all_vals = np.concatenate([np.asarray(m[field_name]).ravel() for _, m in loaded_meshes])
-    global_clim = (float(np.nanmin(all_vals)), float(np.nanmax(all_vals)))
+        for c, mesh in enumerate(meshes):
+            ax = axes[r, c]
+            ax.imshow(render_panel(mesh, field, cmap, clim, log=log), aspect="auto")
+            ax.set_xticks([])
+            ax.set_yticks([])
 
-    # Render the 3 snapshots via PyVista using the shared scale
-    rendered_images = []
-    for ts, mesh in loaded_meshes:
-        img = _render(mesh, field_name, cmap=colour_map, clim=global_clim)
-        rendered_images.append((ts, img))
+            # Panel letter (A, B, C, ...) in a light-grey circle, top-left.
+            ax.text(
+                0.04,
+                0.96,
+                chr(ord("A") + r * ncols + c),
+                transform=ax.transAxes,
+                ha="center",
+                va="center",
+                fontsize=15,
+                zorder=5,
+                bbox=dict(
+                    boxstyle="circle,pad=0.3",
+                    facecolor="lightgrey",
+                    edgecolor="black",
+                ),
+            )
 
-    fig = plt.figure(figsize=(10, 4.5))
-    gs = fig.add_gridspec(1, 3, wspace=0.05, left=0.05, right=0.95, top=0.88, bottom=0.22)
+            if c == 0:
+                # Rotated, boxed row label outside the left edge.
+                ax.text(
+                    -0.12,
+                    0.5,
+                    row_label,
+                    transform=ax.transAxes,
+                    rotation=90,
+                    ha="center",
+                    va="center",
+                    fontsize=17,
+                    bbox=dict(
+                        boxstyle="round,pad=0.4",
+                        facecolor="lightyellow",
+                        edgecolor="black",
+                    ),
+                )
 
-    panel_labels = ["(a)", "(b)", "(c)"]
-    for i, (ts, img) in enumerate(rendered_images):
-        ax = fig.add_subplot(gs[0, i])
-        ax.imshow(img)
-        # Displaying the timestamp in hours (assuming ts is in seconds)
-        ax.set_title(f"{panel_labels[i]} $t = {ts:.0f}$ s", fontsize=18, pad=8)
-        ax.axis("off")
+        # One vertical colour bar per row. Slightly shorter than the row so the
+        # exponential offset factor (e.g. x10^-5) at the top stays visible.
+        p0 = axes[r, ncols - 1].get_position()  # rightmost panel, figure coords
+        cbar_h = 0.84 * p0.height
+        cax = fig.add_axes(
+            [p0.x1 + 0.015, p0.y0 + 0.5 * (p0.height - cbar_h), 0.017, cbar_h]
+        )
+        disc_cmap = plt.get_cmap(cmap, N_LEVELS)  # matching discrete bands
+        cbar = fig.colorbar(ScalarMappable(norm=norm, cmap=disc_cmap), cax=cax)
+        cbar.set_label(bar_label, rotation=90, fontsize=17, labelpad=10)
+        cbar.ax.tick_params(labelsize=12)
 
-    ax_cb = fig.add_axes([0.25, 0.15, 0.50, 0.04])
-    norm = plt.Normalize(vmin=global_clim[0], vmax=global_clim[1])
-    cbar = fig.colorbar(plt.cm.ScalarMappable(norm=norm, cmap=colour_map),
-                        cax=ax_cb, orientation="horizontal")
-    cbar.set_label("Pressure head $h$ (m)")
+    # Time strip across the top: a left-to-right arrow (the time axis) drawn
+    # first and low, so the light-blue time boxes sitting on the same line hide
+    # the segments behind them. The arrow ends just before the last box.
+    y_line = top + 0.025
+    centres = [0.5 * (axes[0, c].get_position().x0 + axes[0, c].get_position().x1)
+               for c in range(ncols)]
+    fig.add_artist(
+        FancyArrowPatch(
+            (centres[0], y_line),
+            (centres[-1] - 0.05, y_line),  # land just before the last box
+            transform=fig.transFigure,
+            arrowstyle="-|>",
+            mutation_scale=22,
+            lw=1.6,
+            color="black",
+            zorder=0.5,
+        )
+    )
+    for c in range(ncols):
+        fig.text(
+            centres[c],
+            y_line,
+            col_titles[c],
+            ha="center",
+            va="center",
+            fontsize=16,
+            zorder=5,
+            bbox=dict(
+                boxstyle="round,pad=0.4", facecolor="lightblue", edgecolor="black"
+            ),
+        )
 
-
-    out_pdf = OUT / "tracy_solution.pdf"
-    fig.savefig(out_pdf, dpi=200, bbox_inches=None)
-    print(f"wrote {out_pdf}")
+    fig.savefig(OUT, dpi=200, bbox_inches="tight", pad_inches=0.15)
+    plt.close(fig)
+    print(f"wrote {OUT}")
 
 
 if __name__ == "__main__":

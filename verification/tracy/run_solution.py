@@ -1,10 +1,13 @@
-"""Capture three pressure-head snapshots of Tracy's 2D benchmark.
+"""Write ParaView snapshots of Tracy's 2D benchmark toward steady state.
 
 Drives one Tracy 2D run from a near-IC analytical state to steady
-state, dumping the pressure-head field at three target wall-clock
-times (``t = 0, 5 x 10^4, 2.5 x 10^6 s``) into
-``results/solution_2d.npz``. The companion ``plot_solution.py``
-renders the three snapshots side by side for §3.1 Fig. 1.
+state and writes the solution at three target wall-clock times
+(``t = 0, 5 x 10^4, 2.5 x 10^6 s``) into ``results/solution.pvd`` as a
+VTK time series for ParaView. At each snapshot we output three fields:
+the pressure head ``h``, the moisture content ``theta(h)``, and the
+hydraulic conductivity ``K(h)``. The latter two are derived from the
+exponential soil curve and re-interpolated before every write, so the
+file shows directly how conductivity varies across the wetting front.
 """
 from __future__ import annotations
 
@@ -13,31 +16,28 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent.parent))
 
-import numpy as np  # noqa: E402
 import gwassess  # noqa: E402
 from gadopt import (  # noqa: E402
     BackwardEuler, ExponentialCurve, Function, FunctionSpace, RectangleMesh,
-    RichardsSolver, SpatialCoordinate, VectorFunctionSpace, Constant,
-    as_vector, exp, get_boundary_ids, ln, pi, sin, VTKFile, PETSc,
+    RichardsSolver, SpatialCoordinate, VectorFunctionSpace, VTKFile, Constant,
+    as_vector, exp, get_boundary_ids, ln, pi, sin,
 )
 
 
-# Times at which we want to record pressure-head snapshots, matching
-# the paper caption. The first snapshot is the IC (which is the Tracy
-# analytical at a small t_offset, indistinguishable from t = 0 within
-# colourbar resolution); the last is effectively at steady state.
+# Times at which we want to record snapshots, matching the paper
+# caption. The first snapshot is the IC (which is the Tracy analytical
+# at a small t_offset, indistinguishable from t = 0 within colourbar
+# resolution); the last is effectively at steady state.
 SNAPSHOT_TIMES = (0.0, 5.0e4, 2.5e6)
 
 # The Tracy analytical is singular at t = 0, so the IC is set from
 # t_offset > 0 (same convention as the g-adopt richards Tracy 2D test).
 T_OFFSET = 2000.0
 
-HERE = Path(__file__).parent
-OUT = HERE / "results"
-OUT.mkdir(parents=True, exist_ok=True)
 
 def model(nodes: int = 201, degree: int = 1,
-          snapshot_times=SNAPSHOT_TIMES):
+          snapshot_times=SNAPSHOT_TIMES,
+          output: str = "results/solution.pvd"):
     L = 15.24
     alpha = 0.25
     hr = -L
@@ -72,15 +72,26 @@ def model(nodes: int = 201, degree: int = 1,
         for xy in coords.dat.data
     ]
 
-    snapshot_writer = VTKFile(str(OUT / "tracy_solution.pvd"))
+    # Derived fields for visualisation. These are re-interpolated from
+    # the soil curve before each write so ParaView shows how theta and
+    # K track the pressure head as the front advances.
+    theta = Function(V, name="MoistureContent")
+    K = Function(V, name="HydraulicConductivity")
 
-    xs = np.asarray(coords.dat.data[:, 0])
-    ys = np.asarray(coords.dat.data[:, 1])
+    out_path = Path(output)
+    if not out_path.is_absolute():
+        out_path = Path(__file__).parent / out_path
+    out_path.parent.mkdir(parents=True, exist_ok=True)
+    vtk = VTKFile(str(out_path))
+
+    def dump(t):
+        theta.interpolate(soil.moisture_content(h))
+        K.interpolate(soil.hydraulic_conductivity(h))
+        vtk.write(h, theta, K, time=t)
 
     targets = sorted(float(s) for s in snapshot_times)
-    snapshots: list[dict] = []
-    if targets[0] == 0.0:
-        snapshot_writer.write(h, time=0.0)
+    if targets and targets[0] <= 0.0:
+        dump(0.0)
         targets = targets[1:]
 
     dt = Constant(min(5e3, targets[0] / 4) if targets else 5e4)
@@ -88,30 +99,25 @@ def model(nodes: int = 201, degree: int = 1,
                             bcs=bcs, solver_parameters="direct",
                             quad_degree=3, interior_penalty=0.5)
 
-    time = 0.0
-    t_final = 2.6e6
-    step = 0
-    next_target = targets.pop(0) if targets else None
-    while time < t_final - 1e-9:
-        # Clamp the last step before each snapshot so we land exactly.
-        step_dt = float(dt)
-        if next_target is not None and time + step_dt > next_target:
-            step_dt = next_target - time
-        dt.assign(step_dt)
-        solver.solve()
-        time += step_dt
-        step += 1
+    t = 0.0
+    for target in targets:
+        # Step until ``t`` reaches ``target``; clamp the final step so
+        # the snapshot lands exactly on the requested time.
+        while t < target - 1e-9:
+            step_dt = min(float(dt), target - t)
+            dt.assign(step_dt)
+            solver.solve()
+            t += step_dt
+            # Grow ``dt`` between snapshots so the long t = 2.5e6 leg
+            # does not crawl.
+            dt.assign(min(float(dt) * 1.4, target / 6))
+        dump(t)
+        # Reset ``dt`` for the next leg so the integrator does not
+        # overshoot at the start.
+        dt.assign(min(5e3, max(target / 20, 100.0)))
+        print(f"snapshot at t = {t:.3e} s written")
 
-        if next_target is not None and abs(time - next_target) < 1e-6:
-            snapshot_writer.write(h, time=time)
-            PETSc.Sys.Print(f"snapshot at t = {time:.1f} s (step {step})")
-            next_target = targets.pop(0) if targets else None
-
-    return dict(
-        x=xs, y=ys, L=L,
-        snapshots=snapshots,
-        nodes=nodes, degree=degree,
-    )
+    return str(out_path)
 
 
 if __name__ == "__main__":
@@ -119,5 +125,7 @@ if __name__ == "__main__":
     p = argparse.ArgumentParser()
     p.add_argument("--nodes", type=int, default=201)
     p.add_argument("--degree", type=int, default=1)
+    p.add_argument("--output", default="results/solution.pvd")
     args = p.parse_args()
-    data = model(args.nodes, args.degree)
+    out = model(args.nodes, args.degree, output=args.output)
+    print(f"wrote {out}")
