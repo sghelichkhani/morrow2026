@@ -1,10 +1,9 @@
-"""Plot Tracy 2D and 3D spatial convergence.
+"""Plot Tracy 2D and 3D spatial convergence side-by-side.
 
-Reads `results/spatial_2d.json` and (optionally) `results/spatial_3d.json`
-and produces the figures referenced from §3.1 of the manuscript:
+Reads `results/spatial_2d.json` and `results/spatial_3d.json` and produces
+a single two-panel figure for §3.1 of the manuscript:
 
-- ../../figures/Tracy/2d_spatial_error.pdf
-- ../../figures/Tracy/3d_spatial_congergence.pdf   (spelling matches paper)
+- ../../figures/Tracy/spatial_congergence.pdf   (spelling matches paper)
 """
 from __future__ import annotations
 
@@ -13,6 +12,8 @@ from pathlib import Path
 
 import matplotlib.pyplot as plt
 import numpy as np
+from matplotlib.lines import Line2D
+from matplotlib.ticker import FixedLocator, ScalarFormatter
 
 plt.rcParams.update({'font.size': 18})
 plt.rcParams["font.family"] = "serif"
@@ -39,14 +40,12 @@ def _convergence(xs: np.ndarray, ys: np.ndarray) -> float:
     return float(slope)
 
 
-def plot_2d():
-    path = RESULTS / "spatial_2d.json"
-    if not path.exists():
-        print(f"skip 2D: missing {path}")
-        return
-    data = load_json(path)["cases"]
+def _plot_panel(ax, json_path, ref_xrange, tag, title):
+    if not json_path.exists():
+        print(f"skip {json_path.name}: missing")
+        return False
+    data = load_json(json_path)["cases"]
 
-    fig, ax = plt.subplots(figsize=(6, 5))
     for name, case in data.items():
         levels = [e for e in case["levels"] if "l2error_h" in e]
         if not levels:
@@ -55,64 +54,59 @@ def plot_2d():
         err = np.array([e["l2error_h"] / e["l2anal_h"] for e in levels])
         p = case["degree"]
         rate = _convergence(dxs, err)
-        ax.loglog(dxs, err, "o-", label=f"DQ{p} (fitted rate {rate:.2f})")
+        line, = ax.loglog(dxs, err, "o-", label=f"DQ{p}")
 
         x_ref = dxs[-1]
         y_ref = err[-1]
-        x = np.array([2e-2, 6e-1])
-        y = y_ref * (x / x_ref)**(p+1)
+        x = np.array(ref_xrange)
+        y = y_ref * (x / x_ref) ** (p + 1)
+        ax.loglog(x, y, "k--", alpha=0.5)
 
-        ax.loglog(x, y, 'k--', alpha=0.5)
-
-    ax.set_xlabel(r"$\Delta x$ (m)")
-    ax.set_ylabel(r"Relative $L^2$ error in $h$")
-    #ax.set_title("Tracy (2006) 2D spatial convergence")
-    fig.text(0.025, 0.95, '(a)', ha='left', va='top', fontsize=22)
-    ax.grid(True, which="both", alpha=0.0)
-    ax.legend(fontsize=12)
-    fig.tight_layout()
-    out = OUT / "2d_spatial_congergence.pdf"
-    fig.savefig(out, bbox_inches="tight")
-    print(f"wrote {out}")
-
-
-def plot_3d():
-    path = RESULTS / "spatial_3d.json"
-    if not path.exists():
-        print(f"skip 3D: missing {path}")
-        return
-    data = load_json(path)["cases"]
-
-    fig, ax = plt.subplots(figsize=(6, 5))
-    for name, case in data.items():
-        levels = [e for e in case["levels"] if "l2error_h" in e]
-        if not levels:
-            continue
-        dxs = np.array([e["dx"] for e in levels])
-        err = np.array([e["l2error_h"] / e["l2anal_h"] for e in levels])
-        p = case["degree"]
-        rate = _convergence(dxs, err)
-        ax.loglog(dxs, err, "o-", label=f"DQ{p} (fitted rate {rate:.2f})")
-
-        x_ref = dxs[-1]
-        y_ref = err[-1]
-        x = np.array([0.0435, 6e-1])
-        y = y_ref * (x / x_ref)**(p+1)
-
-        ax.loglog(x, y, 'k--', alpha=0.5)
+        # Annotate the fitted rate on top of the last interval (between
+        # the two finest meshes, where the slope is measured).
+        x_mid = np.sqrt(dxs[-1] * dxs[-2])
+        y_mid = np.sqrt(err[-1] * err[-2])
+        ax.annotate(f"{rate:.2f}", xy=(x_mid, y_mid),
+                    xytext=(0, 6), textcoords="offset points",
+                    ha="center", va="bottom", fontsize=19,
+                    color=line.get_color())
 
     ax.set_xlabel(r"$\Delta x$ (m)")
-    ax.set_ylabel(r"Relative $L^2$ error in $h$")
-    #ax.set_title("Tracy (2006) 3D spatial convergence")
-    fig.text(0.025, 0.95, '(b)', ha='left', va='top', fontsize=22)
-    ax.grid(True, which="both", alpha=0.0)
-    ax.legend(fontsize=12)
+    ax.set_title(title, fontsize=15, pad=18,
+                 bbox=dict(boxstyle="round,pad=0.3",
+                 facecolor="lightyellow", edgecolor="black"))
+    # Add 5e-2 and 5e-1 as labelled ticks alongside the decade marks.
+    ax.xaxis.set_major_locator(FixedLocator([1e-2, 5e-2, 1e-1, 5e-1]))
+    ax.xaxis.set_major_formatter(ScalarFormatter())
+    ax.grid(True, which="both", alpha=0.3)
+    ax.text(0.08, 0.92, tag, transform=ax.transAxes,
+            ha="center", va="center", fontsize=20, color="black",
+            bbox=dict(boxstyle="circle,pad=0.2", facecolor="lightgray",
+                      edgecolor="black"))
+    return True
+
+
+def plot_combined():
+    fig, axes = plt.subplots(1, 2, figsize=(12, 5), sharey=True)
+    _plot_panel(axes[0], RESULTS / "spatial_2d.json",
+                ref_xrange=(2e-2, 6e-1), tag="A", title="2D")
+    _plot_panel(axes[1], RESULTS / "spatial_3d.json",
+                ref_xrange=(4.35e-2, 6e-1), tag="B", title="3D")
+    axes[0].set_ylabel(r"Relative $L^2$ error in $h$")
+    handles, labels = axes[0].get_legend_handles_labels()
+    # Single proxy entry for the dashed theoretical-rate reference lines.
+    handles.append(Line2D([], [], color="black", linestyle="--", alpha=0.5))
+    labels.append("theory")
+    leg = fig.legend(handles, labels, loc="upper center", ncol=2,
+                     fontsize=14, bbox_to_anchor=(0.535, 1.06),
+                     framealpha=1.0, edgecolor="black")
+    leg.get_frame().set_facecolor("white")
     fig.tight_layout()
-    out = OUT / "3d_spatial_congergence.pdf"
+    fig.subplots_adjust(wspace=0.02, top=0.9)
+    out = OUT / "spatial_congergence.pdf"
     fig.savefig(out, bbox_inches="tight")
     print(f"wrote {out}")
 
 
 if __name__ == "__main__":
-    plot_2d()
-    plot_3d()
+    plot_combined()

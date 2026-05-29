@@ -50,7 +50,7 @@ N_LEVELS = 10  # discrete colour bands (panels and colour bars)
 # (array name, row label, colour-bar label, colormap, log?) -- top to bottom.
 FIELDS = [
     ("MoistureContent", "Moisture content  $\\theta$", r"$\theta$", "Blues", False),
-    ("PressureHead", "Pressure head  $\\psi$ [m]", r"$\psi$ [m]", "Reds", False),
+    ("PressureHead", "Pressure head  $h$ [m]", r"$h$ [m]", "Reds", False),
     ("HydraulicConductivity", "Hydraulic conductivity  $K$", r"$K$", "turbo_r", True),
 ]
 

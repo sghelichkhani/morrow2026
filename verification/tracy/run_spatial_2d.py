@@ -60,7 +60,7 @@ def run(max_level: int | None = None,
                 PETSc.Sys.Print(f"[{name}] nodes={nodes} dq{degree} FAILED: {exc!r} "
                      f"wall={wall:.1f}s")
                 entries.append({
-                    "nodes": nodes, "dx": 15.24 / (nodes+1),
+                    "nodes": nodes, "dx": 15.24 / nodes,
                     "error": repr(exc), "wall_seconds": wall,
                 })
                 if output is not None:
@@ -68,7 +68,7 @@ def run(max_level: int | None = None,
                 continue
             wall = time.time() - t0
             entries.append({
-                "nodes": nodes, "dx": 15.24 / (nodes+1),
+                "nodes": nodes, "dx": 15.24 / nodes,
                 "l2error_h": float(l2err_h),
                 "l2anal_h": float(l2anal_h),
                 "wall_seconds": wall,
