@@ -1,28 +1,32 @@
 #!/bin/bash
-# Cockett 3D box — high-resolution DQ2 run that writes VTK for rendering.
+# Cockett 3D box — high-resolution movie of the infiltration front.
 #
 # Same footprint as the `large` scaling case (8 normalsr nodes, 832 CPUs,
-# 4 TB RAM): 240 x 240 x 312 mesh, but degree 2 instead of 1, so this is
-# ~485M DOF. Output is the four moisture snapshots (CG2) plus the DQ0 soil
-# indicator, written to scratch for download/rendering.
+# 4 TB RAM): 240 x 240 x 312, degree 1 (~144M DOF). This is the exact
+# mesh+solver+degree of the frozen `large` scaling point, where vlumping
+# runs at ~17.5 s/step, so 108 steps finishes in ~35 min.
+#
+# Degree 1 (not 2): DQ2 at this resolution costs ~330 linear iterations
+# and ~14 min/step -- vlumping's vertical lumping is only mesh-independent
+# at degree 1, and it degrades badly at degree 2. For a full-domain movie
+# (screen resolution) the high-order CG2 buys nothing, so we render at DQ1
+# -> CG1. Keep DQ2 only for a static zoomed still if ever needed.
 #
 # Solver: vlumping_inexact -- the g-adopt auto-default for extruded
-# Cartesian meshes and the production preset. Its cheap two-level coarse
-# solve means far fewer iterations than bjacobi (the scaling study shows
-# ~17-33 vs hundreds), which is what makes this run finish in walltime.
-# Timestep is loosened to 2400 s (108 steps to 72 h) -- this is a
-# visualisation, so the 600 s resolution of the scaling runs is overkill.
+# Cartesian meshes, mesh-independent at DQ1 (~20 iters vs hundreds for
+# bjacobi). Timestep loosened to 2400 s (108 steps to 72 h); for a
+# visualisation the 600 s scaling resolution is overkill.
 #
 # Output: moisture content only, one field per frame, every 6 steps (a
-# frame every 4 h sim time = ~19 frames). theta-only keeps each CG2 frame
-# at ~4.5 GB, so the whole movie is ~85 GB rather than ~1.4 TB.
+# frame every 4 h sim time = ~19 frames). At DQ1->CG1 each frame is
+# ~200 MB, so the whole movie is a few GB.
 #
 # Submit with:  module load git && qsub submit_cockett_visualise.pbs
 #
 #PBS -N rs-cock-vis
 #PBS -P xd2
 #PBS -q normalsr
-#PBS -l walltime=06:00:00
+#PBS -l walltime=02:00:00
 #PBS -l mem=4000GB
 #PBS -l ncpus=832
 #PBS -l jobfs=400GB
@@ -49,17 +53,17 @@ mkdir -p $OUTPUT_DIR
 cd $SCALING_DIR
 
 echo "=== Job info ==="
-echo "Case: cockett (visualisation, DQ2)"
-echo "Mesh: 240x240x312, degree 2"
+echo "Case: cockett (visualisation movie, DQ1)"
+echo "Mesh: 240x240x312, degree 1"
 echo "Nodes: 8  CPUs: 832"
 echo "Solver: vlumping_inexact"
 echo "dt: 2400 s (108 steps to 72 h)"
-echo "Output: theta only, every 6 steps (~19 frames)"
+echo "Output: theta only (CG1), every 6 steps (~19 frames)"
 echo "Date: $(date)"
 echo "================"
 
 mpiexec -np $PBS_NCPUS python $SCALING_DIR/cockett_visualise.py \
-    --nx 240 --nz 312 --degree 2 --dt 2400 --solver vlumping_inexact \
+    --nx 240 --nz 312 --degree 1 --dt 2400 --solver vlumping_inexact \
     --output-every 6 --output-dir $OUTPUT_DIR 2>&1
 
 echo "=== Job completed: $(date) ==="
