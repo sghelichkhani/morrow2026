@@ -6,11 +6,12 @@
 # ~485M DOF. Output is the four moisture snapshots (CG2) plus the DQ0 soil
 # indicator, written to scratch for download/rendering.
 #
-# Solver: bjacobi. Its ILU(0) blocks make no assumptions about the DG
-# polynomial degree, so it's the safest choice at the untested DQ2. If it
-# stalls (bjacobi iteration counts grow with refinement and may exceed the
-# preset's ksp_max_it=500), switch --solver to vlumping_inexact, the
-# mesh-independent production preset.
+# Solver: vlumping_inexact -- the g-adopt auto-default for extruded
+# Cartesian meshes and the production preset. Its cheap two-level coarse
+# solve means far fewer iterations than bjacobi (the scaling study shows
+# ~17-33 vs hundreds), which is what makes this run finish in walltime.
+# Timestep is loosened to 2400 s (108 steps to 72 h) -- this is a
+# visualisation, so the 600 s resolution of the scaling runs is overkill.
 #
 # Submit with:  module load git && qsub submit_cockett_visualise.pbs
 #
@@ -47,12 +48,13 @@ echo "=== Job info ==="
 echo "Case: cockett (visualisation, DQ2)"
 echo "Mesh: 240x240x312, degree 2"
 echo "Nodes: 8  CPUs: 832"
-echo "Solver: bjacobi"
+echo "Solver: vlumping_inexact"
+echo "dt: 2400 s (108 steps to 72 h)"
 echo "Date: $(date)"
 echo "================"
 
 mpiexec -np $PBS_NCPUS python $SCALING_DIR/cockett_visualise.py \
-    --nx 240 --nz 312 --degree 2 --dt 600 --solver bjacobi \
+    --nx 240 --nz 312 --degree 2 --dt 2400 --solver vlumping_inexact \
     --output-dir $OUTPUT_DIR 2>&1
 
 echo "=== Job completed: $(date) ==="

@@ -24,7 +24,7 @@ indicator on CG2 would ring).
 
 Usage (Gadi, 8 nodes — see submit_cockett_visualise.pbs):
     mpiexec -np $PBS_NCPUS python cockett_visualise.py \
-        --nx 240 --nz 312 --degree 2 --solver bjacobi \
+        --nx 240 --nz 312 --degree 2 --solver vlumping_inexact --dt 2400 \
         --output-dir /scratch/xd2/sg8812/morrow2026/parallel_scaling/results/cockett_hires
 
 Laptop smoke test (serial, tiny mesh, direct solve):
@@ -47,13 +47,16 @@ if __name__ == "__main__":
                         help="vertical layers (large scaling mesh: 312)")
     parser.add_argument("--degree", type=int, default=2,
                         help="DQ polynomial degree of the solve space")
-    parser.add_argument("--dt", type=float, default=600.0,
-                        help="time step in seconds")
-    parser.add_argument("--solver", type=str, default="bjacobi",
-                        help="solver preset from solvers/ (bjacobi is the "
-                             "degree-agnostic safe choice; vlumping_inexact "
-                             "is the mesh-independent production preset), or "
-                             "'direct' for tiny laptop meshes")
+    parser.add_argument("--dt", type=float, default=2400.0,
+                        help="time step in seconds (2400 s = 108 steps to 72 h; "
+                             "this is a visualisation, so we don't need the 600 s "
+                             "resolution the scaling runs used)")
+    parser.add_argument("--solver", type=str, default="vlumping_inexact",
+                        help="solver preset from solvers/. vlumping_inexact is "
+                             "the mesh-independent production preset and the "
+                             "g-adopt auto-default for extruded Cartesian meshes "
+                             "(cheap coarse solve, far fewer iterations than "
+                             "bjacobi); 'direct' for tiny laptop meshes")
     parser.add_argument("--output-dir", type=str, default="results/cockett_hires",
                         help="directory for the PVD / VTU output")
     _ARGS = parser.parse_args()
@@ -72,8 +75,8 @@ from gadopt import (
 SNAPSHOT_TIMES_H = (0.0, 24.0, 48.0, 72.0)
 
 
-def model(nx=240, nz=312, degree=2, dt_value=600.0,
-          solver="bjacobi", output_dir="results/cockett_hires"):
+def model(nx=240, nz=312, degree=2, dt_value=2400.0,
+          solver="vlumping_inexact", output_dir="results/cockett_hires"):
     Lx, Ly, Lz = 2.0, 2.0, 2.6
 
     mesh2d = RectangleMesh(nx, nx, Lx, Ly, quadrilateral=True)
