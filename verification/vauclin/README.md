@@ -10,8 +10,8 @@ Two figures live here:
 
 | Script | |
 |---|---|
-| `run_solution.py` | one medium-resolution run that saves `h`, `θ`, `q` at the requested snapshot times into `results/solution.npz` |
-| `plot_solution.py` | produces `solution.pdf` from `results/solution.npz` |
+| `run_solution.py` | one medium-resolution run that writes `h`, `θ`, `q` at the requested snapshot times into `results/solution.pvd` (+ `results/solution/*.vtu`) as a ParaView time series |
+| `plot_solution.py` | produces `solution.pdf` from `results/solution.pvd` — PyVista renders each moisture-content panel off-screen and integrates the flux streamlines natively (Tracy-style composition); run it from the Firedrake venv since it needs `pyvista` |
 | `run_convergence.py` | computes a reference solution (p=2, 121×81) and error for `p ∈ {0, 1}` at coarser meshes |
 | `plot_convergence.py` | produces `convergence_rate.pdf` from `results/convergence.json` |
 | `vauclin_2d.py` | driver (copied from `richardson/tests/richards/vauclin_2d.py`, patched to expose snapshots + custom mesh) |

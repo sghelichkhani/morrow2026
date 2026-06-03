@@ -18,7 +18,7 @@ from typing import Iterable
 import numpy as np
 import gwassess
 from gadopt import (
-    Constant, DIRK22, Function, FunctionSpace, HaverkampCurve, Measure,
+    BackwardEuler, Constant, Function, FunctionSpace, HaverkampCurve, Measure,
     RectangleMesh, RichardsSolver, SpatialCoordinate, VectorFunctionSpace,
     FacetNormal, VTKFile, as_vector, assemble, dot, dx, get_boundary_ids,
     grad, tanh,
@@ -40,7 +40,8 @@ def run(nodes_x: int, nodes_y: int, degree: int = 2,
         t_final: float | None = None,
         snapshot_times: Iterable[float] = (),
         dt_value: float = 10.0,
-        write_pvd: bool = False) -> dict:
+        write_pvd: bool = False,
+        pvd_path: str = "results/vauclin_snapshots.pvd") -> dict:
     """Run the Vauclin 2D benchmark.
 
     Returns a dict with ``snapshots`` (list of Snapshot instances
@@ -93,7 +94,7 @@ def run(nodes_x: int, nodes_y: int, degree: int = 2,
 
     dt = Constant(dt_value)
     solver = RichardsSolver(
-        h, soil, delta_t=dt, timestepper=DIRK22, bcs=bcs,
+        h, soil, delta_t=dt, timestepper=BackwardEuler, bcs=bcs,
         solver_parameters="direct", quad_degree=5,
     )
 
@@ -105,7 +106,7 @@ def run(nodes_x: int, nodes_y: int, degree: int = 2,
     xs = np.asarray(coords.dat.data[:, 0])
     ys = np.asarray(coords.dat.data[:, 1])
 
-    pvd = VTKFile("results/vauclin_snapshots.pvd") if write_pvd else None
+    pvd = VTKFile(str(pvd_path)) if write_pvd else None
     initial_mass = assemble(theta * dx_mesh)
 
     snapshots: list[Snapshot] = []
