@@ -3,7 +3,7 @@
 Reads `results/spatial_2d.json` and `results/spatial_3d.json` and produces
 a single two-panel figure for §3.1 of the manuscript:
 
-- ../../figures/Tracy/spatial_congergence.pdf   (spelling matches paper)
+- ../../figures/Tracy/spatial_convergence.pdf   (spelling matches paper)
 """
 from __future__ import annotations
 
@@ -103,7 +103,7 @@ def plot_combined():
     leg.get_frame().set_facecolor("white")
     fig.tight_layout()
     fig.subplots_adjust(wspace=0.02, top=0.9)
-    out = OUT / "spatial_congergence.pdf"
+    out = OUT / "spatial_convergence.pdf"
     fig.savefig(out, bbox_inches="tight")
     print(f"wrote {out}")
 

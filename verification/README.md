@@ -20,7 +20,7 @@ Gadi. This directory holds what can be run on a laptop or workstation.
 
 | Paper | Directory | Figures produced |
 |---|---|---|
-| §3.1 Tracy | `tracy/` | `solution.pdf`, `2d_spatial_error.pdf`, `3d_spatial_congergence.pdf`, `2d_temporal_congergence.pdf` |
+| §3.1 Tracy | `tracy/` | `solution.pdf`, `2d_spatial_error.pdf`, `3d_spatial_convergence.pdf`, `2d_temporal_congergence.pdf` |
 | §3.2 Mass conservation | `mass_conservation/` | `mass_conservation.pdf` |
 | §3.3 Vauclin | `vauclin/` | `solution.pdf`, `convergence_rate.pdf` |
 

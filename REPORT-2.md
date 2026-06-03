@@ -59,7 +59,7 @@ embed, ~100 KB) and `figures/Tracy/solution.png`.
 - DG1 in 3D reproduces the pre-stopper data to four digits — the
   iterative-preset / maxchange-stopper changes from yesterday's commit
   did not move the convergence numbers, as expected.
-- Figures `2d_spatial_error.pdf` and `3d_spatial_congergence.pdf`
+- Figures `2d_spatial_error.pdf` and `3d_spatial_convergence.pdf`
   regenerated. The Gadi-only DG2 sweep + 3D fine meshes remain
   on `to-do-list.md`.
 
@@ -157,7 +157,7 @@ verification/cockett/run_solution.py                        new
 verification/cockett/plot_solution.py                       new
 parallel_scaling/_murr_common.py                            new
 parallel_scaling/plot_murr_{elevation,mesh,stratigraphy,icbc}.py  new
-figures/Tracy/{solution,2d_spatial_error,2d_temporal_congergence,3d_spatial_congergence}.pdf  regenerated
+figures/Tracy/{solution,2d_spatial_error,2d_temporal_congergence,3d_spatial_convergence}.pdf  regenerated
 figures/Tracy/solution.png                                  new
 figures/MassConservation/{function_space,equation_type}.pdf  regenerated
 figures/Cockett2018/cockett_2018.{pdf,png}                  new
