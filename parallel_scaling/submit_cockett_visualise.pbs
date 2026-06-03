@@ -1,25 +1,24 @@
 #!/bin/bash
-# Cockett 3D box — high-resolution movie of the infiltration front.
+# Cockett 3D box — infiltration-front movie (sweep scale, DQ1, BoomerAMG).
 #
-# Same footprint as the `large` scaling case (8 normalsr nodes, 832 CPUs,
-# 4 TB RAM): 240 x 240 x 312, degree 1 (~144M DOF). This is the exact
-# mesh+solver+degree of the frozen `large` scaling point, where vlumping
-# runs at ~17.5 s/step, so 108 steps finishes in ~35 min.
+# Mesh 120 x 120 x 156 (~18M DOF, DQ1) on 1 normalsr node (104 CPUs,
+# 500 GB) — the `sweep` scaling scale. This is the cost-vs-resolution
+# compromise for the movie: full DQ2 at 240^3 costs ~14 min/step, and even
+# DQ1 at 240^3 is ~4.5 h of compute, whereas 120^3 finishes comfortably
+# inside a couple of hours while still being plenty detailed for a
+# full-domain animation.
 #
-# Degree 1 (not 2): DQ2 at this resolution costs ~330 linear iterations
-# and ~14 min/step -- vlumping's vertical lumping is only mesh-independent
-# at degree 1, and it degrades badly at degree 2. For a full-domain movie
-# (screen resolution) the high-order CG2 buys nothing, so we render at DQ1
-# -> CG1. Keep DQ2 only for a static zoomed still if ever needed.
+# Solver: boomeramg. The scaling study shows BoomerAMG is the most
+# mesh-independent Cockett preconditioner (late-step ~21-23 iterations at
+# every scale) and its per-step solve actually beat vlumping at large; its
+# only drawback was a ~210 s one-time AMG setup, which amortises to nothing
+# over a 108-step movie. vlumping's vertical lumping is tuned to the
+# mass-dominated small-dt regime and degrades badly at the large dt used
+# here, so BoomerAMG is the better fit for this operating point.
 #
-# Solver: vlumping_inexact -- the g-adopt auto-default for extruded
-# Cartesian meshes, mesh-independent at DQ1 (~20 iters vs hundreds for
-# bjacobi). Timestep loosened to 2400 s (108 steps to 72 h); for a
-# visualisation the 600 s scaling resolution is overkill.
-#
-# Output: moisture content only, one field per frame, every 6 steps (a
-# frame every 4 h sim time = ~19 frames). At DQ1->CG1 each frame is
-# ~200 MB, so the whole movie is a few GB.
+# Timestep 2400 s (108 steps to 72 h). Output: moisture content only, CG1,
+# every 6 steps (a frame every 4 h sim time = ~19 frames, ~hundreds of MB
+# total at this resolution).
 #
 # Submit with:  module load git && qsub submit_cockett_visualise.pbs
 #
@@ -27,9 +26,9 @@
 #PBS -P xd2
 #PBS -q normalsr
 #PBS -l walltime=02:00:00
-#PBS -l mem=4000GB
-#PBS -l ncpus=832
-#PBS -l jobfs=400GB
+#PBS -l mem=500GB
+#PBS -l ncpus=104
+#PBS -l jobfs=100GB
 #PBS -l storage=scratch/xd2+gdata/xd2+gdata/fp50
 #PBS -l wd
 #PBS -W umask=0022
@@ -54,16 +53,16 @@ cd $SCALING_DIR
 
 echo "=== Job info ==="
 echo "Case: cockett (visualisation movie, DQ1)"
-echo "Mesh: 240x240x312, degree 1"
-echo "Nodes: 8  CPUs: 832"
-echo "Solver: vlumping_inexact"
+echo "Mesh: 120x120x156, degree 1 (~18M DOF)"
+echo "Nodes: 1  CPUs: 104"
+echo "Solver: boomeramg"
 echo "dt: 2400 s (108 steps to 72 h)"
 echo "Output: theta only (CG1), every 6 steps (~19 frames)"
 echo "Date: $(date)"
 echo "================"
 
 mpiexec -np $PBS_NCPUS python $SCALING_DIR/cockett_visualise.py \
-    --nx 240 --nz 312 --degree 1 --dt 2400 --solver vlumping_inexact \
+    --nx 120 --nz 156 --degree 1 --dt 2400 --solver boomeramg \
     --output-every 6 --output-dir $OUTPUT_DIR 2>&1
 
 echo "=== Job completed: $(date) ==="
