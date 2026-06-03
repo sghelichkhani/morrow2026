@@ -13,6 +13,10 @@
 # Timestep is loosened to 2400 s (108 steps to 72 h) -- this is a
 # visualisation, so the 600 s resolution of the scaling runs is overkill.
 #
+# Output: moisture content only, one field per frame, every 6 steps (a
+# frame every 4 h sim time = ~19 frames). theta-only keeps each CG2 frame
+# at ~4.5 GB, so the whole movie is ~85 GB rather than ~1.4 TB.
+#
 # Submit with:  module load git && qsub submit_cockett_visualise.pbs
 #
 #PBS -N rs-cock-vis
@@ -50,11 +54,12 @@ echo "Mesh: 240x240x312, degree 2"
 echo "Nodes: 8  CPUs: 832"
 echo "Solver: vlumping_inexact"
 echo "dt: 2400 s (108 steps to 72 h)"
+echo "Output: theta only, every 6 steps (~19 frames)"
 echo "Date: $(date)"
 echo "================"
 
 mpiexec -np $PBS_NCPUS python $SCALING_DIR/cockett_visualise.py \
     --nx 240 --nz 312 --degree 2 --dt 2400 --solver vlumping_inexact \
-    --output-dir $OUTPUT_DIR 2>&1
+    --output-every 6 --output-dir $OUTPUT_DIR 2>&1
 
 echo "=== Job completed: $(date) ==="

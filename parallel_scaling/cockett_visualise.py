@@ -5,22 +5,24 @@ driver runs the same heterogeneous-infiltration box (2 x 2 x 2.6 m, sand /
 loamy-sand van Genuchten soil) but writes nothing — it only times the
 solve. Here we solve the same problem at the highest resolution we ran for
 the scaling study (the ``large`` mesh, 240 x 240 x 312) and at degree 2,
-then write snapshots so the moisture front can actually be rendered.
+then write a regular sequence of moisture-content frames so the infiltration
+front can be turned into a movie.
 
 The point of degree 2 is to *see* the high-order field. Firedrake's VTK
 writer is happy to take a DQ2 function, but rather than lean on
-``target_continuity`` we make the output spaces explicit: the derived
-fields (moisture content, hydraulic conductivity, pressure head) are
-interpolated onto a continuous CG2 space and those CG2 functions are what
-gets written. This mirrors the demo idiom
+``target_continuity`` we make the output space explicit: the moisture
+content is interpolated onto a continuous CG2 space and that CG2 function
+is what gets written. This mirrors the demo idiom
 (``theta.interpolate(soil_curve.moisture_content(h))``), just with the
 target being CG2 instead of the solve space, so ParaView receives genuine
 continuous quadratic Lagrange cells.
 
-Snapshots land on t = 0, 24, 48, 72 h, matching the four-panel figure the
-small DQ0 verification run produces. The soil indicator is written once,
-on a DQ0 space, so the soil-structure panel stays crisp (a sharp tanh
-indicator on CG2 would ring).
+For the movie we write *only* the moisture content, one field per frame, on
+a fixed step cadence (``--output-every``). At the full 485M-DOF resolution
+each CG2 field is ~4.5 GB, so a single combined h/theta/K snapshot would be
+~13 GB; writing theta alone keeps ~20 frames down to ~85 GB on scratch. The
+soil indicator is written once, on a DQ0 space, so the soil-structure
+context stays crisp (a sharp tanh indicator on CG2 would ring).
 
 Usage (Gadi, 8 nodes — see submit_cockett_visualise.pbs):
     mpiexec -np $PBS_NCPUS python cockett_visualise.py \
@@ -57,6 +59,10 @@ if __name__ == "__main__":
                              "g-adopt auto-default for extruded Cartesian meshes "
                              "(cheap coarse solve, far fewer iterations than "
                              "bjacobi); 'direct' for tiny laptop meshes")
+    parser.add_argument("--output-every", type=int, default=6,
+                        help="write a moisture frame every N steps (with the "
+                             "default dt=2400 s, every 6 steps = a frame every "
+                             "4 h sim time = ~19 frames over 72 h)")
     parser.add_argument("--output-dir", type=str, default="results/cockett_hires",
                         help="directory for the PVD / VTU output")
     _ARGS = parser.parse_args()
@@ -72,10 +78,10 @@ from gadopt import (
 )
 
 
-SNAPSHOT_TIMES_H = (0.0, 24.0, 48.0, 72.0)
+T_FINAL_H = 72.0  # simulate three days of infiltration
 
 
-def model(nx=240, nz=312, degree=2, dt_value=2400.0,
+def model(nx=240, nz=312, degree=2, dt_value=2400.0, output_every=6,
           solver="vlumping_inexact", output_dir="results/cockett_hires"):
     Lx, Ly, Lz = 2.0, 2.0, 2.6
 
@@ -121,18 +127,17 @@ def model(nx=240, nz=312, degree=2, dt_value=2400.0,
     h = Function(V, name="PressureHead")
     h.interpolate(0.2 * exp(5 * (X[2] - Lz)) - 0.3)
 
-    # --- Output spaces ---------------------------------------------------
-    # The derived fields are interpolated onto a *continuous* CG2 space so
-    # ParaView receives genuine quadratic Lagrange cells rather than a P1
-    # collapse of the DQ2 solution. h itself is discontinuous, so we also
-    # carry a CG2 copy for a clean continuous render of the pressure head.
+    # --- Output space ----------------------------------------------------
+    # We only animate the moisture content for the movie, interpolated onto
+    # a *continuous* CG2 space so ParaView receives genuine quadratic
+    # Lagrange cells rather than a P1 collapse of the DQ2 solution. Writing
+    # one field per frame (not h/theta/K) keeps the per-frame VTK at ~4.5 GB
+    # instead of ~13 GB, so ~20 frames fits comfortably on scratch.
     out_path = Path(output_dir)
     out_path.mkdir(parents=True, exist_ok=True)
 
     V_out = FunctionSpace(mesh, "CG", degree)
-    h_out = Function(V_out, name="PressureHead")
     theta_out = Function(V_out, name="MoistureContent")
-    K_out = Function(V_out, name="HydraulicConductivity")
 
     # Soil indicator on DQ0 — a sharp tanh would ring on CG2, and the
     # soil-structure panel wants crisp per-cell sand/loam blocks.
@@ -144,11 +149,9 @@ def model(nx=240, nz=312, degree=2, dt_value=2400.0,
     snap = VTKFile(str(out_path / "cockett_hires.pvd"))
 
     def dump(t):
-        h_out.interpolate(h)
         theta_out.interpolate(soil_curve.moisture_content(h))
-        K_out.interpolate(soil_curve.hydraulic_conductivity(h))
-        snap.write(h_out, theta_out, K_out, time=t)
-        PETSc.Sys.Print(f"snapshot at t = {t / 3600:.1f} h")
+        snap.write(theta_out, time=t)
+        PETSc.Sys.Print(f"frame at t = {t / 3600:.2f} h")
 
     # --- Solver ----------------------------------------------------------
     # bjacobi / vlumping_* / etc. come from the scaling-study presets;
@@ -174,40 +177,37 @@ def model(nx=240, nz=312, degree=2, dt_value=2400.0,
     )
 
     # --- Time loop -------------------------------------------------------
-    targets = [t * 3600.0 for t in SNAPSHOT_TIMES_H]
-    t_final = max(targets)
-    if targets[0] == 0.0:
-        dump(0.0)
-        targets = targets[1:]
+    # Uniform dt to t_final, writing a moisture frame every `output_every`
+    # steps (plus t = 0 and the final step) — a regular cadence for the
+    # movie. With dt = 2400 s and output_every = 6 that's a frame every 4 h
+    # of simulated time, ~19 frames over 72 h.
+    t_final = T_FINAL_H * 3600.0
+    n_steps = round(t_final / dt_value)
+    dt.assign(dt_value)
+    n_frames = len(range(0, n_steps, output_every)) + 1  # +1 for the final
+    PETSc.Sys.Print(f"{n_steps} steps, frame every {output_every} steps "
+                    f"(~{output_every * dt_value / 3600:.1f} h), ~{n_frames} frames")
 
+    dump(0.0)
     time = 0.0
-    step = 0
-    next_target = targets.pop(0) if targets else None
-    while time < t_final - 1e-9:
-        step_dt = float(dt_value)
-        if next_target is not None and time + step_dt > next_target:
-            step_dt = next_target - time
-        dt.assign(step_dt)
-
+    for step in range(1, n_steps + 1):
         t0 = time_mod.perf_counter()
         richards_solver.solve()
         wall = time_mod.perf_counter() - t0
 
-        time += step_dt
-        step += 1
+        time += dt_value
         snes = richards_solver.ts.stepper.solver.snes
-        log(f"t = {time:.1f} s | step {step} | wall {wall:.2f} s | "
+        log(f"t = {time:.1f} s | step {step}/{n_steps} | wall {wall:.2f} s | "
             f"NL {snes.getIterationNumber()} | L {snes.getLinearSolveIterations()}")
 
-        if next_target is not None and abs(time - next_target) < 1e-6:
+        if step % output_every == 0 or step == n_steps:
             dump(time)
-            next_target = targets.pop(0) if targets else None
-            dt.assign(dt_value)
 
-    PETSc.Sys.Print(f"Cockett visualise complete: {step} steps, "
+    PETSc.Sys.Print(f"Cockett visualise complete: {n_steps} steps, "
                     f"t = {time / 3600:.1f} h, output in {out_path}")
 
 
 if __name__ == "__main__":
     model(nx=_ARGS.nx, nz=_ARGS.nz, degree=_ARGS.degree, dt_value=_ARGS.dt,
-          solver=_ARGS.solver, output_dir=_ARGS.output_dir)
+          output_every=_ARGS.output_every, solver=_ARGS.solver,
+          output_dir=_ARGS.output_dir)
