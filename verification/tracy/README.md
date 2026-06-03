@@ -22,8 +22,18 @@ domain; we use it as the reference. Expected rate for DQp is
 O(h^{p+1}).
 
 For temporal convergence we fix the mesh and march from the analytical
-IC at `t_offset` for elapsed time `t_final`, sweeping Δt across
-BackwardEuler (first order), DIRK22 and CrankNicolson (second order).
+IC at `t_offset` for elapsed time `t_elapsed`, sweeping Δt across
+BackwardEuler (first order), CrankNicolson and ImplicitMidpoint (second
+order). The paper figure shows BackwardEuler only — the higher-order
+tableaux are carried in `temporal_2d.json` but deferred to a follow-up
+(see `to-do-list.md` P3); on this analytical-reference sweep at `Ss = 0`
+they flatten at the spatial floor rather than showing their design rate.
+
+The cleaner rate study that removes that floor — a numerical RadauIIA(2)
+reference at small Δt with `Ss = 1e-4`, all tableaux — is the two-panel
+design in `verification-design.md` and is Gadi-only (`instructions.md`).
+It would write `results/temporal_sweep.json`; `plot_temporal.py` already
+reads that shape and prefers it over `temporal_2d.json` when present.
 
 ## Running locally
 
