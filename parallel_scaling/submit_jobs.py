@@ -88,7 +88,7 @@ STORAGE = "scratch/xd2+gdata/xd2+gdata/fp50"
 
 # Paths on Gadi
 GADOPT_PATH = "/scratch/xd2/sg8812/g-adopt-worktrees/sghelichkhani/richardson"
-LOCAL_PACKAGES = "/scratch/xd2/sg8812/local/firedrake-main-20260401/lib/python3.11/site-packages"
+LOCAL_PACKAGES = "/scratch/xd2/sg8812/local/firedrake-main-20260514/lib/python3.11/site-packages"
 IRKSOME_OVERRIDE = "/scratch/xd2/sg8812/Irksome"
 FIREDRAKE_OVERRIDE = "/scratch/xd2/sg8812/firedrake-override"
 GWASSESS_PATH = "/scratch/xd2/sg8812/gwassess"
@@ -321,7 +321,7 @@ def generate_pbs_script(case, solver, scale, output_dir):
 
 source /etc/profile
 module use /g/data/fp50/modules
-module load firedrake/main-20260401
+module load firedrake/main-20260514
 
 export PYTHONPATH="{GADOPT_PATH}":"{IRKSOME_OVERRIDE}":"{LOCAL_PACKAGES}":"{FIREDRAKE_OVERRIDE}":"{GWASSESS_PATH}":${{PYTHONPATH}}
 export PYTHONDONTWRITEBYTECODE=1

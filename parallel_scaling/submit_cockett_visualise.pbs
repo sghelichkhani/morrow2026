@@ -1,0 +1,58 @@
+#!/bin/bash
+# Cockett 3D box — high-resolution DQ2 run that writes VTK for rendering.
+#
+# Same footprint as the `large` scaling case (8 normalsr nodes, 832 CPUs,
+# 4 TB RAM): 240 x 240 x 312 mesh, but degree 2 instead of 1, so this is
+# ~485M DOF. Output is the four moisture snapshots (CG2) plus the DQ0 soil
+# indicator, written to scratch for download/rendering.
+#
+# Solver: bjacobi. Its ILU(0) blocks make no assumptions about the DG
+# polynomial degree, so it's the safest choice at the untested DQ2. If it
+# stalls (bjacobi iteration counts grow with refinement and may exceed the
+# preset's ksp_max_it=500), switch --solver to vlumping_inexact, the
+# mesh-independent production preset.
+#
+# Submit with:  module load git && qsub submit_cockett_visualise.pbs
+#
+#PBS -N rs-cock-vis
+#PBS -P xd2
+#PBS -q normalsr
+#PBS -l walltime=06:00:00
+#PBS -l mem=4000GB
+#PBS -l ncpus=832
+#PBS -l jobfs=400GB
+#PBS -l storage=scratch/xd2+gdata/xd2+gdata/fp50
+#PBS -l wd
+#PBS -W umask=0022
+#PBS -o /scratch/xd2/sg8812/morrow2026/parallel_scaling/results/cockett_hires/run.out
+#PBS -e /scratch/xd2/sg8812/morrow2026/parallel_scaling/results/cockett_hires/run.err
+
+source /etc/profile
+module use /g/data/fp50/modules
+module load firedrake/main-20260514
+
+export PYTHONPATH="/scratch/xd2/sg8812/g-adopt-worktrees/sghelichkhani/richardson":"/scratch/xd2/sg8812/Irksome":"/scratch/xd2/sg8812/local/firedrake-main-20260514/lib/python3.11/site-packages":"/scratch/xd2/sg8812/firedrake-override":"/scratch/xd2/sg8812/gwassess":${PYTHONPATH}
+export PYTHONDONTWRITEBYTECODE=1
+
+export OMPI_MCA_io="ompio"
+export OMP_NUM_THREADS=1
+export MPLCONFIGDIR=$PBS_JOBFS/matplotlib
+
+SCALING_DIR=/scratch/xd2/sg8812/morrow2026/parallel_scaling
+OUTPUT_DIR=$SCALING_DIR/results/cockett_hires
+mkdir -p $OUTPUT_DIR
+cd $SCALING_DIR
+
+echo "=== Job info ==="
+echo "Case: cockett (visualisation, DQ2)"
+echo "Mesh: 240x240x312, degree 2"
+echo "Nodes: 8  CPUs: 832"
+echo "Solver: bjacobi"
+echo "Date: $(date)"
+echo "================"
+
+mpiexec -np $PBS_NCPUS python $SCALING_DIR/cockett_visualise.py \
+    --nx 240 --nz 312 --degree 2 --dt 600 --solver bjacobi \
+    --output-dir $OUTPUT_DIR 2>&1
+
+echo "=== Job completed: $(date) ==="
