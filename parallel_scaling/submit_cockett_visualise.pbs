@@ -16,9 +16,12 @@
 # mass-dominated small-dt regime and degrades badly at the large dt used
 # here, so BoomerAMG is the better fit for this operating point.
 #
-# Timestep 2400 s (108 steps to 72 h). Output: moisture content only, CG1,
-# every 6 steps (a frame every 4 h sim time = ~19 frames, ~hundreds of MB
-# total at this resolution).
+# Timestep 2400 s (108 steps to 72 h). Output: moisture content and pressure
+# head, CG1, every 6 steps (a frame every 4 h sim time = ~19 frames, ~hundreds
+# of MB total at this resolution). The front isosurface is contoured from the
+# pressure head (continuous across the sand/loam blocks) and coloured by
+# moisture content; theta jumps at soil interfaces so it can't drive a clean
+# isosurface on its own.
 #
 # Submit with:  module load git && qsub submit_cockett_visualise.pbs
 #
@@ -57,7 +60,7 @@ echo "Mesh: 120x120x156, degree 1 (~18M DOF)"
 echo "Nodes: 1  CPUs: 104"
 echo "Solver: boomeramg"
 echo "dt: 2400 s (108 steps to 72 h)"
-echo "Output: theta only (CG1), every 6 steps (~19 frames)"
+echo "Output: theta + pressure head (CG1), every 6 steps (~19 frames)"
 echo "Date: $(date)"
 echo "================"
 

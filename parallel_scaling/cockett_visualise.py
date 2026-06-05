@@ -17,12 +17,19 @@ is what gets written. This mirrors the demo idiom
 target being CG2 instead of the solve space, so ParaView receives genuine
 continuous quadratic Lagrange cells.
 
-For the movie we write *only* the moisture content, one field per frame, on
-a fixed step cadence (``--output-every``). At the full 485M-DOF resolution
-each CG2 field is ~4.5 GB, so a single combined h/theta/K snapshot would be
-~13 GB; writing theta alone keeps ~20 frames down to ~85 GB on scratch. The
-soil indicator is written once, on a DQ0 space, so the soil-structure
-context stays crisp (a sharp tanh indicator on CG2 would ring).
+For the movie we write two fields per frame on a fixed step cadence
+(``--output-every``): the moisture content and the pressure head. The
+moisture content is what we colour by, but it is the *wrong* field to
+contour an isosurface from — the box is heterogeneous (sand / loamy-sand),
+so theta_s and theta_r differ between soil blocks and theta genuinely jumps
+across every soil interface. A fixed-theta isosurface therefore fragments
+along those interfaces no matter the output order. The pressure head is
+continuous across soil boundaries (the physics is continuous in h), so we
+also carry h: build the wetting-front isosurface from ``PressureHead`` and
+colour it by ``MoistureContent``. Both go on the same continuous CG space so
+ParaView receives one dataset per frame with both arrays. The soil indicator
+is written once, on a DQ0 space, so the soil-structure context stays crisp
+(a sharp tanh indicator on CG would ring).
 
 Usage (Gadi, 8 nodes — see submit_cockett_visualise.pbs):
     mpiexec -np $PBS_NCPUS python cockett_visualise.py \
@@ -128,16 +135,20 @@ def model(nx=240, nz=312, degree=2, dt_value=2400.0, output_every=6,
     h.interpolate(0.2 * exp(5 * (X[2] - Lz)) - 0.3)
 
     # --- Output space ----------------------------------------------------
-    # We only animate the moisture content for the movie, interpolated onto
-    # a *continuous* CG2 space so ParaView receives genuine quadratic
-    # Lagrange cells rather than a P1 collapse of the DQ2 solution. Writing
-    # one field per frame (not h/theta/K) keeps the per-frame VTK at ~4.5 GB
-    # instead of ~13 GB, so ~20 frames fits comfortably on scratch.
+    # Both fields are interpolated onto a *continuous* CG space (matching the
+    # solve degree) so ParaView receives genuine Lagrange cells rather than a
+    # P1 collapse of the DQ solution. We carry two fields per frame: the
+    # moisture content to colour by, and the pressure head to contour the
+    # wetting front from. theta jumps across the sand/loam soil blocks
+    # (different theta_s/theta_r), so a fixed-theta isosurface fragments at
+    # every interface; h is continuous across those blocks, so the front
+    # isosurface is taken from h and coloured by theta.
     out_path = Path(output_dir)
     out_path.mkdir(parents=True, exist_ok=True)
 
     V_out = FunctionSpace(mesh, "CG", degree)
     theta_out = Function(V_out, name="MoistureContent")
+    h_out = Function(V_out, name="PressureHead")
 
     # Soil indicator on DQ0 — a sharp tanh would ring on CG2, and the
     # soil-structure panel wants crisp per-cell sand/loam blocks.
@@ -150,7 +161,8 @@ def model(nx=240, nz=312, degree=2, dt_value=2400.0, output_every=6,
 
     def dump(t):
         theta_out.interpolate(soil_curve.moisture_content(h))
-        snap.write(theta_out, time=t)
+        h_out.interpolate(h)
+        snap.write(theta_out, h_out, time=t)
         PETSc.Sys.Print(f"frame at t = {t / 3600:.2f} h")
 
     # --- Solver ----------------------------------------------------------
