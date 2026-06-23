@@ -1,0 +1,71 @@
+#!/bin/bash
+# Standalone Gadi job for the Lower Murrumbidgee checkpoint demo run.
+#
+# This is DELIBERATELY separate from submit_jobs.py and the frozen scaling
+# record. It runs the new checkpoint-based driver (murrumbidgee_demo.py) on a
+# single Sapphire Rapids node and writes a solution PVD for visualisation. It
+# does not touch results/ or parsed/.
+#
+# Before submitting, the checkpoint must be on Gadi (it is a large binary, not
+# in the repo). From the laptop:
+#   rsync -avP ~/Workplace/omega/demos/lower_murrumbidgee/lower_murrumbidgee_1500m_150L.h5 \
+#       gadi:/scratch/xd2/sg8812/morrow2026/parallel_scaling/murrumbidgee_demo_data/
+# The two CSVs (water_table.csv, rainfall_data.csv) travel with the repo sync.
+#
+#   qsub murrumbidgee_demo.pbs
+#
+#PBS -N rs-murr-demo
+#PBS -P xd2
+#PBS -q normalsr
+#PBS -l walltime=02:00:00
+#PBS -l mem=500GB
+#PBS -l ncpus=104
+#PBS -l jobfs=400GB
+#PBS -l storage=scratch/xd2+gdata/xd2+gdata/fp50
+#PBS -l wd
+#PBS -W umask=0022
+
+source /etc/profile
+module use /g/data/fp50/modules
+module load firedrake/main-20260514
+
+GADOPT_PATH=/scratch/xd2/sg8812/g-adopt-worktrees/sghelichkhani/richardson
+IRKSOME_OVERRIDE=/scratch/xd2/sg8812/Irksome
+LOCAL_PACKAGES=/scratch/xd2/sg8812/local/firedrake-main-20260514/lib/python3.11/site-packages
+FIREDRAKE_OVERRIDE=/scratch/xd2/sg8812/firedrake-override
+GWASSESS_PATH=/scratch/xd2/sg8812/gwassess
+
+export PYTHONPATH="${GADOPT_PATH}":"${IRKSOME_OVERRIDE}":"${LOCAL_PACKAGES}":"${FIREDRAKE_OVERRIDE}":"${GWASSESS_PATH}":${PYTHONPATH}
+export PYTHONDONTWRITEBYTECODE=1
+export OMPI_MCA_io="ompio"
+export OMP_NUM_THREADS=1
+export MPLCONFIGDIR=$PBS_JOBFS/matplotlib
+
+SCALING_DIR=/scratch/xd2/sg8812/morrow2026/parallel_scaling
+DEMO_DATA=${SCALING_DIR}/murrumbidgee_demo_data
+CHECKPOINT=${DEMO_DATA}/lower_murrumbidgee_1500m_150L.h5
+OUTDIR=${SCALING_DIR}/demo_output
+mkdir -p "${OUTDIR}"
+
+cd "${SCALING_DIR}"
+
+echo "=== Murrumbidgee checkpoint demo ==="
+echo "Checkpoint: ${CHECKPOINT}"
+echo "Date: $(date)"
+echo "==================================="
+
+# vlumping (the canonical extruded-3D preset). SNES-iteration-dominated adaptive
+# timestep (gadopt RichardsTimestepAdaptor): dt starts at 60 s and grows toward
+# the paper's 12 h ceiling while Newton stays at/below the iteration target,
+# shrinking when it does not. Run 30 days of simulation time as a first test;
+# bump --t-final for the production length. Initial + final frames only.
+mpiexec -np $PBS_NCPUS python "${SCALING_DIR}/murrumbidgee_demo.py" \
+    --checkpoint "${CHECKPOINT}" \
+    --data-dir "${DEMO_DATA}" \
+    --solver vlumping \
+    --dt-init 60 --dt-max 43200 --dt-min 1 --snes-target-its 4 \
+    --t-final 2592000 \
+    --output "${OUTDIR}/murrumbidgee_demo.pvd" --output-every 0 \
+    2>&1
+
+echo "=== Job completed: $(date) ==="
