@@ -3,7 +3,8 @@
 This is the §4 example-solution driver for the *new* mesh workflow: instead of
 rebuilding the mesh and stratigraphy inline from gridded CSVs (as the frozen
 scaling driver ``murrumbidgee_3d.py`` does), it loads a Firedrake checkpoint
-produced by ``omega/demos/lower_murrumbidgee/lower_murrumbidgee_mesh.py``. That
+produced by ``lower_murrumbidgee_mesh.py`` (copied into this directory from omega
+for provenance; see lower_murrumbidgee_README.md). That
 checkpoint carries the terrain-following extruded mesh (real GA SRTM DEM on top,
 NGIS-borehole bedrock below) plus two CG1 fields: ``SaturatedConductivity`` (the
 piecewise-constant per-formation Ks) and ``Formation`` (1 Shepparton /
@@ -28,22 +29,30 @@ Run with the Firedrake venv and the richardson worktree on PYTHONPATH:
 
     PYTHONPATH=~/Workplace/g-adopt-worktrees/sghelichkhani/richardson \
         ~/Workplace/firedrake-2026-03-03/venv-firedrake/bin/python3 \
-        murrumbidgee_demo.py --checkpoint <path.h5> --steps 5
+        murrumbidgee_demo.py --steps 5
+
+The --checkpoint and --data-dir defaults are repo-relative (they point under
+murrumbidgee_demo_data/); the checkpoint .h5 is a large binary kept local.
 """
 
 if __name__ == "__main__":
     # Parse args before importing Firedrake/PETSc, which consumes sys.argv.
     import argparse
+    import os
     import sys
+
+    _HERE = os.path.dirname(os.path.abspath(__file__))
 
     parser = argparse.ArgumentParser(
         description="Lower Murrumbidgee demo run from a prebuilt checkpoint"
     )
     parser.add_argument("--checkpoint", type=str,
-                        default=str(
-                            "/Users/sghelichkhani/Workplace/omega/demos/"
-                            "lower_murrumbidgee/lower_murrumbidgee_1500m_150L.h5"),
-                        help="Firedrake CheckpointFile with mesh + fields")
+                        default=os.path.join(
+                            _HERE, "murrumbidgee_demo_data",
+                            "lower_murrumbidgee_1500m_150L.h5"),
+                        help="Firedrake CheckpointFile with mesh + fields "
+                             "(large binary kept local; build it with "
+                             "lower_murrumbidgee_mesh.py)")
     parser.add_argument("--mesh-name", type=str,
                         default="firedrake_default_extruded")
     parser.add_argument("--degree", type=int, default=1)
@@ -66,7 +75,7 @@ if __name__ == "__main__":
                         help="Final time in seconds (overrides --steps)")
     parser.add_argument("--solver", type=str, default="vlumping")
     parser.add_argument("--data-dir", type=str,
-                        default="./murrumbidgee_demo_data",
+                        default=os.path.join(_HERE, "murrumbidgee_demo_data"),
                         help="Dir with water_table.csv, rainfall_data.csv "
                              "(demo-local copy, isolated from the scaling inputs)")
     parser.add_argument("--offset", type=float, nargs=2,

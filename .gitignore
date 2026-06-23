@@ -7,6 +7,9 @@
 *.pvtu
 profile_*.txt
 
+# Mesh checkpoints (large binaries kept local; recipe: lower_murrumbidgee_mesh.py)
+*.h5
+
 # Regenerated figures — source of truth is the parsed JSON in parsed/.
 # Rebuild with `python3 plot_results.py --parsedir parsed --outdir figures`.
 parallel_scaling/figures/
