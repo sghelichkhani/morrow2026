@@ -50,6 +50,17 @@ ROUND3_SOLVERS = [
     "vlumping_linesmooth", "vlumping_hmg",
 ]
 
+# DQ2 (degree-2) Cockett re-run: the iterative solvers that actually scale.
+# Run at the same sweep/medium/large scales as round3 but with degree-2
+# elements, writing to results/cockett/<solver>/<scale>_dq2.* so the
+# existing DQ1 record is left untouched.
+COCKETT_DQ2_SOLVERS = [
+    "vlumping_inexact",  # production preset (g-adopt's shipped `vlumping`)
+    "vlumping",          # baseline VLumping
+    "boomeramg",         # paper's tuned BoomerAMG
+    "gmg",               # geometric multigrid, horizontal coarsening
+]
+
 # Murrumbidgee vertical weak scaling: 4 solvers representing different
 # preconditioner families. Tests weak scaling while simultaneously
 # increasing aspect ratio (the ultimate anisotropy stress test).
@@ -200,8 +211,12 @@ def murr_horiz_cases():
     }
 
 
-def generate_pbs_script(case, solver, scale, output_dir):
+def generate_pbs_script(case, solver, scale, output_dir, degree=1):
     """Generate a PBS job script for a given case/solver/scale.
+
+    ``degree`` is the DG polynomial degree (Cockett only). When it is
+    greater than 1 the script writes to ``<scale>_dq{degree}`` files so a
+    DQ2 re-run sits alongside the DQ1 record rather than overwriting it.
 
     Returns the path to the generated script.
     """
@@ -223,7 +238,7 @@ def generate_pbs_script(case, solver, scale, output_dir):
         dt_flag = f" --dt {params['dt']}" if "dt" in params else ""
         run_cmd = (
             f"mpiexec -np $PBS_NCPUS python {SCALING_DIR}/cockett_3d.py "
-            f"--nx {nx} --nz {params['nz']} "
+            f"--nx {nx} --nz {params['nz']} --degree {degree} "
             f"--steps {params['steps']} --solver {solver} "
             f"--refinement-levels {ref_levels}{dt_flag}"
         )
@@ -297,13 +312,23 @@ def generate_pbs_script(case, solver, scale, output_dir):
     else:
         raise ValueError(f"Unknown case: {case}")
 
-    job_name = f"rs-{case[:4]}-{solver}-{scale}"
-    walltime = "06:00:00" if case in ("murrumbidgee", "murr_horiz") else "03:00:00"
+    # DQ2 runs share the per-cell DOF blow-up of degree-2 elements
+    # (~27 vs 8 nodes per hex), so they get a distinct output tag and a
+    # longer walltime ceiling than the DQ1 sweep.
+    tag = scale if degree == 1 else f"{scale}_dq{degree}"
+
+    job_name = f"rs-{case[:4]}-{solver}-{tag}"
+    if case in ("murrumbidgee", "murr_horiz"):
+        walltime = "06:00:00"
+    elif case == "cockett" and degree > 1:
+        walltime = "06:00:00"
+    else:
+        walltime = "03:00:00"
 
     result_dir = output_dir / case / solver
     result_dir.mkdir(parents=True, exist_ok=True)
-    output_file = result_dir / f"{scale}.out"
-    error_file = result_dir / f"{scale}.err"
+    output_file = result_dir / f"{tag}.out"
+    error_file = result_dir / f"{tag}.err"
 
     script = f"""#!/bin/bash
 #PBS -N {job_name}
@@ -339,6 +364,7 @@ echo "=== Job info ==="
 echo "Case: {case}"
 echo "Solver: {solver}"
 echo "Scale: {scale}"
+echo "Degree: {degree}"
 echo "Nodes: {params['nodes']}"
 echo "CPUs: {ncpus}"
 echo "Date: $(date)"
@@ -349,7 +375,7 @@ echo "================"
 echo "=== Job completed: $(date) ==="
 """
 
-    script_path = result_dir / f"{scale}.pbs"
+    script_path = result_dir / f"{tag}.pbs"
     script_path.write_text(script)
     return script_path
 
@@ -386,6 +412,17 @@ def get_phase_runs(phase):
         # Round 3 smoke test: 11 solvers at smoke scale only
         for solver in ROUND3_SOLVERS:
             runs.append(("cockett", solver, "smoke"))
+
+    elif phase == "round3_dq2":
+        # DQ2 Cockett: iterative winners at all 3 scales, degree-2 elements.
+        for solver in COCKETT_DQ2_SOLVERS:
+            for scale in ["sweep", "medium", "large"]:
+                runs.append(("cockett", solver, scale, 2))
+
+    elif phase == "round3_dq2_smoke":
+        # DQ2 smoke test: iterative winners at smoke scale, degree-2.
+        for solver in COCKETT_DQ2_SOLVERS:
+            runs.append(("cockett", solver, "smoke", 2))
 
     elif phase == "round3_murr":
         # Murrumbidgee vertical weak scaling: 4 solvers at all 4 scales
@@ -446,6 +483,7 @@ def main():
         "--phase", required=True,
         choices=["smoke", "sweep", "scaling", "all",
                  "round3", "round3_smoke",
+                 "round3_dq2", "round3_dq2_smoke",
                  "round3_murr", "round3_murr_smoke",
                  "round3_murr_horiz", "round3_murr_horiz_smoke",
                  "strong", "hierarchy"],
@@ -477,11 +515,16 @@ def main():
 
     runs = get_phase_runs(args.phase)
 
+    # Phases emit (case, solver, scale) triples, except the DQ2 phases
+    # which append a 4th degree element. Normalise to a uniform 4-tuple.
+    runs = [(c, s, sc, deg[0] if deg else 1)
+            for c, s, sc, *deg in runs]
+
     # Filter by user overrides
     if args.solvers:
-        runs = [(c, s, sc) for c, s, sc in runs if s in args.solvers]
+        runs = [r for r in runs if r[1] in args.solvers]
     if args.cases:
-        runs = [(c, s, sc) for c, s, sc in runs if c in args.cases]
+        runs = [r for r in runs if r[0] in args.cases]
 
     print(f"Phase: {args.phase}")
     print(f"Total jobs: {len(runs)}")
@@ -489,10 +532,12 @@ def main():
     print()
 
     scripts = []
-    for case, solver, scale in runs:
-        script_path = generate_pbs_script(case, solver, scale, output_dir)
+    for case, solver, scale, degree in runs:
+        script_path = generate_pbs_script(case, solver, scale, output_dir,
+                                          degree=degree)
         scripts.append((case, solver, scale, script_path))
-        print(f"  Generated: {script_path.name:40s}  [{case}/{solver}/{scale}]")
+        label = f"{case}/{solver}/{scale}" + (f" DQ{degree}" if degree > 1 else "")
+        print(f"  Generated: {script_path.name:40s}  [{label}]")
 
     if args.dry_run:
         print(f"\nDry run — {len(scripts)} scripts generated, none submitted.")

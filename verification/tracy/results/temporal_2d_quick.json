@@ -1,0 +1,47 @@
+{
+  "integrators": {
+    "BackwardEuler": {
+      "dts": [
+        {
+          "dt": 20000.0,
+          "l2anal_h": 136.96304882900424,
+          "l2error_h": 2.9392475786660692,
+          "n_steps": 5,
+          "t_reached": 100000.0,
+          "wall_seconds": 9.917724847793579
+        },
+        {
+          "dt": 10000.0,
+          "l2anal_h": 136.96304882900424,
+          "l2error_h": 1.652533187281597,
+          "n_steps": 10,
+          "t_reached": 100000.0,
+          "wall_seconds": 3.9945528507232666
+        },
+        {
+          "dt": 5000.0,
+          "l2anal_h": 136.96304882900424,
+          "l2error_h": 0.9877904687072975,
+          "n_steps": 20,
+          "t_reached": 100000.0,
+          "wall_seconds": 5.353116989135742
+        },
+        {
+          "dt": 2500.0,
+          "l2anal_h": 136.96304882900424,
+          "l2error_h": 0.6892799942952175,
+          "n_steps": 40,
+          "t_reached": 100000.0,
+          "wall_seconds": 8.067254066467285
+        }
+      ],
+      "expected_order": 1
+    }
+  },
+  "mesh": {
+    "degree": 1,
+    "nodes": 51,
+    "t_elapsed": 100000.0,
+    "t_offset": 10000.0
+  }
+}
