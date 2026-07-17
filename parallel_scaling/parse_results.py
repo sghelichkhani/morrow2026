@@ -310,12 +310,13 @@ def discover_runs(base_dir, scales):
 EXPERIMENTS = {
     "cockett": {
         "dir": "cockett",
-        "scales": ["smoke", "sweep", "medium", "large"],
+        "scales": ["smoke", "sweep", "medium", "large", "huge", "mega"],
         "scale_meta": {
             "smoke": {"nodes": 1, "cpus": 104, "nx": 60, "nz": 78, "dof_approx": "2.2M"},
             "sweep": {"nodes": 1, "cpus": 104, "nx": 120, "nz": 156, "dof_approx": "18M"},
             "medium": {"nodes": 2, "cpus": 208, "nx": 152, "nz": 196, "dof_approx": "36M"},
-            "large": {"nodes": 8, "cpus": 832, "nx": 240, "nz": 312, "dof_approx": "144M"},
+            "large": {"nodes": 4, "cpus": 416, "nx": 192, "nz": 247, "dof_approx": "72M"},
+            "huge": {"nodes": 8, "cpus": 832, "nx": 240, "nz": 312, "dof_approx": "144M"},
         },
     },
     "cockett_dq2": {

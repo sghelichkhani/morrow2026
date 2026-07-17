@@ -275,14 +275,14 @@ def make_figure(data, solvers, scales, x, xticklabels, xlabel, suptitle, figsize
 
 def fig_cockett(data, outdir, paper_outdir=None):
     """Cockett Round 3: main solver comparison (sweep/medium/large)."""
-    scales = ["sweep", "medium", "large"]
+    scales = ["medium", "large", "huge"]
     solvers = [
         "boomeramg", "bjacobi", "vlumping_inexact", "vlumping",
         "vlumping_linesmooth", "vlumping_hmg",
         "ngmres_gmg", "gmg", "gamg",
     ]
     x = np.arange(len(scales))
-    xlabels = ["1N / 18M", "2N / 36M", "8N / 144M"]
+    xlabels = ["2N / 36M", "4N / 72M", "8N / 144M"]
     if paper_outdir is not None:
         _cockett_emit_paper_panels(data, solvers, scales, x, xlabels,
                                     paper_outdir)
