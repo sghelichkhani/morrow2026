@@ -30,14 +30,14 @@ PAPER_FIGURE_ROOT = Path(__file__).resolve().parent.parent / "figures"
 # ── Solver visual style ─────────────────────────────────────────────────────
 
 SOLVER_STYLE = {
-    "vlumping_inexact": dict(color="#d62728", marker="o", label="VLumping (inexact)"),
-    "vlumping":         dict(color="#e377c2", marker="s", label="VLumping"),
+    "vlumping_inexact": dict(color="#d62728", marker="o", label="VLumping"),
+    "vlumping":         dict(color="#e377c2", marker="s", label="VLumping (exact)"),
     "vlumping_1sweep":  dict(color="#bcbd22", marker="^", label="VLumping (1 sweep)"),
     "vlumping_4sweep":  dict(color="#17becf", marker="v", label="VLumping (4 sweep)"),
     "vlumping_richardson": dict(color="#7f7f7f", marker="<", label="VLumping (Richardson)"),
     "vlumping_sor":     dict(color="#8c564b", marker=">", label="VLumping (SOR)"),
     "boomeramg":        dict(color="#1f77b4", marker="D", label="BoomerAMG"),
-    "gmg":              dict(color="#2ca02c", marker="P", label="GMG"),
+    "gmg":              dict(color="#2ca02c", marker="P", label="GMG-H"),
     "ngmres_gmg":       dict(color="#9467bd", marker="X", label="NGMRES+GMG"),
     "gamg":             dict(color="#ff7f0e", marker="h", label="GAMG"),
     "bjacobi":          dict(color="#000000", marker="d", label="BJacobi"),
@@ -45,7 +45,7 @@ SOLVER_STYLE = {
     "qn_gmg":           dict(color="#98df8a", marker="*", label="QN+GMG"),
     "gamg_asm":         dict(color="#ffbb78", marker="H", label="GAMG+ASM"),
     "vlumping_linesmooth": dict(color="#e6550d", marker="P", label="VLumping (line smoother)"),
-    "vlumping_hmg":        dict(color="#3182bd", marker="X", label="VLumping (HMG)"),
+    "vlumping_hmg":        dict(color="#3182bd", marker="X", label="VLumping-HMG"),
 }
 
 FAILURE_MARKERS = {"diverged": "DIVERGED", "oom": "OOM", "incomplete": "TIMEOUT"}
@@ -106,6 +106,12 @@ def linear_per_nl(r):
     s = r["summary"]
     nl = s["total_nl"]
     return s["total_linear"] / nl if nl > 0 else None
+
+def linear_per_step(r):
+    """Linear (Krylov) iterations per timestep, averaged over all steps."""
+    s = r["summary"]
+    ns = s.get("steps_completed")
+    return s["total_linear"] / ns if ns else None
 
 def peak_rss(r):
     return r["summary"].get("peak_rss_mb")
@@ -170,17 +176,26 @@ def plot_panel(ax, x, data, solvers, scales, metric_fn, ylabel,
     ax.tick_params(axis="both", labelsize=10)
     ax.grid(True, alpha=0.3, zorder=0)
 
-    # Place failure markers near the bottom of the axes
+    # Place failure markers near the bottom of the axes. Where several
+    # solvers fail at the same x (e.g. GMG-H OOM and BoomerAMG DIVERGED on
+    # the layers sweep), stagger the markers in x and stack their labels
+    # vertically so the annotations do not overprint.
     annotations = getattr(ax, "_failure_annotations", [])
     if annotations and all_vals:
         ymin = ax.get_ylim()[0]
         fail_y = ymin + fail_y_frac * (max(all_vals) - (min(all_vals) if not log_y else 0))
-        for xf, color, marker, flabel, slabel, show_label in annotations:
-            ax.plot(xf, fail_y, marker=marker, color=color, markersize=8,
-                    zorder=3, label=slabel if show_label else None)
-            ax.annotate(flabel, (xf, fail_y), textcoords="offset points",
-                        xytext=(0, -14), ha="center", fontsize=8,
-                        fontweight="bold", color=color)
+        groups = {}
+        for a in annotations:
+            groups.setdefault(a[0], []).append(a)
+        for xf, group in groups.items():
+            n = len(group)
+            for j, (_, color, marker, flabel, slabel, show_label) in enumerate(group):
+                dx = 0.0 if n == 1 else (j - (n - 1) / 2.0) * 0.16
+                ax.plot(xf + dx, fail_y, marker=marker, color=color, markersize=8,
+                        zorder=3, label=slabel if show_label else None)
+                ax.annotate(flabel, (xf + dx, fail_y), textcoords="offset points",
+                            xytext=(0, -14 - 12 * j), ha="center", fontsize=8,
+                            fontweight="bold", color=color)
 
 
 def save_single_panel(data, solvers, scales, x, xticklabels, xlabel,
@@ -212,7 +227,7 @@ def save_single_panel(data, solvers, scales, x, xticklabels, xlabel,
 # Panel definitions: (metric_fn, ylabel, panel_title, log_y).
 PAPER_METRICS = {
     "wall":      (mean_wall,     "Wall time per step (s)",     "Wall time per time-step", True),
-    "iters":     (linear_per_nl, "Linear iters / Newton step", "Linear iterations",       False),
+    "iters":     (linear_per_step, "Linear iters / time-step",  "Linear iterations",       False),
     "memory":    (peak_rss,      "Peak RSS per rank (MB)",     "Peak memory per rank",    True),
 }
 
@@ -274,15 +289,17 @@ def make_figure(data, solvers, scales, x, xticklabels, xlabel, suptitle, figsize
 # ── Experiment-specific figures ─────────────────────────────────────────────
 
 def fig_cockett(data, outdir, paper_outdir=None):
-    """Cockett Round 3: main solver comparison (sweep/medium/large)."""
-    scales = ["medium", "large", "huge"]
+    """Cockett Round 3: main solver comparison (sweep/medium/large/huge)."""
+    scales = ["sweep", "medium", "large", "huge"]
+    # Six-solver roster matching the manuscript §3.4 story: two single-level
+    # baselines (SOR, BJacobi), GMG, the anisotropy-tuned BoomerAMG, and the
+    # two shipped VLumping presets (vlumping_inexact is the shipped `vlumping`).
     solvers = [
-        "boomeramg", "bjacobi", "vlumping_inexact", "vlumping",
-        "vlumping_linesmooth", "vlumping_hmg",
-        "ngmres_gmg", "gmg", "gamg",
+        "sor", "bjacobi", "gmg", "boomeramg",
+        "vlumping_inexact", "vlumping_hmg",
     ]
     x = np.arange(len(scales))
-    xlabels = ["2N / 36M", "4N / 72M", "8N / 144M"]
+    xlabels = ["1N / 18M", "2N / 36M", "4N / 72M", "8N / 144M"]
     if paper_outdir is not None:
         _cockett_emit_paper_panels(data, solvers, scales, x, xlabels,
                                     paper_outdir)
@@ -330,8 +347,10 @@ def fig_cockett_vlumping(data, outdir):
 def fig_murr_vertical(data, outdir, paper_outdir=None):
     """Murrumbidgee vertical weak scaling."""
     scales = ["smoke", "sweep", "medium", "large"]
-    solvers = ["vlumping_inexact", "vlumping", "vlumping_linesmooth",
-               "vlumping_hmg", "gmg", "boomeramg"]
+    # Same baseline+shipped roster as the horizontal figure: GMG-H baseline
+    # (works but OOMs beyond 2 nodes here), BoomerAMG (diverges), and the
+    # two shipped VLumping presets, which are the only ones flat in layers.
+    solvers = ["gmg", "boomeramg", "vlumping_inexact", "vlumping_hmg"]
     x = np.arange(len(scales))
     xlabels = ["1N\n150L\nAR 500:1", "2N\n300L\nAR 1000:1",
                "4N\n600L\nAR 2000:1", "8N\n1200L\nAR 4000:1"]
@@ -366,20 +385,29 @@ def fig_murr_strong(data, outdir, paper_outdir=None):
         outpath = paper_outdir / "Murrumbidgee" / "strong_scaling.pdf"
         outpath.parent.mkdir(parents=True, exist_ok=True)
         fig, ax = plt.subplots(figsize=(6, 4.5))
+        # Reframed as an extreme-scale reach/robustness demonstration rather
+        # than a slope-fit strong-scaling test. VLumping (inexact Newton)
+        # carries the tractable 2-8 node regime; at 32 nodes / 3328 cores its
+        # direct coarse solve diverges, so the single VLumping-HMG point is
+        # what reaches the full 320 M DOF decomposition.
         plot_panel(ax, x, data, solvers, scales, mean_wall,
                    "Wall time per step (s)",
                    xticklabels=xlabels, xlabel="Nodes",
-                   log_y=True, title="Strong scaling: 320M DOF total")
-        # Ideal 1/N reference anchored on the first successful point.
-        runs = get_runs(data, solvers[0], scales)
-        ok_idx, ok_val, _, _ = extract_metric(runs, mean_wall)
-        if ok_val:
-            ideal = np.array(ok_val[0]) * (2 ** -np.asarray(x))
-            # rescale so the first ideal point coincides with the
-            # first data point
-            ideal = ok_val[0] * 2.0 ** -(x - x[ok_idx[0]])
-            ax.plot(x, ideal, "k--", alpha=0.6, label="Ideal 1/N")
-            ax.legend(fontsize=9)
+                   log_y=True, title="320 M DOF fixed, 620 m / 300 layers")
+        # Faint ideal-1/N reference, anchored at the 2-node point and drawn
+        # ONLY over the tractable 2-8 node regime (not extended to 16/32,
+        # where the point is reach/robustness, not a scaling slope).
+        ref_scales = ["s2", "s4", "s8"]
+        ref_runs = get_runs(data, "vlumping_inexact", ref_scales)
+        _, ref_val, _, _ = extract_metric(ref_runs, mean_wall)
+        if ref_val:
+            xr = np.log2([2, 4, 8])
+            ideal = ref_val[0] * 2.0 ** -(xr - xr[0])
+            ax.plot(xr, ideal, ls="--", color="gray", lw=1.0, alpha=0.55,
+                    zorder=1, label="Ideal 1/N (2–8 nodes)")
+        handles, labels = ax.get_legend_handles_labels()
+        if handles:
+            ax.legend(handles, labels, fontsize=9)
         fig.tight_layout()
         fig.savefig(outpath, bbox_inches="tight")
         plt.close(fig)
@@ -399,8 +427,8 @@ def fig_murr_hierarchy(data, outdir, paper_outdir=None):
         outpath = paper_outdir / "Murrumbidgee" / "hierarchy_levels.pdf"
         outpath.parent.mkdir(parents=True, exist_ok=True)
         fig, axes = plt.subplots(1, 2, figsize=(11, 4.5))
-        plot_panel(axes[0], x, data, solvers, scales, linear_per_nl,
-                   "Linear iters / Newton step",
+        plot_panel(axes[0], x, data, solvers, scales, linear_per_step,
+                   "Linear iters / time-step",
                    xticklabels=xlabels, xlabel="Hierarchy levels",
                    title="(a) Iterations")
         plot_panel(axes[1], x, data, solvers, scales, mean_wall,
@@ -410,9 +438,9 @@ def fig_murr_hierarchy(data, outdir, paper_outdir=None):
         # Annotate the minima for each solver in each panel: solid for
         # min-iters, dotted for min-wall (matches the paper caption).
         for solver in solvers:
-            color, marker, label = _style(solver)
+            color, marker, _ = _style(solver)
             runs = get_runs(data, solver, scales)
-            for ax, metric_fn, style in [(axes[0], linear_per_nl, "-"),
+            for ax, metric_fn, style in [(axes[0], linear_per_step, "-"),
                                           (axes[1], mean_wall, ":")]:
                 ok_idx, ok_val, _, _ = extract_metric(runs, metric_fn)
                 if not ok_val:
@@ -437,8 +465,13 @@ def fig_murr_hierarchy(data, outdir, paper_outdir=None):
 def fig_murr_horizontal(data, outdir, paper_outdir=None):
     """Murrumbidgee horizontal weak scaling."""
     scales = ["h1", "h2", "h4", "h8"]
-    solvers = ["vlumping_inexact", "vlumping", "vlumping_linesmooth",
-               "vlumping_hmg", "gmg", "bjacobi", "boomeramg", "gamg"]
+    # Baseline+shipped roster for the manuscript §4 story: BJacobi and the
+    # GMG-H baseline (both work), the two shipped VLumping presets that
+    # scale, and BoomerAMG which diverges on this anisotropic mesh (shown
+    # as a DIVERGED marker — the motivation for VLumping). The GAMG (OOM)
+    # and the VLumping ablation variants are dropped from the main figure.
+    solvers = ["bjacobi", "gmg", "boomeramg",
+               "vlumping_inexact", "vlumping_hmg"]
     x = np.arange(len(scales))
     xlabels = ["1N\n1775 m\nAR 1000:1", "2N\n1250 m\nAR 700:1",
                "4N\n880 m\nAR 500:1", "8N\n620 m\nAR 350:1"]

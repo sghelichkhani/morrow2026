@@ -7,6 +7,12 @@ Three panels:
 
 Output: ``figures/Murrumbidgee/ICBC.png``.
 
+NOT used in the paper (2026-07-20) — superseded, along with
+``plot_murr_elevation.py``, ``plot_murr_mesh.py`` and
+``plot_murr_stratigraphy.py``, by the combined visualisation in
+``viz_murrumbidgee.py`` (``figures/Murrumbidgee/example_solution.png``).
+Kept for reference only.
+
 The extraction-site locations are not yet in this repo; the third
 panel renders the domain outline with a TODO note so the layout
 matches the paper while the data is sourced. Tracked in

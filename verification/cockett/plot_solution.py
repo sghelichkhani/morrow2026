@@ -8,6 +8,15 @@ t = 0, 24, 48, 72 h.
 
 Uses PyVista in off-screen mode; the figure is composed in matplotlib
 so the panel titles, colour bars and layout are easy to tweak.
+
+NOT used in the paper. Superseded by the ParaView-based pipeline in
+``parallel_scaling/cockett_figure.py`` (see
+``parallel_scaling/COCKETT_FIGURE.md``), which produces
+``figures/Cockett2018/cockett_infiltration.pdf`` — the figure `main.tex`
+actually includes. This script and its ``cockett_2018.{pdf,png}`` output
+are kept only as an earlier draft; do not regenerate/commit
+``cockett_2018.*`` again without checking whether the paper reference
+has changed back.
 """
 from __future__ import annotations
 

@@ -10,7 +10,8 @@ analytical solutions from Tracy (2006) using the `gwassess`
 | `run_spatial_3d.py` | sweep on an extruded cube | `results/spatial_3d.json` |
 | `run_temporal_2d.py` | fixed mesh, sweep over time integrators × `dt` | `results/temporal_2d.json` |
 | `run_solution.py` | single 2D run, saves h/θ fields for snapshot | `results/solution_2d.npz` |
-| `plot_spatial.py` | reads spatial JSONs | `../../figures/Tracy/2d_spatial_error.pdf`, `3d_spatial_convergence.pdf` |
+| `plot_spatial.py` | legacy — superseded by `plot_spatial_paper.py`, do not run | ~~`2d_spatial_error.pdf`~~ (removed from `figures/Tracy/`) |
+| `plot_spatial_paper.py` | reads spatial JSONs, two-panel SA/non-SA design | `../../figures/Tracy/spatial_convergence.pdf` (the one `main.tex` includes) |
 | `plot_temporal.py` | reads temporal JSON | `../../figures/Tracy/2d_temporal_congergence.pdf` |
 | `plot_solution.py` | reads solution npz | `../../figures/Tracy/solution.pdf` |
 

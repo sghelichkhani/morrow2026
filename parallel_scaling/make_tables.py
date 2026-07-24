@@ -1,0 +1,244 @@
+#!/usr/bin/env python3
+"""Generate the paper's scaling tables directly from the parsed JSON record.
+
+Two LaTeX tables are emitted into the paper tree
+(``~/Workplace/papers/richards-morrow-2026/Tables/``):
+
+* ``solver_outcomes.tex`` — the consolidated solver x scale outcome
+  matrix across all four scaling experiments (Cockett isotropic survey,
+  Murrumbidgee horizontal / vertical weak scaling, Murrumbidgee strong
+  scaling), with a peak-memory summary column. This absorbs the old
+  per-experiment memory panels and the status information that used to
+  be drawn as slanted DIVERGED/OOM markers on the figures.
+* ``hierarchy_depth.tex`` — the GMG-H vs VLumping-HMG hierarchy-depth
+  sweep, demoted from a figure to a table because it is light.
+
+Everything is read from ``parsed/*.json``; nothing is hard-coded. Uses
+only core LaTeX (tabular / multicolumn / hline) so it compiles under the
+Copernicus class without extra packages.
+
+    python3 make_tables.py            # write into the paper Tables/ dir
+    python3 make_tables.py --stdout   # also echo the LaTeX
+"""
+
+import argparse
+import json
+from pathlib import Path
+
+PARSED = Path(__file__).resolve().parent / "parsed"
+PAPER_TABLES = Path.home() / "Workplace/papers/richards-morrow-2026/Tables"
+
+# Outcome -> table glyph. Core-LaTeX only.
+GLYPH = {
+    "success": r"$\bullet$",
+    "diverged": r"D",
+    "oom": r"M",
+    "incomplete": r"T",
+}
+NOT_RUN = r"--"  # core LaTeX only (no xcolor in the Copernicus preamble)
+
+# Human labels + colour/marker-free display names, matching the figures.
+SOLVER_LABEL = {
+    "sor": "SOR",
+    "bjacobi": "BJacobi",
+    "gamg": "GAMG",
+    "boomeramg": "BoomerAMG",
+    "gmg": "GMG-H",
+    "vlumping_inexact": "VLumping",
+    "vlumping_hmg": "VLumping-HMG",
+}
+# Fixed row order (union across experiments); blank where not attempted.
+SOLVER_ORDER = ["sor", "bjacobi", "gamg", "boomeramg", "gmg",
+                "vlumping_inexact", "vlumping_hmg"]
+
+
+def load(name):
+    with open(PARSED / f"{name}.json") as f:
+        return json.load(f)
+
+
+def index(data):
+    """(solver, scale) -> run dict."""
+    return {(r["header"].get("solver"), r["header"].get("scale")): r
+            for r in data["runs"]}
+
+
+def peak_mem_gb(runs):
+    """Max successful peak RSS across the given run dicts, in GB (or None)."""
+    vals = []
+    for r in runs:
+        if r is None or r["outcome"] != "success":
+            continue
+        m = (r.get("summary") or {}).get("peak_rss_mb")
+        if m:
+            vals.append(m / 1024.0)
+    return max(vals) if vals else None
+
+
+# ── Table 1: consolidated outcome matrix ────────────────────────────────────
+
+# Each experiment block: (title, json name, [(node_count, scale_key), ...]).
+BLOCKS = [
+    ("Cockett 3D --- isotropic box, cell AR $\\approx$ 1:1", "cockett",
+     [(1, "sweep"), (2, "medium"), (4, "large"), (8, "huge")]),
+    ("Lower Murrumbidgee --- horizontal weak scaling "
+     "(300 layers; $\\Delta x$ 1775$\\to$620\\,m, AR 1000:1$\\to$350:1)",
+     "murr_horizontal",
+     [(1, "h1"), (2, "h2"), (4, "h4"), (8, "h8")]),
+    ("Lower Murrumbidgee --- vertical weak scaling "
+     "($\\Delta x=1775$\\,m; 150$\\to$1200 layers, AR 500:1$\\to$4000:1)",
+     "murr_vertical",
+     [(1, "smoke"), (2, "sweep"), (4, "medium"), (8, "large")]),
+    ("Lower Murrumbidgee --- strong scaling "
+     "(fixed $3.2\\times10^{8}$ DOF, $\\Delta x=620$\\,m, 300 layers)",
+     "murr_strong",
+     [(1, "s1"), (2, "s2"), (4, "s4"), (8, "s8"), (16, "s16"), (32, "s32")]),
+]
+
+NODE_COLS = [1, 2, 4, 8, 16, 32]
+
+
+def build_outcomes_table():
+    lines = []
+    lines.append(r"\begin{table*}[t]")
+    lines.append(r"\caption{Solver robustness across the four scaling "
+                 r"experiments. Each cell reports the outcome of one run at "
+                 r"the indicated node count: $\bullet$ converged and "
+                 r"completed the run; \textrm{D} diverged; \textrm{M} failed "
+                 r"on an out-of-memory error; \textrm{T} did not reach the "
+                 r"final time within the wall-clock limit; a dash marks a "
+                 r"configuration that was not attempted. The final column is "
+                 r"the peak resident memory per process over the successful "
+                 r"runs in that row. SOR and the black-box algebraic "
+                 r"multigrids (GAMG, BoomerAMG) survive the isotropic Cockett "
+                 r"box but are culled by the anisotropy of the basin mesh, "
+                 r"whereas the two vertically lumped presets carry every "
+                 r"experiment.}")
+    lines.append(r"\label{tab:solver_outcomes}")
+    ncol = 1 + len(NODE_COLS) + 1
+    colspec = "l" + "c" * len(NODE_COLS) + "r"
+    lines.append(r"\begin{tabular}{" + colspec + "}")
+    lines.append(r"\hline")
+    header = ["Solver"] + [f"{n}" for n in NODE_COLS] + [r"Peak mem"]
+    lines.append(" & ".join(header) + r" \\")
+    lines.append(" & " + " & ".join(r"\multicolumn{1}{c}{node" +
+                 ("s" if n != 1 else "") + "}" for n in NODE_COLS) +
+                 r" & (GB) \\")
+    lines.append(r"\hline")
+
+    for title, name, scale_map in BLOCKS:
+        data = load(name)
+        idx = index(data)
+        lines.append(r"\multicolumn{" + str(ncol) +
+                     r"}{l}{\textit{" + title + r"}} \\")
+        present = {s for (s, _) in idx}
+        for solver in SOLVER_ORDER:
+            if solver not in present:
+                continue
+            cells = [SOLVER_LABEL[solver]]
+            row_runs = []
+            for n in NODE_COLS:
+                sc = dict(scale_map).get(n)
+                r = idx.get((solver, sc)) if sc else None
+                if sc is None or r is None:
+                    cells.append(NOT_RUN)
+                else:
+                    cells.append(GLYPH.get(r["outcome"], "?"))
+                    row_runs.append(r)
+            mem = peak_mem_gb(row_runs)
+            cells.append(f"{mem:.1f}" if mem is not None else NOT_RUN)
+            lines.append(" & ".join(cells) + r" \\")
+        lines.append(r"\hline")
+
+    lines.append(r"\end{tabular}")
+    lines.append(r"\end{table*}")
+    return "\n".join(lines) + "\n"
+
+
+# ── Table 2: hierarchy-depth sweep ──────────────────────────────────────────
+
+def linear_per_step(r):
+    s = r.get("summary") or {}
+    ns, lin = s.get("steps_completed"), s.get("total_linear")
+    return lin / ns if (ns and lin) else None
+
+
+def build_hierarchy_table():
+    data = load("murr_hierarchy")
+    idx = index(data)
+    levels = [("L1", "1"), ("L2", "2"), ("L3", "3")]
+    solvers = [("gmg", "GMG-H"), ("vlumping_hmg", "VLumping-HMG")]
+
+    lines = []
+    lines.append(r"\begin{table}[t]")
+    lines.append(r"\caption{Effect of multigrid hierarchy depth at the "
+                 r"eight-node Lower Murrumbidgee configuration "
+                 r"($\Delta x=620$\,m, 300 layers). For each solver the "
+                 r"table lists the linear iterations per timestep and the "
+                 r"wall time per timestep as the number of coarsening levels "
+                 r"is increased; the fastest depth for each solver is shown "
+                 r"in bold. GMG-H is fastest at two levels and degrades "
+                 r"beyond it, whereas VLumping-HMG is optimal at a single "
+                 r"base-mesh level and is roughly twice as fast at its "
+                 r"optimum. Other parameters are as in "
+                 r"Table~\ref{tab:solver_outcomes}.}")
+    lines.append(r"\label{tab:hierarchy_depth}")
+    lines.append(r"\begin{tabular}{lcccccc}")
+    lines.append(r"\hline")
+    lines.append(r" & \multicolumn{3}{c}{Linear iters / step}"
+                 r" & \multicolumn{3}{c}{Wall time / step (s)} \\")
+    lines.append(r"Solver & 1 & 2 & 3 & 1 & 2 & 3 \\")
+    lines.append(r"\hline")
+
+    for solver, label in solvers:
+        iters, walls = [], []
+        for lk, _ in levels:
+            r = idx.get((solver, lk))
+            iters.append(linear_per_step(r) if r and r["outcome"] == "success" else None)
+            walls.append((r.get("summary") or {}).get("mean_wall_per_step")
+                         if r and r["outcome"] == "success" else None)
+        # bold the fastest (min wall)
+        valid_walls = [w for w in walls if w is not None]
+        best = min(valid_walls) if valid_walls else None
+
+        def cell_i(v):
+            return f"{v:.0f}" if v is not None else NOT_RUN
+
+        def cell_w(v):
+            if v is None:
+                return NOT_RUN
+            s = f"{v:.1f}"
+            return r"\textbf{" + s + "}" if v == best else s
+
+        row = [label] + [cell_i(v) for v in iters] + [cell_w(v) for v in walls]
+        lines.append(" & ".join(row) + r" \\")
+
+    lines.append(r"\hline")
+    lines.append(r"\end{tabular}")
+    lines.append(r"\end{table}")
+    return "\n".join(lines) + "\n"
+
+
+def main():
+    ap = argparse.ArgumentParser()
+    ap.add_argument("--outdir", default=str(PAPER_TABLES))
+    ap.add_argument("--stdout", action="store_true")
+    args = ap.parse_args()
+
+    outdir = Path(args.outdir)
+    outdir.mkdir(parents=True, exist_ok=True)
+
+    tables = {
+        "solver_outcomes.tex": build_outcomes_table(),
+        "hierarchy_depth.tex": build_hierarchy_table(),
+    }
+    for fname, tex in tables.items():
+        (outdir / fname).write_text(tex)
+        print(f"Wrote {outdir / fname}")
+        if args.stdout:
+            print("-" * 70)
+            print(tex)
+
+
+if __name__ == "__main__":
+    main()

@@ -127,6 +127,9 @@ def cockett_cases():
         "sweep": {"nodes": 1, "nx": 120, "nz": 156, "steps": 30},
         "medium": {"nodes": 2, "nx": 152, "nz": 196, "steps": 30},
         "large": {"nodes": 8, "nx": 240, "nz": 312, "steps": 30},
+        # Alias for the DQ2 rerun, matching parse_results.py's post-relabel
+        # "huge" (8N/144M DQ1 mesh) — see COCKETT_DQ2_SOLVERS below.
+        "huge": {"nodes": 8, "nx": 240, "nz": 312, "steps": 30},
     }
 
 
@@ -415,8 +418,9 @@ def get_phase_runs(phase):
 
     elif phase == "round3_dq2":
         # DQ2 Cockett: iterative winners at all 3 scales, degree-2 elements.
+        # "huge" (not "large") to match parse_results.py's relabeled scales.
         for solver in COCKETT_DQ2_SOLVERS:
-            for scale in ["sweep", "medium", "large"]:
+            for scale in ["sweep", "medium", "huge"]:
                 runs.append(("cockett", solver, scale, 2))
 
     elif phase == "round3_dq2_smoke":

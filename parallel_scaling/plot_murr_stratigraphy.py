@@ -6,6 +6,12 @@
     "bore-hole" measurements.
 
 Output: ``figures/Murrumbidgee/stratigraphy.png``.
+
+NOT used in the paper (2026-07-20) — superseded, along with
+``plot_murr_elevation.py``, ``plot_murr_mesh.py`` and
+``plot_murr_icbc.py``, by the combined visualisation in
+``viz_murrumbidgee.py`` (``figures/Murrumbidgee/example_solution.png``).
+Kept for reference only.
 """
 from __future__ import annotations
 

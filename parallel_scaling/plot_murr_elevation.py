@@ -3,6 +3,15 @@
 Reads ``murrumbidgee_data/elevation_data.csv`` and produces
 ``figures/Murrumbidgee/elevation.png``: surface elevation in metres,
 clipped to the simulation polygon, with the domain boundary overlaid.
+
+NOT used in the paper (2026-07-20). The four standalone setup figures
+(this one, ``plot_murr_mesh.py``, ``plot_murr_stratigraphy.py``,
+``plot_murr_icbc.py``) were superseded by the combined 3D
+visualisation in ``viz_murrumbidgee.py``
+(``figures/Murrumbidgee/example_solution.png``), which shows the
+topography, conductivity structure, water table and forcing together.
+Kept for reference; do not regenerate/commit ``elevation.{pdf,png}``
+without checking the paper's figure set first.
 """
 from __future__ import annotations
 

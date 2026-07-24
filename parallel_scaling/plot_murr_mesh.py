@@ -8,6 +8,12 @@ target horizontal resolution; the visual count of triangles matches
 the production mesh closely enough for a methods figure.
 
 Output: ``figures/Murrumbidgee/mesh.png``.
+
+NOT used in the paper (2026-07-20) — superseded, along with
+``plot_murr_elevation.py``, ``plot_murr_stratigraphy.py`` and
+``plot_murr_icbc.py``, by the combined visualisation in
+``viz_murrumbidgee.py`` (``figures/Murrumbidgee/example_solution.png``).
+Kept for reference only.
 """
 from __future__ import annotations
 

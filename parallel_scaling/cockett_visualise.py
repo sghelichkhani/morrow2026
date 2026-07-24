@@ -1,21 +1,27 @@
-"""Cockett (2018) 3D box — high-resolution DQ2 run that writes VTK for rendering.
+"""Cockett (2018) 3D box — high-resolution run that writes VTK for rendering.
 
 This is the *visualisation* sibling of ``cockett_3d.py``. The scaling
 driver runs the same heterogeneous-infiltration box (2 x 2 x 2.6 m, sand /
 loamy-sand van Genuchten soil) but writes nothing — it only times the
-solve. Here we solve the same problem at the highest resolution we ran for
-the scaling study (the ``large`` mesh, 240 x 240 x 312) and at degree 2,
-then write a regular sequence of moisture-content frames so the infiltration
-front can be turned into a movie.
+solve. Here we solve the same problem at full resolution and write a
+regular sequence of moisture-content frames so the infiltration front can
+be turned into a movie.
 
-The point of degree 2 is to *see* the high-order field. Firedrake's VTK
-writer is happy to take a DQ2 function, but rather than lean on
-``target_continuity`` we make the output space explicit: the moisture
-content is interpolated onto a continuous CG2 space and that CG2 function
-is what gets written. This mirrors the demo idiom
+The production movie is the ``sweep`` scale, 120 x 120 x 156 (~18M DOF) at
+degree 1, on one ``normalsr`` node with BoomerAMG (see
+``submit_cockett_visualise.pbs`` for the cost-vs-resolution rationale —
+full DQ2 at 240^3 is ~14 min/step, far too dear for a 108-step animation).
+The mesh, degree and solver are all CLI arguments, so the same driver still
+runs the DQ2 240^3 case if wanted; only the submission script picks the
+operating point.
+
+Whatever the degree, we make the output space explicit rather than leaning
+on ``target_continuity``: the DQ solve field is interpolated onto a
+continuous CG space of matching degree and that CG function is what gets
+written. This mirrors the demo idiom
 (``theta.interpolate(soil_curve.moisture_content(h))``), just with the
-target being CG2 instead of the solve space, so ParaView receives genuine
-continuous quadratic Lagrange cells.
+target being CG instead of the solve space, so ParaView receives genuine
+continuous Lagrange cells rather than a P1 collapse of the DQ solution.
 
 For the movie we write two fields per frame on a fixed step cadence
 (``--output-every``): the moisture content and the pressure head. The
@@ -31,15 +37,16 @@ ParaView receives one dataset per frame with both arrays. The soil indicator
 is written once, on a DQ0 space, so the soil-structure context stays crisp
 (a sharp tanh indicator on CG would ring).
 
-Usage (Gadi, 8 nodes — see submit_cockett_visualise.pbs):
+Usage (Gadi, 1 node — see submit_cockett_visualise.pbs):
     mpiexec -np $PBS_NCPUS python cockett_visualise.py \
-        --nx 240 --nz 312 --degree 2 --solver vlumping_inexact --dt 2400 \
+        --nx 120 --nz 156 --degree 1 --solver boomeramg --dt 2400 \
+        --output-every 6 \
         --output-dir /scratch/xd2/sg8812/morrow2026/parallel_scaling/results/cockett_hires
 
 Laptop smoke test (serial, tiny mesh, direct solve):
     PYTHONPATH=~/Workplace/g-adopt-worktrees/sghelichkhani/richardson \
         ~/Workplace/firedrake-2026-03-03/venv-firedrake/bin/python3 \
-        cockett_visualise.py --nx 24 --nz 32 --degree 2 --solver direct \
+        cockett_visualise.py --nx 24 --nz 32 --degree 1 --solver direct \
         --output-dir results/cockett_hires_smoke
 """
 
@@ -49,23 +56,24 @@ if __name__ == "__main__":
     import argparse
     import sys
 
-    parser = argparse.ArgumentParser(description="Cockett 3D DQ2 visualisation run")
-    parser.add_argument("--nx", type=int, default=240,
-                        help="horizontal cells per side (large scaling mesh: 240)")
-    parser.add_argument("--nz", type=int, default=312,
-                        help="vertical layers (large scaling mesh: 312)")
-    parser.add_argument("--degree", type=int, default=2,
-                        help="DQ polynomial degree of the solve space")
+    parser = argparse.ArgumentParser(description="Cockett 3D visualisation run")
+    parser.add_argument("--nx", type=int, default=120,
+                        help="horizontal cells per side (movie 'sweep' scale: 120)")
+    parser.add_argument("--nz", type=int, default=156,
+                        help="vertical layers (movie 'sweep' scale: 156)")
+    parser.add_argument("--degree", type=int, default=1,
+                        help="DQ polynomial degree of the solve space (movie: 1; "
+                             "full DQ2 at 240^3 is far too dear for a 108-step run)")
     parser.add_argument("--dt", type=float, default=2400.0,
                         help="time step in seconds (2400 s = 108 steps to 72 h; "
                              "this is a visualisation, so we don't need the 600 s "
                              "resolution the scaling runs used)")
-    parser.add_argument("--solver", type=str, default="vlumping_inexact",
-                        help="solver preset from solvers/. vlumping_inexact is "
-                             "the mesh-independent production preset and the "
-                             "g-adopt auto-default for extruded Cartesian meshes "
-                             "(cheap coarse solve, far fewer iterations than "
-                             "bjacobi); 'direct' for tiny laptop meshes")
+    parser.add_argument("--solver", type=str, default="boomeramg",
+                        help="solver preset from solvers/. boomeramg is the most "
+                             "mesh-independent Cockett preconditioner and best "
+                             "suited to the large dt used here (vlumping's vertical "
+                             "lumping is tuned to the small-dt regime and degrades "
+                             "at dt=2400 s); 'direct' for tiny laptop meshes")
     parser.add_argument("--output-every", type=int, default=6,
                         help="write a moisture frame every N steps (with the "
                              "default dt=2400 s, every 6 steps = a frame every "
@@ -88,8 +96,8 @@ from gadopt import (
 T_FINAL_H = 72.0  # simulate three days of infiltration
 
 
-def model(nx=240, nz=312, degree=2, dt_value=2400.0, output_every=6,
-          solver="vlumping_inexact", output_dir="results/cockett_hires"):
+def model(nx=120, nz=156, degree=1, dt_value=2400.0, output_every=6,
+          solver="boomeramg", output_dir="results/cockett_hires"):
     Lx, Ly, Lz = 2.0, 2.0, 2.6
 
     mesh2d = RectangleMesh(nx, nx, Lx, Ly, quadrilateral=True)

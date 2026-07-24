@@ -144,7 +144,7 @@ def legend_handles(axes):
 def panel_letter(ax, letter):
     """Grey-circle panel letter, top-left, matching the Vauclin figure."""
     ax.text(
-        0.08, 0.92, letter,
+        0.055, 0.92, letter,
         transform=ax.transAxes, ha="center", va="center",
         fontsize=16, zorder=5,
         bbox=dict(boxstyle="circle,pad=0.3",
@@ -209,43 +209,65 @@ def fig_murr_weak(outdir):
     vlabels = ["1N\n150 L\n500:1", "2N\n300 L\n1000:1",
                "4N\n600 L\n2000:1", "8N\n1200 L\n4000:1"]
 
-    fig, axes = plt.subplots(2, 2, figsize=(9.4, 7.6))
+    # Columns = refinement direction (each shares one x-axis down the
+    # column); rows = metric (wall time on top, iterations below), with a
+    # shared y-axis across each row so the two refinement directions read
+    # on the same scale (right-column tick labels are then redundant).
+    fig, axes = plt.subplots(2, 2, figsize=(9.6, 7.4),
+                             sharex="col", sharey="row")
 
-    # Top row: horizontal refinement (aspect ratio falls).
+    # Yellow beveled box for the column (refinement-direction) titles.
+    title_box = dict(boxstyle="round,pad=0.4",
+                     facecolor="lightyellow", edgecolor="black")
+
+    # Left column: horizontal refinement (aspect ratio falls).
     draw(axes[0, 0], ih, solvers, hscales, wall_per_newton, log=True)
-    axes[0, 0].set_ylabel("Wall time / Newton step (s)")
-    axes[0, 0].set_title("(a) Horizontal refinement — wall time")
-    draw(axes[0, 1], ih, solvers, hscales, linear_per_newton)
-    axes[0, 1].set_ylabel("Linear iters / Newton step")
-    axes[0, 1].set_title("(b) Horizontal refinement — iterations")
-    for ax in axes[0]:
-        ax.set_xticks(range(len(hscales)))
-        ax.set_xticklabels(hlabels)
-        ax.set_xlabel("Nodes / $\\Delta x$ / aspect ratio")
-        ax.margins(x=0.08)
+    axes[0, 0].set_title("Horizontal refinement", bbox=title_box, pad=15)
+    draw(axes[1, 0], ih, solvers, hscales, linear_per_newton)
+    panel_letter(axes[0, 0], "A")
+    panel_letter(axes[1, 0], "B")
 
-    # Bottom row: vertical layer growth (aspect ratio climbs).
-    draw(axes[1, 0], iv, solvers, vscales, wall_per_newton, log=True)
-    axes[1, 0].set_ylabel("Wall time / Newton step (s)")
-    axes[1, 0].set_title("(c) Vertical refinement — wall time")
+    # Right column: vertical layer growth (aspect ratio climbs).
+    draw(axes[0, 1], iv, solvers, vscales, wall_per_newton, log=True)
+    axes[0, 1].set_title("Vertical refinement", bbox=title_box, pad=15)
     draw(axes[1, 1], iv, solvers, vscales, linear_per_newton)
-    axes[1, 1].set_ylabel("Linear iters / Newton step")
-    axes[1, 1].set_title("(d) Vertical refinement — iterations")
-    for ax in axes[1]:
-        ax.set_xticks(range(len(vscales)))
-        ax.set_xticklabels(vlabels)
-        ax.set_xlabel("Nodes / layers / aspect ratio")
+    panel_letter(axes[0, 1], "C")
+    panel_letter(axes[1, 1], "D")
+
+    # Row y-labels (left column carries the metric name), pinned to a
+    # fixed x so the wall-time and iterations labels align vertically.
+    axes[0, 0].set_ylabel("Wall time / Newton step (s)")
+    axes[1, 0].set_ylabel("Linear iters / Newton step")
+    axes[0, 0].yaxis.set_label_coords(-0.14, 0.5)
+    axes[1, 0].yaxis.set_label_coords(-0.14, 0.5)
+
+    # Only the bottom panels carry the (shared) x ticks + label.
+    axes[1, 0].set_xticks(range(len(hscales)))
+    axes[1, 0].set_xticklabels(hlabels)
+    axes[1, 0].set_xlabel("Nodes / $\\Delta x$ / aspect ratio")
+    axes[1, 1].set_xticks(range(len(vscales)))
+    axes[1, 1].set_xticklabels(vlabels)
+    axes[1, 1].set_xlabel("Nodes / layers / aspect ratio")
+    for ax in axes.flat:
         ax.margins(x=0.08)
 
-    fig.subplots_adjust(left=0.10, right=0.985, top=0.91, bottom=0.14,
-                        hspace=0.45, wspace=0.26)
+    # Tight hspace so each column's wall-time / iterations panels butt
+    # together over their shared x-axis.
+    fig.subplots_adjust(left=0.10, right=0.985, top=0.88, bottom=0.11,
+                        hspace=0.06, wspace=0.06)
+
+    fig.text(0.5425, 1.07,
+             "Weak scaling — anisotropic Lower Murrumbidgee basin",
+             ha="center", va="center", fontsize=17, zorder=5,
+             bbox=dict(boxstyle="round,pad=0.5",
+                       facecolor="lightyellow", edgecolor="black"))
 
     h, l = legend_handles(axes)
-    fig.legend(h, l, loc="lower center", ncol=len(l),
-               bbox_to_anchor=(0.5, -0.005))
+    fig.legend(h, l, loc="upper center", ncol=len(l),
+               bbox_to_anchor=(0.5425, 1.015))
     out = outdir / "Murrumbidgee" / "weak_scaling.pdf"
     out.parent.mkdir(parents=True, exist_ok=True)
-    fig.savefig(out, bbox_inches="tight")
+    fig.savefig(out, bbox_inches="tight", pad_inches=0.2)
     plt.close(fig)
     print(f"  saved {out}")
 
@@ -269,18 +291,20 @@ def fig_murr_strong(outdir):
                     ys.append(w)
         return xs, ys
 
-    # Plain VLumping carries the tractable 2-8 node regime.
     st = STYLE["vlumping_inexact"]
     xs, ys = pts("vlumping_inexact")
-    ax.plot(xs, ys, color=st["color"], marker=st["marker"], lw=LW,
-            markersize=MS, zorder=3, label="VLumping")
 
-    # Ideal 1/N reference over the tractable range, anchored at 2 nodes.
+    # Ideal 1/N reference first, so it heads the legend (anchored at the
+    # first tractable point, 2 nodes).
     if xs:
         xr = np.array(xs)
         ideal = ys[0] * 2.0 ** -(xr - xr[0])
         ax.plot(xr, ideal, ls="--", color="gray", lw=1.1, alpha=0.6, zorder=1,
-                label="Ideal $1/N$ (2$\\to$8 nodes)")
+                label="Ideal $1/N$")
+
+    # Plain VLumping carries the tractable 2-8 node regime.
+    ax.plot(xs, ys, color=st["color"], marker=st["marker"], lw=LW,
+            markersize=MS, zorder=3, label="VLumping")
 
     # The single VLumping-HMG point that reaches 3328 cores.
     sth = STYLE["vlumping_hmg"]
@@ -288,16 +312,21 @@ def fig_murr_strong(outdir):
     if xh:
         ax.plot(xh, yh, color=sth["color"], marker=sth["marker"],
                 markersize=MS + 3, linestyle="none", zorder=4,
-                label="VLumping-HMG (32 nodes)")
+                label="VLumping-HMG")
 
     ax.set_yscale("log")
     ax.set_xticks([np.log2(n) for n, _ in node_scale])
     ax.set_xticklabels([str(n) for n, _ in node_scale])
-    ax.set_xlabel("Nodes (104 cores each)")
-    ax.set_ylabel("Wall time / step (s)")
-    ax.set_title("Fixed $3.2\\times10^{8}$ DOF ($\\Delta x=620$ m, 300 layers)")
+    ax.set_xlabel("Compute Nodes (104 cores each)", fontsize=14)
+    ax.set_ylabel("Wall time / step (s)", fontsize=14)
+    ax.tick_params(labelsize=12)
+    ax.set_title("Strong scaling — anisotropic Lower Murrumbidgee basin",
+                 fontsize=13,
+                 bbox=dict(boxstyle="round,pad=0.5",
+                           facecolor="lightyellow", edgecolor="black"),
+                 pad=12)
     ax.grid(True, which="both", alpha=0.3, zorder=0)
-    ax.legend()
+    ax.legend(fontsize=12)
     fig.tight_layout()
     out = outdir / "Murrumbidgee" / "strong_scaling.pdf"
     out.parent.mkdir(parents=True, exist_ok=True)

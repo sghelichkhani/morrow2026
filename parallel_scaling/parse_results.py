@@ -321,11 +321,11 @@ EXPERIMENTS = {
     },
     "cockett_dq2": {
         "dir": "cockett",
-        "scales": ["sweep_dq2", "medium_dq2", "large_dq2"],
+        "scales": ["sweep_dq2", "medium_dq2", "huge_dq2"],
         "scale_meta": {
             "sweep_dq2": {"nodes": 1, "cpus": 104, "nx": 120, "nz": 156, "degree": 2, "dof_approx": "62M"},
             "medium_dq2": {"nodes": 2, "cpus": 208, "nx": 152, "nz": 196, "degree": 2, "dof_approx": "124M"},
-            "large_dq2": {"nodes": 8, "cpus": 832, "nx": 240, "nz": 312, "degree": 2, "dof_approx": "490M"},
+            "huge_dq2": {"nodes": 8, "cpus": 832, "nx": 240, "nz": 312, "degree": 2, "dof_approx": "490M"},
         },
     },
     "murr_vertical": {
