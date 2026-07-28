@@ -24,7 +24,7 @@
 #PBS -l mem=480GB
 #PBS -l jobfs=200GB
 #PBS -l walltime=08:00:00
-#PBS -l storage=scratch/xd2+gdata/xd2+gdata/fp50
+#PBS -l storage=scratch/xd2+gdata/fp50
 #PBS -l wd
 #PBS -j oe
 #PBS -N richards_verification
@@ -35,15 +35,15 @@ set -eo pipefail
 
 source /etc/profile
 module use /g/data/fp50/modules
-module load firedrake/main-20260401
+module load firedrake/main-20260716
 
-LOCAL=/scratch/xd2/sg8812/local/firedrake-main-20260401
 RICHARDSON=/scratch/xd2/sg8812/g-adopt-worktrees/sghelichkhani/richardson
-IRKSOME=/scratch/xd2/sg8812/Irksome
 GWASSESS=/scratch/xd2/sg8812/gwassess
+OMEGA=/scratch/xd2/sg8812/omega
 
-export PATH="${LOCAL}/bin:${PATH}"
-export PYTHONPATH="${RICHARDSON}:${IRKSOME}:${GWASSESS}:${LOCAL}/lib/python3.11/site-packages:${PYTHONPATH:-}"
+# irksome (main) and petsc4py ship inside the firedrake/main-20260716 venv,
+# so the old Irksome branch and hand-built local prefix are no longer needed.
+export PYTHONPATH="${RICHARDSON}:${GWASSESS}:${OMEGA}:${PYTHONPATH:-}"
 export PYTHONDONTWRITEBYTECODE=1
 export PYTHONUNBUFFERED=1
 export OMPI_MCA_io=ompio

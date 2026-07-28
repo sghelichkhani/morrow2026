@@ -27,6 +27,7 @@ def compute_mass_balance(*,
                          function_space: str,
                          stage_type: str = "value") -> float:
     mesh = UnitSquareMesh(grid_points, grid_points, quadrilateral=True)
+    mesh.cartesian = True  # G-ADOPT convention (tag geometry for the gravity term)
     V = FunctionSpace(mesh, function_space, polynomial_degree)
 
     soil = HaverkampCurve(

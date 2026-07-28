@@ -166,6 +166,10 @@ def model(horiz_res, n_layers, degree=1, dt_value=43200.0, steps=20,
         refinement_ratio=1,  # horizontal-only coarsening
     )
     mesh = mh3d[-1]
+    # G-ADOPT convention: tag every hierarchy level as Cartesian so the gravity
+    # term's upward_normal/is_cartesian resolves on coarse grids too.
+    for m in mh3d:
+        m.cartesian = True
 
     # Function spaces — tensor product DG elements on triangular prisms
     horiz_elt = FiniteElement("DG", triangle, degree)

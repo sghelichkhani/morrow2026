@@ -102,6 +102,7 @@ def model(nx=120, nz=156, degree=1, dt_value=2400.0, output_every=6,
 
     mesh2d = RectangleMesh(nx, nx, Lx, Ly, quadrilateral=True)
     mesh = ExtrudedMesh(mesh2d, nz, layer_height=Lz / nz)
+    mesh.cartesian = True  # G-ADOPT convention (tag geometry for the gravity term)
     X = SpatialCoordinate(mesh)
 
     # Solve space: discontinuous, degree as requested (DQ2 by default).

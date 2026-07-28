@@ -18,6 +18,7 @@ sys.path.insert(0, str(Path(__file__).resolve().parent.parent.parent))
 from verification.common import save_json  # noqa: E402
 
 from tracy_2d import model  # noqa: E402
+from firedrake.petsc import PETSc  # noqa: E402  (used for rank-0 logging below)
 
 
 ALL_CASES = {
@@ -25,6 +26,10 @@ ALL_CASES = {
                         "levels": [32, 49, 74, 113, 172, 262, 400, 608]},
     "specified_head_dg1": {"degree": 1, "bc_type": "specified_head",
                            "levels": [32, 49, 74, 113, 172, 262, 400, 608]},
+    # NB: refining past 608^2 does NOT push the DG2 rate toward p+1=3; the
+    # fine-mesh error floors on the steady-state-termination / reference error
+    # and the local rate rolls off (2.92 at 608->400 down to 2.78 at
+    # 1024->800). The asymptotic window below already gives ~2.9, matching 3D.
     "specified_head_dg2": {"degree": 2, "bc_type": "specified_head",
                            "levels": [32, 49, 74, 113, 172, 262, 400, 608]},
 }

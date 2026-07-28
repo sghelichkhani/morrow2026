@@ -40,15 +40,19 @@ ALL_SOLVERS = [
     "vlumping_sor", "vlumping_inexact",
 ]
 
-# The 11 solvers for the Round 3 Cockett comparison: 6 VLumping variants
-# (baseline + 5 parameter sweeps) and 5 re-baselines of previous winners.
-ROUND3_SOLVERS = [
-    "vlumping", "vlumping_1sweep", "vlumping_4sweep",
-    "vlumping_richardson", "vlumping_sor", "vlumping_inexact",
-    "boomeramg", "ngmres_gmg", "gmg", "gamg", "bjacobi",
-    # Round 4 additions: line smoother, line smoother + nested 2D MG
-    "vlumping_linesmooth", "vlumping_hmg",
+# Paper-shown solver set (2026-07 upwind-fix rerun). Only the presets that
+# appear in the manuscript figures/tables are rerun: the two single-level
+# baselines (SOR, BJacobi), horizontal-only geometric MG (GMG-H = `gmg`),
+# the tuned Hypre BoomerAMG, and the two vertically lumped presets
+# (VLumping = `vlumping_inexact`, VLumping-HMG = `vlumping_hmg`). The
+# ablation variants (vlumping_1sweep/_4sweep/_richardson/_sor/_linesmooth,
+# gamg, ngmres_gmg, plain `vlumping`) are noted in the text but not rerun.
+PAPER_SOLVERS = [
+    "sor", "bjacobi", "gmg", "boomeramg", "vlumping_inexact", "vlumping_hmg",
 ]
+
+# Round 3 Cockett comparison, restricted to the paper-shown set.
+ROUND3_SOLVERS = list(PAPER_SOLVERS)
 
 # DQ2 (degree-2) Cockett re-run: the iterative solvers that actually scale.
 # Run at the same sweep/medium/large scales as round3 but with degree-2
@@ -64,45 +68,31 @@ COCKETT_DQ2_SOLVERS = [
 # Murrumbidgee vertical weak scaling: 4 solvers representing different
 # preconditioner families. Tests weak scaling while simultaneously
 # increasing aspect ratio (the ultimate anisotropy stress test).
-ROUND3_MURR_SOLVERS = [
-    "vlumping_inexact",  # best VLumping variant from Cockett
-    "vlumping",          # baseline VLumping (2nd best)
-    "boomeramg",         # algebraic AMG (expected to struggle at high AR)
-    "gmg",               # GMG-H with horizontal-only coarsening (paper's solver)
-    # Round 4 additions
-    "vlumping_linesmooth",
-    "vlumping_hmg",
-]
+ROUND3_MURR_SOLVERS = list(PAPER_SOLVERS)
 
 # Murrumbidgee horizontal weak scaling: replicates the paper's main scaling
 # figure (Morrow et al. 2026, Fig. murrumbidgee_weak). Fixed 300 layers,
 # vary horizontal resolution to keep ~40M DOF/node. The paper tested GMG-H,
 # GAMG, BJacobi; we add VLumping and BoomerAMG.
-ROUND3_MURR_HORIZ_SOLVERS = [
-    "vlumping_inexact",  # new: best VLumping variant
-    "vlumping",          # new: baseline VLumping
-    "boomeramg",         # new: best algebraic AMG from Cockett
-    "gmg",               # paper's winner
-    "gamg",              # paper's AMG
-    "bjacobi",           # paper's baseline
-    # Round 4 additions
-    "vlumping_linesmooth",
-    "vlumping_hmg",
-]
+ROUND3_MURR_HORIZ_SOLVERS = list(PAPER_SOLVERS)
 
 # Gadi PBS configuration
 PBS_PROJECT = "xd2"
 PBS_QUEUE = "normalsr"
 CPUS_PER_NODE = 104  # Sapphire Rapids nodes on normalsr queue
 CPUS_SINGLE_NODE = 104  # Full Sapphire Rapids node (was 48 for Cascade Lake)
-STORAGE = "scratch/xd2+gdata/xd2+gdata/fp50"
+# gdata/xd2 (on the gdata1b filesystem) dropped: the drivers read the repo +
+# richardson/gwassess/omega from scratch/xd2 and modules from gdata/fp50, so
+# gdata/xd2 is unused and requesting it hangs jobs whenever gdata1b is under
+# maintenance.
+STORAGE = "scratch/xd2+gdata/fp50"
 
 # Paths on Gadi
 GADOPT_PATH = "/scratch/xd2/sg8812/g-adopt-worktrees/sghelichkhani/richardson"
-LOCAL_PACKAGES = "/scratch/xd2/sg8812/local/firedrake-main-20260514/lib/python3.11/site-packages"
-IRKSOME_OVERRIDE = "/scratch/xd2/sg8812/Irksome"
-FIREDRAKE_OVERRIDE = "/scratch/xd2/sg8812/firedrake-override"
 GWASSESS_PATH = "/scratch/xd2/sg8812/gwassess"
+# omega provides the Murrumbidgee mesh builder (SurfaceMesh / build_mesh_hierarchy).
+# Flat-layout checkout: putting the repo root on PYTHONPATH is enough.
+OMEGA_PATH = "/scratch/xd2/sg8812/omega"
 # The scaling drivers (with the full solver-preset inventory under
 # parallel_scaling/solvers/) live in *this* repo, not the g-adopt
 # richardson worktree — the g-adopt copy was pruned to the four
@@ -349,9 +339,9 @@ def generate_pbs_script(case, solver, scale, output_dir, degree=1):
 
 source /etc/profile
 module use /g/data/fp50/modules
-module load firedrake/main-20260514
+module load firedrake/main-20260716
 
-export PYTHONPATH="{GADOPT_PATH}":"{IRKSOME_OVERRIDE}":"{LOCAL_PACKAGES}":"{FIREDRAKE_OVERRIDE}":"{GWASSESS_PATH}":${{PYTHONPATH}}
+export PYTHONPATH="{GADOPT_PATH}":"{GWASSESS_PATH}":"{OMEGA_PATH}":${{PYTHONPATH}}
 export PYTHONDONTWRITEBYTECODE=1
 
 export OMPI_MCA_io="ompio"
@@ -458,7 +448,12 @@ def get_phase_runs(phase):
         # well-conditioned enough to converge.
         for scale in ("s1", "s2", "s4", "s8", "s16", "s32"):
             runs.append(("murr_strong", "vlumping_inexact", scale))
-        runs.append(("murr_strong", "vlumping_hmg", "s32"))
+        # Full vlumping_hmg strong-scaling curve (2026-07 rerun extra): carry
+        # the nested-coarse-solve variant across the whole sweep, not just the
+        # extreme s32 point, so it fills the 8->32 gap where vlumping_inexact's
+        # direct coarse factorisation hangs/OOMs (s16 M2, s32 OOM).
+        for scale in ("s2", "s4", "s8", "s16", "s32"):
+            runs.append(("murr_strong", "vlumping_hmg", scale))
 
     elif phase == "hierarchy":
         # Murrumbidgee hierarchy-depth study at h8 (production scale)

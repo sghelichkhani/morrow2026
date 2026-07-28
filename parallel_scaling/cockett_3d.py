@@ -72,9 +72,14 @@ def model(nx, nz, degree=1, dt_value=300.0, steps=100,
             extrusion_type="uniform",
         )
         mesh = mh3d[-1]
+        # G-ADOPT convention: tag every hierarchy level as Cartesian so the
+        # gravity term's upward_normal/is_cartesian resolves on coarse grids too.
+        for m in mh3d:
+            m.cartesian = True
     else:
         mesh2d = RectangleMesh(nx, nx, Lx, Ly, quadrilateral=True)
         mesh = ExtrudedMesh(mesh2d, nz, layer_height=Lz / nz)
+        mesh.cartesian = True
 
     X = SpatialCoordinate(mesh)
 

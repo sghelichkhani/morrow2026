@@ -62,6 +62,7 @@ def model(nodes, degree=1, dt_value=5e4, t_final=5e6,
 
     mesh2d = RectangleMesh(nodes, nodes, L, L, quadrilateral=True)
     mesh = ExtrudedMesh(mesh2d, nodes, layer_height=L / nodes, name="mesh")
+    mesh.cartesian = True  # G-ADOPT convention (tag geometry for the gravity term)
     X = SpatialCoordinate(mesh)
 
     V = FunctionSpace(mesh, "DQ", degree)
