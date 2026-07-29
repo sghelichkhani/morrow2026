@@ -1,0 +1,189 @@
+{
+  "cumulative_inflow": 0.03,
+  "dt": 100.0,
+  "entries": [
+    {
+      "degree": 0,
+      "dx": 0.08333333333333333,
+      "family": "DQ",
+      "global": 4.260647164873352e-11,
+      "grid_points": 13,
+      "local": 4.26082534658869e-11,
+      "wall_seconds": 2.192660093307495
+    },
+    {
+      "degree": 0,
+      "dx": 0.04,
+      "family": "DQ",
+      "global": 4.2731151443881876e-11,
+      "grid_points": 26,
+      "local": 4.273265682807821e-11,
+      "wall_seconds": 2.610612154006958
+    },
+    {
+      "degree": 0,
+      "dx": 0.02,
+      "family": "DQ",
+      "global": 4.3328572905236804e-11,
+      "grid_points": 51,
+      "local": 4.333080182162047e-11,
+      "wall_seconds": 7.5336689949035645
+    },
+    {
+      "degree": 0,
+      "dx": 0.01,
+      "family": "DQ",
+      "global": 4.314391268571922e-11,
+      "grid_points": 101,
+      "local": 4.3170132688745284e-11,
+      "wall_seconds": 28.213960886001587
+    },
+    {
+      "degree": 1,
+      "dx": 0.08333333333333333,
+      "family": "DQ",
+      "global": 4.36117129600552e-11,
+      "grid_points": 13,
+      "local": 4.3613134316456786e-11,
+      "wall_seconds": 3.7969326972961426
+    },
+    {
+      "degree": 1,
+      "dx": 0.04,
+      "family": "DQ",
+      "global": 4.316201960882132e-11,
+      "grid_points": 26,
+      "local": 4.316668417785556e-11,
+      "wall_seconds": 8.59084677696228
+    },
+    {
+      "degree": 1,
+      "dx": 0.02,
+      "family": "DQ",
+      "global": 4.348242250549807e-11,
+      "grid_points": 51,
+      "local": 4.350287004211104e-11,
+      "wall_seconds": 34.31617307662964
+    },
+    {
+      "degree": 1,
+      "dx": 0.01,
+      "family": "DQ",
+      "global": 4.360224150623883e-11,
+      "grid_points": 101,
+      "local": 4.368794789604021e-11,
+      "wall_seconds": 149.53096413612366
+    },
+    {
+      "degree": 2,
+      "dx": 0.08333333333333333,
+      "family": "DQ",
+      "global": 4.348392428160422e-11,
+      "grid_points": 13,
+      "local": 4.3486335520009245e-11,
+      "wall_seconds": 7.756860971450806
+    },
+    {
+      "degree": 2,
+      "dx": 0.04,
+      "family": "DQ",
+      "global": 4.361811880508444e-11,
+      "grid_points": 26,
+      "local": 4.3628034243283284e-11,
+      "wall_seconds": 29.825733184814453
+    },
+    {
+      "degree": 2,
+      "dx": 0.02,
+      "family": "DQ",
+      "global": 4.2838896430124484e-11,
+      "grid_points": 51,
+      "local": 4.287975228303564e-11,
+      "wall_seconds": 132.8273799419403
+    },
+    {
+      "degree": 2,
+      "dx": 0.01,
+      "family": "DQ",
+      "global": 4.2839261017654235e-11,
+      "grid_points": 101,
+      "local": 4.302894172260717e-11,
+      "wall_seconds": 611.716875076294
+    },
+    {
+      "degree": 1,
+      "dx": 0.08333333333333333,
+      "family": "CG",
+      "global": 4.35795347282518e-11,
+      "grid_points": 13,
+      "local": 0.002378405946400787,
+      "wall_seconds": 1.8253870010375977
+    },
+    {
+      "degree": 1,
+      "dx": 0.04,
+      "family": "CG",
+      "global": 4.315889169029757e-11,
+      "grid_points": 26,
+      "local": 0.0009113083489516325,
+      "wall_seconds": 2.560649871826172
+    },
+    {
+      "degree": 1,
+      "dx": 0.02,
+      "family": "CG",
+      "global": 4.348241226389296e-11,
+      "grid_points": 51,
+      "local": 0.00031149626843613993,
+      "wall_seconds": 6.913351058959961
+    },
+    {
+      "degree": 1,
+      "dx": 0.01,
+      "family": "CG",
+      "global": 4.2888961086654725e-11,
+      "grid_points": 101,
+      "local": 9.608563536758645e-05,
+      "wall_seconds": 24.951059341430664
+    },
+    {
+      "degree": 2,
+      "dx": 0.08333333333333333,
+      "family": "CG",
+      "global": 4.3481809559819494e-11,
+      "grid_points": 13,
+      "local": 0.0010453400224772632,
+      "wall_seconds": 2.951188802719116
+    },
+    {
+      "degree": 2,
+      "dx": 0.04,
+      "family": "CG",
+      "global": 4.2903389554864263e-11,
+      "grid_points": 26,
+      "local": 0.0004230191494000785,
+      "wall_seconds": 6.1444761753082275
+    },
+    {
+      "degree": 2,
+      "dx": 0.02,
+      "family": "CG",
+      "global": 4.293762549563786e-11,
+      "grid_points": 51,
+      "local": 0.00014924657165814176,
+      "wall_seconds": 22.5657160282135
+    },
+    {
+      "degree": 2,
+      "dx": 0.01,
+      "family": "CG",
+      "global": 4.2839530379645713e-11,
+      "grid_points": 101,
+      "local": 4.659476212873747e-05,
+      "wall_seconds": 92.49756693840027
+    }
+  ],
+  "inflow_rate": 1e-06,
+  "integrator": "BackwardEuler",
+  "t_final": 30000.0
+}

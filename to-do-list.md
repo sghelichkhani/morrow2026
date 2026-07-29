@@ -1,6 +1,160 @@
 # Morrow et al. 2026 — outstanding work
 
-Last updated: 2026-05-15.
+Last updated: 2026-07-20 (solver-comparison rewrite plan below; earlier
+2026-05-15 body not yet reconciled against it).
+
+---
+
+## 2026-07-20 — Solver-comparison rewrite (Option B: VLumping-centric)
+
+The paper's §3.4 (Cockett) and §4 (Murrumbidgee) solver-performance
+prose is written for the *old* GMG-H-centric story and no longer matches
+the figures, which the current `plot_results.py` pipeline regenerates in
+a VLumping-centric form. This section is the authoritative plan to
+reconcile the manuscript with the shipped g-adopt solver set. This is a
+**paper + figures** task; the g-adopt source change (see "External
+dependency") is being done by a separate agent, not here.
+
+### Decisions locked (Sia, 2026-07-20)
+
+- **Narrative reorganised around the shipped g-adopt presets.** Three
+  3-D iterative presets get first-class treatment: **BoomerAMG
+  (`iterative`), `vlumping`, `vlumping_hmg`**. `direct` (MUMPS LU) is
+  2-D-only and outside the scaling comparison.
+- **Everything else tried is *noted in text but not shown* in figures:**
+  `bjacobi`, `sor`, `gamg`, GMG-H (`gmg`), and the VLumping ablation
+  sweep (`vlumping_1sweep`, `_4sweep`, `_richardson`, `_sor`,
+  `vlumping_linesmooth`). Their solver parameters should be *noted*, not
+  necessarily displayed.
+- **AMG baseline = Hypre BoomerAMG** (not PETSc GAMG). No Gadi rerun: the
+  existing `boomeramg` Cockett data already used the tuned params, and
+  the shipped `iterative` preset is being retuned to match (see below).
+- **Strong scaling** (`strong_scaling.pdf`): reframe as an *extreme-scale
+  robustness demonstration* — `vlumping_hmg` carrying 320 M DOF at 32
+  nodes / 3328 cores at the most extreme aspect ratio — rather than a
+  slope-fit strong-scaling test. Keep the figure; write the missing
+  prose. (Final keep-vs-cut nod still open.)
+- **Example solution** (`example_solution.pdf`): ship the current
+  checkpoint-based surface-forced render. Confirmed no source/sink term
+  is wired into either driver (`murrumbidgee_3d.py`,
+  `murrumbidgee_demo.py` — neither passes a `source=` to
+  `RichardsSolver`; forcing is surface rainfall recharge + no-flow
+  bottom + hydrostatic sides/IC). The extraction / no-extraction
+  two-panel comparison is **deferred to a follow-up** (bore CSV +
+  driver sink term + two production runs — not this round).
+- **Cockett DQ2**: out of scope for this paper. Drop the empty
+  `parallel_scaling/parsed/cockett_dq2.json` scaffold (or leave parked).
+
+### External dependency (NOT our task — separate agent)
+
+- Retune g-adopt's `iterative_richards_solver_parameters`
+  (`richardson:gadopt/richards_solver.py:73-97`) to the tuned Cockett
+  BoomerAMG: `strong_threshold` 0.7→0.5, `agg_nl` 1→2, add
+  `truncfactor 0.3`, add `P_max 4`, `ksp_rtol` 1e-5→1e-6. This makes the
+  *shipped* preset identical to `parallel_scaling/solvers/boomeramg.py`,
+  which produced the existing Cockett `boomeramg` data, so shipped ==
+  reported with no rerun. **The paper's appendix BoomerAMG block must be
+  quoted from whatever finally lands in that preset** — coordinate the
+  appendix (C3) against it.
+
+### Manuscript items — `~/Workplace/papers/richards-morrow-2026/main.tex`
+
+- **C1. Rewrite §3.4 (Cockett, ≈349-366)** around the shipped trio.
+  Discuss all tried baselines in prose (SOR, BJacobi, GMG-H, GAMG,
+  BoomerAMG) but headline the recommendation with BoomerAMG (`iterative`),
+  `vlumping`, `vlumping_hmg`. Fix the "AMG"↔"GAMG" naming flip — use
+  **BoomerAMG** consistently.
+- **C2. Rewrite §4 (Murrumbidgee, ≈416-435)** around VLumping: BoomerAMG
+  *diverges* on the anisotropic basin (the motivation), GMG-H is the
+  strong baseline, `vlumping`/`vlumping_hmg` are the only presets that
+  scale. Fold in the "many variants tried, three shipped" framing.
+- **C3. Add missing appendix solver blocks (≈477-547).** Currently
+  Cockett-only. Add verbatim dicts for `vlumping` and `vlumping_hmg`
+  (absent entirely); make the BoomerAMG block match the retuned shipped
+  preset (External dependency); add an SOR block or drop SOR from the
+  compared set; keep a GMG-H block as a baseline.
+- **C4. Factual caption/text fixes:**
+  - **48 → 104 CPUs/node** (Sapphire Rapids `normalsr`) at lines 361,
+    373, 416, 431; redo the DOF-per-core arithmetic.
+  - **Murrumbidgee dt**: text says fixed Δt = 12 h / 200 steps; the
+    actual data is **adaptive** (`dt_init = 60 s → dt_max = 12 h,
+    growth 1.5`). Reconcile text to data. (Cockett fixed 300 s / 100
+    steps is correct.)
+  - DOF/node notation `1.8×10⁷` vs `18×10⁶` — pick one.
+  - Caption cross-ref bug at line 373 (`§Benchmarking` → `§scalability`).
+  - Un-comment `memory_layers.pdf` (line 441) — the file now exists.
+  - Inert `_sub_pc_factor_levels` key (line 542) + commented monitors —
+    clean up.
+- **C5. Strong scaling (≈446-451):** add the missing prose, reframed per
+  the decision above (extreme-scale demonstration). Figure is currently
+  orphaned (`\includegraphics`'d but never discussed).
+- **C6. `\codedataavailability`:** fill with this repo's URL, the g-adopt
+  richardson pointer, gwassess (`g-adopt/gwassess`), Gadi project `xd2`.
+
+### Figure-regen items — `parallel_scaling/`
+
+- **B1. Consolidate `plot_results.py:SOLVER_STYLE` to shipped names.**
+  Relabel `vlumping_inexact` → "VLumping" (shipped `vlumping` *is* the
+  inexact one), `vlumping_hmg` → "VLumping-HMG". Drop the redundant plain
+  `vlumping` (rtol 1e-6, not shipped), `vlumping_linesmooth`,
+  `ngmres_gmg`, `qn_gmg` from the main-figure solver lists.
+- **B2. Cockett figure list** (`fig_cockett`, line 279): swap
+  `gamg`→`boomeramg`, add `sor`, giving {SOR, BJacobi, GMG, BoomerAMG,
+  VLumping, VLumping-HMG}.
+- **B3. Murr-horizontal list** (`fig_murr_horizontal`, line 440): same
+  baseline+shipped set; keep `gmg` (GMG-H baseline), drop the extra
+  vlumping variants.
+- **B4. Regenerate paper figures** into `figures/` and copy to the paper
+  tree: Cockett `{simulation_time,iterations,memory}`; Murr-horizontal
+  `{time_per_timestep,linear_iterations,memory,hierarchy_levels}`;
+  Murr-layers `{linear_iterations_layers,time_per_timestep_layers,
+  memory_layers}`; `strong_scaling`.
+- **B5. Regenerate `example_solution.pdf`** from the real checkpoint
+  render (`viz_murrumbidgee.py`) — the paper slot still points at a stale
+  placeholder pre-dating the checkpoint run. Confirm the copied file is
+  the real one.
+- **B6. Strong-scaling reframe** (`fig_murr_strong`): headline the
+  s32 / 320 M-DOF / 3328-core extreme point rather than a slope fit.
+- **B7. Drop** the empty `parsed/cockett_dq2.json` scaffold.
+
+### Subsumes / supersedes earlier items
+
+The 2026-05-15 body below already lists some of these in weaker form —
+this section is authoritative where they overlap: the 48→104 core fix
+(§2), the `memory_layers.pdf` un-comment (§2), the `example_solution`
+figure (§1, now scoped down to "ship current render, defer extraction"),
+and the strong-scaling caveats (M2/M6, now folded into the reframe).
+
+---
+
+**2026-07-20 — stale-figure cleanup.** Removed three committed figures
+that were no longer referenced by `main.tex`, each superseded by a
+later pipeline: `Cockett2018/cockett_2018.{pdf,png}` (→
+`cockett_infiltration.pdf`, see `parallel_scaling/COCKETT_FIGURE.md`),
+`Tracy/2d_spatial_error.pdf` (→ `spatial_convergence.pdf`, see
+`verification/tracy/README.md`), and
+`MassConservation/equation_type.pdf` (methodology changed since that
+sweep ran; excluded from the paper by decision, see
+`verification/mass_conservation/README.md`). The generating scripts and
+raw data for all three are left in place for reference — only the
+committed figure outputs were dropped. If a figure in `figures/` isn't
+`\includegraphics`'d anywhere in `main.tex`, that's the signal to check
+here before assuming it's still wanted.
+
+Also dropped the four Murrumbidgee setup figures — `elevation.{pdf,png}`,
+`mesh.{pdf,png}`, `stratigraphy.{pdf,png}`, `ICBC.{pdf,png}` — by
+decision: the combined 3D visualisation in `viz_murrumbidgee.py`
+(`figures/Murrumbidgee/example_solution.png`) now covers the same
+ground (topography, conductivity structure, water table, forcing) and
+replaces the whole standalone-setup-figure block. Generating scripts
+(`plot_murr_elevation.py`, `plot_murr_mesh.py`,
+`plot_murr_stratigraphy.py`, `plot_murr_icbc.py`) are kept for
+reference only. **This is not yet reflected in `main.tex`** — §4's
+Figs. 13–16 (and the `example_solution` figure slot, which currently
+points at a stale `.pdf` predating the real checkpoint-based run) still
+need editing in the paper tree to match. See the M4/M5 to-do items
+above, which this decision now resolves by removal rather than by
+filling in the placeholders.
 
 **Status:** every figure cited by the manuscript has a generating script
 in this repo and the data it ingests also in this repo (or
@@ -258,10 +412,11 @@ python verification/tracy/plot_spatial.py
 python verification/tracy/run_temporal_2d.py
 python verification/tracy/plot_temporal.py
 
-# §3.2 mass conservation
-python verification/mass_conservation/run_function_space.py
-python verification/mass_conservation/run_equation_type.py
-python verification/mass_conservation/plot_mass.py
+# §3.2 mass conservation  (~17 min; DQ2 n=101 is 10 of those)
+python verification/mass_conservation/run_local_balance.py
+python verification/mass_conservation/plot_local_balance.py
+# the run_function_space/plot_mass chain was deleted; see
+# verification/mass_conservation/README.md for why
 
 # §3.3 Vauclin
 python verification/vauclin/run_solution.py
