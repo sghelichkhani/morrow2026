@@ -37,7 +37,7 @@ with pressure head `h`, specific storage `S_s`, effective saturation
 extruded prisms), with SIPG diffusion stabilisation and upwinding for the
 gravity-driven flux. Time integration through Irksome — almost all scaling
 tests use BackwardEuler with `stage_type="value"` for exact mass
-conservation (see `richards_solver.py` and the project CLAUDE.md).
+conservation (see `richards_solver.py`).
 
 **Newton linearisation.** At each timestep we solve a sequence of linear
 systems `J(h_k) δh = −F(h_k)` until `‖F‖` falls below tolerance. The
