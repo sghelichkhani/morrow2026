@@ -5,14 +5,14 @@ title: >-
   variably saturated groundwater flow: solving the forward problem"
 type: software
 license: MIT
-repository-code: "https://github.com/g-adopt/morrow2026"
+repository-code: "https://github.com/sghelichkhani/morrow2026"
 version: 1.0.0
 # date-released: 2026-01-01   # set to the release date when you cut the tag
 authors:
   - family-names: Morrow
     given-names: Liam
     affiliation: "Research School of Earth Sciences, The Australian National University, Canberra, ACT, Australia"
-    # orcid: "https://orcid.org/0000-0000-0000-0000"   # fill in before first release
+    orcid: "https://orcid.org/0000-0002-3413-6200"
   - family-names: Ghelichkhan
     given-names: Sia
     affiliation: "Research School of Earth Sciences and Institute for Water Futures, The Australian National University, Canberra, ACT, Australia"
@@ -20,7 +20,7 @@ authors:
   - family-names: Kramer
     given-names: Stephan C.
     affiliation: "Department of Earth Science and Engineering, Imperial College London, London, UK"
-    # orcid: "https://orcid.org/0000-0000-0000-0000"
+    orcid: "https://orcid.org/0000-0002-9193-5092"
 keywords:
   - Richards equation
   - variably saturated flow

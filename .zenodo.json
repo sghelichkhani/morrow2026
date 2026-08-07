@@ -7,7 +7,8 @@
     "creators": [
         {
             "name": "Morrow, Liam",
-            "affiliation": "Research School of Earth Sciences, The Australian National University, Canberra, ACT, Australia"
+            "affiliation": "Research School of Earth Sciences, The Australian National University, Canberra, ACT, Australia",
+            "orcid": "0000-0002-3413-6200"
         },
         {
             "name": "Ghelichkhan, Sia",
@@ -15,7 +16,8 @@
         },
         {
             "name": "Kramer, Stephan C.",
-            "affiliation": "Department of Earth Science and Engineering, Imperial College London, London, UK"
+            "affiliation": "Department of Earth Science and Engineering, Imperial College London, London, UK",
+            "orcid": "0000-0002-9193-5092"
         }
     ],
     "keywords": [

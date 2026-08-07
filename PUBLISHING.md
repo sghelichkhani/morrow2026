@@ -2,15 +2,8 @@
 
 This repository is archived on Zenodo through Zenodo's GitHub integration:
 every tagged GitHub release is deposited automatically and issued a citable
-DOI. The steps below target the intended public home of the repository,
-`https://github.com/g-adopt/morrow2026`.
-
-> **Note on the current remote.** The repository presently lives at
-> `github.com:sghelichkhani/morrow2026`. Move (or mirror) it to the
-> `g-adopt` organisation before enabling the Zenodo hook, so the archived
-> record and the URL cited in the paper's code-availability statement
-> agree. The Zenodo switch is per-repository, so enable it on whichever
-> account actually hosts the public copy.
+DOI. The steps below target the public home of the repository,
+`https://github.com/sghelichkhani/morrow2026`.
 
 ## One-time setup
 
@@ -19,9 +12,9 @@ DOI. The steps below target the intended public home of the repository,
    grant Zenodo the permissions it asks for.
 2. Open the Zenodo GitHub settings at
    <https://zenodo.org/account/settings/github/>. Zenodo lists the
-   repositories you can administer. If `g-adopt/morrow2026` is missing, click
-   **Sync now**; organisation-owned repositories only appear once the org has
-   approved the Zenodo OAuth application and you hold admin rights on the repo.
+   repositories you can administer. If `sghelichkhani/morrow2026` is missing,
+   click **Sync now** (Zenodo only lists repositories where you hold admin
+   rights).
 3. Flip the toggle next to the repository to **ON**. From this point every new
    release is archived automatically. Releases made *before* the switch was
    enabled are not captured, so turn it on before cutting the release you want
@@ -88,8 +81,9 @@ version DOI under the same concept DOI automatically.
 
 The manuscript's code- and data-availability statement currently points at
 `https://github.com/g-adopt/morrow2026` and notes that it "will be made
-publicly available upon publication." Once the first release is archived,
-replace that with the Zenodo concept DOI
+publicly available upon publication." Since the repository lives at
+`https://github.com/sghelichkhani/morrow2026`, update that URL in the paper to
+match. Once the first release is archived, add the Zenodo concept DOI
 (`https://doi.org/10.5281/zenodo.XXXXXXX`), mirroring how G-ADOPT itself is
 cited there (archived at <https://doi.org/10.5281/zenodo.19688884>).
 
