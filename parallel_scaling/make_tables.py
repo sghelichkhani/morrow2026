@@ -80,7 +80,7 @@ def peak_mem_gb(runs):
 # Each experiment block: (title, json name, [(node_count, scale_key), ...]).
 BLOCKS = [
     ("Cockett 3D --- isotropic box, cell AR $\\approx$ 1:1", "cockett",
-     [(1, "sweep"), (2, "medium"), (4, "large"), (8, "huge")]),
+     [(1, "sweep"), (2, "medium"), (8, "large")]),
     ("Lower Murrumbidgee --- horizontal weak scaling "
      "(300 layers; $\\Delta x$ 1775$\\to$620\\,m, AR 1000:1$\\to$350:1)",
      "murr_horizontal",
@@ -197,20 +197,24 @@ def build_hierarchy_table():
             iters.append(linear_per_step(r) if r and r["outcome"] == "success" else None)
             walls.append((r.get("summary") or {}).get("mean_wall_per_step")
                          if r and r["outcome"] == "success" else None)
-        # bold the fastest (min wall)
-        valid_walls = [w for w in walls if w is not None]
-        best = min(valid_walls) if valid_walls else None
+        # bold the fastest depth; on a near-tie prefer the shallower hierarchy
+        valid = [(i, w) for i, w in enumerate(walls) if w is not None]
+        if valid:
+            mn = min(w for _, w in valid)
+            bold_idx = next(i for i, w in valid if w <= 1.01 * mn)
+        else:
+            bold_idx = None
 
         def cell_i(v):
             return f"{v:.0f}" if v is not None else NOT_RUN
 
-        def cell_w(v):
+        def cell_w(i, v):
             if v is None:
                 return NOT_RUN
             s = f"{v:.1f}"
-            return r"\textbf{" + s + "}" if v == best else s
+            return r"\textbf{" + s + "}" if i == bold_idx else s
 
-        row = [label] + [cell_i(v) for v in iters] + [cell_w(v) for v in walls]
+        row = [label] + [cell_i(v) for v in iters] + [cell_w(i, v) for i, v in enumerate(walls)]
         lines.append(" & ".join(row) + r" \\")
 
     lines.append(r"\hline")

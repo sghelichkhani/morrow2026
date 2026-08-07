@@ -154,8 +154,8 @@ def panel_letter(ax, letter):
 
 def fig_cockett(outdir):
     idx = index(load("cockett"))
-    scales = ["sweep", "medium", "large", "huge"]
-    xlabels = ["1N\n18M", "2N\n36M", "4N\n72M", "8N\n144M"]
+    scales = ["sweep", "medium", "large"]
+    xlabels = ["1N\n18M", "2N\n36M", "8N\n144M"]
     solvers = ["bjacobi", "gmg", "boomeramg", "vlumping_inexact", "vlumping_hmg"]
 
     fig, axes = plt.subplots(1, 2, figsize=(12.0, 5.4))
