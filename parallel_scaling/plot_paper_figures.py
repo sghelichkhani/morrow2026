@@ -14,9 +14,9 @@ same fonts), but three separate stories:
   linear iterations. VLumping stays flat whichever way anisotropy is
   stressed.
 * ``Murrumbidgee/strong_scaling.pdf`` — the extreme-scale reach: plain
-  VLumping over 2-8 nodes tracking ideal 1/N, then the single
-  VLumping-HMG point that reaches 3328 cores where the direct coarse
-  factorisation of plain VLumping runs out of memory.
+  VLumping over 2-8 nodes tracking ideal 1/N, then VLumping-HMG
+  continuing to 16 nodes where the direct coarse factorisation of
+  plain VLumping runs out of memory.
 
 Non-converging solvers (SOR, GAMG, BoomerAMG, and timed-out runs) are
 NOT drawn as floor markers any more; their outcomes are in
@@ -275,8 +275,7 @@ def fig_murr_weak(outdir):
 # ── Figure C: Murrumbidgee strong scaling (extreme reach) ────────────────────
 def fig_murr_strong(outdir):
     idx = index(load("murr_strong"))
-    node_scale = [(1, "s1"), (2, "s2"), (4, "s4"), (8, "s8"),
-                  (16, "s16"), (32, "s32")]
+    node_scale = [(1, "s1"), (2, "s2"), (4, "s4"), (8, "s8"), (16, "s16")]
 
     fig, ax = plt.subplots(figsize=(6.2, 4.6))
 
@@ -306,7 +305,7 @@ def fig_murr_strong(outdir):
     ax.plot(xs, ys, color=st["color"], marker=st["marker"], lw=LW,
             markersize=MS, zorder=3, label="VLumping")
 
-    # The single VLumping-HMG point that reaches 3328 cores.
+    # VLumping-HMG carries the sweep past VLumping's eight-node limit.
     sth = STYLE["vlumping_hmg"]
     xh, yh = pts("vlumping_hmg")
     if xh:
