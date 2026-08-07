@@ -1,0 +1,45 @@
+cff-version: 1.2.0
+message: "If you use this repository, please cite both the archived software (below) and the accompanying paper (preferred-citation)."
+title: >-
+  morrow2026: reproducibility repository for "Scalable simulation of
+  variably saturated groundwater flow: solving the forward problem"
+type: software
+license: MIT
+repository-code: "https://github.com/g-adopt/morrow2026"
+version: 1.0.0
+# date-released: 2026-01-01   # set to the release date when you cut the tag
+authors:
+  - family-names: Morrow
+    given-names: Liam
+    affiliation: "Research School of Earth Sciences, The Australian National University, Canberra, ACT, Australia"
+    # orcid: "https://orcid.org/0000-0000-0000-0000"   # fill in before first release
+  - family-names: Ghelichkhan
+    given-names: Sia
+    affiliation: "Research School of Earth Sciences and Institute for Water Futures, The Australian National University, Canberra, ACT, Australia"
+    # orcid: "https://orcid.org/0000-0000-0000-0000"
+  - family-names: Kramer
+    given-names: Stephan C.
+    affiliation: "Department of Earth Science and Engineering, Imperial College London, London, UK"
+    # orcid: "https://orcid.org/0000-0000-0000-0000"
+keywords:
+  - Richards equation
+  - variably saturated flow
+  - groundwater
+  - finite element method
+  - discontinuous Galerkin
+  - multigrid preconditioning
+  - parallel scaling
+  - G-ADOPT
+  - Firedrake
+preferred-citation:
+  type: article
+  title: "Scalable simulation of variably saturated groundwater flow: solving the forward problem"
+  year: 2026
+  # doi: "10.xxxx/xxxxx"   # add the journal DOI once assigned
+  authors:
+    - family-names: Morrow
+      given-names: Liam
+    - family-names: Ghelichkhan
+      given-names: Sia
+    - family-names: Kramer
+      given-names: Stephan C.

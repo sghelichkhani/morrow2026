@@ -1,0 +1,39 @@
+{
+    "title": "morrow2026: reproducibility repository for \"Scalable simulation of variably saturated groundwater flow: solving the forward problem\"",
+    "description": "Driver scripts, solver-parameter presets, parsed run records, and plotting routines that reproduce every figure and number reported in Morrow, Ghelichkhan and Kramer (2026), \"Scalable simulation of variably saturated groundwater flow: solving the forward problem\". Covers the verification benchmarks (Tracy, Vauclin, mass conservation) and the parallel-scaling study (Cockett 3D and the Lower Murrumbidgee basin case) built on the G-ADOPT framework and Firedrake.",
+    "upload_type": "software",
+    "access_right": "open",
+    "license": {"id": "mit"},
+    "creators": [
+        {
+            "name": "Morrow, Liam",
+            "affiliation": "Research School of Earth Sciences, The Australian National University, Canberra, ACT, Australia"
+        },
+        {
+            "name": "Ghelichkhan, Sia",
+            "affiliation": "Research School of Earth Sciences and Institute for Water Futures, The Australian National University, Canberra, ACT, Australia"
+        },
+        {
+            "name": "Kramer, Stephan C.",
+            "affiliation": "Department of Earth Science and Engineering, Imperial College London, London, UK"
+        }
+    ],
+    "keywords": [
+        "Richards equation",
+        "variably saturated flow",
+        "groundwater",
+        "finite element method",
+        "discontinuous Galerkin",
+        "multigrid preconditioning",
+        "parallel scaling",
+        "G-ADOPT",
+        "Firedrake"
+    ],
+    "related_identifiers": [
+        {
+            "identifier": "10.5281/zenodo.19688884",
+            "relation": "references",
+            "scheme": "doi"
+        }
+    ]
+}
