@@ -40,6 +40,11 @@ def _gather(json_path: Path) -> dict[int, tuple[np.ndarray, np.ndarray]]:
     data = load_json(json_path)["cases"]
     out: dict[int, tuple[np.ndarray, np.ndarray]] = {}
     for case in data.values():
+        # Degree 0 is excluded from the paper: the interior-penalty form
+        # degenerates to a two-point-flux finite-volume scheme there. The
+        # runs stay in the results file, they are simply not plotted.
+        if case["degree"] < 1:
+            continue
         levels = [e for e in case["levels"] if "l2error_h" in e]
         if not levels:
             continue

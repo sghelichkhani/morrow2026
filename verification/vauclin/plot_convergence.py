@@ -28,10 +28,20 @@ OUT = FIGURE_ROOT / "Vauclin1979"
 OUT.mkdir(parents=True, exist_ok=True)
 
 
+# Only p=1 is plotted. p=0 is excluded from the paper because the
+# interior-penalty form degenerates to a two-point-flux finite-volume scheme
+# there. p=2 is excluded on this benchmark specifically: the infiltration flux
+# is prescribed over part of the upper boundary only, so the solution loses the
+# regularity a third-order rate would need, and the reference solution is itself
+# of degree 2. The high-order verification is carried by Tracy, which has an
+# exact solution. All degrees remain in results/convergence.json.
+PLOT_DEGREES = (1,)
+
+
 def _gather(entries) -> dict[int, tuple[np.ndarray, np.ndarray]]:
     """Return {degree: (dx, relative_error_h)} from the convergence entries."""
     out: dict[int, tuple[np.ndarray, np.ndarray]] = {}
-    for degree in sorted({e["degree"] for e in entries}):
+    for degree in sorted({e["degree"] for e in entries} & set(PLOT_DEGREES)):
         rows = [e for e in entries if e["degree"] == degree]
         dxs = np.array([r["dx"] for r in rows])
         err = np.array([r["l2_error"] / r["l2_reference"] for r in rows])

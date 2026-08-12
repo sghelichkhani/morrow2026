@@ -59,7 +59,9 @@ CG_COLORS = {1: "#e8743b", 2: "#8b1a1a"}
 # marker shape and step the sizes/widths down in draw order, so coincident
 # curves render as nested open markers and every space can be seen.
 STYLE = [  # (family, degree, marker, markersize, linewidth)
-    ("DQ", 0, "o", 14, 3.6),
+    # DQ0 is deliberately absent: at degree 0 the interior-penalty form
+    # degenerates to a two-point-flux finite-volume scheme, so the paper
+    # reports p >= 1 only. Its entries remain in results/local_balance.json.
     ("DQ", 1, "s", 11, 2.9),
     ("DQ", 2, "^", 8.5, 2.2),
     ("CG", 1, "D", 6.0, 1.6),
@@ -113,7 +115,12 @@ def _draw(ax, entries, key):
 
 def plot_local_balance(results: Path) -> None:
     data = load_json(results)
-    entries = data["entries"]
+    # Keep only the spaces STYLE actually draws, so that the axis limits and
+    # the floor-band ticks are set by plotted data rather than by the DQ0 runs
+    # that remain in the results file but are excluded from the paper.
+    plotted = {(family, degree) for family, degree, *_ in STYLE}
+    entries = [e for e in data["entries"]
+               if (e.get("family"), e.get("degree")) in plotted]
 
     values = np.array([e[k] for e in entries
                        for k in ("local", "global") if k in e])
