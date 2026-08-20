@@ -1,0 +1,1635 @@
+=== Job info ===
+Phase: smoke
+Solver: bjacobi
+Scale: smoke
+Nodes: 1
+CPUs: 104
+Firedrake module: firedrake/main-20260806
+G-ADOPT source: /scratch/xd2/sg8812/morrow2026-profile-stage2-20260820T053301Z/source/g-adopt
+PETSC_OPTIONS: -log_view :/scratch/xd2/sg8812/morrow2026-profile-stage2-20260820T053301Z/smoke/results/bjacobi/smoke.profile -options_left
+Date: 2026-08-20T05:41:08Z
+Command: python /scratch/xd2/sg8812/morrow2026-profile-stage2-20260820T053301Z/source/morrow/parallel_scaling/murrumbidgee_3d.py --horiz-res 5000 --layers 30 --solver bjacobi --refinement-levels 0 --dt-init 60 --dt-max 43200 --dt-growth 1.5 --dt-shrink 0.5 --t-final 150 --data-dir /scratch/xd2/sg8812/morrow2026-profile-stage2-20260820T053301Z/source/morrow/parallel_scaling/murrumbidgee_data
+================
+Number of degrees of freedom: 512280
+Horizontal resolution: 5000.0 m, Layers: 30, DG1
+Time stepper: BackwardEuler, dt_init = 60.0 s, dt_max = 43200.0 s, growth = 1.5
+Solver: bjacobi
+Solver parameters: {'ksp_type': 'gmres', 'ksp_rtol': 1e-06, 'ksp_max_it': 500, 'ksp_gmres_restart': 30, 'pc_type': 'bjacobi', 'sub_ksp_type': 'preonly', 'sub_pc_type': 'ilu', 'sub_pc_factor_levels': 0, 'snes_type': 'newtonls', 'snes_linesearch_type': 'bt', 'snes_rtol': 1e-08, 'snes_atol': 1e-08, 'snes_max_it': 50}
+  0 SNES Function norm 5.183784513615e+05
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 25
+Mat Object: (BackwardEuler-Equation_) 104 MPI processes
+  type: mpiaij
+  rows=512280, cols=512280
+  total: nonzeros=18079488, allocated nonzeros=18079488
+  total number of mallocs used during MatSetValues calls=0
+    using I-node (on process 0) routines: found 1680 nodes, limit used is 5
+  1 SNES Function norm 2.085893116751e+05
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 23
+Mat Object: (BackwardEuler-Equation_) 104 MPI processes
+  type: mpiaij
+  rows=512280, cols=512280
+  total: nonzeros=18079488, allocated nonzeros=18079488
+  total number of mallocs used during MatSetValues calls=0
+    using I-node (on process 0) routines: found 1680 nodes, limit used is 5
+  2 SNES Function norm 2.686747424169e+04
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 19
+Mat Object: (BackwardEuler-Equation_) 104 MPI processes
+  type: mpiaij
+  rows=512280, cols=512280
+  total: nonzeros=18079488, allocated nonzeros=18079488
+  total number of mallocs used during MatSetValues calls=0
+    using I-node (on process 0) routines: found 1680 nodes, limit used is 5
+  3 SNES Function norm 3.879826405137e+03
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 18
+Mat Object: (BackwardEuler-Equation_) 104 MPI processes
+  type: mpiaij
+  rows=512280, cols=512280
+  total: nonzeros=18079488, allocated nonzeros=18079488
+  total number of mallocs used during MatSetValues calls=0
+    using I-node (on process 0) routines: found 1680 nodes, limit used is 5
+  4 SNES Function norm 5.651738723043e+02
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 17
+Mat Object: (BackwardEuler-Equation_) 104 MPI processes
+  type: mpiaij
+  rows=512280, cols=512280
+  total: nonzeros=18079488, allocated nonzeros=18079488
+  total number of mallocs used during MatSetValues calls=0
+    using I-node (on process 0) routines: found 1680 nodes, limit used is 5
+  5 SNES Function norm 1.425361420201e+02
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 13
+Mat Object: (BackwardEuler-Equation_) 104 MPI processes
+  type: mpiaij
+  rows=512280, cols=512280
+  total: nonzeros=18079488, allocated nonzeros=18079488
+  total number of mallocs used during MatSetValues calls=0
+    using I-node (on process 0) routines: found 1680 nodes, limit used is 5
+  6 SNES Function norm 4.705553363943e+01
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 15
+Mat Object: (BackwardEuler-Equation_) 104 MPI processes
+  type: mpiaij
+  rows=512280, cols=512280
+  total: nonzeros=18079488, allocated nonzeros=18079488
+  total number of mallocs used during MatSetValues calls=0
+    using I-node (on process 0) routines: found 1680 nodes, limit used is 5
+  7 SNES Function norm 4.028648786547e+01
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 14
+Mat Object: (BackwardEuler-Equation_) 104 MPI processes
+  type: mpiaij
+  rows=512280, cols=512280
+  total: nonzeros=18079488, allocated nonzeros=18079488
+  total number of mallocs used during MatSetValues calls=0
+    using I-node (on process 0) routines: found 1680 nodes, limit used is 5
+  8 SNES Function norm 3.966990815563e+01
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 15
+Mat Object: (BackwardEuler-Equation_) 104 MPI processes
+  type: mpiaij
+  rows=512280, cols=512280
+  total: nonzeros=18079488, allocated nonzeros=18079488
+  total number of mallocs used during MatSetValues calls=0
+    using I-node (on process 0) routines: found 1680 nodes, limit used is 5
+  9 SNES Function norm 3.965367848337e+01
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 10
+Mat Object: (BackwardEuler-Equation_) 104 MPI processes
+  type: mpiaij
+  rows=512280, cols=512280
+  total: nonzeros=18079488, allocated nonzeros=18079488
+  total number of mallocs used during MatSetValues calls=0
+    using I-node (on process 0) routines: found 1680 nodes, limit used is 5
+ 10 SNES Function norm 3.965115311681e+01
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 16
+Mat Object: (BackwardEuler-Equation_) 104 MPI processes
+  type: mpiaij
+  rows=512280, cols=512280
+  total: nonzeros=18079488, allocated nonzeros=18079488
+  total number of mallocs used during MatSetValues calls=0
+    using I-node (on process 0) routines: found 1680 nodes, limit used is 5
+ 11 SNES Function norm 3.965100619215e+01
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 18
+Mat Object: (BackwardEuler-Equation_) 104 MPI processes
+  type: mpiaij
+  rows=512280, cols=512280
+  total: nonzeros=18079488, allocated nonzeros=18079488
+  total number of mallocs used during MatSetValues calls=0
+    using I-node (on process 0) routines: found 1680 nodes, limit used is 5
+ 12 SNES Function norm 3.965100126678e+01
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 20
+Mat Object: (BackwardEuler-Equation_) 104 MPI processes
+  type: mpiaij
+  rows=512280, cols=512280
+  total: nonzeros=18079488, allocated nonzeros=18079488
+  total number of mallocs used during MatSetValues calls=0
+    using I-node (on process 0) routines: found 1680 nodes, limit used is 5
+ 13 SNES Function norm 3.965100110534e+01
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 22
+Mat Object: (BackwardEuler-Equation_) 104 MPI processes
+  type: mpiaij
+  rows=512280, cols=512280
+  total: nonzeros=18079488, allocated nonzeros=18079488
+  total number of mallocs used during MatSetValues calls=0
+    using I-node (on process 0) routines: found 1680 nodes, limit used is 5
+ 14 SNES Function norm 3.965100110329e+01
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 22
+Mat Object: (BackwardEuler-Equation_) 104 MPI processes
+  type: mpiaij
+  rows=512280, cols=512280
+  total: nonzeros=18079488, allocated nonzeros=18079488
+  total number of mallocs used during MatSetValues calls=0
+    using I-node (on process 0) routines: found 1680 nodes, limit used is 5
+ 15 SNES Function norm 3.965100109657e+01
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 23
+Mat Object: (BackwardEuler-Equation_) 104 MPI processes
+  type: mpiaij
+  rows=512280, cols=512280
+  total: nonzeros=18079488, allocated nonzeros=18079488
+  total number of mallocs used during MatSetValues calls=0
+    using I-node (on process 0) routines: found 1680 nodes, limit used is 5
+ 16 SNES Function norm 3.965100109409e+01
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 26
+Mat Object: (BackwardEuler-Equation_) 104 MPI processes
+  type: mpiaij
+  rows=512280, cols=512280
+  total: nonzeros=18079488, allocated nonzeros=18079488
+  total number of mallocs used during MatSetValues calls=0
+    using I-node (on process 0) routines: found 1680 nodes, limit used is 5
+  Nonlinear BackwardEuler-Equation_ solve did not converge due to DIVERGED_LINE_SEARCH iterations 16
+SNES Object: (BackwardEuler-Equation_) 104 MPI processes
+  type: newtonls
+  maximum iterations=50, maximum function evaluations=10000
+  tolerances: relative=1e-08, absolute=1e-08, solution=1e-08
+  total number of linear solver iterations=316
+  total number of function evaluations=96
+  norm schedule ALWAYS
+  SNESLineSearch Object: (BackwardEuler-Equation_) 104 MPI processes
+    type: bt
+      interpolation: cubic
+      alpha=1.000000e-04
+    maxlambda=1.000000e+00, minlambda=1.000000e-12
+    tolerances: relative=1.000000e-08, absolute=1.000000e-15, lambda=1.000000e-08
+    maximum iterations=40
+  KSP Object: (BackwardEuler-Equation_) 104 MPI processes
+    type: gmres
+      restart=30, using classical (unmodified) Gram-Schmidt orthogonalization with no iterative refinement
+      happy breakdown tolerance=1e-30
+    maximum iterations=500, initial guess is zero
+    tolerances: relative=1e-06, absolute=1e-50, divergence=10000.
+    left preconditioning
+    using PRECONDITIONED norm type for convergence test
+  PC Object: (BackwardEuler-Equation_) 104 MPI processes
+    type: bjacobi
+      number of blocks = 104
+      Local solver information for first block is in the following KSP and PC objects on rank 0:
+      Use -BackwardEuler-Equation_ksp_view ::ascii_info_detail to display information for all blocks
+      KSP Object: (BackwardEuler-Equation_sub_) 1 MPI process
+        type: preonly
+        maximum iterations=10000, initial guess is zero
+        tolerances: relative=1e-05, absolute=1e-50, divergence=10000.
+        left preconditioning
+        not checking for convergence
+      PC Object: (BackwardEuler-Equation_sub_) 1 MPI process
+        type: ilu
+          out-of-place factorization
+          0 levels of fill
+          tolerance for zero pivot 2.22045e-14
+          matrix ordering: natural
+          factor fill ratio given 1., needed 1.
+            Factored matrix:
+              Mat Object: (BackwardEuler-Equation_sub_) 1 MPI process
+                type: seqaij
+                rows=5040, cols=5040
+                package used to perform factorization: petsc
+                total: nonzeros=162144, allocated nonzeros=162144
+                  using I-node routines: found 1680 nodes, limit used is 5
+        linear system matrix, which is also used to construct the preconditioner:
+        Mat Object: (BackwardEuler-Equation_sub_) 1 MPI process
+          type: seqaij
+          rows=5040, cols=5040
+          total: nonzeros=162144, allocated nonzeros=162144
+          total number of mallocs used during MatSetValues calls=0
+            using I-node routines: found 1680 nodes, limit used is 5
+    linear system matrix, which is also used to construct the preconditioner:
+    Mat Object: (BackwardEuler-Equation_) 104 MPI processes
+      type: mpiaij
+      rows=512280, cols=512280
+      total: nonzeros=18079488, allocated nonzeros=18079488
+      total number of mallocs used during MatSetValues calls=0
+        using I-node (on process 0) routines: found 1680 nodes, limit used is 5
+Step 1 FAILED (ConvergenceError), shrinking dt to 30.0 s
+  0 SNES Function norm 2.787817763043e+03
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 20
+Mat Object: (BackwardEuler-Equation_) 104 MPI processes
+  type: mpiaij
+  rows=512280, cols=512280
+  total: nonzeros=18079488, allocated nonzeros=18079488
+  total number of mallocs used during MatSetValues calls=0
+    using I-node (on process 0) routines: found 1680 nodes, limit used is 5
+  1 SNES Function norm 2.786974946433e+03
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 15
+Mat Object: (BackwardEuler-Equation_) 104 MPI processes
+  type: mpiaij
+  rows=512280, cols=512280
+  total: nonzeros=18079488, allocated nonzeros=18079488
+  total number of mallocs used during MatSetValues calls=0
+    using I-node (on process 0) routines: found 1680 nodes, limit used is 5
+  2 SNES Function norm 3.039361300436e+01
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 15
+Mat Object: (BackwardEuler-Equation_) 104 MPI processes
+  type: mpiaij
+  rows=512280, cols=512280
+  total: nonzeros=18079488, allocated nonzeros=18079488
+  total number of mallocs used during MatSetValues calls=0
+    using I-node (on process 0) routines: found 1680 nodes, limit used is 5
+  3 SNES Function norm 2.340647868205e+01
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 14
+Mat Object: (BackwardEuler-Equation_) 104 MPI processes
+  type: mpiaij
+  rows=512280, cols=512280
+  total: nonzeros=18079488, allocated nonzeros=18079488
+  total number of mallocs used during MatSetValues calls=0
+    using I-node (on process 0) routines: found 1680 nodes, limit used is 5
+  4 SNES Function norm 1.835771847912e+01
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 15
+Mat Object: (BackwardEuler-Equation_) 104 MPI processes
+  type: mpiaij
+  rows=512280, cols=512280
+  total: nonzeros=18079488, allocated nonzeros=18079488
+  total number of mallocs used during MatSetValues calls=0
+    using I-node (on process 0) routines: found 1680 nodes, limit used is 5
+  5 SNES Function norm 1.705442556069e+01
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 15
+Mat Object: (BackwardEuler-Equation_) 104 MPI processes
+  type: mpiaij
+  rows=512280, cols=512280
+  total: nonzeros=18079488, allocated nonzeros=18079488
+  total number of mallocs used during MatSetValues calls=0
+    using I-node (on process 0) routines: found 1680 nodes, limit used is 5
+  6 SNES Function norm 1.673762304915e+01
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 17
+Mat Object: (BackwardEuler-Equation_) 104 MPI processes
+  type: mpiaij
+  rows=512280, cols=512280
+  total: nonzeros=18079488, allocated nonzeros=18079488
+  total number of mallocs used during MatSetValues calls=0
+    using I-node (on process 0) routines: found 1680 nodes, limit used is 5
+  7 SNES Function norm 1.673594437216e+01
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 19
+Mat Object: (BackwardEuler-Equation_) 104 MPI processes
+  type: mpiaij
+  rows=512280, cols=512280
+  total: nonzeros=18079488, allocated nonzeros=18079488
+  total number of mallocs used during MatSetValues calls=0
+    using I-node (on process 0) routines: found 1680 nodes, limit used is 5
+  8 SNES Function norm 1.673592397201e+01
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 23
+Mat Object: (BackwardEuler-Equation_) 104 MPI processes
+  type: mpiaij
+  rows=512280, cols=512280
+  total: nonzeros=18079488, allocated nonzeros=18079488
+  total number of mallocs used during MatSetValues calls=0
+    using I-node (on process 0) routines: found 1680 nodes, limit used is 5
+  9 SNES Function norm 1.673592376859e+01
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 27
+Mat Object: (BackwardEuler-Equation_) 104 MPI processes
+  type: mpiaij
+  rows=512280, cols=512280
+  total: nonzeros=18079488, allocated nonzeros=18079488
+  total number of mallocs used during MatSetValues calls=0
+    using I-node (on process 0) routines: found 1680 nodes, limit used is 5
+ 10 SNES Function norm 1.673592376679e+01
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 31
+Mat Object: (BackwardEuler-Equation_) 104 MPI processes
+  type: mpiaij
+  rows=512280, cols=512280
+  total: nonzeros=18079488, allocated nonzeros=18079488
+  total number of mallocs used during MatSetValues calls=0
+    using I-node (on process 0) routines: found 1680 nodes, limit used is 5
+ 11 SNES Function norm 1.673592376639e+01
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 57
+Mat Object: (BackwardEuler-Equation_) 104 MPI processes
+  type: mpiaij
+  rows=512280, cols=512280
+  total: nonzeros=18079488, allocated nonzeros=18079488
+  total number of mallocs used during MatSetValues calls=0
+    using I-node (on process 0) routines: found 1680 nodes, limit used is 5
+  Nonlinear BackwardEuler-Equation_ solve did not converge due to DIVERGED_LINE_SEARCH iterations 11
+SNES Object: (BackwardEuler-Equation_) 104 MPI processes
+  type: newtonls
+  maximum iterations=50, maximum function evaluations=10000
+  tolerances: relative=1e-08, absolute=1e-08, solution=1e-08
+  total number of linear solver iterations=268
+  total number of function evaluations=79
+  norm schedule ALWAYS
+  SNESLineSearch Object: (BackwardEuler-Equation_) 104 MPI processes
+    type: bt
+      interpolation: cubic
+      alpha=1.000000e-04
+    maxlambda=1.000000e+00, minlambda=1.000000e-12
+    tolerances: relative=1.000000e-08, absolute=1.000000e-15, lambda=1.000000e-08
+    maximum iterations=40
+  KSP Object: (BackwardEuler-Equation_) 104 MPI processes
+    type: gmres
+      restart=30, using classical (unmodified) Gram-Schmidt orthogonalization with no iterative refinement
+      happy breakdown tolerance=1e-30
+    maximum iterations=500, initial guess is zero
+    tolerances: relative=1e-06, absolute=1e-50, divergence=10000.
+    left preconditioning
+    using PRECONDITIONED norm type for convergence test
+  PC Object: (BackwardEuler-Equation_) 104 MPI processes
+    type: bjacobi
+      number of blocks = 104
+      Local solver information for first block is in the following KSP and PC objects on rank 0:
+      Use -BackwardEuler-Equation_ksp_view ::ascii_info_detail to display information for all blocks
+      KSP Object: (BackwardEuler-Equation_sub_) 1 MPI process
+        type: preonly
+        maximum iterations=10000, initial guess is zero
+        tolerances: relative=1e-05, absolute=1e-50, divergence=10000.
+        left preconditioning
+        not checking for convergence
+      PC Object: (BackwardEuler-Equation_sub_) 1 MPI process
+        type: ilu
+          out-of-place factorization
+          0 levels of fill
+          tolerance for zero pivot 2.22045e-14
+          matrix ordering: natural
+          factor fill ratio given 1., needed 1.
+            Factored matrix:
+              Mat Object: (BackwardEuler-Equation_sub_) 1 MPI process
+                type: seqaij
+                rows=5040, cols=5040
+                package used to perform factorization: petsc
+                total: nonzeros=162144, allocated nonzeros=162144
+                  using I-node routines: found 1680 nodes, limit used is 5
+        linear system matrix, which is also used to construct the preconditioner:
+        Mat Object: (BackwardEuler-Equation_sub_) 1 MPI process
+          type: seqaij
+          rows=5040, cols=5040
+          total: nonzeros=162144, allocated nonzeros=162144
+          total number of mallocs used during MatSetValues calls=0
+            using I-node routines: found 1680 nodes, limit used is 5
+    linear system matrix, which is also used to construct the preconditioner:
+    Mat Object: (BackwardEuler-Equation_) 104 MPI processes
+      type: mpiaij
+      rows=512280, cols=512280
+      total: nonzeros=18079488, allocated nonzeros=18079488
+      total number of mallocs used during MatSetValues calls=0
+        using I-node (on process 0) routines: found 1680 nodes, limit used is 5
+Step 1 FAILED (ConvergenceError), shrinking dt to 15.0 s
+  0 SNES Function norm 1.843124677521e+03
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 27
+Mat Object: (BackwardEuler-Equation_) 104 MPI processes
+  type: mpiaij
+  rows=512280, cols=512280
+  total: nonzeros=18079488, allocated nonzeros=18079488
+  total number of mallocs used during MatSetValues calls=0
+    using I-node (on process 0) routines: found 1680 nodes, limit used is 5
+  1 SNES Function norm 1.842855738979e+03
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 23
+Mat Object: (BackwardEuler-Equation_) 104 MPI processes
+  type: mpiaij
+  rows=512280, cols=512280
+  total: nonzeros=18079488, allocated nonzeros=18079488
+  total number of mallocs used during MatSetValues calls=0
+    using I-node (on process 0) routines: found 1680 nodes, limit used is 5
+  2 SNES Function norm 1.684250031944e+03
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 16
+Mat Object: (BackwardEuler-Equation_) 104 MPI processes
+  type: mpiaij
+  rows=512280, cols=512280
+  total: nonzeros=18079488, allocated nonzeros=18079488
+  total number of mallocs used during MatSetValues calls=0
+    using I-node (on process 0) routines: found 1680 nodes, limit used is 5
+  3 SNES Function norm 1.228871919993e+02
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 15
+Mat Object: (BackwardEuler-Equation_) 104 MPI processes
+  type: mpiaij
+  rows=512280, cols=512280
+  total: nonzeros=18079488, allocated nonzeros=18079488
+  total number of mallocs used during MatSetValues calls=0
+    using I-node (on process 0) routines: found 1680 nodes, limit used is 5
+  4 SNES Function norm 2.064858046863e+01
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 14
+Mat Object: (BackwardEuler-Equation_) 104 MPI processes
+  type: mpiaij
+  rows=512280, cols=512280
+  total: nonzeros=18079488, allocated nonzeros=18079488
+  total number of mallocs used during MatSetValues calls=0
+    using I-node (on process 0) routines: found 1680 nodes, limit used is 5
+  5 SNES Function norm 1.963556480209e+01
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 15
+Mat Object: (BackwardEuler-Equation_) 104 MPI processes
+  type: mpiaij
+  rows=512280, cols=512280
+  total: nonzeros=18079488, allocated nonzeros=18079488
+  total number of mallocs used during MatSetValues calls=0
+    using I-node (on process 0) routines: found 1680 nodes, limit used is 5
+  6 SNES Function norm 1.563278875998e+01
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 13
+Mat Object: (BackwardEuler-Equation_) 104 MPI processes
+  type: mpiaij
+  rows=512280, cols=512280
+  total: nonzeros=18079488, allocated nonzeros=18079488
+  total number of mallocs used during MatSetValues calls=0
+    using I-node (on process 0) routines: found 1680 nodes, limit used is 5
+  7 SNES Function norm 1.433413636780e+01
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 13
+Mat Object: (BackwardEuler-Equation_) 104 MPI processes
+  type: mpiaij
+  rows=512280, cols=512280
+  total: nonzeros=18079488, allocated nonzeros=18079488
+  total number of mallocs used during MatSetValues calls=0
+    using I-node (on process 0) routines: found 1680 nodes, limit used is 5
+  8 SNES Function norm 1.410627010486e+01
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 14
+Mat Object: (BackwardEuler-Equation_) 104 MPI processes
+  type: mpiaij
+  rows=512280, cols=512280
+  total: nonzeros=18079488, allocated nonzeros=18079488
+  total number of mallocs used during MatSetValues calls=0
+    using I-node (on process 0) routines: found 1680 nodes, limit used is 5
+  9 SNES Function norm 1.401277481057e+01
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 14
+Mat Object: (BackwardEuler-Equation_) 104 MPI processes
+  type: mpiaij
+  rows=512280, cols=512280
+  total: nonzeros=18079488, allocated nonzeros=18079488
+  total number of mallocs used during MatSetValues calls=0
+    using I-node (on process 0) routines: found 1680 nodes, limit used is 5
+ 10 SNES Function norm 1.380748913842e+01
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 14
+Mat Object: (BackwardEuler-Equation_) 104 MPI processes
+  type: mpiaij
+  rows=512280, cols=512280
+  total: nonzeros=18079488, allocated nonzeros=18079488
+  total number of mallocs used during MatSetValues calls=0
+    using I-node (on process 0) routines: found 1680 nodes, limit used is 5
+ 11 SNES Function norm 1.374557148239e+01
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 14
+Mat Object: (BackwardEuler-Equation_) 104 MPI processes
+  type: mpiaij
+  rows=512280, cols=512280
+  total: nonzeros=18079488, allocated nonzeros=18079488
+  total number of mallocs used during MatSetValues calls=0
+    using I-node (on process 0) routines: found 1680 nodes, limit used is 5
+ 12 SNES Function norm 1.361141253234e+01
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 14
+Mat Object: (BackwardEuler-Equation_) 104 MPI processes
+  type: mpiaij
+  rows=512280, cols=512280
+  total: nonzeros=18079488, allocated nonzeros=18079488
+  total number of mallocs used during MatSetValues calls=0
+    using I-node (on process 0) routines: found 1680 nodes, limit used is 5
+ 13 SNES Function norm 1.359985427708e+01
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 14
+Mat Object: (BackwardEuler-Equation_) 104 MPI processes
+  type: mpiaij
+  rows=512280, cols=512280
+  total: nonzeros=18079488, allocated nonzeros=18079488
+  total number of mallocs used during MatSetValues calls=0
+    using I-node (on process 0) routines: found 1680 nodes, limit used is 5
+ 14 SNES Function norm 1.358714098644e+01
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 14
+Mat Object: (BackwardEuler-Equation_) 104 MPI processes
+  type: mpiaij
+  rows=512280, cols=512280
+  total: nonzeros=18079488, allocated nonzeros=18079488
+  total number of mallocs used during MatSetValues calls=0
+    using I-node (on process 0) routines: found 1680 nodes, limit used is 5
+ 15 SNES Function norm 1.356954392210e+01
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 14
+Mat Object: (BackwardEuler-Equation_) 104 MPI processes
+  type: mpiaij
+  rows=512280, cols=512280
+  total: nonzeros=18079488, allocated nonzeros=18079488
+  total number of mallocs used during MatSetValues calls=0
+    using I-node (on process 0) routines: found 1680 nodes, limit used is 5
+ 16 SNES Function norm 1.355221532900e+01
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 14
+Mat Object: (BackwardEuler-Equation_) 104 MPI processes
+  type: mpiaij
+  rows=512280, cols=512280
+  total: nonzeros=18079488, allocated nonzeros=18079488
+  total number of mallocs used during MatSetValues calls=0
+    using I-node (on process 0) routines: found 1680 nodes, limit used is 5
+ 17 SNES Function norm 1.352912820882e+01
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 14
+Mat Object: (BackwardEuler-Equation_) 104 MPI processes
+  type: mpiaij
+  rows=512280, cols=512280
+  total: nonzeros=18079488, allocated nonzeros=18079488
+  total number of mallocs used during MatSetValues calls=0
+    using I-node (on process 0) routines: found 1680 nodes, limit used is 5
+ 18 SNES Function norm 1.350805950659e+01
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 14
+Mat Object: (BackwardEuler-Equation_) 104 MPI processes
+  type: mpiaij
+  rows=512280, cols=512280
+  total: nonzeros=18079488, allocated nonzeros=18079488
+  total number of mallocs used during MatSetValues calls=0
+    using I-node (on process 0) routines: found 1680 nodes, limit used is 5
+ 19 SNES Function norm 1.348219393389e+01
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 14
+Mat Object: (BackwardEuler-Equation_) 104 MPI processes
+  type: mpiaij
+  rows=512280, cols=512280
+  total: nonzeros=18079488, allocated nonzeros=18079488
+  total number of mallocs used during MatSetValues calls=0
+    using I-node (on process 0) routines: found 1680 nodes, limit used is 5
+ 20 SNES Function norm 1.345975679240e+01
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 15
+Mat Object: (BackwardEuler-Equation_) 104 MPI processes
+  type: mpiaij
+  rows=512280, cols=512280
+  total: nonzeros=18079488, allocated nonzeros=18079488
+  total number of mallocs used during MatSetValues calls=0
+    using I-node (on process 0) routines: found 1680 nodes, limit used is 5
+ 21 SNES Function norm 1.343366348223e+01
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 14
+Mat Object: (BackwardEuler-Equation_) 104 MPI processes
+  type: mpiaij
+  rows=512280, cols=512280
+  total: nonzeros=18079488, allocated nonzeros=18079488
+  total number of mallocs used during MatSetValues calls=0
+    using I-node (on process 0) routines: found 1680 nodes, limit used is 5
+ 22 SNES Function norm 1.341185799060e+01
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 15
+Mat Object: (BackwardEuler-Equation_) 104 MPI processes
+  type: mpiaij
+  rows=512280, cols=512280
+  total: nonzeros=18079488, allocated nonzeros=18079488
+  total number of mallocs used during MatSetValues calls=0
+    using I-node (on process 0) routines: found 1680 nodes, limit used is 5
+ 23 SNES Function norm 1.338689955300e+01
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 15
+Mat Object: (BackwardEuler-Equation_) 104 MPI processes
+  type: mpiaij
+  rows=512280, cols=512280
+  total: nonzeros=18079488, allocated nonzeros=18079488
+  total number of mallocs used during MatSetValues calls=0
+    using I-node (on process 0) routines: found 1680 nodes, limit used is 5
+ 24 SNES Function norm 1.336663913368e+01
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 16
+Mat Object: (BackwardEuler-Equation_) 104 MPI processes
+  type: mpiaij
+  rows=512280, cols=512280
+  total: nonzeros=18079488, allocated nonzeros=18079488
+  total number of mallocs used during MatSetValues calls=0
+    using I-node (on process 0) routines: found 1680 nodes, limit used is 5
+ 25 SNES Function norm 1.334274856929e+01
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 14
+Mat Object: (BackwardEuler-Equation_) 104 MPI processes
+  type: mpiaij
+  rows=512280, cols=512280
+  total: nonzeros=18079488, allocated nonzeros=18079488
+  total number of mallocs used during MatSetValues calls=0
+    using I-node (on process 0) routines: found 1680 nodes, limit used is 5
+ 26 SNES Function norm 1.332284539887e+01
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 15
+Mat Object: (BackwardEuler-Equation_) 104 MPI processes
+  type: mpiaij
+  rows=512280, cols=512280
+  total: nonzeros=18079488, allocated nonzeros=18079488
+  total number of mallocs used during MatSetValues calls=0
+    using I-node (on process 0) routines: found 1680 nodes, limit used is 5
+ 27 SNES Function norm 1.330007517550e+01
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 15
+Mat Object: (BackwardEuler-Equation_) 104 MPI processes
+  type: mpiaij
+  rows=512280, cols=512280
+  total: nonzeros=18079488, allocated nonzeros=18079488
+  total number of mallocs used during MatSetValues calls=0
+    using I-node (on process 0) routines: found 1680 nodes, limit used is 5
+ 28 SNES Function norm 1.328194843513e+01
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 16
+Mat Object: (BackwardEuler-Equation_) 104 MPI processes
+  type: mpiaij
+  rows=512280, cols=512280
+  total: nonzeros=18079488, allocated nonzeros=18079488
+  total number of mallocs used during MatSetValues calls=0
+    using I-node (on process 0) routines: found 1680 nodes, limit used is 5
+ 29 SNES Function norm 1.326025130449e+01
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 14
+Mat Object: (BackwardEuler-Equation_) 104 MPI processes
+  type: mpiaij
+  rows=512280, cols=512280
+  total: nonzeros=18079488, allocated nonzeros=18079488
+  total number of mallocs used during MatSetValues calls=0
+    using I-node (on process 0) routines: found 1680 nodes, limit used is 5
+ 30 SNES Function norm 1.324233556003e+01
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 15
+Mat Object: (BackwardEuler-Equation_) 104 MPI processes
+  type: mpiaij
+  rows=512280, cols=512280
+  total: nonzeros=18079488, allocated nonzeros=18079488
+  total number of mallocs used during MatSetValues calls=0
+    using I-node (on process 0) routines: found 1680 nodes, limit used is 5
+ 31 SNES Function norm 1.322196060474e+01
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 15
+Mat Object: (BackwardEuler-Equation_) 104 MPI processes
+  type: mpiaij
+  rows=512280, cols=512280
+  total: nonzeros=18079488, allocated nonzeros=18079488
+  total number of mallocs used during MatSetValues calls=0
+    using I-node (on process 0) routines: found 1680 nodes, limit used is 5
+ 32 SNES Function norm 1.320620214324e+01
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 15
+Mat Object: (BackwardEuler-Equation_) 104 MPI processes
+  type: mpiaij
+  rows=512280, cols=512280
+  total: nonzeros=18079488, allocated nonzeros=18079488
+  total number of mallocs used during MatSetValues calls=0
+    using I-node (on process 0) routines: found 1680 nodes, limit used is 5
+ 33 SNES Function norm 1.318781537584e+01
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 15
+Mat Object: (BackwardEuler-Equation_) 104 MPI processes
+  type: mpiaij
+  rows=512280, cols=512280
+  total: nonzeros=18079488, allocated nonzeros=18079488
+  total number of mallocs used during MatSetValues calls=0
+    using I-node (on process 0) routines: found 1680 nodes, limit used is 5
+ 34 SNES Function norm 1.317328422192e+01
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 15
+Mat Object: (BackwardEuler-Equation_) 104 MPI processes
+  type: mpiaij
+  rows=512280, cols=512280
+  total: nonzeros=18079488, allocated nonzeros=18079488
+  total number of mallocs used during MatSetValues calls=0
+    using I-node (on process 0) routines: found 1680 nodes, limit used is 5
+ 35 SNES Function norm 1.315623449957e+01
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 15
+Mat Object: (BackwardEuler-Equation_) 104 MPI processes
+  type: mpiaij
+  rows=512280, cols=512280
+  total: nonzeros=18079488, allocated nonzeros=18079488
+  total number of mallocs used during MatSetValues calls=0
+    using I-node (on process 0) routines: found 1680 nodes, limit used is 5
+ 36 SNES Function norm 1.314262955489e+01
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 15
+Mat Object: (BackwardEuler-Equation_) 104 MPI processes
+  type: mpiaij
+  rows=512280, cols=512280
+  total: nonzeros=18079488, allocated nonzeros=18079488
+  total number of mallocs used during MatSetValues calls=0
+    using I-node (on process 0) routines: found 1680 nodes, limit used is 5
+ 37 SNES Function norm 1.312688279298e+01
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 15
+Mat Object: (BackwardEuler-Equation_) 104 MPI processes
+  type: mpiaij
+  rows=512280, cols=512280
+  total: nonzeros=18079488, allocated nonzeros=18079488
+  total number of mallocs used during MatSetValues calls=0
+    using I-node (on process 0) routines: found 1680 nodes, limit used is 5
+ 38 SNES Function norm 1.311443999566e+01
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 15
+Mat Object: (BackwardEuler-Equation_) 104 MPI processes
+  type: mpiaij
+  rows=512280, cols=512280
+  total: nonzeros=18079488, allocated nonzeros=18079488
+  total number of mallocs used during MatSetValues calls=0
+    using I-node (on process 0) routines: found 1680 nodes, limit used is 5
+ 39 SNES Function norm 1.310009445499e+01
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 15
+Mat Object: (BackwardEuler-Equation_) 104 MPI processes
+  type: mpiaij
+  rows=512280, cols=512280
+  total: nonzeros=18079488, allocated nonzeros=18079488
+  total number of mallocs used during MatSetValues calls=0
+    using I-node (on process 0) routines: found 1680 nodes, limit used is 5
+ 40 SNES Function norm 1.308859394109e+01
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 15
+Mat Object: (BackwardEuler-Equation_) 104 MPI processes
+  type: mpiaij
+  rows=512280, cols=512280
+  total: nonzeros=18079488, allocated nonzeros=18079488
+  total number of mallocs used during MatSetValues calls=0
+    using I-node (on process 0) routines: found 1680 nodes, limit used is 5
+ 41 SNES Function norm 1.307556753648e+01
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 15
+Mat Object: (BackwardEuler-Equation_) 104 MPI processes
+  type: mpiaij
+  rows=512280, cols=512280
+  total: nonzeros=18079488, allocated nonzeros=18079488
+  total number of mallocs used during MatSetValues calls=0
+    using I-node (on process 0) routines: found 1680 nodes, limit used is 5
+ 42 SNES Function norm 1.306507440760e+01
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 15
+Mat Object: (BackwardEuler-Equation_) 104 MPI processes
+  type: mpiaij
+  rows=512280, cols=512280
+  total: nonzeros=18079488, allocated nonzeros=18079488
+  total number of mallocs used during MatSetValues calls=0
+    using I-node (on process 0) routines: found 1680 nodes, limit used is 5
+ 43 SNES Function norm 1.305342286322e+01
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 15
+Mat Object: (BackwardEuler-Equation_) 104 MPI processes
+  type: mpiaij
+  rows=512280, cols=512280
+  total: nonzeros=18079488, allocated nonzeros=18079488
+  total number of mallocs used during MatSetValues calls=0
+    using I-node (on process 0) routines: found 1680 nodes, limit used is 5
+ 44 SNES Function norm 1.304386931294e+01
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 15
+Mat Object: (BackwardEuler-Equation_) 104 MPI processes
+  type: mpiaij
+  rows=512280, cols=512280
+  total: nonzeros=18079488, allocated nonzeros=18079488
+  total number of mallocs used during MatSetValues calls=0
+    using I-node (on process 0) routines: found 1680 nodes, limit used is 5
+ 45 SNES Function norm 1.303357270748e+01
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 15
+Mat Object: (BackwardEuler-Equation_) 104 MPI processes
+  type: mpiaij
+  rows=512280, cols=512280
+  total: nonzeros=18079488, allocated nonzeros=18079488
+  total number of mallocs used during MatSetValues calls=0
+    using I-node (on process 0) routines: found 1680 nodes, limit used is 5
+ 46 SNES Function norm 1.302495264389e+01
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 15
+Mat Object: (BackwardEuler-Equation_) 104 MPI processes
+  type: mpiaij
+  rows=512280, cols=512280
+  total: nonzeros=18079488, allocated nonzeros=18079488
+  total number of mallocs used during MatSetValues calls=0
+    using I-node (on process 0) routines: found 1680 nodes, limit used is 5
+ 47 SNES Function norm 1.301603422982e+01
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 15
+Mat Object: (BackwardEuler-Equation_) 104 MPI processes
+  type: mpiaij
+  rows=512280, cols=512280
+  total: nonzeros=18079488, allocated nonzeros=18079488
+  total number of mallocs used during MatSetValues calls=0
+    using I-node (on process 0) routines: found 1680 nodes, limit used is 5
+ 48 SNES Function norm 1.300834327709e+01
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 15
+Mat Object: (BackwardEuler-Equation_) 104 MPI processes
+  type: mpiaij
+  rows=512280, cols=512280
+  total: nonzeros=18079488, allocated nonzeros=18079488
+  total number of mallocs used during MatSetValues calls=0
+    using I-node (on process 0) routines: found 1680 nodes, limit used is 5
+ 49 SNES Function norm 1.300082844221e+01
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 15
+Mat Object: (BackwardEuler-Equation_) 104 MPI processes
+  type: mpiaij
+  rows=512280, cols=512280
+  total: nonzeros=18079488, allocated nonzeros=18079488
+  total number of mallocs used during MatSetValues calls=0
+    using I-node (on process 0) routines: found 1680 nodes, limit used is 5
+ 50 SNES Function norm 1.299408227485e+01
+  Nonlinear BackwardEuler-Equation_ solve did not converge due to DIVERGED_MAX_IT iterations 50
+SNES Object: (BackwardEuler-Equation_) 104 MPI processes
+  type: newtonls
+  maximum iterations=50, maximum function evaluations=10000
+  tolerances: relative=1e-08, absolute=1e-08, solution=1e-08
+  total number of linear solver iterations=753
+  total number of function evaluations=184
+  norm schedule ALWAYS
+  SNESLineSearch Object: (BackwardEuler-Equation_) 104 MPI processes
+    type: bt
+      interpolation: cubic
+      alpha=1.000000e-04
+    maxlambda=1.000000e+00, minlambda=1.000000e-12
+    tolerances: relative=1.000000e-08, absolute=1.000000e-15, lambda=1.000000e-08
+    maximum iterations=40
+  KSP Object: (BackwardEuler-Equation_) 104 MPI processes
+    type: gmres
+      restart=30, using classical (unmodified) Gram-Schmidt orthogonalization with no iterative refinement
+      happy breakdown tolerance=1e-30
+    maximum iterations=500, initial guess is zero
+    tolerances: relative=1e-06, absolute=1e-50, divergence=10000.
+    left preconditioning
+    using PRECONDITIONED norm type for convergence test
+  PC Object: (BackwardEuler-Equation_) 104 MPI processes
+    type: bjacobi
+      number of blocks = 104
+      Local solver information for first block is in the following KSP and PC objects on rank 0:
+      Use -BackwardEuler-Equation_ksp_view ::ascii_info_detail to display information for all blocks
+      KSP Object: (BackwardEuler-Equation_sub_) 1 MPI process
+        type: preonly
+        maximum iterations=10000, initial guess is zero
+        tolerances: relative=1e-05, absolute=1e-50, divergence=10000.
+        left preconditioning
+        not checking for convergence
+      PC Object: (BackwardEuler-Equation_sub_) 1 MPI process
+        type: ilu
+          out-of-place factorization
+          0 levels of fill
+          tolerance for zero pivot 2.22045e-14
+          matrix ordering: natural
+          factor fill ratio given 1., needed 1.
+            Factored matrix:
+              Mat Object: (BackwardEuler-Equation_sub_) 1 MPI process
+                type: seqaij
+                rows=5040, cols=5040
+                package used to perform factorization: petsc
+                total: nonzeros=162144, allocated nonzeros=162144
+                  using I-node routines: found 1680 nodes, limit used is 5
+        linear system matrix, which is also used to construct the preconditioner:
+        Mat Object: (BackwardEuler-Equation_sub_) 1 MPI process
+          type: seqaij
+          rows=5040, cols=5040
+          total: nonzeros=162144, allocated nonzeros=162144
+          total number of mallocs used during MatSetValues calls=0
+            using I-node routines: found 1680 nodes, limit used is 5
+    linear system matrix, which is also used to construct the preconditioner:
+    Mat Object: (BackwardEuler-Equation_) 104 MPI processes
+      type: mpiaij
+      rows=512280, cols=512280
+      total: nonzeros=18079488, allocated nonzeros=18079488
+      total number of mallocs used during MatSetValues calls=0
+        using I-node (on process 0) routines: found 1680 nodes, limit used is 5
+Step 1 FAILED (ConvergenceError), shrinking dt to 7.5 s
+  0 SNES Function norm 1.137349365567e+03
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 16
+Mat Object: (BackwardEuler-Equation_) 104 MPI processes
+  type: mpiaij
+  rows=512280, cols=512280
+  total: nonzeros=18079488, allocated nonzeros=18079488
+  total number of mallocs used during MatSetValues calls=0
+    using I-node (on process 0) routines: found 1680 nodes, limit used is 5
+  1 SNES Function norm 1.759823752475e+02
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 11
+Mat Object: (BackwardEuler-Equation_) 104 MPI processes
+  type: mpiaij
+  rows=512280, cols=512280
+  total: nonzeros=18079488, allocated nonzeros=18079488
+  total number of mallocs used during MatSetValues calls=0
+    using I-node (on process 0) routines: found 1680 nodes, limit used is 5
+  2 SNES Function norm 1.758008573777e+02
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 11
+Mat Object: (BackwardEuler-Equation_) 104 MPI processes
+  type: mpiaij
+  rows=512280, cols=512280
+  total: nonzeros=18079488, allocated nonzeros=18079488
+  total number of mallocs used during MatSetValues calls=0
+    using I-node (on process 0) routines: found 1680 nodes, limit used is 5
+  3 SNES Function norm 1.541678652519e+01
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 14
+Mat Object: (BackwardEuler-Equation_) 104 MPI processes
+  type: mpiaij
+  rows=512280, cols=512280
+  total: nonzeros=18079488, allocated nonzeros=18079488
+  total number of mallocs used during MatSetValues calls=0
+    using I-node (on process 0) routines: found 1680 nodes, limit used is 5
+  4 SNES Function norm 4.864361979118e+00
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 19
+Mat Object: (BackwardEuler-Equation_) 104 MPI processes
+  type: mpiaij
+  rows=512280, cols=512280
+  total: nonzeros=18079488, allocated nonzeros=18079488
+  total number of mallocs used during MatSetValues calls=0
+    using I-node (on process 0) routines: found 1680 nodes, limit used is 5
+  5 SNES Function norm 4.863955389899e+00
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 17
+Mat Object: (BackwardEuler-Equation_) 104 MPI processes
+  type: mpiaij
+  rows=512280, cols=512280
+  total: nonzeros=18079488, allocated nonzeros=18079488
+  total number of mallocs used during MatSetValues calls=0
+    using I-node (on process 0) routines: found 1680 nodes, limit used is 5
+  6 SNES Function norm 4.818136198989e+00
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 15
+Mat Object: (BackwardEuler-Equation_) 104 MPI processes
+  type: mpiaij
+  rows=512280, cols=512280
+  total: nonzeros=18079488, allocated nonzeros=18079488
+  total number of mallocs used during MatSetValues calls=0
+    using I-node (on process 0) routines: found 1680 nodes, limit used is 5
+  7 SNES Function norm 4.526910153968e+00
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 13
+Mat Object: (BackwardEuler-Equation_) 104 MPI processes
+  type: mpiaij
+  rows=512280, cols=512280
+  total: nonzeros=18079488, allocated nonzeros=18079488
+  total number of mallocs used during MatSetValues calls=0
+    using I-node (on process 0) routines: found 1680 nodes, limit used is 5
+  8 SNES Function norm 4.519345545220e+00
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 14
+Mat Object: (BackwardEuler-Equation_) 104 MPI processes
+  type: mpiaij
+  rows=512280, cols=512280
+  total: nonzeros=18079488, allocated nonzeros=18079488
+  total number of mallocs used during MatSetValues calls=0
+    using I-node (on process 0) routines: found 1680 nodes, limit used is 5
+  9 SNES Function norm 4.518393929764e+00
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 13
+Mat Object: (BackwardEuler-Equation_) 104 MPI processes
+  type: mpiaij
+  rows=512280, cols=512280
+  total: nonzeros=18079488, allocated nonzeros=18079488
+  total number of mallocs used during MatSetValues calls=0
+    using I-node (on process 0) routines: found 1680 nodes, limit used is 5
+ 10 SNES Function norm 4.516387933657e+00
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 14
+Mat Object: (BackwardEuler-Equation_) 104 MPI processes
+  type: mpiaij
+  rows=512280, cols=512280
+  total: nonzeros=18079488, allocated nonzeros=18079488
+  total number of mallocs used during MatSetValues calls=0
+    using I-node (on process 0) routines: found 1680 nodes, limit used is 5
+ 11 SNES Function norm 4.515805585947e+00
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 14
+Mat Object: (BackwardEuler-Equation_) 104 MPI processes
+  type: mpiaij
+  rows=512280, cols=512280
+  total: nonzeros=18079488, allocated nonzeros=18079488
+  total number of mallocs used during MatSetValues calls=0
+    using I-node (on process 0) routines: found 1680 nodes, limit used is 5
+ 12 SNES Function norm 4.515711352255e+00
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 14
+Mat Object: (BackwardEuler-Equation_) 104 MPI processes
+  type: mpiaij
+  rows=512280, cols=512280
+  total: nonzeros=18079488, allocated nonzeros=18079488
+  total number of mallocs used during MatSetValues calls=0
+    using I-node (on process 0) routines: found 1680 nodes, limit used is 5
+ 13 SNES Function norm 4.515675199176e+00
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 15
+Mat Object: (BackwardEuler-Equation_) 104 MPI processes
+  type: mpiaij
+  rows=512280, cols=512280
+  total: nonzeros=18079488, allocated nonzeros=18079488
+  total number of mallocs used during MatSetValues calls=0
+    using I-node (on process 0) routines: found 1680 nodes, limit used is 5
+ 14 SNES Function norm 4.515669906639e+00
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 16
+Mat Object: (BackwardEuler-Equation_) 104 MPI processes
+  type: mpiaij
+  rows=512280, cols=512280
+  total: nonzeros=18079488, allocated nonzeros=18079488
+  total number of mallocs used during MatSetValues calls=0
+    using I-node (on process 0) routines: found 1680 nodes, limit used is 5
+ 15 SNES Function norm 4.515669287463e+00
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 16
+Mat Object: (BackwardEuler-Equation_) 104 MPI processes
+  type: mpiaij
+  rows=512280, cols=512280
+  total: nonzeros=18079488, allocated nonzeros=18079488
+  total number of mallocs used during MatSetValues calls=0
+    using I-node (on process 0) routines: found 1680 nodes, limit used is 5
+ 16 SNES Function norm 4.515668643535e+00
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 16
+Mat Object: (BackwardEuler-Equation_) 104 MPI processes
+  type: mpiaij
+  rows=512280, cols=512280
+  total: nonzeros=18079488, allocated nonzeros=18079488
+  total number of mallocs used during MatSetValues calls=0
+    using I-node (on process 0) routines: found 1680 nodes, limit used is 5
+ 17 SNES Function norm 4.515668076765e+00
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 16
+Mat Object: (BackwardEuler-Equation_) 104 MPI processes
+  type: mpiaij
+  rows=512280, cols=512280
+  total: nonzeros=18079488, allocated nonzeros=18079488
+  total number of mallocs used during MatSetValues calls=0
+    using I-node (on process 0) routines: found 1680 nodes, limit used is 5
+ 18 SNES Function norm 4.515667291263e+00
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 16
+Mat Object: (BackwardEuler-Equation_) 104 MPI processes
+  type: mpiaij
+  rows=512280, cols=512280
+  total: nonzeros=18079488, allocated nonzeros=18079488
+  total number of mallocs used during MatSetValues calls=0
+    using I-node (on process 0) routines: found 1680 nodes, limit used is 5
+ 19 SNES Function norm 4.515666732351e+00
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 18
+Mat Object: (BackwardEuler-Equation_) 104 MPI processes
+  type: mpiaij
+  rows=512280, cols=512280
+  total: nonzeros=18079488, allocated nonzeros=18079488
+  total number of mallocs used during MatSetValues calls=0
+    using I-node (on process 0) routines: found 1680 nodes, limit used is 5
+ 20 SNES Function norm 4.515666662275e+00
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 18
+Mat Object: (BackwardEuler-Equation_) 104 MPI processes
+  type: mpiaij
+  rows=512280, cols=512280
+  total: nonzeros=18079488, allocated nonzeros=18079488
+  total number of mallocs used during MatSetValues calls=0
+    using I-node (on process 0) routines: found 1680 nodes, limit used is 5
+ 21 SNES Function norm 4.515666625942e+00
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 18
+Mat Object: (BackwardEuler-Equation_) 104 MPI processes
+  type: mpiaij
+  rows=512280, cols=512280
+  total: nonzeros=18079488, allocated nonzeros=18079488
+  total number of mallocs used during MatSetValues calls=0
+    using I-node (on process 0) routines: found 1680 nodes, limit used is 5
+ 22 SNES Function norm 4.515666508427e+00
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 18
+Mat Object: (BackwardEuler-Equation_) 104 MPI processes
+  type: mpiaij
+  rows=512280, cols=512280
+  total: nonzeros=18079488, allocated nonzeros=18079488
+  total number of mallocs used during MatSetValues calls=0
+    using I-node (on process 0) routines: found 1680 nodes, limit used is 5
+ 23 SNES Function norm 4.515666491406e+00
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 19
+Mat Object: (BackwardEuler-Equation_) 104 MPI processes
+  type: mpiaij
+  rows=512280, cols=512280
+  total: nonzeros=18079488, allocated nonzeros=18079488
+  total number of mallocs used during MatSetValues calls=0
+    using I-node (on process 0) routines: found 1680 nodes, limit used is 5
+ 24 SNES Function norm 4.515666488927e+00
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 20
+Mat Object: (BackwardEuler-Equation_) 104 MPI processes
+  type: mpiaij
+  rows=512280, cols=512280
+  total: nonzeros=18079488, allocated nonzeros=18079488
+  total number of mallocs used during MatSetValues calls=0
+    using I-node (on process 0) routines: found 1680 nodes, limit used is 5
+ 25 SNES Function norm 4.515666488455e+00
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 22
+Mat Object: (BackwardEuler-Equation_) 104 MPI processes
+  type: mpiaij
+  rows=512280, cols=512280
+  total: nonzeros=18079488, allocated nonzeros=18079488
+  total number of mallocs used during MatSetValues calls=0
+    using I-node (on process 0) routines: found 1680 nodes, limit used is 5
+  Nonlinear BackwardEuler-Equation_ solve did not converge due to DIVERGED_LINE_SEARCH iterations 25
+SNES Object: (BackwardEuler-Equation_) 104 MPI processes
+  type: newtonls
+  maximum iterations=50, maximum function evaluations=10000
+  tolerances: relative=1e-08, absolute=1e-08, solution=1e-08
+  total number of linear solver iterations=413
+  total number of function evaluations=171
+  norm schedule ALWAYS
+  SNESLineSearch Object: (BackwardEuler-Equation_) 104 MPI processes
+    type: bt
+      interpolation: cubic
+      alpha=1.000000e-04
+    maxlambda=1.000000e+00, minlambda=1.000000e-12
+    tolerances: relative=1.000000e-08, absolute=1.000000e-15, lambda=1.000000e-08
+    maximum iterations=40
+  KSP Object: (BackwardEuler-Equation_) 104 MPI processes
+    type: gmres
+      restart=30, using classical (unmodified) Gram-Schmidt orthogonalization with no iterative refinement
+      happy breakdown tolerance=1e-30
+    maximum iterations=500, initial guess is zero
+    tolerances: relative=1e-06, absolute=1e-50, divergence=10000.
+    left preconditioning
+    using PRECONDITIONED norm type for convergence test
+  PC Object: (BackwardEuler-Equation_) 104 MPI processes
+    type: bjacobi
+      number of blocks = 104
+      Local solver information for first block is in the following KSP and PC objects on rank 0:
+      Use -BackwardEuler-Equation_ksp_view ::ascii_info_detail to display information for all blocks
+      KSP Object: (BackwardEuler-Equation_sub_) 1 MPI process
+        type: preonly
+        maximum iterations=10000, initial guess is zero
+        tolerances: relative=1e-05, absolute=1e-50, divergence=10000.
+        left preconditioning
+        not checking for convergence
+      PC Object: (BackwardEuler-Equation_sub_) 1 MPI process
+        type: ilu
+          out-of-place factorization
+          0 levels of fill
+          tolerance for zero pivot 2.22045e-14
+          matrix ordering: natural
+          factor fill ratio given 1., needed 1.
+            Factored matrix:
+              Mat Object: (BackwardEuler-Equation_sub_) 1 MPI process
+                type: seqaij
+                rows=5040, cols=5040
+                package used to perform factorization: petsc
+                total: nonzeros=162144, allocated nonzeros=162144
+                  using I-node routines: found 1680 nodes, limit used is 5
+        linear system matrix, which is also used to construct the preconditioner:
+        Mat Object: (BackwardEuler-Equation_sub_) 1 MPI process
+          type: seqaij
+          rows=5040, cols=5040
+          total: nonzeros=162144, allocated nonzeros=162144
+          total number of mallocs used during MatSetValues calls=0
+            using I-node routines: found 1680 nodes, limit used is 5
+    linear system matrix, which is also used to construct the preconditioner:
+    Mat Object: (BackwardEuler-Equation_) 104 MPI processes
+      type: mpiaij
+      rows=512280, cols=512280
+      total: nonzeros=18079488, allocated nonzeros=18079488
+      total number of mallocs used during MatSetValues calls=0
+        using I-node (on process 0) routines: found 1680 nodes, limit used is 5
+Step 1 FAILED (ConvergenceError), shrinking dt to 3.8 s
+  0 SNES Function norm 6.559737876584e+02
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 19
+Mat Object: (BackwardEuler-Equation_) 104 MPI processes
+  type: mpiaij
+  rows=512280, cols=512280
+  total: nonzeros=18079488, allocated nonzeros=18079488
+  total number of mallocs used during MatSetValues calls=0
+    using I-node (on process 0) routines: found 1680 nodes, limit used is 5
+  1 SNES Function norm 6.559449318149e+02
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 14
+Mat Object: (BackwardEuler-Equation_) 104 MPI processes
+  type: mpiaij
+  rows=512280, cols=512280
+  total: nonzeros=18079488, allocated nonzeros=18079488
+  total number of mallocs used during MatSetValues calls=0
+    using I-node (on process 0) routines: found 1680 nodes, limit used is 5
+  2 SNES Function norm 1.987233578660e+00
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 18
+Mat Object: (BackwardEuler-Equation_) 104 MPI processes
+  type: mpiaij
+  rows=512280, cols=512280
+  total: nonzeros=18079488, allocated nonzeros=18079488
+  total number of mallocs used during MatSetValues calls=0
+    using I-node (on process 0) routines: found 1680 nodes, limit used is 5
+  3 SNES Function norm 1.987226413818e+00
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 18
+Mat Object: (BackwardEuler-Equation_) 104 MPI processes
+  type: mpiaij
+  rows=512280, cols=512280
+  total: nonzeros=18079488, allocated nonzeros=18079488
+  total number of mallocs used during MatSetValues calls=0
+    using I-node (on process 0) routines: found 1680 nodes, limit used is 5
+  4 SNES Function norm 1.987220049049e+00
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 18
+Mat Object: (BackwardEuler-Equation_) 104 MPI processes
+  type: mpiaij
+  rows=512280, cols=512280
+  total: nonzeros=18079488, allocated nonzeros=18079488
+  total number of mallocs used during MatSetValues calls=0
+    using I-node (on process 0) routines: found 1680 nodes, limit used is 5
+  5 SNES Function norm 1.987214964040e+00
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 18
+Mat Object: (BackwardEuler-Equation_) 104 MPI processes
+  type: mpiaij
+  rows=512280, cols=512280
+  total: nonzeros=18079488, allocated nonzeros=18079488
+  total number of mallocs used during MatSetValues calls=0
+    using I-node (on process 0) routines: found 1680 nodes, limit used is 5
+  6 SNES Function norm 1.987214923281e+00
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 18
+Mat Object: (BackwardEuler-Equation_) 104 MPI processes
+  type: mpiaij
+  rows=512280, cols=512280
+  total: nonzeros=18079488, allocated nonzeros=18079488
+  total number of mallocs used during MatSetValues calls=0
+    using I-node (on process 0) routines: found 1680 nodes, limit used is 5
+  7 SNES Function norm 1.987214919208e+00
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 18
+Mat Object: (BackwardEuler-Equation_) 104 MPI processes
+  type: mpiaij
+  rows=512280, cols=512280
+  total: nonzeros=18079488, allocated nonzeros=18079488
+  total number of mallocs used during MatSetValues calls=0
+    using I-node (on process 0) routines: found 1680 nodes, limit used is 5
+  8 SNES Function norm 1.987214915063e+00
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 18
+Mat Object: (BackwardEuler-Equation_) 104 MPI processes
+  type: mpiaij
+  rows=512280, cols=512280
+  total: nonzeros=18079488, allocated nonzeros=18079488
+  total number of mallocs used during MatSetValues calls=0
+    using I-node (on process 0) routines: found 1680 nodes, limit used is 5
+  9 SNES Function norm 1.987214910932e+00
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 18
+Mat Object: (BackwardEuler-Equation_) 104 MPI processes
+  type: mpiaij
+  rows=512280, cols=512280
+  total: nonzeros=18079488, allocated nonzeros=18079488
+  total number of mallocs used during MatSetValues calls=0
+    using I-node (on process 0) routines: found 1680 nodes, limit used is 5
+ 10 SNES Function norm 1.987214910555e+00
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 18
+Mat Object: (BackwardEuler-Equation_) 104 MPI processes
+  type: mpiaij
+  rows=512280, cols=512280
+  total: nonzeros=18079488, allocated nonzeros=18079488
+  total number of mallocs used during MatSetValues calls=0
+    using I-node (on process 0) routines: found 1680 nodes, limit used is 5
+ 11 SNES Function norm 1.987214910213e+00
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 18
+Mat Object: (BackwardEuler-Equation_) 104 MPI processes
+  type: mpiaij
+  rows=512280, cols=512280
+  total: nonzeros=18079488, allocated nonzeros=18079488
+  total number of mallocs used during MatSetValues calls=0
+    using I-node (on process 0) routines: found 1680 nodes, limit used is 5
+ 12 SNES Function norm 1.987214909803e+00
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 18
+Mat Object: (BackwardEuler-Equation_) 104 MPI processes
+  type: mpiaij
+  rows=512280, cols=512280
+  total: nonzeros=18079488, allocated nonzeros=18079488
+  total number of mallocs used during MatSetValues calls=0
+    using I-node (on process 0) routines: found 1680 nodes, limit used is 5
+ 13 SNES Function norm 1.987214909710e+00
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 18
+Mat Object: (BackwardEuler-Equation_) 104 MPI processes
+  type: mpiaij
+  rows=512280, cols=512280
+  total: nonzeros=18079488, allocated nonzeros=18079488
+  total number of mallocs used during MatSetValues calls=0
+    using I-node (on process 0) routines: found 1680 nodes, limit used is 5
+ 14 SNES Function norm 1.987214909702e+00
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 18
+Mat Object: (BackwardEuler-Equation_) 104 MPI processes
+  type: mpiaij
+  rows=512280, cols=512280
+  total: nonzeros=18079488, allocated nonzeros=18079488
+  total number of mallocs used during MatSetValues calls=0
+    using I-node (on process 0) routines: found 1680 nodes, limit used is 5
+ 15 SNES Function norm 1.987214909686e+00
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 18
+Mat Object: (BackwardEuler-Equation_) 104 MPI processes
+  type: mpiaij
+  rows=512280, cols=512280
+  total: nonzeros=18079488, allocated nonzeros=18079488
+  total number of mallocs used during MatSetValues calls=0
+    using I-node (on process 0) routines: found 1680 nodes, limit used is 5
+ 16 SNES Function norm 1.987214909681e+00
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 18
+Mat Object: (BackwardEuler-Equation_) 104 MPI processes
+  type: mpiaij
+  rows=512280, cols=512280
+  total: nonzeros=18079488, allocated nonzeros=18079488
+  total number of mallocs used during MatSetValues calls=0
+    using I-node (on process 0) routines: found 1680 nodes, limit used is 5
+  Nonlinear BackwardEuler-Equation_ solve did not converge due to DIVERGED_LINE_SEARCH iterations 16
+SNES Object: (BackwardEuler-Equation_) 104 MPI processes
+  type: newtonls
+  maximum iterations=50, maximum function evaluations=10000
+  tolerances: relative=1e-08, absolute=1e-08, solution=1e-08
+  total number of linear solver iterations=303
+  total number of function evaluations=169
+  norm schedule ALWAYS
+  SNESLineSearch Object: (BackwardEuler-Equation_) 104 MPI processes
+    type: bt
+      interpolation: cubic
+      alpha=1.000000e-04
+    maxlambda=1.000000e+00, minlambda=1.000000e-12
+    tolerances: relative=1.000000e-08, absolute=1.000000e-15, lambda=1.000000e-08
+    maximum iterations=40
+  KSP Object: (BackwardEuler-Equation_) 104 MPI processes
+    type: gmres
+      restart=30, using classical (unmodified) Gram-Schmidt orthogonalization with no iterative refinement
+      happy breakdown tolerance=1e-30
+    maximum iterations=500, initial guess is zero
+    tolerances: relative=1e-06, absolute=1e-50, divergence=10000.
+    left preconditioning
+    using PRECONDITIONED norm type for convergence test
+  PC Object: (BackwardEuler-Equation_) 104 MPI processes
+    type: bjacobi
+      number of blocks = 104
+      Local solver information for first block is in the following KSP and PC objects on rank 0:
+      Use -BackwardEuler-Equation_ksp_view ::ascii_info_detail to display information for all blocks
+      KSP Object: (BackwardEuler-Equation_sub_) 1 MPI process
+        type: preonly
+        maximum iterations=10000, initial guess is zero
+        tolerances: relative=1e-05, absolute=1e-50, divergence=10000.
+        left preconditioning
+        not checking for convergence
+      PC Object: (BackwardEuler-Equation_sub_) 1 MPI process
+        type: ilu
+          out-of-place factorization
+          0 levels of fill
+          tolerance for zero pivot 2.22045e-14
+          matrix ordering: natural
+          factor fill ratio given 1., needed 1.
+            Factored matrix:
+              Mat Object: (BackwardEuler-Equation_sub_) 1 MPI process
+                type: seqaij
+                rows=5040, cols=5040
+                package used to perform factorization: petsc
+                total: nonzeros=162144, allocated nonzeros=162144
+                  using I-node routines: found 1680 nodes, limit used is 5
+        linear system matrix, which is also used to construct the preconditioner:
+        Mat Object: (BackwardEuler-Equation_sub_) 1 MPI process
+          type: seqaij
+          rows=5040, cols=5040
+          total: nonzeros=162144, allocated nonzeros=162144
+          total number of mallocs used during MatSetValues calls=0
+            using I-node routines: found 1680 nodes, limit used is 5
+    linear system matrix, which is also used to construct the preconditioner:
+    Mat Object: (BackwardEuler-Equation_) 104 MPI processes
+      type: mpiaij
+      rows=512280, cols=512280
+      total: nonzeros=18079488, allocated nonzeros=18079488
+      total number of mallocs used during MatSetValues calls=0
+        using I-node (on process 0) routines: found 1680 nodes, limit used is 5
+Step 1 FAILED (ConvergenceError), shrinking dt to 1.9 s
+  0 SNES Function norm 3.594147560136e+02
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 19
+Mat Object: (BackwardEuler-Equation_) 104 MPI processes
+  type: mpiaij
+  rows=512280, cols=512280
+  total: nonzeros=18079488, allocated nonzeros=18079488
+  total number of mallocs used during MatSetValues calls=0
+    using I-node (on process 0) routines: found 1680 nodes, limit used is 5
+  1 SNES Function norm 3.582510141268e+02
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 17
+Mat Object: (BackwardEuler-Equation_) 104 MPI processes
+  type: mpiaij
+  rows=512280, cols=512280
+  total: nonzeros=18079488, allocated nonzeros=18079488
+  total number of mallocs used during MatSetValues calls=0
+    using I-node (on process 0) routines: found 1680 nodes, limit used is 5
+  2 SNES Function norm 8.347580445969e+00
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 15
+Mat Object: (BackwardEuler-Equation_) 104 MPI processes
+  type: mpiaij
+  rows=512280, cols=512280
+  total: nonzeros=18079488, allocated nonzeros=18079488
+  total number of mallocs used during MatSetValues calls=0
+    using I-node (on process 0) routines: found 1680 nodes, limit used is 5
+  3 SNES Function norm 1.920936042313e+00
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 16
+Mat Object: (BackwardEuler-Equation_) 104 MPI processes
+  type: mpiaij
+  rows=512280, cols=512280
+  total: nonzeros=18079488, allocated nonzeros=18079488
+  total number of mallocs used during MatSetValues calls=0
+    using I-node (on process 0) routines: found 1680 nodes, limit used is 5
+  4 SNES Function norm 1.920722545254e+00
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 20
+Mat Object: (BackwardEuler-Equation_) 104 MPI processes
+  type: mpiaij
+  rows=512280, cols=512280
+  total: nonzeros=18079488, allocated nonzeros=18079488
+  total number of mallocs used during MatSetValues calls=0
+    using I-node (on process 0) routines: found 1680 nodes, limit used is 5
+  5 SNES Function norm 1.920716019137e+00
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 14
+Mat Object: (BackwardEuler-Equation_) 104 MPI processes
+  type: mpiaij
+  rows=512280, cols=512280
+  total: nonzeros=18079488, allocated nonzeros=18079488
+  total number of mallocs used during MatSetValues calls=0
+    using I-node (on process 0) routines: found 1680 nodes, limit used is 5
+  6 SNES Function norm 1.832899901930e+00
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 13
+Mat Object: (BackwardEuler-Equation_) 104 MPI processes
+  type: mpiaij
+  rows=512280, cols=512280
+  total: nonzeros=18079488, allocated nonzeros=18079488
+  total number of mallocs used during MatSetValues calls=0
+    using I-node (on process 0) routines: found 1680 nodes, limit used is 5
+  7 SNES Function norm 1.832859159088e+00
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 13
+Mat Object: (BackwardEuler-Equation_) 104 MPI processes
+  type: mpiaij
+  rows=512280, cols=512280
+  total: nonzeros=18079488, allocated nonzeros=18079488
+  total number of mallocs used during MatSetValues calls=0
+    using I-node (on process 0) routines: found 1680 nodes, limit used is 5
+  8 SNES Function norm 1.812451334910e+00
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 12
+Mat Object: (BackwardEuler-Equation_) 104 MPI processes
+  type: mpiaij
+  rows=512280, cols=512280
+  total: nonzeros=18079488, allocated nonzeros=18079488
+  total number of mallocs used during MatSetValues calls=0
+    using I-node (on process 0) routines: found 1680 nodes, limit used is 5
+  9 SNES Function norm 1.812385532026e+00
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 12
+Mat Object: (BackwardEuler-Equation_) 104 MPI processes
+  type: mpiaij
+  rows=512280, cols=512280
+  total: nonzeros=18079488, allocated nonzeros=18079488
+  total number of mallocs used during MatSetValues calls=0
+    using I-node (on process 0) routines: found 1680 nodes, limit used is 5
+ 10 SNES Function norm 1.812336568102e+00
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 12
+Mat Object: (BackwardEuler-Equation_) 104 MPI processes
+  type: mpiaij
+  rows=512280, cols=512280
+  total: nonzeros=18079488, allocated nonzeros=18079488
+  total number of mallocs used during MatSetValues calls=0
+    using I-node (on process 0) routines: found 1680 nodes, limit used is 5
+ 11 SNES Function norm 1.812332652049e+00
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 12
+Mat Object: (BackwardEuler-Equation_) 104 MPI processes
+  type: mpiaij
+  rows=512280, cols=512280
+  total: nonzeros=18079488, allocated nonzeros=18079488
+  total number of mallocs used during MatSetValues calls=0
+    using I-node (on process 0) routines: found 1680 nodes, limit used is 5
+ 12 SNES Function norm 1.812328806033e+00
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 12
+Mat Object: (BackwardEuler-Equation_) 104 MPI processes
+  type: mpiaij
+  rows=512280, cols=512280
+  total: nonzeros=18079488, allocated nonzeros=18079488
+  total number of mallocs used during MatSetValues calls=0
+    using I-node (on process 0) routines: found 1680 nodes, limit used is 5
+ 13 SNES Function norm 1.812325027679e+00
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 12
+Mat Object: (BackwardEuler-Equation_) 104 MPI processes
+  type: mpiaij
+  rows=512280, cols=512280
+  total: nonzeros=18079488, allocated nonzeros=18079488
+  total number of mallocs used during MatSetValues calls=0
+    using I-node (on process 0) routines: found 1680 nodes, limit used is 5
+ 14 SNES Function norm 1.812324990491e+00
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 12
+Mat Object: (BackwardEuler-Equation_) 104 MPI processes
+  type: mpiaij
+  rows=512280, cols=512280
+  total: nonzeros=18079488, allocated nonzeros=18079488
+  total number of mallocs used during MatSetValues calls=0
+    using I-node (on process 0) routines: found 1680 nodes, limit used is 5
+ 15 SNES Function norm 1.812324953411e+00
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 12
+Mat Object: (BackwardEuler-Equation_) 104 MPI processes
+  type: mpiaij
+  rows=512280, cols=512280
+  total: nonzeros=18079488, allocated nonzeros=18079488
+  total number of mallocs used during MatSetValues calls=0
+    using I-node (on process 0) routines: found 1680 nodes, limit used is 5
+ 16 SNES Function norm 1.812324949670e+00
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 12
+Mat Object: (BackwardEuler-Equation_) 104 MPI processes
+  type: mpiaij
+  rows=512280, cols=512280
+  total: nonzeros=18079488, allocated nonzeros=18079488
+  total number of mallocs used during MatSetValues calls=0
+    using I-node (on process 0) routines: found 1680 nodes, limit used is 5
+ 17 SNES Function norm 1.812324945995e+00
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 12
+Mat Object: (BackwardEuler-Equation_) 104 MPI processes
+  type: mpiaij
+  rows=512280, cols=512280
+  total: nonzeros=18079488, allocated nonzeros=18079488
+  total number of mallocs used during MatSetValues calls=0
+    using I-node (on process 0) routines: found 1680 nodes, limit used is 5
+ 18 SNES Function norm 1.812324942378e+00
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 12
+Mat Object: (BackwardEuler-Equation_) 104 MPI processes
+  type: mpiaij
+  rows=512280, cols=512280
+  total: nonzeros=18079488, allocated nonzeros=18079488
+  total number of mallocs used during MatSetValues calls=0
+    using I-node (on process 0) routines: found 1680 nodes, limit used is 5
+ 19 SNES Function norm 1.812324938647e+00
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 12
+Mat Object: (BackwardEuler-Equation_) 104 MPI processes
+  type: mpiaij
+  rows=512280, cols=512280
+  total: nonzeros=18079488, allocated nonzeros=18079488
+  total number of mallocs used during MatSetValues calls=0
+    using I-node (on process 0) routines: found 1680 nodes, limit used is 5
+ 20 SNES Function norm 1.812324934995e+00
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 12
+Mat Object: (BackwardEuler-Equation_) 104 MPI processes
+  type: mpiaij
+  rows=512280, cols=512280
+  total: nonzeros=18079488, allocated nonzeros=18079488
+  total number of mallocs used during MatSetValues calls=0
+    using I-node (on process 0) routines: found 1680 nodes, limit used is 5
+ 21 SNES Function norm 1.812324934613e+00
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 12
+Mat Object: (BackwardEuler-Equation_) 104 MPI processes
+  type: mpiaij
+  rows=512280, cols=512280
+  total: nonzeros=18079488, allocated nonzeros=18079488
+  total number of mallocs used during MatSetValues calls=0
+    using I-node (on process 0) routines: found 1680 nodes, limit used is 5
+ 22 SNES Function norm 1.812324934567e+00
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 12
+Mat Object: (BackwardEuler-Equation_) 104 MPI processes
+  type: mpiaij
+  rows=512280, cols=512280
+  total: nonzeros=18079488, allocated nonzeros=18079488
+  total number of mallocs used during MatSetValues calls=0
+    using I-node (on process 0) routines: found 1680 nodes, limit used is 5
+ 23 SNES Function norm 1.812324934505e+00
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 12
+Mat Object: (BackwardEuler-Equation_) 104 MPI processes
+  type: mpiaij
+  rows=512280, cols=512280
+  total: nonzeros=18079488, allocated nonzeros=18079488
+  total number of mallocs used during MatSetValues calls=0
+    using I-node (on process 0) routines: found 1680 nodes, limit used is 5
+ 24 SNES Function norm 1.812324934459e+00
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 12
+Mat Object: (BackwardEuler-Equation_) 104 MPI processes
+  type: mpiaij
+  rows=512280, cols=512280
+  total: nonzeros=18079488, allocated nonzeros=18079488
+  total number of mallocs used during MatSetValues calls=0
+    using I-node (on process 0) routines: found 1680 nodes, limit used is 5
+ 25 SNES Function norm 1.812324934405e+00
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 12
+Mat Object: (BackwardEuler-Equation_) 104 MPI processes
+  type: mpiaij
+  rows=512280, cols=512280
+  total: nonzeros=18079488, allocated nonzeros=18079488
+  total number of mallocs used during MatSetValues calls=0
+    using I-node (on process 0) routines: found 1680 nodes, limit used is 5
+ 26 SNES Function norm 1.812324934361e+00
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 12
+Mat Object: (BackwardEuler-Equation_) 104 MPI processes
+  type: mpiaij
+  rows=512280, cols=512280
+  total: nonzeros=18079488, allocated nonzeros=18079488
+  total number of mallocs used during MatSetValues calls=0
+    using I-node (on process 0) routines: found 1680 nodes, limit used is 5
+ 27 SNES Function norm 1.812324934309e+00
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 12
+Mat Object: (BackwardEuler-Equation_) 104 MPI processes
+  type: mpiaij
+  rows=512280, cols=512280
+  total: nonzeros=18079488, allocated nonzeros=18079488
+  total number of mallocs used during MatSetValues calls=0
+    using I-node (on process 0) routines: found 1680 nodes, limit used is 5
+ 28 SNES Function norm 1.812324934269e+00
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 12
+Mat Object: (BackwardEuler-Equation_) 104 MPI processes
+  type: mpiaij
+  rows=512280, cols=512280
+  total: nonzeros=18079488, allocated nonzeros=18079488
+  total number of mallocs used during MatSetValues calls=0
+    using I-node (on process 0) routines: found 1680 nodes, limit used is 5
+ 29 SNES Function norm 1.812324934260e+00
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 12
+Mat Object: (BackwardEuler-Equation_) 104 MPI processes
+  type: mpiaij
+  rows=512280, cols=512280
+  total: nonzeros=18079488, allocated nonzeros=18079488
+  total number of mallocs used during MatSetValues calls=0
+    using I-node (on process 0) routines: found 1680 nodes, limit used is 5
+ 30 SNES Function norm 1.812324934243e+00
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 12
+Mat Object: (BackwardEuler-Equation_) 104 MPI processes
+  type: mpiaij
+  rows=512280, cols=512280
+  total: nonzeros=18079488, allocated nonzeros=18079488
+  total number of mallocs used during MatSetValues calls=0
+    using I-node (on process 0) routines: found 1680 nodes, limit used is 5
+  Nonlinear BackwardEuler-Equation_ solve did not converge due to DIVERGED_LINE_SEARCH iterations 30
+SNES Object: (BackwardEuler-Equation_) 104 MPI processes
+  type: newtonls
+  maximum iterations=50, maximum function evaluations=10000
+  tolerances: relative=1e-08, absolute=1e-08, solution=1e-08
+  total number of linear solver iterations=403
+  total number of function evaluations=266
+  norm schedule ALWAYS
+  SNESLineSearch Object: (BackwardEuler-Equation_) 104 MPI processes
+    type: bt
+      interpolation: cubic
+      alpha=1.000000e-04
+    maxlambda=1.000000e+00, minlambda=1.000000e-12
+    tolerances: relative=1.000000e-08, absolute=1.000000e-15, lambda=1.000000e-08
+    maximum iterations=40
+  KSP Object: (BackwardEuler-Equation_) 104 MPI processes
+    type: gmres
+      restart=30, using classical (unmodified) Gram-Schmidt orthogonalization with no iterative refinement
+      happy breakdown tolerance=1e-30
+    maximum iterations=500, initial guess is zero
+    tolerances: relative=1e-06, absolute=1e-50, divergence=10000.
+    left preconditioning
+    using PRECONDITIONED norm type for convergence test
+  PC Object: (BackwardEuler-Equation_) 104 MPI processes
+    type: bjacobi
+      number of blocks = 104
+      Local solver information for first block is in the following KSP and PC objects on rank 0:
+      Use -BackwardEuler-Equation_ksp_view ::ascii_info_detail to display information for all blocks
+      KSP Object: (BackwardEuler-Equation_sub_) 1 MPI process
+        type: preonly
+        maximum iterations=10000, initial guess is zero
+        tolerances: relative=1e-05, absolute=1e-50, divergence=10000.
+        left preconditioning
+        not checking for convergence
+      PC Object: (BackwardEuler-Equation_sub_) 1 MPI process
+        type: ilu
+          out-of-place factorization
+          0 levels of fill
+          tolerance for zero pivot 2.22045e-14
+          matrix ordering: natural
+          factor fill ratio given 1., needed 1.
+            Factored matrix:
+              Mat Object: (BackwardEuler-Equation_sub_) 1 MPI process
+                type: seqaij
+                rows=5040, cols=5040
+                package used to perform factorization: petsc
+                total: nonzeros=162144, allocated nonzeros=162144
+                  using I-node routines: found 1680 nodes, limit used is 5
+        linear system matrix, which is also used to construct the preconditioner:
+        Mat Object: (BackwardEuler-Equation_sub_) 1 MPI process
+          type: seqaij
+          rows=5040, cols=5040
+          total: nonzeros=162144, allocated nonzeros=162144
+          total number of mallocs used during MatSetValues calls=0
+            using I-node routines: found 1680 nodes, limit used is 5
+    linear system matrix, which is also used to construct the preconditioner:
+    Mat Object: (BackwardEuler-Equation_) 104 MPI processes
+      type: mpiaij
+      rows=512280, cols=512280
+      total: nonzeros=18079488, allocated nonzeros=18079488
+      total number of mallocs used during MatSetValues calls=0
+        using I-node (on process 0) routines: found 1680 nodes, limit used is 5
+dt shrunk below 1 s (9.38e-01), giving up
+FAILED — no successful steps | failed 6
+There are no unused options.
+=== Job completed: 2026-08-20T05:42:36Z ===
+
+======================================================================================
+                  Resource Usage on 2026-08-20 15:42:39:
+   Job Id:             176799192.gadi-pbs
+   Project:            xd2
+   Exit Status:        0
+   Service Units:      5.20
+   NCPUs Requested:    104                 CPU Time Used: 02:19:01        
+   Memory Requested:   500.0GB               Memory Used: 75.94GB         
+   Walltime Requested: 01:00:00            Walltime Used: 00:01:30        
+   JobFS Requested:    400.0GB                JobFS Used: 49.98MB         
+======================================================================================

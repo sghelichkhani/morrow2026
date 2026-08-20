@@ -67,6 +67,9 @@ RE_FAILED = re.compile(r"^FAILED.*failed (\d+)")
 
 # OOM / crash
 RE_SIGNAL = re.compile(r"exited on signal (\d+)")
+RE_PBS_WALLTIME_KILL = re.compile(
+    r"PBS: job killed: walltime (\d+) exceeded limit (\d+)"
+)
 
 # PBS resource usage
 RE_PBS_WALLTIME = re.compile(r"Walltime Used:\s*(\S+)")
@@ -80,6 +83,8 @@ def parse_file(path):
 
     text = path.read_text(errors="replace")
     lines = text.splitlines()
+    error_path = path.with_suffix(".err")
+    error_text = error_path.read_text(errors="replace") if error_path.exists() else ""
 
     result = {
         "file": str(path),
@@ -250,6 +255,10 @@ def parse_file(path):
             result["outcome"] = "oom"
             continue
 
+    walltime_kill = RE_PBS_WALLTIME_KILL.search(error_text)
+    if walltime_kill:
+        result["outcome"] = "walltime"
+
     # ── Compute derived steady-state metrics ────────────────────────────
     if result["steps"] and len(result["steps"]) > 1:
         steady = result["steps"][1:]  # skip step 1
@@ -283,6 +292,9 @@ def parse_file(path):
         m = RE_PBS_MEMORY.search(line)
         if m:
             pbs["memory_used"] = m.group(1)
+    if walltime_kill:
+        pbs["walltime_used_seconds"] = int(walltime_kill.group(1))
+        pbs["walltime_limit_seconds"] = int(walltime_kill.group(2))
     if pbs:
         result["pbs"] = pbs
 

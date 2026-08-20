@@ -27,6 +27,8 @@ if __name__ == "__main__":
     parser.add_argument("--steps", type=int, default=100)
     parser.add_argument("--solver", type=str, default="gamg")
     parser.add_argument("--refinement-levels", type=int, default=0)
+    parser.add_argument("--profile", action="store_true",
+                        help="Reduce PETSc text output during a profile run")
     _ARGS = parser.parse_args()
     sys.argv = sys.argv[:1]  # Clear so PETSc doesn't see them
 
@@ -38,7 +40,7 @@ from solvers import get_solver
 
 
 def model(nx, nz, degree=1, dt_value=300.0, steps=100,
-          solver="gamg", refinement_levels=0):
+          solver="gamg", refinement_levels=0, profile=False):
     """Run Cockett 3D benchmark.
 
     Args:
@@ -49,6 +51,7 @@ def model(nx, nz, degree=1, dt_value=300.0, steps=100,
         steps: Number of time steps.
         solver: Solver preset name from solvers/.
         refinement_levels: Mesh hierarchy levels for geometric MG.
+        profile: Reduce PETSc text output during a profile run.
     """
     Lx, Ly, Lz = 2.0, 2.0, 2.6
 
@@ -133,12 +136,15 @@ def model(nx, nz, degree=1, dt_value=300.0, steps=100,
     # Full solver hierarchy dump (snes_view) prints after the first solve:
     # SNES→KSP→PC structure, GAMG complexity, MG level sizes, smoother configs.
     solver_parameters_extra = {
-        "snes_view": None,
-        "snes_monitor": None,
         "snes_converged_reason": None,
         "ksp_converged_reason": None,
-        "ksp_view_pmat": "::ascii_info",
     }
+    if not profile:
+        solver_parameters_extra.update({
+            "snes_view": None,
+            "snes_monitor": None,
+            "ksp_view_pmat": "::ascii_info",
+        })
 
     # Solver-specific diagnostics
     if solver.startswith("vlumping"):
@@ -188,4 +194,4 @@ def model(nx, nz, degree=1, dt_value=300.0, steps=100,
 if __name__ == "__main__":
     model(_ARGS.nx, _ARGS.nz, degree=_ARGS.degree, dt_value=_ARGS.dt,
           steps=_ARGS.steps, solver=_ARGS.solver,
-          refinement_levels=_ARGS.refinement_levels)
+          refinement_levels=_ARGS.refinement_levels, profile=_ARGS.profile)

@@ -1,0 +1,5110 @@
+[
+  {
+    "case": "cockett",
+    "scale": "sweep",
+    "nodes": 1,
+    "walltime_limit": "03:00:00",
+    "pbs_exit_status": 0,
+    "pbs_walltime": "00:21:55",
+    "pbs_memory": "71.54GB",
+    "script_completed": true,
+    "stderr_bytes": 120,
+    "outcome": "success",
+    "problems": [],
+    "nonlinear_iterations": 200,
+    "linear_iterations": 16341,
+    "mean_step_seconds": 12.76,
+    "peak_rss_mb_per_rank": 950.0,
+    "steps": 100,
+    "failed_attempts": 0,
+    "simulated_days": null,
+    "profile_time": 1299.0,
+    "events": {
+      "BuildTwoSided": {
+        "count": 840,
+        "time": 25.399
+      },
+      "BuildTwoSidedF": {
+        "count": 802,
+        "time": 25.314
+      },
+      "SFSetGraph": {
+        "count": 41,
+        "time": 0.0040563
+      },
+      "SFSetUp": {
+        "count": 38,
+        "time": 0.19442
+      },
+      "SFBcastBegin": {
+        "count": 696,
+        "time": 0.24348
+      },
+      "SFBcastEnd": {
+        "count": 696,
+        "time": 13.906
+      },
+      "SFReduceBegin": {
+        "count": 313,
+        "time": 0.055767
+      },
+      "SFReduceEnd": {
+        "count": 313,
+        "time": 8.258
+      },
+      "SFFetchOpBegin": {
+        "count": 2,
+        "time": 1.4443e-05
+      },
+      "SFFetchOpEnd": {
+        "count": 2,
+        "time": 0.00025692
+      },
+      "SFCreateEmbed": {
+        "count": 2,
+        "time": 0.00084892
+      },
+      "SFDistSection": {
+        "count": 22,
+        "time": 0.0078755
+      },
+      "SFSectionSF": {
+        "count": 22,
+        "time": 0.0033017
+      },
+      "SFPack": {
+        "count": 17952,
+        "time": 3.2667
+      },
+      "SFUnpack": {
+        "count": 17954,
+        "time": 0.10871
+      },
+      "VecDot": {
+        "count": 200,
+        "time": 0.54963
+      },
+      "VecMDot": {
+        "count": 16341,
+        "time": 133.04
+      },
+      "VecNorm": {
+        "count": 17441,
+        "time": 17.824
+      },
+      "VecScale": {
+        "count": 16941,
+        "time": 0.68492
+      },
+      "VecCopy": {
+        "count": 1900,
+        "time": 1.0945
+      },
+      "VecSet": {
+        "count": 800,
+        "time": 0.24455
+      },
+      "VecAXPY": {
+        "count": 1000,
+        "time": 0.40932
+      },
+      "VecWAXPY": {
+        "count": 200,
+        "time": 0.15002
+      },
+      "VecMAXPY": {
+        "count": 16941,
+        "time": 87.367
+      },
+      "VecScatterBegin": {
+        "count": 16941,
+        "time": 3.5438
+      },
+      "VecScatterEnd": {
+        "count": 16941,
+        "time": 35.034
+      },
+      "VecReduceArith": {
+        "count": 400,
+        "time": 0.062932
+      },
+      "VecReduceComm": {
+        "count": 200,
+        "time": 0.17016
+      },
+      "VecNormalize": {
+        "count": 16941,
+        "time": 14.878
+      },
+      "MatMult": {
+        "count": 16941,
+        "time": 430.73
+      },
+      "MatSolve": {
+        "count": 16941,
+        "time": 410.3
+      },
+      "MatLUFactorNum": {
+        "count": 200,
+        "time": 22.156
+      },
+      "MatILUFactorSym": {
+        "count": 1,
+        "time": 0.10673
+      },
+      "MatAssemblyBegin": {
+        "count": 802,
+        "time": 25.653
+      },
+      "MatAssemblyEnd": {
+        "count": 802,
+        "time": 4.2906
+      },
+      "MatGetRowIJ": {
+        "count": 1,
+        "time": 7.211e-06
+      },
+      "MatGetOrdering": {
+        "count": 1,
+        "time": 0.0025344
+      },
+      "MatZeroEntries": {
+        "count": 200,
+        "time": 6.0881
+      },
+      "PCSetUp": {
+        "count": 200,
+        "time": 0.0035529
+      },
+      "PCSetUpOnBlocks": {
+        "count": 200,
+        "time": 22.268
+      },
+      "PCApply": {
+        "count": 16941,
+        "time": 410.58
+      },
+      "PCApplyOnBlocks": {
+        "count": 16941,
+        "time": 410.49
+      },
+      "KSPSetUp": {
+        "count": 200,
+        "time": 0.0084205
+      },
+      "KSPSolve": {
+        "count": 200,
+        "time": 983.46
+      },
+      "KSPGMRESOrthog": {
+        "count": 16341,
+        "time": 208.51
+      },
+      "DMPlexPartSelf": {
+        "count": 1,
+        "time": 0.0060088
+      },
+      "DMPlexPartLblInv": {
+        "count": 2,
+        "time": 0.0097717
+      },
+      "DMPlexPartLblSF": {
+        "count": 2,
+        "time": 0.0046405
+      },
+      "DMPlexPartStrtSF": {
+        "count": 2,
+        "time": 0.0018992
+      },
+      "DMPlexPointSF": {
+        "count": 2,
+        "time": 0.0040441
+      },
+      "DMPlexDistribute": {
+        "count": 1,
+        "time": 0.098356
+      },
+      "DMPlexDistCones": {
+        "count": 2,
+        "time": 0.0025463
+      },
+      "DMPlexDistLabels": {
+        "count": 2,
+        "time": 0.013589
+      },
+      "DMPlexDistOvrlp": {
+        "count": 1,
+        "time": 0.004427
+      },
+      "DMPlexDistField": {
+        "count": 3,
+        "time": 0.00294
+      },
+      "DMPlexDistData": {
+        "count": 1,
+        "time": 8.7127e-05
+      },
+      "DMPlexStratify": {
+        "count": 3,
+        "time": 0.0063806
+      },
+      "DMPlexSymmetrize": {
+        "count": 3,
+        "time": 0.0014546
+      },
+      "DMPlexGenerate": {
+        "count": 1,
+        "time": 0.010616
+      },
+      "SNESSolve": {
+        "count": 100,
+        "time": 1274.9
+      },
+      "SNESSetUp": {
+        "count": 1,
+        "time": 0.00050908
+      },
+      "SNESFunctionEval": {
+        "count": 300,
+        "time": 82.604
+      },
+      "SNESJacobianEval": {
+        "count": 200,
+        "time": 185.62
+      },
+      "SNESLineSearch": {
+        "count": 200,
+        "time": 49.762
+      },
+      "firedrake": {
+        "count": 1,
+        "time": 1295.9
+      },
+      "CreateMesh": {
+        "count": 1,
+        "time": 0.15004
+      },
+      "CreateFunctionSpace": {
+        "count": 4,
+        "time": 0.027235
+      },
+      "CreateExtMesh": {
+        "count": 1,
+        "time": 1.7461
+      },
+      "ParLoopExecute": {
+        "count": 2502,
+        "time": 254.15
+      },
+      "ParLoopRednBegin": {
+        "count": 2502,
+        "time": 0.0059729
+      },
+      "ParLoopRednEnd": {
+        "count": 2502,
+        "time": 0.0052863
+      },
+      "CreateSparsity": {
+        "count": 1,
+        "time": 2.2359
+      },
+      "MatZeroInitial": {
+        "count": 1,
+        "time": 0.41256
+      }
+    }
+  },
+  {
+    "case": "cockett",
+    "scale": "medium",
+    "nodes": 2,
+    "walltime_limit": "03:00:00",
+    "pbs_exit_status": 0,
+    "pbs_walltime": "00:16:29",
+    "pbs_memory": "146.32GB",
+    "script_completed": true,
+    "stderr_bytes": 120,
+    "outcome": "success",
+    "problems": [],
+    "nonlinear_iterations": 118,
+    "linear_iterations": 12315,
+    "mean_step_seconds": 9.45,
+    "peak_rss_mb_per_rank": 976.0,
+    "steps": 100,
+    "failed_attempts": 0,
+    "simulated_days": null,
+    "profile_time": 969.1,
+    "events": {
+      "BuildTwoSided": {
+        "count": 512,
+        "time": 18.27
+      },
+      "BuildTwoSidedF": {
+        "count": 474,
+        "time": 18.106
+      },
+      "SFSetGraph": {
+        "count": 41,
+        "time": 0.0048738
+      },
+      "SFSetUp": {
+        "count": 38,
+        "time": 0.27869
+      },
+      "SFBcastBegin": {
+        "count": 532,
+        "time": 0.2324
+      },
+      "SFBcastEnd": {
+        "count": 532,
+        "time": 10.289
+      },
+      "SFReduceBegin": {
+        "count": 231,
+        "time": 0.042954
+      },
+      "SFReduceEnd": {
+        "count": 231,
+        "time": 6.2244
+      },
+      "SFFetchOpBegin": {
+        "count": 2,
+        "time": 1.6918e-05
+      },
+      "SFFetchOpEnd": {
+        "count": 2,
+        "time": 0.00067735
+      },
+      "SFCreateEmbed": {
+        "count": 2,
+        "time": 0.0015157
+      },
+      "SFDistSection": {
+        "count": 22,
+        "time": 0.011013
+      },
+      "SFSectionSF": {
+        "count": 22,
+        "time": 0.0049042
+      },
+      "SFPack": {
+        "count": 13552,
+        "time": 3.0093
+      },
+      "SFUnpack": {
+        "count": 13554,
+        "time": 0.098526
+      },
+      "VecDot": {
+        "count": 118,
+        "time": 0.28802
+      },
+      "VecMDot": {
+        "count": 12315,
+        "time": 91.746
+      },
+      "VecNorm": {
+        "count": 13123,
+        "time": 12.007
+      },
+      "VecScale": {
+        "count": 12787,
+        "time": 0.52571
+      },
+      "VecCopy": {
+        "count": 1362,
+        "time": 0.78177
+      },
+      "VecSet": {
+        "count": 590,
+        "time": 0.18075
+      },
+      "VecAXPY": {
+        "count": 826,
+        "time": 0.35137
+      },
+      "VecWAXPY": {
+        "count": 118,
+        "time": 0.089852
+      },
+      "VecMAXPY": {
+        "count": 12787,
+        "time": 66.256
+      },
+      "VecScatterBegin": {
+        "count": 12787,
+        "time": 3.1762
+      },
+      "VecScatterEnd": {
+        "count": 12787,
+        "time": 26.816
+      },
+      "VecReduceArith": {
+        "count": 236,
+        "time": 0.071959
+      },
+      "VecReduceComm": {
+        "count": 118,
+        "time": 0.058588
+      },
+      "VecNormalize": {
+        "count": 12787,
+        "time": 9.7212
+      },
+      "MatMult": {
+        "count": 12787,
+        "time": 331.98
+      },
+      "MatSolve": {
+        "count": 12787,
+        "time": 310.09
+      },
+      "MatLUFactorNum": {
+        "count": 118,
+        "time": 12.817
+      },
+      "MatILUFactorSym": {
+        "count": 1,
+        "time": 0.10497
+      },
+      "MatAssemblyBegin": {
+        "count": 474,
+        "time": 18.291
+      },
+      "MatAssemblyEnd": {
+        "count": 474,
+        "time": 3.1899
+      },
+      "MatGetRowIJ": {
+        "count": 1,
+        "time": 5.266e-06
+      },
+      "MatGetOrdering": {
+        "count": 1,
+        "time": 0.0027661
+      },
+      "MatZeroEntries": {
+        "count": 118,
+        "time": 2.9236
+      },
+      "PCSetUp": {
+        "count": 118,
+        "time": 0.0035528
+      },
+      "PCSetUpOnBlocks": {
+        "count": 118,
+        "time": 12.917
+      },
+      "PCApply": {
+        "count": 12787,
+        "time": 310.3
+      },
+      "PCApplyOnBlocks": {
+        "count": 12787,
+        "time": 310.23
+      },
+      "KSPSetUp": {
+        "count": 118,
+        "time": 0.0082252
+      },
+      "KSPSolve": {
+        "count": 118,
+        "time": 745.19
+      },
+      "KSPGMRESOrthog": {
+        "count": 12315,
+        "time": 150.3
+      },
+      "DMPlexPartSelf": {
+        "count": 1,
+        "time": 0.0097563
+      },
+      "DMPlexPartLblInv": {
+        "count": 2,
+        "time": 0.019095
+      },
+      "DMPlexPartLblSF": {
+        "count": 2,
+        "time": 0.0042125
+      },
+      "DMPlexPartStrtSF": {
+        "count": 2,
+        "time": 0.0013776
+      },
+      "DMPlexPointSF": {
+        "count": 2,
+        "time": 0.0055275
+      },
+      "DMPlexDistribute": {
+        "count": 1,
+        "time": 0.16483
+      },
+      "DMPlexDistCones": {
+        "count": 2,
+        "time": 0.0034136
+      },
+      "DMPlexDistLabels": {
+        "count": 2,
+        "time": 0.019649
+      },
+      "DMPlexDistOvrlp": {
+        "count": 1,
+        "time": 0.0091423
+      },
+      "DMPlexDistField": {
+        "count": 3,
+        "time": 0.005167
+      },
+      "DMPlexDistData": {
+        "count": 1,
+        "time": 0.00010228
+      },
+      "DMPlexStratify": {
+        "count": 3,
+        "time": 0.0067794
+      },
+      "DMPlexSymmetrize": {
+        "count": 3,
+        "time": 0.0020603
+      },
+      "DMPlexGenerate": {
+        "count": 1,
+        "time": 0.011595
+      },
+      "SNESSolve": {
+        "count": 100,
+        "time": 944.37
+      },
+      "SNESSetUp": {
+        "count": 1,
+        "time": 3.4635e-05
+      },
+      "SNESFunctionEval": {
+        "count": 218,
+        "time": 65.432
+      },
+      "SNESJacobianEval": {
+        "count": 118,
+        "time": 119.47
+      },
+      "SNESLineSearch": {
+        "count": 118,
+        "time": 29.922
+      },
+      "firedrake": {
+        "count": 1,
+        "time": 966.26
+      },
+      "CreateMesh": {
+        "count": 1,
+        "time": 0.23236
+      },
+      "CreateFunctionSpace": {
+        "count": 4,
+        "time": 0.025811
+      },
+      "CreateExtMesh": {
+        "count": 1,
+        "time": 2.3079
+      },
+      "ParLoopExecute": {
+        "count": 1682,
+        "time": 175.72
+      },
+      "ParLoopRednBegin": {
+        "count": 1682,
+        "time": 0.0042902
+      },
+      "ParLoopRednEnd": {
+        "count": 1682,
+        "time": 0.0038226
+      },
+      "CreateSparsity": {
+        "count": 1,
+        "time": 2.4116
+      },
+      "MatZeroInitial": {
+        "count": 1,
+        "time": 0.41855
+      }
+    }
+  },
+  {
+    "case": "cockett",
+    "scale": "large",
+    "nodes": 8,
+    "walltime_limit": "03:00:00",
+    "pbs_exit_status": 0,
+    "pbs_walltime": "00:23:26",
+    "pbs_memory": "589.52GB",
+    "script_completed": true,
+    "stderr_bytes": 120,
+    "outcome": "success",
+    "problems": [],
+    "nonlinear_iterations": 105,
+    "linear_iterations": 19001,
+    "mean_step_seconds": 13.62,
+    "peak_rss_mb_per_rank": 1020.0,
+    "steps": 100,
+    "failed_attempts": 0,
+    "simulated_days": null,
+    "profile_time": 1387.0,
+    "events": {
+      "BuildTwoSided": {
+        "count": 460,
+        "time": 20.752
+      },
+      "BuildTwoSidedF": {
+        "count": 422,
+        "time": 20.634
+      },
+      "SFSetGraph": {
+        "count": 41,
+        "time": 0.0060417
+      },
+      "SFSetUp": {
+        "count": 38,
+        "time": 0.33985
+      },
+      "SFBcastBegin": {
+        "count": 506,
+        "time": 0.29041
+      },
+      "SFBcastEnd": {
+        "count": 506,
+        "time": 15.433
+      },
+      "SFReduceBegin": {
+        "count": 218,
+        "time": 0.052072
+      },
+      "SFReduceEnd": {
+        "count": 218,
+        "time": 6.3642
+      },
+      "SFFetchOpBegin": {
+        "count": 2,
+        "time": 2.37e-05
+      },
+      "SFFetchOpEnd": {
+        "count": 2,
+        "time": 0.0008442
+      },
+      "SFCreateEmbed": {
+        "count": 2,
+        "time": 0.0029307
+      },
+      "SFDistSection": {
+        "count": 22,
+        "time": 0.025969
+      },
+      "SFSectionSF": {
+        "count": 22,
+        "time": 0.01396
+      },
+      "SFPack": {
+        "count": 20424,
+        "time": 6.1666
+      },
+      "SFUnpack": {
+        "count": 20426,
+        "time": 0.12708
+      },
+      "VecDot": {
+        "count": 105,
+        "time": 0.40745
+      },
+      "VecMDot": {
+        "count": 19001,
+        "time": 173.59
+      },
+      "VecNorm": {
+        "count": 20008,
+        "time": 25.431
+      },
+      "VecScale": {
+        "count": 19698,
+        "time": 0.79961
+      },
+      "VecCopy": {
+        "count": 1522,
+        "time": 0.8716
+      },
+      "VecSet": {
+        "count": 802,
+        "time": 0.25238
+      },
+      "VecAXPY": {
+        "count": 1289,
+        "time": 0.55763
+      },
+      "VecWAXPY": {
+        "count": 105,
+        "time": 0.078673
+      },
+      "VecMAXPY": {
+        "count": 19698,
+        "time": 105.59
+      },
+      "VecScatterBegin": {
+        "count": 19698,
+        "time": 6.5522
+      },
+      "VecScatterEnd": {
+        "count": 19698,
+        "time": 50.11
+      },
+      "VecReduceArith": {
+        "count": 210,
+        "time": 0.05004
+      },
+      "VecReduceComm": {
+        "count": 105,
+        "time": 0.073977
+      },
+      "VecNormalize": {
+        "count": 19698,
+        "time": 19.085
+      },
+      "MatMult": {
+        "count": 19698,
+        "time": 521.45
+      },
+      "MatSolve": {
+        "count": 19698,
+        "time": 469.03
+      },
+      "MatLUFactorNum": {
+        "count": 105,
+        "time": 12.072
+      },
+      "MatILUFactorSym": {
+        "count": 1,
+        "time": 0.09911
+      },
+      "MatAssemblyBegin": {
+        "count": 422,
+        "time": 20.866
+      },
+      "MatAssemblyEnd": {
+        "count": 422,
+        "time": 3.7798
+      },
+      "MatGetRowIJ": {
+        "count": 1,
+        "time": 5.182e-06
+      },
+      "MatGetOrdering": {
+        "count": 1,
+        "time": 0.0028174
+      },
+      "MatZeroEntries": {
+        "count": 105,
+        "time": 2.3426
+      },
+      "PCSetUp": {
+        "count": 105,
+        "time": 0.0032127
+      },
+      "PCSetUpOnBlocks": {
+        "count": 105,
+        "time": 12.172
+      },
+      "PCApply": {
+        "count": 19698,
+        "time": 469.38
+      },
+      "PCApplyOnBlocks": {
+        "count": 19698,
+        "time": 469.25
+      },
+      "KSPSetUp": {
+        "count": 105,
+        "time": 0.008533
+      },
+      "KSPSolve": {
+        "count": 105,
+        "time": 1170.5
+      },
+      "KSPGMRESOrthog": {
+        "count": 19001,
+        "time": 265.91
+      },
+      "DMPlexPartSelf": {
+        "count": 1,
+        "time": 0.02526
+      },
+      "DMPlexPartLblInv": {
+        "count": 2,
+        "time": 0.059978
+      },
+      "DMPlexPartLblSF": {
+        "count": 2,
+        "time": 0.01172
+      },
+      "DMPlexPartStrtSF": {
+        "count": 2,
+        "time": 0.002861
+      },
+      "DMPlexPointSF": {
+        "count": 2,
+        "time": 0.011739
+      },
+      "DMPlexDistribute": {
+        "count": 1,
+        "time": 0.61194
+      },
+      "DMPlexDistCones": {
+        "count": 2,
+        "time": 0.0079958
+      },
+      "DMPlexDistLabels": {
+        "count": 2,
+        "time": 0.049989
+      },
+      "DMPlexDistOvrlp": {
+        "count": 1,
+        "time": 0.026464
+      },
+      "DMPlexDistField": {
+        "count": 3,
+        "time": 0.013928
+      },
+      "DMPlexDistData": {
+        "count": 1,
+        "time": 0.00015539
+      },
+      "DMPlexStratify": {
+        "count": 3,
+        "time": 0.015708
+      },
+      "DMPlexSymmetrize": {
+        "count": 3,
+        "time": 0.0054256
+      },
+      "DMPlexGenerate": {
+        "count": 1,
+        "time": 0.021876
+      },
+      "SNESSolve": {
+        "count": 100,
+        "time": 1360.8
+      },
+      "SNESSetUp": {
+        "count": 1,
+        "time": 4.4745e-05
+      },
+      "SNESFunctionEval": {
+        "count": 205,
+        "time": 65.251
+      },
+      "SNESJacobianEval": {
+        "count": 105,
+        "time": 111.52
+      },
+      "SNESLineSearch": {
+        "count": 105,
+        "time": 29.703
+      },
+      "firedrake": {
+        "count": 1,
+        "time": 1384.0
+      },
+      "CreateMesh": {
+        "count": 1,
+        "time": 0.7348
+      },
+      "CreateFunctionSpace": {
+        "count": 4,
+        "time": 0.033519
+      },
+      "CreateExtMesh": {
+        "count": 1,
+        "time": 2.4935
+      },
+      "ParLoopExecute": {
+        "count": 1552,
+        "time": 164.58
+      },
+      "ParLoopRednBegin": {
+        "count": 1552,
+        "time": 0.0041666
+      },
+      "ParLoopRednEnd": {
+        "count": 1552,
+        "time": 0.0035424
+      },
+      "CreateSparsity": {
+        "count": 1,
+        "time": 2.7713
+      },
+      "MatZeroInitial": {
+        "count": 1,
+        "time": 0.44672
+      }
+    }
+  },
+  {
+    "case": "murr_vertical",
+    "scale": "smoke",
+    "nodes": 1,
+    "walltime_limit": "06:00:00",
+    "pbs_exit_status": 0,
+    "pbs_walltime": "00:07:55",
+    "pbs_memory": "77.55GB",
+    "script_completed": true,
+    "stderr_bytes": 120,
+    "outcome": "success",
+    "problems": [],
+    "nonlinear_iterations": 209,
+    "linear_iterations": 5665,
+    "mean_step_seconds": 5.4,
+    "peak_rss_mb_per_rank": 970.0,
+    "steps": 75,
+    "failed_attempts": 0,
+    "simulated_days": 30.37,
+    "profile_time": 457.4,
+    "events": {
+      "BuildTwoSided": {
+        "count": 875,
+        "time": 15.269
+      },
+      "BuildTwoSidedF": {
+        "count": 838,
+        "time": 15.267
+      },
+      "SFSetGraph": {
+        "count": 40,
+        "time": 0.0029737
+      },
+      "SFSetUp": {
+        "count": 37,
+        "time": 0.018802
+      },
+      "SFBcastBegin": {
+        "count": 685,
+        "time": 0.13656
+      },
+      "SFBcastEnd": {
+        "count": 685,
+        "time": 7.2746
+      },
+      "SFReduceBegin": {
+        "count": 295,
+        "time": 0.033329
+      },
+      "SFReduceEnd": {
+        "count": 295,
+        "time": 1.0321
+      },
+      "SFFetchOpBegin": {
+        "count": 2,
+        "time": 1.4552e-05
+      },
+      "SFFetchOpEnd": {
+        "count": 2,
+        "time": 0.0003101
+      },
+      "SFCreateEmbed": {
+        "count": 2,
+        "time": 0.00090705
+      },
+      "SFDistSection": {
+        "count": 21,
+        "time": 0.008701
+      },
+      "SFSectionSF": {
+        "count": 21,
+        "time": 0.0037258
+      },
+      "SFPack": {
+        "count": 6899,
+        "time": 0.85061
+      },
+      "SFUnpack": {
+        "count": 6901,
+        "time": 0.061286
+      },
+      "VecDot": {
+        "count": 209,
+        "time": 0.29358
+      },
+      "VecMDot": {
+        "count": 5665,
+        "time": 40.529
+      },
+      "VecNorm": {
+        "count": 6410,
+        "time": 6.4287
+      },
+      "VecScale": {
+        "count": 5917,
+        "time": 0.3
+      },
+      "VecCopy": {
+        "count": 1522,
+        "time": 0.74971
+      },
+      "VecSet": {
+        "count": 461,
+        "time": 0.16356
+      },
+      "VecAXPY": {
+        "count": 295,
+        "time": 0.17486
+      },
+      "VecWAXPY": {
+        "count": 209,
+        "time": 0.17754
+      },
+      "VecMAXPY": {
+        "count": 5917,
+        "time": 33.86
+      },
+      "VecScatterBegin": {
+        "count": 5917,
+        "time": 0.89815
+      },
+      "VecScatterEnd": {
+        "count": 5917,
+        "time": 9.3038
+      },
+      "VecReduceArith": {
+        "count": 418,
+        "time": 0.080917
+      },
+      "VecReduceComm": {
+        "count": 209,
+        "time": 0.16056
+      },
+      "VecNormalize": {
+        "count": 5917,
+        "time": 4.6336
+      },
+      "MatMult": {
+        "count": 5917,
+        "time": 111.91
+      },
+      "MatSolve": {
+        "count": 5917,
+        "time": 117.5
+      },
+      "MatLUFactorNum": {
+        "count": 209,
+        "time": 14.807
+      },
+      "MatILUFactorSym": {
+        "count": 1,
+        "time": 0.057506
+      },
+      "MatAssemblyBegin": {
+        "count": 838,
+        "time": 16.112
+      },
+      "MatAssemblyEnd": {
+        "count": 838,
+        "time": 4.6397
+      },
+      "MatGetRowIJ": {
+        "count": 1,
+        "time": 7.96e-07
+      },
+      "MatGetOrdering": {
+        "count": 1,
+        "time": 0.0017212
+      },
+      "MatZeroEntries": {
+        "count": 209,
+        "time": 3.4541
+      },
+      "PCSetUp": {
+        "count": 209,
+        "time": 0.0044145
+      },
+      "PCSetUpOnBlocks": {
+        "count": 209,
+        "time": 14.868
+      },
+      "PCApply": {
+        "count": 5917,
+        "time": 117.61
+      },
+      "PCApplyOnBlocks": {
+        "count": 5917,
+        "time": 117.58
+      },
+      "KSPSetUp": {
+        "count": 209,
+        "time": 0.0053009
+      },
+      "KSPSolve": {
+        "count": 209,
+        "time": 283.14
+      },
+      "KSPGMRESOrthog": {
+        "count": 5665,
+        "time": 70.1
+      },
+      "DMPlexCreateGmsh": {
+        "count": 1,
+        "time": 0.054203
+      },
+      "DMPlexCrFromFile": {
+        "count": 1,
+        "time": 0.32085
+      },
+      "DMPlexPartSelf": {
+        "count": 1,
+        "time": 0.0075702
+      },
+      "DMPlexPartLblInv": {
+        "count": 2,
+        "time": 0.01151
+      },
+      "DMPlexPartLblSF": {
+        "count": 2,
+        "time": 0.0048252
+      },
+      "DMPlexPartStrtSF": {
+        "count": 2,
+        "time": 0.0021916
+      },
+      "DMPlexPointSF": {
+        "count": 2,
+        "time": 0.0059583
+      },
+      "DMPlexInterp": {
+        "count": 1,
+        "time": 0.027031
+      },
+      "DMPlexDistribute": {
+        "count": 1,
+        "time": 0.10058
+      },
+      "DMPlexDistCones": {
+        "count": 2,
+        "time": 0.002834
+      },
+      "DMPlexDistLabels": {
+        "count": 2,
+        "time": 0.012512
+      },
+      "DMPlexDistOvrlp": {
+        "count": 1,
+        "time": 0.0048833
+      },
+      "DMPlexDistField": {
+        "count": 3,
+        "time": 0.0031314
+      },
+      "DMPlexStratify": {
+        "count": 4,
+        "time": 0.023138
+      },
+      "DMPlexSymmetrize": {
+        "count": 4,
+        "time": 0.0022559
+      },
+      "SNESSolve": {
+        "count": 75,
+        "time": 404.19
+      },
+      "SNESSetUp": {
+        "count": 1,
+        "time": 3.1539e-05
+      },
+      "SNESFunctionEval": {
+        "count": 284,
+        "time": 20.57
+      },
+      "SNESJacobianEval": {
+        "count": 209,
+        "time": 82.237
+      },
+      "SNESLineSearch": {
+        "count": 209,
+        "time": 12.342
+      },
+      "firedrake": {
+        "count": 1,
+        "time": 455.25
+      },
+      "CreateMesh": {
+        "count": 1,
+        "time": 0.46415
+      },
+      "CreateFunctionSpace": {
+        "count": 7,
+        "time": 0.02278
+      },
+      "CreateExtMesh": {
+        "count": 1,
+        "time": 1.874
+      },
+      "ParLoopExecute": {
+        "count": 2267,
+        "time": 95.179
+      },
+      "ParLoopRednBegin": {
+        "count": 2267,
+        "time": 0.0063903
+      },
+      "ParLoopRednEnd": {
+        "count": 2267,
+        "time": 0.0055663
+      },
+      "CreateSparsity": {
+        "count": 1,
+        "time": 1.8396
+      },
+      "MatZeroInitial": {
+        "count": 1,
+        "time": 0.25684
+      }
+    }
+  },
+  {
+    "case": "murr_vertical",
+    "scale": "sweep",
+    "nodes": 2,
+    "walltime_limit": "06:00:00",
+    "pbs_exit_status": 0,
+    "pbs_walltime": "00:07:53",
+    "pbs_memory": "157.52GB",
+    "script_completed": true,
+    "stderr_bytes": 120,
+    "outcome": "success",
+    "problems": [],
+    "nonlinear_iterations": 204,
+    "linear_iterations": 5472,
+    "mean_step_seconds": 5.29,
+    "peak_rss_mb_per_rank": 985.0,
+    "steps": 75,
+    "failed_attempts": 0,
+    "simulated_days": 30.37,
+    "profile_time": 449.4,
+    "events": {
+      "BuildTwoSided": {
+        "count": 855,
+        "time": 16.778
+      },
+      "BuildTwoSidedF": {
+        "count": 818,
+        "time": 16.764
+      },
+      "SFSetGraph": {
+        "count": 40,
+        "time": 0.0037663
+      },
+      "SFSetUp": {
+        "count": 37,
+        "time": 0.026293
+      },
+      "SFBcastBegin": {
+        "count": 675,
+        "time": 0.22694
+      },
+      "SFBcastEnd": {
+        "count": 675,
+        "time": 6.7737
+      },
+      "SFReduceBegin": {
+        "count": 290,
+        "time": 0.042218
+      },
+      "SFReduceEnd": {
+        "count": 290,
+        "time": 1.3953
+      },
+      "SFFetchOpBegin": {
+        "count": 2,
+        "time": 1.6497e-05
+      },
+      "SFFetchOpEnd": {
+        "count": 2,
+        "time": 0.00091337
+      },
+      "SFCreateEmbed": {
+        "count": 2,
+        "time": 0.0014965
+      },
+      "SFDistSection": {
+        "count": 21,
+        "time": 0.010097
+      },
+      "SFSectionSF": {
+        "count": 21,
+        "time": 0.0044724
+      },
+      "SFPack": {
+        "count": 6699,
+        "time": 1.2742
+      },
+      "SFUnpack": {
+        "count": 6701,
+        "time": 0.080214
+      },
+      "VecDot": {
+        "count": 204,
+        "time": 0.37902
+      },
+      "VecMDot": {
+        "count": 5472,
+        "time": 41.248
+      },
+      "VecNorm": {
+        "count": 6215,
+        "time": 7.2327
+      },
+      "VecScale": {
+        "count": 5732,
+        "time": 0.27492
+      },
+      "VecCopy": {
+        "count": 1505,
+        "time": 0.75641
+      },
+      "VecSet": {
+        "count": 464,
+        "time": 0.1658
+      },
+      "VecAXPY": {
+        "count": 316,
+        "time": 0.16174
+      },
+      "VecWAXPY": {
+        "count": 204,
+        "time": 0.17182
+      },
+      "VecMAXPY": {
+        "count": 5732,
+        "time": 31.521
+      },
+      "VecScatterBegin": {
+        "count": 5732,
+        "time": 1.2339
+      },
+      "VecScatterEnd": {
+        "count": 5732,
+        "time": 8.9553
+      },
+      "VecReduceArith": {
+        "count": 408,
+        "time": 0.085508
+      },
+      "VecReduceComm": {
+        "count": 204,
+        "time": 0.16721
+      },
+      "VecNormalize": {
+        "count": 5732,
+        "time": 5.8445
+      },
+      "MatMult": {
+        "count": 5732,
+        "time": 111.1
+      },
+      "MatSolve": {
+        "count": 5732,
+        "time": 112.18
+      },
+      "MatLUFactorNum": {
+        "count": 204,
+        "time": 15.216
+      },
+      "MatILUFactorSym": {
+        "count": 1,
+        "time": 0.053579
+      },
+      "MatAssemblyBegin": {
+        "count": 818,
+        "time": 18.576
+      },
+      "MatAssemblyEnd": {
+        "count": 818,
+        "time": 6.8212
+      },
+      "MatGetRowIJ": {
+        "count": 1,
+        "time": 4.253e-06
+      },
+      "MatGetOrdering": {
+        "count": 1,
+        "time": 0.0017072
+      },
+      "MatZeroEntries": {
+        "count": 204,
+        "time": 3.3426
+      },
+      "PCSetUp": {
+        "count": 204,
+        "time": 0.0037745
+      },
+      "PCSetUpOnBlocks": {
+        "count": 204,
+        "time": 15.275
+      },
+      "PCApply": {
+        "count": 5732,
+        "time": 112.28
+      },
+      "PCApplyOnBlocks": {
+        "count": 5732,
+        "time": 112.25
+      },
+      "KSPSetUp": {
+        "count": 204,
+        "time": 0.0038778
+      },
+      "KSPSolve": {
+        "count": 204,
+        "time": 275.16
+      },
+      "KSPGMRESOrthog": {
+        "count": 5472,
+        "time": 68.849
+      },
+      "DMPlexCreateGmsh": {
+        "count": 1,
+        "time": 0.056765
+      },
+      "DMPlexCrFromFile": {
+        "count": 1,
+        "time": 0.31263
+      },
+      "DMPlexPartSelf": {
+        "count": 1,
+        "time": 0.0080711
+      },
+      "DMPlexPartLblInv": {
+        "count": 2,
+        "time": 0.018052
+      },
+      "DMPlexPartLblSF": {
+        "count": 2,
+        "time": 0.0055757
+      },
+      "DMPlexPartStrtSF": {
+        "count": 2,
+        "time": 0.00243
+      },
+      "DMPlexPointSF": {
+        "count": 2,
+        "time": 0.0044098
+      },
+      "DMPlexInterp": {
+        "count": 1,
+        "time": 0.02721
+      },
+      "DMPlexDistribute": {
+        "count": 1,
+        "time": 0.15785
+      },
+      "DMPlexDistCones": {
+        "count": 2,
+        "time": 0.0030501
+      },
+      "DMPlexDistLabels": {
+        "count": 2,
+        "time": 0.013396
+      },
+      "DMPlexDistOvrlp": {
+        "count": 1,
+        "time": 0.0085275
+      },
+      "DMPlexDistField": {
+        "count": 3,
+        "time": 0.0044572
+      },
+      "DMPlexStratify": {
+        "count": 4,
+        "time": 0.023134
+      },
+      "DMPlexSymmetrize": {
+        "count": 4,
+        "time": 0.0022862
+      },
+      "SNESSolve": {
+        "count": 75,
+        "time": 396.44
+      },
+      "SNESSetUp": {
+        "count": 1,
+        "time": 4.5002e-05
+      },
+      "SNESFunctionEval": {
+        "count": 279,
+        "time": 20.011
+      },
+      "SNESJacobianEval": {
+        "count": 204,
+        "time": 83.21
+      },
+      "SNESLineSearch": {
+        "count": 204,
+        "time": 12.043
+      },
+      "firedrake": {
+        "count": 1,
+        "time": 447.22
+      },
+      "CreateMesh": {
+        "count": 1,
+        "time": 0.51871
+      },
+      "CreateFunctionSpace": {
+        "count": 7,
+        "time": 0.023502
+      },
+      "CreateExtMesh": {
+        "count": 1,
+        "time": 2.249
+      },
+      "ParLoopExecute": {
+        "count": 2222,
+        "time": 94.174
+      },
+      "ParLoopRednBegin": {
+        "count": 2222,
+        "time": 0.006372
+      },
+      "ParLoopRednEnd": {
+        "count": 2222,
+        "time": 0.0062064
+      },
+      "CreateSparsity": {
+        "count": 1,
+        "time": 1.8968
+      },
+      "MatZeroInitial": {
+        "count": 1,
+        "time": 0.25625
+      }
+    }
+  },
+  {
+    "case": "murr_vertical",
+    "scale": "medium",
+    "nodes": 4,
+    "walltime_limit": "06:00:00",
+    "pbs_exit_status": 0,
+    "pbs_walltime": "00:08:06",
+    "pbs_memory": "315.54GB",
+    "script_completed": true,
+    "stderr_bytes": 120,
+    "outcome": "success",
+    "problems": [],
+    "nonlinear_iterations": 203,
+    "linear_iterations": 5445,
+    "mean_step_seconds": 5.45,
+    "peak_rss_mb_per_rank": 990.0,
+    "steps": 75,
+    "failed_attempts": 0,
+    "simulated_days": 30.37,
+    "profile_time": 462.0,
+    "events": {
+      "BuildTwoSided": {
+        "count": 851,
+        "time": 29.083
+      },
+      "BuildTwoSidedF": {
+        "count": 814,
+        "time": 29.073
+      },
+      "SFSetGraph": {
+        "count": 40,
+        "time": 0.005257
+      },
+      "SFSetUp": {
+        "count": 37,
+        "time": 0.030896
+      },
+      "SFBcastBegin": {
+        "count": 673,
+        "time": 0.27556
+      },
+      "SFBcastEnd": {
+        "count": 673,
+        "time": 9.9937
+      },
+      "SFReduceBegin": {
+        "count": 289,
+        "time": 0.069506
+      },
+      "SFReduceEnd": {
+        "count": 289,
+        "time": 1.7456
+      },
+      "SFFetchOpBegin": {
+        "count": 2,
+        "time": 1.4686e-05
+      },
+      "SFFetchOpEnd": {
+        "count": 2,
+        "time": 0.00080057
+      },
+      "SFCreateEmbed": {
+        "count": 2,
+        "time": 0.001637
+      },
+      "SFDistSection": {
+        "count": 21,
+        "time": 0.010963
+      },
+      "SFSectionSF": {
+        "count": 21,
+        "time": 0.004808
+      },
+      "SFPack": {
+        "count": 6667,
+        "time": 1.8428
+      },
+      "SFUnpack": {
+        "count": 6669,
+        "time": 0.15694
+      },
+      "VecDot": {
+        "count": 203,
+        "time": 0.56743
+      },
+      "VecMDot": {
+        "count": 5445,
+        "time": 45.272
+      },
+      "VecNorm": {
+        "count": 6184,
+        "time": 8.7377
+      },
+      "VecScale": {
+        "count": 5703,
+        "time": 0.26902
+      },
+      "VecCopy": {
+        "count": 1498,
+        "time": 0.74526
+      },
+      "VecSet": {
+        "count": 461,
+        "time": 0.16534
+      },
+      "VecAXPY": {
+        "count": 313,
+        "time": 0.16051
+      },
+      "VecWAXPY": {
+        "count": 203,
+        "time": 0.17208
+      },
+      "VecMAXPY": {
+        "count": 5703,
+        "time": 30.838
+      },
+      "VecScatterBegin": {
+        "count": 5703,
+        "time": 1.7276
+      },
+      "VecScatterEnd": {
+        "count": 5703,
+        "time": 11.401
+      },
+      "VecReduceArith": {
+        "count": 406,
+        "time": 0.080368
+      },
+      "VecReduceComm": {
+        "count": 203,
+        "time": 0.17927
+      },
+      "VecNormalize": {
+        "count": 5703,
+        "time": 6.3816
+      },
+      "MatMult": {
+        "count": 5703,
+        "time": 115.75
+      },
+      "MatSolve": {
+        "count": 5703,
+        "time": 110.64
+      },
+      "MatLUFactorNum": {
+        "count": 203,
+        "time": 15.333
+      },
+      "MatILUFactorSym": {
+        "count": 1,
+        "time": 0.053023
+      },
+      "MatAssemblyBegin": {
+        "count": 814,
+        "time": 30.214
+      },
+      "MatAssemblyEnd": {
+        "count": 814,
+        "time": 10.059
+      },
+      "MatGetRowIJ": {
+        "count": 1,
+        "time": 1.0352e-05
+      },
+      "MatGetOrdering": {
+        "count": 1,
+        "time": 0.001722
+      },
+      "MatZeroEntries": {
+        "count": 203,
+        "time": 3.3928
+      },
+      "PCSetUp": {
+        "count": 203,
+        "time": 0.0037817
+      },
+      "PCSetUpOnBlocks": {
+        "count": 203,
+        "time": 15.391
+      },
+      "PCApply": {
+        "count": 5703,
+        "time": 110.75
+      },
+      "PCApplyOnBlocks": {
+        "count": 5703,
+        "time": 110.72
+      },
+      "KSPSetUp": {
+        "count": 203,
+        "time": 0.0038307
+      },
+      "KSPSolve": {
+        "count": 203,
+        "time": 274.6
+      },
+      "KSPGMRESOrthog": {
+        "count": 5445,
+        "time": 70.968
+      },
+      "DMPlexCreateGmsh": {
+        "count": 1,
+        "time": 0.055802
+      },
+      "DMPlexCrFromFile": {
+        "count": 1,
+        "time": 0.75105
+      },
+      "DMPlexPartSelf": {
+        "count": 1,
+        "time": 0.0089327
+      },
+      "DMPlexPartLblInv": {
+        "count": 2,
+        "time": 0.026062
+      },
+      "DMPlexPartLblSF": {
+        "count": 2,
+        "time": 0.0051604
+      },
+      "DMPlexPartStrtSF": {
+        "count": 2,
+        "time": 0.0026369
+      },
+      "DMPlexPointSF": {
+        "count": 2,
+        "time": 0.0046142
+      },
+      "DMPlexInterp": {
+        "count": 1,
+        "time": 0.026935
+      },
+      "DMPlexDistribute": {
+        "count": 1,
+        "time": 0.2463
+      },
+      "DMPlexDistCones": {
+        "count": 2,
+        "time": 0.0034504
+      },
+      "DMPlexDistLabels": {
+        "count": 2,
+        "time": 0.01465
+      },
+      "DMPlexDistOvrlp": {
+        "count": 1,
+        "time": 0.012014
+      },
+      "DMPlexDistField": {
+        "count": 3,
+        "time": 0.0052355
+      },
+      "DMPlexStratify": {
+        "count": 4,
+        "time": 0.022666
+      },
+      "DMPlexSymmetrize": {
+        "count": 4,
+        "time": 0.0019721
+      },
+      "SNESSolve": {
+        "count": 75,
+        "time": 408.36
+      },
+      "SNESSetUp": {
+        "count": 1,
+        "time": 4.5535e-05
+      },
+      "SNESFunctionEval": {
+        "count": 278,
+        "time": 21.006
+      },
+      "SNESJacobianEval": {
+        "count": 203,
+        "time": 94.518
+      },
+      "SNESLineSearch": {
+        "count": 203,
+        "time": 12.869
+      },
+      "firedrake": {
+        "count": 1,
+        "time": 459.73
+      },
+      "CreateMesh": {
+        "count": 1,
+        "time": 1.0559
+      },
+      "CreateFunctionSpace": {
+        "count": 7,
+        "time": 0.024732
+      },
+      "CreateExtMesh": {
+        "count": 1,
+        "time": 2.213
+      },
+      "ParLoopExecute": {
+        "count": 2213,
+        "time": 97.37
+      },
+      "ParLoopRednBegin": {
+        "count": 2213,
+        "time": 0.0064021
+      },
+      "ParLoopRednEnd": {
+        "count": 2213,
+        "time": 0.0064561
+      },
+      "CreateSparsity": {
+        "count": 1,
+        "time": 2.0395
+      },
+      "MatZeroInitial": {
+        "count": 1,
+        "time": 0.26733
+      }
+    }
+  },
+  {
+    "case": "murr_vertical",
+    "scale": "large",
+    "nodes": 8,
+    "walltime_limit": "06:00:00",
+    "pbs_exit_status": 0,
+    "pbs_walltime": "00:08:39",
+    "pbs_memory": "634.61GB",
+    "script_completed": true,
+    "stderr_bytes": 120,
+    "outcome": "success",
+    "problems": [],
+    "nonlinear_iterations": 203,
+    "linear_iterations": 5452,
+    "mean_step_seconds": 5.72,
+    "peak_rss_mb_per_rank": 1032.0,
+    "steps": 75,
+    "failed_attempts": 0,
+    "simulated_days": 30.37,
+    "profile_time": 488.2,
+    "events": {
+      "BuildTwoSided": {
+        "count": 851,
+        "time": 37.854
+      },
+      "BuildTwoSidedF": {
+        "count": 814,
+        "time": 37.831
+      },
+      "SFSetGraph": {
+        "count": 40,
+        "time": 0.0079016
+      },
+      "SFSetUp": {
+        "count": 37,
+        "time": 0.049174
+      },
+      "SFBcastBegin": {
+        "count": 673,
+        "time": 0.40922
+      },
+      "SFBcastEnd": {
+        "count": 673,
+        "time": 14.544
+      },
+      "SFReduceBegin": {
+        "count": 289,
+        "time": 0.094586
+      },
+      "SFReduceEnd": {
+        "count": 289,
+        "time": 2.5945
+      },
+      "SFFetchOpBegin": {
+        "count": 2,
+        "time": 1.2367e-05
+      },
+      "SFFetchOpEnd": {
+        "count": 2,
+        "time": 0.00093028
+      },
+      "SFCreateEmbed": {
+        "count": 2,
+        "time": 0.0029451
+      },
+      "SFDistSection": {
+        "count": 21,
+        "time": 0.015895
+      },
+      "SFSectionSF": {
+        "count": 21,
+        "time": 0.010546
+      },
+      "SFPack": {
+        "count": 6674,
+        "time": 2.7437
+      },
+      "SFUnpack": {
+        "count": 6676,
+        "time": 0.24898
+      },
+      "VecDot": {
+        "count": 203,
+        "time": 0.7406
+      },
+      "VecMDot": {
+        "count": 5452,
+        "time": 50.507
+      },
+      "VecNorm": {
+        "count": 6191,
+        "time": 10.603
+      },
+      "VecScale": {
+        "count": 5710,
+        "time": 0.2949
+      },
+      "VecCopy": {
+        "count": 1498,
+        "time": 0.77268
+      },
+      "VecSet": {
+        "count": 461,
+        "time": 0.16804
+      },
+      "VecAXPY": {
+        "count": 313,
+        "time": 0.1802
+      },
+      "VecWAXPY": {
+        "count": 203,
+        "time": 0.17117
+      },
+      "VecMAXPY": {
+        "count": 5710,
+        "time": 30.722
+      },
+      "VecScatterBegin": {
+        "count": 5710,
+        "time": 2.6105
+      },
+      "VecScatterEnd": {
+        "count": 5710,
+        "time": 13.897
+      },
+      "VecReduceArith": {
+        "count": 406,
+        "time": 0.087552
+      },
+      "VecReduceComm": {
+        "count": 203,
+        "time": 0.21219
+      },
+      "VecNormalize": {
+        "count": 5710,
+        "time": 7.9482
+      },
+      "MatMult": {
+        "count": 5710,
+        "time": 120.82
+      },
+      "MatSolve": {
+        "count": 5710,
+        "time": 109.82
+      },
+      "MatLUFactorNum": {
+        "count": 203,
+        "time": 15.633
+      },
+      "MatILUFactorSym": {
+        "count": 1,
+        "time": 0.05244
+      },
+      "MatAssemblyBegin": {
+        "count": 814,
+        "time": 40.684
+      },
+      "MatAssemblyEnd": {
+        "count": 814,
+        "time": 15.504
+      },
+      "MatGetRowIJ": {
+        "count": 1,
+        "time": 5.842e-06
+      },
+      "MatGetOrdering": {
+        "count": 1,
+        "time": 0.0017864
+      },
+      "MatZeroEntries": {
+        "count": 203,
+        "time": 3.3694
+      },
+      "PCSetUp": {
+        "count": 203,
+        "time": 0.0039005
+      },
+      "PCSetUpOnBlocks": {
+        "count": 203,
+        "time": 15.69
+      },
+      "PCApply": {
+        "count": 5710,
+        "time": 109.93
+      },
+      "PCApplyOnBlocks": {
+        "count": 5710,
+        "time": 109.9
+      },
+      "KSPSetUp": {
+        "count": 203,
+        "time": 0.0040482
+      },
+      "KSPSolve": {
+        "count": 203,
+        "time": 282.57
+      },
+      "KSPGMRESOrthog": {
+        "count": 5452,
+        "time": 75.66
+      },
+      "DMPlexCreateGmsh": {
+        "count": 1,
+        "time": 0.060944
+      },
+      "DMPlexCrFromFile": {
+        "count": 1,
+        "time": 5.9148
+      },
+      "DMPlexPartSelf": {
+        "count": 1,
+        "time": 0.010809
+      },
+      "DMPlexPartLblInv": {
+        "count": 2,
+        "time": 0.046607
+      },
+      "DMPlexPartLblSF": {
+        "count": 2,
+        "time": 0.011102
+      },
+      "DMPlexPartStrtSF": {
+        "count": 2,
+        "time": 0.00302
+      },
+      "DMPlexPointSF": {
+        "count": 2,
+        "time": 0.0054206
+      },
+      "DMPlexInterp": {
+        "count": 1,
+        "time": 0.028608
+      },
+      "DMPlexDistribute": {
+        "count": 1,
+        "time": 0.40427
+      },
+      "DMPlexDistCones": {
+        "count": 2,
+        "time": 0.0060768
+      },
+      "DMPlexDistLabels": {
+        "count": 2,
+        "time": 0.022356
+      },
+      "DMPlexDistOvrlp": {
+        "count": 1,
+        "time": 0.024851
+      },
+      "DMPlexDistField": {
+        "count": 3,
+        "time": 0.0087132
+      },
+      "DMPlexStratify": {
+        "count": 4,
+        "time": 0.02328
+      },
+      "DMPlexSymmetrize": {
+        "count": 4,
+        "time": 0.0019887
+      },
+      "SNESSolve": {
+        "count": 75,
+        "time": 428.66
+      },
+      "SNESSetUp": {
+        "count": 1,
+        "time": 5.2565e-05
+      },
+      "SNESFunctionEval": {
+        "count": 278,
+        "time": 21.691
+      },
+      "SNESJacobianEval": {
+        "count": 203,
+        "time": 106.61
+      },
+      "SNESLineSearch": {
+        "count": 203,
+        "time": 13.676
+      },
+      "firedrake": {
+        "count": 1,
+        "time": 486.05
+      },
+      "CreateMesh": {
+        "count": 1,
+        "time": 6.3924
+      },
+      "CreateFunctionSpace": {
+        "count": 7,
+        "time": 0.024336
+      },
+      "CreateExtMesh": {
+        "count": 1,
+        "time": 2.3043
+      },
+      "ParLoopExecute": {
+        "count": 2213,
+        "time": 101.7
+      },
+      "ParLoopRednBegin": {
+        "count": 2213,
+        "time": 0.0078966
+      },
+      "ParLoopRednEnd": {
+        "count": 2213,
+        "time": 0.0065185
+      },
+      "CreateSparsity": {
+        "count": 1,
+        "time": 2.0941
+      },
+      "MatZeroInitial": {
+        "count": 1,
+        "time": 0.28104
+      }
+    }
+  },
+  {
+    "case": "murr_horizontal",
+    "scale": "h1",
+    "nodes": 1,
+    "walltime_limit": "06:00:00",
+    "pbs_exit_status": 0,
+    "pbs_walltime": "00:14:40",
+    "pbs_memory": "103.69GB",
+    "script_completed": true,
+    "stderr_bytes": 120,
+    "outcome": "success",
+    "problems": [],
+    "nonlinear_iterations": 204,
+    "linear_iterations": 5473,
+    "mean_step_seconds": 10.77,
+    "peak_rss_mb_per_rank": 1215.0,
+    "steps": 75,
+    "failed_attempts": 0,
+    "simulated_days": 30.37,
+    "profile_time": 862.0,
+    "events": {
+      "BuildTwoSided": {
+        "count": 855,
+        "time": 38.996
+      },
+      "BuildTwoSidedF": {
+        "count": 818,
+        "time": 38.993
+      },
+      "SFSetGraph": {
+        "count": 40,
+        "time": 0.005223
+      },
+      "SFSetUp": {
+        "count": 37,
+        "time": 0.026283
+      },
+      "SFBcastBegin": {
+        "count": 675,
+        "time": 0.31624
+      },
+      "SFBcastEnd": {
+        "count": 675,
+        "time": 14.027
+      },
+      "SFReduceBegin": {
+        "count": 290,
+        "time": 0.074904
+      },
+      "SFReduceEnd": {
+        "count": 290,
+        "time": 1.9316
+      },
+      "SFFetchOpBegin": {
+        "count": 2,
+        "time": 1.8183e-05
+      },
+      "SFFetchOpEnd": {
+        "count": 2,
+        "time": 0.000294
+      },
+      "SFCreateEmbed": {
+        "count": 2,
+        "time": 0.00087621
+      },
+      "SFDistSection": {
+        "count": 21,
+        "time": 0.0085612
+      },
+      "SFSectionSF": {
+        "count": 21,
+        "time": 0.0037208
+      },
+      "SFPack": {
+        "count": 6700,
+        "time": 2.0305
+      },
+      "SFUnpack": {
+        "count": 6702,
+        "time": 0.15187
+      },
+      "VecDot": {
+        "count": 204,
+        "time": 0.61344
+      },
+      "VecMDot": {
+        "count": 5473,
+        "time": 98.693
+      },
+      "VecNorm": {
+        "count": 6216,
+        "time": 18.661
+      },
+      "VecScale": {
+        "count": 5733,
+        "time": 1.3807
+      },
+      "VecCopy": {
+        "count": 1505,
+        "time": 1.8446
+      },
+      "VecSet": {
+        "count": 464,
+        "time": 0.34912
+      },
+      "VecAXPY": {
+        "count": 316,
+        "time": 0.49996
+      },
+      "VecWAXPY": {
+        "count": 204,
+        "time": 0.38501
+      },
+      "VecMAXPY": {
+        "count": 5733,
+        "time": 73.522
+      },
+      "VecScatterBegin": {
+        "count": 5733,
+        "time": 1.9985
+      },
+      "VecScatterEnd": {
+        "count": 5733,
+        "time": 17.617
+      },
+      "VecReduceArith": {
+        "count": 408,
+        "time": 0.30244
+      },
+      "VecReduceComm": {
+        "count": 204,
+        "time": 0.3393
+      },
+      "VecNormalize": {
+        "count": 5733,
+        "time": 17.529
+      },
+      "MatMult": {
+        "count": 5733,
+        "time": 218.62
+      },
+      "MatSolve": {
+        "count": 5733,
+        "time": 237.26
+      },
+      "MatLUFactorNum": {
+        "count": 204,
+        "time": 33.35
+      },
+      "MatILUFactorSym": {
+        "count": 1,
+        "time": 0.15295
+      },
+      "MatAssemblyBegin": {
+        "count": 818,
+        "time": 41.804
+      },
+      "MatAssemblyEnd": {
+        "count": 818,
+        "time": 13.716
+      },
+      "MatGetRowIJ": {
+        "count": 1,
+        "time": 4.904e-06
+      },
+      "MatGetOrdering": {
+        "count": 1,
+        "time": 0.0040868
+      },
+      "MatZeroEntries": {
+        "count": 204,
+        "time": 6.7662
+      },
+      "PCSetUp": {
+        "count": 204,
+        "time": 0.0036851
+      },
+      "PCSetUpOnBlocks": {
+        "count": 204,
+        "time": 33.491
+      },
+      "PCApply": {
+        "count": 5733,
+        "time": 237.35
+      },
+      "PCApplyOnBlocks": {
+        "count": 5733,
+        "time": 237.32
+      },
+      "KSPSetUp": {
+        "count": 204,
+        "time": 0.0074395
+      },
+      "KSPSolve": {
+        "count": 204,
+        "time": 580.84
+      },
+      "KSPGMRESOrthog": {
+        "count": 5473,
+        "time": 163.17
+      },
+      "DMPlexCreateGmsh": {
+        "count": 1,
+        "time": 0.05356
+      },
+      "DMPlexCrFromFile": {
+        "count": 1,
+        "time": 0.26244
+      },
+      "DMPlexPartSelf": {
+        "count": 1,
+        "time": 0.0076191
+      },
+      "DMPlexPartLblInv": {
+        "count": 2,
+        "time": 0.011257
+      },
+      "DMPlexPartLblSF": {
+        "count": 2,
+        "time": 0.004282
+      },
+      "DMPlexPartStrtSF": {
+        "count": 2,
+        "time": 0.0019704
+      },
+      "DMPlexPointSF": {
+        "count": 2,
+        "time": 0.0059282
+      },
+      "DMPlexInterp": {
+        "count": 1,
+        "time": 0.026911
+      },
+      "DMPlexDistribute": {
+        "count": 1,
+        "time": 0.099211
+      },
+      "DMPlexDistCones": {
+        "count": 2,
+        "time": 0.002683
+      },
+      "DMPlexDistLabels": {
+        "count": 2,
+        "time": 0.012302
+      },
+      "DMPlexDistOvrlp": {
+        "count": 1,
+        "time": 0.0045367
+      },
+      "DMPlexDistField": {
+        "count": 3,
+        "time": 0.0030853
+      },
+      "DMPlexStratify": {
+        "count": 4,
+        "time": 0.022593
+      },
+      "DMPlexSymmetrize": {
+        "count": 4,
+        "time": 0.0019637
+      },
+      "SNESSolve": {
+        "count": 75,
+        "time": 806.71
+      },
+      "SNESSetUp": {
+        "count": 1,
+        "time": 6.6096e-05
+      },
+      "SNESFunctionEval": {
+        "count": 279,
+        "time": 29.664
+      },
+      "SNESJacobianEval": {
+        "count": 204,
+        "time": 160.85
+      },
+      "SNESLineSearch": {
+        "count": 204,
+        "time": 23.86
+      },
+      "firedrake": {
+        "count": 1,
+        "time": 859.81
+      },
+      "CreateMesh": {
+        "count": 1,
+        "time": 0.40678
+      },
+      "CreateFunctionSpace": {
+        "count": 7,
+        "time": 0.021985
+      },
+      "CreateExtMesh": {
+        "count": 1,
+        "time": 1.8675
+      },
+      "ParLoopExecute": {
+        "count": 2222,
+        "time": 160.14
+      },
+      "ParLoopRednBegin": {
+        "count": 2222,
+        "time": 0.0063544
+      },
+      "ParLoopRednEnd": {
+        "count": 2222,
+        "time": 0.0064564
+      },
+      "CreateSparsity": {
+        "count": 1,
+        "time": 3.8589
+      },
+      "MatZeroInitial": {
+        "count": 1,
+        "time": 0.51845
+      }
+    }
+  },
+  {
+    "case": "murr_horizontal",
+    "scale": "h2",
+    "nodes": 2,
+    "walltime_limit": "06:00:00",
+    "pbs_exit_status": 0,
+    "pbs_walltime": "00:18:19",
+    "pbs_memory": "209.54GB",
+    "script_completed": true,
+    "stderr_bytes": 120,
+    "outcome": "success",
+    "problems": [],
+    "nonlinear_iterations": 206,
+    "linear_iterations": 7179,
+    "mean_step_seconds": 13.53,
+    "peak_rss_mb_per_rank": 1244.0,
+    "steps": 75,
+    "failed_attempts": 0,
+    "simulated_days": 30.37,
+    "profile_time": 1076.0,
+    "events": {
+      "BuildTwoSided": {
+        "count": 863,
+        "time": 45.738
+      },
+      "BuildTwoSidedF": {
+        "count": 826,
+        "time": 45.724
+      },
+      "SFSetGraph": {
+        "count": 40,
+        "time": 0.0060698
+      },
+      "SFSetUp": {
+        "count": 37,
+        "time": 0.029859
+      },
+      "SFBcastBegin": {
+        "count": 679,
+        "time": 0.32574
+      },
+      "SFBcastEnd": {
+        "count": 679,
+        "time": 12.697
+      },
+      "SFReduceBegin": {
+        "count": 292,
+        "time": 0.075167
+      },
+      "SFReduceEnd": {
+        "count": 292,
+        "time": 2.2353
+      },
+      "SFFetchOpBegin": {
+        "count": 2,
+        "time": 2.4999e-05
+      },
+      "SFFetchOpEnd": {
+        "count": 2,
+        "time": 0.0013353
+      },
+      "SFCreateEmbed": {
+        "count": 2,
+        "time": 0.0016302
+      },
+      "SFDistSection": {
+        "count": 21,
+        "time": 0.0133
+      },
+      "SFSectionSF": {
+        "count": 21,
+        "time": 0.0053073
+      },
+      "SFPack": {
+        "count": 8482,
+        "time": 2.4968
+      },
+      "SFUnpack": {
+        "count": 8484,
+        "time": 0.15949
+      },
+      "VecDot": {
+        "count": 206,
+        "time": 0.67369
+      },
+      "VecMDot": {
+        "count": 7179,
+        "time": 140.82
+      },
+      "VecNorm": {
+        "count": 7996,
+        "time": 21.738
+      },
+      "VecScale": {
+        "count": 7509,
+        "time": 1.8167
+      },
+      "VecCopy": {
+        "count": 1585,
+        "time": 1.9402
+      },
+      "VecSet": {
+        "count": 536,
+        "time": 0.40382
+      },
+      "VecAXPY": {
+        "count": 454,
+        "time": 0.72712
+      },
+      "VecWAXPY": {
+        "count": 206,
+        "time": 0.39795
+      },
+      "VecMAXPY": {
+        "count": 7509,
+        "time": 101.68
+      },
+      "VecScatterBegin": {
+        "count": 7509,
+        "time": 2.5176
+      },
+      "VecScatterEnd": {
+        "count": 7509,
+        "time": 20.831
+      },
+      "VecReduceArith": {
+        "count": 412,
+        "time": 0.30357
+      },
+      "VecReduceComm": {
+        "count": 206,
+        "time": 0.33767
+      },
+      "VecNormalize": {
+        "count": 7509,
+        "time": 21.5
+      },
+      "MatMult": {
+        "count": 7509,
+        "time": 287.44
+      },
+      "MatSolve": {
+        "count": 7509,
+        "time": 322.72
+      },
+      "MatLUFactorNum": {
+        "count": 206,
+        "time": 34.091
+      },
+      "MatILUFactorSym": {
+        "count": 1,
+        "time": 0.15732
+      },
+      "MatAssemblyBegin": {
+        "count": 826,
+        "time": 46.664
+      },
+      "MatAssemblyEnd": {
+        "count": 826,
+        "time": 13.771
+      },
+      "MatGetRowIJ": {
+        "count": 1,
+        "time": 4.356e-06
+      },
+      "MatGetOrdering": {
+        "count": 1,
+        "time": 0.0041442
+      },
+      "MatZeroEntries": {
+        "count": 206,
+        "time": 6.9144
+      },
+      "PCSetUp": {
+        "count": 206,
+        "time": 0.0038011
+      },
+      "PCSetUpOnBlocks": {
+        "count": 206,
+        "time": 34.254
+      },
+      "PCApply": {
+        "count": 7509,
+        "time": 322.83
+      },
+      "PCApplyOnBlocks": {
+        "count": 7509,
+        "time": 322.79
+      },
+      "KSPSetUp": {
+        "count": 206,
+        "time": 0.0076129
+      },
+      "KSPSolve": {
+        "count": 206,
+        "time": 778.77
+      },
+      "KSPGMRESOrthog": {
+        "count": 7179,
+        "time": 229.12
+      },
+      "DMPlexCreateGmsh": {
+        "count": 1,
+        "time": 0.1049
+      },
+      "DMPlexCrFromFile": {
+        "count": 1,
+        "time": 5.0828
+      },
+      "DMPlexPartSelf": {
+        "count": 1,
+        "time": 0.015889
+      },
+      "DMPlexPartLblInv": {
+        "count": 2,
+        "time": 0.025176
+      },
+      "DMPlexPartLblSF": {
+        "count": 2,
+        "time": 0.0053982
+      },
+      "DMPlexPartStrtSF": {
+        "count": 2,
+        "time": 0.0024796
+      },
+      "DMPlexPointSF": {
+        "count": 2,
+        "time": 0.0082429
+      },
+      "DMPlexInterp": {
+        "count": 1,
+        "time": 0.054165
+      },
+      "DMPlexDistribute": {
+        "count": 1,
+        "time": 0.18927
+      },
+      "DMPlexDistCones": {
+        "count": 2,
+        "time": 0.0041661
+      },
+      "DMPlexDistLabels": {
+        "count": 2,
+        "time": 0.021083
+      },
+      "DMPlexDistOvrlp": {
+        "count": 1,
+        "time": 0.0096609
+      },
+      "DMPlexDistField": {
+        "count": 3,
+        "time": 0.0049072
+      },
+      "DMPlexStratify": {
+        "count": 4,
+        "time": 0.044725
+      },
+      "DMPlexSymmetrize": {
+        "count": 4,
+        "time": 0.0042332
+      },
+      "SNESSolve": {
+        "count": 75,
+        "time": 1013.6
+      },
+      "SNESSetUp": {
+        "count": 1,
+        "time": 6.2052e-05
+      },
+      "SNESFunctionEval": {
+        "count": 281,
+        "time": 30.003
+      },
+      "SNESJacobianEval": {
+        "count": 206,
+        "time": 169.09
+      },
+      "SNESLineSearch": {
+        "count": 206,
+        "time": 24.255
+      },
+      "firedrake": {
+        "count": 1,
+        "time": 1073.5
+      },
+      "CreateMesh": {
+        "count": 1,
+        "time": 5.3318
+      },
+      "CreateFunctionSpace": {
+        "count": 7,
+        "time": 0.023982
+      },
+      "CreateExtMesh": {
+        "count": 1,
+        "time": 2.2537
+      },
+      "ParLoopExecute": {
+        "count": 2240,
+        "time": 162.38
+      },
+      "ParLoopRednBegin": {
+        "count": 2240,
+        "time": 0.0070143
+      },
+      "ParLoopRednEnd": {
+        "count": 2240,
+        "time": 0.0058111
+      },
+      "CreateSparsity": {
+        "count": 1,
+        "time": 3.9919
+      },
+      "MatZeroInitial": {
+        "count": 1,
+        "time": 0.51827
+      }
+    }
+  },
+  {
+    "case": "murr_horizontal",
+    "scale": "h4",
+    "nodes": 4,
+    "walltime_limit": "06:00:00",
+    "pbs_exit_status": 0,
+    "pbs_walltime": "00:21:59",
+    "pbs_memory": "421.22GB",
+    "script_completed": true,
+    "stderr_bytes": 120,
+    "outcome": "success",
+    "problems": [],
+    "nonlinear_iterations": 204,
+    "linear_iterations": 9349,
+    "mean_step_seconds": 16.51,
+    "peak_rss_mb_per_rank": 1244.0,
+    "steps": 75,
+    "failed_attempts": 0,
+    "simulated_days": 30.37,
+    "profile_time": 1296.0,
+    "events": {
+      "BuildTwoSided": {
+        "count": 855,
+        "time": 44.98
+      },
+      "BuildTwoSidedF": {
+        "count": 818,
+        "time": 44.969
+      },
+      "SFSetGraph": {
+        "count": 40,
+        "time": 0.0059456
+      },
+      "SFSetUp": {
+        "count": 37,
+        "time": 0.03484
+      },
+      "SFBcastBegin": {
+        "count": 675,
+        "time": 0.36725
+      },
+      "SFBcastEnd": {
+        "count": 675,
+        "time": 13.359
+      },
+      "SFReduceBegin": {
+        "count": 290,
+        "time": 0.089999
+      },
+      "SFReduceEnd": {
+        "count": 290,
+        "time": 2.7243
+      },
+      "SFFetchOpBegin": {
+        "count": 2,
+        "time": 2.4965e-05
+      },
+      "SFFetchOpEnd": {
+        "count": 2,
+        "time": 0.0015752
+      },
+      "SFCreateEmbed": {
+        "count": 2,
+        "time": 0.0019814
+      },
+      "SFDistSection": {
+        "count": 21,
+        "time": 0.020656
+      },
+      "SFSectionSF": {
+        "count": 21,
+        "time": 0.0064343
+      },
+      "SFPack": {
+        "count": 10725,
+        "time": 3.2494
+      },
+      "SFUnpack": {
+        "count": 10727,
+        "time": 0.17664
+      },
+      "VecDot": {
+        "count": 204,
+        "time": 0.8927
+      },
+      "VecMDot": {
+        "count": 9349,
+        "time": 181.95
+      },
+      "VecNorm": {
+        "count": 10241,
+        "time": 26.866
+      },
+      "VecScale": {
+        "count": 9758,
+        "time": 2.3644
+      },
+      "VecCopy": {
+        "count": 1654,
+        "time": 2.0613
+      },
+      "VecSet": {
+        "count": 613,
+        "time": 0.48086
+      },
+      "VecAXPY": {
+        "count": 614,
+        "time": 1.01
+      },
+      "VecWAXPY": {
+        "count": 204,
+        "time": 0.39088
+      },
+      "VecMAXPY": {
+        "count": 9758,
+        "time": 130.07
+      },
+      "VecScatterBegin": {
+        "count": 9758,
+        "time": 3.2446
+      },
+      "VecScatterEnd": {
+        "count": 9758,
+        "time": 39.136
+      },
+      "VecReduceArith": {
+        "count": 408,
+        "time": 0.30264
+      },
+      "VecReduceComm": {
+        "count": 204,
+        "time": 0.30037
+      },
+      "VecNormalize": {
+        "count": 9758,
+        "time": 26.651
+      },
+      "MatMult": {
+        "count": 9758,
+        "time": 377.61
+      },
+      "MatSolve": {
+        "count": 9758,
+        "time": 419.59
+      },
+      "MatLUFactorNum": {
+        "count": 204,
+        "time": 35.009
+      },
+      "MatILUFactorSym": {
+        "count": 1,
+        "time": 0.15328
+      },
+      "MatAssemblyBegin": {
+        "count": 818,
+        "time": 46.213
+      },
+      "MatAssemblyEnd": {
+        "count": 818,
+        "time": 12.946
+      },
+      "MatGetRowIJ": {
+        "count": 1,
+        "time": 8.882e-06
+      },
+      "MatGetOrdering": {
+        "count": 1,
+        "time": 0.0042262
+      },
+      "MatZeroEntries": {
+        "count": 204,
+        "time": 7.0293
+      },
+      "PCSetUp": {
+        "count": 204,
+        "time": 0.0042137
+      },
+      "PCSetUpOnBlocks": {
+        "count": 204,
+        "time": 35.163
+      },
+      "PCApply": {
+        "count": 9758,
+        "time": 419.73
+      },
+      "PCApplyOnBlocks": {
+        "count": 9758,
+        "time": 419.68
+      },
+      "KSPSetUp": {
+        "count": 204,
+        "time": 0.008057
+      },
+      "KSPSolve": {
+        "count": 204,
+        "time": 1007.3
+      },
+      "KSPGMRESOrthog": {
+        "count": 9349,
+        "time": 295.74
+      },
+      "DMPlexCreateGmsh": {
+        "count": 1,
+        "time": 0.20473
+      },
+      "DMPlexCrFromFile": {
+        "count": 1,
+        "time": 1.5319
+      },
+      "DMPlexPartSelf": {
+        "count": 1,
+        "time": 0.039152
+      },
+      "DMPlexPartLblInv": {
+        "count": 2,
+        "time": 0.056928
+      },
+      "DMPlexPartLblSF": {
+        "count": 2,
+        "time": 0.0063712
+      },
+      "DMPlexPartStrtSF": {
+        "count": 2,
+        "time": 0.0028697
+      },
+      "DMPlexPointSF": {
+        "count": 2,
+        "time": 0.015508
+      },
+      "DMPlexInterp": {
+        "count": 1,
+        "time": 0.11052
+      },
+      "DMPlexDistribute": {
+        "count": 1,
+        "time": 0.37995
+      },
+      "DMPlexDistCones": {
+        "count": 2,
+        "time": 0.0066852
+      },
+      "DMPlexDistLabels": {
+        "count": 2,
+        "time": 0.039238
+      },
+      "DMPlexDistOvrlp": {
+        "count": 1,
+        "time": 0.014189
+      },
+      "DMPlexDistField": {
+        "count": 3,
+        "time": 0.006794
+      },
+      "DMPlexStratify": {
+        "count": 4,
+        "time": 0.08956
+      },
+      "DMPlexSymmetrize": {
+        "count": 4,
+        "time": 0.0082737
+      },
+      "SNESSolve": {
+        "count": 75,
+        "time": 1237.4
+      },
+      "SNESSetUp": {
+        "count": 1,
+        "time": 5.0265e-05
+      },
+      "SNESFunctionEval": {
+        "count": 279,
+        "time": 30.349
+      },
+      "SNESJacobianEval": {
+        "count": 204,
+        "time": 163.93
+      },
+      "SNESLineSearch": {
+        "count": 204,
+        "time": 24.666
+      },
+      "firedrake": {
+        "count": 1,
+        "time": 1294.2
+      },
+      "CreateMesh": {
+        "count": 1,
+        "time": 1.992
+      },
+      "CreateFunctionSpace": {
+        "count": 7,
+        "time": 0.024502
+      },
+      "CreateExtMesh": {
+        "count": 1,
+        "time": 2.279
+      },
+      "ParLoopExecute": {
+        "count": 2222,
+        "time": 162.73
+      },
+      "ParLoopRednBegin": {
+        "count": 2222,
+        "time": 0.0083974
+      },
+      "ParLoopRednEnd": {
+        "count": 2222,
+        "time": 0.0061735
+      },
+      "CreateSparsity": {
+        "count": 1,
+        "time": 3.9314
+      },
+      "MatZeroInitial": {
+        "count": 1,
+        "time": 0.52487
+      }
+    }
+  },
+  {
+    "case": "murr_horizontal",
+    "scale": "h8",
+    "nodes": 8,
+    "walltime_limit": "06:00:00",
+    "pbs_exit_status": 0,
+    "pbs_walltime": "00:26:49",
+    "pbs_memory": "848.76GB",
+    "script_completed": true,
+    "stderr_bytes": 120,
+    "outcome": "success",
+    "problems": [],
+    "nonlinear_iterations": 203,
+    "linear_iterations": 11971,
+    "mean_step_seconds": 20.29,
+    "peak_rss_mb_per_rank": 1337.0,
+    "steps": 75,
+    "failed_attempts": 0,
+    "simulated_days": 30.37,
+    "profile_time": 1585.0,
+    "events": {
+      "BuildTwoSided": {
+        "count": 851,
+        "time": 41.053
+      },
+      "BuildTwoSidedF": {
+        "count": 814,
+        "time": 41.033
+      },
+      "SFSetGraph": {
+        "count": 40,
+        "time": 0.0057731
+      },
+      "SFSetUp": {
+        "count": 37,
+        "time": 0.048187
+      },
+      "SFBcastBegin": {
+        "count": 673,
+        "time": 0.33926
+      },
+      "SFBcastEnd": {
+        "count": 673,
+        "time": 13.199
+      },
+      "SFReduceBegin": {
+        "count": 289,
+        "time": 0.10149
+      },
+      "SFReduceEnd": {
+        "count": 289,
+        "time": 2.5339
+      },
+      "SFFetchOpBegin": {
+        "count": 2,
+        "time": 3.0775e-05
+      },
+      "SFFetchOpEnd": {
+        "count": 2,
+        "time": 0.0016334
+      },
+      "SFCreateEmbed": {
+        "count": 2,
+        "time": 0.0033902
+      },
+      "SFDistSection": {
+        "count": 21,
+        "time": 0.038267
+      },
+      "SFSectionSF": {
+        "count": 21,
+        "time": 0.012143
+      },
+      "SFPack": {
+        "count": 13400,
+        "time": 3.908
+      },
+      "SFUnpack": {
+        "count": 13402,
+        "time": 0.17055
+      },
+      "VecDot": {
+        "count": 203,
+        "time": 0.87429
+      },
+      "VecMDot": {
+        "count": 11971,
+        "time": 224.14
+      },
+      "VecNorm": {
+        "count": 12917,
+        "time": 33.516
+      },
+      "VecScale": {
+        "count": 12436,
+        "time": 3.0041
+      },
+      "VecCopy": {
+        "count": 1705,
+        "time": 2.17
+      },
+      "VecSet": {
+        "count": 668,
+        "time": 0.51866
+      },
+      "VecAXPY": {
+        "count": 727,
+        "time": 1.1813
+      },
+      "VecWAXPY": {
+        "count": 203,
+        "time": 0.39217
+      },
+      "VecMAXPY": {
+        "count": 12436,
+        "time": 173.37
+      },
+      "VecScatterBegin": {
+        "count": 12436,
+        "time": 4.0201
+      },
+      "VecScatterEnd": {
+        "count": 12436,
+        "time": 45.126
+      },
+      "VecReduceArith": {
+        "count": 406,
+        "time": 0.31645
+      },
+      "VecReduceComm": {
+        "count": 203,
+        "time": 0.40305
+      },
+      "VecNormalize": {
+        "count": 12436,
+        "time": 32.097
+      },
+      "MatMult": {
+        "count": 12436,
+        "time": 479.73
+      },
+      "MatSolve": {
+        "count": 12436,
+        "time": 515.48
+      },
+      "MatLUFactorNum": {
+        "count": 203,
+        "time": 34.222
+      },
+      "MatILUFactorSym": {
+        "count": 1,
+        "time": 0.15235
+      },
+      "MatAssemblyBegin": {
+        "count": 814,
+        "time": 43.588
+      },
+      "MatAssemblyEnd": {
+        "count": 814,
+        "time": 12.225
+      },
+      "MatGetRowIJ": {
+        "count": 1,
+        "time": 5.415e-06
+      },
+      "MatGetOrdering": {
+        "count": 1,
+        "time": 0.0042285
+      },
+      "MatZeroEntries": {
+        "count": 203,
+        "time": 7.1951
+      },
+      "PCSetUp": {
+        "count": 203,
+        "time": 0.0042693
+      },
+      "PCSetUpOnBlocks": {
+        "count": 203,
+        "time": 34.351
+      },
+      "PCApply": {
+        "count": 12436,
+        "time": 515.67
+      },
+      "PCApplyOnBlocks": {
+        "count": 12436,
+        "time": 515.61
+      },
+      "KSPSetUp": {
+        "count": 203,
+        "time": 0.008281
+      },
+      "KSPSolve": {
+        "count": 203,
+        "time": 1292.8
+      },
+      "KSPGMRESOrthog": {
+        "count": 11971,
+        "time": 376.71
+      },
+      "DMPlexCreateGmsh": {
+        "count": 1,
+        "time": 0.41682
+      },
+      "DMPlexCrFromFile": {
+        "count": 1,
+        "time": 2.2783
+      },
+      "DMPlexPartSelf": {
+        "count": 1,
+        "time": 0.082299
+      },
+      "DMPlexPartLblInv": {
+        "count": 2,
+        "time": 0.12181
+      },
+      "DMPlexPartLblSF": {
+        "count": 2,
+        "time": 0.0076597
+      },
+      "DMPlexPartStrtSF": {
+        "count": 2,
+        "time": 0.0059659
+      },
+      "DMPlexPointSF": {
+        "count": 2,
+        "time": 0.031774
+      },
+      "DMPlexInterp": {
+        "count": 1,
+        "time": 0.23201
+      },
+      "DMPlexDistribute": {
+        "count": 1,
+        "time": 0.82736
+      },
+      "DMPlexDistCones": {
+        "count": 2,
+        "time": 0.014248
+      },
+      "DMPlexDistLabels": {
+        "count": 2,
+        "time": 0.07842
+      },
+      "DMPlexDistOvrlp": {
+        "count": 1,
+        "time": 0.024078
+      },
+      "DMPlexDistField": {
+        "count": 3,
+        "time": 0.011792
+      },
+      "DMPlexStratify": {
+        "count": 4,
+        "time": 0.18493
+      },
+      "DMPlexSymmetrize": {
+        "count": 4,
+        "time": 0.018686
+      },
+      "SNESSolve": {
+        "count": 75,
+        "time": 1520.9
+      },
+      "SNESSetUp": {
+        "count": 1,
+        "time": 6.2858e-05
+      },
+      "SNESFunctionEval": {
+        "count": 278,
+        "time": 30.564
+      },
+      "SNESJacobianEval": {
+        "count": 203,
+        "time": 160.89
+      },
+      "SNESLineSearch": {
+        "count": 203,
+        "time": 24.976
+      },
+      "firedrake": {
+        "count": 1,
+        "time": 1582.3
+      },
+      "CreateMesh": {
+        "count": 1,
+        "time": 3.2309
+      },
+      "CreateFunctionSpace": {
+        "count": 7,
+        "time": 0.026479
+      },
+      "CreateExtMesh": {
+        "count": 1,
+        "time": 2.259
+      },
+      "ParLoopExecute": {
+        "count": 2213,
+        "time": 163.66
+      },
+      "ParLoopRednBegin": {
+        "count": 2213,
+        "time": 0.0091033
+      },
+      "ParLoopRednEnd": {
+        "count": 2213,
+        "time": 0.006774
+      },
+      "CreateSparsity": {
+        "count": 1,
+        "time": 3.9118
+      },
+      "MatZeroInitial": {
+        "count": 1,
+        "time": 0.52758
+      }
+    }
+  },
+  {
+    "case": "murr_strong",
+    "scale": "s1",
+    "nodes": 1,
+    "walltime_limit": "03:00:00",
+    "pbs_exit_status": -29,
+    "pbs_walltime": "03:01:07",
+    "pbs_memory": "483.9GB",
+    "script_completed": false,
+    "stderr_bytes": 177,
+    "outcome": "walltime",
+    "problems": [
+      "no validated completion record"
+    ],
+    "stderr_tail": "Loading firedrake/main-20260806\n  Loading requirement: singularity intel-compiler-llvm/2024.2.1\n    petsc/main-20260815\n=>> PBS: job killed: walltime 10856 exceeded limit 10800"
+  },
+  {
+    "case": "murr_strong",
+    "scale": "s2",
+    "nodes": 2,
+    "walltime_limit": "03:00:00",
+    "pbs_exit_status": 0,
+    "pbs_walltime": "01:39:52",
+    "pbs_memory": "538.37GB",
+    "script_completed": true,
+    "stderr_bytes": 120,
+    "outcome": "success",
+    "problems": [],
+    "nonlinear_iterations": 203,
+    "linear_iterations": 11964,
+    "mean_step_seconds": 78.6,
+    "peak_rss_mb_per_rank": 2895.0,
+    "steps": 75,
+    "failed_attempts": 0,
+    "simulated_days": 30.37,
+    "profile_time": 5971.0,
+    "events": {
+      "BuildTwoSided": {
+        "count": 851,
+        "time": 71.519
+      },
+      "BuildTwoSidedF": {
+        "count": 814,
+        "time": 76.806
+      },
+      "SFSetGraph": {
+        "count": 40,
+        "time": 0.013846
+      },
+      "SFSetUp": {
+        "count": 37,
+        "time": 0.05891
+      },
+      "SFBcastBegin": {
+        "count": 673,
+        "time": 0.6491
+      },
+      "SFBcastEnd": {
+        "count": 673,
+        "time": 25.869
+      },
+      "SFReduceBegin": {
+        "count": 289,
+        "time": 0.32542
+      },
+      "SFReduceEnd": {
+        "count": 289,
+        "time": 7.4924
+      },
+      "SFFetchOpBegin": {
+        "count": 2,
+        "time": 3.0555e-05
+      },
+      "SFFetchOpEnd": {
+        "count": 2,
+        "time": 0.0015936
+      },
+      "SFCreateEmbed": {
+        "count": 2,
+        "time": 0.0021454
+      },
+      "SFDistSection": {
+        "count": 21,
+        "time": 0.025041
+      },
+      "SFSectionSF": {
+        "count": 21,
+        "time": 0.0089385
+      },
+      "SFPack": {
+        "count": 13393,
+        "time": 12.914
+      },
+      "SFUnpack": {
+        "count": 13395,
+        "time": 0.45272
+      },
+      "VecDot": {
+        "count": 203,
+        "time": 2.3879
+      },
+      "VecMDot": {
+        "count": 11964,
+        "time": 762.27
+      },
+      "VecNorm": {
+        "count": 12910,
+        "time": 110.19
+      },
+      "VecScale": {
+        "count": 12429,
+        "time": 55.635
+      },
+      "VecCopy": {
+        "count": 1705,
+        "time": 9.9301
+      },
+      "VecSet": {
+        "count": 668,
+        "time": 2.2307
+      },
+      "VecAXPY": {
+        "count": 727,
+        "time": 5.6208
+      },
+      "VecWAXPY": {
+        "count": 203,
+        "time": 1.7548
+      },
+      "VecMAXPY": {
+        "count": 12429,
+        "time": 743.1
+      },
+      "VecScatterBegin": {
+        "count": 12429,
+        "time": 12.974
+      },
+      "VecScatterEnd": {
+        "count": 12429,
+        "time": 113.36
+      },
+      "VecReduceArith": {
+        "count": 406,
+        "time": 1.3855
+      },
+      "VecReduceComm": {
+        "count": 203,
+        "time": 0.91777
+      },
+      "VecNormalize": {
+        "count": 12429,
+        "time": 157.53
+      },
+      "MatMult": {
+        "count": 12429,
+        "time": 1844.3
+      },
+      "MatSolve": {
+        "count": 12429,
+        "time": 2044.0
+      },
+      "MatLUFactorNum": {
+        "count": 203,
+        "time": 137.3
+      },
+      "MatILUFactorSym": {
+        "count": 1,
+        "time": 0.626
+      },
+      "MatAssemblyBegin": {
+        "count": 814,
+        "time": 82.755
+      },
+      "MatAssemblyEnd": {
+        "count": 814,
+        "time": 29.988
+      },
+      "MatGetRowIJ": {
+        "count": 1,
+        "time": 7.939e-06
+      },
+      "MatGetOrdering": {
+        "count": 1,
+        "time": 0.023515
+      },
+      "MatZeroEntries": {
+        "count": 203,
+        "time": 29.019
+      },
+      "PCSetUp": {
+        "count": 203,
+        "time": 0.0036461
+      },
+      "PCSetUpOnBlocks": {
+        "count": 203,
+        "time": 137.95
+      },
+      "PCApply": {
+        "count": 12429,
+        "time": 2044.3
+      },
+      "PCApplyOnBlocks": {
+        "count": 12429,
+        "time": 2044.2
+      },
+      "KSPSetUp": {
+        "count": 203,
+        "time": 0.066411
+      },
+      "KSPSolve": {
+        "count": 203,
+        "time": 5132.2
+      },
+      "KSPGMRESOrthog": {
+        "count": 11964,
+        "time": 1417.4
+      },
+      "DMPlexCreateGmsh": {
+        "count": 1,
+        "time": 0.40431
+      },
+      "DMPlexCrFromFile": {
+        "count": 1,
+        "time": 2.4369
+      },
+      "DMPlexPartSelf": {
+        "count": 1,
+        "time": 0.072747
+      },
+      "DMPlexPartLblInv": {
+        "count": 2,
+        "time": 0.083515
+      },
+      "DMPlexPartLblSF": {
+        "count": 2,
+        "time": 0.0073959
+      },
+      "DMPlexPartStrtSF": {
+        "count": 2,
+        "time": 0.0061031
+      },
+      "DMPlexPointSF": {
+        "count": 2,
+        "time": 0.027568
+      },
+      "DMPlexInterp": {
+        "count": 1,
+        "time": 0.2234
+      },
+      "DMPlexDistribute": {
+        "count": 1,
+        "time": 0.39927
+      },
+      "DMPlexDistCones": {
+        "count": 2,
+        "time": 0.014048
+      },
+      "DMPlexDistLabels": {
+        "count": 2,
+        "time": 0.064382
+      },
+      "DMPlexDistOvrlp": {
+        "count": 1,
+        "time": 0.011551
+      },
+      "DMPlexDistField": {
+        "count": 3,
+        "time": 0.0069952
+      },
+      "DMPlexStratify": {
+        "count": 4,
+        "time": 0.18184
+      },
+      "DMPlexSymmetrize": {
+        "count": 4,
+        "time": 0.018443
+      },
+      "SNESSolve": {
+        "count": 75,
+        "time": 5891.6
+      },
+      "SNESSetUp": {
+        "count": 1,
+        "time": 7.391e-05
+      },
+      "SNESFunctionEval": {
+        "count": 278,
+        "time": 84.748
+      },
+      "SNESJacobianEval": {
+        "count": 203,
+        "time": 529.53
+      },
+      "SNESLineSearch": {
+        "count": 203,
+        "time": 93.047
+      },
+      "firedrake": {
+        "count": 1,
+        "time": 5968.4
+      },
+      "CreateMesh": {
+        "count": 1,
+        "time": 2.9464
+      },
+      "CreateFunctionSpace": {
+        "count": 7,
+        "time": 0.02638
+      },
+      "CreateExtMesh": {
+        "count": 1,
+        "time": 1.7721
+      },
+      "ParLoopExecute": {
+        "count": 2213,
+        "time": 545.16
+      },
+      "ParLoopRednBegin": {
+        "count": 2213,
+        "time": 0.0092931
+      },
+      "ParLoopRednEnd": {
+        "count": 2213,
+        "time": 0.0075105
+      },
+      "CreateSparsity": {
+        "count": 1,
+        "time": 15.107
+      },
+      "MatZeroInitial": {
+        "count": 1,
+        "time": 2.1952
+      }
+    }
+  },
+  {
+    "case": "murr_strong",
+    "scale": "s4",
+    "nodes": 4,
+    "walltime_limit": "03:00:00",
+    "pbs_exit_status": 0,
+    "pbs_walltime": "00:51:24",
+    "pbs_memory": "635.55GB",
+    "script_completed": true,
+    "stderr_bytes": 120,
+    "outcome": "success",
+    "problems": [],
+    "nonlinear_iterations": 203,
+    "linear_iterations": 11966,
+    "mean_step_seconds": 39.96,
+    "peak_rss_mb_per_rank": 1754.0,
+    "steps": 75,
+    "failed_attempts": 0,
+    "simulated_days": 30.37,
+    "profile_time": 3063.0,
+    "events": {
+      "BuildTwoSided": {
+        "count": 851,
+        "time": 51.917
+      },
+      "BuildTwoSidedF": {
+        "count": 814,
+        "time": 51.895
+      },
+      "SFSetGraph": {
+        "count": 40,
+        "time": 0.0090422
+      },
+      "SFSetUp": {
+        "count": 37,
+        "time": 0.054114
+      },
+      "SFBcastBegin": {
+        "count": 673,
+        "time": 0.52476
+      },
+      "SFBcastEnd": {
+        "count": 673,
+        "time": 20.237
+      },
+      "SFReduceBegin": {
+        "count": 289,
+        "time": 0.14081
+      },
+      "SFReduceEnd": {
+        "count": 289,
+        "time": 4.0052
+      },
+      "SFFetchOpBegin": {
+        "count": 2,
+        "time": 2.8068e-05
+      },
+      "SFFetchOpEnd": {
+        "count": 2,
+        "time": 0.001325
+      },
+      "SFCreateEmbed": {
+        "count": 2,
+        "time": 0.0024908
+      },
+      "SFDistSection": {
+        "count": 21,
+        "time": 0.034129
+      },
+      "SFSectionSF": {
+        "count": 21,
+        "time": 0.010234
+      },
+      "SFPack": {
+        "count": 13395,
+        "time": 8.8254
+      },
+      "SFUnpack": {
+        "count": 13397,
+        "time": 0.30652
+      },
+      "VecDot": {
+        "count": 203,
+        "time": 1.6092
+      },
+      "VecMDot": {
+        "count": 11966,
+        "time": 437.25
+      },
+      "VecNorm": {
+        "count": 12912,
+        "time": 64.579
+      },
+      "VecScale": {
+        "count": 12431,
+        "time": 20.312
+      },
+      "VecCopy": {
+        "count": 1705,
+        "time": 4.6639
+      },
+      "VecSet": {
+        "count": 668,
+        "time": 1.1055
+      },
+      "VecAXPY": {
+        "count": 727,
+        "time": 2.7652
+      },
+      "VecWAXPY": {
+        "count": 203,
+        "time": 0.83752
+      },
+      "VecMAXPY": {
+        "count": 12431,
+        "time": 366.84
+      },
+      "VecScatterBegin": {
+        "count": 12431,
+        "time": 8.7888
+      },
+      "VecScatterEnd": {
+        "count": 12431,
+        "time": 76.159
+      },
+      "VecReduceArith": {
+        "count": 406,
+        "time": 0.70856
+      },
+      "VecReduceComm": {
+        "count": 203,
+        "time": 0.56451
+      },
+      "VecNormalize": {
+        "count": 12431,
+        "time": 77.755
+      },
+      "MatMult": {
+        "count": 12431,
+        "time": 946.41
+      },
+      "MatSolve": {
+        "count": 12431,
+        "time": 1035.1
+      },
+      "MatLUFactorNum": {
+        "count": 203,
+        "time": 72.893
+      },
+      "MatILUFactorSym": {
+        "count": 1,
+        "time": 0.3035
+      },
+      "MatAssemblyBegin": {
+        "count": 814,
+        "time": 53.979
+      },
+      "MatAssemblyEnd": {
+        "count": 814,
+        "time": 15.338
+      },
+      "MatGetRowIJ": {
+        "count": 1,
+        "time": 5.079e-06
+      },
+      "MatGetOrdering": {
+        "count": 1,
+        "time": 0.01146
+      },
+      "MatZeroEntries": {
+        "count": 203,
+        "time": 14.741
+      },
+      "PCSetUp": {
+        "count": 203,
+        "time": 0.0046561
+      },
+      "PCSetUpOnBlocks": {
+        "count": 203,
+        "time": 73.185
+      },
+      "PCApply": {
+        "count": 12431,
+        "time": 1035.4
+      },
+      "PCApplyOnBlocks": {
+        "count": 12431,
+        "time": 1035.3
+      },
+      "KSPSetUp": {
+        "count": 203,
+        "time": 0.037362
+      },
+      "KSPSolve": {
+        "count": 203,
+        "time": 2589.9
+      },
+      "KSPGMRESOrthog": {
+        "count": 11966,
+        "time": 751.03
+      },
+      "DMPlexCreateGmsh": {
+        "count": 1,
+        "time": 0.41319
+      },
+      "DMPlexCrFromFile": {
+        "count": 1,
+        "time": 1.0813
+      },
+      "DMPlexPartSelf": {
+        "count": 1,
+        "time": 0.077979
+      },
+      "DMPlexPartLblInv": {
+        "count": 2,
+        "time": 0.095943
+      },
+      "DMPlexPartLblSF": {
+        "count": 2,
+        "time": 0.0063252
+      },
+      "DMPlexPartStrtSF": {
+        "count": 2,
+        "time": 0.0071917
+      },
+      "DMPlexPointSF": {
+        "count": 2,
+        "time": 0.027827
+      },
+      "DMPlexInterp": {
+        "count": 1,
+        "time": 0.22718
+      },
+      "DMPlexDistribute": {
+        "count": 1,
+        "time": 0.53576
+      },
+      "DMPlexDistCones": {
+        "count": 2,
+        "time": 0.015105
+      },
+      "DMPlexDistLabels": {
+        "count": 2,
+        "time": 0.07072
+      },
+      "DMPlexDistOvrlp": {
+        "count": 1,
+        "time": 0.015233
+      },
+      "DMPlexDistField": {
+        "count": 3,
+        "time": 0.0086647
+      },
+      "DMPlexStratify": {
+        "count": 4,
+        "time": 0.18477
+      },
+      "DMPlexSymmetrize": {
+        "count": 4,
+        "time": 0.018373
+      },
+      "SNESSolve": {
+        "count": 75,
+        "time": 2994.9
+      },
+      "SNESSetUp": {
+        "count": 1,
+        "time": 6.3506e-05
+      },
+      "SNESFunctionEval": {
+        "count": 278,
+        "time": 48.507
+      },
+      "SNESJacobianEval": {
+        "count": 203,
+        "time": 281.68
+      },
+      "SNESLineSearch": {
+        "count": 203,
+        "time": 48.444
+      },
+      "firedrake": {
+        "count": 1,
+        "time": 3060.5
+      },
+      "CreateMesh": {
+        "count": 1,
+        "time": 1.7276
+      },
+      "CreateFunctionSpace": {
+        "count": 7,
+        "time": 0.025186
+      },
+      "CreateExtMesh": {
+        "count": 1,
+        "time": 2.3244
+      },
+      "ParLoopExecute": {
+        "count": 2213,
+        "time": 293.18
+      },
+      "ParLoopRednBegin": {
+        "count": 2213,
+        "time": 0.0078002
+      },
+      "ParLoopRednEnd": {
+        "count": 2213,
+        "time": 0.0069645
+      },
+      "CreateSparsity": {
+        "count": 1,
+        "time": 7.5247
+      },
+      "MatZeroInitial": {
+        "count": 1,
+        "time": 1.0731
+      }
+    }
+  },
+  {
+    "case": "murr_strong",
+    "scale": "s8",
+    "nodes": 8,
+    "walltime_limit": "03:00:00",
+    "pbs_exit_status": 0,
+    "pbs_walltime": "00:27:03",
+    "pbs_memory": "849.14GB",
+    "script_completed": true,
+    "stderr_bytes": 120,
+    "outcome": "success",
+    "problems": [],
+    "nonlinear_iterations": 203,
+    "linear_iterations": 11971,
+    "mean_step_seconds": 20.39,
+    "peak_rss_mb_per_rank": 1333.0,
+    "steps": 75,
+    "failed_attempts": 0,
+    "simulated_days": 30.37,
+    "profile_time": 1598.0,
+    "events": {
+      "BuildTwoSided": {
+        "count": 851,
+        "time": 43.003
+      },
+      "BuildTwoSidedF": {
+        "count": 814,
+        "time": 42.988
+      },
+      "SFSetGraph": {
+        "count": 40,
+        "time": 0.0057847
+      },
+      "SFSetUp": {
+        "count": 37,
+        "time": 0.046611
+      },
+      "SFBcastBegin": {
+        "count": 673,
+        "time": 0.34166
+      },
+      "SFBcastEnd": {
+        "count": 673,
+        "time": 12.812
+      },
+      "SFReduceBegin": {
+        "count": 289,
+        "time": 0.11101
+      },
+      "SFReduceEnd": {
+        "count": 289,
+        "time": 2.9517
+      },
+      "SFFetchOpBegin": {
+        "count": 2,
+        "time": 2.8014e-05
+      },
+      "SFFetchOpEnd": {
+        "count": 2,
+        "time": 0.0026069
+      },
+      "SFCreateEmbed": {
+        "count": 2,
+        "time": 0.004018
+      },
+      "SFDistSection": {
+        "count": 21,
+        "time": 0.041302
+      },
+      "SFSectionSF": {
+        "count": 21,
+        "time": 0.011959
+      },
+      "SFPack": {
+        "count": 13400,
+        "time": 3.9443
+      },
+      "SFUnpack": {
+        "count": 13402,
+        "time": 0.17252
+      },
+      "VecDot": {
+        "count": 203,
+        "time": 0.8614
+      },
+      "VecMDot": {
+        "count": 11971,
+        "time": 227.21
+      },
+      "VecNorm": {
+        "count": 12917,
+        "time": 34.114
+      },
+      "VecScale": {
+        "count": 12436,
+        "time": 3.0476
+      },
+      "VecCopy": {
+        "count": 1705,
+        "time": 2.1541
+      },
+      "VecSet": {
+        "count": 668,
+        "time": 0.52069
+      },
+      "VecAXPY": {
+        "count": 727,
+        "time": 1.1878
+      },
+      "VecWAXPY": {
+        "count": 203,
+        "time": 0.39193
+      },
+      "VecMAXPY": {
+        "count": 12436,
+        "time": 173.25
+      },
+      "VecScatterBegin": {
+        "count": 12436,
+        "time": 4.0224
+      },
+      "VecScatterEnd": {
+        "count": 12436,
+        "time": 45.458
+      },
+      "VecReduceArith": {
+        "count": 406,
+        "time": 0.3548
+      },
+      "VecReduceComm": {
+        "count": 203,
+        "time": 0.4275
+      },
+      "VecNormalize": {
+        "count": 12436,
+        "time": 32.597
+      },
+      "MatMult": {
+        "count": 12436,
+        "time": 478.6
+      },
+      "MatSolve": {
+        "count": 12436,
+        "time": 531.69
+      },
+      "MatLUFactorNum": {
+        "count": 203,
+        "time": 35.022
+      },
+      "MatILUFactorSym": {
+        "count": 1,
+        "time": 0.153
+      },
+      "MatAssemblyBegin": {
+        "count": 814,
+        "time": 45.792
+      },
+      "MatAssemblyEnd": {
+        "count": 814,
+        "time": 13.121
+      },
+      "MatGetRowIJ": {
+        "count": 1,
+        "time": 5.848e-06
+      },
+      "MatGetOrdering": {
+        "count": 1,
+        "time": 0.0043104
+      },
+      "MatZeroEntries": {
+        "count": 203,
+        "time": 7.1082
+      },
+      "PCSetUp": {
+        "count": 203,
+        "time": 0.0039082
+      },
+      "PCSetUpOnBlocks": {
+        "count": 203,
+        "time": 35.176
+      },
+      "PCApply": {
+        "count": 12436,
+        "time": 531.91
+      },
+      "PCApplyOnBlocks": {
+        "count": 12436,
+        "time": 531.83
+      },
+      "KSPSetUp": {
+        "count": 203,
+        "time": 0.0080724
+      },
+      "KSPSolve": {
+        "count": 203,
+        "time": 1297.2
+      },
+      "KSPGMRESOrthog": {
+        "count": 11971,
+        "time": 379.17
+      },
+      "DMPlexCreateGmsh": {
+        "count": 1,
+        "time": 0.42126
+      },
+      "DMPlexCrFromFile": {
+        "count": 1,
+        "time": 9.5239
+      },
+      "DMPlexPartSelf": {
+        "count": 1,
+        "time": 0.079058
+      },
+      "DMPlexPartLblInv": {
+        "count": 2,
+        "time": 0.11868
+      },
+      "DMPlexPartLblSF": {
+        "count": 2,
+        "time": 0.0061023
+      },
+      "DMPlexPartStrtSF": {
+        "count": 2,
+        "time": 0.0061787
+      },
+      "DMPlexPointSF": {
+        "count": 2,
+        "time": 0.028715
+      },
+      "DMPlexInterp": {
+        "count": 1,
+        "time": 0.23594
+      },
+      "DMPlexDistribute": {
+        "count": 1,
+        "time": 0.82669
+      },
+      "DMPlexDistCones": {
+        "count": 2,
+        "time": 0.013925
+      },
+      "DMPlexDistLabels": {
+        "count": 2,
+        "time": 0.081825
+      },
+      "DMPlexDistOvrlp": {
+        "count": 1,
+        "time": 0.03068
+      },
+      "DMPlexDistField": {
+        "count": 3,
+        "time": 0.012295
+      },
+      "DMPlexStratify": {
+        "count": 4,
+        "time": 0.19003
+      },
+      "DMPlexSymmetrize": {
+        "count": 4,
+        "time": 0.018178
+      },
+      "SNESSolve": {
+        "count": 75,
+        "time": 1528.2
+      },
+      "SNESSetUp": {
+        "count": 1,
+        "time": 6.2409e-05
+      },
+      "SNESFunctionEval": {
+        "count": 278,
+        "time": 30.814
+      },
+      "SNESJacobianEval": {
+        "count": 203,
+        "time": 164.44
+      },
+      "SNESLineSearch": {
+        "count": 203,
+        "time": 25.152
+      },
+      "firedrake": {
+        "count": 1,
+        "time": 1595.9
+      },
+      "CreateMesh": {
+        "count": 1,
+        "time": 10.487
+      },
+      "CreateFunctionSpace": {
+        "count": 7,
+        "time": 0.025698
+      },
+      "CreateExtMesh": {
+        "count": 1,
+        "time": 2.1606
+      },
+      "ParLoopExecute": {
+        "count": 2213,
+        "time": 165.73
+      },
+      "ParLoopRednBegin": {
+        "count": 2213,
+        "time": 0.0085825
+      },
+      "ParLoopRednEnd": {
+        "count": 2213,
+        "time": 0.0068632
+      },
+      "CreateSparsity": {
+        "count": 1,
+        "time": 3.9571
+      },
+      "MatZeroInitial": {
+        "count": 1,
+        "time": 0.52097
+      }
+    }
+  },
+  {
+    "case": "murr_strong",
+    "scale": "s16",
+    "nodes": 16,
+    "walltime_limit": "03:00:00",
+    "pbs_exit_status": 0,
+    "pbs_walltime": "00:13:47",
+    "pbs_memory": "1.29TB",
+    "script_completed": true,
+    "stderr_bytes": 120,
+    "outcome": "success",
+    "problems": [],
+    "nonlinear_iterations": 203,
+    "linear_iterations": 11979,
+    "mean_step_seconds": 9.99,
+    "peak_rss_mb_per_rank": 1060.0,
+    "steps": 75,
+    "failed_attempts": 0,
+    "simulated_days": 30.37,
+    "profile_time": 806.3,
+    "events": {
+      "BuildTwoSided": {
+        "count": 37,
+        "time": 0.060251
+      },
+      "BuildTwoSidedF": {
+        "count": 814,
+        "time": 22.172
+      },
+      "SFSetGraph": {
+        "count": 40,
+        "time": 0.0041094
+      },
+      "SFSetUp": {
+        "count": 37,
+        "time": 0.073915
+      },
+      "SFBcastBegin": {
+        "count": 673,
+        "time": 0.22941
+      },
+      "SFBcastEnd": {
+        "count": 673,
+        "time": 8.2382
+      },
+      "SFReduceBegin": {
+        "count": 289,
+        "time": 0.065582
+      },
+      "SFReduceEnd": {
+        "count": 289,
+        "time": 1.761
+      },
+      "SFFetchOpBegin": {
+        "count": 2,
+        "time": 2.0224e-05
+      },
+      "SFFetchOpEnd": {
+        "count": 2,
+        "time": 0.0016925
+      },
+      "SFCreateEmbed": {
+        "count": 2,
+        "time": 0.0041171
+      },
+      "SFDistSection": {
+        "count": 21,
+        "time": 0.053277
+      },
+      "SFSectionSF": {
+        "count": 21,
+        "time": 0.021177
+      },
+      "SFPack": {
+        "count": 13409,
+        "time": 2.7361
+      },
+      "SFUnpack": {
+        "count": 13411,
+        "time": 0.10554
+      },
+      "VecDot": {
+        "count": 203,
+        "time": 0.54537
+      },
+      "VecMDot": {
+        "count": 11979,
+        "time": 105.45
+      },
+      "VecNorm": {
+        "count": 12926,
+        "time": 15.397
+      },
+      "VecScale": {
+        "count": 12445,
+        "time": 0.59244
+      },
+      "VecCopy": {
+        "count": 1706,
+        "time": 0.88227
+      },
+      "VecSet": {
+        "count": 669,
+        "time": 0.24131
+      },
+      "VecAXPY": {
+        "count": 729,
+        "time": 0.39817
+      },
+      "VecWAXPY": {
+        "count": 203,
+        "time": 0.17839
+      },
+      "VecMAXPY": {
+        "count": 12445,
+        "time": 74.834
+      },
+      "VecScatterBegin": {
+        "count": 12445,
+        "time": 3.0575
+      },
+      "VecScatterEnd": {
+        "count": 12445,
+        "time": 23.076
+      },
+      "VecReduceArith": {
+        "count": 406,
+        "time": 0.074994
+      },
+      "VecReduceComm": {
+        "count": 203,
+        "time": 0.19307
+      },
+      "VecNormalize": {
+        "count": 12445,
+        "time": 13.606
+      },
+      "MatMult": {
+        "count": 12445,
+        "time": 244.43
+      },
+      "MatSolve": {
+        "count": 12445,
+        "time": 248.41
+      },
+      "MatLUFactorNum": {
+        "count": 203,
+        "time": 15.69
+      },
+      "MatILUFactorSym": {
+        "count": 1,
+        "time": 0.055341
+      },
+      "MatAssemblyBegin": {
+        "count": 814,
+        "time": 23.876
+      },
+      "MatAssemblyEnd": {
+        "count": 814,
+        "time": 6.7289
+      },
+      "MatGetRowIJ": {
+        "count": 1,
+        "time": 8.61e-06
+      },
+      "MatGetOrdering": {
+        "count": 1,
+        "time": 0.0017159
+      },
+      "MatZeroEntries": {
+        "count": 203,
+        "time": 3.4146
+      },
+      "PCSetUp": {
+        "count": 203,
+        "time": 0.0044034
+      },
+      "PCSetUpOnBlocks": {
+        "count": 203,
+        "time": 15.748
+      },
+      "PCApply": {
+        "count": 12445,
+        "time": 248.65
+      },
+      "PCApplyOnBlocks": {
+        "count": 12445,
+        "time": 248.58
+      },
+      "KSPSetUp": {
+        "count": 203,
+        "time": 0.004336
+      },
+      "KSPSolve": {
+        "count": 203,
+        "time": 622.49
+      },
+      "KSPGMRESOrthog": {
+        "count": 11979,
+        "time": 169.85
+      },
+      "DMPlexCreateGmsh": {
+        "count": 1,
+        "time": 0.41076
+      },
+      "DMPlexCrFromFile": {
+        "count": 1,
+        "time": 1.58
+      },
+      "DMPlexPartSelf": {
+        "count": 1,
+        "time": 0.084659
+      },
+      "DMPlexPartLblInv": {
+        "count": 2,
+        "time": 0.1679
+      },
+      "DMPlexPartLblSF": {
+        "count": 2,
+        "time": 0.026007
+      },
+      "DMPlexPartStrtSF": {
+        "count": 2,
+        "time": 0.0072826
+      },
+      "DMPlexPointSF": {
+        "count": 2,
+        "time": 0.029929
+      },
+      "DMPlexInterp": {
+        "count": 1,
+        "time": 0.22443
+      },
+      "DMPlexDistribute": {
+        "count": 1,
+        "time": 1.3224
+      },
+      "DMPlexDistCones": {
+        "count": 2,
+        "time": 0.022144
+      },
+      "DMPlexDistLabels": {
+        "count": 2,
+        "time": 0.089271
+      },
+      "DMPlexDistOvrlp": {
+        "count": 1,
+        "time": 0.035007
+      },
+      "DMPlexDistField": {
+        "count": 3,
+        "time": 0.015314
+      },
+      "DMPlexStratify": {
+        "count": 4,
+        "time": 0.18565
+      },
+      "DMPlexSymmetrize": {
+        "count": 4,
+        "time": 0.018731
+      },
+      "SNESSolve": {
+        "count": 75,
+        "time": 748.72
+      },
+      "SNESSetUp": {
+        "count": 1,
+        "time": 4.606e-05
+      },
+      "SNESFunctionEval": {
+        "count": 278,
+        "time": 20.657
+      },
+      "SNESJacobianEval": {
+        "count": 203,
+        "time": 87.343
+      },
+      "SNESLineSearch": {
+        "count": 203,
+        "time": 12.791
+      },
+      "firedrake": {
+        "count": 1,
+        "time": 804.04
+      },
+      "CreateMesh": {
+        "count": 1,
+        "time": 3.0423
+      },
+      "CreateFunctionSpace": {
+        "count": 7,
+        "time": 0.020404
+      },
+      "CreateExtMesh": {
+        "count": 1,
+        "time": 1.1597
+      },
+      "ParLoopExecute": {
+        "count": 2213,
+        "time": 95.729
+      },
+      "ParLoopRednBegin": {
+        "count": 2213,
+        "time": 0.0069136
+      },
+      "ParLoopRednEnd": {
+        "count": 2213,
+        "time": 0.0064125
+      },
+      "CreateSparsity": {
+        "count": 1,
+        "time": 2.0139
+      },
+      "MatZeroInitial": {
+        "count": 1,
+        "time": 0.26654
+      }
+    }
+  },
+  {
+    "case": "murr_strong",
+    "scale": "s32",
+    "nodes": 32,
+    "walltime_limit": "03:00:00",
+    "pbs_exit_status": 0,
+    "pbs_walltime": "00:07:52",
+    "pbs_memory": "2.5TB",
+    "script_completed": true,
+    "stderr_bytes": 120,
+    "outcome": "success",
+    "problems": [],
+    "nonlinear_iterations": 203,
+    "linear_iterations": 11991,
+    "mean_step_seconds": 5.18,
+    "peak_rss_mb_per_rank": 1095.0,
+    "steps": 75,
+    "failed_attempts": 0,
+    "simulated_days": 30.37,
+    "profile_time": 450.1,
+    "events": {
+      "BuildTwoSided": {
+        "count": 37,
+        "time": 0.095506
+      },
+      "BuildTwoSidedF": {
+        "count": 814,
+        "time": 16.104
+      },
+      "SFSetGraph": {
+        "count": 40,
+        "time": 0.0034937
+      },
+      "SFSetUp": {
+        "count": 37,
+        "time": 0.11088
+      },
+      "SFBcastBegin": {
+        "count": 673,
+        "time": 0.14049
+      },
+      "SFBcastEnd": {
+        "count": 673,
+        "time": 5.8379
+      },
+      "SFReduceBegin": {
+        "count": 289,
+        "time": 0.03444
+      },
+      "SFReduceEnd": {
+        "count": 289,
+        "time": 0.97744
+      },
+      "SFFetchOpBegin": {
+        "count": 2,
+        "time": 2.5256e-05
+      },
+      "SFFetchOpEnd": {
+        "count": 2,
+        "time": 0.0016926
+      },
+      "SFCreateEmbed": {
+        "count": 2,
+        "time": 0.0050981
+      },
+      "SFDistSection": {
+        "count": 21,
+        "time": 0.065546
+      },
+      "SFSectionSF": {
+        "count": 21,
+        "time": 0.031403
+      },
+      "SFPack": {
+        "count": 13422,
+        "time": 1.6097
+      },
+      "SFUnpack": {
+        "count": 13424,
+        "time": 0.070611
+      },
+      "VecDot": {
+        "count": 203,
+        "time": 0.33221
+      },
+      "VecMDot": {
+        "count": 11991,
+        "time": 56.069
+      },
+      "VecNorm": {
+        "count": 12939,
+        "time": 9.0446
+      },
+      "VecScale": {
+        "count": 12458,
+        "time": 0.27588
+      },
+      "VecCopy": {
+        "count": 1707,
+        "time": 0.36986
+      },
+      "VecSet": {
+        "count": 670,
+        "time": 0.11391
+      },
+      "VecAXPY": {
+        "count": 731,
+        "time": 0.14444
+      },
+      "VecWAXPY": {
+        "count": 203,
+        "time": 0.066378
+      },
+      "VecMAXPY": {
+        "count": 12458,
+        "time": 30.123
+      },
+      "VecScatterBegin": {
+        "count": 12458,
+        "time": 1.8107
+      },
+      "VecScatterEnd": {
+        "count": 12458,
+        "time": 12.651
+      },
+      "VecReduceArith": {
+        "count": 406,
+        "time": 0.068361
+      },
+      "VecReduceComm": {
+        "count": 203,
+        "time": 0.13513
+      },
+      "VecNormalize": {
+        "count": 12458,
+        "time": 7.6179
+      },
+      "MatMult": {
+        "count": 12458,
+        "time": 128.12
+      },
+      "MatSolve": {
+        "count": 12458,
+        "time": 121.11
+      },
+      "MatLUFactorNum": {
+        "count": 203,
+        "time": 7.6137
+      },
+      "MatILUFactorSym": {
+        "count": 1,
+        "time": 0.028344
+      },
+      "MatAssemblyBegin": {
+        "count": 814,
+        "time": 17.41
+      },
+      "MatAssemblyEnd": {
+        "count": 814,
+        "time": 5.555
+      },
+      "MatGetRowIJ": {
+        "count": 1,
+        "time": 7.072e-06
+      },
+      "MatGetOrdering": {
+        "count": 1,
+        "time": 0.00081673
+      },
+      "MatZeroEntries": {
+        "count": 203,
+        "time": 1.6602
+      },
+      "PCSetUp": {
+        "count": 203,
+        "time": 0.0045783
+      },
+      "PCSetUpOnBlocks": {
+        "count": 203,
+        "time": 7.645
+      },
+      "PCApply": {
+        "count": 12458,
+        "time": 121.34
+      },
+      "PCApplyOnBlocks": {
+        "count": 12458,
+        "time": 121.27
+      },
+      "KSPSetUp": {
+        "count": 203,
+        "time": 0.0032097
+      },
+      "KSPSolve": {
+        "count": 203,
+        "time": 309.53
+      },
+      "KSPGMRESOrthog": {
+        "count": 11991,
+        "time": 81.986
+      },
+      "DMPlexCreateGmsh": {
+        "count": 1,
+        "time": 0.40558
+      },
+      "DMPlexCrFromFile": {
+        "count": 1,
+        "time": 4.4715
+      },
+      "DMPlexPartSelf": {
+        "count": 1,
+        "time": 0.093863
+      },
+      "DMPlexPartLblInv": {
+        "count": 2,
+        "time": 0.2513
+      },
+      "DMPlexPartLblSF": {
+        "count": 2,
+        "time": 0.059479
+      },
+      "DMPlexPartStrtSF": {
+        "count": 2,
+        "time": 0.0091242
+      },
+      "DMPlexPointSF": {
+        "count": 2,
+        "time": 0.032374
+      },
+      "DMPlexInterp": {
+        "count": 1,
+        "time": 0.22232
+      },
+      "DMPlexDistribute": {
+        "count": 1,
+        "time": 2.3358
+      },
+      "DMPlexDistCones": {
+        "count": 2,
+        "time": 0.028452
+      },
+      "DMPlexDistLabels": {
+        "count": 2,
+        "time": 0.11017
+      },
+      "DMPlexDistOvrlp": {
+        "count": 1,
+        "time": 0.071409
+      },
+      "DMPlexDistField": {
+        "count": 3,
+        "time": 0.022374
+      },
+      "DMPlexStratify": {
+        "count": 4,
+        "time": 0.18357
+      },
+      "DMPlexSymmetrize": {
+        "count": 4,
+        "time": 0.017975
+      },
+      "SNESSolve": {
+        "count": 75,
+        "time": 388.11
+      },
+      "SNESSetUp": {
+        "count": 1,
+        "time": 3.2913e-05
+      },
+      "SNESFunctionEval": {
+        "count": 278,
+        "time": 15.569
+      },
+      "SNESJacobianEval": {
+        "count": 203,
+        "time": 53.563
+      },
+      "SNESLineSearch": {
+        "count": 203,
+        "time": 6.7988
+      },
+      "firedrake": {
+        "count": 1,
+        "time": 447.57
+      },
+      "CreateMesh": {
+        "count": 1,
+        "time": 7.0176
+      },
+      "CreateFunctionSpace": {
+        "count": 7,
+        "time": 0.029516
+      },
+      "CreateExtMesh": {
+        "count": 1,
+        "time": 1.9016
+      },
+      "ParLoopExecute": {
+        "count": 2213,
+        "time": 60.643
+      },
+      "ParLoopRednBegin": {
+        "count": 2213,
+        "time": 0.0063711
+      },
+      "ParLoopRednEnd": {
+        "count": 2213,
+        "time": 0.0057557
+      },
+      "CreateSparsity": {
+        "count": 1,
+        "time": 1.0691
+      },
+      "MatZeroInitial": {
+        "count": 1,
+        "time": 0.13003
+      }
+    }
+  }
+]

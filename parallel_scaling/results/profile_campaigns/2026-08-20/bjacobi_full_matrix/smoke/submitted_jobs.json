@@ -1,0 +1,22 @@
+[
+  {
+    "job_id": "176814353.gadi-pbs",
+    "phase": "smoke",
+    "case": "cockett",
+    "scale": "smoke",
+    "nodes": 1,
+    "walltime": "01:00:00",
+    "nx": 64,
+    "nz": 78,
+    "steps": 10,
+    "horiz_res": null,
+    "layers": null,
+    "solver": "bjacobi",
+    "script": "/scratch/xd2/sg8812/morrow2026-bjacobi-matrix-20260820T070948Z/smoke/jobs/cockett-smoke.pbs",
+    "output": "/scratch/xd2/sg8812/morrow2026-bjacobi-matrix-20260820T070948Z/smoke/results/cockett/smoke/run.out",
+    "error": "/scratch/xd2/sg8812/morrow2026-bjacobi-matrix-20260820T070948Z/smoke/results/cockett/smoke/run.err",
+    "profile": "/scratch/xd2/sg8812/morrow2026-bjacobi-matrix-20260820T070948Z/smoke/results/cockett/smoke/run.profile",
+    "command": "python /scratch/xd2/sg8812/morrow2026-bjacobi-matrix-20260820T070948Z/source/morrow/parallel_scaling/cockett_3d.py --nx 64 --nz 78 --degree 1 --dt 300 --steps 10 --solver bjacobi --refinement-levels 0 --profile",
+    "petsc_options": "-log_view :/scratch/xd2/sg8812/morrow2026-bjacobi-matrix-20260820T070948Z/smoke/results/cockett/smoke/run.profile"
+  }
+]

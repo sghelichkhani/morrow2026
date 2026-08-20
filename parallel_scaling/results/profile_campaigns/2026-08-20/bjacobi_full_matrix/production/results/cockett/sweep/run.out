@@ -1,0 +1,433 @@
+=== Job info ===
+Phase: production
+Case: cockett
+Scale: sweep
+Solver: bjacobi
+Nodes: 1
+CPUs: 104
+Walltime limit: 03:00:00
+Firedrake module: firedrake/main-20260806
+G-ADOPT source: /scratch/xd2/sg8812/morrow2026-bjacobi-matrix-20260820T070948Z/source/g-adopt
+PETSC_OPTIONS: -log_view :/scratch/xd2/sg8812/morrow2026-bjacobi-matrix-20260820T070948Z/production/results/cockett/sweep/run.profile
+Date: 2026-08-20T07:26:32Z
+Command: python /scratch/xd2/sg8812/morrow2026-bjacobi-matrix-20260820T070948Z/source/morrow/parallel_scaling/cockett_3d.py --nx 120 --nz 156 --degree 1 --dt 300 --steps 100 --solver bjacobi --refinement-levels 0 --profile
+================
+Number of degrees of freedom: 17971200
+Mesh: 120x120x156, DQ1
+Time stepper: BackwardEuler, dt = 300.0 s, steps = 100
+Solver: bjacobi
+Solver parameters: {'ksp_type': 'gmres', 'ksp_rtol': 1e-06, 'ksp_max_it': 500, 'ksp_gmres_restart': 30, 'pc_type': 'bjacobi', 'sub_ksp_type': 'preonly', 'sub_pc_type': 'ilu', 'sub_pc_factor_levels': 0, 'snes_type': 'newtonls', 'snes_linesearch_type': 'bt', 'snes_rtol': 1e-08, 'snes_atol': 1e-08, 'snes_max_it': 50}
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 77
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 81
+  Nonlinear BackwardEuler-Equation_ solve converged due to CONVERGED_FNORM_ABS iterations 2
+t = 300.00 s | step 1/100 | wall 46.65 s | NL 2 | L 158
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 76
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 81
+  Nonlinear BackwardEuler-Equation_ solve converged due to CONVERGED_FNORM_ABS iterations 2
+t = 600.00 s | step 2/100 | wall 12.02 s | NL 2 | L 157
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 75
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 80
+  Nonlinear BackwardEuler-Equation_ solve converged due to CONVERGED_FNORM_ABS iterations 2
+t = 900.00 s | step 3/100 | wall 11.87 s | NL 2 | L 155
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 75
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 80
+  Nonlinear BackwardEuler-Equation_ solve converged due to CONVERGED_FNORM_ABS iterations 2
+t = 1200.00 s | step 4/100 | wall 11.88 s | NL 2 | L 155
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 76
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 81
+  Nonlinear BackwardEuler-Equation_ solve converged due to CONVERGED_FNORM_ABS iterations 2
+t = 1500.00 s | step 5/100 | wall 12.00 s | NL 2 | L 157
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 77
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 81
+  Nonlinear BackwardEuler-Equation_ solve converged due to CONVERGED_FNORM_ABS iterations 2
+t = 1800.00 s | step 6/100 | wall 12.06 s | NL 2 | L 158
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 77
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 81
+  Nonlinear BackwardEuler-Equation_ solve converged due to CONVERGED_FNORM_ABS iterations 2
+t = 2100.00 s | step 7/100 | wall 12.06 s | NL 2 | L 158
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 78
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 81
+  Nonlinear BackwardEuler-Equation_ solve converged due to CONVERGED_FNORM_ABS iterations 2
+t = 2400.00 s | step 8/100 | wall 12.12 s | NL 2 | L 159
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 79
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 81
+  Nonlinear BackwardEuler-Equation_ solve converged due to CONVERGED_FNORM_ABS iterations 2
+t = 2700.00 s | step 9/100 | wall 12.20 s | NL 2 | L 160
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 79
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 81
+  Nonlinear BackwardEuler-Equation_ solve converged due to CONVERGED_FNORM_ABS iterations 2
+t = 3000.00 s | step 10/100 | wall 12.18 s | NL 2 | L 160
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 79
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 81
+  Nonlinear BackwardEuler-Equation_ solve converged due to CONVERGED_FNORM_ABS iterations 2
+t = 3300.00 s | step 11/100 | wall 12.19 s | NL 2 | L 160
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 80
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 81
+  Nonlinear BackwardEuler-Equation_ solve converged due to CONVERGED_FNORM_ABS iterations 2
+t = 3600.00 s | step 12/100 | wall 12.27 s | NL 2 | L 161
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 80
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 81
+  Nonlinear BackwardEuler-Equation_ solve converged due to CONVERGED_FNORM_ABS iterations 2
+t = 3900.00 s | step 13/100 | wall 12.24 s | NL 2 | L 161
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 80
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 81
+  Nonlinear BackwardEuler-Equation_ solve converged due to CONVERGED_FNORM_ABS iterations 2
+t = 4200.00 s | step 14/100 | wall 12.24 s | NL 2 | L 161
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 80
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 81
+  Nonlinear BackwardEuler-Equation_ solve converged due to CONVERGED_FNORM_ABS iterations 2
+t = 4500.00 s | step 15/100 | wall 12.25 s | NL 2 | L 161
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 80
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 81
+  Nonlinear BackwardEuler-Equation_ solve converged due to CONVERGED_FNORM_ABS iterations 2
+t = 4800.00 s | step 16/100 | wall 12.25 s | NL 2 | L 161
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 80
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 81
+  Nonlinear BackwardEuler-Equation_ solve converged due to CONVERGED_FNORM_ABS iterations 2
+t = 5100.00 s | step 17/100 | wall 12.25 s | NL 2 | L 161
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 80
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 81
+  Nonlinear BackwardEuler-Equation_ solve converged due to CONVERGED_FNORM_ABS iterations 2
+t = 5400.00 s | step 18/100 | wall 12.26 s | NL 2 | L 161
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 81
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 81
+  Nonlinear BackwardEuler-Equation_ solve converged due to CONVERGED_FNORM_ABS iterations 2
+t = 5700.00 s | step 19/100 | wall 12.35 s | NL 2 | L 162
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 81
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 81
+  Nonlinear BackwardEuler-Equation_ solve converged due to CONVERGED_FNORM_ABS iterations 2
+t = 6000.00 s | step 20/100 | wall 12.30 s | NL 2 | L 162
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 81
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 81
+  Nonlinear BackwardEuler-Equation_ solve converged due to CONVERGED_FNORM_ABS iterations 2
+t = 6300.00 s | step 21/100 | wall 12.32 s | NL 2 | L 162
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 81
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 81
+  Nonlinear BackwardEuler-Equation_ solve converged due to CONVERGED_FNORM_ABS iterations 2
+t = 6600.00 s | step 22/100 | wall 12.32 s | NL 2 | L 162
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 81
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 81
+  Nonlinear BackwardEuler-Equation_ solve converged due to CONVERGED_FNORM_ABS iterations 2
+t = 6900.00 s | step 23/100 | wall 12.33 s | NL 2 | L 162
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 81
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 80
+  Nonlinear BackwardEuler-Equation_ solve converged due to CONVERGED_FNORM_ABS iterations 2
+t = 7200.00 s | step 24/100 | wall 12.26 s | NL 2 | L 161
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 81
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 80
+  Nonlinear BackwardEuler-Equation_ solve converged due to CONVERGED_FNORM_ABS iterations 2
+t = 7500.00 s | step 25/100 | wall 12.25 s | NL 2 | L 161
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 81
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 80
+  Nonlinear BackwardEuler-Equation_ solve converged due to CONVERGED_FNORM_ABS iterations 2
+t = 7800.00 s | step 26/100 | wall 12.25 s | NL 2 | L 161
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 81
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 80
+  Nonlinear BackwardEuler-Equation_ solve converged due to CONVERGED_FNORM_ABS iterations 2
+t = 8100.00 s | step 27/100 | wall 12.26 s | NL 2 | L 161
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 81
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 80
+  Nonlinear BackwardEuler-Equation_ solve converged due to CONVERGED_FNORM_ABS iterations 2
+t = 8400.00 s | step 28/100 | wall 12.30 s | NL 2 | L 161
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 81
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 80
+  Nonlinear BackwardEuler-Equation_ solve converged due to CONVERGED_FNORM_ABS iterations 2
+t = 8700.00 s | step 29/100 | wall 12.25 s | NL 2 | L 161
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 81
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 80
+  Nonlinear BackwardEuler-Equation_ solve converged due to CONVERGED_FNORM_ABS iterations 2
+t = 9000.00 s | step 30/100 | wall 12.25 s | NL 2 | L 161
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 82
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 80
+  Nonlinear BackwardEuler-Equation_ solve converged due to CONVERGED_FNORM_ABS iterations 2
+t = 9300.00 s | step 31/100 | wall 12.32 s | NL 2 | L 162
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 82
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 80
+  Nonlinear BackwardEuler-Equation_ solve converged due to CONVERGED_FNORM_ABS iterations 2
+t = 9600.00 s | step 32/100 | wall 12.31 s | NL 2 | L 162
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 82
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 80
+  Nonlinear BackwardEuler-Equation_ solve converged due to CONVERGED_FNORM_ABS iterations 2
+t = 9900.00 s | step 33/100 | wall 12.31 s | NL 2 | L 162
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 82
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 81
+  Nonlinear BackwardEuler-Equation_ solve converged due to CONVERGED_FNORM_ABS iterations 2
+t = 10200.00 s | step 34/100 | wall 12.37 s | NL 2 | L 163
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 82
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 81
+  Nonlinear BackwardEuler-Equation_ solve converged due to CONVERGED_FNORM_ABS iterations 2
+t = 10500.00 s | step 35/100 | wall 12.38 s | NL 2 | L 163
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 82
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 81
+  Nonlinear BackwardEuler-Equation_ solve converged due to CONVERGED_FNORM_ABS iterations 2
+t = 10800.00 s | step 36/100 | wall 12.37 s | NL 2 | L 163
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 82
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 81
+  Nonlinear BackwardEuler-Equation_ solve converged due to CONVERGED_FNORM_ABS iterations 2
+t = 11100.00 s | step 37/100 | wall 12.38 s | NL 2 | L 163
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 82
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 81
+  Nonlinear BackwardEuler-Equation_ solve converged due to CONVERGED_FNORM_ABS iterations 2
+t = 11400.00 s | step 38/100 | wall 12.41 s | NL 2 | L 163
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 82
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 81
+  Nonlinear BackwardEuler-Equation_ solve converged due to CONVERGED_FNORM_ABS iterations 2
+t = 11700.00 s | step 39/100 | wall 12.38 s | NL 2 | L 163
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 82
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 81
+  Nonlinear BackwardEuler-Equation_ solve converged due to CONVERGED_FNORM_ABS iterations 2
+t = 12000.00 s | step 40/100 | wall 12.39 s | NL 2 | L 163
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 82
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 81
+  Nonlinear BackwardEuler-Equation_ solve converged due to CONVERGED_FNORM_ABS iterations 2
+t = 12300.00 s | step 41/100 | wall 12.38 s | NL 2 | L 163
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 83
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 81
+  Nonlinear BackwardEuler-Equation_ solve converged due to CONVERGED_FNORM_ABS iterations 2
+t = 12600.00 s | step 42/100 | wall 12.45 s | NL 2 | L 164
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 83
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 81
+  Nonlinear BackwardEuler-Equation_ solve converged due to CONVERGED_FNORM_ABS iterations 2
+t = 12900.00 s | step 43/100 | wall 12.45 s | NL 2 | L 164
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 83
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 81
+  Nonlinear BackwardEuler-Equation_ solve converged due to CONVERGED_FNORM_ABS iterations 2
+t = 13200.00 s | step 44/100 | wall 12.44 s | NL 2 | L 164
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 83
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 81
+  Nonlinear BackwardEuler-Equation_ solve converged due to CONVERGED_FNORM_ABS iterations 2
+t = 13500.00 s | step 45/100 | wall 12.44 s | NL 2 | L 164
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 83
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 81
+  Nonlinear BackwardEuler-Equation_ solve converged due to CONVERGED_FNORM_ABS iterations 2
+t = 13800.00 s | step 46/100 | wall 12.45 s | NL 2 | L 164
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 83
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 81
+  Nonlinear BackwardEuler-Equation_ solve converged due to CONVERGED_FNORM_ABS iterations 2
+t = 14100.00 s | step 47/100 | wall 12.45 s | NL 2 | L 164
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 83
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 81
+  Nonlinear BackwardEuler-Equation_ solve converged due to CONVERGED_FNORM_ABS iterations 2
+t = 14400.00 s | step 48/100 | wall 12.49 s | NL 2 | L 164
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 83
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 81
+  Nonlinear BackwardEuler-Equation_ solve converged due to CONVERGED_FNORM_ABS iterations 2
+t = 14700.00 s | step 49/100 | wall 12.43 s | NL 2 | L 164
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 83
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 81
+  Nonlinear BackwardEuler-Equation_ solve converged due to CONVERGED_FNORM_ABS iterations 2
+t = 15000.00 s | step 50/100 | wall 12.45 s | NL 2 | L 164
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 83
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 81
+  Nonlinear BackwardEuler-Equation_ solve converged due to CONVERGED_FNORM_ABS iterations 2
+t = 15300.00 s | step 51/100 | wall 12.44 s | NL 2 | L 164
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 83
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 81
+  Nonlinear BackwardEuler-Equation_ solve converged due to CONVERGED_FNORM_ABS iterations 2
+t = 15600.00 s | step 52/100 | wall 12.44 s | NL 2 | L 164
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 83
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 81
+  Nonlinear BackwardEuler-Equation_ solve converged due to CONVERGED_FNORM_ABS iterations 2
+t = 15900.00 s | step 53/100 | wall 12.44 s | NL 2 | L 164
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 83
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 80
+  Nonlinear BackwardEuler-Equation_ solve converged due to CONVERGED_FNORM_ABS iterations 2
+t = 16200.00 s | step 54/100 | wall 12.38 s | NL 2 | L 163
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 83
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 80
+  Nonlinear BackwardEuler-Equation_ solve converged due to CONVERGED_FNORM_ABS iterations 2
+t = 16500.00 s | step 55/100 | wall 12.38 s | NL 2 | L 163
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 83
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 80
+  Nonlinear BackwardEuler-Equation_ solve converged due to CONVERGED_FNORM_ABS iterations 2
+t = 16800.00 s | step 56/100 | wall 12.39 s | NL 2 | L 163
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 83
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 80
+  Nonlinear BackwardEuler-Equation_ solve converged due to CONVERGED_FNORM_ABS iterations 2
+t = 17100.00 s | step 57/100 | wall 12.37 s | NL 2 | L 163
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 84
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 80
+  Nonlinear BackwardEuler-Equation_ solve converged due to CONVERGED_FNORM_ABS iterations 2
+t = 17400.00 s | step 58/100 | wall 12.49 s | NL 2 | L 164
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 84
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 80
+  Nonlinear BackwardEuler-Equation_ solve converged due to CONVERGED_FNORM_ABS iterations 2
+t = 17700.00 s | step 59/100 | wall 12.44 s | NL 2 | L 164
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 84
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 80
+  Nonlinear BackwardEuler-Equation_ solve converged due to CONVERGED_FNORM_ABS iterations 2
+t = 18000.00 s | step 60/100 | wall 12.45 s | NL 2 | L 164
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 84
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 80
+  Nonlinear BackwardEuler-Equation_ solve converged due to CONVERGED_FNORM_ABS iterations 2
+t = 18300.00 s | step 61/100 | wall 12.44 s | NL 2 | L 164
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 84
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 80
+  Nonlinear BackwardEuler-Equation_ solve converged due to CONVERGED_FNORM_ABS iterations 2
+t = 18600.00 s | step 62/100 | wall 12.45 s | NL 2 | L 164
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 84
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 80
+  Nonlinear BackwardEuler-Equation_ solve converged due to CONVERGED_FNORM_ABS iterations 2
+t = 18900.00 s | step 63/100 | wall 12.44 s | NL 2 | L 164
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 84
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 80
+  Nonlinear BackwardEuler-Equation_ solve converged due to CONVERGED_FNORM_ABS iterations 2
+t = 19200.00 s | step 64/100 | wall 12.45 s | NL 2 | L 164
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 84
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 80
+  Nonlinear BackwardEuler-Equation_ solve converged due to CONVERGED_FNORM_ABS iterations 2
+t = 19500.00 s | step 65/100 | wall 12.45 s | NL 2 | L 164
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 84
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 80
+  Nonlinear BackwardEuler-Equation_ solve converged due to CONVERGED_FNORM_ABS iterations 2
+t = 19800.00 s | step 66/100 | wall 12.46 s | NL 2 | L 164
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 84
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 80
+  Nonlinear BackwardEuler-Equation_ solve converged due to CONVERGED_FNORM_ABS iterations 2
+t = 20100.00 s | step 67/100 | wall 12.44 s | NL 2 | L 164
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 84
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 80
+  Nonlinear BackwardEuler-Equation_ solve converged due to CONVERGED_FNORM_ABS iterations 2
+t = 20400.00 s | step 68/100 | wall 12.47 s | NL 2 | L 164
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 84
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 80
+  Nonlinear BackwardEuler-Equation_ solve converged due to CONVERGED_FNORM_ABS iterations 2
+t = 20700.00 s | step 69/100 | wall 12.45 s | NL 2 | L 164
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 84
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 80
+  Nonlinear BackwardEuler-Equation_ solve converged due to CONVERGED_FNORM_ABS iterations 2
+t = 21000.00 s | step 70/100 | wall 12.44 s | NL 2 | L 164
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 84
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 80
+  Nonlinear BackwardEuler-Equation_ solve converged due to CONVERGED_FNORM_ABS iterations 2
+t = 21300.00 s | step 71/100 | wall 12.45 s | NL 2 | L 164
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 84
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 80
+  Nonlinear BackwardEuler-Equation_ solve converged due to CONVERGED_FNORM_ABS iterations 2
+t = 21600.00 s | step 72/100 | wall 12.45 s | NL 2 | L 164
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 84
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 80
+  Nonlinear BackwardEuler-Equation_ solve converged due to CONVERGED_FNORM_ABS iterations 2
+t = 21900.00 s | step 73/100 | wall 12.45 s | NL 2 | L 164
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 84
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 81
+  Nonlinear BackwardEuler-Equation_ solve converged due to CONVERGED_FNORM_ABS iterations 2
+t = 22200.00 s | step 74/100 | wall 12.52 s | NL 2 | L 165
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 84
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 81
+  Nonlinear BackwardEuler-Equation_ solve converged due to CONVERGED_FNORM_ABS iterations 2
+t = 22500.00 s | step 75/100 | wall 12.51 s | NL 2 | L 165
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 84
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 81
+  Nonlinear BackwardEuler-Equation_ solve converged due to CONVERGED_FNORM_ABS iterations 2
+t = 22800.00 s | step 76/100 | wall 12.51 s | NL 2 | L 165
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 84
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 81
+  Nonlinear BackwardEuler-Equation_ solve converged due to CONVERGED_FNORM_ABS iterations 2
+t = 23100.00 s | step 77/100 | wall 12.50 s | NL 2 | L 165
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 84
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 81
+  Nonlinear BackwardEuler-Equation_ solve converged due to CONVERGED_FNORM_ABS iterations 2
+t = 23400.00 s | step 78/100 | wall 12.58 s | NL 2 | L 165
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 84
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 81
+  Nonlinear BackwardEuler-Equation_ solve converged due to CONVERGED_FNORM_ABS iterations 2
+t = 23700.00 s | step 79/100 | wall 12.51 s | NL 2 | L 165
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 84
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 82
+  Nonlinear BackwardEuler-Equation_ solve converged due to CONVERGED_FNORM_ABS iterations 2
+t = 24000.00 s | step 80/100 | wall 12.57 s | NL 2 | L 166
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 84
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 82
+  Nonlinear BackwardEuler-Equation_ solve converged due to CONVERGED_FNORM_ABS iterations 2
+t = 24300.00 s | step 81/100 | wall 12.58 s | NL 2 | L 166
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 84
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 82
+  Nonlinear BackwardEuler-Equation_ solve converged due to CONVERGED_FNORM_ABS iterations 2
+t = 24600.00 s | step 82/100 | wall 12.57 s | NL 2 | L 166
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 84
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 82
+  Nonlinear BackwardEuler-Equation_ solve converged due to CONVERGED_FNORM_ABS iterations 2
+t = 24900.00 s | step 83/100 | wall 12.57 s | NL 2 | L 166
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 84
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 82
+  Nonlinear BackwardEuler-Equation_ solve converged due to CONVERGED_FNORM_ABS iterations 2
+t = 25200.00 s | step 84/100 | wall 12.56 s | NL 2 | L 166
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 85
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 82
+  Nonlinear BackwardEuler-Equation_ solve converged due to CONVERGED_FNORM_ABS iterations 2
+t = 25500.00 s | step 85/100 | wall 12.64 s | NL 2 | L 167
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 85
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 82
+  Nonlinear BackwardEuler-Equation_ solve converged due to CONVERGED_FNORM_ABS iterations 2
+t = 25800.00 s | step 86/100 | wall 12.63 s | NL 2 | L 167
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 85
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 82
+  Nonlinear BackwardEuler-Equation_ solve converged due to CONVERGED_FNORM_ABS iterations 2
+t = 26100.00 s | step 87/100 | wall 12.67 s | NL 2 | L 167
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 85
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 82
+  Nonlinear BackwardEuler-Equation_ solve converged due to CONVERGED_FNORM_ABS iterations 2
+t = 26400.00 s | step 88/100 | wall 12.63 s | NL 2 | L 167
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 86
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 82
+  Nonlinear BackwardEuler-Equation_ solve converged due to CONVERGED_FNORM_ABS iterations 2
+t = 26700.00 s | step 89/100 | wall 12.72 s | NL 2 | L 168
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 86
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 82
+  Nonlinear BackwardEuler-Equation_ solve converged due to CONVERGED_FNORM_ABS iterations 2
+t = 27000.00 s | step 90/100 | wall 12.69 s | NL 2 | L 168
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 86
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 82
+  Nonlinear BackwardEuler-Equation_ solve converged due to CONVERGED_FNORM_ABS iterations 2
+t = 27300.00 s | step 91/100 | wall 12.70 s | NL 2 | L 168
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 86
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 82
+  Nonlinear BackwardEuler-Equation_ solve converged due to CONVERGED_FNORM_ABS iterations 2
+t = 27600.00 s | step 92/100 | wall 12.70 s | NL 2 | L 168
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 86
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 82
+  Nonlinear BackwardEuler-Equation_ solve converged due to CONVERGED_FNORM_ABS iterations 2
+t = 27900.00 s | step 93/100 | wall 12.70 s | NL 2 | L 168
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 86
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 82
+  Nonlinear BackwardEuler-Equation_ solve converged due to CONVERGED_FNORM_ABS iterations 2
+t = 28200.00 s | step 94/100 | wall 12.71 s | NL 2 | L 168
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 86
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 82
+  Nonlinear BackwardEuler-Equation_ solve converged due to CONVERGED_FNORM_ABS iterations 2
+t = 28500.00 s | step 95/100 | wall 12.70 s | NL 2 | L 168
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 86
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 82
+  Nonlinear BackwardEuler-Equation_ solve converged due to CONVERGED_FNORM_ABS iterations 2
+t = 28800.00 s | step 96/100 | wall 12.71 s | NL 2 | L 168
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 86
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 82
+  Nonlinear BackwardEuler-Equation_ solve converged due to CONVERGED_FNORM_ABS iterations 2
+t = 29100.00 s | step 97/100 | wall 12.73 s | NL 2 | L 168
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 86
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 82
+  Nonlinear BackwardEuler-Equation_ solve converged due to CONVERGED_FNORM_ABS iterations 2
+t = 29400.00 s | step 98/100 | wall 12.70 s | NL 2 | L 168
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 86
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 82
+  Nonlinear BackwardEuler-Equation_ solve converged due to CONVERGED_FNORM_ABS iterations 2
+t = 29700.00 s | step 99/100 | wall 12.69 s | NL 2 | L 168
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 87
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 83
+  Nonlinear BackwardEuler-Equation_ solve converged due to CONVERGED_FNORM_ABS iterations 2
+t = 30000.00 s | step 100/100 | wall 12.83 s | NL 2 | L 170
+Done | total NL 200 | total L 16341 | mean wall/step 12.76 s | peak RSS 950 MB
+=== Job completed: 2026-08-20T07:48:25Z ===
+
+======================================================================================
+                  Resource Usage on 2026-08-20 17:48:28:
+   Job Id:             176816368.gadi-pbs
+   Project:            xd2
+   Exit Status:        0
+   Service Units:      75.98
+   NCPUs Requested:    104                 CPU Time Used: 37:40:14        
+   Memory Requested:   500.0GB               Memory Used: 71.54GB         
+   Walltime Requested: 03:00:00            Walltime Used: 00:21:55        
+   JobFS Requested:    400.0GB                JobFS Used: 61.99MB         
+======================================================================================

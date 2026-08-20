@@ -7,6 +7,10 @@
 *.pvtu
 profile_*.txt
 
+# Curated campaign archives contain the raw evidence for published results.
+!parallel_scaling/results/profile_campaigns/
+!parallel_scaling/results/profile_campaigns/**
+
 # Mesh checkpoints (large binaries kept local; recipe: lower_murrumbidgee_mesh.py)
 *.h5
 

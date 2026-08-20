@@ -1,0 +1,55 @@
+#!/bin/bash
+#PBS -N r2-vli-smoke
+#PBS -P xd2
+#PBS -q normalsr
+#PBS -l walltime=01:00:00
+#PBS -l mem=500GB
+#PBS -l ncpus=104
+#PBS -l jobfs=400GB
+#PBS -l storage=scratch/xd2+gdata/fp50
+#PBS -l wd
+#PBS -W umask=0022
+#PBS -o /scratch/xd2/sg8812/morrow2026-profile-stage2-20260820T053301Z/smoke/results/vlumping_inexact/smoke.out
+#PBS -e /scratch/xd2/sg8812/morrow2026-profile-stage2-20260820T053301Z/smoke/results/vlumping_inexact/smoke.err
+
+source /etc/profile
+set -euo pipefail
+
+module use /g/data/fp50/modules
+module load firedrake/main-20260806
+
+export PYTHONPATH=/scratch/xd2/sg8812/morrow2026-profile-stage2-20260820T053301Z/source/g-adopt:/scratch/xd2/sg8812/gwassess:/scratch/xd2/sg8812/omega:${PYTHONPATH:-}
+export PYTHONDONTWRITEBYTECODE=1
+export OMPI_MCA_io=ompio
+export OMP_NUM_THREADS=1
+export NCI_PROJECT=xd2
+
+mkdir -p "$PBS_JOBFS/pyop2" "$PBS_JOBFS/tsfc" "$PBS_JOBFS/xdg"
+export PYOP2_CACHE_DIR="$PBS_JOBFS/pyop2"
+export FIREDRAKE_TSFC_KERNEL_CACHE_DIR="$PBS_JOBFS/tsfc"
+export XDG_CACHE_HOME="$PBS_JOBFS/xdg"
+export PETSC_OPTIONS='-log_view :/scratch/xd2/sg8812/morrow2026-profile-stage2-20260820T053301Z/smoke/results/vlumping_inexact/smoke.profile -options_left -BackwardEuler-Equation_lumped_pc_mg_log'
+
+cd /scratch/xd2/sg8812/morrow2026-profile-stage2-20260820T053301Z/source/morrow/parallel_scaling
+
+echo "=== Job info ==="
+echo "Phase: smoke"
+echo "Solver: vlumping_inexact"
+echo "Scale: smoke"
+echo "Nodes: 1"
+echo "CPUs: $PBS_NCPUS"
+echo "Firedrake module: firedrake/main-20260806"
+echo "G-ADOPT source: /scratch/xd2/sg8812/morrow2026-profile-stage2-20260820T053301Z/source/g-adopt"
+echo "PETSC_OPTIONS: $PETSC_OPTIONS"
+echo "Date: $(date -u +%Y-%m-%dT%H:%M:%SZ)"
+echo "Command: python /scratch/xd2/sg8812/morrow2026-profile-stage2-20260820T053301Z/source/morrow/parallel_scaling/murrumbidgee_3d.py --horiz-res 5000 --layers 30 --solver vlumping_inexact --refinement-levels 0 --dt-init 60 --dt-max 43200 --dt-growth 1.5 --dt-shrink 0.5 --t-final 150 --data-dir /scratch/xd2/sg8812/morrow2026-profile-stage2-20260820T053301Z/source/morrow/parallel_scaling/murrumbidgee_data"
+echo "================"
+
+mpiexec -np "$PBS_NCPUS" bash -c '
+  export MPLCONFIGDIR="$PBS_JOBFS/mpl.${OMPI_COMM_WORLD_RANK:-0}"
+  mkdir -p "$MPLCONFIGDIR"
+  exec "$@"
+' _ python /scratch/xd2/sg8812/morrow2026-profile-stage2-20260820T053301Z/source/morrow/parallel_scaling/murrumbidgee_3d.py --horiz-res 5000 --layers 30 --solver vlumping_inexact --refinement-levels 0 --dt-init 60 --dt-max 43200 --dt-growth 1.5 --dt-shrink 0.5 --t-final 150 --data-dir /scratch/xd2/sg8812/morrow2026-profile-stage2-20260820T053301Z/source/morrow/parallel_scaling/murrumbidgee_data
+
+test -s /scratch/xd2/sg8812/morrow2026-profile-stage2-20260820T053301Z/smoke/results/vlumping_inexact/smoke.profile
+echo "=== Job completed: $(date -u +%Y-%m-%dT%H:%M:%SZ) ==="

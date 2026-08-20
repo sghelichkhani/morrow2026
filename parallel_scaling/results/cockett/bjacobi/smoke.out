@@ -1,0 +1,73 @@
+=== Job info ===
+Phase: smoke
+Case: cockett
+Scale: smoke
+Solver: bjacobi
+Nodes: 1
+CPUs: 104
+Walltime limit: 01:00:00
+Firedrake module: firedrake/main-20260806
+G-ADOPT source: /scratch/xd2/sg8812/morrow2026-bjacobi-matrix-20260820T070948Z/source/g-adopt
+PETSC_OPTIONS: -log_view :/scratch/xd2/sg8812/morrow2026-bjacobi-matrix-20260820T070948Z/smoke/results/cockett/smoke/run.profile
+Date: 2026-08-20T07:18:43Z
+Command: python /scratch/xd2/sg8812/morrow2026-bjacobi-matrix-20260820T070948Z/source/morrow/parallel_scaling/cockett_3d.py --nx 64 --nz 78 --degree 1 --dt 300 --steps 10 --solver bjacobi --refinement-levels 0 --profile
+================
+Number of degrees of freedom: 2555904
+Mesh: 64x64x78, DQ1
+Time stepper: BackwardEuler, dt = 300.0 s, steps = 10
+Solver: bjacobi
+Solver parameters: {'ksp_type': 'gmres', 'ksp_rtol': 1e-06, 'ksp_max_it': 500, 'ksp_gmres_restart': 30, 'pc_type': 'bjacobi', 'sub_ksp_type': 'preonly', 'sub_pc_type': 'ilu', 'sub_pc_factor_levels': 0, 'snes_type': 'newtonls', 'snes_linesearch_type': 'bt', 'snes_rtol': 1e-08, 'snes_atol': 1e-08, 'snes_max_it': 50}
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 48
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 51
+  Nonlinear BackwardEuler-Equation_ solve converged due to CONVERGED_FNORM_ABS iterations 2
+t = 300.00 s | step 1/10 | wall 36.55 s | NL 2 | L 99
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 48
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 51
+  Nonlinear BackwardEuler-Equation_ solve converged due to CONVERGED_FNORM_ABS iterations 2
+t = 600.00 s | step 2/10 | wall 1.21 s | NL 2 | L 99
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 48
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 51
+  Nonlinear BackwardEuler-Equation_ solve converged due to CONVERGED_FNORM_ABS iterations 2
+t = 900.00 s | step 3/10 | wall 1.20 s | NL 2 | L 99
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 49
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 51
+  Nonlinear BackwardEuler-Equation_ solve converged due to CONVERGED_FNORM_ABS iterations 2
+t = 1200.00 s | step 4/10 | wall 1.21 s | NL 2 | L 100
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 49
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 51
+  Nonlinear BackwardEuler-Equation_ solve converged due to CONVERGED_FNORM_ABS iterations 2
+t = 1500.00 s | step 5/10 | wall 1.22 s | NL 2 | L 100
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 50
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 51
+  Nonlinear BackwardEuler-Equation_ solve converged due to CONVERGED_FNORM_ABS iterations 2
+t = 1800.00 s | step 6/10 | wall 1.23 s | NL 2 | L 101
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 50
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 51
+  Nonlinear BackwardEuler-Equation_ solve converged due to CONVERGED_FNORM_ABS iterations 2
+t = 2100.00 s | step 7/10 | wall 1.22 s | NL 2 | L 101
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 50
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 51
+  Nonlinear BackwardEuler-Equation_ solve converged due to CONVERGED_FNORM_ABS iterations 2
+t = 2400.00 s | step 8/10 | wall 1.23 s | NL 2 | L 101
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 51
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 51
+  Nonlinear BackwardEuler-Equation_ solve converged due to CONVERGED_FNORM_ABS iterations 2
+t = 2700.00 s | step 9/10 | wall 1.23 s | NL 2 | L 102
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 51
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 51
+  Nonlinear BackwardEuler-Equation_ solve converged due to CONVERGED_FNORM_ABS iterations 2
+t = 3000.00 s | step 10/10 | wall 1.24 s | NL 2 | L 102
+Done | total NL 20 | total L 1004 | mean wall/step 4.75 s | peak RSS 704 MB
+=== Job completed: 2026-08-20T07:20:07Z ===
+
+======================================================================================
+                  Resource Usage on 2026-08-20 17:20:11:
+   Job Id:             176814353.gadi-pbs
+   Project:            xd2
+   Exit Status:        0
+   Service Units:      5.08
+   NCPUs Requested:    104                 CPU Time Used: 02:14:31        
+   Memory Requested:   500.0GB               Memory Used: 45.05GB         
+   Walltime Requested: 00:30:00            Walltime Used: 00:01:28        
+   JobFS Requested:    400.0GB                JobFS Used: 53.65MB         
+======================================================================================

@@ -1,0 +1,55 @@
+=== Job info ===
+Phase: smoke
+Solver: vlumping_inexact
+Scale: smoke
+Nodes: 1
+CPUs: 104
+Firedrake module: firedrake/main-20260806
+G-ADOPT source: /scratch/xd2/sg8812/morrow2026-profile-stage2-20260820T053301Z/source/g-adopt
+PETSC_OPTIONS: -log_view :/scratch/xd2/sg8812/morrow2026-profile-stage2-20260820T053301Z/smoke/results/vlumping_inexact/smoke.profile -BackwardEuler-Equation_lumped_pc_mg_log
+Date: 2026-08-20T05:48:47Z
+Command: python /scratch/xd2/sg8812/morrow2026-profile-stage2-20260820T053301Z/source/morrow/parallel_scaling/murrumbidgee_3d.py --horiz-res 1775 --layers 150 --solver vlumping_inexact --refinement-levels 0 --dt-init 60 --dt-max 43200 --dt-growth 1.5 --dt-shrink 0.5 --t-final 150 --data-dir /scratch/xd2/sg8812/morrow2026-profile-stage2-20260820T053301Z/source/morrow/parallel_scaling/murrumbidgee_data --profile
+================
+Number of degrees of freedom: 20040300
+Horizontal resolution: 1775.0 m, Layers: 150, DG1
+Time stepper: BackwardEuler, dt_init = 60.0 s, dt_max = 43200.0 s, growth = 1.5
+Solver: vlumping_inexact
+Solver parameters: {'mat_type': 'aij', 'ksp_type': 'fgmres', 'snes_linesearch_type': 'bt', 'ksp_rtol': 0.0001, 'ksp_max_it': 200, 'ksp_gmres_restart': 30, 'pc_type': 'python', 'pc_python_type': 'gadopt.VerticallyLumpedPC', 'lumped_mg_levels_ksp_type': 'chebyshev', 'lumped_mg_levels_ksp_max_it': 2, 'lumped_mg_levels_ksp_convergence_test': 'skip', 'lumped_mg_levels_pc_type': 'bjacobi', 'lumped_mg_levels_sub_pc_type': 'ilu', 'lumped_mg_levels_sub_pc_factor_levels': 0, 'lumped_mg_coarse_ksp_type': 'preonly', 'lumped_mg_coarse_pc_type': 'lu', 'lumped_mg_coarse_pc_factor_mat_solver_type': 'mumps', 'snes_type': 'newtonls', 'snes_rtol': 1e-08, 'snes_atol': 1e-12, 'snes_stol': 1e-08, 'snes_max_it': 50}
+          Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
+          Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 2
+          Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
+          Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
+          Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
+          Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
+          Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 5
+          Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
+          Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 2
+  Nonlinear BackwardEuler-Equation_ solve converged due to CONVERGED_SNORM_RELATIVE iterations 3
+t = 0.00 d | step 1/100000 | dt = 60.0 s | wall 26.01 s | NL 3 | L 9
+          Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
+          Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 2
+          Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
+          Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
+          Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
+          Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 4
+  Nonlinear BackwardEuler-Equation_ solve converged due to CONVERGED_SNORM_RELATIVE iterations 2
+t = 0.00 d | step 2/100000 | dt = 90.0 s | wall 3.50 s | NL 2 | L 6
+Done | total NL 5 | total L 15 | mean wall/step 14.76 s | peak RSS 1022 MB | steps 2 | failed 0 | sim_time 0.00 d
+=== Job completed: 2026-08-20T05:50:37Z ===
+
+======================================================================================
+                  Resource Usage on 2026-08-20 15:50:41:
+   Job Id:             176801492.gadi-pbs
+   Project:            xd2
+   Exit Status:        0
+   Service Units:      6.47
+   NCPUs Requested:    104                 CPU Time Used: 02:59:54        
+   Memory Requested:   500.0GB               Memory Used: 79.18GB         
+   Walltime Requested: 01:00:00            Walltime Used: 00:01:52        
+   JobFS Requested:    400.0GB                JobFS Used: 148.45MB        
+======================================================================================

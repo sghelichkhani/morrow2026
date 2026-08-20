@@ -1,0 +1,317 @@
+[
+  {
+    "case": "cockett",
+    "scale": "smoke",
+    "nodes": 1,
+    "walltime_limit": "01:00:00",
+    "pbs_exit_status": 0,
+    "pbs_walltime": "00:01:28",
+    "pbs_memory": "45.05GB",
+    "script_completed": true,
+    "stderr_bytes": 120,
+    "outcome": "success",
+    "problems": [],
+    "nonlinear_iterations": 20,
+    "linear_iterations": 1004,
+    "mean_step_seconds": 4.75,
+    "peak_rss_mb_per_rank": 704.0,
+    "steps": 10,
+    "failed_attempts": 0,
+    "simulated_days": null,
+    "profile_time": 73.16,
+    "events": {
+      "BuildTwoSided": {
+        "count": 120,
+        "time": 0.65487
+      },
+      "BuildTwoSidedF": {
+        "count": 82,
+        "time": 0.58609
+      },
+      "SFSetGraph": {
+        "count": 41,
+        "time": 0.0010548
+      },
+      "SFSetUp": {
+        "count": 38,
+        "time": 0.12007
+      },
+      "SFBcastBegin": {
+        "count": 156,
+        "time": 0.012278
+      },
+      "SFBcastEnd": {
+        "count": 156,
+        "time": 0.58283
+      },
+      "SFReduceBegin": {
+        "count": 43,
+        "time": 0.0021212
+      },
+      "SFReduceEnd": {
+        "count": 43,
+        "time": 0.11974
+      },
+      "SFFetchOpBegin": {
+        "count": 2,
+        "time": 1.2099e-05
+      },
+      "SFFetchOpEnd": {
+        "count": 2,
+        "time": 0.00028083
+      },
+      "SFCreateEmbed": {
+        "count": 2,
+        "time": 0.00072167
+      },
+      "SFDistSection": {
+        "count": 22,
+        "time": 0.0049971
+      },
+      "SFSectionSF": {
+        "count": 22,
+        "time": 0.0024243
+      },
+      "SFPack": {
+        "count": 1245,
+        "time": 0.052675
+      },
+      "SFUnpack": {
+        "count": 1247,
+        "time": 0.0023937
+      },
+      "VecDot": {
+        "count": 20,
+        "time": 0.010669
+      },
+      "VecMDot": {
+        "count": 1004,
+        "time": 1.3765
+      },
+      "VecNorm": {
+        "count": 1094,
+        "time": 0.33995
+      },
+      "VecScale": {
+        "count": 1044,
+        "time": 0.0080985
+      },
+      "VecCopy": {
+        "count": 170,
+        "time": 0.0064981
+      },
+      "VecSet": {
+        "count": 60,
+        "time": 0.0029563
+      },
+      "VecAXPY": {
+        "count": 60,
+        "time": 0.0039366
+      },
+      "VecWAXPY": {
+        "count": 20,
+        "time": 0.0011476
+      },
+      "VecMAXPY": {
+        "count": 1044,
+        "time": 0.38939
+      },
+      "VecScatterBegin": {
+        "count": 1044,
+        "time": 0.070457
+      },
+      "VecScatterEnd": {
+        "count": 1044,
+        "time": 0.47791
+      },
+      "VecReduceArith": {
+        "count": 40,
+        "time": 0.00070931
+      },
+      "VecReduceComm": {
+        "count": 20,
+        "time": 0.0082983
+      },
+      "VecNormalize": {
+        "count": 1044,
+        "time": 0.15653
+      },
+      "MatMult": {
+        "count": 1044,
+        "time": 3.9836
+      },
+      "MatSolve": {
+        "count": 1044,
+        "time": 3.4393
+      },
+      "MatLUFactorNum": {
+        "count": 20,
+        "time": 0.2873
+      },
+      "MatILUFactorSym": {
+        "count": 1,
+        "time": 0.012763
+      },
+      "MatAssemblyBegin": {
+        "count": 82,
+        "time": 0.60357
+      },
+      "MatAssemblyEnd": {
+        "count": 82,
+        "time": 0.15848
+      },
+      "MatGetRowIJ": {
+        "count": 1,
+        "time": 4.401e-06
+      },
+      "MatGetOrdering": {
+        "count": 1,
+        "time": 0.00018979
+      },
+      "MatZeroEntries": {
+        "count": 20,
+        "time": 0.0606
+      },
+      "PCSetUp": {
+        "count": 20,
+        "time": 0.0023248
+      },
+      "PCSetUpOnBlocks": {
+        "count": 20,
+        "time": 0.30069
+      },
+      "PCApply": {
+        "count": 1044,
+        "time": 3.4549
+      },
+      "PCApplyOnBlocks": {
+        "count": 1044,
+        "time": 3.4498
+      },
+      "KSPSetUp": {
+        "count": 20,
+        "time": 0.0004777
+      },
+      "KSPSolve": {
+        "count": 20,
+        "time": 8.2004
+      },
+      "KSPGMRESOrthog": {
+        "count": 1004,
+        "time": 1.6951
+      },
+      "DMPlexPartSelf": {
+        "count": 1,
+        "time": 0.0021391
+      },
+      "DMPlexPartLblInv": {
+        "count": 2,
+        "time": 0.0056463
+      },
+      "DMPlexPartLblSF": {
+        "count": 2,
+        "time": 0.0027962
+      },
+      "DMPlexPartStrtSF": {
+        "count": 2,
+        "time": 0.0012048
+      },
+      "DMPlexPointSF": {
+        "count": 2,
+        "time": 0.0019444
+      },
+      "DMPlexDistribute": {
+        "count": 1,
+        "time": 0.084258
+      },
+      "DMPlexDistCones": {
+        "count": 2,
+        "time": 0.0014679
+      },
+      "DMPlexDistLabels": {
+        "count": 2,
+        "time": 0.0058591
+      },
+      "DMPlexDistOvrlp": {
+        "count": 1,
+        "time": 0.0041956
+      },
+      "DMPlexDistField": {
+        "count": 3,
+        "time": 0.0024594
+      },
+      "DMPlexDistData": {
+        "count": 1,
+        "time": 0.0001088
+      },
+      "DMPlexStratify": {
+        "count": 3,
+        "time": 0.0016193
+      },
+      "DMPlexSymmetrize": {
+        "count": 3,
+        "time": 0.0003303
+      },
+      "DMPlexGenerate": {
+        "count": 1,
+        "time": 0.016521
+      },
+      "SNESSolve": {
+        "count": 10,
+        "time": 47.51
+      },
+      "SNESSetUp": {
+        "count": 1,
+        "time": 2.3065e-05
+      },
+      "SNESFunctionEval": {
+        "count": 30,
+        "time": 18.347
+      },
+      "SNESJacobianEval": {
+        "count": 20,
+        "time": 20.499
+      },
+      "SNESLineSearch": {
+        "count": 20,
+        "time": 0.7643
+      },
+      "firedrake": {
+        "count": 1,
+        "time": 70.074
+      },
+      "CreateMesh": {
+        "count": 1,
+        "time": 0.16495
+      },
+      "CreateFunctionSpace": {
+        "count": 4,
+        "time": 0.064987
+      },
+      "CreateExtMesh": {
+        "count": 1,
+        "time": 1.8695
+      },
+      "ParLoopExecute": {
+        "count": 252,
+        "time": 36.627
+      },
+      "ParLoopRednBegin": {
+        "count": 252,
+        "time": 0.00081618
+      },
+      "ParLoopRednEnd": {
+        "count": 252,
+        "time": 0.00042899
+      },
+      "CreateSparsity": {
+        "count": 1,
+        "time": 0.59563
+      },
+      "MatZeroInitial": {
+        "count": 1,
+        "time": 0.053241
+      }
+    }
+  }
+]

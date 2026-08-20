@@ -1,0 +1,39 @@
+=== Job info ===
+Phase: smoke
+Solver: bjacobi
+Scale: smoke
+Nodes: 1
+CPUs: 104
+Firedrake module: firedrake/main-20260806
+G-ADOPT source: /scratch/xd2/sg8812/morrow2026-profile-stage2-20260820T053301Z/source/g-adopt
+PETSC_OPTIONS: -log_view :/scratch/xd2/sg8812/morrow2026-profile-stage2-20260820T053301Z/smoke/results/bjacobi/smoke.profile
+Date: 2026-08-20T05:48:47Z
+Command: python /scratch/xd2/sg8812/morrow2026-profile-stage2-20260820T053301Z/source/morrow/parallel_scaling/murrumbidgee_3d.py --horiz-res 1775 --layers 150 --solver bjacobi --refinement-levels 0 --dt-init 60 --dt-max 43200 --dt-growth 1.5 --dt-shrink 0.5 --t-final 150 --data-dir /scratch/xd2/sg8812/morrow2026-profile-stage2-20260820T053301Z/source/morrow/parallel_scaling/murrumbidgee_data --profile
+================
+Number of degrees of freedom: 20040300
+Horizontal resolution: 1775.0 m, Layers: 150, DG1
+Time stepper: BackwardEuler, dt_init = 60.0 s, dt_max = 43200.0 s, growth = 1.5
+Solver: bjacobi
+Solver parameters: {'ksp_type': 'gmres', 'ksp_rtol': 1e-06, 'ksp_max_it': 500, 'ksp_gmres_restart': 30, 'pc_type': 'bjacobi', 'sub_ksp_type': 'preonly', 'sub_pc_type': 'ilu', 'sub_pc_factor_levels': 0, 'snes_type': 'newtonls', 'snes_linesearch_type': 'bt', 'snes_rtol': 1e-08, 'snes_atol': 1e-08, 'snes_max_it': 50}
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 33
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 32
+  Nonlinear BackwardEuler-Equation_ solve converged due to CONVERGED_SNORM_RELATIVE iterations 2
+t = 0.00 d | step 1/100000 | dt = 60.0 s | wall 24.14 s | NL 2 | L 65
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 26
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 32
+  Nonlinear BackwardEuler-Equation_ solve converged due to CONVERGED_SNORM_RELATIVE iterations 2
+t = 0.00 d | step 2/100000 | dt = 90.0 s | wall 4.07 s | NL 2 | L 58
+Done | total NL 4 | total L 123 | mean wall/step 14.11 s | peak RSS 963 MB | steps 2 | failed 0 | sim_time 0.00 d
+=== Job completed: 2026-08-20T05:50:23Z ===
+
+======================================================================================
+                  Resource Usage on 2026-08-20 15:50:28:
+   Job Id:             176801491.gadi-pbs
+   Project:            xd2
+   Exit Status:        0
+   Service Units:      5.66
+   NCPUs Requested:    104                 CPU Time Used: 02:32:52        
+   Memory Requested:   500.0GB               Memory Used: 77.53GB         
+   Walltime Requested: 01:00:00            Walltime Used: 00:01:38        
+   JobFS Requested:    400.0GB                JobFS Used: 139.98MB        
+======================================================================================

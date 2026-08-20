@@ -1,0 +1,419 @@
+Loading firedrake/main-20260806
+  Loading requirement: singularity intel-compiler-llvm/2024.2.1
+    petsc/main-20260815
+/g/data/fp50/apps/firedrake/main-20260806/venv/lib/python3.11/site-packages/petsctools/options.py:126: PetscToolsWarning: Unused PETSc option: BackwardEuler-Equation_mat_type
+  warnings.warn(
+/g/data/fp50/apps/firedrake/main-20260806/venv/lib/python3.11/site-packages/petsctools/options.py:126: PetscToolsWarning: Unused PETSc option: BackwardEuler-Equation_pc_factor_mat_mumps_icntl_14
+  warnings.warn(
+/g/data/fp50/apps/firedrake/main-20260806/venv/lib/python3.11/site-packages/petsctools/options.py:126: PetscToolsWarning: Unused PETSc option: BackwardEuler-Equation_mat_type
+  warnings.warn(
+/g/data/fp50/apps/firedrake/main-20260806/venv/lib/python3.11/site-packages/petsctools/options.py:126: PetscToolsWarning: Unused PETSc option: BackwardEuler-Equation_pc_factor_mat_mumps_icntl_14
+  warnings.warn(
+/g/data/fp50/apps/firedrake/main-20260806/venv/lib/python3.11/site-packages/petsctools/options.py:126: PetscToolsWarning: Unused PETSc option: BackwardEuler-Equation_mat_type
+  warnings.warn(
+/g/data/fp50/apps/firedrake/main-20260806/venv/lib/python3.11/site-packages/petsctools/options.py:126: PetscToolsWarning: Unused PETSc option: BackwardEuler-Equation_pc_factor_mat_mumps_icntl_14
+  warnings.warn(
+/g/data/fp50/apps/firedrake/main-20260806/venv/lib/python3.11/site-packages/petsctools/options.py:126: PetscToolsWarning: Unused PETSc option: BackwardEuler-Equation_mat_type
+  warnings.warn(
+/g/data/fp50/apps/firedrake/main-20260806/venv/lib/python3.11/site-packages/petsctools/options.py:126: PetscToolsWarning: Unused PETSc option: BackwardEuler-Equation_pc_factor_mat_mumps_icntl_14
+  warnings.warn(
+/g/data/fp50/apps/firedrake/main-20260806/venv/lib/python3.11/site-packages/petsctools/options.py:126: PetscToolsWarning: Unused PETSc option: BackwardEuler-Equation_mat_type
+  warnings.warn(
+/g/data/fp50/apps/firedrake/main-20260806/venv/lib/python3.11/site-packages/petsctools/options.py:126: PetscToolsWarning: Unused PETSc option: BackwardEuler-Equation_pc_factor_mat_mumps_icntl_14
+  warnings.warn(
+/g/data/fp50/apps/firedrake/main-20260806/venv/lib/python3.11/site-packages/petsctools/options.py:126: PetscToolsWarning: Unused PETSc option: BackwardEuler-Equation_mat_type
+  warnings.warn(
+/g/data/fp50/apps/firedrake/main-20260806/venv/lib/python3.11/site-packages/petsctools/options.py:126: PetscToolsWarning: Unused PETSc option: BackwardEuler-Equation_pc_factor_mat_mumps_icntl_14
+  warnings.warn(
+/g/data/fp50/apps/firedrake/main-20260806/venv/lib/python3.11/site-packages/petsctools/options.py:126: PetscToolsWarning: Unused PETSc option: BackwardEuler-Equation_mat_type
+  warnings.warn(
+/g/data/fp50/apps/firedrake/main-20260806/venv/lib/python3.11/site-packages/petsctools/options.py:126: PetscToolsWarning: Unused PETSc option: BackwardEuler-Equation_pc_factor_mat_mumps_icntl_14
+  warnings.warn(
+/g/data/fp50/apps/firedrake/main-20260806/venv/lib/python3.11/site-packages/petsctools/options.py:126: PetscToolsWarning: Unused PETSc option: BackwardEuler-Equation_mat_type
+  warnings.warn(
+/g/data/fp50/apps/firedrake/main-20260806/venv/lib/python3.11/site-packages/petsctools/options.py:126: PetscToolsWarning: Unused PETSc option: BackwardEuler-Equation_pc_factor_mat_mumps_icntl_14
+  warnings.warn(
+/g/data/fp50/apps/firedrake/main-20260806/venv/lib/python3.11/site-packages/petsctools/options.py:126: PetscToolsWarning: Unused PETSc option: BackwardEuler-Equation_mat_type
+  warnings.warn(
+/g/data/fp50/apps/firedrake/main-20260806/venv/lib/python3.11/site-packages/petsctools/options.py:126: PetscToolsWarning: Unused PETSc option: BackwardEuler-Equation_pc_factor_mat_mumps_icntl_14
+  warnings.warn(
+/g/data/fp50/apps/firedrake/main-20260806/venv/lib/python3.11/site-packages/petsctools/options.py:126: PetscToolsWarning: Unused PETSc option: BackwardEuler-Equation_mat_type
+  warnings.warn(
+/g/data/fp50/apps/firedrake/main-20260806/venv/lib/python3.11/site-packages/petsctools/options.py:126: PetscToolsWarning: Unused PETSc option: BackwardEuler-Equation_pc_factor_mat_mumps_icntl_14
+  warnings.warn(
+/g/data/fp50/apps/firedrake/main-20260806/venv/lib/python3.11/site-packages/petsctools/options.py:126: PetscToolsWarning: Unused PETSc option: BackwardEuler-Equation_mat_type
+  warnings.warn(
+/g/data/fp50/apps/firedrake/main-20260806/venv/lib/python3.11/site-packages/petsctools/options.py:126: PetscToolsWarning: Unused PETSc option: BackwardEuler-Equation_pc_factor_mat_mumps_icntl_14
+  warnings.warn(
+/g/data/fp50/apps/firedrake/main-20260806/venv/lib/python3.11/site-packages/petsctools/options.py:126: PetscToolsWarning: Unused PETSc option: BackwardEuler-Equation_mat_type
+  warnings.warn(
+/g/data/fp50/apps/firedrake/main-20260806/venv/lib/python3.11/site-packages/petsctools/options.py:126: PetscToolsWarning: Unused PETSc option: BackwardEuler-Equation_pc_factor_mat_mumps_icntl_14
+  warnings.warn(
+/g/data/fp50/apps/firedrake/main-20260806/venv/lib/python3.11/site-packages/petsctools/options.py:126: PetscToolsWarning: Unused PETSc option: BackwardEuler-Equation_mat_type
+  warnings.warn(
+/g/data/fp50/apps/firedrake/main-20260806/venv/lib/python3.11/site-packages/petsctools/options.py:126: PetscToolsWarning: Unused PETSc option: BackwardEuler-Equation_pc_factor_mat_mumps_icntl_14
+  warnings.warn(
+/g/data/fp50/apps/firedrake/main-20260806/venv/lib/python3.11/site-packages/petsctools/options.py:126: PetscToolsWarning: Unused PETSc option: BackwardEuler-Equation_mat_type
+  warnings.warn(
+/g/data/fp50/apps/firedrake/main-20260806/venv/lib/python3.11/site-packages/petsctools/options.py:126: PetscToolsWarning: Unused PETSc option: BackwardEuler-Equation_pc_factor_mat_mumps_icntl_14
+  warnings.warn(
+/g/data/fp50/apps/firedrake/main-20260806/venv/lib/python3.11/site-packages/petsctools/options.py:126: PetscToolsWarning: Unused PETSc option: BackwardEuler-Equation_mat_type
+  warnings.warn(
+/g/data/fp50/apps/firedrake/main-20260806/venv/lib/python3.11/site-packages/petsctools/options.py:126: PetscToolsWarning: Unused PETSc option: BackwardEuler-Equation_pc_factor_mat_mumps_icntl_14
+  warnings.warn(
+/g/data/fp50/apps/firedrake/main-20260806/venv/lib/python3.11/site-packages/petsctools/options.py:126: PetscToolsWarning: Unused PETSc option: BackwardEuler-Equation_mat_type
+  warnings.warn(
+/g/data/fp50/apps/firedrake/main-20260806/venv/lib/python3.11/site-packages/petsctools/options.py:126: PetscToolsWarning: Unused PETSc option: BackwardEuler-Equation_pc_factor_mat_mumps_icntl_14
+  warnings.warn(
+/g/data/fp50/apps/firedrake/main-20260806/venv/lib/python3.11/site-packages/petsctools/options.py:126: PetscToolsWarning: Unused PETSc option: BackwardEuler-Equation_mat_type
+  warnings.warn(
+/g/data/fp50/apps/firedrake/main-20260806/venv/lib/python3.11/site-packages/petsctools/options.py:126: PetscToolsWarning: Unused PETSc option: BackwardEuler-Equation_pc_factor_mat_mumps_icntl_14
+  warnings.warn(
+/g/data/fp50/apps/firedrake/main-20260806/venv/lib/python3.11/site-packages/petsctools/options.py:126: PetscToolsWarning: Unused PETSc option: BackwardEuler-Equation_mat_type
+  warnings.warn(
+/g/data/fp50/apps/firedrake/main-20260806/venv/lib/python3.11/site-packages/petsctools/options.py:126: PetscToolsWarning: Unused PETSc option: BackwardEuler-Equation_pc_factor_mat_mumps_icntl_14
+  warnings.warn(
+/g/data/fp50/apps/firedrake/main-20260806/venv/lib/python3.11/site-packages/petsctools/options.py:126: PetscToolsWarning: Unused PETSc option: BackwardEuler-Equation_mat_type
+  warnings.warn(
+/g/data/fp50/apps/firedrake/main-20260806/venv/lib/python3.11/site-packages/petsctools/options.py:126: PetscToolsWarning: Unused PETSc option: BackwardEuler-Equation_pc_factor_mat_mumps_icntl_14
+  warnings.warn(
+/g/data/fp50/apps/firedrake/main-20260806/venv/lib/python3.11/site-packages/petsctools/options.py:126: PetscToolsWarning: Unused PETSc option: BackwardEuler-Equation_mat_type
+  warnings.warn(
+/g/data/fp50/apps/firedrake/main-20260806/venv/lib/python3.11/site-packages/petsctools/options.py:126: PetscToolsWarning: Unused PETSc option: BackwardEuler-Equation_pc_factor_mat_mumps_icntl_14
+  warnings.warn(
+/g/data/fp50/apps/firedrake/main-20260806/venv/lib/python3.11/site-packages/petsctools/options.py:126: PetscToolsWarning: Unused PETSc option: BackwardEuler-Equation_mat_type
+  warnings.warn(
+/g/data/fp50/apps/firedrake/main-20260806/venv/lib/python3.11/site-packages/petsctools/options.py:126: PetscToolsWarning: Unused PETSc option: BackwardEuler-Equation_pc_factor_mat_mumps_icntl_14
+  warnings.warn(
+/g/data/fp50/apps/firedrake/main-20260806/venv/lib/python3.11/site-packages/petsctools/options.py:126: PetscToolsWarning: Unused PETSc option: BackwardEuler-Equation_mat_type
+  warnings.warn(
+/g/data/fp50/apps/firedrake/main-20260806/venv/lib/python3.11/site-packages/petsctools/options.py:126: PetscToolsWarning: Unused PETSc option: BackwardEuler-Equation_pc_factor_mat_mumps_icntl_14
+  warnings.warn(
+/g/data/fp50/apps/firedrake/main-20260806/venv/lib/python3.11/site-packages/petsctools/options.py:126: PetscToolsWarning: Unused PETSc option: BackwardEuler-Equation_mat_type
+  warnings.warn(
+/g/data/fp50/apps/firedrake/main-20260806/venv/lib/python3.11/site-packages/petsctools/options.py:126: PetscToolsWarning: Unused PETSc option: BackwardEuler-Equation_pc_factor_mat_mumps_icntl_14
+  warnings.warn(
+/g/data/fp50/apps/firedrake/main-20260806/venv/lib/python3.11/site-packages/petsctools/options.py:126: PetscToolsWarning: Unused PETSc option: BackwardEuler-Equation_mat_type
+  warnings.warn(
+/g/data/fp50/apps/firedrake/main-20260806/venv/lib/python3.11/site-packages/petsctools/options.py:126: PetscToolsWarning: Unused PETSc option: BackwardEuler-Equation_pc_factor_mat_mumps_icntl_14
+  warnings.warn(
+/g/data/fp50/apps/firedrake/main-20260806/venv/lib/python3.11/site-packages/petsctools/options.py:126: PetscToolsWarning: Unused PETSc option: BackwardEuler-Equation_mat_type
+  warnings.warn(
+/g/data/fp50/apps/firedrake/main-20260806/venv/lib/python3.11/site-packages/petsctools/options.py:126: PetscToolsWarning: Unused PETSc option: BackwardEuler-Equation_pc_factor_mat_mumps_icntl_14
+  warnings.warn(
+/g/data/fp50/apps/firedrake/main-20260806/venv/lib/python3.11/site-packages/petsctools/options.py:126: PetscToolsWarning: Unused PETSc option: BackwardEuler-Equation_mat_type
+  warnings.warn(
+/g/data/fp50/apps/firedrake/main-20260806/venv/lib/python3.11/site-packages/petsctools/options.py:126: PetscToolsWarning: Unused PETSc option: BackwardEuler-Equation_pc_factor_mat_mumps_icntl_14
+  warnings.warn(
+/g/data/fp50/apps/firedrake/main-20260806/venv/lib/python3.11/site-packages/petsctools/options.py:126: PetscToolsWarning: Unused PETSc option: BackwardEuler-Equation_mat_type
+  warnings.warn(
+/g/data/fp50/apps/firedrake/main-20260806/venv/lib/python3.11/site-packages/petsctools/options.py:126: PetscToolsWarning: Unused PETSc option: BackwardEuler-Equation_pc_factor_mat_mumps_icntl_14
+  warnings.warn(
+/g/data/fp50/apps/firedrake/main-20260806/venv/lib/python3.11/site-packages/petsctools/options.py:126: PetscToolsWarning: Unused PETSc option: BackwardEuler-Equation_mat_type
+  warnings.warn(
+/g/data/fp50/apps/firedrake/main-20260806/venv/lib/python3.11/site-packages/petsctools/options.py:126: PetscToolsWarning: Unused PETSc option: BackwardEuler-Equation_pc_factor_mat_mumps_icntl_14
+  warnings.warn(
+/g/data/fp50/apps/firedrake/main-20260806/venv/lib/python3.11/site-packages/petsctools/options.py:126: PetscToolsWarning: Unused PETSc option: BackwardEuler-Equation_mat_type
+  warnings.warn(
+/g/data/fp50/apps/firedrake/main-20260806/venv/lib/python3.11/site-packages/petsctools/options.py:126: PetscToolsWarning: Unused PETSc option: BackwardEuler-Equation_pc_factor_mat_mumps_icntl_14
+  warnings.warn(
+/g/data/fp50/apps/firedrake/main-20260806/venv/lib/python3.11/site-packages/petsctools/options.py:126: PetscToolsWarning: Unused PETSc option: BackwardEuler-Equation_mat_type
+  warnings.warn(
+/g/data/fp50/apps/firedrake/main-20260806/venv/lib/python3.11/site-packages/petsctools/options.py:126: PetscToolsWarning: Unused PETSc option: BackwardEuler-Equation_pc_factor_mat_mumps_icntl_14
+  warnings.warn(
+/g/data/fp50/apps/firedrake/main-20260806/venv/lib/python3.11/site-packages/petsctools/options.py:126: PetscToolsWarning: Unused PETSc option: BackwardEuler-Equation_mat_type
+  warnings.warn(
+/g/data/fp50/apps/firedrake/main-20260806/venv/lib/python3.11/site-packages/petsctools/options.py:126: PetscToolsWarning: Unused PETSc option: BackwardEuler-Equation_pc_factor_mat_mumps_icntl_14
+  warnings.warn(
+/g/data/fp50/apps/firedrake/main-20260806/venv/lib/python3.11/site-packages/petsctools/options.py:126: PetscToolsWarning: Unused PETSc option: BackwardEuler-Equation_mat_type
+  warnings.warn(
+/g/data/fp50/apps/firedrake/main-20260806/venv/lib/python3.11/site-packages/petsctools/options.py:126: PetscToolsWarning: Unused PETSc option: BackwardEuler-Equation_pc_factor_mat_mumps_icntl_14
+  warnings.warn(
+/g/data/fp50/apps/firedrake/main-20260806/venv/lib/python3.11/site-packages/petsctools/options.py:126: PetscToolsWarning: Unused PETSc option: BackwardEuler-Equation_mat_type
+  warnings.warn(
+/g/data/fp50/apps/firedrake/main-20260806/venv/lib/python3.11/site-packages/petsctools/options.py:126: PetscToolsWarning: Unused PETSc option: BackwardEuler-Equation_pc_factor_mat_mumps_icntl_14
+  warnings.warn(
+/g/data/fp50/apps/firedrake/main-20260806/venv/lib/python3.11/site-packages/petsctools/options.py:126: PetscToolsWarning: Unused PETSc option: BackwardEuler-Equation_mat_type
+  warnings.warn(
+/g/data/fp50/apps/firedrake/main-20260806/venv/lib/python3.11/site-packages/petsctools/options.py:126: PetscToolsWarning: Unused PETSc option: BackwardEuler-Equation_pc_factor_mat_mumps_icntl_14
+  warnings.warn(
+/g/data/fp50/apps/firedrake/main-20260806/venv/lib/python3.11/site-packages/petsctools/options.py:126: PetscToolsWarning: Unused PETSc option: BackwardEuler-Equation_mat_type
+  warnings.warn(
+/g/data/fp50/apps/firedrake/main-20260806/venv/lib/python3.11/site-packages/petsctools/options.py:126: PetscToolsWarning: Unused PETSc option: BackwardEuler-Equation_pc_factor_mat_mumps_icntl_14
+  warnings.warn(
+/g/data/fp50/apps/firedrake/main-20260806/venv/lib/python3.11/site-packages/petsctools/options.py:126: PetscToolsWarning: Unused PETSc option: BackwardEuler-Equation_mat_type
+  warnings.warn(
+/g/data/fp50/apps/firedrake/main-20260806/venv/lib/python3.11/site-packages/petsctools/options.py:126: PetscToolsWarning: Unused PETSc option: BackwardEuler-Equation_pc_factor_mat_mumps_icntl_14
+  warnings.warn(
+/g/data/fp50/apps/firedrake/main-20260806/venv/lib/python3.11/site-packages/petsctools/options.py:126: PetscToolsWarning: Unused PETSc option: BackwardEuler-Equation_mat_type
+  warnings.warn(
+/g/data/fp50/apps/firedrake/main-20260806/venv/lib/python3.11/site-packages/petsctools/options.py:126: PetscToolsWarning: Unused PETSc option: BackwardEuler-Equation_pc_factor_mat_mumps_icntl_14
+  warnings.warn(
+/g/data/fp50/apps/firedrake/main-20260806/venv/lib/python3.11/site-packages/petsctools/options.py:126: PetscToolsWarning: Unused PETSc option: BackwardEuler-Equation_mat_type
+  warnings.warn(
+/g/data/fp50/apps/firedrake/main-20260806/venv/lib/python3.11/site-packages/petsctools/options.py:126: PetscToolsWarning: Unused PETSc option: BackwardEuler-Equation_pc_factor_mat_mumps_icntl_14
+  warnings.warn(
+/g/data/fp50/apps/firedrake/main-20260806/venv/lib/python3.11/site-packages/petsctools/options.py:126: PetscToolsWarning: Unused PETSc option: BackwardEuler-Equation_mat_type
+  warnings.warn(
+/g/data/fp50/apps/firedrake/main-20260806/venv/lib/python3.11/site-packages/petsctools/options.py:126: PetscToolsWarning: Unused PETSc option: BackwardEuler-Equation_pc_factor_mat_mumps_icntl_14
+  warnings.warn(
+/g/data/fp50/apps/firedrake/main-20260806/venv/lib/python3.11/site-packages/petsctools/options.py:126: PetscToolsWarning: Unused PETSc option: BackwardEuler-Equation_mat_type
+  warnings.warn(
+/g/data/fp50/apps/firedrake/main-20260806/venv/lib/python3.11/site-packages/petsctools/options.py:126: PetscToolsWarning: Unused PETSc option: BackwardEuler-Equation_pc_factor_mat_mumps_icntl_14
+  warnings.warn(
+/g/data/fp50/apps/firedrake/main-20260806/venv/lib/python3.11/site-packages/petsctools/options.py:126: PetscToolsWarning: Unused PETSc option: BackwardEuler-Equation_mat_type
+  warnings.warn(
+/g/data/fp50/apps/firedrake/main-20260806/venv/lib/python3.11/site-packages/petsctools/options.py:126: PetscToolsWarning: Unused PETSc option: BackwardEuler-Equation_pc_factor_mat_mumps_icntl_14
+  warnings.warn(
+/g/data/fp50/apps/firedrake/main-20260806/venv/lib/python3.11/site-packages/petsctools/options.py:126: PetscToolsWarning: Unused PETSc option: BackwardEuler-Equation_mat_type
+  warnings.warn(
+/g/data/fp50/apps/firedrake/main-20260806/venv/lib/python3.11/site-packages/petsctools/options.py:126: PetscToolsWarning: Unused PETSc option: BackwardEuler-Equation_pc_factor_mat_mumps_icntl_14
+  warnings.warn(
+/g/data/fp50/apps/firedrake/main-20260806/venv/lib/python3.11/site-packages/petsctools/options.py:126: PetscToolsWarning: Unused PETSc option: BackwardEuler-Equation_mat_type
+  warnings.warn(
+/g/data/fp50/apps/firedrake/main-20260806/venv/lib/python3.11/site-packages/petsctools/options.py:126: PetscToolsWarning: Unused PETSc option: BackwardEuler-Equation_pc_factor_mat_mumps_icntl_14
+  warnings.warn(
+/g/data/fp50/apps/firedrake/main-20260806/venv/lib/python3.11/site-packages/petsctools/options.py:126: PetscToolsWarning: Unused PETSc option: BackwardEuler-Equation_mat_type
+  warnings.warn(
+/g/data/fp50/apps/firedrake/main-20260806/venv/lib/python3.11/site-packages/petsctools/options.py:126: PetscToolsWarning: Unused PETSc option: BackwardEuler-Equation_pc_factor_mat_mumps_icntl_14
+  warnings.warn(
+/g/data/fp50/apps/firedrake/main-20260806/venv/lib/python3.11/site-packages/petsctools/options.py:126: PetscToolsWarning: Unused PETSc option: BackwardEuler-Equation_mat_type
+  warnings.warn(
+/g/data/fp50/apps/firedrake/main-20260806/venv/lib/python3.11/site-packages/petsctools/options.py:126: PetscToolsWarning: Unused PETSc option: BackwardEuler-Equation_pc_factor_mat_mumps_icntl_14
+  warnings.warn(
+/g/data/fp50/apps/firedrake/main-20260806/venv/lib/python3.11/site-packages/petsctools/options.py:126: PetscToolsWarning: Unused PETSc option: BackwardEuler-Equation_mat_type
+  warnings.warn(
+/g/data/fp50/apps/firedrake/main-20260806/venv/lib/python3.11/site-packages/petsctools/options.py:126: PetscToolsWarning: Unused PETSc option: BackwardEuler-Equation_pc_factor_mat_mumps_icntl_14
+  warnings.warn(
+/g/data/fp50/apps/firedrake/main-20260806/venv/lib/python3.11/site-packages/petsctools/options.py:126: PetscToolsWarning: Unused PETSc option: BackwardEuler-Equation_mat_type
+  warnings.warn(
+/g/data/fp50/apps/firedrake/main-20260806/venv/lib/python3.11/site-packages/petsctools/options.py:126: PetscToolsWarning: Unused PETSc option: BackwardEuler-Equation_pc_factor_mat_mumps_icntl_14
+  warnings.warn(
+/g/data/fp50/apps/firedrake/main-20260806/venv/lib/python3.11/site-packages/petsctools/options.py:126: PetscToolsWarning: Unused PETSc option: BackwardEuler-Equation_mat_type
+  warnings.warn(
+/g/data/fp50/apps/firedrake/main-20260806/venv/lib/python3.11/site-packages/petsctools/options.py:126: PetscToolsWarning: Unused PETSc option: BackwardEuler-Equation_pc_factor_mat_mumps_icntl_14
+  warnings.warn(
+/g/data/fp50/apps/firedrake/main-20260806/venv/lib/python3.11/site-packages/petsctools/options.py:126: PetscToolsWarning: Unused PETSc option: BackwardEuler-Equation_mat_type
+  warnings.warn(
+/g/data/fp50/apps/firedrake/main-20260806/venv/lib/python3.11/site-packages/petsctools/options.py:126: PetscToolsWarning: Unused PETSc option: BackwardEuler-Equation_pc_factor_mat_mumps_icntl_14
+  warnings.warn(
+/g/data/fp50/apps/firedrake/main-20260806/venv/lib/python3.11/site-packages/petsctools/options.py:126: PetscToolsWarning: Unused PETSc option: BackwardEuler-Equation_mat_type
+  warnings.warn(
+/g/data/fp50/apps/firedrake/main-20260806/venv/lib/python3.11/site-packages/petsctools/options.py:126: PetscToolsWarning: Unused PETSc option: BackwardEuler-Equation_pc_factor_mat_mumps_icntl_14
+  warnings.warn(
+/g/data/fp50/apps/firedrake/main-20260806/venv/lib/python3.11/site-packages/petsctools/options.py:126: PetscToolsWarning: Unused PETSc option: BackwardEuler-Equation_mat_type
+  warnings.warn(
+/g/data/fp50/apps/firedrake/main-20260806/venv/lib/python3.11/site-packages/petsctools/options.py:126: PetscToolsWarning: Unused PETSc option: BackwardEuler-Equation_pc_factor_mat_mumps_icntl_14
+  warnings.warn(
+/g/data/fp50/apps/firedrake/main-20260806/venv/lib/python3.11/site-packages/petsctools/options.py:126: PetscToolsWarning: Unused PETSc option: BackwardEuler-Equation_mat_type
+  warnings.warn(
+/g/data/fp50/apps/firedrake/main-20260806/venv/lib/python3.11/site-packages/petsctools/options.py:126: PetscToolsWarning: Unused PETSc option: BackwardEuler-Equation_pc_factor_mat_mumps_icntl_14
+  warnings.warn(
+/g/data/fp50/apps/firedrake/main-20260806/venv/lib/python3.11/site-packages/petsctools/options.py:126: PetscToolsWarning: Unused PETSc option: BackwardEuler-Equation_mat_type
+  warnings.warn(
+/g/data/fp50/apps/firedrake/main-20260806/venv/lib/python3.11/site-packages/petsctools/options.py:126: PetscToolsWarning: Unused PETSc option: BackwardEuler-Equation_pc_factor_mat_mumps_icntl_14
+  warnings.warn(
+/g/data/fp50/apps/firedrake/main-20260806/venv/lib/python3.11/site-packages/petsctools/options.py:126: PetscToolsWarning: Unused PETSc option: BackwardEuler-Equation_mat_type
+  warnings.warn(
+/g/data/fp50/apps/firedrake/main-20260806/venv/lib/python3.11/site-packages/petsctools/options.py:126: PetscToolsWarning: Unused PETSc option: BackwardEuler-Equation_pc_factor_mat_mumps_icntl_14
+  warnings.warn(
+/g/data/fp50/apps/firedrake/main-20260806/venv/lib/python3.11/site-packages/petsctools/options.py:126: PetscToolsWarning: Unused PETSc option: BackwardEuler-Equation_mat_type
+  warnings.warn(
+/g/data/fp50/apps/firedrake/main-20260806/venv/lib/python3.11/site-packages/petsctools/options.py:126: PetscToolsWarning: Unused PETSc option: BackwardEuler-Equation_pc_factor_mat_mumps_icntl_14
+  warnings.warn(
+/g/data/fp50/apps/firedrake/main-20260806/venv/lib/python3.11/site-packages/petsctools/options.py:126: PetscToolsWarning: Unused PETSc option: BackwardEuler-Equation_mat_type
+  warnings.warn(
+/g/data/fp50/apps/firedrake/main-20260806/venv/lib/python3.11/site-packages/petsctools/options.py:126: PetscToolsWarning: Unused PETSc option: BackwardEuler-Equation_pc_factor_mat_mumps_icntl_14
+  warnings.warn(
+/g/data/fp50/apps/firedrake/main-20260806/venv/lib/python3.11/site-packages/petsctools/options.py:126: PetscToolsWarning: Unused PETSc option: BackwardEuler-Equation_mat_type
+  warnings.warn(
+/g/data/fp50/apps/firedrake/main-20260806/venv/lib/python3.11/site-packages/petsctools/options.py:126: PetscToolsWarning: Unused PETSc option: BackwardEuler-Equation_pc_factor_mat_mumps_icntl_14
+  warnings.warn(
+/g/data/fp50/apps/firedrake/main-20260806/venv/lib/python3.11/site-packages/petsctools/options.py:126: PetscToolsWarning: Unused PETSc option: BackwardEuler-Equation_mat_type
+  warnings.warn(
+/g/data/fp50/apps/firedrake/main-20260806/venv/lib/python3.11/site-packages/petsctools/options.py:126: PetscToolsWarning: Unused PETSc option: BackwardEuler-Equation_pc_factor_mat_mumps_icntl_14
+  warnings.warn(
+/g/data/fp50/apps/firedrake/main-20260806/venv/lib/python3.11/site-packages/petsctools/options.py:126: PetscToolsWarning: Unused PETSc option: BackwardEuler-Equation_mat_type
+  warnings.warn(
+/g/data/fp50/apps/firedrake/main-20260806/venv/lib/python3.11/site-packages/petsctools/options.py:126: PetscToolsWarning: Unused PETSc option: BackwardEuler-Equation_pc_factor_mat_mumps_icntl_14
+  warnings.warn(
+/g/data/fp50/apps/firedrake/main-20260806/venv/lib/python3.11/site-packages/petsctools/options.py:126: PetscToolsWarning: Unused PETSc option: BackwardEuler-Equation_mat_type
+  warnings.warn(
+/g/data/fp50/apps/firedrake/main-20260806/venv/lib/python3.11/site-packages/petsctools/options.py:126: PetscToolsWarning: Unused PETSc option: BackwardEuler-Equation_pc_factor_mat_mumps_icntl_14
+  warnings.warn(
+/g/data/fp50/apps/firedrake/main-20260806/venv/lib/python3.11/site-packages/petsctools/options.py:126: PetscToolsWarning: Unused PETSc option: BackwardEuler-Equation_mat_type
+  warnings.warn(
+/g/data/fp50/apps/firedrake/main-20260806/venv/lib/python3.11/site-packages/petsctools/options.py:126: PetscToolsWarning: Unused PETSc option: BackwardEuler-Equation_pc_factor_mat_mumps_icntl_14
+  warnings.warn(
+/g/data/fp50/apps/firedrake/main-20260806/venv/lib/python3.11/site-packages/petsctools/options.py:126: PetscToolsWarning: Unused PETSc option: BackwardEuler-Equation_mat_type
+  warnings.warn(
+/g/data/fp50/apps/firedrake/main-20260806/venv/lib/python3.11/site-packages/petsctools/options.py:126: PetscToolsWarning: Unused PETSc option: BackwardEuler-Equation_pc_factor_mat_mumps_icntl_14
+  warnings.warn(
+/g/data/fp50/apps/firedrake/main-20260806/venv/lib/python3.11/site-packages/petsctools/options.py:126: PetscToolsWarning: Unused PETSc option: BackwardEuler-Equation_mat_type
+  warnings.warn(
+/g/data/fp50/apps/firedrake/main-20260806/venv/lib/python3.11/site-packages/petsctools/options.py:126: PetscToolsWarning: Unused PETSc option: BackwardEuler-Equation_pc_factor_mat_mumps_icntl_14
+  warnings.warn(
+/g/data/fp50/apps/firedrake/main-20260806/venv/lib/python3.11/site-packages/petsctools/options.py:126: PetscToolsWarning: Unused PETSc option: BackwardEuler-Equation_mat_type
+  warnings.warn(
+/g/data/fp50/apps/firedrake/main-20260806/venv/lib/python3.11/site-packages/petsctools/options.py:126: PetscToolsWarning: Unused PETSc option: BackwardEuler-Equation_pc_factor_mat_mumps_icntl_14
+  warnings.warn(
+/g/data/fp50/apps/firedrake/main-20260806/venv/lib/python3.11/site-packages/petsctools/options.py:126: PetscToolsWarning: Unused PETSc option: BackwardEuler-Equation_mat_type
+  warnings.warn(
+/g/data/fp50/apps/firedrake/main-20260806/venv/lib/python3.11/site-packages/petsctools/options.py:126: PetscToolsWarning: Unused PETSc option: BackwardEuler-Equation_pc_factor_mat_mumps_icntl_14
+  warnings.warn(
+/g/data/fp50/apps/firedrake/main-20260806/venv/lib/python3.11/site-packages/petsctools/options.py:126: PetscToolsWarning: Unused PETSc option: BackwardEuler-Equation_mat_type
+  warnings.warn(
+/g/data/fp50/apps/firedrake/main-20260806/venv/lib/python3.11/site-packages/petsctools/options.py:126: PetscToolsWarning: Unused PETSc option: BackwardEuler-Equation_pc_factor_mat_mumps_icntl_14
+  warnings.warn(
+/g/data/fp50/apps/firedrake/main-20260806/venv/lib/python3.11/site-packages/petsctools/options.py:126: PetscToolsWarning: Unused PETSc option: BackwardEuler-Equation_mat_type
+  warnings.warn(
+/g/data/fp50/apps/firedrake/main-20260806/venv/lib/python3.11/site-packages/petsctools/options.py:126: PetscToolsWarning: Unused PETSc option: BackwardEuler-Equation_pc_factor_mat_mumps_icntl_14
+  warnings.warn(
+/g/data/fp50/apps/firedrake/main-20260806/venv/lib/python3.11/site-packages/petsctools/options.py:126: PetscToolsWarning: Unused PETSc option: BackwardEuler-Equation_mat_type
+  warnings.warn(
+/g/data/fp50/apps/firedrake/main-20260806/venv/lib/python3.11/site-packages/petsctools/options.py:126: PetscToolsWarning: Unused PETSc option: BackwardEuler-Equation_pc_factor_mat_mumps_icntl_14
+  warnings.warn(
+/g/data/fp50/apps/firedrake/main-20260806/venv/lib/python3.11/site-packages/petsctools/options.py:126: PetscToolsWarning: Unused PETSc option: BackwardEuler-Equation_mat_type
+  warnings.warn(
+/g/data/fp50/apps/firedrake/main-20260806/venv/lib/python3.11/site-packages/petsctools/options.py:126: PetscToolsWarning: Unused PETSc option: BackwardEuler-Equation_pc_factor_mat_mumps_icntl_14
+  warnings.warn(
+/g/data/fp50/apps/firedrake/main-20260806/venv/lib/python3.11/site-packages/petsctools/options.py:126: PetscToolsWarning: Unused PETSc option: BackwardEuler-Equation_mat_type
+  warnings.warn(
+/g/data/fp50/apps/firedrake/main-20260806/venv/lib/python3.11/site-packages/petsctools/options.py:126: PetscToolsWarning: Unused PETSc option: BackwardEuler-Equation_pc_factor_mat_mumps_icntl_14
+  warnings.warn(
+/g/data/fp50/apps/firedrake/main-20260806/venv/lib/python3.11/site-packages/petsctools/options.py:126: PetscToolsWarning: Unused PETSc option: BackwardEuler-Equation_mat_type
+  warnings.warn(
+/g/data/fp50/apps/firedrake/main-20260806/venv/lib/python3.11/site-packages/petsctools/options.py:126: PetscToolsWarning: Unused PETSc option: BackwardEuler-Equation_pc_factor_mat_mumps_icntl_14
+  warnings.warn(
+/g/data/fp50/apps/firedrake/main-20260806/venv/lib/python3.11/site-packages/petsctools/options.py:126: PetscToolsWarning: Unused PETSc option: BackwardEuler-Equation_mat_type
+  warnings.warn(
+/g/data/fp50/apps/firedrake/main-20260806/venv/lib/python3.11/site-packages/petsctools/options.py:126: PetscToolsWarning: Unused PETSc option: BackwardEuler-Equation_pc_factor_mat_mumps_icntl_14
+  warnings.warn(
+/g/data/fp50/apps/firedrake/main-20260806/venv/lib/python3.11/site-packages/petsctools/options.py:126: PetscToolsWarning: Unused PETSc option: BackwardEuler-Equation_mat_type
+  warnings.warn(
+/g/data/fp50/apps/firedrake/main-20260806/venv/lib/python3.11/site-packages/petsctools/options.py:126: PetscToolsWarning: Unused PETSc option: BackwardEuler-Equation_pc_factor_mat_mumps_icntl_14
+  warnings.warn(
+/g/data/fp50/apps/firedrake/main-20260806/venv/lib/python3.11/site-packages/petsctools/options.py:126: PetscToolsWarning: Unused PETSc option: BackwardEuler-Equation_mat_type
+  warnings.warn(
+/g/data/fp50/apps/firedrake/main-20260806/venv/lib/python3.11/site-packages/petsctools/options.py:126: PetscToolsWarning: Unused PETSc option: BackwardEuler-Equation_pc_factor_mat_mumps_icntl_14
+  warnings.warn(
+/g/data/fp50/apps/firedrake/main-20260806/venv/lib/python3.11/site-packages/petsctools/options.py:126: PetscToolsWarning: Unused PETSc option: BackwardEuler-Equation_mat_type
+  warnings.warn(
+/g/data/fp50/apps/firedrake/main-20260806/venv/lib/python3.11/site-packages/petsctools/options.py:126: PetscToolsWarning: Unused PETSc option: BackwardEuler-Equation_pc_factor_mat_mumps_icntl_14
+  warnings.warn(
+/g/data/fp50/apps/firedrake/main-20260806/venv/lib/python3.11/site-packages/petsctools/options.py:126: PetscToolsWarning: Unused PETSc option: BackwardEuler-Equation_mat_type
+  warnings.warn(
+/g/data/fp50/apps/firedrake/main-20260806/venv/lib/python3.11/site-packages/petsctools/options.py:126: PetscToolsWarning: Unused PETSc option: BackwardEuler-Equation_pc_factor_mat_mumps_icntl_14
+  warnings.warn(
+/g/data/fp50/apps/firedrake/main-20260806/venv/lib/python3.11/site-packages/petsctools/options.py:126: PetscToolsWarning: Unused PETSc option: BackwardEuler-Equation_mat_type
+  warnings.warn(
+/g/data/fp50/apps/firedrake/main-20260806/venv/lib/python3.11/site-packages/petsctools/options.py:126: PetscToolsWarning: Unused PETSc option: BackwardEuler-Equation_pc_factor_mat_mumps_icntl_14
+  warnings.warn(
+/g/data/fp50/apps/firedrake/main-20260806/venv/lib/python3.11/site-packages/petsctools/options.py:126: PetscToolsWarning: Unused PETSc option: BackwardEuler-Equation_mat_type
+  warnings.warn(
+/g/data/fp50/apps/firedrake/main-20260806/venv/lib/python3.11/site-packages/petsctools/options.py:126: PetscToolsWarning: Unused PETSc option: BackwardEuler-Equation_pc_factor_mat_mumps_icntl_14
+  warnings.warn(
+/g/data/fp50/apps/firedrake/main-20260806/venv/lib/python3.11/site-packages/petsctools/options.py:126: PetscToolsWarning: Unused PETSc option: BackwardEuler-Equation_mat_type
+  warnings.warn(
+/g/data/fp50/apps/firedrake/main-20260806/venv/lib/python3.11/site-packages/petsctools/options.py:126: PetscToolsWarning: Unused PETSc option: BackwardEuler-Equation_pc_factor_mat_mumps_icntl_14
+  warnings.warn(
+/g/data/fp50/apps/firedrake/main-20260806/venv/lib/python3.11/site-packages/petsctools/options.py:126: PetscToolsWarning: Unused PETSc option: BackwardEuler-Equation_mat_type
+  warnings.warn(
+/g/data/fp50/apps/firedrake/main-20260806/venv/lib/python3.11/site-packages/petsctools/options.py:126: PetscToolsWarning: Unused PETSc option: BackwardEuler-Equation_pc_factor_mat_mumps_icntl_14
+  warnings.warn(
+/g/data/fp50/apps/firedrake/main-20260806/venv/lib/python3.11/site-packages/petsctools/options.py:126: PetscToolsWarning: Unused PETSc option: BackwardEuler-Equation_mat_type
+  warnings.warn(
+/g/data/fp50/apps/firedrake/main-20260806/venv/lib/python3.11/site-packages/petsctools/options.py:126: PetscToolsWarning: Unused PETSc option: BackwardEuler-Equation_pc_factor_mat_mumps_icntl_14
+  warnings.warn(
+/g/data/fp50/apps/firedrake/main-20260806/venv/lib/python3.11/site-packages/petsctools/options.py:126: PetscToolsWarning: Unused PETSc option: BackwardEuler-Equation_mat_type
+  warnings.warn(
+/g/data/fp50/apps/firedrake/main-20260806/venv/lib/python3.11/site-packages/petsctools/options.py:126: PetscToolsWarning: Unused PETSc option: BackwardEuler-Equation_pc_factor_mat_mumps_icntl_14
+  warnings.warn(
+/g/data/fp50/apps/firedrake/main-20260806/venv/lib/python3.11/site-packages/petsctools/options.py:126: PetscToolsWarning: Unused PETSc option: BackwardEuler-Equation_mat_type
+  warnings.warn(
+/g/data/fp50/apps/firedrake/main-20260806/venv/lib/python3.11/site-packages/petsctools/options.py:126: PetscToolsWarning: Unused PETSc option: BackwardEuler-Equation_pc_factor_mat_mumps_icntl_14
+  warnings.warn(
+/g/data/fp50/apps/firedrake/main-20260806/venv/lib/python3.11/site-packages/petsctools/options.py:126: PetscToolsWarning: Unused PETSc option: BackwardEuler-Equation_mat_type
+  warnings.warn(
+/g/data/fp50/apps/firedrake/main-20260806/venv/lib/python3.11/site-packages/petsctools/options.py:126: PetscToolsWarning: Unused PETSc option: BackwardEuler-Equation_pc_factor_mat_mumps_icntl_14
+  warnings.warn(
+/g/data/fp50/apps/firedrake/main-20260806/venv/lib/python3.11/site-packages/petsctools/options.py:126: PetscToolsWarning: Unused PETSc option: BackwardEuler-Equation_mat_type
+  warnings.warn(
+/g/data/fp50/apps/firedrake/main-20260806/venv/lib/python3.11/site-packages/petsctools/options.py:126: PetscToolsWarning: Unused PETSc option: BackwardEuler-Equation_pc_factor_mat_mumps_icntl_14
+  warnings.warn(
+/g/data/fp50/apps/firedrake/main-20260806/venv/lib/python3.11/site-packages/petsctools/options.py:126: PetscToolsWarning: Unused PETSc option: BackwardEuler-Equation_mat_type
+  warnings.warn(
+/g/data/fp50/apps/firedrake/main-20260806/venv/lib/python3.11/site-packages/petsctools/options.py:126: PetscToolsWarning: Unused PETSc option: BackwardEuler-Equation_pc_factor_mat_mumps_icntl_14
+  warnings.warn(
+/g/data/fp50/apps/firedrake/main-20260806/venv/lib/python3.11/site-packages/petsctools/options.py:126: PetscToolsWarning: Unused PETSc option: BackwardEuler-Equation_mat_type
+  warnings.warn(
+/g/data/fp50/apps/firedrake/main-20260806/venv/lib/python3.11/site-packages/petsctools/options.py:126: PetscToolsWarning: Unused PETSc option: BackwardEuler-Equation_pc_factor_mat_mumps_icntl_14
+  warnings.warn(
+/g/data/fp50/apps/firedrake/main-20260806/venv/lib/python3.11/site-packages/petsctools/options.py:126: PetscToolsWarning: Unused PETSc option: BackwardEuler-Equation_mat_type
+  warnings.warn(
+/g/data/fp50/apps/firedrake/main-20260806/venv/lib/python3.11/site-packages/petsctools/options.py:126: PetscToolsWarning: Unused PETSc option: BackwardEuler-Equation_pc_factor_mat_mumps_icntl_14
+  warnings.warn(
+/g/data/fp50/apps/firedrake/main-20260806/venv/lib/python3.11/site-packages/petsctools/options.py:126: PetscToolsWarning: Unused PETSc option: BackwardEuler-Equation_mat_type
+  warnings.warn(
+/g/data/fp50/apps/firedrake/main-20260806/venv/lib/python3.11/site-packages/petsctools/options.py:126: PetscToolsWarning: Unused PETSc option: BackwardEuler-Equation_pc_factor_mat_mumps_icntl_14
+  warnings.warn(
+/g/data/fp50/apps/firedrake/main-20260806/venv/lib/python3.11/site-packages/petsctools/options.py:126: PetscToolsWarning: Unused PETSc option: BackwardEuler-Equation_mat_type
+  warnings.warn(
+/g/data/fp50/apps/firedrake/main-20260806/venv/lib/python3.11/site-packages/petsctools/options.py:126: PetscToolsWarning: Unused PETSc option: BackwardEuler-Equation_pc_factor_mat_mumps_icntl_14
+  warnings.warn(
+/g/data/fp50/apps/firedrake/main-20260806/venv/lib/python3.11/site-packages/petsctools/options.py:126: PetscToolsWarning: Unused PETSc option: BackwardEuler-Equation_mat_type
+  warnings.warn(
+/g/data/fp50/apps/firedrake/main-20260806/venv/lib/python3.11/site-packages/petsctools/options.py:126: PetscToolsWarning: Unused PETSc option: BackwardEuler-Equation_pc_factor_mat_mumps_icntl_14
+  warnings.warn(
+/g/data/fp50/apps/firedrake/main-20260806/venv/lib/python3.11/site-packages/petsctools/options.py:126: PetscToolsWarning: Unused PETSc option: BackwardEuler-Equation_mat_type
+  warnings.warn(
+/g/data/fp50/apps/firedrake/main-20260806/venv/lib/python3.11/site-packages/petsctools/options.py:126: PetscToolsWarning: Unused PETSc option: BackwardEuler-Equation_pc_factor_mat_mumps_icntl_14
+  warnings.warn(
+/g/data/fp50/apps/firedrake/main-20260806/venv/lib/python3.11/site-packages/petsctools/options.py:126: PetscToolsWarning: Unused PETSc option: BackwardEuler-Equation_mat_type
+  warnings.warn(
+/g/data/fp50/apps/firedrake/main-20260806/venv/lib/python3.11/site-packages/petsctools/options.py:126: PetscToolsWarning: Unused PETSc option: BackwardEuler-Equation_pc_factor_mat_mumps_icntl_14
+  warnings.warn(
+/g/data/fp50/apps/firedrake/main-20260806/venv/lib/python3.11/site-packages/petsctools/options.py:126: PetscToolsWarning: Unused PETSc option: BackwardEuler-Equation_mat_type
+  warnings.warn(
+/g/data/fp50/apps/firedrake/main-20260806/venv/lib/python3.11/site-packages/petsctools/options.py:126: PetscToolsWarning: Unused PETSc option: BackwardEuler-Equation_pc_factor_mat_mumps_icntl_14
+  warnings.warn(
+/g/data/fp50/apps/firedrake/main-20260806/venv/lib/python3.11/site-packages/petsctools/options.py:126: PetscToolsWarning: Unused PETSc option: BackwardEuler-Equation_mat_type
+  warnings.warn(
+/g/data/fp50/apps/firedrake/main-20260806/venv/lib/python3.11/site-packages/petsctools/options.py:126: PetscToolsWarning: Unused PETSc option: BackwardEuler-Equation_pc_factor_mat_mumps_icntl_14
+  warnings.warn(
+/g/data/fp50/apps/firedrake/main-20260806/venv/lib/python3.11/site-packages/petsctools/options.py:126: PetscToolsWarning: Unused PETSc option: BackwardEuler-Equation_mat_type
+  warnings.warn(
+/g/data/fp50/apps/firedrake/main-20260806/venv/lib/python3.11/site-packages/petsctools/options.py:126: PetscToolsWarning: Unused PETSc option: BackwardEuler-Equation_pc_factor_mat_mumps_icntl_14
+  warnings.warn(
+/g/data/fp50/apps/firedrake/main-20260806/venv/lib/python3.11/site-packages/petsctools/options.py:126: PetscToolsWarning: Unused PETSc option: BackwardEuler-Equation_mat_type
+  warnings.warn(
+/g/data/fp50/apps/firedrake/main-20260806/venv/lib/python3.11/site-packages/petsctools/options.py:126: PetscToolsWarning: Unused PETSc option: BackwardEuler-Equation_pc_factor_mat_mumps_icntl_14
+  warnings.warn(
+/g/data/fp50/apps/firedrake/main-20260806/venv/lib/python3.11/site-packages/petsctools/options.py:126: PetscToolsWarning: Unused PETSc option: BackwardEuler-Equation_mat_type
+  warnings.warn(
+/g/data/fp50/apps/firedrake/main-20260806/venv/lib/python3.11/site-packages/petsctools/options.py:126: PetscToolsWarning: Unused PETSc option: BackwardEuler-Equation_pc_factor_mat_mumps_icntl_14
+  warnings.warn(
+/g/data/fp50/apps/firedrake/main-20260806/venv/lib/python3.11/site-packages/petsctools/options.py:126: PetscToolsWarning: Unused PETSc option: BackwardEuler-Equation_mat_type
+  warnings.warn(
+/g/data/fp50/apps/firedrake/main-20260806/venv/lib/python3.11/site-packages/petsctools/options.py:126: PetscToolsWarning: Unused PETSc option: BackwardEuler-Equation_pc_factor_mat_mumps_icntl_14
+  warnings.warn(
+/g/data/fp50/apps/firedrake/main-20260806/venv/lib/python3.11/site-packages/petsctools/options.py:126: PetscToolsWarning: Unused PETSc option: BackwardEuler-Equation_mat_type
+  warnings.warn(
+/g/data/fp50/apps/firedrake/main-20260806/venv/lib/python3.11/site-packages/petsctools/options.py:126: PetscToolsWarning: Unused PETSc option: BackwardEuler-Equation_pc_factor_mat_mumps_icntl_14
+  warnings.warn(
+/g/data/fp50/apps/firedrake/main-20260806/venv/lib/python3.11/site-packages/petsctools/options.py:126: PetscToolsWarning: Unused PETSc option: BackwardEuler-Equation_mat_type
+  warnings.warn(
+/g/data/fp50/apps/firedrake/main-20260806/venv/lib/python3.11/site-packages/petsctools/options.py:126: PetscToolsWarning: Unused PETSc option: BackwardEuler-Equation_pc_factor_mat_mumps_icntl_14
+  warnings.warn(
+/g/data/fp50/apps/firedrake/main-20260806/venv/lib/python3.11/site-packages/petsctools/options.py:126: PetscToolsWarning: Unused PETSc option: BackwardEuler-Equation_mat_type
+  warnings.warn(
+/g/data/fp50/apps/firedrake/main-20260806/venv/lib/python3.11/site-packages/petsctools/options.py:126: PetscToolsWarning: Unused PETSc option: BackwardEuler-Equation_pc_factor_mat_mumps_icntl_14
+  warnings.warn(
+/g/data/fp50/apps/firedrake/main-20260806/venv/lib/python3.11/site-packages/petsctools/options.py:126: PetscToolsWarning: Unused PETSc option: BackwardEuler-Equation_mat_type
+  warnings.warn(
+/g/data/fp50/apps/firedrake/main-20260806/venv/lib/python3.11/site-packages/petsctools/options.py:126: PetscToolsWarning: Unused PETSc option: BackwardEuler-Equation_pc_factor_mat_mumps_icntl_14
+  warnings.warn(
+/g/data/fp50/apps/firedrake/main-20260806/venv/lib/python3.11/site-packages/petsctools/options.py:126: PetscToolsWarning: Unused PETSc option: BackwardEuler-Equation_mat_type
+  warnings.warn(
+/g/data/fp50/apps/firedrake/main-20260806/venv/lib/python3.11/site-packages/petsctools/options.py:126: PetscToolsWarning: Unused PETSc option: BackwardEuler-Equation_pc_factor_mat_mumps_icntl_14
+  warnings.warn(

@@ -47,6 +47,8 @@ if __name__ == "__main__":
                              "canonical g-adopt preset for extruded 3D).")
     parser.add_argument("--refinement-levels", type=int, default=0)
     parser.add_argument("--data-dir", type=str, default="./murrumbidgee_data")
+    parser.add_argument("--profile", action="store_true",
+                        help="Reduce PETSc text output during a profile run")
     _ARGS = parser.parse_args()
     sys.argv = sys.argv[:1]
 
@@ -115,7 +117,7 @@ def load_spatial_field(V, V_cg, mesh_xy, csv_path, name):
 def model(horiz_res, n_layers, degree=1, dt_value=43200.0, steps=20,
           solver="vlumping", refinement_levels=0, data_dir="./murrumbidgee_data",
           dt_init=None, dt_max=43200.0, dt_growth=1.5, dt_shrink=0.5,
-          t_final=None):
+          t_final=None, profile=False):
     """Run Lower Murrumbidgee scaling benchmark.
 
     Args:
@@ -132,6 +134,7 @@ def model(horiz_res, n_layers, degree=1, dt_value=43200.0, steps=20,
         dt_growth: Factor to grow dt after each successful step.
         dt_shrink: Factor to shrink dt after a solver failure.
         t_final: Target simulation time. If set, overrides steps.
+        profile: Reduce PETSc text output during a profile run.
     """
     from omega import SurfaceMesh, Polygon
     from omega.mesh.builder import build_mesh_hierarchy
@@ -267,12 +270,15 @@ def model(horiz_res, n_layers, degree=1, dt_value=43200.0, steps=20,
 
     # --- Diagnostics ---
     solver_parameters_extra = {
-        "snes_view": None,
-        "snes_monitor": None,
         "snes_converged_reason": None,
         "ksp_converged_reason": None,
-        "ksp_view_pmat": "::ascii_info",
     }
+    if not profile:
+        solver_parameters_extra.update({
+            "snes_view": None,
+            "snes_monitor": None,
+            "ksp_view_pmat": "::ascii_info",
+        })
 
     # Solver-specific diagnostics
     if solver.startswith("vlumping"):
@@ -367,5 +373,5 @@ if __name__ == "__main__":
         data_dir=_ARGS.data_dir,
         dt_init=_ARGS.dt_init, dt_max=_ARGS.dt_max,
         dt_growth=_ARGS.dt_growth, dt_shrink=_ARGS.dt_shrink,
-        t_final=_ARGS.t_final,
+        t_final=_ARGS.t_final, profile=_ARGS.profile,
     )
