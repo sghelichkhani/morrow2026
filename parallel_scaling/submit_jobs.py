@@ -113,18 +113,46 @@ RICH_SOLVERS = [
 # and lag only the setup. On a dt ramp this wins where the Richardson
 # presets lose, because a spread spectrum is what a polynomial smoother is
 # for. These two are the leading candidates, not the fallback.
-# Everything compared in the 2026-08 fair-comparison campaign: the paper's
-# table plus the setup-cost presets. sor, gamg and boomeramg failed at the
-# largest basin scales on the previous mesh and tolerance; they are included
-# so the outcome table rests on one mesh throughout rather than quoting a
-# failure measured under different conditions.
-FAIR_SOLVERS = [
+# The 2026-08 fair-comparison campaign.
+#
+# Every compared solver uses ksp_rtol 1e-4 with right preconditioning, one
+# SNES block, one linear iteration cap and one mesh per basin scale, so a
+# difference in wall time is a difference in the preconditioner.
+#
+# The grid is deliberately not a full product. The strong sweep and the
+# ablation variants answer narrower questions than the weak-scaling curves,
+# and running them everywhere would spend most of the campaign re-confirming
+# divergences and out-of-memory failures that the record already documents.
+
+# The paper's outcome table: every solver, every weak-scaling point.
+FAIR_CORE_SOLVERS = [
     "sor", "bjacobi", "gamg", "gmg", "boomeramg",
     "vlumping_inexact", "vlumping_hmg",
+]
+
+# The candidate production presets. They target setup cost, so they earn the
+# whole horizontal weak-scaling curve, which is the paper's main figure.
+FAIR_ABLATION_SOLVERS = [
     "vlumping_inexact_snapshot_lag3", "vlumping_hmg_snapshot_lag3",
     "vlumping_inexact_rich", "vlumping_inexact_rich_lag3",
     "vlumping_hmg_rich", "vlumping_hmg_rich_lag3",
 ]
+
+# Strong scaling asks one question: does the preset survive the coarse-solve
+# latency at high rank counts. The presets that cannot converge on the basin
+# at all are not in it. s1 is dropped because the fixed 320M-DOF problem
+# does not fit one node, and s8 is the same job as murr_horiz h8, kept as a
+# same-day repeat that bounds machine noise.
+FAIR_STRONG_SOLVERS = [
+    "bjacobi", "vlumping_inexact", "vlumping_hmg",
+    "vlumping_inexact_snapshot_lag3", "vlumping_hmg_snapshot_lag3",
+    "vlumping_hmg_rich_lag3",
+]
+
+# Tolerance ablation: the same preconditioner at 1e-6 and 1e-4 on the same
+# mesh, for three solver families, so the effect of the tolerance is
+# separable from the effect of the preconditioner.
+FAIR_TOLERANCE_SOLVERS = ["vlumping", "bjacobi_rtol6", "gmg_rtol6"]
 
 SNAPSHOT_SOLVERS = [
     "vlumping_inexact_snapshot_lag3",
@@ -611,18 +639,25 @@ def get_phase_runs(phase):
             runs.append(("murr_horiz", solver, "h8"))
 
     elif phase == "fair_all":
-        # The 2026-08 fair-comparison campaign. Every compared solver on
-        # every benchmark and scale, with matched tolerances and one mesh per
-        # basin scale. Restrict with --solvers to run it in stages.
-        for solver in FAIR_SOLVERS:
+        # The whole campaign. Restrict with --solvers to run it in stages.
+        for solver in FAIR_CORE_SOLVERS:
             for scale in ("sweep", "medium", "large"):
                 runs.append(("cockett", solver, scale))
             for scale in ("smoke", "sweep", "medium", "large"):
                 runs.append(("murrumbidgee", solver, scale))
             for scale in ("h1", "h2", "h4", "h8"):
                 runs.append(("murr_horiz", solver, scale))
-            for scale in ("s1", "s2", "s4", "s8", "s16", "s32"):
+        for solver in FAIR_ABLATION_SOLVERS:
+            for scale in ("h1", "h2", "h4", "h8"):
+                runs.append(("murr_horiz", solver, scale))
+        for solver in FAIR_STRONG_SOLVERS:
+            for scale in ("s2", "s4", "s8", "s16", "s32"):
                 runs.append(("murr_strong", solver, scale))
+        for solver in FAIR_TOLERANCE_SOLVERS:
+            runs.append(("murr_horiz", solver, "h8"))
+            runs.append(("murrumbidgee", solver, "large"))
+        # Does the incoherent lag keep its advantage on the basin?
+        runs.append(("murr_horiz", "vlumping_hmg_rich_lag3_live", "h8"))
 
     elif phase == "final_h8":
         # The complete setup-cost campaign at production scale: the two

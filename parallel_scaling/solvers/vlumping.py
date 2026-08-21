@@ -39,6 +39,7 @@ solver_parameters = {
     "snes_type": "newtonls",
     "snes_linesearch_type": "bt",
     "snes_rtol": 1e-8,
-    "snes_atol": 1e-8,
+    "snes_atol": 1e-12,
+    "snes_stol": 1e-8,
     "snes_max_it": 50,
 }

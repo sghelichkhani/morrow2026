@@ -40,6 +40,9 @@ Available presets:
     vlumping_hmg_rich_lag3      — as above, plus a snapshot lag of three
     vlumping_inexact_snapshot_lag3 — Chebyshev kept, snapshot lag of three
     vlumping_hmg_snapshot_lag3     — HMG with Chebyshev kept, snapshot lag of three
+    bjacobi_rtol6               — bjacobi at ksp_rtol 1e-6 (tolerance ablation)
+    gmg_rtol6                   — GMG-H at ksp_rtol 1e-6 (tolerance ablation)
+    vlumping_hmg_rich_lag3_live — as vlumping_hmg_rich_lag3, live fine smoother
 
 The Pmat strategies `gamg_diffpmat`, `gamg_lipnikov`, and
 `boomeramg_lipnikov` were retired in April 2026. See SOLVER-STUDY.md §7
@@ -65,6 +68,8 @@ _presets = (
     "vlumping_inexact_rich", "vlumping_inexact_rich_lag3",
     "vlumping_hmg_rich", "vlumping_hmg_rich_lag3",
     "vlumping_inexact_snapshot_lag3", "vlumping_hmg_snapshot_lag3",
+    # Fair-comparison campaign: tolerance pairs and the incoherent lag
+    "bjacobi_rtol6", "gmg_rtol6", "vlumping_hmg_rich_lag3_live",
 )
 
 
