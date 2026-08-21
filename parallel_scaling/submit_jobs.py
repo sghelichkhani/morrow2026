@@ -34,6 +34,8 @@ HMG1_SOLVERS = {
     "vlumping_hmg_lag3",
     "vlumping_hmg_bjacilu",
     "vlumping_hmg_bjacilu_lag3",
+    "vlumping_hmg_rich",
+    "vlumping_hmg_rich_lag3",
 }
 GMG_SOLVERS = GMG3_SOLVERS | HMG1_SOLVERS
 
@@ -89,6 +91,21 @@ REVIEWER_SOLVERS = [
     "vlumping_hmg_lag3",
     "vlumping_hmg_bjacilu",
     "vlumping_hmg_bjacilu_lag3",
+]
+
+# Setup-cost campaign (2026-08-21). Two changes to the VLumping presets,
+# tested separately and together: a Richardson fine smoother, which removes
+# the per-Newton-step Chebyshev eigenvalue estimation, and a private
+# snapshot of the operator, which lags the Galerkin product and the coarse
+# factorisation. The unchanged `vlumping_inexact` and `vlumping_hmg` runs at
+# h8 from 2026-08-20 are the controls; the g-adopt change defaults to no lag
+# and leaves their code path unaltered. See
+# NOTES/2026-08-21-SPEEDING-UP-VLUMPING-SUGGESTIONS.md.
+RICH_SOLVERS = [
+    "vlumping_inexact_rich",
+    "vlumping_inexact_rich_lag3",
+    "vlumping_hmg_rich",
+    "vlumping_hmg_rich_lag3",
 ]
 
 # Gadi PBS configuration
@@ -545,6 +562,17 @@ def get_phase_runs(phase):
         for solver in REVIEWER_SOLVERS:
             runs.append(("murr_horiz", solver, "h8"))
 
+    elif phase == "rich_h8":
+        # Setup-cost campaign at production scale. The controls already ran
+        # on 2026-08-20 and are not repeated.
+        for solver in RICH_SOLVERS:
+            runs.append(("murr_horiz", solver, "h8"))
+
+    elif phase == "rich_smoke":
+        # Exercise each new preset on the one-node, 1775 m horizontal case.
+        for solver in RICH_SOLVERS:
+            runs.append(("murr_horiz", solver, "h1"))
+
     elif phase == "reviewer_strong":
         # Submit selected scales with --solvers after the h8 screen.
         for solver in REVIEWER_SOLVERS:
@@ -574,7 +602,8 @@ def main():
                  "round3_murr", "round3_murr_smoke",
                  "round3_murr_horiz", "round3_murr_horiz_smoke",
                  "strong", "hierarchy", "paper_profiles", "reviewer_smoke",
-                 "reviewer_h8", "reviewer_strong"],
+                 "reviewer_h8", "reviewer_strong",
+                 "rich_smoke", "rich_h8"],
         help="Which set of jobs to generate/submit"
     )
     parser.add_argument(
