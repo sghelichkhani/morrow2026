@@ -1,0 +1,337 @@
+=== Job info ===
+Case: cockett
+Solver: qn_gmg
+Scale: medium
+Nodes: 2
+CPUs: 208
+Date: Wed Apr 15 10:54:16 AEST 2026
+================
+Could not save font_manager cache Lock error: Matplotlib failed to acquire the following lock file:
+    /jobfs/165687827.gadi-pbs/matplotlib/fontlist-v390.json.matplotlib-lock
+This maybe due to another process holding this lock file.  If you are sure no
+other Matplotlib process is running, remove this file and try again.
+Could not save font_manager cache Lock error: Matplotlib failed to acquire the following lock file:
+    /jobfs/165687827.gadi-pbs/matplotlib/fontlist-v390.json.matplotlib-lock
+This maybe due to another process holding this lock file.  If you are sure no
+other Matplotlib process is running, remove this file and try again.
+Could not save font_manager cache Lock error: Matplotlib failed to acquire the following lock file:
+    /jobfs/165687827.gadi-pbs/matplotlib/fontlist-v390.json.matplotlib-lock
+This maybe due to another process holding this lock file.  If you are sure no
+other Matplotlib process is running, remove this file and try again.
+Could not save font_manager cache Lock error: Matplotlib failed to acquire the following lock file:
+    /jobfs/165687827.gadi-pbs/matplotlib/fontlist-v390.json.matplotlib-lock
+This maybe due to another process holding this lock file.  If you are sure no
+other Matplotlib process is running, remove this file and try again.
+Could not save font_manager cache Lock error: Matplotlib failed to acquire the following lock file:
+    /jobfs/165687827.gadi-pbs/matplotlib/fontlist-v390.json.matplotlib-lock
+This maybe due to another process holding this lock file.  If you are sure no
+other Matplotlib process is running, remove this file and try again.
+Could not save font_manager cache Lock error: Matplotlib failed to acquire the following lock file:
+    /jobfs/165687827.gadi-pbs/matplotlib/fontlist-v390.json.matplotlib-lock
+This maybe due to another process holding this lock file.  If you are sure no
+other Matplotlib process is running, remove this file and try again.
+Could not save font_manager cache Lock error: Matplotlib failed to acquire the following lock file:
+    /jobfs/165687827.gadi-pbs/matplotlib/fontlist-v390.json.matplotlib-lock
+This maybe due to another process holding this lock file.  If you are sure no
+other Matplotlib process is running, remove this file and try again.
+Could not save font_manager cache Lock error: Matplotlib failed to acquire the following lock file:
+    /jobfs/165687827.gadi-pbs/matplotlib/fontlist-v390.json.matplotlib-lock
+This maybe due to another process holding this lock file.  If you are sure no
+other Matplotlib process is running, remove this file and try again.
+Could not save font_manager cache Lock error: Matplotlib failed to acquire the following lock file:
+    /jobfs/165687827.gadi-pbs/matplotlib/fontlist-v390.json.matplotlib-lock
+This maybe due to another process holding this lock file.  If you are sure no
+other Matplotlib process is running, remove this file and try again.
+Could not save font_manager cache Lock error: Matplotlib failed to acquire the following lock file:
+    /jobfs/165687827.gadi-pbs/matplotlib/fontlist-v390.json.matplotlib-lock
+This maybe due to another process holding this lock file.  If you are sure no
+other Matplotlib process is running, remove this file and try again.
+Could not save font_manager cache Lock error: Matplotlib failed to acquire the following lock file:
+    /jobfs/165687827.gadi-pbs/matplotlib/fontlist-v390.json.matplotlib-lock
+This maybe due to another process holding this lock file.  If you are sure no
+other Matplotlib process is running, remove this file and try again.
+Could not save font_manager cache Lock error: Matplotlib failed to acquire the following lock file:
+    /jobfs/165687827.gadi-pbs/matplotlib/fontlist-v390.json.matplotlib-lock
+This maybe due to another process holding this lock file.  If you are sure no
+other Matplotlib process is running, remove this file and try again.
+Could not save font_manager cache Lock error: Matplotlib failed to acquire the following lock file:
+    /jobfs/165687827.gadi-pbs/matplotlib/fontlist-v390.json.matplotlib-lock
+This maybe due to another process holding this lock file.  If you are sure no
+other Matplotlib process is running, remove this file and try again.
+Could not save font_manager cache Lock error: Matplotlib failed to acquire the following lock file:
+    /jobfs/165687827.gadi-pbs/matplotlib/fontlist-v390.json.matplotlib-lock
+This maybe due to another process holding this lock file.  If you are sure no
+other Matplotlib process is running, remove this file and try again.
+Could not save font_manager cache Lock error: Matplotlib failed to acquire the following lock file:
+    /jobfs/165687827.gadi-pbs/matplotlib/fontlist-v390.json.matplotlib-lock
+This maybe due to another process holding this lock file.  If you are sure no
+other Matplotlib process is running, remove this file and try again.
+Could not save font_manager cache Lock error: Matplotlib failed to acquire the following lock file:
+    /jobfs/165687827.gadi-pbs/matplotlib/fontlist-v390.json.matplotlib-lock
+This maybe due to another process holding this lock file.  If you are sure no
+other Matplotlib process is running, remove this file and try again.
+Could not save font_manager cache Lock error: Matplotlib failed to acquire the following lock file:
+    /jobfs/165687827.gadi-pbs/matplotlib/fontlist-v390.json.matplotlib-lock
+This maybe due to another process holding this lock file.  If you are sure no
+other Matplotlib process is running, remove this file and try again.
+Could not save font_manager cache Lock error: Matplotlib failed to acquire the following lock file:
+    /jobfs/165687827.gadi-pbs/matplotlib/fontlist-v390.json.matplotlib-lock
+This maybe due to another process holding this lock file.  If you are sure no
+other Matplotlib process is running, remove this file and try again.
+Could not save font_manager cache Lock error: Matplotlib failed to acquire the following lock file:
+    /jobfs/165687827.gadi-pbs/matplotlib/fontlist-v390.json.matplotlib-lock
+This maybe due to another process holding this lock file.  If you are sure no
+other Matplotlib process is running, remove this file and try again.
+Number of degrees of freedom: 36227072
+Mesh: 152x152x196, DQ1
+Time stepper: BackwardEuler, dt = 300.0 s, steps = 30
+Solver: qn_gmg
+Solver parameters: {'snes_type': 'qn', 'snes_rtol': 1e-08, 'snes_atol': 1e-08, 'snes_max_it': 50, 'snes_qn_type': 'lbfgs', 'snes_qn_m': 10, 'snes_qn_restart_type': 'powell', 'snes_qn_powell_gamma': 0.9999, 'snes_qn_scale_type': 'jacobian', 'snes_linesearch_type': 'cp', 'snes_linesearch_order': 3, 'ksp_type': 'fgmres', 'ksp_rtol': 1e-06, 'ksp_max_it': 200, 'ksp_gmres_restart': 30, 'pc_type': 'mg', 'pc_mg_cycle_type': 'v', 'mg_levels_ksp_type': 'chebyshev', 'mg_levels_ksp_max_it': 1, 'mg_levels_ksp_convergence_test': 'skip', 'mg_levels_pc_type': 'bjacobi', 'mg_levels_sub_pc_type': 'ilu', 'mg_levels_sub_pc_factor_levels': 0, 'mg_coarse_ksp_type': 'gmres', 'mg_coarse_ksp_max_it': 30, 'mg_coarse_pc_type': 'bjacobi', 'mg_coarse_sub_pc_type': 'ilu'}
+  0 SNES Function norm 3.127253666746e-06
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 28
+  1 SNES Function norm 1.700277330891e-07
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 29
+  2 SNES Function norm 3.069203567040e-08
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 28
+  3 SNES Function norm 4.672574676751e-09
+  Nonlinear BackwardEuler-Equation_ solve converged due to CONVERGED_FNORM_ABS iterations 3
+t = 300.00 s | step 1/30 | wall 113.78 s | NL 3 | L 0
+  0 SNES Function norm 1.390507344293e-06
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 28
+  1 SNES Function norm 1.390473797690e-06
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 28
+  2 SNES Function norm 1.805325615083e-06
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 28
+  3 SNES Function norm 4.811655954344e-07
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 27
+  4 SNES Function norm 7.447662691820e-08
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 27
+  5 SNES Function norm 9.516553035295e-09
+  Nonlinear BackwardEuler-Equation_ solve converged due to CONVERGED_FNORM_ABS iterations 5
+t = 600.00 s | step 2/30 | wall 54.00 s | NL 5 | L 0
+  0 SNES Function norm 1.190517480208e-06
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 28
+  1 SNES Function norm 7.379239435736e-07
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 29
+  2 SNES Function norm 6.643403536894e-08
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 28
+  3 SNES Function norm 2.993687969864e-08
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 28
+  4 SNES Function norm 3.769398016997e-09
+  Nonlinear BackwardEuler-Equation_ solve converged due to CONVERGED_FNORM_ABS iterations 4
+t = 900.00 s | step 3/30 | wall 44.82 s | NL 4 | L 0
+  0 SNES Function norm 1.088023908406e-06
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 29
+  1 SNES Function norm 1.087737250862e-06
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 29
+  2 SNES Function norm 1.341306317666e-06
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 29
+  3 SNES Function norm 2.261148341568e-06
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 29
+  4 SNES Function norm 1.333718387806e-07
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 28
+  5 SNES Function norm 1.305159530076e-08
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 27
+  6 SNES Function norm 1.362876506111e-09
+  Nonlinear BackwardEuler-Equation_ solve converged due to CONVERGED_FNORM_ABS iterations 6
+t = 1200.00 s | step 4/30 | wall 69.15 s | NL 6 | L 0
+  0 SNES Function norm 1.021707225337e-06
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 29
+  1 SNES Function norm 5.984145230543e-07
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 30
+  2 SNES Function norm 2.824799264524e-08
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 28
+  3 SNES Function norm 4.490094888575e-09
+  Nonlinear BackwardEuler-Equation_ solve converged due to CONVERGED_FNORM_ABS iterations 3
+t = 1500.00 s | step 5/30 | wall 35.21 s | NL 3 | L 0
+  0 SNES Function norm 9.738293499249e-07
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 29
+  1 SNES Function norm 9.710552451672e-07
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 29
+  2 SNES Function norm 3.720871517169e-07
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 29
+  3 SNES Function norm 1.433098032257e-08
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 29
+  4 SNES Function norm 1.578131314119e-09
+  Nonlinear BackwardEuler-Equation_ solve converged due to CONVERGED_FNORM_ABS iterations 4
+t = 1800.00 s | step 6/30 | wall 45.74 s | NL 4 | L 0
+  0 SNES Function norm 9.371178954770e-07
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 29
+  1 SNES Function norm 1.134573949293e-07
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 29
+  2 SNES Function norm 1.221529755572e-08
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 29
+  3 SNES Function norm 1.230694698028e-09
+  Nonlinear BackwardEuler-Equation_ solve converged due to CONVERGED_FNORM_ABS iterations 3
+t = 2100.00 s | step 7/30 | wall 35.23 s | NL 3 | L 0
+  0 SNES Function norm 9.077644911650e-07
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 29
+  1 SNES Function norm 9.137927079803e-07
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 29
+  2 SNES Function norm 9.214945935865e-07
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 28
+  3 SNES Function norm 2.118355759004e-06
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 29
+  4 SNES Function norm 4.342872592337e-08
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 28
+  5 SNES Function norm 1.987365918385e-09
+  Nonlinear BackwardEuler-Equation_ solve converged due to CONVERGED_FNORM_ABS iterations 5
+t = 2400.00 s | step 8/30 | wall 59.01 s | NL 5 | L 0
+  0 SNES Function norm 8.835784026183e-07
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 29
+  1 SNES Function norm 8.839115302360e-07
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 29
+  2 SNES Function norm 8.843533616525e-07
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 28
+  3 SNES Function norm 1.605978867223e-06
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 29
+  4 SNES Function norm 3.512461471550e-08
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 28
+  5 SNES Function norm 1.692418845096e-09
+  Nonlinear BackwardEuler-Equation_ solve converged due to CONVERGED_FNORM_ABS iterations 5
+t = 2700.00 s | step 9/30 | wall 58.97 s | NL 5 | L 0
+  0 SNES Function norm 8.632060104503e-07
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 28
+  1 SNES Function norm 6.587770859459e-08
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 28
+  2 SNES Function norm 2.561074705595e-09
+  Nonlinear BackwardEuler-Equation_ solve converged due to CONVERGED_FNORM_ABS iterations 2
+t = 3000.00 s | step 10/30 | wall 24.31 s | NL 2 | L 0
+  0 SNES Function norm 8.457915169664e-07
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 29
+  1 SNES Function norm 2.132251768873e-08
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 29
+  2 SNES Function norm 7.953297721866e-10
+  Nonlinear BackwardEuler-Equation_ solve converged due to CONVERGED_FNORM_ABS iterations 2
+t = 3300.00 s | step 11/30 | wall 24.75 s | NL 2 | L 0
+  0 SNES Function norm 8.307028250106e-07
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 29
+  1 SNES Function norm 1.799150741596e-08
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 29
+  2 SNES Function norm 8.378768868603e-10
+  Nonlinear BackwardEuler-Equation_ solve converged due to CONVERGED_FNORM_ABS iterations 2
+t = 3600.00 s | step 12/30 | wall 24.74 s | NL 2 | L 0
+  0 SNES Function norm 8.174952446585e-07
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 29
+  1 SNES Function norm 1.456879853746e-08
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 29
+  2 SNES Function norm 1.102671370662e-09
+  Nonlinear BackwardEuler-Equation_ solve converged due to CONVERGED_FNORM_ABS iterations 2
+t = 3900.00 s | step 13/30 | wall 24.76 s | NL 2 | L 0
+  0 SNES Function norm 8.058334242186e-07
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 29
+  1 SNES Function norm 1.186872165482e-08
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 29
+  2 SNES Function norm 1.351398070724e-09
+  Nonlinear BackwardEuler-Equation_ solve converged due to CONVERGED_FNORM_ABS iterations 2
+t = 4200.00 s | step 14/30 | wall 24.74 s | NL 2 | L 0
+  0 SNES Function norm 7.954619584250e-07
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 29
+  1 SNES Function norm 1.000045851105e-08
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 29
+  2 SNES Function norm 1.488728715636e-09
+  Nonlinear BackwardEuler-Equation_ solve converged due to CONVERGED_FNORM_ABS iterations 2
+t = 4500.00 s | step 15/30 | wall 24.75 s | NL 2 | L 0
+  0 SNES Function norm 7.861815034080e-07
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 28
+  1 SNES Function norm 8.898241238790e-09
+  Nonlinear BackwardEuler-Equation_ solve converged due to CONVERGED_FNORM_ABS iterations 1
+t = 4800.00 s | step 16/30 | wall 13.97 s | NL 1 | L 0
+  0 SNES Function norm 7.776567516084e-07
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 29
+  1 SNES Function norm 1.925442156668e-08
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 29
+  2 SNES Function norm 3.153742140502e-09
+  Nonlinear BackwardEuler-Equation_ solve converged due to CONVERGED_FNORM_ABS iterations 2
+t = 5100.00 s | step 17/30 | wall 24.75 s | NL 2 | L 0
+  0 SNES Function norm 7.701796917094e-07
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 28
+  1 SNES Function norm 8.516848521632e-09
+  Nonlinear BackwardEuler-Equation_ solve converged due to CONVERGED_FNORM_ABS iterations 1
+t = 5400.00 s | step 18/30 | wall 13.96 s | NL 1 | L 0
+  0 SNES Function norm 7.632116516431e-07
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 28
+  1 SNES Function norm 1.791360310926e-08
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 29
+  2 SNES Function norm 2.704188557027e-09
+  Nonlinear BackwardEuler-Equation_ solve converged due to CONVERGED_FNORM_ABS iterations 2
+t = 5700.00 s | step 19/30 | wall 24.46 s | NL 2 | L 0
+  0 SNES Function norm 7.570634922412e-07
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 28
+  1 SNES Function norm 8.486706491776e-09
+  Nonlinear BackwardEuler-Equation_ solve converged due to CONVERGED_FNORM_ABS iterations 1
+t = 6000.00 s | step 20/30 | wall 13.96 s | NL 1 | L 0
+  0 SNES Function norm 7.512600116062e-07
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 28
+  1 SNES Function norm 1.732989772824e-08
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 29
+  2 SNES Function norm 2.156088488446e-09
+  Nonlinear BackwardEuler-Equation_ solve converged due to CONVERGED_FNORM_ABS iterations 2
+t = 6300.00 s | step 21/30 | wall 24.42 s | NL 2 | L 0
+  0 SNES Function norm 7.461350528121e-07
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 28
+  1 SNES Function norm 8.338127461392e-09
+  Nonlinear BackwardEuler-Equation_ solve converged due to CONVERGED_FNORM_ABS iterations 1
+t = 6600.00 s | step 22/30 | wall 13.96 s | NL 1 | L 0
+  0 SNES Function norm 7.412348853797e-07
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 28
+  1 SNES Function norm 1.682632180732e-08
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 29
+  2 SNES Function norm 1.084341668368e-09
+  Nonlinear BackwardEuler-Equation_ solve converged due to CONVERGED_FNORM_ABS iterations 2
+t = 6900.00 s | step 23/30 | wall 24.44 s | NL 2 | L 0
+  0 SNES Function norm 7.369258240728e-07
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 28
+  1 SNES Function norm 7.097161965952e-09
+  Nonlinear BackwardEuler-Equation_ solve converged due to CONVERGED_FNORM_ABS iterations 1
+t = 7200.00 s | step 24/30 | wall 13.97 s | NL 1 | L 0
+  0 SNES Function norm 7.327559830617e-07
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 28
+  1 SNES Function norm 1.490252736838e-08
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 29
+  2 SNES Function norm 1.067692923392e-09
+  Nonlinear BackwardEuler-Equation_ solve converged due to CONVERGED_FNORM_ABS iterations 2
+t = 7500.00 s | step 25/30 | wall 24.47 s | NL 2 | L 0
+  0 SNES Function norm 7.291165535793e-07
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 28
+  1 SNES Function norm 6.955684764038e-09
+  Nonlinear BackwardEuler-Equation_ solve converged due to CONVERGED_FNORM_ABS iterations 1
+t = 7800.00 s | step 26/30 | wall 13.97 s | NL 1 | L 0
+  0 SNES Function norm 7.255416768728e-07
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 28
+  1 SNES Function norm 1.448262880634e-08
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 29
+  2 SNES Function norm 1.064270761348e-09
+  Nonlinear BackwardEuler-Equation_ solve converged due to CONVERGED_FNORM_ABS iterations 2
+t = 8100.00 s | step 27/30 | wall 24.43 s | NL 2 | L 0
+  0 SNES Function norm 7.224446983798e-07
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 28
+  1 SNES Function norm 6.839803778475e-09
+  Nonlinear BackwardEuler-Equation_ solve converged due to CONVERGED_FNORM_ABS iterations 1
+t = 8400.00 s | step 28/30 | wall 13.96 s | NL 1 | L 0
+  0 SNES Function norm 7.193625117437e-07
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 28
+  1 SNES Function norm 1.414500856359e-08
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 29
+  2 SNES Function norm 1.062819431724e-09
+  Nonlinear BackwardEuler-Equation_ solve converged due to CONVERGED_FNORM_ABS iterations 2
+t = 8700.00 s | step 29/30 | wall 24.41 s | NL 2 | L 0
+  0 SNES Function norm 7.167176226062e-07
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 28
+  1 SNES Function norm 6.736500103902e-09
+  Nonlinear BackwardEuler-Equation_ solve converged due to CONVERGED_FNORM_ABS iterations 1
+t = 9000.00 s | step 30/30 | wall 13.95 s | NL 1 | L 0
+Done | total NL 72 | total L 0 | mean wall/step 31.57 s | peak RSS 1694 MB
+=== Job completed: Wed Apr 15 11:10:56 AEST 2026 ===
+
+======================================================================================
+                  Resource Usage on 2026-04-15 11:11:01:
+   Job Id:             165687827.gadi-pbs
+   Project:            xd2
+   Exit Status:        0
+   Service Units:      115.90
+   NCPUs Requested:    208                 CPU Time Used: 56:37:15        
+   Memory Requested:   1000.0GB              Memory Used: 209.67GB        
+   Walltime Requested: 03:00:00            Walltime Used: 00:16:43        
+   JobFS Requested:    400.0GB                JobFS Used: 88.5MB          
+======================================================================================

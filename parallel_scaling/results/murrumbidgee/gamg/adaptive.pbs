@@ -1,0 +1,42 @@
+#!/bin/bash
+#PBS -N rs-murr-gamg-adapt
+#PBS -P xd2
+#PBS -q normalsr
+#PBS -l walltime=06:00:00
+#PBS -l mem=2000GB
+#PBS -l ncpus=416
+#PBS -l jobfs=400GB
+#PBS -l storage=scratch/xd2+gdata/xd2+gdata/fp50
+#PBS -l wd
+#PBS -W umask=0022
+#PBS -o /scratch/xd2/sg8812/g-adopt-worktrees/sghelichkhani/richardson/tests/parallel_scaling_richards/results/murrumbidgee/gamg/adaptive.out
+#PBS -e /scratch/xd2/sg8812/g-adopt-worktrees/sghelichkhani/richardson/tests/parallel_scaling_richards/results/murrumbidgee/gamg/adaptive.err
+
+source /etc/profile
+module use /g/data/fp50/modules
+module load firedrake/main-20260401
+
+export PYTHONPATH="/scratch/xd2/sg8812/g-adopt-worktrees/sghelichkhani/richardson":"/scratch/xd2/sg8812/Irksome":"/scratch/xd2/sg8812/local/firedrake-main-20260401/lib/python3.11/site-packages":"/scratch/xd2/sg8812/firedrake-override":"/scratch/xd2/sg8812/gwassess":${PYTHONPATH}
+export PYTHONDONTWRITEBYTECODE=1
+export OMPI_MCA_io="ompio"
+export OMP_NUM_THREADS=1
+export MPLCONFIGDIR=$PBS_JOBFS/matplotlib
+
+cd /scratch/xd2/sg8812/g-adopt-worktrees/sghelichkhani/richardson/tests/parallel_scaling_richards
+
+echo "=== Murrumbidgee adaptive ramp-up: gamg, paper resolution ==="
+echo "Resolution: 1775 m horiz, 300 layers"
+echo "dt ramp: 60 s -> 43200 s (growth 1.5, shrink 0.5)"
+echo "Target: 30 days simulation time"
+echo "Nodes: 4 (416 CPUs)"
+echo "Date: $(date)"
+echo "================"
+
+mpiexec -np $PBS_NCPUS python murrumbidgee_3d.py \
+    --horiz-res 1775 --layers 300 \
+    --solver gamg \
+    --dt-init 60 --dt-max 43200 --dt-growth 0.5 --dt-shrink 0.5 \
+    --t-final 2592000 \
+    --data-dir ./murrumbidgee_data 2>&1
+
+echo "=== Job completed: $(date) ==="

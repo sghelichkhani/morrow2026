@@ -1,0 +1,39 @@
+#!/bin/bash
+#PBS -N rs-murr-gamg_lipnikov-sweep
+#PBS -P xd2
+#PBS -q normalsr
+#PBS -l walltime=03:00:00
+#PBS -l mem=500GB
+#PBS -l ncpus=48
+#PBS -l jobfs=400GB
+#PBS -l storage=scratch/xd2+gdata/xd2+gdata/fp50
+#PBS -l wd
+#PBS -W umask=0022
+#PBS -o /scratch/xd2/sg8812/g-adopt-worktrees/sghelichkhani/richardson/tests/parallel_scaling_richards/results/murrumbidgee/gamg_lipnikov/sweep.out
+#PBS -e /scratch/xd2/sg8812/g-adopt-worktrees/sghelichkhani/richardson/tests/parallel_scaling_richards/results/murrumbidgee/gamg_lipnikov/sweep.err
+
+source /etc/profile
+module use /g/data/fp50/modules
+module load firedrake/main-20260401
+
+export PYTHONPATH="/scratch/xd2/sg8812/g-adopt-worktrees/sghelichkhani/richardson":"/scratch/xd2/sg8812/Irksome":"/scratch/xd2/sg8812/local/firedrake-main-20260401/lib/python3.11/site-packages":"/scratch/xd2/sg8812/firedrake-override":"/scratch/xd2/sg8812/gwassess":${PYTHONPATH}
+export PYTHONDONTWRITEBYTECODE=1
+
+export OMPI_MCA_io="ompio"
+export OMP_NUM_THREADS=1
+export MPLCONFIGDIR=$PBS_JOBFS/matplotlib
+
+cd /scratch/xd2/sg8812/g-adopt-worktrees/sghelichkhani/richardson/tests/parallel_scaling_richards
+
+echo "=== Job info ==="
+echo "Case: murrumbidgee"
+echo "Solver: gamg_lipnikov"
+echo "Scale: sweep"
+echo "Nodes: 1"
+echo "CPUs: 48"
+echo "Date: $(date)"
+echo "================"
+
+mpiexec -np $PBS_NCPUS python /scratch/xd2/sg8812/g-adopt-worktrees/sghelichkhani/richardson/tests/parallel_scaling_richards/murrumbidgee_3d.py --horiz-res 5000 --layers 50 --steps 20 --solver gamg_lipnikov --refinement-levels 0 --data-dir /scratch/xd2/sg8812/g-adopt-worktrees/sghelichkhani/richardson/tests/parallel_scaling_richards/murrumbidgee_data 2>&1
+
+echo "=== Job completed: $(date) ==="

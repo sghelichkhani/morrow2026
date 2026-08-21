@@ -1,0 +1,4 @@
+Loading firedrake/main-20260401
+  Loading requirement: singularity intel-compiler-llvm/2024.2.1
+    petsc/main-20260404
+=>> PBS: job killed: walltime 10858 exceeded limit 10800

@@ -1,0 +1,2936 @@
+=== Job info ===
+Case: cockett
+Solver: ngmres_gmg
+Scale: large
+Nodes: 8
+CPUs: 832
+Date: Wed Apr 15 16:05:55 AEST 2026
+================
+Could not save font_manager cache Lock error: Matplotlib failed to acquire the following lock file:
+    /jobfs/165722975.gadi-pbs/matplotlib/fontlist-v390.json.matplotlib-lock
+This maybe due to another process holding this lock file.  If you are sure no
+other Matplotlib process is running, remove this file and try again.
+Could not save font_manager cache Lock error: Matplotlib failed to acquire the following lock file:
+    /jobfs/165722975.gadi-pbs/matplotlib/fontlist-v390.json.matplotlib-lock
+This maybe due to another process holding this lock file.  If you are sure no
+other Matplotlib process is running, remove this file and try again.
+Could not save font_manager cache Lock error: Matplotlib failed to acquire the following lock file:
+    /jobfs/165722975.gadi-pbs/matplotlib/fontlist-v390.json.matplotlib-lock
+This maybe due to another process holding this lock file.  If you are sure no
+other Matplotlib process is running, remove this file and try again.
+Could not save font_manager cache Lock error: Matplotlib failed to acquire the following lock file:
+    /jobfs/165722975.gadi-pbs/matplotlib/fontlist-v390.json.matplotlib-lock
+This maybe due to another process holding this lock file.  If you are sure no
+other Matplotlib process is running, remove this file and try again.
+Could not save font_manager cache Lock error: Matplotlib failed to acquire the following lock file:
+    /jobfs/165722975.gadi-pbs/matplotlib/fontlist-v390.json.matplotlib-lock
+This maybe due to another process holding this lock file.  If you are sure no
+other Matplotlib process is running, remove this file and try again.
+Could not save font_manager cache Lock error: Matplotlib failed to acquire the following lock file:
+    /jobfs/165722975.gadi-pbs/matplotlib/fontlist-v390.json.matplotlib-lock
+This maybe due to another process holding this lock file.  If you are sure no
+other Matplotlib process is running, remove this file and try again.
+Could not save font_manager cache Lock error: Matplotlib failed to acquire the following lock file:
+    /jobfs/165722975.gadi-pbs/matplotlib/fontlist-v390.json.matplotlib-lock
+This maybe due to another process holding this lock file.  If you are sure no
+other Matplotlib process is running, remove this file and try again.
+Could not save font_manager cache Lock error: Matplotlib failed to acquire the following lock file:
+    /jobfs/165722975.gadi-pbs/matplotlib/fontlist-v390.json.matplotlib-lock
+This maybe due to another process holding this lock file.  If you are sure no
+other Matplotlib process is running, remove this file and try again.
+Could not save font_manager cache Lock error: Matplotlib failed to acquire the following lock file:
+    /jobfs/165722975.gadi-pbs/matplotlib/fontlist-v390.json.matplotlib-lock
+This maybe due to another process holding this lock file.  If you are sure no
+other Matplotlib process is running, remove this file and try again.
+Could not save font_manager cache Lock error: Matplotlib failed to acquire the following lock file:
+    /jobfs/165722975.gadi-pbs/matplotlib/fontlist-v390.json.matplotlib-lock
+This maybe due to another process holding this lock file.  If you are sure no
+other Matplotlib process is running, remove this file and try again.
+Could not save font_manager cache Lock error: Matplotlib failed to acquire the following lock file:
+    /jobfs/165722975.gadi-pbs/matplotlib/fontlist-v390.json.matplotlib-lock
+This maybe due to another process holding this lock file.  If you are sure no
+other Matplotlib process is running, remove this file and try again.
+Could not save font_manager cache Lock error: Matplotlib failed to acquire the following lock file:
+    /jobfs/165722975.gadi-pbs/matplotlib/fontlist-v390.json.matplotlib-lock
+This maybe due to another process holding this lock file.  If you are sure no
+other Matplotlib process is running, remove this file and try again.
+Could not save font_manager cache Lock error: Matplotlib failed to acquire the following lock file:
+    /jobfs/165722975.gadi-pbs/matplotlib/fontlist-v390.json.matplotlib-lock
+This maybe due to another process holding this lock file.  If you are sure no
+other Matplotlib process is running, remove this file and try again.
+Could not save font_manager cache Lock error: Matplotlib failed to acquire the following lock file:
+    /jobfs/165722975.gadi-pbs/matplotlib/fontlist-v390.json.matplotlib-lock
+This maybe due to another process holding this lock file.  If you are sure no
+other Matplotlib process is running, remove this file and try again.
+Could not save font_manager cache Lock error: Matplotlib failed to acquire the following lock file:
+    /jobfs/165722975.gadi-pbs/matplotlib/fontlist-v390.json.matplotlib-lock
+This maybe due to another process holding this lock file.  If you are sure no
+other Matplotlib process is running, remove this file and try again.
+Could not save font_manager cache Lock error: Matplotlib failed to acquire the following lock file:
+    /jobfs/165722975.gadi-pbs/matplotlib/fontlist-v390.json.matplotlib-lock
+This maybe due to another process holding this lock file.  If you are sure no
+other Matplotlib process is running, remove this file and try again.
+Could not save font_manager cache Lock error: Matplotlib failed to acquire the following lock file:
+    /jobfs/165722975.gadi-pbs/matplotlib/fontlist-v390.json.matplotlib-lock
+This maybe due to another process holding this lock file.  If you are sure no
+other Matplotlib process is running, remove this file and try again.
+Could not save font_manager cache Lock error: Matplotlib failed to acquire the following lock file:
+    /jobfs/165722975.gadi-pbs/matplotlib/fontlist-v390.json.matplotlib-lock
+This maybe due to another process holding this lock file.  If you are sure no
+other Matplotlib process is running, remove this file and try again.
+Could not save font_manager cache Lock error: Matplotlib failed to acquire the following lock file:
+    /jobfs/165722975.gadi-pbs/matplotlib/fontlist-v390.json.matplotlib-lock
+This maybe due to another process holding this lock file.  If you are sure no
+other Matplotlib process is running, remove this file and try again.
+Could not save font_manager cache Lock error: Matplotlib failed to acquire the following lock file:
+    /jobfs/165722975.gadi-pbs/matplotlib/fontlist-v390.json.matplotlib-lock
+This maybe due to another process holding this lock file.  If you are sure no
+other Matplotlib process is running, remove this file and try again.
+Could not save font_manager cache Lock error: Matplotlib failed to acquire the following lock file:
+    /jobfs/165722975.gadi-pbs/matplotlib/fontlist-v390.json.matplotlib-lock
+This maybe due to another process holding this lock file.  If you are sure no
+other Matplotlib process is running, remove this file and try again.
+Could not save font_manager cache Lock error: Matplotlib failed to acquire the following lock file:
+    /jobfs/165722975.gadi-pbs/matplotlib/fontlist-v390.json.matplotlib-lock
+This maybe due to another process holding this lock file.  If you are sure no
+other Matplotlib process is running, remove this file and try again.
+Could not save font_manager cache Lock error: Matplotlib failed to acquire the following lock file:
+    /jobfs/165722975.gadi-pbs/matplotlib/fontlist-v390.json.matplotlib-lock
+This maybe due to another process holding this lock file.  If you are sure no
+other Matplotlib process is running, remove this file and try again.
+Could not save font_manager cache Lock error: Matplotlib failed to acquire the following lock file:
+    /jobfs/165722975.gadi-pbs/matplotlib/fontlist-v390.json.matplotlib-lock
+This maybe due to another process holding this lock file.  If you are sure no
+other Matplotlib process is running, remove this file and try again.
+Could not save font_manager cache Lock error: Matplotlib failed to acquire the following lock file:
+    /jobfs/165722975.gadi-pbs/matplotlib/fontlist-v390.json.matplotlib-lock
+This maybe due to another process holding this lock file.  If you are sure no
+other Matplotlib process is running, remove this file and try again.
+Could not save font_manager cache Lock error: Matplotlib failed to acquire the following lock file:
+    /jobfs/165722975.gadi-pbs/matplotlib/fontlist-v390.json.matplotlib-lock
+This maybe due to another process holding this lock file.  If you are sure no
+other Matplotlib process is running, remove this file and try again.
+Could not save font_manager cache Lock error: Matplotlib failed to acquire the following lock file:
+    /jobfs/165722975.gadi-pbs/matplotlib/fontlist-v390.json.matplotlib-lock
+This maybe due to another process holding this lock file.  If you are sure no
+other Matplotlib process is running, remove this file and try again.
+Could not save font_manager cache Lock error: Matplotlib failed to acquire the following lock file:
+    /jobfs/165722975.gadi-pbs/matplotlib/fontlist-v390.json.matplotlib-lock
+This maybe due to another process holding this lock file.  If you are sure no
+other Matplotlib process is running, remove this file and try again.
+Could not save font_manager cache Lock error: Matplotlib failed to acquire the following lock file:
+    /jobfs/165722975.gadi-pbs/matplotlib/fontlist-v390.json.matplotlib-lock
+This maybe due to another process holding this lock file.  If you are sure no
+other Matplotlib process is running, remove this file and try again.
+Could not save font_manager cache Lock error: Matplotlib failed to acquire the following lock file:
+    /jobfs/165722975.gadi-pbs/matplotlib/fontlist-v390.json.matplotlib-lock
+This maybe due to another process holding this lock file.  If you are sure no
+other Matplotlib process is running, remove this file and try again.
+Could not save font_manager cache Lock error: Matplotlib failed to acquire the following lock file:
+    /jobfs/165722975.gadi-pbs/matplotlib/fontlist-v390.json.matplotlib-lock
+This maybe due to another process holding this lock file.  If you are sure no
+other Matplotlib process is running, remove this file and try again.
+Could not save font_manager cache Lock error: Matplotlib failed to acquire the following lock file:
+    /jobfs/165722975.gadi-pbs/matplotlib/fontlist-v390.json.matplotlib-lock
+This maybe due to another process holding this lock file.  If you are sure no
+other Matplotlib process is running, remove this file and try again.
+Could not save font_manager cache Lock error: Matplotlib failed to acquire the following lock file:
+    /jobfs/165722975.gadi-pbs/matplotlib/fontlist-v390.json.matplotlib-lock
+This maybe due to another process holding this lock file.  If you are sure no
+other Matplotlib process is running, remove this file and try again.
+Could not save font_manager cache Lock error: Matplotlib failed to acquire the following lock file:
+    /jobfs/165722975.gadi-pbs/matplotlib/fontlist-v390.json.matplotlib-lock
+This maybe due to another process holding this lock file.  If you are sure no
+other Matplotlib process is running, remove this file and try again.
+Could not save font_manager cache Lock error: Matplotlib failed to acquire the following lock file:
+    /jobfs/165722975.gadi-pbs/matplotlib/fontlist-v390.json.matplotlib-lock
+This maybe due to another process holding this lock file.  If you are sure no
+other Matplotlib process is running, remove this file and try again.
+Could not save font_manager cache Lock error: Matplotlib failed to acquire the following lock file:
+    /jobfs/165722975.gadi-pbs/matplotlib/fontlist-v390.json.matplotlib-lock
+This maybe due to another process holding this lock file.  If you are sure no
+other Matplotlib process is running, remove this file and try again.
+Could not save font_manager cache Lock error: Matplotlib failed to acquire the following lock file:
+    /jobfs/165722975.gadi-pbs/matplotlib/fontlist-v390.json.matplotlib-lock
+This maybe due to another process holding this lock file.  If you are sure no
+other Matplotlib process is running, remove this file and try again.
+Could not save font_manager cache Lock error: Matplotlib failed to acquire the following lock file:
+    /jobfs/165722975.gadi-pbs/matplotlib/fontlist-v390.json.matplotlib-lock
+This maybe due to another process holding this lock file.  If you are sure no
+other Matplotlib process is running, remove this file and try again.
+Could not save font_manager cache Lock error: Matplotlib failed to acquire the following lock file:
+    /jobfs/165722975.gadi-pbs/matplotlib/fontlist-v390.json.matplotlib-lock
+This maybe due to another process holding this lock file.  If you are sure no
+other Matplotlib process is running, remove this file and try again.
+Could not save font_manager cache Lock error: Matplotlib failed to acquire the following lock file:
+    /jobfs/165722975.gadi-pbs/matplotlib/fontlist-v390.json.matplotlib-lock
+This maybe due to another process holding this lock file.  If you are sure no
+other Matplotlib process is running, remove this file and try again.
+Could not save font_manager cache Lock error: Matplotlib failed to acquire the following lock file:
+    /jobfs/165722975.gadi-pbs/matplotlib/fontlist-v390.json.matplotlib-lock
+This maybe due to another process holding this lock file.  If you are sure no
+other Matplotlib process is running, remove this file and try again.
+Could not save font_manager cache Lock error: Matplotlib failed to acquire the following lock file:
+    /jobfs/165722975.gadi-pbs/matplotlib/fontlist-v390.json.matplotlib-lock
+This maybe due to another process holding this lock file.  If you are sure no
+other Matplotlib process is running, remove this file and try again.
+Could not save font_manager cache Lock error: Matplotlib failed to acquire the following lock file:
+    /jobfs/165722975.gadi-pbs/matplotlib/fontlist-v390.json.matplotlib-lock
+This maybe due to another process holding this lock file.  If you are sure no
+other Matplotlib process is running, remove this file and try again.
+Could not save font_manager cache Lock error: Matplotlib failed to acquire the following lock file:
+    /jobfs/165722975.gadi-pbs/matplotlib/fontlist-v390.json.matplotlib-lock
+This maybe due to another process holding this lock file.  If you are sure no
+other Matplotlib process is running, remove this file and try again.
+Could not save font_manager cache Lock error: Matplotlib failed to acquire the following lock file:
+    /jobfs/165722975.gadi-pbs/matplotlib/fontlist-v390.json.matplotlib-lock
+This maybe due to another process holding this lock file.  If you are sure no
+other Matplotlib process is running, remove this file and try again.
+Could not save font_manager cache Lock error: Matplotlib failed to acquire the following lock file:
+    /jobfs/165722975.gadi-pbs/matplotlib/fontlist-v390.json.matplotlib-lock
+This maybe due to another process holding this lock file.  If you are sure no
+other Matplotlib process is running, remove this file and try again.
+Could not save font_manager cache Lock error: Matplotlib failed to acquire the following lock file:
+    /jobfs/165722975.gadi-pbs/matplotlib/fontlist-v390.json.matplotlib-lock
+This maybe due to another process holding this lock file.  If you are sure no
+other Matplotlib process is running, remove this file and try again.
+Could not save font_manager cache Lock error: Matplotlib failed to acquire the following lock file:
+    /jobfs/165722975.gadi-pbs/matplotlib/fontlist-v390.json.matplotlib-lock
+This maybe due to another process holding this lock file.  If you are sure no
+other Matplotlib process is running, remove this file and try again.
+Could not save font_manager cache Lock error: Matplotlib failed to acquire the following lock file:
+    /jobfs/165722975.gadi-pbs/matplotlib/fontlist-v390.json.matplotlib-lock
+This maybe due to another process holding this lock file.  If you are sure no
+other Matplotlib process is running, remove this file and try again.
+Could not save font_manager cache Lock error: Matplotlib failed to acquire the following lock file:
+    /jobfs/165722975.gadi-pbs/matplotlib/fontlist-v390.json.matplotlib-lock
+This maybe due to another process holding this lock file.  If you are sure no
+other Matplotlib process is running, remove this file and try again.
+Could not save font_manager cache Lock error: Matplotlib failed to acquire the following lock file:
+    /jobfs/165722975.gadi-pbs/matplotlib/fontlist-v390.json.matplotlib-lock
+This maybe due to another process holding this lock file.  If you are sure no
+other Matplotlib process is running, remove this file and try again.
+Could not save font_manager cache Lock error: Matplotlib failed to acquire the following lock file:
+    /jobfs/165722975.gadi-pbs/matplotlib/fontlist-v390.json.matplotlib-lock
+This maybe due to another process holding this lock file.  If you are sure no
+other Matplotlib process is running, remove this file and try again.
+Could not save font_manager cache Lock error: Matplotlib failed to acquire the following lock file:
+    /jobfs/165722975.gadi-pbs/matplotlib/fontlist-v390.json.matplotlib-lock
+This maybe due to another process holding this lock file.  If you are sure no
+other Matplotlib process is running, remove this file and try again.
+Could not save font_manager cache Lock error: Matplotlib failed to acquire the following lock file:
+    /jobfs/165722975.gadi-pbs/matplotlib/fontlist-v390.json.matplotlib-lock
+This maybe due to another process holding this lock file.  If you are sure no
+other Matplotlib process is running, remove this file and try again.
+Could not save font_manager cache Lock error: Matplotlib failed to acquire the following lock file:
+    /jobfs/165722975.gadi-pbs/matplotlib/fontlist-v390.json.matplotlib-lock
+This maybe due to another process holding this lock file.  If you are sure no
+other Matplotlib process is running, remove this file and try again.
+Could not save font_manager cache Lock error: Matplotlib failed to acquire the following lock file:
+    /jobfs/165722975.gadi-pbs/matplotlib/fontlist-v390.json.matplotlib-lock
+This maybe due to another process holding this lock file.  If you are sure no
+other Matplotlib process is running, remove this file and try again.
+Could not save font_manager cache Lock error: Matplotlib failed to acquire the following lock file:
+    /jobfs/165722975.gadi-pbs/matplotlib/fontlist-v390.json.matplotlib-lock
+This maybe due to another process holding this lock file.  If you are sure no
+other Matplotlib process is running, remove this file and try again.
+Could not save font_manager cache Lock error: Matplotlib failed to acquire the following lock file:
+    /jobfs/165722975.gadi-pbs/matplotlib/fontlist-v390.json.matplotlib-lock
+This maybe due to another process holding this lock file.  If you are sure no
+other Matplotlib process is running, remove this file and try again.
+Could not save font_manager cache Lock error: Matplotlib failed to acquire the following lock file:
+    /jobfs/165722975.gadi-pbs/matplotlib/fontlist-v390.json.matplotlib-lock
+This maybe due to another process holding this lock file.  If you are sure no
+other Matplotlib process is running, remove this file and try again.
+Could not save font_manager cache Lock error: Matplotlib failed to acquire the following lock file:
+    /jobfs/165722975.gadi-pbs/matplotlib/fontlist-v390.json.matplotlib-lock
+This maybe due to another process holding this lock file.  If you are sure no
+other Matplotlib process is running, remove this file and try again.
+Could not save font_manager cache Lock error: Matplotlib failed to acquire the following lock file:
+    /jobfs/165722975.gadi-pbs/matplotlib/fontlist-v390.json.matplotlib-lock
+This maybe due to another process holding this lock file.  If you are sure no
+other Matplotlib process is running, remove this file and try again.
+Could not save font_manager cache Lock error: Matplotlib failed to acquire the following lock file:
+    /jobfs/165722975.gadi-pbs/matplotlib/fontlist-v390.json.matplotlib-lock
+This maybe due to another process holding this lock file.  If you are sure no
+other Matplotlib process is running, remove this file and try again.
+Could not save font_manager cache Lock error: Matplotlib failed to acquire the following lock file:
+    /jobfs/165722975.gadi-pbs/matplotlib/fontlist-v390.json.matplotlib-lock
+This maybe due to another process holding this lock file.  If you are sure no
+other Matplotlib process is running, remove this file and try again.
+Could not save font_manager cache Lock error: Matplotlib failed to acquire the following lock file:
+    /jobfs/165722975.gadi-pbs/matplotlib/fontlist-v390.json.matplotlib-lock
+This maybe due to another process holding this lock file.  If you are sure no
+other Matplotlib process is running, remove this file and try again.
+Could not save font_manager cache Lock error: Matplotlib failed to acquire the following lock file:
+    /jobfs/165722975.gadi-pbs/matplotlib/fontlist-v390.json.matplotlib-lock
+This maybe due to another process holding this lock file.  If you are sure no
+other Matplotlib process is running, remove this file and try again.
+Could not save font_manager cache Lock error: Matplotlib failed to acquire the following lock file:
+    /jobfs/165722975.gadi-pbs/matplotlib/fontlist-v390.json.matplotlib-lock
+This maybe due to another process holding this lock file.  If you are sure no
+other Matplotlib process is running, remove this file and try again.
+Could not save font_manager cache Lock error: Matplotlib failed to acquire the following lock file:
+    /jobfs/165722975.gadi-pbs/matplotlib/fontlist-v390.json.matplotlib-lock
+This maybe due to another process holding this lock file.  If you are sure no
+other Matplotlib process is running, remove this file and try again.
+Could not save font_manager cache Lock error: Matplotlib failed to acquire the following lock file:
+    /jobfs/165722975.gadi-pbs/matplotlib/fontlist-v390.json.matplotlib-lock
+This maybe due to another process holding this lock file.  If you are sure no
+other Matplotlib process is running, remove this file and try again.
+Could not save font_manager cache Lock error: Matplotlib failed to acquire the following lock file:
+    /jobfs/165722975.gadi-pbs/matplotlib/fontlist-v390.json.matplotlib-lock
+This maybe due to another process holding this lock file.  If you are sure no
+other Matplotlib process is running, remove this file and try again.
+Could not save font_manager cache Lock error: Matplotlib failed to acquire the following lock file:
+    /jobfs/165722975.gadi-pbs/matplotlib/fontlist-v390.json.matplotlib-lock
+This maybe due to another process holding this lock file.  If you are sure no
+other Matplotlib process is running, remove this file and try again.
+Could not save font_manager cache Lock error: Matplotlib failed to acquire the following lock file:
+    /jobfs/165722975.gadi-pbs/matplotlib/fontlist-v390.json.matplotlib-lock
+This maybe due to another process holding this lock file.  If you are sure no
+other Matplotlib process is running, remove this file and try again.
+Could not save font_manager cache Lock error: Matplotlib failed to acquire the following lock file:
+    /jobfs/165722975.gadi-pbs/matplotlib/fontlist-v390.json.matplotlib-lock
+This maybe due to another process holding this lock file.  If you are sure no
+other Matplotlib process is running, remove this file and try again.
+Could not save font_manager cache Lock error: Matplotlib failed to acquire the following lock file:
+    /jobfs/165722975.gadi-pbs/matplotlib/fontlist-v390.json.matplotlib-lock
+This maybe due to another process holding this lock file.  If you are sure no
+other Matplotlib process is running, remove this file and try again.
+Could not save font_manager cache Lock error: Matplotlib failed to acquire the following lock file:
+    /jobfs/165722975.gadi-pbs/matplotlib/fontlist-v390.json.matplotlib-lock
+This maybe due to another process holding this lock file.  If you are sure no
+other Matplotlib process is running, remove this file and try again.
+Could not save font_manager cache Lock error: Matplotlib failed to acquire the following lock file:
+    /jobfs/165722975.gadi-pbs/matplotlib/fontlist-v390.json.matplotlib-lock
+This maybe due to another process holding this lock file.  If you are sure no
+other Matplotlib process is running, remove this file and try again.
+Could not save font_manager cache Lock error: Matplotlib failed to acquire the following lock file:
+    /jobfs/165722975.gadi-pbs/matplotlib/fontlist-v390.json.matplotlib-lock
+This maybe due to another process holding this lock file.  If you are sure no
+other Matplotlib process is running, remove this file and try again.
+Could not save font_manager cache Lock error: Matplotlib failed to acquire the following lock file:
+    /jobfs/165722975.gadi-pbs/matplotlib/fontlist-v390.json.matplotlib-lock
+This maybe due to another process holding this lock file.  If you are sure no
+other Matplotlib process is running, remove this file and try again.
+Could not save font_manager cache Lock error: Matplotlib failed to acquire the following lock file:
+    /jobfs/165722975.gadi-pbs/matplotlib/fontlist-v390.json.matplotlib-lock
+This maybe due to another process holding this lock file.  If you are sure no
+other Matplotlib process is running, remove this file and try again.
+Could not save font_manager cache Lock error: Matplotlib failed to acquire the following lock file:
+    /jobfs/165722975.gadi-pbs/matplotlib/fontlist-v390.json.matplotlib-lock
+This maybe due to another process holding this lock file.  If you are sure no
+other Matplotlib process is running, remove this file and try again.
+Could not save font_manager cache Lock error: Matplotlib failed to acquire the following lock file:
+    /jobfs/165722975.gadi-pbs/matplotlib/fontlist-v390.json.matplotlib-lock
+This maybe due to another process holding this lock file.  If you are sure no
+other Matplotlib process is running, remove this file and try again.
+Could not save font_manager cache Lock error: Matplotlib failed to acquire the following lock file:
+    /jobfs/165722975.gadi-pbs/matplotlib/fontlist-v390.json.matplotlib-lock
+This maybe due to another process holding this lock file.  If you are sure no
+other Matplotlib process is running, remove this file and try again.
+Could not save font_manager cache Lock error: Matplotlib failed to acquire the following lock file:
+    /jobfs/165722975.gadi-pbs/matplotlib/fontlist-v390.json.matplotlib-lock
+This maybe due to another process holding this lock file.  If you are sure no
+other Matplotlib process is running, remove this file and try again.
+Could not save font_manager cache Lock error: Matplotlib failed to acquire the following lock file:
+    /jobfs/165722975.gadi-pbs/matplotlib/fontlist-v390.json.matplotlib-lock
+This maybe due to another process holding this lock file.  If you are sure no
+other Matplotlib process is running, remove this file and try again.
+Could not save font_manager cache Lock error: Matplotlib failed to acquire the following lock file:
+    /jobfs/165722975.gadi-pbs/matplotlib/fontlist-v390.json.matplotlib-lock
+This maybe due to another process holding this lock file.  If you are sure no
+other Matplotlib process is running, remove this file and try again.
+Could not save font_manager cache Lock error: Matplotlib failed to acquire the following lock file:
+    /jobfs/165722975.gadi-pbs/matplotlib/fontlist-v390.json.matplotlib-lock
+This maybe due to another process holding this lock file.  If you are sure no
+other Matplotlib process is running, remove this file and try again.
+Could not save font_manager cache Lock error: Matplotlib failed to acquire the following lock file:
+    /jobfs/165722975.gadi-pbs/matplotlib/fontlist-v390.json.matplotlib-lock
+This maybe due to another process holding this lock file.  If you are sure no
+other Matplotlib process is running, remove this file and try again.
+Could not save font_manager cache Lock error: Matplotlib failed to acquire the following lock file:
+    /jobfs/165722975.gadi-pbs/matplotlib/fontlist-v390.json.matplotlib-lock
+This maybe due to another process holding this lock file.  If you are sure no
+other Matplotlib process is running, remove this file and try again.
+Could not save font_manager cache Lock error: Matplotlib failed to acquire the following lock file:
+    /jobfs/165722975.gadi-pbs/matplotlib/fontlist-v390.json.matplotlib-lock
+This maybe due to another process holding this lock file.  If you are sure no
+other Matplotlib process is running, remove this file and try again.
+Could not save font_manager cache Lock error: Matplotlib failed to acquire the following lock file:
+    /jobfs/165722975.gadi-pbs/matplotlib/fontlist-v390.json.matplotlib-lock
+This maybe due to another process holding this lock file.  If you are sure no
+other Matplotlib process is running, remove this file and try again.
+Could not save font_manager cache Lock error: Matplotlib failed to acquire the following lock file:
+    /jobfs/165722975.gadi-pbs/matplotlib/fontlist-v390.json.matplotlib-lock
+This maybe due to another process holding this lock file.  If you are sure no
+other Matplotlib process is running, remove this file and try again.
+Could not save font_manager cache Lock error: Matplotlib failed to acquire the following lock file:
+    /jobfs/165722975.gadi-pbs/matplotlib/fontlist-v390.json.matplotlib-lock
+This maybe due to another process holding this lock file.  If you are sure no
+other Matplotlib process is running, remove this file and try again.
+Could not save font_manager cache Lock error: Matplotlib failed to acquire the following lock file:
+    /jobfs/165722975.gadi-pbs/matplotlib/fontlist-v390.json.matplotlib-lock
+This maybe due to another process holding this lock file.  If you are sure no
+other Matplotlib process is running, remove this file and try again.
+Could not save font_manager cache Lock error: Matplotlib failed to acquire the following lock file:
+    /jobfs/165722975.gadi-pbs/matplotlib/fontlist-v390.json.matplotlib-lock
+This maybe due to another process holding this lock file.  If you are sure no
+other Matplotlib process is running, remove this file and try again.
+Could not save font_manager cache Lock error: Matplotlib failed to acquire the following lock file:
+    /jobfs/165722975.gadi-pbs/matplotlib/fontlist-v390.json.matplotlib-lock
+This maybe due to another process holding this lock file.  If you are sure no
+other Matplotlib process is running, remove this file and try again.
+Could not save font_manager cache Lock error: Matplotlib failed to acquire the following lock file:
+    /jobfs/165722975.gadi-pbs/matplotlib/fontlist-v390.json.matplotlib-lock
+This maybe due to another process holding this lock file.  If you are sure no
+other Matplotlib process is running, remove this file and try again.
+Could not save font_manager cache Lock error: Matplotlib failed to acquire the following lock file:
+    /jobfs/165722975.gadi-pbs/matplotlib/fontlist-v390.json.matplotlib-lock
+This maybe due to another process holding this lock file.  If you are sure no
+other Matplotlib process is running, remove this file and try again.
+Could not save font_manager cache Lock error: Matplotlib failed to acquire the following lock file:
+    /jobfs/165722975.gadi-pbs/matplotlib/fontlist-v390.json.matplotlib-lock
+This maybe due to another process holding this lock file.  If you are sure no
+other Matplotlib process is running, remove this file and try again.
+Could not save font_manager cache Lock error: Matplotlib failed to acquire the following lock file:
+    /jobfs/165722975.gadi-pbs/matplotlib/fontlist-v390.json.matplotlib-lock
+This maybe due to another process holding this lock file.  If you are sure no
+other Matplotlib process is running, remove this file and try again.
+Could not save font_manager cache Lock error: Matplotlib failed to acquire the following lock file:
+    /jobfs/165722975.gadi-pbs/matplotlib/fontlist-v390.json.matplotlib-lock
+This maybe due to another process holding this lock file.  If you are sure no
+other Matplotlib process is running, remove this file and try again.
+Could not save font_manager cache Lock error: Matplotlib failed to acquire the following lock file:
+    /jobfs/165722975.gadi-pbs/matplotlib/fontlist-v390.json.matplotlib-lock
+This maybe due to another process holding this lock file.  If you are sure no
+other Matplotlib process is running, remove this file and try again.
+Could not save font_manager cache Lock error: Matplotlib failed to acquire the following lock file:
+    /jobfs/165722975.gadi-pbs/matplotlib/fontlist-v390.json.matplotlib-lock
+This maybe due to another process holding this lock file.  If you are sure no
+other Matplotlib process is running, remove this file and try again.
+Could not save font_manager cache Lock error: Matplotlib failed to acquire the following lock file:
+    /jobfs/165722975.gadi-pbs/matplotlib/fontlist-v390.json.matplotlib-lock
+This maybe due to another process holding this lock file.  If you are sure no
+other Matplotlib process is running, remove this file and try again.
+Could not save font_manager cache Lock error: Matplotlib failed to acquire the following lock file:
+    /jobfs/165722975.gadi-pbs/matplotlib/fontlist-v390.json.matplotlib-lock
+This maybe due to another process holding this lock file.  If you are sure no
+other Matplotlib process is running, remove this file and try again.
+Could not save font_manager cache Lock error: Matplotlib failed to acquire the following lock file:
+    /jobfs/165722975.gadi-pbs/matplotlib/fontlist-v390.json.matplotlib-lock
+This maybe due to another process holding this lock file.  If you are sure no
+other Matplotlib process is running, remove this file and try again.
+Could not save font_manager cache Lock error: Matplotlib failed to acquire the following lock file:
+    /jobfs/165722975.gadi-pbs/matplotlib/fontlist-v390.json.matplotlib-lock
+This maybe due to another process holding this lock file.  If you are sure no
+other Matplotlib process is running, remove this file and try again.
+Could not save font_manager cache Lock error: Matplotlib failed to acquire the following lock file:
+    /jobfs/165722975.gadi-pbs/matplotlib/fontlist-v390.json.matplotlib-lock
+This maybe due to another process holding this lock file.  If you are sure no
+other Matplotlib process is running, remove this file and try again.
+Could not save font_manager cache Lock error: Matplotlib failed to acquire the following lock file:
+    /jobfs/165722975.gadi-pbs/matplotlib/fontlist-v390.json.matplotlib-lock
+This maybe due to another process holding this lock file.  If you are sure no
+other Matplotlib process is running, remove this file and try again.
+Could not save font_manager cache Lock error: Matplotlib failed to acquire the following lock file:
+    /jobfs/165722975.gadi-pbs/matplotlib/fontlist-v390.json.matplotlib-lock
+This maybe due to another process holding this lock file.  If you are sure no
+other Matplotlib process is running, remove this file and try again.
+Could not save font_manager cache Lock error: Matplotlib failed to acquire the following lock file:
+    /jobfs/165722975.gadi-pbs/matplotlib/fontlist-v390.json.matplotlib-lock
+This maybe due to another process holding this lock file.  If you are sure no
+other Matplotlib process is running, remove this file and try again.
+Could not save font_manager cache Lock error: Matplotlib failed to acquire the following lock file:
+    /jobfs/165722975.gadi-pbs/matplotlib/fontlist-v390.json.matplotlib-lock
+This maybe due to another process holding this lock file.  If you are sure no
+other Matplotlib process is running, remove this file and try again.
+Could not save font_manager cache Lock error: Matplotlib failed to acquire the following lock file:
+    /jobfs/165722975.gadi-pbs/matplotlib/fontlist-v390.json.matplotlib-lock
+This maybe due to another process holding this lock file.  If you are sure no
+other Matplotlib process is running, remove this file and try again.
+Could not save font_manager cache Lock error: Matplotlib failed to acquire the following lock file:
+    /jobfs/165722975.gadi-pbs/matplotlib/fontlist-v390.json.matplotlib-lock
+This maybe due to another process holding this lock file.  If you are sure no
+other Matplotlib process is running, remove this file and try again.
+Could not save font_manager cache Lock error: Matplotlib failed to acquire the following lock file:
+    /jobfs/165722975.gadi-pbs/matplotlib/fontlist-v390.json.matplotlib-lock
+This maybe due to another process holding this lock file.  If you are sure no
+other Matplotlib process is running, remove this file and try again.
+Could not save font_manager cache Lock error: Matplotlib failed to acquire the following lock file:
+    /jobfs/165722975.gadi-pbs/matplotlib/fontlist-v390.json.matplotlib-lock
+This maybe due to another process holding this lock file.  If you are sure no
+other Matplotlib process is running, remove this file and try again.
+Could not save font_manager cache Lock error: Matplotlib failed to acquire the following lock file:
+    /jobfs/165722975.gadi-pbs/matplotlib/fontlist-v390.json.matplotlib-lock
+This maybe due to another process holding this lock file.  If you are sure no
+other Matplotlib process is running, remove this file and try again.
+Could not save font_manager cache Lock error: Matplotlib failed to acquire the following lock file:
+    /jobfs/165722975.gadi-pbs/matplotlib/fontlist-v390.json.matplotlib-lock
+This maybe due to another process holding this lock file.  If you are sure no
+other Matplotlib process is running, remove this file and try again.
+Could not save font_manager cache Lock error: Matplotlib failed to acquire the following lock file:
+    /jobfs/165722975.gadi-pbs/matplotlib/fontlist-v390.json.matplotlib-lock
+This maybe due to another process holding this lock file.  If you are sure no
+other Matplotlib process is running, remove this file and try again.
+Could not save font_manager cache Lock error: Matplotlib failed to acquire the following lock file:
+    /jobfs/165722975.gadi-pbs/matplotlib/fontlist-v390.json.matplotlib-lock
+This maybe due to another process holding this lock file.  If you are sure no
+other Matplotlib process is running, remove this file and try again.
+Could not save font_manager cache Lock error: Matplotlib failed to acquire the following lock file:
+    /jobfs/165722975.gadi-pbs/matplotlib/fontlist-v390.json.matplotlib-lock
+This maybe due to another process holding this lock file.  If you are sure no
+other Matplotlib process is running, remove this file and try again.
+Number of degrees of freedom: 143769600
+Mesh: 240x240x312, DQ1
+Time stepper: BackwardEuler, dt = 300.0 s, steps = 30
+Solver: ngmres_gmg
+Solver parameters: {'snes_type': 'ngmres', 'snes_rtol': 1e-08, 'snes_atol': 1e-08, 'snes_max_it': 50, 'snes_ngmres_m': 30, 'snes_ngmres_restart': 30, 'snes_ngmres_select_type': 'difference', 'snes_ngmres_restart_type': 'difference', 'snes_ngmres_gammaA': 2.0, 'snes_ngmres_gammaC': 2.0, 'npc_snes_type': 'newtonls', 'npc_snes_linesearch_type': 'bt', 'npc_snes_max_it': 1, 'ksp_type': 'fgmres', 'ksp_rtol': 1e-06, 'ksp_max_it': 200, 'ksp_gmres_restart': 30, 'pc_type': 'mg', 'pc_mg_cycle_type': 'v', 'mg_levels_ksp_type': 'chebyshev', 'mg_levels_ksp_max_it': 1, 'mg_levels_ksp_convergence_test': 'skip', 'mg_levels_pc_type': 'bjacobi', 'mg_levels_sub_pc_type': 'ilu', 'mg_levels_sub_pc_factor_levels': 0, 'mg_coarse_ksp_type': 'gmres', 'mg_coarse_ksp_max_it': 30, 'mg_coarse_pc_type': 'bjacobi', 'mg_coarse_sub_pc_type': 'ilu'}
+  0 SNES Function norm 2.571091429520e-06
+  1 SNES Function norm 1.160676329505e-07
+  2 SNES Function norm 9.551189393618e-10
+  Nonlinear BackwardEuler-Equation_ solve converged due to CONVERGED_FNORM_ABS iterations 2
+SNES Object: (BackwardEuler-Equation_) 832 MPI processes
+  type: ngmres
+    Number of stored past updates: 30
+    Residual selection: gammaA=2e+00, gammaC=2e+00
+    Difference restart: epsilonB=1e-01, deltaB=9e-01
+    Restart on F_M residual increase: FALSE
+  maximum iterations=50, maximum function evaluations=30000
+  tolerances: relative=1e-08, absolute=1e-08, solution=1e-08
+  total number of function evaluations=3
+  norm schedule ALWAYS
+  SNESLineSearch Object: (BackwardEuler-Equation_) 832 MPI processes
+    type: basic
+    maxlambda=1.000000e+00, minlambda=1.000000e-12
+    tolerances: relative=1.000000e-08, absolute=1.000000e-15, lambda=1.000000e-08
+    maximum iterations=1
+  SNES Object: (BackwardEuler-Equation_npc_) 832 MPI processes
+    type: newtonls
+    maximum iterations=1, maximum function evaluations=10000
+    tolerances: relative=0., absolute=0., solution=0.
+    total number of linear solver iterations=235
+    total number of function evaluations=2
+    norm schedule FINALONLY
+    SNESLineSearch Object: (BackwardEuler-Equation_npc_) 832 MPI processes
+      type: bt
+        interpolation: cubic
+        alpha=1.000000e-04
+      maxlambda=1.000000e+00, minlambda=1.000000e-12
+      tolerances: relative=1.000000e-08, absolute=1.000000e-15, lambda=1.000000e-08
+      maximum iterations=40
+    KSP Object: (BackwardEuler-Equation_npc_) 832 MPI processes
+      type: gmres
+        restart=30, using classical (unmodified) Gram-Schmidt orthogonalization with no iterative refinement
+        happy breakdown tolerance=1e-30
+      maximum iterations=10000, initial guess is zero
+      tolerances: relative=1e-05, absolute=1e-50, divergence=10000.
+      left preconditioning
+      using PRECONDITIONED norm type for convergence test
+    PC Object: (BackwardEuler-Equation_npc_) 832 MPI processes
+      type: bjacobi
+        number of blocks = 832
+        Local solver information for first block is in the following KSP and PC objects on rank 0:
+        Use -BackwardEuler-Equation_npc_ksp_view ::ascii_info_detail to display information for all blocks
+        KSP Object: (BackwardEuler-Equation_npc_sub_) 1 MPI process
+          type: preonly
+          maximum iterations=10000, initial guess is zero
+          tolerances: relative=1e-05, absolute=1e-50, divergence=10000.
+          left preconditioning
+          not checking for convergence
+        PC Object: (BackwardEuler-Equation_npc_sub_) 1 MPI process
+          type: ilu
+            out-of-place factorization
+            0 levels of fill
+            tolerance for zero pivot 2.22045e-14
+            matrix ordering: natural
+            factor fill ratio given 1., needed 1.
+              Factored matrix:
+                Mat Object: (BackwardEuler-Equation_npc_sub_) 1 MPI process
+                  type: seqaij
+                  rows=0, cols=0
+                  package used to perform factorization: petsc
+                  total: nonzeros=0, allocated nonzeros=0
+                    not using I-node routines
+          linear system matrix, which is also used to construct the preconditioner:
+          Mat Object: (BackwardEuler-Equation_npc_sub_) 1 MPI process
+            type: seqaij
+            rows=0, cols=0
+            total: nonzeros=0, allocated nonzeros=0
+            total number of mallocs used during MatSetValues calls=0
+              not using I-node routines
+      linear system matrix, which is also used to construct the preconditioner:
+      Mat Object: (BackwardEuler-Equation_) 832 MPI processes
+        type: mpiaij
+        rows=143769600, cols=143769600
+        total: nonzeros=8024555520, allocated nonzeros=8024555520
+        total number of mallocs used during MatSetValues calls=0
+          has attached near null space
+          not using I-node (on process 0) routines
+t = 300.00 s | step 1/30 | wall 71.04 s | NL 2 | L 0
+  0 SNES Function norm 7.015630640208e-07
+  1 SNES Function norm 1.871604898002e-08
+  2 SNES Function norm 2.263058481189e-11
+  Nonlinear BackwardEuler-Equation_ solve converged due to CONVERGED_FNORM_ABS iterations 2
+SNES Object: (BackwardEuler-Equation_) 832 MPI processes
+  type: ngmres
+    Number of stored past updates: 30
+    Residual selection: gammaA=2e+00, gammaC=2e+00
+    Difference restart: epsilonB=1e-01, deltaB=9e-01
+    Restart on F_M residual increase: FALSE
+  maximum iterations=50, maximum function evaluations=30000
+  tolerances: relative=1e-08, absolute=1e-08, solution=1e-08
+  total number of function evaluations=3
+  norm schedule ALWAYS
+  SNESLineSearch Object: (BackwardEuler-Equation_) 832 MPI processes
+    type: basic
+    maxlambda=1.000000e+00, minlambda=1.000000e-12
+    tolerances: relative=1.000000e-08, absolute=1.000000e-15, lambda=1.000000e-08
+    maximum iterations=1
+  SNES Object: (BackwardEuler-Equation_npc_) 832 MPI processes
+    type: newtonls
+    maximum iterations=1, maximum function evaluations=10000
+    tolerances: relative=0., absolute=0., solution=0.
+    total number of linear solver iterations=467
+    total number of function evaluations=4
+    norm schedule FINALONLY
+    SNESLineSearch Object: (BackwardEuler-Equation_npc_) 832 MPI processes
+      type: bt
+        interpolation: cubic
+        alpha=1.000000e-04
+      maxlambda=1.000000e+00, minlambda=1.000000e-12
+      tolerances: relative=1.000000e-08, absolute=1.000000e-15, lambda=1.000000e-08
+      maximum iterations=40
+    KSP Object: (BackwardEuler-Equation_npc_) 832 MPI processes
+      type: gmres
+        restart=30, using classical (unmodified) Gram-Schmidt orthogonalization with no iterative refinement
+        happy breakdown tolerance=1e-30
+      maximum iterations=10000, initial guess is zero
+      tolerances: relative=1e-05, absolute=1e-50, divergence=10000.
+      left preconditioning
+      using PRECONDITIONED norm type for convergence test
+    PC Object: (BackwardEuler-Equation_npc_) 832 MPI processes
+      type: bjacobi
+        number of blocks = 832
+        Local solver information for first block is in the following KSP and PC objects on rank 0:
+        Use -BackwardEuler-Equation_npc_ksp_view ::ascii_info_detail to display information for all blocks
+        KSP Object: (BackwardEuler-Equation_npc_sub_) 1 MPI process
+          type: preonly
+          maximum iterations=10000, initial guess is zero
+          tolerances: relative=1e-05, absolute=1e-50, divergence=10000.
+          left preconditioning
+          not checking for convergence
+        PC Object: (BackwardEuler-Equation_npc_sub_) 1 MPI process
+          type: ilu
+            out-of-place factorization
+            0 levels of fill
+            tolerance for zero pivot 2.22045e-14
+            matrix ordering: natural
+            factor fill ratio given 1., needed 1.
+              Factored matrix:
+                Mat Object: (BackwardEuler-Equation_npc_sub_) 1 MPI process
+                  type: seqaij
+                  rows=0, cols=0
+                  package used to perform factorization: petsc
+                  total: nonzeros=0, allocated nonzeros=0
+                    not using I-node routines
+          linear system matrix, which is also used to construct the preconditioner:
+          Mat Object: (BackwardEuler-Equation_npc_sub_) 1 MPI process
+            type: seqaij
+            rows=0, cols=0
+            total: nonzeros=0, allocated nonzeros=0
+            total number of mallocs used during MatSetValues calls=0
+              not using I-node routines
+      linear system matrix, which is also used to construct the preconditioner:
+      Mat Object: (BackwardEuler-Equation_) 832 MPI processes
+        type: mpiaij
+        rows=143769600, cols=143769600
+        total: nonzeros=8024555520, allocated nonzeros=8024555520
+        total number of mallocs used during MatSetValues calls=0
+          has attached near null space
+          not using I-node (on process 0) routines
+t = 600.00 s | step 2/30 | wall 36.44 s | NL 2 | L 0
+  0 SNES Function norm 5.996629992391e-07
+  1 SNES Function norm 1.020829898872e-08
+  2 SNES Function norm 6.548134953527e-12
+  Nonlinear BackwardEuler-Equation_ solve converged due to CONVERGED_FNORM_ABS iterations 2
+SNES Object: (BackwardEuler-Equation_) 832 MPI processes
+  type: ngmres
+    Number of stored past updates: 30
+    Residual selection: gammaA=2e+00, gammaC=2e+00
+    Difference restart: epsilonB=1e-01, deltaB=9e-01
+    Restart on F_M residual increase: FALSE
+  maximum iterations=50, maximum function evaluations=30000
+  tolerances: relative=1e-08, absolute=1e-08, solution=1e-08
+  total number of function evaluations=3
+  norm schedule ALWAYS
+  SNESLineSearch Object: (BackwardEuler-Equation_) 832 MPI processes
+    type: basic
+    maxlambda=1.000000e+00, minlambda=1.000000e-12
+    tolerances: relative=1.000000e-08, absolute=1.000000e-15, lambda=1.000000e-08
+    maximum iterations=1
+  SNES Object: (BackwardEuler-Equation_npc_) 832 MPI processes
+    type: newtonls
+    maximum iterations=1, maximum function evaluations=10000
+    tolerances: relative=0., absolute=0., solution=0.
+    total number of linear solver iterations=699
+    total number of function evaluations=6
+    norm schedule FINALONLY
+    SNESLineSearch Object: (BackwardEuler-Equation_npc_) 832 MPI processes
+      type: bt
+        interpolation: cubic
+        alpha=1.000000e-04
+      maxlambda=1.000000e+00, minlambda=1.000000e-12
+      tolerances: relative=1.000000e-08, absolute=1.000000e-15, lambda=1.000000e-08
+      maximum iterations=40
+    KSP Object: (BackwardEuler-Equation_npc_) 832 MPI processes
+      type: gmres
+        restart=30, using classical (unmodified) Gram-Schmidt orthogonalization with no iterative refinement
+        happy breakdown tolerance=1e-30
+      maximum iterations=10000, initial guess is zero
+      tolerances: relative=1e-05, absolute=1e-50, divergence=10000.
+      left preconditioning
+      using PRECONDITIONED norm type for convergence test
+    PC Object: (BackwardEuler-Equation_npc_) 832 MPI processes
+      type: bjacobi
+        number of blocks = 832
+        Local solver information for first block is in the following KSP and PC objects on rank 0:
+        Use -BackwardEuler-Equation_npc_ksp_view ::ascii_info_detail to display information for all blocks
+        KSP Object: (BackwardEuler-Equation_npc_sub_) 1 MPI process
+          type: preonly
+          maximum iterations=10000, initial guess is zero
+          tolerances: relative=1e-05, absolute=1e-50, divergence=10000.
+          left preconditioning
+          not checking for convergence
+        PC Object: (BackwardEuler-Equation_npc_sub_) 1 MPI process
+          type: ilu
+            out-of-place factorization
+            0 levels of fill
+            tolerance for zero pivot 2.22045e-14
+            matrix ordering: natural
+            factor fill ratio given 1., needed 1.
+              Factored matrix:
+                Mat Object: (BackwardEuler-Equation_npc_sub_) 1 MPI process
+                  type: seqaij
+                  rows=0, cols=0
+                  package used to perform factorization: petsc
+                  total: nonzeros=0, allocated nonzeros=0
+                    not using I-node routines
+          linear system matrix, which is also used to construct the preconditioner:
+          Mat Object: (BackwardEuler-Equation_npc_sub_) 1 MPI process
+            type: seqaij
+            rows=0, cols=0
+            total: nonzeros=0, allocated nonzeros=0
+            total number of mallocs used during MatSetValues calls=0
+              not using I-node routines
+      linear system matrix, which is also used to construct the preconditioner:
+      Mat Object: (BackwardEuler-Equation_) 832 MPI processes
+        type: mpiaij
+        rows=143769600, cols=143769600
+        total: nonzeros=8024555520, allocated nonzeros=8024555520
+        total number of mallocs used during MatSetValues calls=0
+          has attached near null space
+          not using I-node (on process 0) routines
+t = 900.00 s | step 3/30 | wall 36.37 s | NL 2 | L 0
+  0 SNES Function norm 5.477441643037e-07
+  1 SNES Function norm 7.182062077622e-09
+  Nonlinear BackwardEuler-Equation_ solve converged due to CONVERGED_FNORM_ABS iterations 1
+SNES Object: (BackwardEuler-Equation_) 832 MPI processes
+  type: ngmres
+    Number of stored past updates: 30
+    Residual selection: gammaA=2e+00, gammaC=2e+00
+    Difference restart: epsilonB=1e-01, deltaB=9e-01
+    Restart on F_M residual increase: FALSE
+  maximum iterations=50, maximum function evaluations=30000
+  tolerances: relative=1e-08, absolute=1e-08, solution=1e-08
+  total number of function evaluations=2
+  norm schedule ALWAYS
+  SNESLineSearch Object: (BackwardEuler-Equation_) 832 MPI processes
+    type: basic
+    maxlambda=1.000000e+00, minlambda=1.000000e-12
+    tolerances: relative=1.000000e-08, absolute=1.000000e-15, lambda=1.000000e-08
+    maximum iterations=1
+  SNES Object: (BackwardEuler-Equation_npc_) 832 MPI processes
+    type: newtonls
+    maximum iterations=1, maximum function evaluations=10000
+    tolerances: relative=0., absolute=0., solution=0.
+    total number of linear solver iterations=823
+    total number of function evaluations=7
+    norm schedule FINALONLY
+    SNESLineSearch Object: (BackwardEuler-Equation_npc_) 832 MPI processes
+      type: bt
+        interpolation: cubic
+        alpha=1.000000e-04
+      maxlambda=1.000000e+00, minlambda=1.000000e-12
+      tolerances: relative=1.000000e-08, absolute=1.000000e-15, lambda=1.000000e-08
+      maximum iterations=40
+    KSP Object: (BackwardEuler-Equation_npc_) 832 MPI processes
+      type: gmres
+        restart=30, using classical (unmodified) Gram-Schmidt orthogonalization with no iterative refinement
+        happy breakdown tolerance=1e-30
+      maximum iterations=10000, initial guess is zero
+      tolerances: relative=1e-05, absolute=1e-50, divergence=10000.
+      left preconditioning
+      using PRECONDITIONED norm type for convergence test
+    PC Object: (BackwardEuler-Equation_npc_) 832 MPI processes
+      type: bjacobi
+        number of blocks = 832
+        Local solver information for first block is in the following KSP and PC objects on rank 0:
+        Use -BackwardEuler-Equation_npc_ksp_view ::ascii_info_detail to display information for all blocks
+        KSP Object: (BackwardEuler-Equation_npc_sub_) 1 MPI process
+          type: preonly
+          maximum iterations=10000, initial guess is zero
+          tolerances: relative=1e-05, absolute=1e-50, divergence=10000.
+          left preconditioning
+          not checking for convergence
+        PC Object: (BackwardEuler-Equation_npc_sub_) 1 MPI process
+          type: ilu
+            out-of-place factorization
+            0 levels of fill
+            tolerance for zero pivot 2.22045e-14
+            matrix ordering: natural
+            factor fill ratio given 1., needed 1.
+              Factored matrix:
+                Mat Object: (BackwardEuler-Equation_npc_sub_) 1 MPI process
+                  type: seqaij
+                  rows=0, cols=0
+                  package used to perform factorization: petsc
+                  total: nonzeros=0, allocated nonzeros=0
+                    not using I-node routines
+          linear system matrix, which is also used to construct the preconditioner:
+          Mat Object: (BackwardEuler-Equation_npc_sub_) 1 MPI process
+            type: seqaij
+            rows=0, cols=0
+            total: nonzeros=0, allocated nonzeros=0
+            total number of mallocs used during MatSetValues calls=0
+              not using I-node routines
+      linear system matrix, which is also used to construct the preconditioner:
+      Mat Object: (BackwardEuler-Equation_) 832 MPI processes
+        type: mpiaij
+        rows=143769600, cols=143769600
+        total: nonzeros=8024555520, allocated nonzeros=8024555520
+        total number of mallocs used during MatSetValues calls=0
+          has attached near null space
+          not using I-node (on process 0) routines
+t = 1200.00 s | step 4/30 | wall 19.49 s | NL 1 | L 0
+  0 SNES Function norm 5.139368948134e-07
+  1 SNES Function norm 5.582563413632e-09
+  Nonlinear BackwardEuler-Equation_ solve converged due to CONVERGED_FNORM_ABS iterations 1
+SNES Object: (BackwardEuler-Equation_) 832 MPI processes
+  type: ngmres
+    Number of stored past updates: 30
+    Residual selection: gammaA=2e+00, gammaC=2e+00
+    Difference restart: epsilonB=1e-01, deltaB=9e-01
+    Restart on F_M residual increase: FALSE
+  maximum iterations=50, maximum function evaluations=30000
+  tolerances: relative=1e-08, absolute=1e-08, solution=1e-08
+  total number of function evaluations=2
+  norm schedule ALWAYS
+  SNESLineSearch Object: (BackwardEuler-Equation_) 832 MPI processes
+    type: basic
+    maxlambda=1.000000e+00, minlambda=1.000000e-12
+    tolerances: relative=1.000000e-08, absolute=1.000000e-15, lambda=1.000000e-08
+    maximum iterations=1
+  SNES Object: (BackwardEuler-Equation_npc_) 832 MPI processes
+    type: newtonls
+    maximum iterations=1, maximum function evaluations=10000
+    tolerances: relative=0., absolute=0., solution=0.
+    total number of linear solver iterations=948
+    total number of function evaluations=8
+    norm schedule FINALONLY
+    SNESLineSearch Object: (BackwardEuler-Equation_npc_) 832 MPI processes
+      type: bt
+        interpolation: cubic
+        alpha=1.000000e-04
+      maxlambda=1.000000e+00, minlambda=1.000000e-12
+      tolerances: relative=1.000000e-08, absolute=1.000000e-15, lambda=1.000000e-08
+      maximum iterations=40
+    KSP Object: (BackwardEuler-Equation_npc_) 832 MPI processes
+      type: gmres
+        restart=30, using classical (unmodified) Gram-Schmidt orthogonalization with no iterative refinement
+        happy breakdown tolerance=1e-30
+      maximum iterations=10000, initial guess is zero
+      tolerances: relative=1e-05, absolute=1e-50, divergence=10000.
+      left preconditioning
+      using PRECONDITIONED norm type for convergence test
+    PC Object: (BackwardEuler-Equation_npc_) 832 MPI processes
+      type: bjacobi
+        number of blocks = 832
+        Local solver information for first block is in the following KSP and PC objects on rank 0:
+        Use -BackwardEuler-Equation_npc_ksp_view ::ascii_info_detail to display information for all blocks
+        KSP Object: (BackwardEuler-Equation_npc_sub_) 1 MPI process
+          type: preonly
+          maximum iterations=10000, initial guess is zero
+          tolerances: relative=1e-05, absolute=1e-50, divergence=10000.
+          left preconditioning
+          not checking for convergence
+        PC Object: (BackwardEuler-Equation_npc_sub_) 1 MPI process
+          type: ilu
+            out-of-place factorization
+            0 levels of fill
+            tolerance for zero pivot 2.22045e-14
+            matrix ordering: natural
+            factor fill ratio given 1., needed 1.
+              Factored matrix:
+                Mat Object: (BackwardEuler-Equation_npc_sub_) 1 MPI process
+                  type: seqaij
+                  rows=0, cols=0
+                  package used to perform factorization: petsc
+                  total: nonzeros=0, allocated nonzeros=0
+                    not using I-node routines
+          linear system matrix, which is also used to construct the preconditioner:
+          Mat Object: (BackwardEuler-Equation_npc_sub_) 1 MPI process
+            type: seqaij
+            rows=0, cols=0
+            total: nonzeros=0, allocated nonzeros=0
+            total number of mallocs used during MatSetValues calls=0
+              not using I-node routines
+      linear system matrix, which is also used to construct the preconditioner:
+      Mat Object: (BackwardEuler-Equation_) 832 MPI processes
+        type: mpiaij
+        rows=143769600, cols=143769600
+        total: nonzeros=8024555520, allocated nonzeros=8024555520
+        total number of mallocs used during MatSetValues calls=0
+          has attached near null space
+          not using I-node (on process 0) routines
+t = 1500.00 s | step 5/30 | wall 19.59 s | NL 1 | L 0
+  0 SNES Function norm 4.897816915905e-07
+  1 SNES Function norm 4.651828624679e-09
+  Nonlinear BackwardEuler-Equation_ solve converged due to CONVERGED_FNORM_ABS iterations 1
+SNES Object: (BackwardEuler-Equation_) 832 MPI processes
+  type: ngmres
+    Number of stored past updates: 30
+    Residual selection: gammaA=2e+00, gammaC=2e+00
+    Difference restart: epsilonB=1e-01, deltaB=9e-01
+    Restart on F_M residual increase: FALSE
+  maximum iterations=50, maximum function evaluations=30000
+  tolerances: relative=1e-08, absolute=1e-08, solution=1e-08
+  total number of function evaluations=2
+  norm schedule ALWAYS
+  SNESLineSearch Object: (BackwardEuler-Equation_) 832 MPI processes
+    type: basic
+    maxlambda=1.000000e+00, minlambda=1.000000e-12
+    tolerances: relative=1.000000e-08, absolute=1.000000e-15, lambda=1.000000e-08
+    maximum iterations=1
+  SNES Object: (BackwardEuler-Equation_npc_) 832 MPI processes
+    type: newtonls
+    maximum iterations=1, maximum function evaluations=10000
+    tolerances: relative=0., absolute=0., solution=0.
+    total number of linear solver iterations=1075
+    total number of function evaluations=9
+    norm schedule FINALONLY
+    SNESLineSearch Object: (BackwardEuler-Equation_npc_) 832 MPI processes
+      type: bt
+        interpolation: cubic
+        alpha=1.000000e-04
+      maxlambda=1.000000e+00, minlambda=1.000000e-12
+      tolerances: relative=1.000000e-08, absolute=1.000000e-15, lambda=1.000000e-08
+      maximum iterations=40
+    KSP Object: (BackwardEuler-Equation_npc_) 832 MPI processes
+      type: gmres
+        restart=30, using classical (unmodified) Gram-Schmidt orthogonalization with no iterative refinement
+        happy breakdown tolerance=1e-30
+      maximum iterations=10000, initial guess is zero
+      tolerances: relative=1e-05, absolute=1e-50, divergence=10000.
+      left preconditioning
+      using PRECONDITIONED norm type for convergence test
+    PC Object: (BackwardEuler-Equation_npc_) 832 MPI processes
+      type: bjacobi
+        number of blocks = 832
+        Local solver information for first block is in the following KSP and PC objects on rank 0:
+        Use -BackwardEuler-Equation_npc_ksp_view ::ascii_info_detail to display information for all blocks
+        KSP Object: (BackwardEuler-Equation_npc_sub_) 1 MPI process
+          type: preonly
+          maximum iterations=10000, initial guess is zero
+          tolerances: relative=1e-05, absolute=1e-50, divergence=10000.
+          left preconditioning
+          not checking for convergence
+        PC Object: (BackwardEuler-Equation_npc_sub_) 1 MPI process
+          type: ilu
+            out-of-place factorization
+            0 levels of fill
+            tolerance for zero pivot 2.22045e-14
+            matrix ordering: natural
+            factor fill ratio given 1., needed 1.
+              Factored matrix:
+                Mat Object: (BackwardEuler-Equation_npc_sub_) 1 MPI process
+                  type: seqaij
+                  rows=0, cols=0
+                  package used to perform factorization: petsc
+                  total: nonzeros=0, allocated nonzeros=0
+                    not using I-node routines
+          linear system matrix, which is also used to construct the preconditioner:
+          Mat Object: (BackwardEuler-Equation_npc_sub_) 1 MPI process
+            type: seqaij
+            rows=0, cols=0
+            total: nonzeros=0, allocated nonzeros=0
+            total number of mallocs used during MatSetValues calls=0
+              not using I-node routines
+      linear system matrix, which is also used to construct the preconditioner:
+      Mat Object: (BackwardEuler-Equation_) 832 MPI processes
+        type: mpiaij
+        rows=143769600, cols=143769600
+        total: nonzeros=8024555520, allocated nonzeros=8024555520
+        total number of mallocs used during MatSetValues calls=0
+          has attached near null space
+          not using I-node (on process 0) routines
+t = 1800.00 s | step 6/30 | wall 19.95 s | NL 1 | L 0
+  0 SNES Function norm 4.712922494879e-07
+  1 SNES Function norm 4.033355811056e-09
+  Nonlinear BackwardEuler-Equation_ solve converged due to CONVERGED_FNORM_ABS iterations 1
+SNES Object: (BackwardEuler-Equation_) 832 MPI processes
+  type: ngmres
+    Number of stored past updates: 30
+    Residual selection: gammaA=2e+00, gammaC=2e+00
+    Difference restart: epsilonB=1e-01, deltaB=9e-01
+    Restart on F_M residual increase: FALSE
+  maximum iterations=50, maximum function evaluations=30000
+  tolerances: relative=1e-08, absolute=1e-08, solution=1e-08
+  total number of function evaluations=2
+  norm schedule ALWAYS
+  SNESLineSearch Object: (BackwardEuler-Equation_) 832 MPI processes
+    type: basic
+    maxlambda=1.000000e+00, minlambda=1.000000e-12
+    tolerances: relative=1.000000e-08, absolute=1.000000e-15, lambda=1.000000e-08
+    maximum iterations=1
+  SNES Object: (BackwardEuler-Equation_npc_) 832 MPI processes
+    type: newtonls
+    maximum iterations=1, maximum function evaluations=10000
+    tolerances: relative=0., absolute=0., solution=0.
+    total number of linear solver iterations=1202
+    total number of function evaluations=10
+    norm schedule FINALONLY
+    SNESLineSearch Object: (BackwardEuler-Equation_npc_) 832 MPI processes
+      type: bt
+        interpolation: cubic
+        alpha=1.000000e-04
+      maxlambda=1.000000e+00, minlambda=1.000000e-12
+      tolerances: relative=1.000000e-08, absolute=1.000000e-15, lambda=1.000000e-08
+      maximum iterations=40
+    KSP Object: (BackwardEuler-Equation_npc_) 832 MPI processes
+      type: gmres
+        restart=30, using classical (unmodified) Gram-Schmidt orthogonalization with no iterative refinement
+        happy breakdown tolerance=1e-30
+      maximum iterations=10000, initial guess is zero
+      tolerances: relative=1e-05, absolute=1e-50, divergence=10000.
+      left preconditioning
+      using PRECONDITIONED norm type for convergence test
+    PC Object: (BackwardEuler-Equation_npc_) 832 MPI processes
+      type: bjacobi
+        number of blocks = 832
+        Local solver information for first block is in the following KSP and PC objects on rank 0:
+        Use -BackwardEuler-Equation_npc_ksp_view ::ascii_info_detail to display information for all blocks
+        KSP Object: (BackwardEuler-Equation_npc_sub_) 1 MPI process
+          type: preonly
+          maximum iterations=10000, initial guess is zero
+          tolerances: relative=1e-05, absolute=1e-50, divergence=10000.
+          left preconditioning
+          not checking for convergence
+        PC Object: (BackwardEuler-Equation_npc_sub_) 1 MPI process
+          type: ilu
+            out-of-place factorization
+            0 levels of fill
+            tolerance for zero pivot 2.22045e-14
+            matrix ordering: natural
+            factor fill ratio given 1., needed 1.
+              Factored matrix:
+                Mat Object: (BackwardEuler-Equation_npc_sub_) 1 MPI process
+                  type: seqaij
+                  rows=0, cols=0
+                  package used to perform factorization: petsc
+                  total: nonzeros=0, allocated nonzeros=0
+                    not using I-node routines
+          linear system matrix, which is also used to construct the preconditioner:
+          Mat Object: (BackwardEuler-Equation_npc_sub_) 1 MPI process
+            type: seqaij
+            rows=0, cols=0
+            total: nonzeros=0, allocated nonzeros=0
+            total number of mallocs used during MatSetValues calls=0
+              not using I-node routines
+      linear system matrix, which is also used to construct the preconditioner:
+      Mat Object: (BackwardEuler-Equation_) 832 MPI processes
+        type: mpiaij
+        rows=143769600, cols=143769600
+        total: nonzeros=8024555520, allocated nonzeros=8024555520
+        total number of mallocs used during MatSetValues calls=0
+          has attached near null space
+          not using I-node (on process 0) routines
+t = 2100.00 s | step 7/30 | wall 19.83 s | NL 1 | L 0
+  0 SNES Function norm 4.565125699126e-07
+  1 SNES Function norm 3.589894122648e-09
+  Nonlinear BackwardEuler-Equation_ solve converged due to CONVERGED_FNORM_ABS iterations 1
+SNES Object: (BackwardEuler-Equation_) 832 MPI processes
+  type: ngmres
+    Number of stored past updates: 30
+    Residual selection: gammaA=2e+00, gammaC=2e+00
+    Difference restart: epsilonB=1e-01, deltaB=9e-01
+    Restart on F_M residual increase: FALSE
+  maximum iterations=50, maximum function evaluations=30000
+  tolerances: relative=1e-08, absolute=1e-08, solution=1e-08
+  total number of function evaluations=2
+  norm schedule ALWAYS
+  SNESLineSearch Object: (BackwardEuler-Equation_) 832 MPI processes
+    type: basic
+    maxlambda=1.000000e+00, minlambda=1.000000e-12
+    tolerances: relative=1.000000e-08, absolute=1.000000e-15, lambda=1.000000e-08
+    maximum iterations=1
+  SNES Object: (BackwardEuler-Equation_npc_) 832 MPI processes
+    type: newtonls
+    maximum iterations=1, maximum function evaluations=10000
+    tolerances: relative=0., absolute=0., solution=0.
+    total number of linear solver iterations=1330
+    total number of function evaluations=11
+    norm schedule FINALONLY
+    SNESLineSearch Object: (BackwardEuler-Equation_npc_) 832 MPI processes
+      type: bt
+        interpolation: cubic
+        alpha=1.000000e-04
+      maxlambda=1.000000e+00, minlambda=1.000000e-12
+      tolerances: relative=1.000000e-08, absolute=1.000000e-15, lambda=1.000000e-08
+      maximum iterations=40
+    KSP Object: (BackwardEuler-Equation_npc_) 832 MPI processes
+      type: gmres
+        restart=30, using classical (unmodified) Gram-Schmidt orthogonalization with no iterative refinement
+        happy breakdown tolerance=1e-30
+      maximum iterations=10000, initial guess is zero
+      tolerances: relative=1e-05, absolute=1e-50, divergence=10000.
+      left preconditioning
+      using PRECONDITIONED norm type for convergence test
+    PC Object: (BackwardEuler-Equation_npc_) 832 MPI processes
+      type: bjacobi
+        number of blocks = 832
+        Local solver information for first block is in the following KSP and PC objects on rank 0:
+        Use -BackwardEuler-Equation_npc_ksp_view ::ascii_info_detail to display information for all blocks
+        KSP Object: (BackwardEuler-Equation_npc_sub_) 1 MPI process
+          type: preonly
+          maximum iterations=10000, initial guess is zero
+          tolerances: relative=1e-05, absolute=1e-50, divergence=10000.
+          left preconditioning
+          not checking for convergence
+        PC Object: (BackwardEuler-Equation_npc_sub_) 1 MPI process
+          type: ilu
+            out-of-place factorization
+            0 levels of fill
+            tolerance for zero pivot 2.22045e-14
+            matrix ordering: natural
+            factor fill ratio given 1., needed 1.
+              Factored matrix:
+                Mat Object: (BackwardEuler-Equation_npc_sub_) 1 MPI process
+                  type: seqaij
+                  rows=0, cols=0
+                  package used to perform factorization: petsc
+                  total: nonzeros=0, allocated nonzeros=0
+                    not using I-node routines
+          linear system matrix, which is also used to construct the preconditioner:
+          Mat Object: (BackwardEuler-Equation_npc_sub_) 1 MPI process
+            type: seqaij
+            rows=0, cols=0
+            total: nonzeros=0, allocated nonzeros=0
+            total number of mallocs used during MatSetValues calls=0
+              not using I-node routines
+      linear system matrix, which is also used to construct the preconditioner:
+      Mat Object: (BackwardEuler-Equation_) 832 MPI processes
+        type: mpiaij
+        rows=143769600, cols=143769600
+        total: nonzeros=8024555520, allocated nonzeros=8024555520
+        total number of mallocs used during MatSetValues calls=0
+          has attached near null space
+          not using I-node (on process 0) routines
+t = 2400.00 s | step 8/30 | wall 19.88 s | NL 1 | L 0
+  0 SNES Function norm 4.443415967115e-07
+  1 SNES Function norm 3.256231544446e-09
+  Nonlinear BackwardEuler-Equation_ solve converged due to CONVERGED_FNORM_ABS iterations 1
+SNES Object: (BackwardEuler-Equation_) 832 MPI processes
+  type: ngmres
+    Number of stored past updates: 30
+    Residual selection: gammaA=2e+00, gammaC=2e+00
+    Difference restart: epsilonB=1e-01, deltaB=9e-01
+    Restart on F_M residual increase: FALSE
+  maximum iterations=50, maximum function evaluations=30000
+  tolerances: relative=1e-08, absolute=1e-08, solution=1e-08
+  total number of function evaluations=2
+  norm schedule ALWAYS
+  SNESLineSearch Object: (BackwardEuler-Equation_) 832 MPI processes
+    type: basic
+    maxlambda=1.000000e+00, minlambda=1.000000e-12
+    tolerances: relative=1.000000e-08, absolute=1.000000e-15, lambda=1.000000e-08
+    maximum iterations=1
+  SNES Object: (BackwardEuler-Equation_npc_) 832 MPI processes
+    type: newtonls
+    maximum iterations=1, maximum function evaluations=10000
+    tolerances: relative=0., absolute=0., solution=0.
+    total number of linear solver iterations=1458
+    total number of function evaluations=12
+    norm schedule FINALONLY
+    SNESLineSearch Object: (BackwardEuler-Equation_npc_) 832 MPI processes
+      type: bt
+        interpolation: cubic
+        alpha=1.000000e-04
+      maxlambda=1.000000e+00, minlambda=1.000000e-12
+      tolerances: relative=1.000000e-08, absolute=1.000000e-15, lambda=1.000000e-08
+      maximum iterations=40
+    KSP Object: (BackwardEuler-Equation_npc_) 832 MPI processes
+      type: gmres
+        restart=30, using classical (unmodified) Gram-Schmidt orthogonalization with no iterative refinement
+        happy breakdown tolerance=1e-30
+      maximum iterations=10000, initial guess is zero
+      tolerances: relative=1e-05, absolute=1e-50, divergence=10000.
+      left preconditioning
+      using PRECONDITIONED norm type for convergence test
+    PC Object: (BackwardEuler-Equation_npc_) 832 MPI processes
+      type: bjacobi
+        number of blocks = 832
+        Local solver information for first block is in the following KSP and PC objects on rank 0:
+        Use -BackwardEuler-Equation_npc_ksp_view ::ascii_info_detail to display information for all blocks
+        KSP Object: (BackwardEuler-Equation_npc_sub_) 1 MPI process
+          type: preonly
+          maximum iterations=10000, initial guess is zero
+          tolerances: relative=1e-05, absolute=1e-50, divergence=10000.
+          left preconditioning
+          not checking for convergence
+        PC Object: (BackwardEuler-Equation_npc_sub_) 1 MPI process
+          type: ilu
+            out-of-place factorization
+            0 levels of fill
+            tolerance for zero pivot 2.22045e-14
+            matrix ordering: natural
+            factor fill ratio given 1., needed 1.
+              Factored matrix:
+                Mat Object: (BackwardEuler-Equation_npc_sub_) 1 MPI process
+                  type: seqaij
+                  rows=0, cols=0
+                  package used to perform factorization: petsc
+                  total: nonzeros=0, allocated nonzeros=0
+                    not using I-node routines
+          linear system matrix, which is also used to construct the preconditioner:
+          Mat Object: (BackwardEuler-Equation_npc_sub_) 1 MPI process
+            type: seqaij
+            rows=0, cols=0
+            total: nonzeros=0, allocated nonzeros=0
+            total number of mallocs used during MatSetValues calls=0
+              not using I-node routines
+      linear system matrix, which is also used to construct the preconditioner:
+      Mat Object: (BackwardEuler-Equation_) 832 MPI processes
+        type: mpiaij
+        rows=143769600, cols=143769600
+        total: nonzeros=8024555520, allocated nonzeros=8024555520
+        total number of mallocs used during MatSetValues calls=0
+          has attached near null space
+          not using I-node (on process 0) routines
+t = 2700.00 s | step 9/30 | wall 19.89 s | NL 1 | L 0
+  0 SNES Function norm 4.340996667110e-07
+  1 SNES Function norm 2.996470629412e-09
+  Nonlinear BackwardEuler-Equation_ solve converged due to CONVERGED_FNORM_ABS iterations 1
+SNES Object: (BackwardEuler-Equation_) 832 MPI processes
+  type: ngmres
+    Number of stored past updates: 30
+    Residual selection: gammaA=2e+00, gammaC=2e+00
+    Difference restart: epsilonB=1e-01, deltaB=9e-01
+    Restart on F_M residual increase: FALSE
+  maximum iterations=50, maximum function evaluations=30000
+  tolerances: relative=1e-08, absolute=1e-08, solution=1e-08
+  total number of function evaluations=2
+  norm schedule ALWAYS
+  SNESLineSearch Object: (BackwardEuler-Equation_) 832 MPI processes
+    type: basic
+    maxlambda=1.000000e+00, minlambda=1.000000e-12
+    tolerances: relative=1.000000e-08, absolute=1.000000e-15, lambda=1.000000e-08
+    maximum iterations=1
+  SNES Object: (BackwardEuler-Equation_npc_) 832 MPI processes
+    type: newtonls
+    maximum iterations=1, maximum function evaluations=10000
+    tolerances: relative=0., absolute=0., solution=0.
+    total number of linear solver iterations=1587
+    total number of function evaluations=13
+    norm schedule FINALONLY
+    SNESLineSearch Object: (BackwardEuler-Equation_npc_) 832 MPI processes
+      type: bt
+        interpolation: cubic
+        alpha=1.000000e-04
+      maxlambda=1.000000e+00, minlambda=1.000000e-12
+      tolerances: relative=1.000000e-08, absolute=1.000000e-15, lambda=1.000000e-08
+      maximum iterations=40
+    KSP Object: (BackwardEuler-Equation_npc_) 832 MPI processes
+      type: gmres
+        restart=30, using classical (unmodified) Gram-Schmidt orthogonalization with no iterative refinement
+        happy breakdown tolerance=1e-30
+      maximum iterations=10000, initial guess is zero
+      tolerances: relative=1e-05, absolute=1e-50, divergence=10000.
+      left preconditioning
+      using PRECONDITIONED norm type for convergence test
+    PC Object: (BackwardEuler-Equation_npc_) 832 MPI processes
+      type: bjacobi
+        number of blocks = 832
+        Local solver information for first block is in the following KSP and PC objects on rank 0:
+        Use -BackwardEuler-Equation_npc_ksp_view ::ascii_info_detail to display information for all blocks
+        KSP Object: (BackwardEuler-Equation_npc_sub_) 1 MPI process
+          type: preonly
+          maximum iterations=10000, initial guess is zero
+          tolerances: relative=1e-05, absolute=1e-50, divergence=10000.
+          left preconditioning
+          not checking for convergence
+        PC Object: (BackwardEuler-Equation_npc_sub_) 1 MPI process
+          type: ilu
+            out-of-place factorization
+            0 levels of fill
+            tolerance for zero pivot 2.22045e-14
+            matrix ordering: natural
+            factor fill ratio given 1., needed 1.
+              Factored matrix:
+                Mat Object: (BackwardEuler-Equation_npc_sub_) 1 MPI process
+                  type: seqaij
+                  rows=0, cols=0
+                  package used to perform factorization: petsc
+                  total: nonzeros=0, allocated nonzeros=0
+                    not using I-node routines
+          linear system matrix, which is also used to construct the preconditioner:
+          Mat Object: (BackwardEuler-Equation_npc_sub_) 1 MPI process
+            type: seqaij
+            rows=0, cols=0
+            total: nonzeros=0, allocated nonzeros=0
+            total number of mallocs used during MatSetValues calls=0
+              not using I-node routines
+      linear system matrix, which is also used to construct the preconditioner:
+      Mat Object: (BackwardEuler-Equation_) 832 MPI processes
+        type: mpiaij
+        rows=143769600, cols=143769600
+        total: nonzeros=8024555520, allocated nonzeros=8024555520
+        total number of mallocs used during MatSetValues calls=0
+          has attached near null space
+          not using I-node (on process 0) routines
+t = 3000.00 s | step 10/30 | wall 19.99 s | NL 1 | L 0
+  0 SNES Function norm 4.253381597253e-07
+  1 SNES Function norm 2.789131153904e-09
+  Nonlinear BackwardEuler-Equation_ solve converged due to CONVERGED_FNORM_ABS iterations 1
+SNES Object: (BackwardEuler-Equation_) 832 MPI processes
+  type: ngmres
+    Number of stored past updates: 30
+    Residual selection: gammaA=2e+00, gammaC=2e+00
+    Difference restart: epsilonB=1e-01, deltaB=9e-01
+    Restart on F_M residual increase: FALSE
+  maximum iterations=50, maximum function evaluations=30000
+  tolerances: relative=1e-08, absolute=1e-08, solution=1e-08
+  total number of function evaluations=2
+  norm schedule ALWAYS
+  SNESLineSearch Object: (BackwardEuler-Equation_) 832 MPI processes
+    type: basic
+    maxlambda=1.000000e+00, minlambda=1.000000e-12
+    tolerances: relative=1.000000e-08, absolute=1.000000e-15, lambda=1.000000e-08
+    maximum iterations=1
+  SNES Object: (BackwardEuler-Equation_npc_) 832 MPI processes
+    type: newtonls
+    maximum iterations=1, maximum function evaluations=10000
+    tolerances: relative=0., absolute=0., solution=0.
+    total number of linear solver iterations=1717
+    total number of function evaluations=14
+    norm schedule FINALONLY
+    SNESLineSearch Object: (BackwardEuler-Equation_npc_) 832 MPI processes
+      type: bt
+        interpolation: cubic
+        alpha=1.000000e-04
+      maxlambda=1.000000e+00, minlambda=1.000000e-12
+      tolerances: relative=1.000000e-08, absolute=1.000000e-15, lambda=1.000000e-08
+      maximum iterations=40
+    KSP Object: (BackwardEuler-Equation_npc_) 832 MPI processes
+      type: gmres
+        restart=30, using classical (unmodified) Gram-Schmidt orthogonalization with no iterative refinement
+        happy breakdown tolerance=1e-30
+      maximum iterations=10000, initial guess is zero
+      tolerances: relative=1e-05, absolute=1e-50, divergence=10000.
+      left preconditioning
+      using PRECONDITIONED norm type for convergence test
+    PC Object: (BackwardEuler-Equation_npc_) 832 MPI processes
+      type: bjacobi
+        number of blocks = 832
+        Local solver information for first block is in the following KSP and PC objects on rank 0:
+        Use -BackwardEuler-Equation_npc_ksp_view ::ascii_info_detail to display information for all blocks
+        KSP Object: (BackwardEuler-Equation_npc_sub_) 1 MPI process
+          type: preonly
+          maximum iterations=10000, initial guess is zero
+          tolerances: relative=1e-05, absolute=1e-50, divergence=10000.
+          left preconditioning
+          not checking for convergence
+        PC Object: (BackwardEuler-Equation_npc_sub_) 1 MPI process
+          type: ilu
+            out-of-place factorization
+            0 levels of fill
+            tolerance for zero pivot 2.22045e-14
+            matrix ordering: natural
+            factor fill ratio given 1., needed 1.
+              Factored matrix:
+                Mat Object: (BackwardEuler-Equation_npc_sub_) 1 MPI process
+                  type: seqaij
+                  rows=0, cols=0
+                  package used to perform factorization: petsc
+                  total: nonzeros=0, allocated nonzeros=0
+                    not using I-node routines
+          linear system matrix, which is also used to construct the preconditioner:
+          Mat Object: (BackwardEuler-Equation_npc_sub_) 1 MPI process
+            type: seqaij
+            rows=0, cols=0
+            total: nonzeros=0, allocated nonzeros=0
+            total number of mallocs used during MatSetValues calls=0
+              not using I-node routines
+      linear system matrix, which is also used to construct the preconditioner:
+      Mat Object: (BackwardEuler-Equation_) 832 MPI processes
+        type: mpiaij
+        rows=143769600, cols=143769600
+        total: nonzeros=8024555520, allocated nonzeros=8024555520
+        total number of mallocs used during MatSetValues calls=0
+          has attached near null space
+          not using I-node (on process 0) routines
+t = 3300.00 s | step 11/30 | wall 20.12 s | NL 1 | L 0
+  0 SNES Function norm 4.177456339044e-07
+  1 SNES Function norm 2.620452810952e-09
+  Nonlinear BackwardEuler-Equation_ solve converged due to CONVERGED_FNORM_ABS iterations 1
+SNES Object: (BackwardEuler-Equation_) 832 MPI processes
+  type: ngmres
+    Number of stored past updates: 30
+    Residual selection: gammaA=2e+00, gammaC=2e+00
+    Difference restart: epsilonB=1e-01, deltaB=9e-01
+    Restart on F_M residual increase: FALSE
+  maximum iterations=50, maximum function evaluations=30000
+  tolerances: relative=1e-08, absolute=1e-08, solution=1e-08
+  total number of function evaluations=2
+  norm schedule ALWAYS
+  SNESLineSearch Object: (BackwardEuler-Equation_) 832 MPI processes
+    type: basic
+    maxlambda=1.000000e+00, minlambda=1.000000e-12
+    tolerances: relative=1.000000e-08, absolute=1.000000e-15, lambda=1.000000e-08
+    maximum iterations=1
+  SNES Object: (BackwardEuler-Equation_npc_) 832 MPI processes
+    type: newtonls
+    maximum iterations=1, maximum function evaluations=10000
+    tolerances: relative=0., absolute=0., solution=0.
+    total number of linear solver iterations=1848
+    total number of function evaluations=15
+    norm schedule FINALONLY
+    SNESLineSearch Object: (BackwardEuler-Equation_npc_) 832 MPI processes
+      type: bt
+        interpolation: cubic
+        alpha=1.000000e-04
+      maxlambda=1.000000e+00, minlambda=1.000000e-12
+      tolerances: relative=1.000000e-08, absolute=1.000000e-15, lambda=1.000000e-08
+      maximum iterations=40
+    KSP Object: (BackwardEuler-Equation_npc_) 832 MPI processes
+      type: gmres
+        restart=30, using classical (unmodified) Gram-Schmidt orthogonalization with no iterative refinement
+        happy breakdown tolerance=1e-30
+      maximum iterations=10000, initial guess is zero
+      tolerances: relative=1e-05, absolute=1e-50, divergence=10000.
+      left preconditioning
+      using PRECONDITIONED norm type for convergence test
+    PC Object: (BackwardEuler-Equation_npc_) 832 MPI processes
+      type: bjacobi
+        number of blocks = 832
+        Local solver information for first block is in the following KSP and PC objects on rank 0:
+        Use -BackwardEuler-Equation_npc_ksp_view ::ascii_info_detail to display information for all blocks
+        KSP Object: (BackwardEuler-Equation_npc_sub_) 1 MPI process
+          type: preonly
+          maximum iterations=10000, initial guess is zero
+          tolerances: relative=1e-05, absolute=1e-50, divergence=10000.
+          left preconditioning
+          not checking for convergence
+        PC Object: (BackwardEuler-Equation_npc_sub_) 1 MPI process
+          type: ilu
+            out-of-place factorization
+            0 levels of fill
+            tolerance for zero pivot 2.22045e-14
+            matrix ordering: natural
+            factor fill ratio given 1., needed 1.
+              Factored matrix:
+                Mat Object: (BackwardEuler-Equation_npc_sub_) 1 MPI process
+                  type: seqaij
+                  rows=0, cols=0
+                  package used to perform factorization: petsc
+                  total: nonzeros=0, allocated nonzeros=0
+                    not using I-node routines
+          linear system matrix, which is also used to construct the preconditioner:
+          Mat Object: (BackwardEuler-Equation_npc_sub_) 1 MPI process
+            type: seqaij
+            rows=0, cols=0
+            total: nonzeros=0, allocated nonzeros=0
+            total number of mallocs used during MatSetValues calls=0
+              not using I-node routines
+      linear system matrix, which is also used to construct the preconditioner:
+      Mat Object: (BackwardEuler-Equation_) 832 MPI processes
+        type: mpiaij
+        rows=143769600, cols=143769600
+        total: nonzeros=8024555520, allocated nonzeros=8024555520
+        total number of mallocs used during MatSetValues calls=0
+          has attached near null space
+          not using I-node (on process 0) routines
+t = 3600.00 s | step 12/30 | wall 20.20 s | NL 1 | L 0
+  0 SNES Function norm 4.110972323747e-07
+  1 SNES Function norm 2.481086634055e-09
+  Nonlinear BackwardEuler-Equation_ solve converged due to CONVERGED_FNORM_ABS iterations 1
+SNES Object: (BackwardEuler-Equation_) 832 MPI processes
+  type: ngmres
+    Number of stored past updates: 30
+    Residual selection: gammaA=2e+00, gammaC=2e+00
+    Difference restart: epsilonB=1e-01, deltaB=9e-01
+    Restart on F_M residual increase: FALSE
+  maximum iterations=50, maximum function evaluations=30000
+  tolerances: relative=1e-08, absolute=1e-08, solution=1e-08
+  total number of function evaluations=2
+  norm schedule ALWAYS
+  SNESLineSearch Object: (BackwardEuler-Equation_) 832 MPI processes
+    type: basic
+    maxlambda=1.000000e+00, minlambda=1.000000e-12
+    tolerances: relative=1.000000e-08, absolute=1.000000e-15, lambda=1.000000e-08
+    maximum iterations=1
+  SNES Object: (BackwardEuler-Equation_npc_) 832 MPI processes
+    type: newtonls
+    maximum iterations=1, maximum function evaluations=10000
+    tolerances: relative=0., absolute=0., solution=0.
+    total number of linear solver iterations=1980
+    total number of function evaluations=16
+    norm schedule FINALONLY
+    SNESLineSearch Object: (BackwardEuler-Equation_npc_) 832 MPI processes
+      type: bt
+        interpolation: cubic
+        alpha=1.000000e-04
+      maxlambda=1.000000e+00, minlambda=1.000000e-12
+      tolerances: relative=1.000000e-08, absolute=1.000000e-15, lambda=1.000000e-08
+      maximum iterations=40
+    KSP Object: (BackwardEuler-Equation_npc_) 832 MPI processes
+      type: gmres
+        restart=30, using classical (unmodified) Gram-Schmidt orthogonalization with no iterative refinement
+        happy breakdown tolerance=1e-30
+      maximum iterations=10000, initial guess is zero
+      tolerances: relative=1e-05, absolute=1e-50, divergence=10000.
+      left preconditioning
+      using PRECONDITIONED norm type for convergence test
+    PC Object: (BackwardEuler-Equation_npc_) 832 MPI processes
+      type: bjacobi
+        number of blocks = 832
+        Local solver information for first block is in the following KSP and PC objects on rank 0:
+        Use -BackwardEuler-Equation_npc_ksp_view ::ascii_info_detail to display information for all blocks
+        KSP Object: (BackwardEuler-Equation_npc_sub_) 1 MPI process
+          type: preonly
+          maximum iterations=10000, initial guess is zero
+          tolerances: relative=1e-05, absolute=1e-50, divergence=10000.
+          left preconditioning
+          not checking for convergence
+        PC Object: (BackwardEuler-Equation_npc_sub_) 1 MPI process
+          type: ilu
+            out-of-place factorization
+            0 levels of fill
+            tolerance for zero pivot 2.22045e-14
+            matrix ordering: natural
+            factor fill ratio given 1., needed 1.
+              Factored matrix:
+                Mat Object: (BackwardEuler-Equation_npc_sub_) 1 MPI process
+                  type: seqaij
+                  rows=0, cols=0
+                  package used to perform factorization: petsc
+                  total: nonzeros=0, allocated nonzeros=0
+                    not using I-node routines
+          linear system matrix, which is also used to construct the preconditioner:
+          Mat Object: (BackwardEuler-Equation_npc_sub_) 1 MPI process
+            type: seqaij
+            rows=0, cols=0
+            total: nonzeros=0, allocated nonzeros=0
+            total number of mallocs used during MatSetValues calls=0
+              not using I-node routines
+      linear system matrix, which is also used to construct the preconditioner:
+      Mat Object: (BackwardEuler-Equation_) 832 MPI processes
+        type: mpiaij
+        rows=143769600, cols=143769600
+        total: nonzeros=8024555520, allocated nonzeros=8024555520
+        total number of mallocs used during MatSetValues calls=0
+          has attached near null space
+          not using I-node (on process 0) routines
+t = 3900.00 s | step 13/30 | wall 20.31 s | NL 1 | L 0
+  0 SNES Function norm 4.052254413759e-07
+  1 SNES Function norm 2.364583657305e-09
+  Nonlinear BackwardEuler-Equation_ solve converged due to CONVERGED_FNORM_ABS iterations 1
+SNES Object: (BackwardEuler-Equation_) 832 MPI processes
+  type: ngmres
+    Number of stored past updates: 30
+    Residual selection: gammaA=2e+00, gammaC=2e+00
+    Difference restart: epsilonB=1e-01, deltaB=9e-01
+    Restart on F_M residual increase: FALSE
+  maximum iterations=50, maximum function evaluations=30000
+  tolerances: relative=1e-08, absolute=1e-08, solution=1e-08
+  total number of function evaluations=2
+  norm schedule ALWAYS
+  SNESLineSearch Object: (BackwardEuler-Equation_) 832 MPI processes
+    type: basic
+    maxlambda=1.000000e+00, minlambda=1.000000e-12
+    tolerances: relative=1.000000e-08, absolute=1.000000e-15, lambda=1.000000e-08
+    maximum iterations=1
+  SNES Object: (BackwardEuler-Equation_npc_) 832 MPI processes
+    type: newtonls
+    maximum iterations=1, maximum function evaluations=10000
+    tolerances: relative=0., absolute=0., solution=0.
+    total number of linear solver iterations=2112
+    total number of function evaluations=17
+    norm schedule FINALONLY
+    SNESLineSearch Object: (BackwardEuler-Equation_npc_) 832 MPI processes
+      type: bt
+        interpolation: cubic
+        alpha=1.000000e-04
+      maxlambda=1.000000e+00, minlambda=1.000000e-12
+      tolerances: relative=1.000000e-08, absolute=1.000000e-15, lambda=1.000000e-08
+      maximum iterations=40
+    KSP Object: (BackwardEuler-Equation_npc_) 832 MPI processes
+      type: gmres
+        restart=30, using classical (unmodified) Gram-Schmidt orthogonalization with no iterative refinement
+        happy breakdown tolerance=1e-30
+      maximum iterations=10000, initial guess is zero
+      tolerances: relative=1e-05, absolute=1e-50, divergence=10000.
+      left preconditioning
+      using PRECONDITIONED norm type for convergence test
+    PC Object: (BackwardEuler-Equation_npc_) 832 MPI processes
+      type: bjacobi
+        number of blocks = 832
+        Local solver information for first block is in the following KSP and PC objects on rank 0:
+        Use -BackwardEuler-Equation_npc_ksp_view ::ascii_info_detail to display information for all blocks
+        KSP Object: (BackwardEuler-Equation_npc_sub_) 1 MPI process
+          type: preonly
+          maximum iterations=10000, initial guess is zero
+          tolerances: relative=1e-05, absolute=1e-50, divergence=10000.
+          left preconditioning
+          not checking for convergence
+        PC Object: (BackwardEuler-Equation_npc_sub_) 1 MPI process
+          type: ilu
+            out-of-place factorization
+            0 levels of fill
+            tolerance for zero pivot 2.22045e-14
+            matrix ordering: natural
+            factor fill ratio given 1., needed 1.
+              Factored matrix:
+                Mat Object: (BackwardEuler-Equation_npc_sub_) 1 MPI process
+                  type: seqaij
+                  rows=0, cols=0
+                  package used to perform factorization: petsc
+                  total: nonzeros=0, allocated nonzeros=0
+                    not using I-node routines
+          linear system matrix, which is also used to construct the preconditioner:
+          Mat Object: (BackwardEuler-Equation_npc_sub_) 1 MPI process
+            type: seqaij
+            rows=0, cols=0
+            total: nonzeros=0, allocated nonzeros=0
+            total number of mallocs used during MatSetValues calls=0
+              not using I-node routines
+      linear system matrix, which is also used to construct the preconditioner:
+      Mat Object: (BackwardEuler-Equation_) 832 MPI processes
+        type: mpiaij
+        rows=143769600, cols=143769600
+        total: nonzeros=8024555520, allocated nonzeros=8024555520
+        total number of mallocs used during MatSetValues calls=0
+          has attached near null space
+          not using I-node (on process 0) routines
+t = 4200.00 s | step 14/30 | wall 20.31 s | NL 1 | L 0
+  0 SNES Function norm 4.000022238569e-07
+  1 SNES Function norm 2.265738207919e-09
+  Nonlinear BackwardEuler-Equation_ solve converged due to CONVERGED_FNORM_ABS iterations 1
+SNES Object: (BackwardEuler-Equation_) 832 MPI processes
+  type: ngmres
+    Number of stored past updates: 30
+    Residual selection: gammaA=2e+00, gammaC=2e+00
+    Difference restart: epsilonB=1e-01, deltaB=9e-01
+    Restart on F_M residual increase: FALSE
+  maximum iterations=50, maximum function evaluations=30000
+  tolerances: relative=1e-08, absolute=1e-08, solution=1e-08
+  total number of function evaluations=2
+  norm schedule ALWAYS
+  SNESLineSearch Object: (BackwardEuler-Equation_) 832 MPI processes
+    type: basic
+    maxlambda=1.000000e+00, minlambda=1.000000e-12
+    tolerances: relative=1.000000e-08, absolute=1.000000e-15, lambda=1.000000e-08
+    maximum iterations=1
+  SNES Object: (BackwardEuler-Equation_npc_) 832 MPI processes
+    type: newtonls
+    maximum iterations=1, maximum function evaluations=10000
+    tolerances: relative=0., absolute=0., solution=0.
+    total number of linear solver iterations=2245
+    total number of function evaluations=18
+    norm schedule FINALONLY
+    SNESLineSearch Object: (BackwardEuler-Equation_npc_) 832 MPI processes
+      type: bt
+        interpolation: cubic
+        alpha=1.000000e-04
+      maxlambda=1.000000e+00, minlambda=1.000000e-12
+      tolerances: relative=1.000000e-08, absolute=1.000000e-15, lambda=1.000000e-08
+      maximum iterations=40
+    KSP Object: (BackwardEuler-Equation_npc_) 832 MPI processes
+      type: gmres
+        restart=30, using classical (unmodified) Gram-Schmidt orthogonalization with no iterative refinement
+        happy breakdown tolerance=1e-30
+      maximum iterations=10000, initial guess is zero
+      tolerances: relative=1e-05, absolute=1e-50, divergence=10000.
+      left preconditioning
+      using PRECONDITIONED norm type for convergence test
+    PC Object: (BackwardEuler-Equation_npc_) 832 MPI processes
+      type: bjacobi
+        number of blocks = 832
+        Local solver information for first block is in the following KSP and PC objects on rank 0:
+        Use -BackwardEuler-Equation_npc_ksp_view ::ascii_info_detail to display information for all blocks
+        KSP Object: (BackwardEuler-Equation_npc_sub_) 1 MPI process
+          type: preonly
+          maximum iterations=10000, initial guess is zero
+          tolerances: relative=1e-05, absolute=1e-50, divergence=10000.
+          left preconditioning
+          not checking for convergence
+        PC Object: (BackwardEuler-Equation_npc_sub_) 1 MPI process
+          type: ilu
+            out-of-place factorization
+            0 levels of fill
+            tolerance for zero pivot 2.22045e-14
+            matrix ordering: natural
+            factor fill ratio given 1., needed 1.
+              Factored matrix:
+                Mat Object: (BackwardEuler-Equation_npc_sub_) 1 MPI process
+                  type: seqaij
+                  rows=0, cols=0
+                  package used to perform factorization: petsc
+                  total: nonzeros=0, allocated nonzeros=0
+                    not using I-node routines
+          linear system matrix, which is also used to construct the preconditioner:
+          Mat Object: (BackwardEuler-Equation_npc_sub_) 1 MPI process
+            type: seqaij
+            rows=0, cols=0
+            total: nonzeros=0, allocated nonzeros=0
+            total number of mallocs used during MatSetValues calls=0
+              not using I-node routines
+      linear system matrix, which is also used to construct the preconditioner:
+      Mat Object: (BackwardEuler-Equation_) 832 MPI processes
+        type: mpiaij
+        rows=143769600, cols=143769600
+        total: nonzeros=8024555520, allocated nonzeros=8024555520
+        total number of mallocs used during MatSetValues calls=0
+          has attached near null space
+          not using I-node (on process 0) routines
+t = 4500.00 s | step 15/30 | wall 20.41 s | NL 1 | L 0
+  0 SNES Function norm 3.953276712306e-07
+  1 SNES Function norm 2.181197839551e-09
+  Nonlinear BackwardEuler-Equation_ solve converged due to CONVERGED_FNORM_ABS iterations 1
+SNES Object: (BackwardEuler-Equation_) 832 MPI processes
+  type: ngmres
+    Number of stored past updates: 30
+    Residual selection: gammaA=2e+00, gammaC=2e+00
+    Difference restart: epsilonB=1e-01, deltaB=9e-01
+    Restart on F_M residual increase: FALSE
+  maximum iterations=50, maximum function evaluations=30000
+  tolerances: relative=1e-08, absolute=1e-08, solution=1e-08
+  total number of function evaluations=2
+  norm schedule ALWAYS
+  SNESLineSearch Object: (BackwardEuler-Equation_) 832 MPI processes
+    type: basic
+    maxlambda=1.000000e+00, minlambda=1.000000e-12
+    tolerances: relative=1.000000e-08, absolute=1.000000e-15, lambda=1.000000e-08
+    maximum iterations=1
+  SNES Object: (BackwardEuler-Equation_npc_) 832 MPI processes
+    type: newtonls
+    maximum iterations=1, maximum function evaluations=10000
+    tolerances: relative=0., absolute=0., solution=0.
+    total number of linear solver iterations=2379
+    total number of function evaluations=19
+    norm schedule FINALONLY
+    SNESLineSearch Object: (BackwardEuler-Equation_npc_) 832 MPI processes
+      type: bt
+        interpolation: cubic
+        alpha=1.000000e-04
+      maxlambda=1.000000e+00, minlambda=1.000000e-12
+      tolerances: relative=1.000000e-08, absolute=1.000000e-15, lambda=1.000000e-08
+      maximum iterations=40
+    KSP Object: (BackwardEuler-Equation_npc_) 832 MPI processes
+      type: gmres
+        restart=30, using classical (unmodified) Gram-Schmidt orthogonalization with no iterative refinement
+        happy breakdown tolerance=1e-30
+      maximum iterations=10000, initial guess is zero
+      tolerances: relative=1e-05, absolute=1e-50, divergence=10000.
+      left preconditioning
+      using PRECONDITIONED norm type for convergence test
+    PC Object: (BackwardEuler-Equation_npc_) 832 MPI processes
+      type: bjacobi
+        number of blocks = 832
+        Local solver information for first block is in the following KSP and PC objects on rank 0:
+        Use -BackwardEuler-Equation_npc_ksp_view ::ascii_info_detail to display information for all blocks
+        KSP Object: (BackwardEuler-Equation_npc_sub_) 1 MPI process
+          type: preonly
+          maximum iterations=10000, initial guess is zero
+          tolerances: relative=1e-05, absolute=1e-50, divergence=10000.
+          left preconditioning
+          not checking for convergence
+        PC Object: (BackwardEuler-Equation_npc_sub_) 1 MPI process
+          type: ilu
+            out-of-place factorization
+            0 levels of fill
+            tolerance for zero pivot 2.22045e-14
+            matrix ordering: natural
+            factor fill ratio given 1., needed 1.
+              Factored matrix:
+                Mat Object: (BackwardEuler-Equation_npc_sub_) 1 MPI process
+                  type: seqaij
+                  rows=0, cols=0
+                  package used to perform factorization: petsc
+                  total: nonzeros=0, allocated nonzeros=0
+                    not using I-node routines
+          linear system matrix, which is also used to construct the preconditioner:
+          Mat Object: (BackwardEuler-Equation_npc_sub_) 1 MPI process
+            type: seqaij
+            rows=0, cols=0
+            total: nonzeros=0, allocated nonzeros=0
+            total number of mallocs used during MatSetValues calls=0
+              not using I-node routines
+      linear system matrix, which is also used to construct the preconditioner:
+      Mat Object: (BackwardEuler-Equation_) 832 MPI processes
+        type: mpiaij
+        rows=143769600, cols=143769600
+        total: nonzeros=8024555520, allocated nonzeros=8024555520
+        total number of mallocs used during MatSetValues calls=0
+          has attached near null space
+          not using I-node (on process 0) routines
+t = 4800.00 s | step 16/30 | wall 20.52 s | NL 1 | L 0
+  0 SNES Function norm 3.911223327873e-07
+  1 SNES Function norm 2.108391930742e-09
+  Nonlinear BackwardEuler-Equation_ solve converged due to CONVERGED_FNORM_ABS iterations 1
+SNES Object: (BackwardEuler-Equation_) 832 MPI processes
+  type: ngmres
+    Number of stored past updates: 30
+    Residual selection: gammaA=2e+00, gammaC=2e+00
+    Difference restart: epsilonB=1e-01, deltaB=9e-01
+    Restart on F_M residual increase: FALSE
+  maximum iterations=50, maximum function evaluations=30000
+  tolerances: relative=1e-08, absolute=1e-08, solution=1e-08
+  total number of function evaluations=2
+  norm schedule ALWAYS
+  SNESLineSearch Object: (BackwardEuler-Equation_) 832 MPI processes
+    type: basic
+    maxlambda=1.000000e+00, minlambda=1.000000e-12
+    tolerances: relative=1.000000e-08, absolute=1.000000e-15, lambda=1.000000e-08
+    maximum iterations=1
+  SNES Object: (BackwardEuler-Equation_npc_) 832 MPI processes
+    type: newtonls
+    maximum iterations=1, maximum function evaluations=10000
+    tolerances: relative=0., absolute=0., solution=0.
+    total number of linear solver iterations=2514
+    total number of function evaluations=20
+    norm schedule FINALONLY
+    SNESLineSearch Object: (BackwardEuler-Equation_npc_) 832 MPI processes
+      type: bt
+        interpolation: cubic
+        alpha=1.000000e-04
+      maxlambda=1.000000e+00, minlambda=1.000000e-12
+      tolerances: relative=1.000000e-08, absolute=1.000000e-15, lambda=1.000000e-08
+      maximum iterations=40
+    KSP Object: (BackwardEuler-Equation_npc_) 832 MPI processes
+      type: gmres
+        restart=30, using classical (unmodified) Gram-Schmidt orthogonalization with no iterative refinement
+        happy breakdown tolerance=1e-30
+      maximum iterations=10000, initial guess is zero
+      tolerances: relative=1e-05, absolute=1e-50, divergence=10000.
+      left preconditioning
+      using PRECONDITIONED norm type for convergence test
+    PC Object: (BackwardEuler-Equation_npc_) 832 MPI processes
+      type: bjacobi
+        number of blocks = 832
+        Local solver information for first block is in the following KSP and PC objects on rank 0:
+        Use -BackwardEuler-Equation_npc_ksp_view ::ascii_info_detail to display information for all blocks
+        KSP Object: (BackwardEuler-Equation_npc_sub_) 1 MPI process
+          type: preonly
+          maximum iterations=10000, initial guess is zero
+          tolerances: relative=1e-05, absolute=1e-50, divergence=10000.
+          left preconditioning
+          not checking for convergence
+        PC Object: (BackwardEuler-Equation_npc_sub_) 1 MPI process
+          type: ilu
+            out-of-place factorization
+            0 levels of fill
+            tolerance for zero pivot 2.22045e-14
+            matrix ordering: natural
+            factor fill ratio given 1., needed 1.
+              Factored matrix:
+                Mat Object: (BackwardEuler-Equation_npc_sub_) 1 MPI process
+                  type: seqaij
+                  rows=0, cols=0
+                  package used to perform factorization: petsc
+                  total: nonzeros=0, allocated nonzeros=0
+                    not using I-node routines
+          linear system matrix, which is also used to construct the preconditioner:
+          Mat Object: (BackwardEuler-Equation_npc_sub_) 1 MPI process
+            type: seqaij
+            rows=0, cols=0
+            total: nonzeros=0, allocated nonzeros=0
+            total number of mallocs used during MatSetValues calls=0
+              not using I-node routines
+      linear system matrix, which is also used to construct the preconditioner:
+      Mat Object: (BackwardEuler-Equation_) 832 MPI processes
+        type: mpiaij
+        rows=143769600, cols=143769600
+        total: nonzeros=8024555520, allocated nonzeros=8024555520
+        total number of mallocs used during MatSetValues calls=0
+          has attached near null space
+          not using I-node (on process 0) routines
+t = 5100.00 s | step 17/30 | wall 20.66 s | NL 1 | L 0
+  0 SNES Function norm 3.873220481203e-07
+  1 SNES Function norm 2.045540607315e-09
+  Nonlinear BackwardEuler-Equation_ solve converged due to CONVERGED_FNORM_ABS iterations 1
+SNES Object: (BackwardEuler-Equation_) 832 MPI processes
+  type: ngmres
+    Number of stored past updates: 30
+    Residual selection: gammaA=2e+00, gammaC=2e+00
+    Difference restart: epsilonB=1e-01, deltaB=9e-01
+    Restart on F_M residual increase: FALSE
+  maximum iterations=50, maximum function evaluations=30000
+  tolerances: relative=1e-08, absolute=1e-08, solution=1e-08
+  total number of function evaluations=2
+  norm schedule ALWAYS
+  SNESLineSearch Object: (BackwardEuler-Equation_) 832 MPI processes
+    type: basic
+    maxlambda=1.000000e+00, minlambda=1.000000e-12
+    tolerances: relative=1.000000e-08, absolute=1.000000e-15, lambda=1.000000e-08
+    maximum iterations=1
+  SNES Object: (BackwardEuler-Equation_npc_) 832 MPI processes
+    type: newtonls
+    maximum iterations=1, maximum function evaluations=10000
+    tolerances: relative=0., absolute=0., solution=0.
+    total number of linear solver iterations=2649
+    total number of function evaluations=21
+    norm schedule FINALONLY
+    SNESLineSearch Object: (BackwardEuler-Equation_npc_) 832 MPI processes
+      type: bt
+        interpolation: cubic
+        alpha=1.000000e-04
+      maxlambda=1.000000e+00, minlambda=1.000000e-12
+      tolerances: relative=1.000000e-08, absolute=1.000000e-15, lambda=1.000000e-08
+      maximum iterations=40
+    KSP Object: (BackwardEuler-Equation_npc_) 832 MPI processes
+      type: gmres
+        restart=30, using classical (unmodified) Gram-Schmidt orthogonalization with no iterative refinement
+        happy breakdown tolerance=1e-30
+      maximum iterations=10000, initial guess is zero
+      tolerances: relative=1e-05, absolute=1e-50, divergence=10000.
+      left preconditioning
+      using PRECONDITIONED norm type for convergence test
+    PC Object: (BackwardEuler-Equation_npc_) 832 MPI processes
+      type: bjacobi
+        number of blocks = 832
+        Local solver information for first block is in the following KSP and PC objects on rank 0:
+        Use -BackwardEuler-Equation_npc_ksp_view ::ascii_info_detail to display information for all blocks
+        KSP Object: (BackwardEuler-Equation_npc_sub_) 1 MPI process
+          type: preonly
+          maximum iterations=10000, initial guess is zero
+          tolerances: relative=1e-05, absolute=1e-50, divergence=10000.
+          left preconditioning
+          not checking for convergence
+        PC Object: (BackwardEuler-Equation_npc_sub_) 1 MPI process
+          type: ilu
+            out-of-place factorization
+            0 levels of fill
+            tolerance for zero pivot 2.22045e-14
+            matrix ordering: natural
+            factor fill ratio given 1., needed 1.
+              Factored matrix:
+                Mat Object: (BackwardEuler-Equation_npc_sub_) 1 MPI process
+                  type: seqaij
+                  rows=0, cols=0
+                  package used to perform factorization: petsc
+                  total: nonzeros=0, allocated nonzeros=0
+                    not using I-node routines
+          linear system matrix, which is also used to construct the preconditioner:
+          Mat Object: (BackwardEuler-Equation_npc_sub_) 1 MPI process
+            type: seqaij
+            rows=0, cols=0
+            total: nonzeros=0, allocated nonzeros=0
+            total number of mallocs used during MatSetValues calls=0
+              not using I-node routines
+      linear system matrix, which is also used to construct the preconditioner:
+      Mat Object: (BackwardEuler-Equation_) 832 MPI processes
+        type: mpiaij
+        rows=143769600, cols=143769600
+        total: nonzeros=8024555520, allocated nonzeros=8024555520
+        total number of mallocs used during MatSetValues calls=0
+          has attached near null space
+          not using I-node (on process 0) routines
+t = 5400.00 s | step 18/30 | wall 20.62 s | NL 1 | L 0
+  0 SNES Function norm 3.838742596449e-07
+  1 SNES Function norm 1.990368456813e-09
+  Nonlinear BackwardEuler-Equation_ solve converged due to CONVERGED_FNORM_ABS iterations 1
+SNES Object: (BackwardEuler-Equation_) 832 MPI processes
+  type: ngmres
+    Number of stored past updates: 30
+    Residual selection: gammaA=2e+00, gammaC=2e+00
+    Difference restart: epsilonB=1e-01, deltaB=9e-01
+    Restart on F_M residual increase: FALSE
+  maximum iterations=50, maximum function evaluations=30000
+  tolerances: relative=1e-08, absolute=1e-08, solution=1e-08
+  total number of function evaluations=2
+  norm schedule ALWAYS
+  SNESLineSearch Object: (BackwardEuler-Equation_) 832 MPI processes
+    type: basic
+    maxlambda=1.000000e+00, minlambda=1.000000e-12
+    tolerances: relative=1.000000e-08, absolute=1.000000e-15, lambda=1.000000e-08
+    maximum iterations=1
+  SNES Object: (BackwardEuler-Equation_npc_) 832 MPI processes
+    type: newtonls
+    maximum iterations=1, maximum function evaluations=10000
+    tolerances: relative=0., absolute=0., solution=0.
+    total number of linear solver iterations=2785
+    total number of function evaluations=22
+    norm schedule FINALONLY
+    SNESLineSearch Object: (BackwardEuler-Equation_npc_) 832 MPI processes
+      type: bt
+        interpolation: cubic
+        alpha=1.000000e-04
+      maxlambda=1.000000e+00, minlambda=1.000000e-12
+      tolerances: relative=1.000000e-08, absolute=1.000000e-15, lambda=1.000000e-08
+      maximum iterations=40
+    KSP Object: (BackwardEuler-Equation_npc_) 832 MPI processes
+      type: gmres
+        restart=30, using classical (unmodified) Gram-Schmidt orthogonalization with no iterative refinement
+        happy breakdown tolerance=1e-30
+      maximum iterations=10000, initial guess is zero
+      tolerances: relative=1e-05, absolute=1e-50, divergence=10000.
+      left preconditioning
+      using PRECONDITIONED norm type for convergence test
+    PC Object: (BackwardEuler-Equation_npc_) 832 MPI processes
+      type: bjacobi
+        number of blocks = 832
+        Local solver information for first block is in the following KSP and PC objects on rank 0:
+        Use -BackwardEuler-Equation_npc_ksp_view ::ascii_info_detail to display information for all blocks
+        KSP Object: (BackwardEuler-Equation_npc_sub_) 1 MPI process
+          type: preonly
+          maximum iterations=10000, initial guess is zero
+          tolerances: relative=1e-05, absolute=1e-50, divergence=10000.
+          left preconditioning
+          not checking for convergence
+        PC Object: (BackwardEuler-Equation_npc_sub_) 1 MPI process
+          type: ilu
+            out-of-place factorization
+            0 levels of fill
+            tolerance for zero pivot 2.22045e-14
+            matrix ordering: natural
+            factor fill ratio given 1., needed 1.
+              Factored matrix:
+                Mat Object: (BackwardEuler-Equation_npc_sub_) 1 MPI process
+                  type: seqaij
+                  rows=0, cols=0
+                  package used to perform factorization: petsc
+                  total: nonzeros=0, allocated nonzeros=0
+                    not using I-node routines
+          linear system matrix, which is also used to construct the preconditioner:
+          Mat Object: (BackwardEuler-Equation_npc_sub_) 1 MPI process
+            type: seqaij
+            rows=0, cols=0
+            total: nonzeros=0, allocated nonzeros=0
+            total number of mallocs used during MatSetValues calls=0
+              not using I-node routines
+      linear system matrix, which is also used to construct the preconditioner:
+      Mat Object: (BackwardEuler-Equation_) 832 MPI processes
+        type: mpiaij
+        rows=143769600, cols=143769600
+        total: nonzeros=8024555520, allocated nonzeros=8024555520
+        total number of mallocs used during MatSetValues calls=0
+          has attached near null space
+          not using I-node (on process 0) routines
+t = 5700.00 s | step 19/30 | wall 20.77 s | NL 1 | L 0
+  0 SNES Function norm 3.807355071905e-07
+  1 SNES Function norm 1.941817553791e-09
+  Nonlinear BackwardEuler-Equation_ solve converged due to CONVERGED_FNORM_ABS iterations 1
+SNES Object: (BackwardEuler-Equation_) 832 MPI processes
+  type: ngmres
+    Number of stored past updates: 30
+    Residual selection: gammaA=2e+00, gammaC=2e+00
+    Difference restart: epsilonB=1e-01, deltaB=9e-01
+    Restart on F_M residual increase: FALSE
+  maximum iterations=50, maximum function evaluations=30000
+  tolerances: relative=1e-08, absolute=1e-08, solution=1e-08
+  total number of function evaluations=2
+  norm schedule ALWAYS
+  SNESLineSearch Object: (BackwardEuler-Equation_) 832 MPI processes
+    type: basic
+    maxlambda=1.000000e+00, minlambda=1.000000e-12
+    tolerances: relative=1.000000e-08, absolute=1.000000e-15, lambda=1.000000e-08
+    maximum iterations=1
+  SNES Object: (BackwardEuler-Equation_npc_) 832 MPI processes
+    type: newtonls
+    maximum iterations=1, maximum function evaluations=10000
+    tolerances: relative=0., absolute=0., solution=0.
+    total number of linear solver iterations=2922
+    total number of function evaluations=23
+    norm schedule FINALONLY
+    SNESLineSearch Object: (BackwardEuler-Equation_npc_) 832 MPI processes
+      type: bt
+        interpolation: cubic
+        alpha=1.000000e-04
+      maxlambda=1.000000e+00, minlambda=1.000000e-12
+      tolerances: relative=1.000000e-08, absolute=1.000000e-15, lambda=1.000000e-08
+      maximum iterations=40
+    KSP Object: (BackwardEuler-Equation_npc_) 832 MPI processes
+      type: gmres
+        restart=30, using classical (unmodified) Gram-Schmidt orthogonalization with no iterative refinement
+        happy breakdown tolerance=1e-30
+      maximum iterations=10000, initial guess is zero
+      tolerances: relative=1e-05, absolute=1e-50, divergence=10000.
+      left preconditioning
+      using PRECONDITIONED norm type for convergence test
+    PC Object: (BackwardEuler-Equation_npc_) 832 MPI processes
+      type: bjacobi
+        number of blocks = 832
+        Local solver information for first block is in the following KSP and PC objects on rank 0:
+        Use -BackwardEuler-Equation_npc_ksp_view ::ascii_info_detail to display information for all blocks
+        KSP Object: (BackwardEuler-Equation_npc_sub_) 1 MPI process
+          type: preonly
+          maximum iterations=10000, initial guess is zero
+          tolerances: relative=1e-05, absolute=1e-50, divergence=10000.
+          left preconditioning
+          not checking for convergence
+        PC Object: (BackwardEuler-Equation_npc_sub_) 1 MPI process
+          type: ilu
+            out-of-place factorization
+            0 levels of fill
+            tolerance for zero pivot 2.22045e-14
+            matrix ordering: natural
+            factor fill ratio given 1., needed 1.
+              Factored matrix:
+                Mat Object: (BackwardEuler-Equation_npc_sub_) 1 MPI process
+                  type: seqaij
+                  rows=0, cols=0
+                  package used to perform factorization: petsc
+                  total: nonzeros=0, allocated nonzeros=0
+                    not using I-node routines
+          linear system matrix, which is also used to construct the preconditioner:
+          Mat Object: (BackwardEuler-Equation_npc_sub_) 1 MPI process
+            type: seqaij
+            rows=0, cols=0
+            total: nonzeros=0, allocated nonzeros=0
+            total number of mallocs used during MatSetValues calls=0
+              not using I-node routines
+      linear system matrix, which is also used to construct the preconditioner:
+      Mat Object: (BackwardEuler-Equation_) 832 MPI processes
+        type: mpiaij
+        rows=143769600, cols=143769600
+        total: nonzeros=8024555520, allocated nonzeros=8024555520
+        total number of mallocs used during MatSetValues calls=0
+          has attached near null space
+          not using I-node (on process 0) routines
+t = 6000.00 s | step 20/30 | wall 20.84 s | NL 1 | L 0
+  0 SNES Function norm 3.778693999412e-07
+  1 SNES Function norm 1.899341737794e-09
+  Nonlinear BackwardEuler-Equation_ solve converged due to CONVERGED_FNORM_ABS iterations 1
+SNES Object: (BackwardEuler-Equation_) 832 MPI processes
+  type: ngmres
+    Number of stored past updates: 30
+    Residual selection: gammaA=2e+00, gammaC=2e+00
+    Difference restart: epsilonB=1e-01, deltaB=9e-01
+    Restart on F_M residual increase: FALSE
+  maximum iterations=50, maximum function evaluations=30000
+  tolerances: relative=1e-08, absolute=1e-08, solution=1e-08
+  total number of function evaluations=2
+  norm schedule ALWAYS
+  SNESLineSearch Object: (BackwardEuler-Equation_) 832 MPI processes
+    type: basic
+    maxlambda=1.000000e+00, minlambda=1.000000e-12
+    tolerances: relative=1.000000e-08, absolute=1.000000e-15, lambda=1.000000e-08
+    maximum iterations=1
+  SNES Object: (BackwardEuler-Equation_npc_) 832 MPI processes
+    type: newtonls
+    maximum iterations=1, maximum function evaluations=10000
+    tolerances: relative=0., absolute=0., solution=0.
+    total number of linear solver iterations=3059
+    total number of function evaluations=24
+    norm schedule FINALONLY
+    SNESLineSearch Object: (BackwardEuler-Equation_npc_) 832 MPI processes
+      type: bt
+        interpolation: cubic
+        alpha=1.000000e-04
+      maxlambda=1.000000e+00, minlambda=1.000000e-12
+      tolerances: relative=1.000000e-08, absolute=1.000000e-15, lambda=1.000000e-08
+      maximum iterations=40
+    KSP Object: (BackwardEuler-Equation_npc_) 832 MPI processes
+      type: gmres
+        restart=30, using classical (unmodified) Gram-Schmidt orthogonalization with no iterative refinement
+        happy breakdown tolerance=1e-30
+      maximum iterations=10000, initial guess is zero
+      tolerances: relative=1e-05, absolute=1e-50, divergence=10000.
+      left preconditioning
+      using PRECONDITIONED norm type for convergence test
+    PC Object: (BackwardEuler-Equation_npc_) 832 MPI processes
+      type: bjacobi
+        number of blocks = 832
+        Local solver information for first block is in the following KSP and PC objects on rank 0:
+        Use -BackwardEuler-Equation_npc_ksp_view ::ascii_info_detail to display information for all blocks
+        KSP Object: (BackwardEuler-Equation_npc_sub_) 1 MPI process
+          type: preonly
+          maximum iterations=10000, initial guess is zero
+          tolerances: relative=1e-05, absolute=1e-50, divergence=10000.
+          left preconditioning
+          not checking for convergence
+        PC Object: (BackwardEuler-Equation_npc_sub_) 1 MPI process
+          type: ilu
+            out-of-place factorization
+            0 levels of fill
+            tolerance for zero pivot 2.22045e-14
+            matrix ordering: natural
+            factor fill ratio given 1., needed 1.
+              Factored matrix:
+                Mat Object: (BackwardEuler-Equation_npc_sub_) 1 MPI process
+                  type: seqaij
+                  rows=0, cols=0
+                  package used to perform factorization: petsc
+                  total: nonzeros=0, allocated nonzeros=0
+                    not using I-node routines
+          linear system matrix, which is also used to construct the preconditioner:
+          Mat Object: (BackwardEuler-Equation_npc_sub_) 1 MPI process
+            type: seqaij
+            rows=0, cols=0
+            total: nonzeros=0, allocated nonzeros=0
+            total number of mallocs used during MatSetValues calls=0
+              not using I-node routines
+      linear system matrix, which is also used to construct the preconditioner:
+      Mat Object: (BackwardEuler-Equation_) 832 MPI processes
+        type: mpiaij
+        rows=143769600, cols=143769600
+        total: nonzeros=8024555520, allocated nonzeros=8024555520
+        total number of mallocs used during MatSetValues calls=0
+          has attached near null space
+          not using I-node (on process 0) routines
+t = 6300.00 s | step 21/30 | wall 20.84 s | NL 1 | L 0
+  0 SNES Function norm 3.752451519418e-07
+  1 SNES Function norm 1.861166975066e-09
+  Nonlinear BackwardEuler-Equation_ solve converged due to CONVERGED_FNORM_ABS iterations 1
+SNES Object: (BackwardEuler-Equation_) 832 MPI processes
+  type: ngmres
+    Number of stored past updates: 30
+    Residual selection: gammaA=2e+00, gammaC=2e+00
+    Difference restart: epsilonB=1e-01, deltaB=9e-01
+    Restart on F_M residual increase: FALSE
+  maximum iterations=50, maximum function evaluations=30000
+  tolerances: relative=1e-08, absolute=1e-08, solution=1e-08
+  total number of function evaluations=2
+  norm schedule ALWAYS
+  SNESLineSearch Object: (BackwardEuler-Equation_) 832 MPI processes
+    type: basic
+    maxlambda=1.000000e+00, minlambda=1.000000e-12
+    tolerances: relative=1.000000e-08, absolute=1.000000e-15, lambda=1.000000e-08
+    maximum iterations=1
+  SNES Object: (BackwardEuler-Equation_npc_) 832 MPI processes
+    type: newtonls
+    maximum iterations=1, maximum function evaluations=10000
+    tolerances: relative=0., absolute=0., solution=0.
+    total number of linear solver iterations=3197
+    total number of function evaluations=25
+    norm schedule FINALONLY
+    SNESLineSearch Object: (BackwardEuler-Equation_npc_) 832 MPI processes
+      type: bt
+        interpolation: cubic
+        alpha=1.000000e-04
+      maxlambda=1.000000e+00, minlambda=1.000000e-12
+      tolerances: relative=1.000000e-08, absolute=1.000000e-15, lambda=1.000000e-08
+      maximum iterations=40
+    KSP Object: (BackwardEuler-Equation_npc_) 832 MPI processes
+      type: gmres
+        restart=30, using classical (unmodified) Gram-Schmidt orthogonalization with no iterative refinement
+        happy breakdown tolerance=1e-30
+      maximum iterations=10000, initial guess is zero
+      tolerances: relative=1e-05, absolute=1e-50, divergence=10000.
+      left preconditioning
+      using PRECONDITIONED norm type for convergence test
+    PC Object: (BackwardEuler-Equation_npc_) 832 MPI processes
+      type: bjacobi
+        number of blocks = 832
+        Local solver information for first block is in the following KSP and PC objects on rank 0:
+        Use -BackwardEuler-Equation_npc_ksp_view ::ascii_info_detail to display information for all blocks
+        KSP Object: (BackwardEuler-Equation_npc_sub_) 1 MPI process
+          type: preonly
+          maximum iterations=10000, initial guess is zero
+          tolerances: relative=1e-05, absolute=1e-50, divergence=10000.
+          left preconditioning
+          not checking for convergence
+        PC Object: (BackwardEuler-Equation_npc_sub_) 1 MPI process
+          type: ilu
+            out-of-place factorization
+            0 levels of fill
+            tolerance for zero pivot 2.22045e-14
+            matrix ordering: natural
+            factor fill ratio given 1., needed 1.
+              Factored matrix:
+                Mat Object: (BackwardEuler-Equation_npc_sub_) 1 MPI process
+                  type: seqaij
+                  rows=0, cols=0
+                  package used to perform factorization: petsc
+                  total: nonzeros=0, allocated nonzeros=0
+                    not using I-node routines
+          linear system matrix, which is also used to construct the preconditioner:
+          Mat Object: (BackwardEuler-Equation_npc_sub_) 1 MPI process
+            type: seqaij
+            rows=0, cols=0
+            total: nonzeros=0, allocated nonzeros=0
+            total number of mallocs used during MatSetValues calls=0
+              not using I-node routines
+      linear system matrix, which is also used to construct the preconditioner:
+      Mat Object: (BackwardEuler-Equation_) 832 MPI processes
+        type: mpiaij
+        rows=143769600, cols=143769600
+        total: nonzeros=8024555520, allocated nonzeros=8024555520
+        total number of mallocs used during MatSetValues calls=0
+          has attached near null space
+          not using I-node (on process 0) routines
+t = 6600.00 s | step 22/30 | wall 20.95 s | NL 1 | L 0
+  0 SNES Function norm 3.728366517006e-07
+  1 SNES Function norm 1.827640207758e-09
+  Nonlinear BackwardEuler-Equation_ solve converged due to CONVERGED_FNORM_ABS iterations 1
+SNES Object: (BackwardEuler-Equation_) 832 MPI processes
+  type: ngmres
+    Number of stored past updates: 30
+    Residual selection: gammaA=2e+00, gammaC=2e+00
+    Difference restart: epsilonB=1e-01, deltaB=9e-01
+    Restart on F_M residual increase: FALSE
+  maximum iterations=50, maximum function evaluations=30000
+  tolerances: relative=1e-08, absolute=1e-08, solution=1e-08
+  total number of function evaluations=2
+  norm schedule ALWAYS
+  SNESLineSearch Object: (BackwardEuler-Equation_) 832 MPI processes
+    type: basic
+    maxlambda=1.000000e+00, minlambda=1.000000e-12
+    tolerances: relative=1.000000e-08, absolute=1.000000e-15, lambda=1.000000e-08
+    maximum iterations=1
+  SNES Object: (BackwardEuler-Equation_npc_) 832 MPI processes
+    type: newtonls
+    maximum iterations=1, maximum function evaluations=10000
+    tolerances: relative=0., absolute=0., solution=0.
+    total number of linear solver iterations=3335
+    total number of function evaluations=26
+    norm schedule FINALONLY
+    SNESLineSearch Object: (BackwardEuler-Equation_npc_) 832 MPI processes
+      type: bt
+        interpolation: cubic
+        alpha=1.000000e-04
+      maxlambda=1.000000e+00, minlambda=1.000000e-12
+      tolerances: relative=1.000000e-08, absolute=1.000000e-15, lambda=1.000000e-08
+      maximum iterations=40
+    KSP Object: (BackwardEuler-Equation_npc_) 832 MPI processes
+      type: gmres
+        restart=30, using classical (unmodified) Gram-Schmidt orthogonalization with no iterative refinement
+        happy breakdown tolerance=1e-30
+      maximum iterations=10000, initial guess is zero
+      tolerances: relative=1e-05, absolute=1e-50, divergence=10000.
+      left preconditioning
+      using PRECONDITIONED norm type for convergence test
+    PC Object: (BackwardEuler-Equation_npc_) 832 MPI processes
+      type: bjacobi
+        number of blocks = 832
+        Local solver information for first block is in the following KSP and PC objects on rank 0:
+        Use -BackwardEuler-Equation_npc_ksp_view ::ascii_info_detail to display information for all blocks
+        KSP Object: (BackwardEuler-Equation_npc_sub_) 1 MPI process
+          type: preonly
+          maximum iterations=10000, initial guess is zero
+          tolerances: relative=1e-05, absolute=1e-50, divergence=10000.
+          left preconditioning
+          not checking for convergence
+        PC Object: (BackwardEuler-Equation_npc_sub_) 1 MPI process
+          type: ilu
+            out-of-place factorization
+            0 levels of fill
+            tolerance for zero pivot 2.22045e-14
+            matrix ordering: natural
+            factor fill ratio given 1., needed 1.
+              Factored matrix:
+                Mat Object: (BackwardEuler-Equation_npc_sub_) 1 MPI process
+                  type: seqaij
+                  rows=0, cols=0
+                  package used to perform factorization: petsc
+                  total: nonzeros=0, allocated nonzeros=0
+                    not using I-node routines
+          linear system matrix, which is also used to construct the preconditioner:
+          Mat Object: (BackwardEuler-Equation_npc_sub_) 1 MPI process
+            type: seqaij
+            rows=0, cols=0
+            total: nonzeros=0, allocated nonzeros=0
+            total number of mallocs used during MatSetValues calls=0
+              not using I-node routines
+      linear system matrix, which is also used to construct the preconditioner:
+      Mat Object: (BackwardEuler-Equation_) 832 MPI processes
+        type: mpiaij
+        rows=143769600, cols=143769600
+        total: nonzeros=8024555520, allocated nonzeros=8024555520
+        total number of mallocs used during MatSetValues calls=0
+          has attached near null space
+          not using I-node (on process 0) routines
+t = 6900.00 s | step 23/30 | wall 20.96 s | NL 1 | L 0
+  0 SNES Function norm 3.706214247154e-07
+  1 SNES Function norm 1.797122132809e-09
+  Nonlinear BackwardEuler-Equation_ solve converged due to CONVERGED_FNORM_ABS iterations 1
+SNES Object: (BackwardEuler-Equation_) 832 MPI processes
+  type: ngmres
+    Number of stored past updates: 30
+    Residual selection: gammaA=2e+00, gammaC=2e+00
+    Difference restart: epsilonB=1e-01, deltaB=9e-01
+    Restart on F_M residual increase: FALSE
+  maximum iterations=50, maximum function evaluations=30000
+  tolerances: relative=1e-08, absolute=1e-08, solution=1e-08
+  total number of function evaluations=2
+  norm schedule ALWAYS
+  SNESLineSearch Object: (BackwardEuler-Equation_) 832 MPI processes
+    type: basic
+    maxlambda=1.000000e+00, minlambda=1.000000e-12
+    tolerances: relative=1.000000e-08, absolute=1.000000e-15, lambda=1.000000e-08
+    maximum iterations=1
+  SNES Object: (BackwardEuler-Equation_npc_) 832 MPI processes
+    type: newtonls
+    maximum iterations=1, maximum function evaluations=10000
+    tolerances: relative=0., absolute=0., solution=0.
+    total number of linear solver iterations=3474
+    total number of function evaluations=27
+    norm schedule FINALONLY
+    SNESLineSearch Object: (BackwardEuler-Equation_npc_) 832 MPI processes
+      type: bt
+        interpolation: cubic
+        alpha=1.000000e-04
+      maxlambda=1.000000e+00, minlambda=1.000000e-12
+      tolerances: relative=1.000000e-08, absolute=1.000000e-15, lambda=1.000000e-08
+      maximum iterations=40
+    KSP Object: (BackwardEuler-Equation_npc_) 832 MPI processes
+      type: gmres
+        restart=30, using classical (unmodified) Gram-Schmidt orthogonalization with no iterative refinement
+        happy breakdown tolerance=1e-30
+      maximum iterations=10000, initial guess is zero
+      tolerances: relative=1e-05, absolute=1e-50, divergence=10000.
+      left preconditioning
+      using PRECONDITIONED norm type for convergence test
+    PC Object: (BackwardEuler-Equation_npc_) 832 MPI processes
+      type: bjacobi
+        number of blocks = 832
+        Local solver information for first block is in the following KSP and PC objects on rank 0:
+        Use -BackwardEuler-Equation_npc_ksp_view ::ascii_info_detail to display information for all blocks
+        KSP Object: (BackwardEuler-Equation_npc_sub_) 1 MPI process
+          type: preonly
+          maximum iterations=10000, initial guess is zero
+          tolerances: relative=1e-05, absolute=1e-50, divergence=10000.
+          left preconditioning
+          not checking for convergence
+        PC Object: (BackwardEuler-Equation_npc_sub_) 1 MPI process
+          type: ilu
+            out-of-place factorization
+            0 levels of fill
+            tolerance for zero pivot 2.22045e-14
+            matrix ordering: natural
+            factor fill ratio given 1., needed 1.
+              Factored matrix:
+                Mat Object: (BackwardEuler-Equation_npc_sub_) 1 MPI process
+                  type: seqaij
+                  rows=0, cols=0
+                  package used to perform factorization: petsc
+                  total: nonzeros=0, allocated nonzeros=0
+                    not using I-node routines
+          linear system matrix, which is also used to construct the preconditioner:
+          Mat Object: (BackwardEuler-Equation_npc_sub_) 1 MPI process
+            type: seqaij
+            rows=0, cols=0
+            total: nonzeros=0, allocated nonzeros=0
+            total number of mallocs used during MatSetValues calls=0
+              not using I-node routines
+      linear system matrix, which is also used to construct the preconditioner:
+      Mat Object: (BackwardEuler-Equation_) 832 MPI processes
+        type: mpiaij
+        rows=143769600, cols=143769600
+        total: nonzeros=8024555520, allocated nonzeros=8024555520
+        total number of mallocs used during MatSetValues calls=0
+          has attached near null space
+          not using I-node (on process 0) routines
+t = 7200.00 s | step 24/30 | wall 21.08 s | NL 1 | L 0
+  0 SNES Function norm 3.685801987231e-07
+  1 SNES Function norm 1.770311701578e-09
+  Nonlinear BackwardEuler-Equation_ solve converged due to CONVERGED_FNORM_ABS iterations 1
+SNES Object: (BackwardEuler-Equation_) 832 MPI processes
+  type: ngmres
+    Number of stored past updates: 30
+    Residual selection: gammaA=2e+00, gammaC=2e+00
+    Difference restart: epsilonB=1e-01, deltaB=9e-01
+    Restart on F_M residual increase: FALSE
+  maximum iterations=50, maximum function evaluations=30000
+  tolerances: relative=1e-08, absolute=1e-08, solution=1e-08
+  total number of function evaluations=2
+  norm schedule ALWAYS
+  SNESLineSearch Object: (BackwardEuler-Equation_) 832 MPI processes
+    type: basic
+    maxlambda=1.000000e+00, minlambda=1.000000e-12
+    tolerances: relative=1.000000e-08, absolute=1.000000e-15, lambda=1.000000e-08
+    maximum iterations=1
+  SNES Object: (BackwardEuler-Equation_npc_) 832 MPI processes
+    type: newtonls
+    maximum iterations=1, maximum function evaluations=10000
+    tolerances: relative=0., absolute=0., solution=0.
+    total number of linear solver iterations=3613
+    total number of function evaluations=28
+    norm schedule FINALONLY
+    SNESLineSearch Object: (BackwardEuler-Equation_npc_) 832 MPI processes
+      type: bt
+        interpolation: cubic
+        alpha=1.000000e-04
+      maxlambda=1.000000e+00, minlambda=1.000000e-12
+      tolerances: relative=1.000000e-08, absolute=1.000000e-15, lambda=1.000000e-08
+      maximum iterations=40
+    KSP Object: (BackwardEuler-Equation_npc_) 832 MPI processes
+      type: gmres
+        restart=30, using classical (unmodified) Gram-Schmidt orthogonalization with no iterative refinement
+        happy breakdown tolerance=1e-30
+      maximum iterations=10000, initial guess is zero
+      tolerances: relative=1e-05, absolute=1e-50, divergence=10000.
+      left preconditioning
+      using PRECONDITIONED norm type for convergence test
+    PC Object: (BackwardEuler-Equation_npc_) 832 MPI processes
+      type: bjacobi
+        number of blocks = 832
+        Local solver information for first block is in the following KSP and PC objects on rank 0:
+        Use -BackwardEuler-Equation_npc_ksp_view ::ascii_info_detail to display information for all blocks
+        KSP Object: (BackwardEuler-Equation_npc_sub_) 1 MPI process
+          type: preonly
+          maximum iterations=10000, initial guess is zero
+          tolerances: relative=1e-05, absolute=1e-50, divergence=10000.
+          left preconditioning
+          not checking for convergence
+        PC Object: (BackwardEuler-Equation_npc_sub_) 1 MPI process
+          type: ilu
+            out-of-place factorization
+            0 levels of fill
+            tolerance for zero pivot 2.22045e-14
+            matrix ordering: natural
+            factor fill ratio given 1., needed 1.
+              Factored matrix:
+                Mat Object: (BackwardEuler-Equation_npc_sub_) 1 MPI process
+                  type: seqaij
+                  rows=0, cols=0
+                  package used to perform factorization: petsc
+                  total: nonzeros=0, allocated nonzeros=0
+                    not using I-node routines
+          linear system matrix, which is also used to construct the preconditioner:
+          Mat Object: (BackwardEuler-Equation_npc_sub_) 1 MPI process
+            type: seqaij
+            rows=0, cols=0
+            total: nonzeros=0, allocated nonzeros=0
+            total number of mallocs used during MatSetValues calls=0
+              not using I-node routines
+      linear system matrix, which is also used to construct the preconditioner:
+      Mat Object: (BackwardEuler-Equation_) 832 MPI processes
+        type: mpiaij
+        rows=143769600, cols=143769600
+        total: nonzeros=8024555520, allocated nonzeros=8024555520
+        total number of mallocs used during MatSetValues calls=0
+          has attached near null space
+          not using I-node (on process 0) routines
+t = 7500.00 s | step 25/30 | wall 21.10 s | NL 1 | L 0
+  0 SNES Function norm 3.666961408446e-07
+  1 SNES Function norm 1.746275353849e-09
+  Nonlinear BackwardEuler-Equation_ solve converged due to CONVERGED_FNORM_ABS iterations 1
+SNES Object: (BackwardEuler-Equation_) 832 MPI processes
+  type: ngmres
+    Number of stored past updates: 30
+    Residual selection: gammaA=2e+00, gammaC=2e+00
+    Difference restart: epsilonB=1e-01, deltaB=9e-01
+    Restart on F_M residual increase: FALSE
+  maximum iterations=50, maximum function evaluations=30000
+  tolerances: relative=1e-08, absolute=1e-08, solution=1e-08
+  total number of function evaluations=2
+  norm schedule ALWAYS
+  SNESLineSearch Object: (BackwardEuler-Equation_) 832 MPI processes
+    type: basic
+    maxlambda=1.000000e+00, minlambda=1.000000e-12
+    tolerances: relative=1.000000e-08, absolute=1.000000e-15, lambda=1.000000e-08
+    maximum iterations=1
+  SNES Object: (BackwardEuler-Equation_npc_) 832 MPI processes
+    type: newtonls
+    maximum iterations=1, maximum function evaluations=10000
+    tolerances: relative=0., absolute=0., solution=0.
+    total number of linear solver iterations=3752
+    total number of function evaluations=29
+    norm schedule FINALONLY
+    SNESLineSearch Object: (BackwardEuler-Equation_npc_) 832 MPI processes
+      type: bt
+        interpolation: cubic
+        alpha=1.000000e-04
+      maxlambda=1.000000e+00, minlambda=1.000000e-12
+      tolerances: relative=1.000000e-08, absolute=1.000000e-15, lambda=1.000000e-08
+      maximum iterations=40
+    KSP Object: (BackwardEuler-Equation_npc_) 832 MPI processes
+      type: gmres
+        restart=30, using classical (unmodified) Gram-Schmidt orthogonalization with no iterative refinement
+        happy breakdown tolerance=1e-30
+      maximum iterations=10000, initial guess is zero
+      tolerances: relative=1e-05, absolute=1e-50, divergence=10000.
+      left preconditioning
+      using PRECONDITIONED norm type for convergence test
+    PC Object: (BackwardEuler-Equation_npc_) 832 MPI processes
+      type: bjacobi
+        number of blocks = 832
+        Local solver information for first block is in the following KSP and PC objects on rank 0:
+        Use -BackwardEuler-Equation_npc_ksp_view ::ascii_info_detail to display information for all blocks
+        KSP Object: (BackwardEuler-Equation_npc_sub_) 1 MPI process
+          type: preonly
+          maximum iterations=10000, initial guess is zero
+          tolerances: relative=1e-05, absolute=1e-50, divergence=10000.
+          left preconditioning
+          not checking for convergence
+        PC Object: (BackwardEuler-Equation_npc_sub_) 1 MPI process
+          type: ilu
+            out-of-place factorization
+            0 levels of fill
+            tolerance for zero pivot 2.22045e-14
+            matrix ordering: natural
+            factor fill ratio given 1., needed 1.
+              Factored matrix:
+                Mat Object: (BackwardEuler-Equation_npc_sub_) 1 MPI process
+                  type: seqaij
+                  rows=0, cols=0
+                  package used to perform factorization: petsc
+                  total: nonzeros=0, allocated nonzeros=0
+                    not using I-node routines
+          linear system matrix, which is also used to construct the preconditioner:
+          Mat Object: (BackwardEuler-Equation_npc_sub_) 1 MPI process
+            type: seqaij
+            rows=0, cols=0
+            total: nonzeros=0, allocated nonzeros=0
+            total number of mallocs used during MatSetValues calls=0
+              not using I-node routines
+      linear system matrix, which is also used to construct the preconditioner:
+      Mat Object: (BackwardEuler-Equation_) 832 MPI processes
+        type: mpiaij
+        rows=143769600, cols=143769600
+        total: nonzeros=8024555520, allocated nonzeros=8024555520
+        total number of mallocs used during MatSetValues calls=0
+          has attached near null space
+          not using I-node (on process 0) routines
+t = 7800.00 s | step 26/30 | wall 21.08 s | NL 1 | L 0
+  0 SNES Function norm 3.649546442748e-07
+  1 SNES Function norm 1.724178678643e-09
+  Nonlinear BackwardEuler-Equation_ solve converged due to CONVERGED_FNORM_ABS iterations 1
+SNES Object: (BackwardEuler-Equation_) 832 MPI processes
+  type: ngmres
+    Number of stored past updates: 30
+    Residual selection: gammaA=2e+00, gammaC=2e+00
+    Difference restart: epsilonB=1e-01, deltaB=9e-01
+    Restart on F_M residual increase: FALSE
+  maximum iterations=50, maximum function evaluations=30000
+  tolerances: relative=1e-08, absolute=1e-08, solution=1e-08
+  total number of function evaluations=2
+  norm schedule ALWAYS
+  SNESLineSearch Object: (BackwardEuler-Equation_) 832 MPI processes
+    type: basic
+    maxlambda=1.000000e+00, minlambda=1.000000e-12
+    tolerances: relative=1.000000e-08, absolute=1.000000e-15, lambda=1.000000e-08
+    maximum iterations=1
+  SNES Object: (BackwardEuler-Equation_npc_) 832 MPI processes
+    type: newtonls
+    maximum iterations=1, maximum function evaluations=10000
+    tolerances: relative=0., absolute=0., solution=0.
+    total number of linear solver iterations=3892
+    total number of function evaluations=30
+    norm schedule FINALONLY
+    SNESLineSearch Object: (BackwardEuler-Equation_npc_) 832 MPI processes
+      type: bt
+        interpolation: cubic
+        alpha=1.000000e-04
+      maxlambda=1.000000e+00, minlambda=1.000000e-12
+      tolerances: relative=1.000000e-08, absolute=1.000000e-15, lambda=1.000000e-08
+      maximum iterations=40
+    KSP Object: (BackwardEuler-Equation_npc_) 832 MPI processes
+      type: gmres
+        restart=30, using classical (unmodified) Gram-Schmidt orthogonalization with no iterative refinement
+        happy breakdown tolerance=1e-30
+      maximum iterations=10000, initial guess is zero
+      tolerances: relative=1e-05, absolute=1e-50, divergence=10000.
+      left preconditioning
+      using PRECONDITIONED norm type for convergence test
+    PC Object: (BackwardEuler-Equation_npc_) 832 MPI processes
+      type: bjacobi
+        number of blocks = 832
+        Local solver information for first block is in the following KSP and PC objects on rank 0:
+        Use -BackwardEuler-Equation_npc_ksp_view ::ascii_info_detail to display information for all blocks
+        KSP Object: (BackwardEuler-Equation_npc_sub_) 1 MPI process
+          type: preonly
+          maximum iterations=10000, initial guess is zero
+          tolerances: relative=1e-05, absolute=1e-50, divergence=10000.
+          left preconditioning
+          not checking for convergence
+        PC Object: (BackwardEuler-Equation_npc_sub_) 1 MPI process
+          type: ilu
+            out-of-place factorization
+            0 levels of fill
+            tolerance for zero pivot 2.22045e-14
+            matrix ordering: natural
+            factor fill ratio given 1., needed 1.
+              Factored matrix:
+                Mat Object: (BackwardEuler-Equation_npc_sub_) 1 MPI process
+                  type: seqaij
+                  rows=0, cols=0
+                  package used to perform factorization: petsc
+                  total: nonzeros=0, allocated nonzeros=0
+                    not using I-node routines
+          linear system matrix, which is also used to construct the preconditioner:
+          Mat Object: (BackwardEuler-Equation_npc_sub_) 1 MPI process
+            type: seqaij
+            rows=0, cols=0
+            total: nonzeros=0, allocated nonzeros=0
+            total number of mallocs used during MatSetValues calls=0
+              not using I-node routines
+      linear system matrix, which is also used to construct the preconditioner:
+      Mat Object: (BackwardEuler-Equation_) 832 MPI processes
+        type: mpiaij
+        rows=143769600, cols=143769600
+        total: nonzeros=8024555520, allocated nonzeros=8024555520
+        total number of mallocs used during MatSetValues calls=0
+          has attached near null space
+          not using I-node (on process 0) routines
+t = 8100.00 s | step 27/30 | wall 21.18 s | NL 1 | L 0
+  0 SNES Function norm 3.633429772207e-07
+  1 SNES Function norm 1.704744252456e-09
+  Nonlinear BackwardEuler-Equation_ solve converged due to CONVERGED_FNORM_ABS iterations 1
+SNES Object: (BackwardEuler-Equation_) 832 MPI processes
+  type: ngmres
+    Number of stored past updates: 30
+    Residual selection: gammaA=2e+00, gammaC=2e+00
+    Difference restart: epsilonB=1e-01, deltaB=9e-01
+    Restart on F_M residual increase: FALSE
+  maximum iterations=50, maximum function evaluations=30000
+  tolerances: relative=1e-08, absolute=1e-08, solution=1e-08
+  total number of function evaluations=2
+  norm schedule ALWAYS
+  SNESLineSearch Object: (BackwardEuler-Equation_) 832 MPI processes
+    type: basic
+    maxlambda=1.000000e+00, minlambda=1.000000e-12
+    tolerances: relative=1.000000e-08, absolute=1.000000e-15, lambda=1.000000e-08
+    maximum iterations=1
+  SNES Object: (BackwardEuler-Equation_npc_) 832 MPI processes
+    type: newtonls
+    maximum iterations=1, maximum function evaluations=10000
+    tolerances: relative=0., absolute=0., solution=0.
+    total number of linear solver iterations=4032
+    total number of function evaluations=31
+    norm schedule FINALONLY
+    SNESLineSearch Object: (BackwardEuler-Equation_npc_) 832 MPI processes
+      type: bt
+        interpolation: cubic
+        alpha=1.000000e-04
+      maxlambda=1.000000e+00, minlambda=1.000000e-12
+      tolerances: relative=1.000000e-08, absolute=1.000000e-15, lambda=1.000000e-08
+      maximum iterations=40
+    KSP Object: (BackwardEuler-Equation_npc_) 832 MPI processes
+      type: gmres
+        restart=30, using classical (unmodified) Gram-Schmidt orthogonalization with no iterative refinement
+        happy breakdown tolerance=1e-30
+      maximum iterations=10000, initial guess is zero
+      tolerances: relative=1e-05, absolute=1e-50, divergence=10000.
+      left preconditioning
+      using PRECONDITIONED norm type for convergence test
+    PC Object: (BackwardEuler-Equation_npc_) 832 MPI processes
+      type: bjacobi
+        number of blocks = 832
+        Local solver information for first block is in the following KSP and PC objects on rank 0:
+        Use -BackwardEuler-Equation_npc_ksp_view ::ascii_info_detail to display information for all blocks
+        KSP Object: (BackwardEuler-Equation_npc_sub_) 1 MPI process
+          type: preonly
+          maximum iterations=10000, initial guess is zero
+          tolerances: relative=1e-05, absolute=1e-50, divergence=10000.
+          left preconditioning
+          not checking for convergence
+        PC Object: (BackwardEuler-Equation_npc_sub_) 1 MPI process
+          type: ilu
+            out-of-place factorization
+            0 levels of fill
+            tolerance for zero pivot 2.22045e-14
+            matrix ordering: natural
+            factor fill ratio given 1., needed 1.
+              Factored matrix:
+                Mat Object: (BackwardEuler-Equation_npc_sub_) 1 MPI process
+                  type: seqaij
+                  rows=0, cols=0
+                  package used to perform factorization: petsc
+                  total: nonzeros=0, allocated nonzeros=0
+                    not using I-node routines
+          linear system matrix, which is also used to construct the preconditioner:
+          Mat Object: (BackwardEuler-Equation_npc_sub_) 1 MPI process
+            type: seqaij
+            rows=0, cols=0
+            total: nonzeros=0, allocated nonzeros=0
+            total number of mallocs used during MatSetValues calls=0
+              not using I-node routines
+      linear system matrix, which is also used to construct the preconditioner:
+      Mat Object: (BackwardEuler-Equation_) 832 MPI processes
+        type: mpiaij
+        rows=143769600, cols=143769600
+        total: nonzeros=8024555520, allocated nonzeros=8024555520
+        total number of mallocs used during MatSetValues calls=0
+          has attached near null space
+          not using I-node (on process 0) routines
+t = 8400.00 s | step 28/30 | wall 21.19 s | NL 1 | L 0
+  0 SNES Function norm 3.618498583131e-07
+  1 SNES Function norm 1.687256563662e-09
+  Nonlinear BackwardEuler-Equation_ solve converged due to CONVERGED_FNORM_ABS iterations 1
+SNES Object: (BackwardEuler-Equation_) 832 MPI processes
+  type: ngmres
+    Number of stored past updates: 30
+    Residual selection: gammaA=2e+00, gammaC=2e+00
+    Difference restart: epsilonB=1e-01, deltaB=9e-01
+    Restart on F_M residual increase: FALSE
+  maximum iterations=50, maximum function evaluations=30000
+  tolerances: relative=1e-08, absolute=1e-08, solution=1e-08
+  total number of function evaluations=2
+  norm schedule ALWAYS
+  SNESLineSearch Object: (BackwardEuler-Equation_) 832 MPI processes
+    type: basic
+    maxlambda=1.000000e+00, minlambda=1.000000e-12
+    tolerances: relative=1.000000e-08, absolute=1.000000e-15, lambda=1.000000e-08
+    maximum iterations=1
+  SNES Object: (BackwardEuler-Equation_npc_) 832 MPI processes
+    type: newtonls
+    maximum iterations=1, maximum function evaluations=10000
+    tolerances: relative=0., absolute=0., solution=0.
+    total number of linear solver iterations=4172
+    total number of function evaluations=32
+    norm schedule FINALONLY
+    SNESLineSearch Object: (BackwardEuler-Equation_npc_) 832 MPI processes
+      type: bt
+        interpolation: cubic
+        alpha=1.000000e-04
+      maxlambda=1.000000e+00, minlambda=1.000000e-12
+      tolerances: relative=1.000000e-08, absolute=1.000000e-15, lambda=1.000000e-08
+      maximum iterations=40
+    KSP Object: (BackwardEuler-Equation_npc_) 832 MPI processes
+      type: gmres
+        restart=30, using classical (unmodified) Gram-Schmidt orthogonalization with no iterative refinement
+        happy breakdown tolerance=1e-30
+      maximum iterations=10000, initial guess is zero
+      tolerances: relative=1e-05, absolute=1e-50, divergence=10000.
+      left preconditioning
+      using PRECONDITIONED norm type for convergence test
+    PC Object: (BackwardEuler-Equation_npc_) 832 MPI processes
+      type: bjacobi
+        number of blocks = 832
+        Local solver information for first block is in the following KSP and PC objects on rank 0:
+        Use -BackwardEuler-Equation_npc_ksp_view ::ascii_info_detail to display information for all blocks
+        KSP Object: (BackwardEuler-Equation_npc_sub_) 1 MPI process
+          type: preonly
+          maximum iterations=10000, initial guess is zero
+          tolerances: relative=1e-05, absolute=1e-50, divergence=10000.
+          left preconditioning
+          not checking for convergence
+        PC Object: (BackwardEuler-Equation_npc_sub_) 1 MPI process
+          type: ilu
+            out-of-place factorization
+            0 levels of fill
+            tolerance for zero pivot 2.22045e-14
+            matrix ordering: natural
+            factor fill ratio given 1., needed 1.
+              Factored matrix:
+                Mat Object: (BackwardEuler-Equation_npc_sub_) 1 MPI process
+                  type: seqaij
+                  rows=0, cols=0
+                  package used to perform factorization: petsc
+                  total: nonzeros=0, allocated nonzeros=0
+                    not using I-node routines
+          linear system matrix, which is also used to construct the preconditioner:
+          Mat Object: (BackwardEuler-Equation_npc_sub_) 1 MPI process
+            type: seqaij
+            rows=0, cols=0
+            total: nonzeros=0, allocated nonzeros=0
+            total number of mallocs used during MatSetValues calls=0
+              not using I-node routines
+      linear system matrix, which is also used to construct the preconditioner:
+      Mat Object: (BackwardEuler-Equation_) 832 MPI processes
+        type: mpiaij
+        rows=143769600, cols=143769600
+        total: nonzeros=8024555520, allocated nonzeros=8024555520
+        total number of mallocs used during MatSetValues calls=0
+          has attached near null space
+          not using I-node (on process 0) routines
+t = 8700.00 s | step 29/30 | wall 21.20 s | NL 1 | L 0
+  0 SNES Function norm 3.604653803776e-07
+  1 SNES Function norm 1.671520476438e-09
+  Nonlinear BackwardEuler-Equation_ solve converged due to CONVERGED_FNORM_ABS iterations 1
+SNES Object: (BackwardEuler-Equation_) 832 MPI processes
+  type: ngmres
+    Number of stored past updates: 30
+    Residual selection: gammaA=2e+00, gammaC=2e+00
+    Difference restart: epsilonB=1e-01, deltaB=9e-01
+    Restart on F_M residual increase: FALSE
+  maximum iterations=50, maximum function evaluations=30000
+  tolerances: relative=1e-08, absolute=1e-08, solution=1e-08
+  total number of function evaluations=2
+  norm schedule ALWAYS
+  SNESLineSearch Object: (BackwardEuler-Equation_) 832 MPI processes
+    type: basic
+    maxlambda=1.000000e+00, minlambda=1.000000e-12
+    tolerances: relative=1.000000e-08, absolute=1.000000e-15, lambda=1.000000e-08
+    maximum iterations=1
+  SNES Object: (BackwardEuler-Equation_npc_) 832 MPI processes
+    type: newtonls
+    maximum iterations=1, maximum function evaluations=10000
+    tolerances: relative=0., absolute=0., solution=0.
+    total number of linear solver iterations=4312
+    total number of function evaluations=33
+    norm schedule FINALONLY
+    SNESLineSearch Object: (BackwardEuler-Equation_npc_) 832 MPI processes
+      type: bt
+        interpolation: cubic
+        alpha=1.000000e-04
+      maxlambda=1.000000e+00, minlambda=1.000000e-12
+      tolerances: relative=1.000000e-08, absolute=1.000000e-15, lambda=1.000000e-08
+      maximum iterations=40
+    KSP Object: (BackwardEuler-Equation_npc_) 832 MPI processes
+      type: gmres
+        restart=30, using classical (unmodified) Gram-Schmidt orthogonalization with no iterative refinement
+        happy breakdown tolerance=1e-30
+      maximum iterations=10000, initial guess is zero
+      tolerances: relative=1e-05, absolute=1e-50, divergence=10000.
+      left preconditioning
+      using PRECONDITIONED norm type for convergence test
+    PC Object: (BackwardEuler-Equation_npc_) 832 MPI processes
+      type: bjacobi
+        number of blocks = 832
+        Local solver information for first block is in the following KSP and PC objects on rank 0:
+        Use -BackwardEuler-Equation_npc_ksp_view ::ascii_info_detail to display information for all blocks
+        KSP Object: (BackwardEuler-Equation_npc_sub_) 1 MPI process
+          type: preonly
+          maximum iterations=10000, initial guess is zero
+          tolerances: relative=1e-05, absolute=1e-50, divergence=10000.
+          left preconditioning
+          not checking for convergence
+        PC Object: (BackwardEuler-Equation_npc_sub_) 1 MPI process
+          type: ilu
+            out-of-place factorization
+            0 levels of fill
+            tolerance for zero pivot 2.22045e-14
+            matrix ordering: natural
+            factor fill ratio given 1., needed 1.
+              Factored matrix:
+                Mat Object: (BackwardEuler-Equation_npc_sub_) 1 MPI process
+                  type: seqaij
+                  rows=0, cols=0
+                  package used to perform factorization: petsc
+                  total: nonzeros=0, allocated nonzeros=0
+                    not using I-node routines
+          linear system matrix, which is also used to construct the preconditioner:
+          Mat Object: (BackwardEuler-Equation_npc_sub_) 1 MPI process
+            type: seqaij
+            rows=0, cols=0
+            total: nonzeros=0, allocated nonzeros=0
+            total number of mallocs used during MatSetValues calls=0
+              not using I-node routines
+      linear system matrix, which is also used to construct the preconditioner:
+      Mat Object: (BackwardEuler-Equation_) 832 MPI processes
+        type: mpiaij
+        rows=143769600, cols=143769600
+        total: nonzeros=8024555520, allocated nonzeros=8024555520
+        total number of mallocs used during MatSetValues calls=0
+          has attached near null space
+          not using I-node (on process 0) routines
+t = 9000.00 s | step 30/30 | wall 21.19 s | NL 1 | L 0
+Done | total NL 33 | total L 0 | mean wall/step 23.27 s | peak RSS 652 MB
+=== Job completed: Wed Apr 15 16:18:47 AEST 2026 ===
+
+======================================================================================
+                  Resource Usage on 2026-04-15 16:18:51:
+   Job Id:             165722975.gadi-pbs
+   Project:            xd2
+   Exit Status:        0
+   Service Units:      357.76
+   NCPUs Requested:    832                 CPU Time Used: 170:45:04       
+   Memory Requested:   3.91TB                Memory Used: 661.09GB        
+   Walltime Requested: 03:00:00            Walltime Used: 00:12:54        
+   JobFS Requested:    400.0GB                JobFS Used: 55.76MB         
+======================================================================================

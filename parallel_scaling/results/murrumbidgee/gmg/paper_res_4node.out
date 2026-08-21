@@ -1,0 +1,789 @@
+=== Murrumbidgee GMG-H at paper resolution (4 nodes, matching VLumping) ===
+Resolution: 1775 m horiz, 300 layers, 3 refinement levels (coarse ~14200 m)
+dt ramp: 60 s -> 43200 s (growth 1.5, shrink 0.5)
+Target: 30 days simulation time
+Nodes: 4 (416 CPUs)
+Date: Wed Apr 15 14:59:55 AEST 2026
+================
+Could not save font_manager cache Lock error: Matplotlib failed to acquire the following lock file:
+    /jobfs/165716726.gadi-pbs/matplotlib/fontlist-v390.json.matplotlib-lock
+This maybe due to another process holding this lock file.  If you are sure no
+other Matplotlib process is running, remove this file and try again.
+Could not save font_manager cache Lock error: Matplotlib failed to acquire the following lock file:
+    /jobfs/165716726.gadi-pbs/matplotlib/fontlist-v390.json.matplotlib-lock
+This maybe due to another process holding this lock file.  If you are sure no
+other Matplotlib process is running, remove this file and try again.
+Could not save font_manager cache Lock error: Matplotlib failed to acquire the following lock file:
+    /jobfs/165716726.gadi-pbs/matplotlib/fontlist-v390.json.matplotlib-lock
+This maybe due to another process holding this lock file.  If you are sure no
+other Matplotlib process is running, remove this file and try again.
+Could not save font_manager cache Lock error: Matplotlib failed to acquire the following lock file:
+    /jobfs/165716726.gadi-pbs/matplotlib/fontlist-v390.json.matplotlib-lock
+This maybe due to another process holding this lock file.  If you are sure no
+other Matplotlib process is running, remove this file and try again.
+Could not save font_manager cache Lock error: Matplotlib failed to acquire the following lock file:
+    /jobfs/165716726.gadi-pbs/matplotlib/fontlist-v390.json.matplotlib-lock
+This maybe due to another process holding this lock file.  If you are sure no
+other Matplotlib process is running, remove this file and try again.
+Could not save font_manager cache Lock error: Matplotlib failed to acquire the following lock file:
+    /jobfs/165716726.gadi-pbs/matplotlib/fontlist-v390.json.matplotlib-lock
+This maybe due to another process holding this lock file.  If you are sure no
+other Matplotlib process is running, remove this file and try again.
+Could not save font_manager cache Lock error: Matplotlib failed to acquire the following lock file:
+    /jobfs/165716726.gadi-pbs/matplotlib/fontlist-v390.json.matplotlib-lock
+This maybe due to another process holding this lock file.  If you are sure no
+other Matplotlib process is running, remove this file and try again.
+Could not save font_manager cache Lock error: Matplotlib failed to acquire the following lock file:
+    /jobfs/165716726.gadi-pbs/matplotlib/fontlist-v390.json.matplotlib-lock
+This maybe due to another process holding this lock file.  If you are sure no
+other Matplotlib process is running, remove this file and try again.
+Could not save font_manager cache Lock error: Matplotlib failed to acquire the following lock file:
+    /jobfs/165716726.gadi-pbs/matplotlib/fontlist-v390.json.matplotlib-lock
+This maybe due to another process holding this lock file.  If you are sure no
+other Matplotlib process is running, remove this file and try again.
+Could not save font_manager cache Lock error: Matplotlib failed to acquire the following lock file:
+    /jobfs/165716726.gadi-pbs/matplotlib/fontlist-v390.json.matplotlib-lock
+This maybe due to another process holding this lock file.  If you are sure no
+other Matplotlib process is running, remove this file and try again.
+Could not save font_manager cache Lock error: Matplotlib failed to acquire the following lock file:
+    /jobfs/165716726.gadi-pbs/matplotlib/fontlist-v390.json.matplotlib-lock
+This maybe due to another process holding this lock file.  If you are sure no
+other Matplotlib process is running, remove this file and try again.
+Could not save font_manager cache Lock error: Matplotlib failed to acquire the following lock file:
+    /jobfs/165716726.gadi-pbs/matplotlib/fontlist-v390.json.matplotlib-lock
+This maybe due to another process holding this lock file.  If you are sure no
+other Matplotlib process is running, remove this file and try again.
+Could not save font_manager cache Lock error: Matplotlib failed to acquire the following lock file:
+    /jobfs/165716726.gadi-pbs/matplotlib/fontlist-v390.json.matplotlib-lock
+This maybe due to another process holding this lock file.  If you are sure no
+other Matplotlib process is running, remove this file and try again.
+Could not save font_manager cache Lock error: Matplotlib failed to acquire the following lock file:
+    /jobfs/165716726.gadi-pbs/matplotlib/fontlist-v390.json.matplotlib-lock
+This maybe due to another process holding this lock file.  If you are sure no
+other Matplotlib process is running, remove this file and try again.
+Could not save font_manager cache Lock error: Matplotlib failed to acquire the following lock file:
+    /jobfs/165716726.gadi-pbs/matplotlib/fontlist-v390.json.matplotlib-lock
+This maybe due to another process holding this lock file.  If you are sure no
+other Matplotlib process is running, remove this file and try again.
+Could not save font_manager cache Lock error: Matplotlib failed to acquire the following lock file:
+    /jobfs/165716726.gadi-pbs/matplotlib/fontlist-v390.json.matplotlib-lock
+This maybe due to another process holding this lock file.  If you are sure no
+other Matplotlib process is running, remove this file and try again.
+Could not save font_manager cache Lock error: Matplotlib failed to acquire the following lock file:
+    /jobfs/165716726.gadi-pbs/matplotlib/fontlist-v390.json.matplotlib-lock
+This maybe due to another process holding this lock file.  If you are sure no
+other Matplotlib process is running, remove this file and try again.
+Could not save font_manager cache Lock error: Matplotlib failed to acquire the following lock file:
+    /jobfs/165716726.gadi-pbs/matplotlib/fontlist-v390.json.matplotlib-lock
+This maybe due to another process holding this lock file.  If you are sure no
+other Matplotlib process is running, remove this file and try again.
+Could not save font_manager cache Lock error: Matplotlib failed to acquire the following lock file:
+    /jobfs/165716726.gadi-pbs/matplotlib/fontlist-v390.json.matplotlib-lock
+This maybe due to another process holding this lock file.  If you are sure no
+other Matplotlib process is running, remove this file and try again.
+Could not save font_manager cache Lock error: Matplotlib failed to acquire the following lock file:
+    /jobfs/165716726.gadi-pbs/matplotlib/fontlist-v390.json.matplotlib-lock
+This maybe due to another process holding this lock file.  If you are sure no
+other Matplotlib process is running, remove this file and try again.
+Could not save font_manager cache Lock error: Matplotlib failed to acquire the following lock file:
+    /jobfs/165716726.gadi-pbs/matplotlib/fontlist-v390.json.matplotlib-lock
+This maybe due to another process holding this lock file.  If you are sure no
+other Matplotlib process is running, remove this file and try again.
+Could not save font_manager cache Lock error: Matplotlib failed to acquire the following lock file:
+    /jobfs/165716726.gadi-pbs/matplotlib/fontlist-v390.json.matplotlib-lock
+This maybe due to another process holding this lock file.  If you are sure no
+other Matplotlib process is running, remove this file and try again.
+Could not save font_manager cache Lock error: Matplotlib failed to acquire the following lock file:
+    /jobfs/165716726.gadi-pbs/matplotlib/fontlist-v390.json.matplotlib-lock
+This maybe due to another process holding this lock file.  If you are sure no
+other Matplotlib process is running, remove this file and try again.
+Could not save font_manager cache Lock error: Matplotlib failed to acquire the following lock file:
+    /jobfs/165716726.gadi-pbs/matplotlib/fontlist-v390.json.matplotlib-lock
+This maybe due to another process holding this lock file.  If you are sure no
+other Matplotlib process is running, remove this file and try again.
+Could not save font_manager cache Lock error: Matplotlib failed to acquire the following lock file:
+    /jobfs/165716726.gadi-pbs/matplotlib/fontlist-v390.json.matplotlib-lock
+This maybe due to another process holding this lock file.  If you are sure no
+other Matplotlib process is running, remove this file and try again.
+Could not save font_manager cache Lock error: Matplotlib failed to acquire the following lock file:
+    /jobfs/165716726.gadi-pbs/matplotlib/fontlist-v390.json.matplotlib-lock
+This maybe due to another process holding this lock file.  If you are sure no
+other Matplotlib process is running, remove this file and try again.
+Could not save font_manager cache Lock error: Matplotlib failed to acquire the following lock file:
+    /jobfs/165716726.gadi-pbs/matplotlib/fontlist-v390.json.matplotlib-lock
+This maybe due to another process holding this lock file.  If you are sure no
+other Matplotlib process is running, remove this file and try again.
+Could not save font_manager cache Lock error: Matplotlib failed to acquire the following lock file:
+    /jobfs/165716726.gadi-pbs/matplotlib/fontlist-v390.json.matplotlib-lock
+This maybe due to another process holding this lock file.  If you are sure no
+other Matplotlib process is running, remove this file and try again.
+Could not save font_manager cache Lock error: Matplotlib failed to acquire the following lock file:
+    /jobfs/165716726.gadi-pbs/matplotlib/fontlist-v390.json.matplotlib-lock
+This maybe due to another process holding this lock file.  If you are sure no
+other Matplotlib process is running, remove this file and try again.
+Could not save font_manager cache Lock error: Matplotlib failed to acquire the following lock file:
+    /jobfs/165716726.gadi-pbs/matplotlib/fontlist-v390.json.matplotlib-lock
+This maybe due to another process holding this lock file.  If you are sure no
+other Matplotlib process is running, remove this file and try again.
+Could not save font_manager cache Lock error: Matplotlib failed to acquire the following lock file:
+    /jobfs/165716726.gadi-pbs/matplotlib/fontlist-v390.json.matplotlib-lock
+This maybe due to another process holding this lock file.  If you are sure no
+other Matplotlib process is running, remove this file and try again.
+Could not save font_manager cache Lock error: Matplotlib failed to acquire the following lock file:
+    /jobfs/165716726.gadi-pbs/matplotlib/fontlist-v390.json.matplotlib-lock
+This maybe due to another process holding this lock file.  If you are sure no
+other Matplotlib process is running, remove this file and try again.
+Could not save font_manager cache Lock error: Matplotlib failed to acquire the following lock file:
+    /jobfs/165716726.gadi-pbs/matplotlib/fontlist-v390.json.matplotlib-lock
+This maybe due to another process holding this lock file.  If you are sure no
+other Matplotlib process is running, remove this file and try again.
+Could not save font_manager cache Lock error: Matplotlib failed to acquire the following lock file:
+    /jobfs/165716726.gadi-pbs/matplotlib/fontlist-v390.json.matplotlib-lock
+This maybe due to another process holding this lock file.  If you are sure no
+other Matplotlib process is running, remove this file and try again.
+Could not save font_manager cache Lock error: Matplotlib failed to acquire the following lock file:
+    /jobfs/165716726.gadi-pbs/matplotlib/fontlist-v390.json.matplotlib-lock
+This maybe due to another process holding this lock file.  If you are sure no
+other Matplotlib process is running, remove this file and try again.
+Could not save font_manager cache Lock error: Matplotlib failed to acquire the following lock file:
+    /jobfs/165716726.gadi-pbs/matplotlib/fontlist-v390.json.matplotlib-lock
+This maybe due to another process holding this lock file.  If you are sure no
+other Matplotlib process is running, remove this file and try again.
+Could not save font_manager cache Lock error: Matplotlib failed to acquire the following lock file:
+    /jobfs/165716726.gadi-pbs/matplotlib/fontlist-v390.json.matplotlib-lock
+This maybe due to another process holding this lock file.  If you are sure no
+other Matplotlib process is running, remove this file and try again.
+Could not save font_manager cache Lock error: Matplotlib failed to acquire the following lock file:
+    /jobfs/165716726.gadi-pbs/matplotlib/fontlist-v390.json.matplotlib-lock
+This maybe due to another process holding this lock file.  If you are sure no
+other Matplotlib process is running, remove this file and try again.
+Could not save font_manager cache Lock error: Matplotlib failed to acquire the following lock file:
+    /jobfs/165716726.gadi-pbs/matplotlib/fontlist-v390.json.matplotlib-lock
+This maybe due to another process holding this lock file.  If you are sure no
+other Matplotlib process is running, remove this file and try again.
+Could not save font_manager cache Lock error: Matplotlib failed to acquire the following lock file:
+    /jobfs/165716726.gadi-pbs/matplotlib/fontlist-v390.json.matplotlib-lock
+This maybe due to another process holding this lock file.  If you are sure no
+other Matplotlib process is running, remove this file and try again.
+Could not save font_manager cache Lock error: Matplotlib failed to acquire the following lock file:
+    /jobfs/165716726.gadi-pbs/matplotlib/fontlist-v390.json.matplotlib-lock
+This maybe due to another process holding this lock file.  If you are sure no
+other Matplotlib process is running, remove this file and try again.
+Could not save font_manager cache Lock error: Matplotlib failed to acquire the following lock file:
+    /jobfs/165716726.gadi-pbs/matplotlib/fontlist-v390.json.matplotlib-lock
+This maybe due to another process holding this lock file.  If you are sure no
+other Matplotlib process is running, remove this file and try again.
+Could not save font_manager cache Lock error: Matplotlib failed to acquire the following lock file:
+    /jobfs/165716726.gadi-pbs/matplotlib/fontlist-v390.json.matplotlib-lock
+This maybe due to another process holding this lock file.  If you are sure no
+other Matplotlib process is running, remove this file and try again.
+Could not save font_manager cache Lock error: Matplotlib failed to acquire the following lock file:
+    /jobfs/165716726.gadi-pbs/matplotlib/fontlist-v390.json.matplotlib-lock
+This maybe due to another process holding this lock file.  If you are sure no
+other Matplotlib process is running, remove this file and try again.
+Could not save font_manager cache Lock error: Matplotlib failed to acquire the following lock file:
+    /jobfs/165716726.gadi-pbs/matplotlib/fontlist-v390.json.matplotlib-lock
+This maybe due to another process holding this lock file.  If you are sure no
+other Matplotlib process is running, remove this file and try again.
+Could not save font_manager cache Lock error: Matplotlib failed to acquire the following lock file:
+    /jobfs/165716726.gadi-pbs/matplotlib/fontlist-v390.json.matplotlib-lock
+This maybe due to another process holding this lock file.  If you are sure no
+other Matplotlib process is running, remove this file and try again.
+Could not save font_manager cache Lock error: Matplotlib failed to acquire the following lock file:
+    /jobfs/165716726.gadi-pbs/matplotlib/fontlist-v390.json.matplotlib-lock
+This maybe due to another process holding this lock file.  If you are sure no
+other Matplotlib process is running, remove this file and try again.
+Could not save font_manager cache Lock error: Matplotlib failed to acquire the following lock file:
+    /jobfs/165716726.gadi-pbs/matplotlib/fontlist-v390.json.matplotlib-lock
+This maybe due to another process holding this lock file.  If you are sure no
+other Matplotlib process is running, remove this file and try again.
+Could not save font_manager cache Lock error: Matplotlib failed to acquire the following lock file:
+    /jobfs/165716726.gadi-pbs/matplotlib/fontlist-v390.json.matplotlib-lock
+This maybe due to another process holding this lock file.  If you are sure no
+other Matplotlib process is running, remove this file and try again.
+Could not save font_manager cache Lock error: Matplotlib failed to acquire the following lock file:
+    /jobfs/165716726.gadi-pbs/matplotlib/fontlist-v390.json.matplotlib-lock
+This maybe due to another process holding this lock file.  If you are sure no
+other Matplotlib process is running, remove this file and try again.
+Could not save font_manager cache Lock error: Matplotlib failed to acquire the following lock file:
+    /jobfs/165716726.gadi-pbs/matplotlib/fontlist-v390.json.matplotlib-lock
+This maybe due to another process holding this lock file.  If you are sure no
+other Matplotlib process is running, remove this file and try again.
+Could not save font_manager cache Lock error: Matplotlib failed to acquire the following lock file:
+    /jobfs/165716726.gadi-pbs/matplotlib/fontlist-v390.json.matplotlib-lock
+This maybe due to another process holding this lock file.  If you are sure no
+other Matplotlib process is running, remove this file and try again.
+Could not save font_manager cache Lock error: Matplotlib failed to acquire the following lock file:
+    /jobfs/165716726.gadi-pbs/matplotlib/fontlist-v390.json.matplotlib-lock
+This maybe due to another process holding this lock file.  If you are sure no
+other Matplotlib process is running, remove this file and try again.
+Could not save font_manager cache Lock error: Matplotlib failed to acquire the following lock file:
+    /jobfs/165716726.gadi-pbs/matplotlib/fontlist-v390.json.matplotlib-lock
+This maybe due to another process holding this lock file.  If you are sure no
+other Matplotlib process is running, remove this file and try again.
+Could not save font_manager cache Lock error: Matplotlib failed to acquire the following lock file:
+    /jobfs/165716726.gadi-pbs/matplotlib/fontlist-v390.json.matplotlib-lock
+This maybe due to another process holding this lock file.  If you are sure no
+other Matplotlib process is running, remove this file and try again.
+Could not save font_manager cache Lock error: Matplotlib failed to acquire the following lock file:
+    /jobfs/165716726.gadi-pbs/matplotlib/fontlist-v390.json.matplotlib-lock
+This maybe due to another process holding this lock file.  If you are sure no
+other Matplotlib process is running, remove this file and try again.
+Could not save font_manager cache Lock error: Matplotlib failed to acquire the following lock file:
+    /jobfs/165716726.gadi-pbs/matplotlib/fontlist-v390.json.matplotlib-lock
+This maybe due to another process holding this lock file.  If you are sure no
+other Matplotlib process is running, remove this file and try again.
+Could not save font_manager cache Lock error: Matplotlib failed to acquire the following lock file:
+    /jobfs/165716726.gadi-pbs/matplotlib/fontlist-v390.json.matplotlib-lock
+This maybe due to another process holding this lock file.  If you are sure no
+other Matplotlib process is running, remove this file and try again.
+Could not save font_manager cache Lock error: Matplotlib failed to acquire the following lock file:
+    /jobfs/165716726.gadi-pbs/matplotlib/fontlist-v390.json.matplotlib-lock
+This maybe due to another process holding this lock file.  If you are sure no
+other Matplotlib process is running, remove this file and try again.
+Could not save font_manager cache Lock error: Matplotlib failed to acquire the following lock file:
+    /jobfs/165716726.gadi-pbs/matplotlib/fontlist-v390.json.matplotlib-lock
+This maybe due to another process holding this lock file.  If you are sure no
+other Matplotlib process is running, remove this file and try again.
+Could not save font_manager cache Lock error: Matplotlib failed to acquire the following lock file:
+    /jobfs/165716726.gadi-pbs/matplotlib/fontlist-v390.json.matplotlib-lock
+This maybe due to another process holding this lock file.  If you are sure no
+other Matplotlib process is running, remove this file and try again.
+Could not save font_manager cache Lock error: Matplotlib failed to acquire the following lock file:
+    /jobfs/165716726.gadi-pbs/matplotlib/fontlist-v390.json.matplotlib-lock
+This maybe due to another process holding this lock file.  If you are sure no
+other Matplotlib process is running, remove this file and try again.
+Could not save font_manager cache Lock error: Matplotlib failed to acquire the following lock file:
+    /jobfs/165716726.gadi-pbs/matplotlib/fontlist-v390.json.matplotlib-lock
+This maybe due to another process holding this lock file.  If you are sure no
+other Matplotlib process is running, remove this file and try again.
+Could not save font_manager cache Lock error: Matplotlib failed to acquire the following lock file:
+    /jobfs/165716726.gadi-pbs/matplotlib/fontlist-v390.json.matplotlib-lock
+This maybe due to another process holding this lock file.  If you are sure no
+other Matplotlib process is running, remove this file and try again.
+Could not save font_manager cache Lock error: Matplotlib failed to acquire the following lock file:
+    /jobfs/165716726.gadi-pbs/matplotlib/fontlist-v390.json.matplotlib-lock
+This maybe due to another process holding this lock file.  If you are sure no
+other Matplotlib process is running, remove this file and try again.
+Could not save font_manager cache Lock error: Matplotlib failed to acquire the following lock file:
+    /jobfs/165716726.gadi-pbs/matplotlib/fontlist-v390.json.matplotlib-lock
+This maybe due to another process holding this lock file.  If you are sure no
+other Matplotlib process is running, remove this file and try again.
+Could not save font_manager cache Lock error: Matplotlib failed to acquire the following lock file:
+    /jobfs/165716726.gadi-pbs/matplotlib/fontlist-v390.json.matplotlib-lock
+This maybe due to another process holding this lock file.  If you are sure no
+other Matplotlib process is running, remove this file and try again.
+Could not save font_manager cache Lock error: Matplotlib failed to acquire the following lock file:
+    /jobfs/165716726.gadi-pbs/matplotlib/fontlist-v390.json.matplotlib-lock
+This maybe due to another process holding this lock file.  If you are sure no
+other Matplotlib process is running, remove this file and try again.
+Could not save font_manager cache Lock error: Matplotlib failed to acquire the following lock file:
+    /jobfs/165716726.gadi-pbs/matplotlib/fontlist-v390.json.matplotlib-lock
+This maybe due to another process holding this lock file.  If you are sure no
+other Matplotlib process is running, remove this file and try again.
+Could not save font_manager cache Lock error: Matplotlib failed to acquire the following lock file:
+    /jobfs/165716726.gadi-pbs/matplotlib/fontlist-v390.json.matplotlib-lock
+This maybe due to another process holding this lock file.  If you are sure no
+other Matplotlib process is running, remove this file and try again.
+Could not save font_manager cache Lock error: Matplotlib failed to acquire the following lock file:
+    /jobfs/165716726.gadi-pbs/matplotlib/fontlist-v390.json.matplotlib-lock
+This maybe due to another process holding this lock file.  If you are sure no
+other Matplotlib process is running, remove this file and try again.
+Could not save font_manager cache Lock error: Matplotlib failed to acquire the following lock file:
+    /jobfs/165716726.gadi-pbs/matplotlib/fontlist-v390.json.matplotlib-lock
+This maybe due to another process holding this lock file.  If you are sure no
+other Matplotlib process is running, remove this file and try again.
+Could not save font_manager cache Lock error: Matplotlib failed to acquire the following lock file:
+    /jobfs/165716726.gadi-pbs/matplotlib/fontlist-v390.json.matplotlib-lock
+This maybe due to another process holding this lock file.  If you are sure no
+other Matplotlib process is running, remove this file and try again.
+Could not save font_manager cache Lock error: Matplotlib failed to acquire the following lock file:
+    /jobfs/165716726.gadi-pbs/matplotlib/fontlist-v390.json.matplotlib-lock
+This maybe due to another process holding this lock file.  If you are sure no
+other Matplotlib process is running, remove this file and try again.
+Could not save font_manager cache Lock error: Matplotlib failed to acquire the following lock file:
+    /jobfs/165716726.gadi-pbs/matplotlib/fontlist-v390.json.matplotlib-lock
+This maybe due to another process holding this lock file.  If you are sure no
+other Matplotlib process is running, remove this file and try again.
+Could not save font_manager cache Lock error: Matplotlib failed to acquire the following lock file:
+    /jobfs/165716726.gadi-pbs/matplotlib/fontlist-v390.json.matplotlib-lock
+This maybe due to another process holding this lock file.  If you are sure no
+other Matplotlib process is running, remove this file and try again.
+Could not save font_manager cache Lock error: Matplotlib failed to acquire the following lock file:
+    /jobfs/165716726.gadi-pbs/matplotlib/fontlist-v390.json.matplotlib-lock
+This maybe due to another process holding this lock file.  If you are sure no
+other Matplotlib process is running, remove this file and try again.
+Could not save font_manager cache Lock error: Matplotlib failed to acquire the following lock file:
+    /jobfs/165716726.gadi-pbs/matplotlib/fontlist-v390.json.matplotlib-lock
+This maybe due to another process holding this lock file.  If you are sure no
+other Matplotlib process is running, remove this file and try again.
+Could not save font_manager cache Lock error: Matplotlib failed to acquire the following lock file:
+    /jobfs/165716726.gadi-pbs/matplotlib/fontlist-v390.json.matplotlib-lock
+This maybe due to another process holding this lock file.  If you are sure no
+other Matplotlib process is running, remove this file and try again.
+Could not save font_manager cache Lock error: Matplotlib failed to acquire the following lock file:
+    /jobfs/165716726.gadi-pbs/matplotlib/fontlist-v390.json.matplotlib-lock
+This maybe due to another process holding this lock file.  If you are sure no
+other Matplotlib process is running, remove this file and try again.
+Could not save font_manager cache Lock error: Matplotlib failed to acquire the following lock file:
+    /jobfs/165716726.gadi-pbs/matplotlib/fontlist-v390.json.matplotlib-lock
+This maybe due to another process holding this lock file.  If you are sure no
+other Matplotlib process is running, remove this file and try again.
+Could not save font_manager cache Lock error: Matplotlib failed to acquire the following lock file:
+    /jobfs/165716726.gadi-pbs/matplotlib/fontlist-v390.json.matplotlib-lock
+This maybe due to another process holding this lock file.  If you are sure no
+other Matplotlib process is running, remove this file and try again.
+Could not save font_manager cache Lock error: Matplotlib failed to acquire the following lock file:
+    /jobfs/165716726.gadi-pbs/matplotlib/fontlist-v390.json.matplotlib-lock
+This maybe due to another process holding this lock file.  If you are sure no
+other Matplotlib process is running, remove this file and try again.
+Could not save font_manager cache Lock error: Matplotlib failed to acquire the following lock file:
+    /jobfs/165716726.gadi-pbs/matplotlib/fontlist-v390.json.matplotlib-lock
+This maybe due to another process holding this lock file.  If you are sure no
+other Matplotlib process is running, remove this file and try again.
+Could not save font_manager cache Lock error: Matplotlib failed to acquire the following lock file:
+    /jobfs/165716726.gadi-pbs/matplotlib/fontlist-v390.json.matplotlib-lock
+This maybe due to another process holding this lock file.  If you are sure no
+other Matplotlib process is running, remove this file and try again.
+Could not save font_manager cache Lock error: Matplotlib failed to acquire the following lock file:
+    /jobfs/165716726.gadi-pbs/matplotlib/fontlist-v390.json.matplotlib-lock
+This maybe due to another process holding this lock file.  If you are sure no
+other Matplotlib process is running, remove this file and try again.
+Could not save font_manager cache Lock error: Matplotlib failed to acquire the following lock file:
+    /jobfs/165716726.gadi-pbs/matplotlib/fontlist-v390.json.matplotlib-lock
+This maybe due to another process holding this lock file.  If you are sure no
+other Matplotlib process is running, remove this file and try again.
+Could not save font_manager cache Lock error: Matplotlib failed to acquire the following lock file:
+    /jobfs/165716726.gadi-pbs/matplotlib/fontlist-v390.json.matplotlib-lock
+This maybe due to another process holding this lock file.  If you are sure no
+other Matplotlib process is running, remove this file and try again.
+Could not save font_manager cache Lock error: Matplotlib failed to acquire the following lock file:
+    /jobfs/165716726.gadi-pbs/matplotlib/fontlist-v390.json.matplotlib-lock
+This maybe due to another process holding this lock file.  If you are sure no
+other Matplotlib process is running, remove this file and try again.
+Could not save font_manager cache Lock error: Matplotlib failed to acquire the following lock file:
+    /jobfs/165716726.gadi-pbs/matplotlib/fontlist-v390.json.matplotlib-lock
+This maybe due to another process holding this lock file.  If you are sure no
+other Matplotlib process is running, remove this file and try again.
+Could not save font_manager cache Lock error: Matplotlib failed to acquire the following lock file:
+    /jobfs/165716726.gadi-pbs/matplotlib/fontlist-v390.json.matplotlib-lock
+This maybe due to another process holding this lock file.  If you are sure no
+other Matplotlib process is running, remove this file and try again.
+Could not save font_manager cache Lock error: Matplotlib failed to acquire the following lock file:
+    /jobfs/165716726.gadi-pbs/matplotlib/fontlist-v390.json.matplotlib-lock
+This maybe due to another process holding this lock file.  If you are sure no
+other Matplotlib process is running, remove this file and try again.
+Could not save font_manager cache Lock error: Matplotlib failed to acquire the following lock file:
+    /jobfs/165716726.gadi-pbs/matplotlib/fontlist-v390.json.matplotlib-lock
+This maybe due to another process holding this lock file.  If you are sure no
+other Matplotlib process is running, remove this file and try again.
+Could not save font_manager cache Lock error: Matplotlib failed to acquire the following lock file:
+    /jobfs/165716726.gadi-pbs/matplotlib/fontlist-v390.json.matplotlib-lock
+This maybe due to another process holding this lock file.  If you are sure no
+other Matplotlib process is running, remove this file and try again.
+Could not save font_manager cache Lock error: Matplotlib failed to acquire the following lock file:
+    /jobfs/165716726.gadi-pbs/matplotlib/fontlist-v390.json.matplotlib-lock
+This maybe due to another process holding this lock file.  If you are sure no
+other Matplotlib process is running, remove this file and try again.
+Could not save font_manager cache Lock error: Matplotlib failed to acquire the following lock file:
+    /jobfs/165716726.gadi-pbs/matplotlib/fontlist-v390.json.matplotlib-lock
+This maybe due to another process holding this lock file.  If you are sure no
+other Matplotlib process is running, remove this file and try again.
+Could not save font_manager cache Lock error: Matplotlib failed to acquire the following lock file:
+    /jobfs/165716726.gadi-pbs/matplotlib/fontlist-v390.json.matplotlib-lock
+This maybe due to another process holding this lock file.  If you are sure no
+other Matplotlib process is running, remove this file and try again.
+Could not save font_manager cache Lock error: Matplotlib failed to acquire the following lock file:
+    /jobfs/165716726.gadi-pbs/matplotlib/fontlist-v390.json.matplotlib-lock
+This maybe due to another process holding this lock file.  If you are sure no
+other Matplotlib process is running, remove this file and try again.
+Could not save font_manager cache Lock error: Matplotlib failed to acquire the following lock file:
+    /jobfs/165716726.gadi-pbs/matplotlib/fontlist-v390.json.matplotlib-lock
+This maybe due to another process holding this lock file.  If you are sure no
+other Matplotlib process is running, remove this file and try again.
+Could not save font_manager cache Lock error: Matplotlib failed to acquire the following lock file:
+    /jobfs/165716726.gadi-pbs/matplotlib/fontlist-v390.json.matplotlib-lock
+This maybe due to another process holding this lock file.  If you are sure no
+other Matplotlib process is running, remove this file and try again.
+Could not save font_manager cache Lock error: Matplotlib failed to acquire the following lock file:
+    /jobfs/165716726.gadi-pbs/matplotlib/fontlist-v390.json.matplotlib-lock
+This maybe due to another process holding this lock file.  If you are sure no
+other Matplotlib process is running, remove this file and try again.
+Could not save font_manager cache Lock error: Matplotlib failed to acquire the following lock file:
+    /jobfs/165716726.gadi-pbs/matplotlib/fontlist-v390.json.matplotlib-lock
+This maybe due to another process holding this lock file.  If you are sure no
+other Matplotlib process is running, remove this file and try again.
+Could not save font_manager cache Lock error: Matplotlib failed to acquire the following lock file:
+    /jobfs/165716726.gadi-pbs/matplotlib/fontlist-v390.json.matplotlib-lock
+This maybe due to another process holding this lock file.  If you are sure no
+other Matplotlib process is running, remove this file and try again.
+Could not save font_manager cache Lock error: Matplotlib failed to acquire the following lock file:
+    /jobfs/165716726.gadi-pbs/matplotlib/fontlist-v390.json.matplotlib-lock
+This maybe due to another process holding this lock file.  If you are sure no
+other Matplotlib process is running, remove this file and try again.
+Could not save font_manager cache Lock error: Matplotlib failed to acquire the following lock file:
+    /jobfs/165716726.gadi-pbs/matplotlib/fontlist-v390.json.matplotlib-lock
+This maybe due to another process holding this lock file.  If you are sure no
+other Matplotlib process is running, remove this file and try again.
+Could not save font_manager cache Lock error: Matplotlib failed to acquire the following lock file:
+    /jobfs/165716726.gadi-pbs/matplotlib/fontlist-v390.json.matplotlib-lock
+This maybe due to another process holding this lock file.  If you are sure no
+other Matplotlib process is running, remove this file and try again.
+Could not save font_manager cache Lock error: Matplotlib failed to acquire the following lock file:
+    /jobfs/165716726.gadi-pbs/matplotlib/fontlist-v390.json.matplotlib-lock
+This maybe due to another process holding this lock file.  If you are sure no
+other Matplotlib process is running, remove this file and try again.
+Could not save font_manager cache Lock error: Matplotlib failed to acquire the following lock file:
+    /jobfs/165716726.gadi-pbs/matplotlib/fontlist-v390.json.matplotlib-lock
+This maybe due to another process holding this lock file.  If you are sure no
+other Matplotlib process is running, remove this file and try again.
+Could not save font_manager cache Lock error: Matplotlib failed to acquire the following lock file:
+    /jobfs/165716726.gadi-pbs/matplotlib/fontlist-v390.json.matplotlib-lock
+This maybe due to another process holding this lock file.  If you are sure no
+other Matplotlib process is running, remove this file and try again.
+Could not save font_manager cache Lock error: Matplotlib failed to acquire the following lock file:
+    /jobfs/165716726.gadi-pbs/matplotlib/fontlist-v390.json.matplotlib-lock
+This maybe due to another process holding this lock file.  If you are sure no
+other Matplotlib process is running, remove this file and try again.
+Could not save font_manager cache Lock error: Matplotlib failed to acquire the following lock file:
+    /jobfs/165716726.gadi-pbs/matplotlib/fontlist-v390.json.matplotlib-lock
+This maybe due to another process holding this lock file.  If you are sure no
+other Matplotlib process is running, remove this file and try again.
+Could not save font_manager cache Lock error: Matplotlib failed to acquire the following lock file:
+    /jobfs/165716726.gadi-pbs/matplotlib/fontlist-v390.json.matplotlib-lock
+This maybe due to another process holding this lock file.  If you are sure no
+other Matplotlib process is running, remove this file and try again.
+Could not save font_manager cache Lock error: Matplotlib failed to acquire the following lock file:
+    /jobfs/165716726.gadi-pbs/matplotlib/fontlist-v390.json.matplotlib-lock
+This maybe due to another process holding this lock file.  If you are sure no
+other Matplotlib process is running, remove this file and try again.
+Could not save font_manager cache Lock error: Matplotlib failed to acquire the following lock file:
+    /jobfs/165716726.gadi-pbs/matplotlib/fontlist-v390.json.matplotlib-lock
+This maybe due to another process holding this lock file.  If you are sure no
+other Matplotlib process is running, remove this file and try again.
+Could not save font_manager cache Lock error: Matplotlib failed to acquire the following lock file:
+    /jobfs/165716726.gadi-pbs/matplotlib/fontlist-v390.json.matplotlib-lock
+This maybe due to another process holding this lock file.  If you are sure no
+other Matplotlib process is running, remove this file and try again.
+Could not save font_manager cache Lock error: Matplotlib failed to acquire the following lock file:
+    /jobfs/165716726.gadi-pbs/matplotlib/fontlist-v390.json.matplotlib-lock
+This maybe due to another process holding this lock file.  If you are sure no
+other Matplotlib process is running, remove this file and try again.
+Could not save font_manager cache Lock error: Matplotlib failed to acquire the following lock file:
+    /jobfs/165716726.gadi-pbs/matplotlib/fontlist-v390.json.matplotlib-lock
+This maybe due to another process holding this lock file.  If you are sure no
+other Matplotlib process is running, remove this file and try again.
+Could not save font_manager cache Lock error: Matplotlib failed to acquire the following lock file:
+    /jobfs/165716726.gadi-pbs/matplotlib/fontlist-v390.json.matplotlib-lock
+This maybe due to another process holding this lock file.  If you are sure no
+other Matplotlib process is running, remove this file and try again.
+Could not save font_manager cache Lock error: Matplotlib failed to acquire the following lock file:
+    /jobfs/165716726.gadi-pbs/matplotlib/fontlist-v390.json.matplotlib-lock
+This maybe due to another process holding this lock file.  If you are sure no
+other Matplotlib process is running, remove this file and try again.
+Could not save font_manager cache Lock error: Matplotlib failed to acquire the following lock file:
+    /jobfs/165716726.gadi-pbs/matplotlib/fontlist-v390.json.matplotlib-lock
+This maybe due to another process holding this lock file.  If you are sure no
+other Matplotlib process is running, remove this file and try again.
+Could not save font_manager cache Lock error: Matplotlib failed to acquire the following lock file:
+    /jobfs/165716726.gadi-pbs/matplotlib/fontlist-v390.json.matplotlib-lock
+This maybe due to another process holding this lock file.  If you are sure no
+other Matplotlib process is running, remove this file and try again.
+Could not save font_manager cache Lock error: Matplotlib failed to acquire the following lock file:
+    /jobfs/165716726.gadi-pbs/matplotlib/fontlist-v390.json.matplotlib-lock
+This maybe due to another process holding this lock file.  If you are sure no
+other Matplotlib process is running, remove this file and try again.
+Number of degrees of freedom: 45849600
+Horizontal resolution: 1775.0 m, Layers: 300, DG1
+Time stepper: BackwardEuler, dt_init = 60.0 s, dt_max = 43200.0 s, growth = 1.5
+Solver: gmg
+Solver parameters: {'ksp_type': 'fgmres', 'ksp_rtol': 1e-06, 'ksp_max_it': 200, 'ksp_gmres_restart': 30, 'pc_type': 'mg', 'pc_mg_type': 'multiplicative', 'pc_mg_cycle_type': 'v', 'mg_levels_ksp_type': 'chebyshev', 'mg_levels_ksp_max_it': 1, 'mg_levels_ksp_convergence_test': 'skip', 'mg_levels_pc_type': 'bjacobi', 'mg_levels_sub_pc_type': 'ilu', 'mg_levels_sub_pc_factor_levels': 0, 'mg_coarse_ksp_type': 'gmres', 'mg_coarse_ksp_max_it': 30, 'mg_coarse_pc_type': 'bjacobi', 'mg_coarse_sub_pc_type': 'ilu', 'snes_type': 'newtonls', 'snes_linesearch_type': 'bt', 'snes_rtol': 1e-08, 'snes_atol': 1e-08, 'snes_max_it': 50}
+  0 SNES Function norm 1.597236456024e+03
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 21
+  1 SNES Function norm 1.141444360702e+00
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 25
+  2 SNES Function norm 1.282585453442e-01
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 18
+  3 SNES Function norm 6.313389051615e-03
+  Nonlinear BackwardEuler-Equation_ solve converged due to CONVERGED_SNORM_RELATIVE iterations 3
+t = 0.00 d | step 1/100000 | dt = 60.0 s | wall 1066.57 s | NL 3 | L 64
+  0 SNES Function norm 1.508936062076e+02
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 13
+  1 SNES Function norm 8.357545399656e-02
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 21
+  2 SNES Function norm 6.902247894504e-05
+  Nonlinear BackwardEuler-Equation_ solve converged due to CONVERGED_SNORM_RELATIVE iterations 2
+t = 0.00 d | step 2/100000 | dt = 90.0 s | wall 475.61 s | NL 2 | L 34
+  0 SNES Function norm 1.904283222753e+02
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 11
+  1 SNES Function norm 1.276236727310e-01
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 18
+  2 SNES Function norm 2.842860632327e-03
+  Nonlinear BackwardEuler-Equation_ solve converged due to CONVERGED_SNORM_RELATIVE iterations 2
+t = 0.00 d | step 3/100000 | dt = 135.0 s | wall 424.20 s | NL 2 | L 29
+  0 SNES Function norm 2.332877690209e+02
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 10
+  1 SNES Function norm 1.949471066813e-01
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 17
+  2 SNES Function norm 1.788529383601e-04
+  Nonlinear BackwardEuler-Equation_ solve converged due to CONVERGED_SNORM_RELATIVE iterations 2
+t = 0.01 d | step 4/100000 | dt = 202.5 s | wall 403.11 s | NL 2 | L 27
+  0 SNES Function norm 2.723346210606e+02
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 9
+  1 SNES Function norm 2.258157388777e-01
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 15
+  2 SNES Function norm 5.775388104019e-05
+  Nonlinear BackwardEuler-Equation_ solve converged due to CONVERGED_SNORM_RELATIVE iterations 2
+t = 0.01 d | step 5/100000 | dt = 303.8 s | wall 373.26 s | NL 2 | L 24
+  0 SNES Function norm 3.011502088598e+02
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 9
+  1 SNES Function norm 2.444412013823e-01
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 14
+  2 SNES Function norm 3.438859908110e-05
+  Nonlinear BackwardEuler-Equation_ solve converged due to CONVERGED_SNORM_RELATIVE iterations 2
+t = 0.01 d | step 6/100000 | dt = 455.6 s | wall 362.11 s | NL 2 | L 23
+  0 SNES Function norm 3.225930603107e+02
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 9
+  1 SNES Function norm 2.822585717290e-01
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 14
+  2 SNES Function norm 5.554114420292e-05
+  Nonlinear BackwardEuler-Equation_ solve converged due to CONVERGED_SNORM_RELATIVE iterations 2
+t = 0.02 d | step 7/100000 | dt = 683.4 s | wall 362.10 s | NL 2 | L 23
+  0 SNES Function norm 3.583139924775e+02
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 9
+  1 SNES Function norm 3.679276928428e-01
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 15
+  2 SNES Function norm 1.145191054005e-04
+  Nonlinear BackwardEuler-Equation_ solve converged due to CONVERGED_SNORM_RELATIVE iterations 2
+t = 0.03 d | step 8/100000 | dt = 1025.2 s | wall 371.94 s | NL 2 | L 24
+  0 SNES Function norm 4.421453114812e+02
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 10
+  1 SNES Function norm 6.204198927417e-01
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 14
+  2 SNES Function norm 3.641308106816e-03
+  Nonlinear BackwardEuler-Equation_ solve converged due to CONVERGED_SNORM_RELATIVE iterations 2
+t = 0.05 d | step 9/100000 | dt = 1537.7 s | wall 371.83 s | NL 2 | L 24
+  0 SNES Function norm 5.946463582730e+02
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 11
+  1 SNES Function norm 1.028082522882e+00
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 14
+  2 SNES Function norm 1.430119125296e-03
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 16
+  3 SNES Function norm 1.639832896152e-04
+  Nonlinear BackwardEuler-Equation_ solve converged due to CONVERGED_SNORM_RELATIVE iterations 3
+t = 0.08 d | step 10/100000 | dt = 2306.6 s | wall 609.05 s | NL 3 | L 41
+  0 SNES Function norm 8.202832487679e+02
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 12
+  1 SNES Function norm 1.890475647287e+00
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 15
+  2 SNES Function norm 2.130499658553e-03
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 16
+  3 SNES Function norm 2.456044429219e-04
+  Nonlinear BackwardEuler-Equation_ solve converged due to CONVERGED_SNORM_RELATIVE iterations 3
+t = 0.12 d | step 11/100000 | dt = 3459.9 s | wall 628.18 s | NL 3 | L 43
+  0 SNES Function norm 1.124271648881e+03
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 12
+  1 SNES Function norm 3.226296347716e+00
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 15
+  2 SNES Function norm 3.914290660459e-03
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 17
+  3 SNES Function norm 3.688581335930e-04
+  Nonlinear BackwardEuler-Equation_ solve converged due to CONVERGED_SNORM_RELATIVE iterations 3
+t = 0.18 d | step 12/100000 | dt = 5189.9 s | wall 639.31 s | NL 3 | L 44
+  0 SNES Function norm 1.520118242999e+03
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 13
+  1 SNES Function norm 5.169443693729e+00
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 15
+  2 SNES Function norm 1.171469492860e-02
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 17
+  3 SNES Function norm 5.543018137723e-04
+  Nonlinear BackwardEuler-Equation_ solve converged due to CONVERGED_SNORM_RELATIVE iterations 3
+t = 0.27 d | step 13/100000 | dt = 7784.8 s | wall 649.49 s | NL 3 | L 45
+  0 SNES Function norm 2.035232286347e+03
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 14
+  1 SNES Function norm 8.817194662602e+00
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 16
+  2 SNES Function norm 1.335382318215e-02
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 17
+  3 SNES Function norm 8.286943419560e-04
+  Nonlinear BackwardEuler-Equation_ solve converged due to CONVERGED_SNORM_RELATIVE iterations 3
+t = 0.40 d | step 14/100000 | dt = 11677.2 s | wall 669.84 s | NL 3 | L 47
+  0 SNES Function norm 2.724679726380e+03
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 15
+  1 SNES Function norm 1.554521828162e+01
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 17
+  2 SNES Function norm 5.391161207003e-02
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 17
+  3 SNES Function norm 1.238000549548e-03
+  Nonlinear BackwardEuler-Equation_ solve converged due to CONVERGED_SNORM_RELATIVE iterations 3
+t = 0.61 d | step 15/100000 | dt = 17515.8 s | wall 689.91 s | NL 3 | L 49
+  0 SNES Function norm 3.686704570777e+03
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 16
+  1 SNES Function norm 1.826761619421e+01
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 17
+  2 SNES Function norm 2.217803134568e-02
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 19
+  3 SNES Function norm 1.864434804027e-03
+  Nonlinear BackwardEuler-Equation_ solve converged due to CONVERGED_SNORM_RELATIVE iterations 3
+t = 0.91 d | step 16/100000 | dt = 26273.6 s | wall 721.65 s | NL 3 | L 52
+  0 SNES Function norm 5.070214320926e+03
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 17
+  1 SNES Function norm 3.161330955431e+01
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 18
+  2 SNES Function norm 6.415122994449e-02
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 19
+  3 SNES Function norm 2.796864329449e-03
+  Nonlinear BackwardEuler-Equation_ solve converged due to CONVERGED_SNORM_RELATIVE iterations 3
+t = 1.37 d | step 17/100000 | dt = 39410.5 s | wall 742.49 s | NL 3 | L 54
+  0 SNES Function norm 5.176769853673e+03
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 17
+  1 SNES Function norm 5.955277348515e+01
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 17
+  2 SNES Function norm 1.360616083823e-01
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 19
+  3 SNES Function norm 3.070005786607e-03
+  Nonlinear BackwardEuler-Equation_ solve converged due to CONVERGED_SNORM_RELATIVE iterations 3
+t = 1.87 d | step 18/100000 | dt = 43200.0 s | wall 731.16 s | NL 3 | L 53
+  0 SNES Function norm 4.938524172381e+03
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 17
+  1 SNES Function norm 3.879900804950e+01
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 18
+  2 SNES Function norm 2.251433763923e-01
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 18
+  3 SNES Function norm 3.060135883200e-03
+  Nonlinear BackwardEuler-Equation_ solve converged due to CONVERGED_SNORM_RELATIVE iterations 3
+t = 2.37 d | step 19/100000 | dt = 43200.0 s | wall 731.53 s | NL 3 | L 53
+  0 SNES Function norm 4.782686388769e+03
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 17
+  1 SNES Function norm 2.864881660796e+01
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 18
+  2 SNES Function norm 7.533067086623e-02
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 19
+  3 SNES Function norm 3.066698955464e-03
+  Nonlinear BackwardEuler-Equation_ solve converged due to CONVERGED_SNORM_RELATIVE iterations 3
+t = 2.87 d | step 20/100000 | dt = 43200.0 s | wall 741.97 s | NL 3 | L 54
+  0 SNES Function norm 4.670922509744e+03
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 17
+  1 SNES Function norm 2.299148144043e+01
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 18
+  2 SNES Function norm 1.020495352411e-01
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 18
+  3 SNES Function norm 3.064355319753e-03
+  Nonlinear BackwardEuler-Equation_ solve converged due to CONVERGED_SNORM_RELATIVE iterations 3
+t = 3.37 d | step 21/100000 | dt = 43200.0 s | wall 731.21 s | NL 3 | L 53
+  0 SNES Function norm 4.585849847950e+03
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 17
+  1 SNES Function norm 2.084528892585e+01
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 18
+  2 SNES Function norm 4.880704316280e-02
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 19
+  3 SNES Function norm 3.059250835158e-03
+  Nonlinear BackwardEuler-Equation_ solve converged due to CONVERGED_SNORM_RELATIVE iterations 3
+t = 3.87 d | step 22/100000 | dt = 43200.0 s | wall 741.29 s | NL 3 | L 54
+  0 SNES Function norm 4.517949548772e+03
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 17
+  1 SNES Function norm 2.173481613062e+01
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 18
+  2 SNES Function norm 1.321332466634e-02
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 20
+  3 SNES Function norm 3.064521575961e-03
+  Nonlinear BackwardEuler-Equation_ solve converged due to CONVERGED_SNORM_RELATIVE iterations 3
+t = 4.37 d | step 23/100000 | dt = 43200.0 s | wall 752.74 s | NL 3 | L 55
+  0 SNES Function norm 4.461929427581e+03
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 17
+  1 SNES Function norm 6.853132807522e+01
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 16
+  2 SNES Function norm 3.544377819283e-02
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 20
+  3 SNES Function norm 3.072166045967e-03
+  Nonlinear BackwardEuler-Equation_ solve converged due to CONVERGED_SNORM_RELATIVE iterations 3
+t = 4.87 d | step 24/100000 | dt = 43200.0 s | wall 732.83 s | NL 3 | L 53
+  0 SNES Function norm 4.414538323705e+03
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 17
+  1 SNES Function norm 9.832270658262e+01
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 15
+  2 SNES Function norm 1.419792638948e-02
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 22
+  3 SNES Function norm 3.080567859889e-03
+  Nonlinear BackwardEuler-Equation_ solve converged due to CONVERGED_SNORM_RELATIVE iterations 3
+t = 5.37 d | step 25/100000 | dt = 43200.0 s | wall 743.17 s | NL 3 | L 54
+  0 SNES Function norm 4.373969718627e+03
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 17
+  1 SNES Function norm 4.411434272241e+01
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 17
+  2 SNES Function norm 1.822656216962e-01
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 17
+  3 SNES Function norm 3.068372997600e-03
+  Nonlinear BackwardEuler-Equation_ solve converged due to CONVERGED_SNORM_RELATIVE iterations 3
+t = 5.87 d | step 26/100000 | dt = 43200.0 s | wall 710.68 s | NL 3 | L 51
+  0 SNES Function norm 4.338611917227e+03
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 17
+  1 SNES Function norm 4.748426761280e+01
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 17
+  2 SNES Function norm 4.510789561217e-02
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 19
+  3 SNES Function norm 3.068186491661e-03
+  Nonlinear BackwardEuler-Equation_ solve converged due to CONVERGED_SNORM_RELATIVE iterations 3
+t = 6.37 d | step 27/100000 | dt = 43200.0 s | wall 731.68 s | NL 3 | L 53
+  0 SNES Function norm 4.307435114133e+03
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 17
+  1 SNES Function norm 2.083112661441e+01
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 18
+  2 SNES Function norm 1.092517480218e-01
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 19
+  3 SNES Function norm 3.060279501405e-03
+  Nonlinear BackwardEuler-Equation_ solve converged due to CONVERGED_SNORM_RELATIVE iterations 3
+t = 6.87 d | step 28/100000 | dt = 43200.0 s | wall 742.24 s | NL 3 | L 54
+  0 SNES Function norm 4.279165587743e+03
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 17
+  1 SNES Function norm 1.694039292087e+01
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 19
+  2 SNES Function norm 1.751408201930e-02
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 19
+  3 SNES Function norm 3.052477879655e-03
+  Nonlinear BackwardEuler-Equation_ solve converged due to CONVERGED_SNORM_RELATIVE iterations 3
+t = 7.37 d | step 29/100000 | dt = 43200.0 s | wall 752.72 s | NL 3 | L 55
+  0 SNES Function norm 4.253957939147e+03
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 17
+  1 SNES Function norm 2.551621818759e+01
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 18
+  2 SNES Function norm 5.303543287724e-02
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 18
+  3 SNES Function norm 3.058573575339e-03
+  Nonlinear BackwardEuler-Equation_ solve converged due to CONVERGED_SNORM_RELATIVE iterations 3
+t = 7.87 d | step 30/100000 | dt = 43200.0 s | wall 733.00 s | NL 3 | L 53
+  0 SNES Function norm 4.230971285960e+03
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 17
+  1 SNES Function norm 1.799418480315e+01
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 19
+  2 SNES Function norm 2.640338039521e-02
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 19
+  3 SNES Function norm 3.051116709076e-03
+  Nonlinear BackwardEuler-Equation_ solve converged due to CONVERGED_SNORM_RELATIVE iterations 3
+t = 8.37 d | step 31/100000 | dt = 43200.0 s | wall 753.21 s | NL 3 | L 55
+  0 SNES Function norm 4.210022044894e+03
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 17
+  1 SNES Function norm 2.157571689316e+01
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 18
+  2 SNES Function norm 3.299515116475e-02
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 20
+  3 SNES Function norm 3.062819675530e-03
+  Nonlinear BackwardEuler-Equation_ solve converged due to CONVERGED_SNORM_RELATIVE iterations 3
+t = 8.87 d | step 32/100000 | dt = 43200.0 s | wall 752.11 s | NL 3 | L 55
+  0 SNES Function norm 4.190786623652e+03
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 17
+  1 SNES Function norm 1.982620040281e+01
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 18
+  2 SNES Function norm 5.175469640337e-02
+
+======================================================================================
+                  Resource Usage on 2026-04-15 21:00:47:
+   Job Id:             165716726.gadi-pbs
+   Project:            xd2
+   Exit Status:        -29 (Job failed due to exceeding walltime)
+   Service Units:      5003.56
+   NCPUs Requested:    416                 CPU Time Used: 2496:52:05      
+   Memory Requested:   1.95TB                Memory Used: 416.83GB        
+   Walltime Requested: 06:00:00            Walltime Used: 06:00:50        
+   JobFS Requested:    400.0GB                JobFS Used: 47.33MB         
+======================================================================================

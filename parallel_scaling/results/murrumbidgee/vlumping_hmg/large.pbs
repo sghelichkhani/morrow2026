@@ -1,0 +1,51 @@
+#!/bin/bash
+#PBS -N rs-murr-vlumping_hmg-large
+#PBS -P xd2
+#PBS -q normalsr
+#PBS -l walltime=06:00:00
+#PBS -l mem=4000GB
+#PBS -l ncpus=832
+#PBS -l jobfs=400GB
+#PBS -l storage=scratch/xd2+gdata/fp50
+#PBS -l wd
+#PBS -W umask=0022
+#PBS -o /scratch/xd2/sg8812/morrow2026/parallel_scaling/results/murrumbidgee/vlumping_hmg/large.out
+#PBS -e /scratch/xd2/sg8812/morrow2026/parallel_scaling/results/murrumbidgee/vlumping_hmg/large.err
+
+source /etc/profile
+set -e
+module use /g/data/fp50/modules
+module load firedrake/main-20260806
+
+export PYTHONPATH="/scratch/xd2/sg8812/g-adopt-worktrees/sghelichkhani/richardson":"/scratch/xd2/sg8812/gwassess":"/scratch/xd2/sg8812/omega":${PYTHONPATH}
+export PYTHONDONTWRITEBYTECODE=1
+
+export OMPI_MCA_io="ompio"
+export OMP_NUM_THREADS=1
+export NCI_PROJECT=xd2
+export MPLCONFIGDIR=$PBS_JOBFS/matplotlib
+export PETSC_OPTIONS="-log_view :/scratch/xd2/sg8812/morrow2026/parallel_scaling/results/murrumbidgee/vlumping_hmg/large.profile -BackwardEuler-Equation_lumped_pc_mg_log"
+
+cd /scratch/xd2/sg8812/morrow2026/parallel_scaling
+
+echo "=== Job info ==="
+echo "Case: murrumbidgee"
+echo "Solver: vlumping_hmg"
+echo "Scale: large"
+echo "Degree: 1"
+echo "Nodes: 8"
+echo "CPUs: 832"
+echo "Date: $(date)"
+echo "G-ADOPT commit: $(git -C /scratch/xd2/sg8812/g-adopt-worktrees/sghelichkhani/richardson rev-parse HEAD)"
+echo "Morrow commit: $(git -C /scratch/xd2/sg8812/morrow2026 rev-parse HEAD)"
+echo "Driver SHA256: $(sha256sum /scratch/xd2/sg8812/morrow2026/parallel_scaling/murrumbidgee_3d.py | cut -d' ' -f1)"
+echo "Solver SHA256: $(sha256sum /scratch/xd2/sg8812/morrow2026/parallel_scaling/solvers/vlumping_hmg.py | cut -d' ' -f1)"
+echo "Firedrake module: $LOADEDMODULES"
+echo "PETSC_OPTIONS: $PETSC_OPTIONS"
+echo "================"
+
+mpiexec -np $PBS_NCPUS python /scratch/xd2/sg8812/morrow2026/parallel_scaling/murrumbidgee_3d.py --horiz-res 1775 --layers 1200 --solver vlumping_hmg --refinement-levels 1 --dt-init 60 --dt-max 43200 --dt-growth 1.5 --dt-shrink 0.5 --t-final 2592000 --data-dir /scratch/xd2/sg8812/morrow2026/parallel_scaling/murrumbidgee_data --profile 2>&1
+
+test -s /scratch/xd2/sg8812/morrow2026/parallel_scaling/results/murrumbidgee/vlumping_hmg/large.profile
+
+echo "=== Job completed: $(date) ==="

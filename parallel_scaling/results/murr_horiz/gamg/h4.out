@@ -1,0 +1,215 @@
+=== Job info ===
+Case: murr_horiz
+Solver: gamg
+Scale: h4
+Degree: 1
+Nodes: 4
+CPUs: 416
+Date: Thu Aug 20 23:29:16 AEST 2026
+G-ADOPT commit: 7c88d823542349b5dfe272e69a23d79b8aca9c31
+Morrow commit: 689b192257f4e1d4dab5c673542ac05744e76260
+Driver SHA256: f5182d7d32b0293d79ef7050bbc979798d87c378f1525fe27f283ad0b4e5ba41
+Solver SHA256: e0bd373ecafe94f1012ffe8f90d7228000579ab736960ad1a7cf73360802396f
+Firedrake module: singularity:intel-compiler-llvm/2024.2.1:petsc/main-20260815:firedrake/main-20260806
+PETSC_OPTIONS: -log_view :/scratch/xd2/sg8812/morrow2026/parallel_scaling/results/murr_horiz/gamg/h4.profile
+================
+Matplotlib is building the font cache; this may take a moment.
+Matplotlib is building the font cache; this may take a moment.
+Matplotlib is building the font cache; this may take a moment.
+Matplotlib is building the font cache; this may take a moment.
+Matplotlib is building the font cache; this may take a moment.
+Matplotlib is building the font cache; this may take a moment.
+Matplotlib is building the font cache; this may take a moment.
+Matplotlib is building the font cache; this may take a moment.
+Matplotlib is building the font cache; this may take a moment.
+Matplotlib is building the font cache; this may take a moment.
+Matplotlib is building the font cache; this may take a moment.
+Matplotlib is building the font cache; this may take a moment.
+Matplotlib is building the font cache; this may take a moment.
+Matplotlib is building the font cache; this may take a moment.
+Matplotlib is building the font cache; this may take a moment.
+Matplotlib is building the font cache; this may take a moment.
+Matplotlib is building the font cache; this may take a moment.
+Matplotlib is building the font cache; this may take a moment.
+Matplotlib is building the font cache; this may take a moment.
+Matplotlib is building the font cache; this may take a moment.
+Matplotlib is building the font cache; this may take a moment.
+Matplotlib is building the font cache; this may take a moment.
+Matplotlib is building the font cache; this may take a moment.
+Matplotlib is building the font cache; this may take a moment.
+Matplotlib is building the font cache; this may take a moment.
+Matplotlib is building the font cache; this may take a moment.
+Matplotlib is building the font cache; this may take a moment.
+Matplotlib is building the font cache; this may take a moment.
+Matplotlib is building the font cache; this may take a moment.
+Matplotlib is building the font cache; this may take a moment.
+Matplotlib is building the font cache; this may take a moment.
+Matplotlib is building the font cache; this may take a moment.
+Matplotlib is building the font cache; this may take a moment.
+Matplotlib is building the font cache; this may take a moment.
+Matplotlib is building the font cache; this may take a moment.
+Matplotlib is building the font cache; this may take a moment.
+Matplotlib is building the font cache; this may take a moment.
+Matplotlib is building the font cache; this may take a moment.
+Matplotlib is building the font cache; this may take a moment.
+Matplotlib is building the font cache; this may take a moment.
+Matplotlib is building the font cache; this may take a moment.
+Matplotlib is building the font cache; this may take a moment.
+Matplotlib is building the font cache; this may take a moment.
+Matplotlib is building the font cache; this may take a moment.
+Matplotlib is building the font cache; this may take a moment.
+Matplotlib is building the font cache; this may take a moment.
+Matplotlib is building the font cache; this may take a moment.
+Matplotlib is building the font cache; this may take a moment.
+Matplotlib is building the font cache; this may take a moment.
+Matplotlib is building the font cache; this may take a moment.
+Matplotlib is building the font cache; this may take a moment.
+Matplotlib is building the font cache; this may take a moment.
+Matplotlib is building the font cache; this may take a moment.
+Matplotlib is building the font cache; this may take a moment.
+Matplotlib is building the font cache; this may take a moment.
+Matplotlib is building the font cache; this may take a moment.
+Matplotlib is building the font cache; this may take a moment.
+Matplotlib is building the font cache; this may take a moment.
+Matplotlib is building the font cache; this may take a moment.
+Matplotlib is building the font cache; this may take a moment.
+Matplotlib is building the font cache; this may take a moment.
+Matplotlib is building the font cache; this may take a moment.
+Matplotlib is building the font cache; this may take a moment.
+Matplotlib is building the font cache; this may take a moment.
+Matplotlib is building the font cache; this may take a moment.
+Matplotlib is building the font cache; this may take a moment.
+Matplotlib is building the font cache; this may take a moment.
+Matplotlib is building the font cache; this may take a moment.
+Matplotlib is building the font cache; this may take a moment.
+Matplotlib is building the font cache; this may take a moment.
+Matplotlib is building the font cache; this may take a moment.
+Matplotlib is building the font cache; this may take a moment.
+Matplotlib is building the font cache; this may take a moment.
+Matplotlib is building the font cache; this may take a moment.
+Matplotlib is building the font cache; this may take a moment.
+Matplotlib is building the font cache; this may take a moment.
+Matplotlib is building the font cache; this may take a moment.
+Matplotlib is building the font cache; this may take a moment.
+Matplotlib is building the font cache; this may take a moment.
+Matplotlib is building the font cache; this may take a moment.
+Matplotlib is building the font cache; this may take a moment.
+Matplotlib is building the font cache; this may take a moment.
+Matplotlib is building the font cache; this may take a moment.
+Matplotlib is building the font cache; this may take a moment.
+Matplotlib is building the font cache; this may take a moment.
+Matplotlib is building the font cache; this may take a moment.
+Matplotlib is building the font cache; this may take a moment.
+Matplotlib is building the font cache; this may take a moment.
+Matplotlib is building the font cache; this may take a moment.
+Matplotlib is building the font cache; this may take a moment.
+Matplotlib is building the font cache; this may take a moment.
+Matplotlib is building the font cache; this may take a moment.
+Matplotlib is building the font cache; this may take a moment.
+Matplotlib is building the font cache; this may take a moment.
+Matplotlib is building the font cache; this may take a moment.
+Matplotlib is building the font cache; this may take a moment.
+Matplotlib is building the font cache; this may take a moment.
+Matplotlib is building the font cache; this may take a moment.
+Matplotlib is building the font cache; this may take a moment.
+Matplotlib is building the font cache; this may take a moment.
+Matplotlib is building the font cache; this may take a moment.
+Matplotlib is building the font cache; this may take a moment.
+Matplotlib is building the font cache; this may take a moment.
+Matplotlib is building the font cache; this may take a moment.
+Matplotlib is building the font cache; this may take a moment.
+Matplotlib is building the font cache; this may take a moment.
+Matplotlib is building the font cache; this may take a moment.
+Matplotlib is building the font cache; this may take a moment.
+Matplotlib is building the font cache; this may take a moment.
+Matplotlib is building the font cache; this may take a moment.
+Matplotlib is building the font cache; this may take a moment.
+Matplotlib is building the font cache; this may take a moment.
+Matplotlib is building the font cache; this may take a moment.
+Matplotlib is building the font cache; this may take a moment.
+Matplotlib is building the font cache; this may take a moment.
+Matplotlib is building the font cache; this may take a moment.
+Matplotlib is building the font cache; this may take a moment.
+Matplotlib is building the font cache; this may take a moment.
+Matplotlib is building the font cache; this may take a moment.
+Matplotlib is building the font cache; this may take a moment.
+Matplotlib is building the font cache; this may take a moment.
+Matplotlib is building the font cache; this may take a moment.
+Matplotlib is building the font cache; this may take a moment.
+Matplotlib is building the font cache; this may take a moment.
+Matplotlib is building the font cache; this may take a moment.
+Matplotlib is building the font cache; this may take a moment.
+Matplotlib is building the font cache; this may take a moment.
+Matplotlib is building the font cache; this may take a moment.
+Matplotlib is building the font cache; this may take a moment.
+Matplotlib is building the font cache; this may take a moment.
+Matplotlib is building the font cache; this may take a moment.
+Matplotlib is building the font cache; this may take a moment.
+Matplotlib is building the font cache; this may take a moment.
+Matplotlib is building the font cache; this may take a moment.
+Matplotlib is building the font cache; this may take a moment.
+Matplotlib is building the font cache; this may take a moment.
+Matplotlib is building the font cache; this may take a moment.
+Matplotlib is building the font cache; this may take a moment.
+Matplotlib is building the font cache; this may take a moment.
+Matplotlib is building the font cache; this may take a moment.
+Matplotlib is building the font cache; this may take a moment.
+Matplotlib is building the font cache; this may take a moment.
+Matplotlib is building the font cache; this may take a moment.
+Matplotlib is building the font cache; this may take a moment.
+Matplotlib is building the font cache; this may take a moment.
+Matplotlib is building the font cache; this may take a moment.
+Matplotlib is building the font cache; this may take a moment.
+Matplotlib is building the font cache; this may take a moment.
+Matplotlib is building the font cache; this may take a moment.
+Matplotlib is building the font cache; this may take a moment.
+Matplotlib is building the font cache; this may take a moment.
+Matplotlib is building the font cache; this may take a moment.
+Matplotlib is building the font cache; this may take a moment.
+Matplotlib is building the font cache; this may take a moment.
+Matplotlib is building the font cache; this may take a moment.
+Matplotlib is building the font cache; this may take a moment.
+Matplotlib is building the font cache; this may take a moment.
+Matplotlib is building the font cache; this may take a moment.
+Matplotlib is building the font cache; this may take a moment.
+Matplotlib is building the font cache; this may take a moment.
+Matplotlib is building the font cache; this may take a moment.
+Matplotlib is building the font cache; this may take a moment.
+Matplotlib is building the font cache; this may take a moment.
+Matplotlib is building the font cache; this may take a moment.
+Matplotlib is building the font cache; this may take a moment.
+Matplotlib is building the font cache; this may take a moment.
+Matplotlib is building the font cache; this may take a moment.
+Matplotlib is building the font cache; this may take a moment.
+Matplotlib is building the font cache; this may take a moment.
+Matplotlib is building the font cache; this may take a moment.
+Matplotlib is building the font cache; this may take a moment.
+Matplotlib is building the font cache; this may take a moment.
+Matplotlib is building the font cache; this may take a moment.
+Matplotlib is building the font cache; this may take a moment.
+Matplotlib is building the font cache; this may take a moment.
+Matplotlib is building the font cache; this may take a moment.
+Number of degrees of freedom: 161211600
+Horizontal resolution: 880.0 m, Layers: 300, DG1
+Time stepper: BackwardEuler, dt_init = 60.0 s, dt_max = 43200.0 s, growth = 1.5
+Solver: gamg
+Solver parameters: {'ksp_type': 'gmres', 'ksp_rtol': 1e-06, 'ksp_max_it': 200, 'ksp_gmres_restart': 30, 'pc_type': 'gamg', 'pc_gamg_type': 'agg', 'pc_gamg_threshold': 0.02, 'pc_gamg_aggressive_coarsening': 1, 'pc_gamg_coarse_eq_limit': 1000, 'pc_gamg_process_eq_limit': 50, 'pc_gamg_agg_nsmooths': 1, 'pc_gamg_reuse_interpolation': True, 'mg_levels_ksp_type': 'chebyshev', 'mg_levels_ksp_max_it': 2, 'mg_levels_ksp_convergence_test': 'skip', 'mg_levels_pc_type': 'bjacobi', 'mg_levels_sub_pc_type': 'ilu', 'mg_levels_sub_pc_factor_levels': 0, 'mg_coarse_ksp_type': 'gmres', 'mg_coarse_ksp_max_it': 30, 'mg_coarse_pc_type': 'bjacobi', 'mg_coarse_sub_pc_type': 'ilu', 'snes_type': 'newtonls', 'snes_linesearch_type': 'bt', 'snes_rtol': 1e-08, 'snes_atol': 1e-08, 'snes_max_it': 50}
+--------------------------------------------------------------------------
+Primary job  terminated normally, but 1 process returned
+a non-zero exit code. Per user-direction, the job has been aborted.
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+mpiexec noticed that process rank 103 with PID 0 on node gadi-cpu-spr-0609 exited on signal 9 (Killed).
+--------------------------------------------------------------------------
+
+======================================================================================
+                  Resource Usage on 2026-08-20 23:35:30:
+   Job Id:             176848259.gadi-pbs
+   Project:            xd2
+   Exit Status:        137 (Linux Signal 9 SIGKILL Kill, unblockable)
+   Service Units:      86.44
+   NCPUs Requested:    416                 CPU Time Used: 38:35:31        
+   Memory Requested:   1.95TB                Memory Used: 1.84TB          
+   Walltime Requested: 06:00:00            Walltime Used: 00:06:14        
+   JobFS Requested:    400.0GB                JobFS Used: 503.8MB         
+======================================================================================

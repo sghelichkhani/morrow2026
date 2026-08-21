@@ -1,0 +1,287 @@
+=== Job info ===
+Case: cockett
+Solver: qn_gmg
+Scale: sweep
+Nodes: 1
+CPUs: 48
+Date: Wed Apr 15 10:54:25 AEST 2026
+================
+Number of degrees of freedom: 17971200
+Mesh: 120x120x156, DQ1
+Time stepper: BackwardEuler, dt = 300.0 s, steps = 30
+Solver: qn_gmg
+Solver parameters: {'snes_type': 'qn', 'snes_rtol': 1e-08, 'snes_atol': 1e-08, 'snes_max_it': 50, 'snes_qn_type': 'lbfgs', 'snes_qn_m': 10, 'snes_qn_restart_type': 'powell', 'snes_qn_powell_gamma': 0.9999, 'snes_qn_scale_type': 'jacobian', 'snes_linesearch_type': 'cp', 'snes_linesearch_order': 3, 'ksp_type': 'fgmres', 'ksp_rtol': 1e-06, 'ksp_max_it': 200, 'ksp_gmres_restart': 30, 'pc_type': 'mg', 'pc_mg_cycle_type': 'v', 'mg_levels_ksp_type': 'chebyshev', 'mg_levels_ksp_max_it': 1, 'mg_levels_ksp_convergence_test': 'skip', 'mg_levels_pc_type': 'bjacobi', 'mg_levels_sub_pc_type': 'ilu', 'mg_levels_sub_pc_factor_levels': 0, 'mg_coarse_ksp_type': 'gmres', 'mg_coarse_ksp_max_it': 30, 'mg_coarse_pc_type': 'bjacobi', 'mg_coarse_sub_pc_type': 'ilu'}
+  0 SNES Function norm 3.471807577015e-06
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 28
+  1 SNES Function norm 2.302550676063e-07
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 28
+  2 SNES Function norm 3.920122859390e-08
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 27
+  3 SNES Function norm 6.105675208541e-09
+  Nonlinear BackwardEuler-Equation_ solve converged due to CONVERGED_FNORM_ABS iterations 3
+t = 300.00 s | step 1/30 | wall 124.42 s | NL 3 | L 0
+  0 SNES Function norm 1.965045532819e-06
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 27
+  1 SNES Function norm 1.959737785345e-06
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 27
+  2 SNES Function norm 1.855626170682e-06
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 26
+  3 SNES Function norm 1.135446592128e-07
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 26
+  4 SNES Function norm 7.203762916731e-08
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 26
+  5 SNES Function norm 1.249240004856e-08
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 26
+  6 SNES Function norm 4.907821401361e-09
+  Nonlinear BackwardEuler-Equation_ solve converged due to CONVERGED_FNORM_ABS iterations 6
+t = 600.00 s | step 2/30 | wall 93.47 s | NL 6 | L 0
+  0 SNES Function norm 1.684856690978e-06
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 27
+  1 SNES Function norm 9.783251462384e-07
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 27
+  2 SNES Function norm 4.613713389022e-08
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 26
+  3 SNES Function norm 7.006483210930e-09
+  Nonlinear BackwardEuler-Equation_ solve converged due to CONVERGED_FNORM_ABS iterations 3
+t = 900.00 s | step 3/30 | wall 49.97 s | NL 3 | L 0
+  0 SNES Function norm 1.540211599998e-06
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 27
+  1 SNES Function norm 1.595968190747e-06
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 27
+  2 SNES Function norm 1.569710684335e-06
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 27
+  3 SNES Function norm 9.442188514301e-07
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 27
+  4 SNES Function norm 9.574238545839e-09
+  Nonlinear BackwardEuler-Equation_ solve converged due to CONVERGED_FNORM_ABS iterations 4
+t = 1200.00 s | step 4/30 | wall 70.39 s | NL 4 | L 0
+  0 SNES Function norm 1.446788752261e-06
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 28
+  1 SNES Function norm 3.165348662081e-04
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 22
+  2 SNES Function norm 4.117245450808e-06
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 22
+  3 SNES Function norm 1.554089727832e-06
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 22
+  4 SNES Function norm 1.583985151622e-06
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 22
+  5 SNES Function norm 1.980801632574e-05
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 23
+  6 SNES Function norm 5.332932490942e-06
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 20
+  7 SNES Function norm 2.460229546134e-06
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 23
+  8 SNES Function norm 2.865788579032e-07
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 20
+  9 SNES Function norm 6.665631881283e-08
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 19
+ 10 SNES Function norm 2.751485817773e-08
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 18
+ 11 SNES Function norm 1.159189081540e-08
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 17
+ 12 SNES Function norm 3.206498929282e-09
+  Nonlinear BackwardEuler-Equation_ solve converged due to CONVERGED_FNORM_ABS iterations 12
+t = 1500.00 s | step 5/30 | wall 156.72 s | NL 12 | L 0
+  0 SNES Function norm 1.379313870956e-06
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 23
+  1 SNES Function norm 1.862193879877e-06
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 24
+  2 SNES Function norm 3.398562954863e-08
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 24
+  3 SNES Function norm 3.325962823261e-08
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 26
+  4 SNES Function norm 5.153999758141e-10
+  Nonlinear BackwardEuler-Equation_ solve converged due to CONVERGED_FNORM_ABS iterations 4
+t = 1800.00 s | step 6/30 | wall 60.11 s | NL 4 | L 0
+  0 SNES Function norm 1.327499501562e-06
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 24
+  1 SNES Function norm 1.430113783633e-06
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 24
+  2 SNES Function norm 1.422093541712e-06
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 23
+  3 SNES Function norm 8.592489735154e-08
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 23
+  4 SNES Function norm 2.844539542675e-08
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 23
+  5 SNES Function norm 2.114186895409e-09
+  Nonlinear BackwardEuler-Equation_ solve converged due to CONVERGED_FNORM_ABS iterations 5
+t = 2100.00 s | step 7/30 | wall 71.74 s | NL 5 | L 0
+  0 SNES Function norm 1.286017032891e-06
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 23
+  1 SNES Function norm 1.283907620112e-06
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 23
+  2 SNES Function norm 4.493588255480e-07
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 26
+  3 SNES Function norm 2.105624197046e-08
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 24
+  4 SNES Function norm 3.441909199408e-09
+  Nonlinear BackwardEuler-Equation_ solve converged due to CONVERGED_FNORM_ABS iterations 4
+t = 2400.00 s | step 8/30 | wall 59.62 s | NL 4 | L 0
+  0 SNES Function norm 1.251841552136e-06
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 24
+  1 SNES Function norm 1.250392325279e-06
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 24
+  2 SNES Function norm 1.428586697617e-06
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 24
+  3 SNES Function norm 6.475261241124e-08
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 27
+  4 SNES Function norm 2.597941411536e-09
+  Nonlinear BackwardEuler-Equation_ solve converged due to CONVERGED_FNORM_ABS iterations 4
+t = 2700.00 s | step 9/30 | wall 61.10 s | NL 4 | L 0
+  0 SNES Function norm 1.223088537735e-06
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 27
+  1 SNES Function norm 1.216643270638e-06
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 27
+  2 SNES Function norm 6.810148947131e-07
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 27
+  3 SNES Function norm 2.600718574160e-08
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 26
+  4 SNES Function norm 5.715501750481e-09
+  Nonlinear BackwardEuler-Equation_ solve converged due to CONVERGED_FNORM_ABS iterations 4
+t = 3000.00 s | step 10/30 | wall 65.16 s | NL 4 | L 0
+  0 SNES Function norm 1.198458309766e-06
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 27
+  1 SNES Function norm 1.187913264934e-06
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 27
+  2 SNES Function norm 2.708727553241e-08
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 27
+  3 SNES Function norm 8.924688225315e-09
+  Nonlinear BackwardEuler-Equation_ solve converged due to CONVERGED_FNORM_ABS iterations 3
+t = 3300.00 s | step 11/30 | wall 50.59 s | NL 3 | L 0
+  0 SNES Function norm 1.177199637132e-06
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 26
+  1 SNES Function norm 1.558390101038e-06
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 28
+  2 SNES Function norm 1.177385883020e-06
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 25
+  3 SNES Function norm 1.177044234879e-06
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 26
+  4 SNES Function norm 1.383433322514e-06
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 28
+  5 SNES Function norm 2.596324853729e-08
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 26
+  6 SNES Function norm 1.567946385281e-09
+  Nonlinear BackwardEuler-Equation_ solve converged due to CONVERGED_FNORM_ABS iterations 6
+t = 3600.00 s | step 12/30 | wall 99.09 s | NL 6 | L 0
+  0 SNES Function norm 1.158505674345e-06
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 27
+  1 SNES Function norm 4.171775626731e-06
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 24
+  2 SNES Function norm 1.159372982467e-06
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 25
+  3 SNES Function norm 1.159186102995e-06
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 24
+  4 SNES Function norm 5.065815055725e-06
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 26
+  5 SNES Function norm 5.839040401255e-07
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 22
+  6 SNES Function norm 1.132319791353e-07
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 24
+  7 SNES Function norm 2.086179824708e-09
+  Nonlinear BackwardEuler-Equation_ solve converged due to CONVERGED_FNORM_ABS iterations 7
+t = 3900.00 s | step 13/30 | wall 106.84 s | NL 7 | L 0
+  0 SNES Function norm 1.142037766943e-06
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 27
+  1 SNES Function norm 4.128374645208e-04
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 24
+  2 SNES Function norm 1.142847609855e-06
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 24
+  3 SNES Function norm 1.143647370786e-06
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 28
+  4 SNES Function norm 6.714309580203e-09
+  Nonlinear BackwardEuler-Equation_ solve converged due to CONVERGED_FNORM_ABS iterations 4
+t = 4200.00 s | step 14/30 | wall 67.84 s | NL 4 | L 0
+  0 SNES Function norm 1.127089030347e-06
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 28
+  1 SNES Function norm 6.333615751185e-09
+  Nonlinear BackwardEuler-Equation_ solve converged due to CONVERGED_FNORM_ABS iterations 1
+t = 4500.00 s | step 15/30 | wall 20.86 s | NL 1 | L 0
+  0 SNES Function norm 1.113798206025e-06
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 28
+  1 SNES Function norm 6.078866813524e-09
+  Nonlinear BackwardEuler-Equation_ solve converged due to CONVERGED_FNORM_ABS iterations 1
+t = 4800.00 s | step 16/30 | wall 20.88 s | NL 1 | L 0
+  0 SNES Function norm 1.101893205223e-06
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 28
+  1 SNES Function norm 5.864496682373e-09
+  Nonlinear BackwardEuler-Equation_ solve converged due to CONVERGED_FNORM_ABS iterations 1
+t = 5100.00 s | step 17/30 | wall 20.89 s | NL 1 | L 0
+  0 SNES Function norm 1.091168482548e-06
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 29
+  1 SNES Function norm 5.681224223579e-09
+  Nonlinear BackwardEuler-Equation_ solve converged due to CONVERGED_FNORM_ABS iterations 1
+t = 5400.00 s | step 18/30 | wall 21.43 s | NL 1 | L 0
+  0 SNES Function norm 1.081461243833e-06
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 28
+  1 SNES Function norm 5.522759842890e-09
+  Nonlinear BackwardEuler-Equation_ solve converged due to CONVERGED_FNORM_ABS iterations 1
+t = 5700.00 s | step 19/30 | wall 20.91 s | NL 1 | L 0
+  0 SNES Function norm 1.072639721145e-06
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 28
+  1 SNES Function norm 5.384551780290e-09
+  Nonlinear BackwardEuler-Equation_ solve converged due to CONVERGED_FNORM_ABS iterations 1
+t = 6000.00 s | step 20/30 | wall 20.92 s | NL 1 | L 0
+  0 SNES Function norm 1.064595499611e-06
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 29
+  1 SNES Function norm 5.263164868192e-09
+  Nonlinear BackwardEuler-Equation_ solve converged due to CONVERGED_FNORM_ABS iterations 1
+t = 6300.00 s | step 21/30 | wall 21.42 s | NL 1 | L 0
+  0 SNES Function norm 1.057238189262e-06
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 29
+  1 SNES Function norm 5.155934108114e-09
+  Nonlinear BackwardEuler-Equation_ solve converged due to CONVERGED_FNORM_ABS iterations 1
+t = 6600.00 s | step 22/30 | wall 21.43 s | NL 1 | L 0
+  0 SNES Function norm 1.050491598072e-06
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 29
+  1 SNES Function norm 5.060738634953e-09
+  Nonlinear BackwardEuler-Equation_ solve converged due to CONVERGED_FNORM_ABS iterations 1
+t = 6900.00 s | step 23/30 | wall 21.45 s | NL 1 | L 0
+  0 SNES Function norm 1.044290911677e-06
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 29
+  1 SNES Function norm 4.975879328577e-09
+  Nonlinear BackwardEuler-Equation_ solve converged due to CONVERGED_FNORM_ABS iterations 1
+t = 7200.00 s | step 24/30 | wall 21.42 s | NL 1 | L 0
+  0 SNES Function norm 1.038580565674e-06
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 29
+  1 SNES Function norm 4.899979597829e-09
+  Nonlinear BackwardEuler-Equation_ solve converged due to CONVERGED_FNORM_ABS iterations 1
+t = 7500.00 s | step 25/30 | wall 21.43 s | NL 1 | L 0
+  0 SNES Function norm 1.033312608617e-06
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 29
+  1 SNES Function norm 4.831913578562e-09
+  Nonlinear BackwardEuler-Equation_ solve converged due to CONVERGED_FNORM_ABS iterations 1
+t = 7800.00 s | step 26/30 | wall 21.44 s | NL 1 | L 0
+  0 SNES Function norm 1.028445419391e-06
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 29
+  1 SNES Function norm 4.770752362623e-09
+  Nonlinear BackwardEuler-Equation_ solve converged due to CONVERGED_FNORM_ABS iterations 1
+t = 8100.00 s | step 27/30 | wall 21.44 s | NL 1 | L 0
+  0 SNES Function norm 1.023942685695e-06
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 29
+  1 SNES Function norm 4.715723832005e-09
+  Nonlinear BackwardEuler-Equation_ solve converged due to CONVERGED_FNORM_ABS iterations 1
+t = 8400.00 s | step 28/30 | wall 21.40 s | NL 1 | L 0
+  0 SNES Function norm 1.019772578710e-06
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 29
+  1 SNES Function norm 4.666180591325e-09
+  Nonlinear BackwardEuler-Equation_ solve converged due to CONVERGED_FNORM_ABS iterations 1
+t = 8700.00 s | step 29/30 | wall 21.47 s | NL 1 | L 0
+  0 SNES Function norm 1.015907078090e-06
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 29
+  1 SNES Function norm 4.621572657751e-09
+  Nonlinear BackwardEuler-Equation_ solve converged due to CONVERGED_FNORM_ABS iterations 1
+t = 9000.00 s | step 30/30 | wall 21.41 s | NL 1 | L 0
+Done | total NL 85 | total L 0 | mean wall/step 49.24 s | peak RSS 1858 MB
+=== Job completed: Wed Apr 15 11:19:46 AEST 2026 ===
+
+======================================================================================
+                  Resource Usage on 2026-04-15 11:19:49:
+   Job Id:             165687792.gadi-pbs
+   Project:            xd2
+   Exit Status:        0
+   Service Units:      84.61
+   NCPUs Requested:    48                  CPU Time Used: 20:06:17        
+   Memory Requested:   500.0GB               Memory Used: 85.68GB         
+   Walltime Requested: 03:00:00            Walltime Used: 00:25:23        
+   JobFS Requested:    400.0GB                JobFS Used: 88.38MB         
+======================================================================================

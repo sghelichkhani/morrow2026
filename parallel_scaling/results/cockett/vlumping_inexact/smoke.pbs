@@ -1,0 +1,43 @@
+#!/bin/bash
+#PBS -N rs-cock-vlumping_inexact-smoke
+#PBS -P xd2
+#PBS -q normalsr
+#PBS -l walltime=03:00:00
+#PBS -l mem=500GB
+#PBS -l ncpus=104
+#PBS -l jobfs=400GB
+#PBS -l storage=scratch/xd2+gdata/xd2+gdata/fp50
+#PBS -l wd
+#PBS -W umask=0022
+#PBS -o /scratch/xd2/sg8812/morrow2026/parallel_scaling/results/cockett/vlumping_inexact/smoke.out
+#PBS -e /scratch/xd2/sg8812/morrow2026/parallel_scaling/results/cockett/vlumping_inexact/smoke.err
+
+source /etc/profile
+module use /g/data/fp50/modules
+module load firedrake/main-20260716
+
+export PYTHONPATH="/scratch/xd2/sg8812/g-adopt-worktrees/sghelichkhani/richardson":"/scratch/xd2/sg8812/gwassess":"/scratch/xd2/sg8812/omega":${PYTHONPATH}
+export PYTHONDONTWRITEBYTECODE=1
+
+export OMPI_MCA_io="ompio"
+export OMP_NUM_THREADS=1
+export MPLCONFIGDIR=$PBS_JOBFS/matplotlib
+# Note: -log_view / -memory_view require PETSc init-time support that
+# Firedrake/petsc4py does not provide. Per-step timing and RSS are
+# tracked in Python; snes_view dumps the full solver hierarchy.
+
+cd /scratch/xd2/sg8812/morrow2026/parallel_scaling
+
+echo "=== Job info ==="
+echo "Case: cockett"
+echo "Solver: vlumping_inexact"
+echo "Scale: smoke"
+echo "Degree: 1"
+echo "Nodes: 1"
+echo "CPUs: 104"
+echo "Date: $(date)"
+echo "================"
+
+mpiexec -np $PBS_NCPUS python /scratch/xd2/sg8812/morrow2026/parallel_scaling/cockett_3d.py --nx 64 --nz 78 --degree 1 --steps 10 --solver vlumping_inexact --refinement-levels 0 2>&1
+
+echo "=== Job completed: $(date) ==="

@@ -1,0 +1,49 @@
+=== Job info ===
+Case: cockett
+Solver: gamg_lipnikov
+Scale: sweep
+Nodes: 1
+CPUs: 48
+Date: Wed Apr 15 10:54:24 AEST 2026
+================
+Number of degrees of freedom: 17971200
+Mesh: 120x120x156, DQ1
+Time stepper: BackwardEuler, dt = 300.0 s, steps = 30
+Solver: gamg_lipnikov
+Solver parameters: {'ksp_type': 'gmres', 'ksp_rtol': 1e-06, 'ksp_max_it': 200, 'ksp_gmres_restart': 30, 'pc_type': 'python', 'pc_python_type': 'gadopt.RichardsLipnikovPC', 'aux_pc_type': 'gamg', 'aux_pc_gamg_type': 'agg', 'aux_pc_gamg_threshold': 0.02, 'aux_pc_gamg_aggressive_coarsening': 1, 'aux_pc_gamg_agg_nsmooths': 1, 'aux_pc_gamg_coarse_eq_limit': 1000, 'aux_pc_gamg_reuse_interpolation': True, 'aux_pc_gamg_graph_symmetrize': True, 'aux_mg_levels_ksp_type': 'chebyshev', 'aux_mg_levels_ksp_max_it': 2, 'aux_mg_levels_ksp_convergence_test': 'skip', 'aux_mg_levels_pc_type': 'bjacobi', 'aux_mg_levels_sub_pc_type': 'ilu', 'aux_mg_levels_sub_pc_factor_levels': 0, 'aux_mg_coarse_ksp_type': 'gmres', 'aux_mg_coarse_ksp_max_it': 30, 'aux_mg_coarse_pc_type': 'bjacobi', 'aux_mg_coarse_sub_pc_type': 'ilu', 'snes_type': 'newtonls', 'snes_linesearch_type': 'bt', 'snes_rtol': 1e-08, 'snes_atol': 1e-08, 'snes_max_it': 50}
+Solver kwargs: {'pmat': 'lipnikov'}
+  0 SNES Function norm 3.471807577015e-06
+tsfc:WARNING Estimated quadrature degree 121 more than tenfold greater than any argument/coefficient degree (max (1, 1))
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 67
+  1 SNES Function norm 3.219803681229e-07
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 96
+  2 SNES Function norm 4.403956779214e-09
+  Nonlinear BackwardEuler-Equation_ solve converged due to CONVERGED_FNORM_ABS iterations 2
+t = 300.00 s | step 1/30 | wall 3303.69 s | NL 2 | L 163
+  0 SNES Function norm 1.964792461791e-06
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 65
+  1 SNES Function norm 7.475882376738e-08
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 73
+  2 SNES Function norm 2.000762324461e-10
+  Nonlinear BackwardEuler-Equation_ solve converged due to CONVERGED_FNORM_ABS iterations 2
+t = 600.00 s | step 2/30 | wall 3202.27 s | NL 2 | L 138
+  0 SNES Function norm 1.684842423948e-06
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 59
+  1 SNES Function norm 4.775247972326e-08
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 71
+  2 SNES Function norm 1.824369220446e-10
+  Nonlinear BackwardEuler-Equation_ solve converged due to CONVERGED_FNORM_ABS iterations 2
+t = 900.00 s | step 3/30 | wall 3194.41 s | NL 2 | L 130
+  0 SNES Function norm 1.540384862009e-06
+
+======================================================================================
+                  Resource Usage on 2026-04-15 13:55:36:
+   Job Id:             165687789.gadi-pbs
+   Project:            xd2
+   Exit Status:        -29 (Job failed due to exceeding walltime)
+   Service Units:      603.83
+   NCPUs Requested:    48                  CPU Time Used: 144:35:32       
+   Memory Requested:   500.0GB               Memory Used: 140.51GB        
+   Walltime Requested: 03:00:00            Walltime Used: 03:01:09        
+   JobFS Requested:    400.0GB                JobFS Used: 80.94MB         
+======================================================================================
