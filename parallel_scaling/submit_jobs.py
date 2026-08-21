@@ -19,6 +19,7 @@ Usage:
 
 import argparse
 import subprocess
+from datetime import datetime, timezone
 from pathlib import Path
 
 # Solvers that require a mesh hierarchy for geometric multigrid.
@@ -28,7 +29,12 @@ from pathlib import Path
 # safety floor on any of the current cases, so we start at the minimum
 # that exercises the algorithm.
 GMG3_SOLVERS = {"gmg", "ngmres_gmg", "qn_gmg"}
-HMG1_SOLVERS = {"vlumping_hmg"}
+HMG1_SOLVERS = {
+    "vlumping_hmg",
+    "vlumping_hmg_lag3",
+    "vlumping_hmg_bjacilu",
+    "vlumping_hmg_bjacilu_lag3",
+}
 GMG_SOLVERS = GMG3_SOLVERS | HMG1_SOLVERS
 
 ALL_SOLVERS = [
@@ -40,15 +46,13 @@ ALL_SOLVERS = [
     "vlumping_sor", "vlumping_inexact",
 ]
 
-# Paper-shown solver set (2026-07 upwind-fix rerun). Only the presets that
-# appear in the manuscript figures/tables are rerun: the two single-level
-# baselines (SOR, BJacobi), horizontal-only geometric MG (GMG-H = `gmg`),
-# the tuned Hypre BoomerAMG, and the two vertically lumped presets
-# (VLumping = `vlumping_inexact`, VLumping-HMG = `vlumping_hmg`). The
-# ablation variants (vlumping_1sweep/_4sweep/_richardson/_sor/_linesmooth,
-# gamg, ngmres_gmg, plain `vlumping`) are noted in the text but not rerun.
+# Paper-shown solver set. This includes each solver displayed in the outcome
+# table, even when the solver is omitted from a scaling figure. The ablation
+# variants (vlumping_1sweep/_4sweep/_richardson/_sor/_linesmooth,
+# ngmres_gmg, and plain `vlumping`) are not displayed in the paper.
 PAPER_SOLVERS = [
-    "sor", "bjacobi", "gmg", "boomeramg", "vlumping_inexact", "vlumping_hmg",
+    "sor", "bjacobi", "gamg", "gmg", "boomeramg",
+    "vlumping_inexact", "vlumping_hmg",
 ]
 
 # Round 3 Cockett comparison, restricted to the paper-shown set.
@@ -76,9 +80,21 @@ ROUND3_MURR_SOLVERS = list(PAPER_SOLVERS)
 # GAMG, BJacobi; we add VLumping and BoomerAMG.
 ROUND3_MURR_HORIZ_SOLVERS = list(PAPER_SOLVERS)
 
+# Matched setup-lag and fine-smoother experiment. The two unchanged presets
+# are rerun as controls with the same source and Firedrake installation.
+REVIEWER_SOLVERS = [
+    "vlumping_inexact",
+    "vlumping_inexact_lag3",
+    "vlumping_hmg",
+    "vlumping_hmg_lag3",
+    "vlumping_hmg_bjacilu",
+    "vlumping_hmg_bjacilu_lag3",
+]
+
 # Gadi PBS configuration
 PBS_PROJECT = "xd2"
 PBS_QUEUE = "normalsr"
+QSUB = "/opt/pbs/default/bin/qsub"
 CPUS_PER_NODE = 104  # Sapphire Rapids nodes on normalsr queue
 CPUS_SINGLE_NODE = 104  # Full Sapphire Rapids node (was 48 for Cascade Lake)
 # gdata/xd2 (on the gdata1b filesystem) dropped: the drivers read the repo +
@@ -204,7 +220,8 @@ def murr_horiz_cases():
     }
 
 
-def generate_pbs_script(case, solver, scale, output_dir, degree=1):
+def generate_pbs_script(case, solver, scale, output_dir, degree=1,
+                        profile=False):
     """Generate a PBS job script for a given case/solver/scale.
 
     ``degree`` is the DG polynomial degree (Cockett only). When it is
@@ -310,8 +327,11 @@ def generate_pbs_script(case, solver, scale, output_dir, degree=1):
     # longer walltime ceiling than the DQ1 sweep.
     tag = scale if degree == 1 else f"{scale}_dq{degree}"
 
+    if profile:
+        run_cmd += " --profile"
+
     job_name = f"rs-{case[:4]}-{solver}-{tag}"
-    if case in ("murrumbidgee", "murr_horiz"):
+    if case in ("murrumbidgee", "murr_horiz", "murr_strong"):
         walltime = "06:00:00"
     elif case == "cockett" and degree > 1:
         walltime = "06:00:00"
@@ -322,6 +342,15 @@ def generate_pbs_script(case, solver, scale, output_dir, degree=1):
     result_dir.mkdir(parents=True, exist_ok=True)
     output_file = result_dir / f"{tag}.out"
     error_file = result_dir / f"{tag}.err"
+    profile_file = result_dir / f"{tag}.profile"
+    petsc_options_value = f"-log_view :{profile_file}"
+    if solver.startswith("vlumping"):
+        petsc_options_value += " -BackwardEuler-Equation_lumped_pc_mg_log"
+    petsc_options = (
+        f'export PETSC_OPTIONS="{petsc_options_value}"'
+        if profile else ""
+    )
+    profile_check = f"test -s {profile_file}" if profile else ""
 
     script = f"""#!/bin/bash
 #PBS -N {job_name}
@@ -338,18 +367,18 @@ def generate_pbs_script(case, solver, scale, output_dir, degree=1):
 #PBS -e {error_file}
 
 source /etc/profile
+set -e
 module use /g/data/fp50/modules
-module load firedrake/main-20260716
+module load firedrake/main-20260806
 
 export PYTHONPATH="{GADOPT_PATH}":"{GWASSESS_PATH}":"{OMEGA_PATH}":${{PYTHONPATH}}
 export PYTHONDONTWRITEBYTECODE=1
 
 export OMPI_MCA_io="ompio"
 export OMP_NUM_THREADS=1
+export NCI_PROJECT={PBS_PROJECT}
 export MPLCONFIGDIR=$PBS_JOBFS/matplotlib
-# Note: -log_view / -memory_view require PETSc init-time support that
-# Firedrake/petsc4py does not provide. Per-step timing and RSS are
-# tracked in Python; snes_view dumps the full solver hierarchy.
+{petsc_options}
 
 cd {SCALING_DIR}
 
@@ -361,9 +390,17 @@ echo "Degree: {degree}"
 echo "Nodes: {params['nodes']}"
 echo "CPUs: {ncpus}"
 echo "Date: $(date)"
+echo "G-ADOPT commit: $(git -C {GADOPT_PATH} rev-parse HEAD)"
+echo "Morrow commit: $(git -C {MORROW_REPO} rev-parse HEAD)"
+echo "Driver SHA256: $(sha256sum {SCALING_DIR}/{case.split('_')[0] if case == 'cockett' else 'murrumbidgee'}_3d.py | cut -d' ' -f1)"
+echo "Solver SHA256: $(sha256sum {SCALING_DIR}/solvers/{solver}.py | cut -d' ' -f1)"
+echo "Firedrake module: $LOADEDMODULES"
+echo "PETSC_OPTIONS: $PETSC_OPTIONS"
 echo "================"
 
 {run_cmd} 2>&1
+
+{profile_check}
 
 echo "=== Job completed: $(date) ==="
 """
@@ -371,6 +408,24 @@ echo "=== Job completed: $(date) ==="
     script_path = result_dir / f"{tag}.pbs"
     script_path.write_text(script)
     return script_path
+
+
+def archive_existing_outputs(case, solver, scale, output_dir, degree,
+                             timestamp):
+    """Move an existing result set before PBS appends a replacement run."""
+    tag = scale if degree == 1 else f"{scale}_dq{degree}"
+    result_dir = output_dir / case / solver
+    archive_dir = result_dir / "previous" / timestamp
+    moved = []
+    for suffix in ("out", "err", "profile", "pbs"):
+        source = result_dir / f"{tag}.{suffix}"
+        if not source.exists():
+            continue
+        archive_dir.mkdir(parents=True, exist_ok=True)
+        destination = archive_dir / source.name
+        source.replace(destination)
+        moved.append(destination)
+    return moved
 
 
 def get_phase_runs(phase):
@@ -396,13 +451,13 @@ def get_phase_runs(phase):
                     runs.append((case, solver, scale))
 
     elif phase == "round3":
-        # Round 3 Cockett comparison: 11 solvers at all 3 scales
+        # Paper Cockett comparison and outcome table at all three scales.
         for solver in ROUND3_SOLVERS:
             for scale in ["sweep", "medium", "large"]:
                 runs.append(("cockett", solver, scale))
 
     elif phase == "round3_smoke":
-        # Round 3 smoke test: 11 solvers at smoke scale only
+        # Paper Cockett solvers at the smoke scale.
         for solver in ROUND3_SOLVERS:
             runs.append(("cockett", solver, "smoke"))
 
@@ -419,24 +474,24 @@ def get_phase_runs(phase):
             runs.append(("cockett", solver, "smoke", 2))
 
     elif phase == "round3_murr":
-        # Murrumbidgee vertical weak scaling: 4 solvers at all 4 scales
+        # Paper Murrumbidgee vertical results at all four scales.
         for solver in ROUND3_MURR_SOLVERS:
             for scale in ["smoke", "sweep", "medium", "large"]:
                 runs.append(("murrumbidgee", solver, scale))
 
     elif phase == "round3_murr_smoke":
-        # Murrumbidgee smoke test: 4 solvers at smoke scale (1 node, 150 layers)
+        # Paper Murrumbidgee solvers at one node and 150 layers.
         for solver in ROUND3_MURR_SOLVERS:
             runs.append(("murrumbidgee", solver, "smoke"))
 
     elif phase == "round3_murr_horiz":
-        # Paper's horizontal weak scaling: 6 solvers at all 4 scales
+        # Paper horizontal weak-scaling results at all four scales.
         for solver in ROUND3_MURR_HORIZ_SOLVERS:
             for scale in ["h1", "h2", "h4", "h8"]:
                 runs.append(("murr_horiz", solver, scale))
 
     elif phase == "round3_murr_horiz_smoke":
-        # Horizontal scaling smoke test: 6 solvers at h1 (1 node, 1775m)
+        # Paper horizontal solvers at one node and 1775 m resolution.
         for solver in ROUND3_MURR_HORIZ_SOLVERS:
             runs.append(("murr_horiz", solver, "h1"))
 
@@ -463,6 +518,39 @@ def get_phase_runs(phase):
             for scale in ("L1", "L2", "L3", "L4"):
                 runs.append(("murr_hierarchy", solver, scale))
 
+    elif phase == "paper_profiles":
+        # Exact union of the runs displayed in the manuscript figures and
+        # tables. L4 is retained in the experimental record but is not shown
+        # in the hierarchy-depth table.
+        for solver in PAPER_SOLVERS:
+            for scale in ("sweep", "medium", "large"):
+                runs.append(("cockett", solver, scale))
+            for scale in ("smoke", "sweep", "medium", "large"):
+                runs.append(("murrumbidgee", solver, scale))
+            for scale in ("h1", "h2", "h4", "h8"):
+                runs.append(("murr_horiz", solver, scale))
+        runs.extend(get_phase_runs("strong"))
+        for solver in ("gmg", "vlumping_hmg"):
+            for scale in ("L1", "L2", "L3"):
+                runs.append(("murr_hierarchy", solver, scale))
+
+    elif phase == "reviewer_smoke":
+        # Exercise each new mechanism on the one-node, 150-layer case.
+        for solver in ("vlumping_inexact_lag3",
+                       "vlumping_hmg_bjacilu_lag3"):
+            runs.append(("murrumbidgee", solver, "smoke"))
+
+    elif phase == "reviewer_h8":
+        # Matched production-scale comparison for setup lag and smoother type.
+        for solver in REVIEWER_SOLVERS:
+            runs.append(("murr_horiz", solver, "h8"))
+
+    elif phase == "reviewer_strong":
+        # Submit selected scales with --solvers after the h8 screen.
+        for solver in REVIEWER_SOLVERS:
+            for scale in ("s16", "s32"):
+                runs.append(("murr_strong", solver, scale))
+
     elif phase == "all":
         # Everything: smoke + sweep + scaling
         for p in ["smoke", "sweep", "scaling"]:
@@ -485,7 +573,8 @@ def main():
                  "round3_dq2", "round3_dq2_smoke",
                  "round3_murr", "round3_murr_smoke",
                  "round3_murr_horiz", "round3_murr_horiz_smoke",
-                 "strong", "hierarchy"],
+                 "strong", "hierarchy", "paper_profiles", "reviewer_smoke",
+                 "reviewer_h8", "reviewer_strong"],
         help="Which set of jobs to generate/submit"
     )
     parser.add_argument(
@@ -502,6 +591,18 @@ def main():
         help="Override solver list (default: all 12)"
     )
     parser.add_argument(
+        "--scales", nargs="+", default=None,
+        help="Keep only the named scales from the selected phase"
+    )
+    parser.add_argument(
+        "--profile", action="store_true",
+        help="Write PETSc -log_view output next to each result"
+    )
+    parser.add_argument(
+        "--missing-profiles-only", action="store_true",
+        help="Skip runs that already have a nonempty profile file"
+    )
+    parser.add_argument(
         "--cases", nargs="+", default=None,
         choices=["cockett", "murrumbidgee", "murr_horiz",
                  "murr_strong", "murr_hierarchy"],
@@ -509,7 +610,7 @@ def main():
     )
     args = parser.parse_args()
 
-    output_dir = Path(args.output_dir)
+    output_dir = Path(args.output_dir).resolve()
     output_dir.mkdir(parents=True, exist_ok=True)
 
     runs = get_phase_runs(args.phase)
@@ -524,16 +625,41 @@ def main():
         runs = [r for r in runs if r[1] in args.solvers]
     if args.cases:
         runs = [r for r in runs if r[0] in args.cases]
+    if args.scales:
+        runs = [r for r in runs if r[2] in args.scales]
+    if args.missing_profiles_only:
+        if not args.profile:
+            parser.error("--missing-profiles-only requires --profile")
+        runs = [
+            r for r in runs
+            if not (
+                output_dir / r[0] / r[1] /
+                (r[2] if r[3] == 1 else f"{r[2]}_dq{r[3]}")
+            ).with_suffix(".profile").is_file()
+            or (
+                output_dir / r[0] / r[1] /
+                (r[2] if r[3] == 1 else f"{r[2]}_dq{r[3]}")
+            ).with_suffix(".profile").stat().st_size == 0
+        ]
 
     print(f"Phase: {args.phase}")
     print(f"Total jobs: {len(runs)}")
     print(f"Output directory: {output_dir}")
     print()
 
+    if not args.dry_run:
+        timestamp = datetime.now(timezone.utc).strftime("%Y%m%dT%H%M%SZ")
+        for case, solver, scale, degree in runs:
+            moved = archive_existing_outputs(
+                case, solver, scale, output_dir, degree, timestamp
+            )
+            for path in moved:
+                print(f"  Archived: {path}")
+
     scripts = []
     for case, solver, scale, degree in runs:
         script_path = generate_pbs_script(case, solver, scale, output_dir,
-                                          degree=degree)
+                                          degree=degree, profile=args.profile)
         scripts.append((case, solver, scale, script_path))
         label = f"{case}/{solver}/{scale}" + (f" DQ{degree}" if degree > 1 else "")
         print(f"  Generated: {script_path.name:40s}  [{label}]")
@@ -546,8 +672,10 @@ def main():
     job_ids = []
     for case, solver, scale, script_path in scripts:
         result = subprocess.run(
-            ["qsub", str(script_path)],
-            capture_output=True, text=True,
+            [QSUB, str(script_path)],
+            stdout=subprocess.PIPE,
+            stderr=subprocess.PIPE,
+            universal_newlines=True,
         )
         if result.returncode == 0:
             job_id = result.stdout.strip()

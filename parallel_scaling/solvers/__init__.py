@@ -30,6 +30,10 @@ Available presets:
     vlumping_inexact    — Inexact Newton (ksp_rtol=1e-4) — shipped as g-adopt's `vlumping`
     vlumping_linesmooth — Vertical-line ASM smoother, LU coarse
     vlumping_hmg        — Line smoother + geometric MG on 2D base hierarchy — shipped as g-adopt's `vlumping_hmg`
+    vlumping_inexact_lag3       — VLumping with preconditioner lag three
+    vlumping_hmg_lag3           — VLumping-HMG with preconditioner lag three
+    vlumping_hmg_bjacilu        — VLumping-HMG with BJacobi-ILU fine smoothing
+    vlumping_hmg_bjacilu_lag3   — BJacobi-ILU HMG with preconditioner lag three
 
 The Pmat strategies `gamg_diffpmat`, `gamg_lipnikov`, and
 `boomeramg_lipnikov` were retired in April 2026. See SOLVER-STUDY.md §7
@@ -48,6 +52,9 @@ _presets = (
     "vlumping_1sweep", "vlumping_4sweep", "vlumping_richardson",
     "vlumping_sor", "vlumping_inexact",
     "vlumping_linesmooth", "vlumping_hmg",
+    # Reviewer follow-up: setup lag and HMG fine-smoother experiment
+    "vlumping_inexact_lag3", "vlumping_hmg_lag3",
+    "vlumping_hmg_bjacilu", "vlumping_hmg_bjacilu_lag3",
 )
 
 
