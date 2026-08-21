@@ -46,28 +46,29 @@ Keep the two in sync. Before the first release:
 ## Cutting a release
 
 1. Make sure the working tree is clean and `main` is pushed.
-2. Tag and push:
+2. Update `version` and `date-released` in `CITATION.cff`.
+3. Tag and push the new version:
 
    ```bash
-   git tag -a v1.0.0 -m "Morrow et al. 2026 reproducibility archive"
-   git push origin v1.0.0
+   git tag -a v1.0.1 -m "Morrow et al. 2026 reproducibility archive v1.0.1"
+   git push origin v1.0.1
    ```
 
-3. Create the GitHub release from that tag — either through the web UI
-   (**Releases → Draft a new release → choose `v1.0.0` → add title and notes →
+4. Create the GitHub release from that tag through the web UI
+   (**Releases → Draft a new release → choose `v1.0.1` → add title and notes →
    Publish**) or with the CLI:
 
    ```bash
-   gh release create v1.0.0 --title "Morrow et al. 2026 reproducibility archive" \
-       --notes "Scripts, presets, parsed records and plotting routines backing the paper."
+   gh release create v1.0.1 \
+       --title "Morrow et al. 2026 reproducibility archive v1.0.1" \
+       --notes "Available PETSc profiles and complete run records, including failed cases and reviewer solver experiments."
    ```
 
-4. Publishing the release fires the Zenodo webhook. Within a minute or two a
-   new entry with a DOI badge appears next to the repository on the Zenodo
-   GitHub settings page.
-5. Open the deposit on Zenodo, confirm the metadata pulled from `.zenodo.json`,
-   fix anything that needs it, and the record publishes — the DOI is live.
-   (Metadata remains editable after publication; the archived files do not.)
+5. Publishing the release sends a webhook to Zenodo.
+6. Open the Zenodo record and check the metadata from `.zenodo.json`.
+7. If the record is a draft, publish the record after the metadata check.
+
+Zenodo keeps the files fixed after publication. You can edit the record metadata after publication.
 
 ## DOIs and versioning
 
@@ -83,9 +84,9 @@ The manuscript's code- and data-availability statement currently points at
 `https://github.com/g-adopt/morrow2026` and notes that it "will be made
 publicly available upon publication." Since the repository lives at
 `https://github.com/sghelichkhani/morrow2026`, update that URL in the paper to
-match. Once the first release is archived, add the Zenodo concept DOI
-(`https://doi.org/10.5281/zenodo.XXXXXXX`), mirroring how G-ADOPT itself is
-cited there (archived at <https://doi.org/10.5281/zenodo.19688884>).
+match. The Zenodo concept DOI is <https://doi.org/10.5281/zenodo.21833121>.
+Use this DOI for the repository in the paper.
+G-ADOPT uses the concept DOI <https://doi.org/10.5281/zenodo.19688884>.
 
 ## DOI badge (optional)
 
