@@ -17,7 +17,6 @@
 
 from .vlumping_inexact_rich import (  # noqa: F401
     VerticallyLumpedPC,
-    OMEGA,
     solver_parameters as _base,
 )
 

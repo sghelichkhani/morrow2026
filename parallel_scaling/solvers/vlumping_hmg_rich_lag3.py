@@ -11,8 +11,6 @@
 
 from .vlumping_hmg_rich import (  # noqa: F401
     VerticallyLumpedHMGPC,
-    OMEGA_FINE,
-    OMEGA_BASE,
     solver_parameters as _base,
 )
 

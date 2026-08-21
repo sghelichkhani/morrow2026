@@ -36,6 +36,7 @@ HMG1_SOLVERS = {
     "vlumping_hmg_bjacilu_lag3",
     "vlumping_hmg_rich",
     "vlumping_hmg_rich_lag3",
+    "vlumping_hmg_snapshot_lag3",
 }
 GMG_SOLVERS = GMG3_SOLVERS | HMG1_SOLVERS
 
@@ -106,6 +107,15 @@ RICH_SOLVERS = [
     "vlumping_inexact_rich_lag3",
     "vlumping_hmg_rich",
     "vlumping_hmg_rich_lag3",
+]
+
+# The conservative half of the same campaign: keep the Chebyshev smoother
+# and lag only the setup. On a dt ramp this wins where the Richardson
+# presets lose, because a spread spectrum is what a polynomial smoother is
+# for. These two are the leading candidates, not the fallback.
+SNAPSHOT_SOLVERS = [
+    "vlumping_inexact_snapshot_lag3",
+    "vlumping_hmg_snapshot_lag3",
 ]
 
 # Gadi PBS configuration
@@ -568,6 +578,25 @@ def get_phase_runs(phase):
         for solver in RICH_SOLVERS:
             runs.append(("murr_horiz", solver, "h8"))
 
+    elif phase == "final_h8":
+        # The complete setup-cost campaign at production scale: the two
+        # presets that keep Chebyshev and lag the setup, and the four that
+        # replace the smoother with a derived Richardson damping.
+        for solver in SNAPSHOT_SOLVERS + RICH_SOLVERS:
+            runs.append(("murr_horiz", solver, "h8"))
+
+    elif phase == "final_smoke":
+        for solver in SNAPSHOT_SOLVERS + RICH_SOLVERS:
+            runs.append(("murr_horiz", solver, "h1"))
+
+    elif phase == "snapshot_h8":
+        for solver in SNAPSHOT_SOLVERS:
+            runs.append(("murr_horiz", solver, "h8"))
+
+    elif phase == "snapshot_smoke":
+        for solver in SNAPSHOT_SOLVERS:
+            runs.append(("murr_horiz", solver, "h1"))
+
     elif phase == "rich_smoke":
         # Exercise each new preset on the one-node, 1775 m horizontal case.
         for solver in RICH_SOLVERS:
@@ -603,7 +632,9 @@ def main():
                  "round3_murr_horiz", "round3_murr_horiz_smoke",
                  "strong", "hierarchy", "paper_profiles", "reviewer_smoke",
                  "reviewer_h8", "reviewer_strong",
-                 "rich_smoke", "rich_h8"],
+                 "rich_smoke", "rich_h8",
+                 "snapshot_smoke", "snapshot_h8",
+                 "final_smoke", "final_h8"],
         help="Which set of jobs to generate/submit"
     )
     parser.add_argument(

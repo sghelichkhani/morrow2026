@@ -38,6 +38,8 @@ Available presets:
     vlumping_inexact_rich_lag3  — as above, plus a snapshot lag of three
     vlumping_hmg_rich           — Richardson smoothers on both HMG hierarchies
     vlumping_hmg_rich_lag3      — as above, plus a snapshot lag of three
+    vlumping_inexact_snapshot_lag3 — Chebyshev kept, snapshot lag of three
+    vlumping_hmg_snapshot_lag3     — HMG with Chebyshev kept, snapshot lag of three
 
 The Pmat strategies `gamg_diffpmat`, `gamg_lipnikov`, and
 `boomeramg_lipnikov` were retired in April 2026. See SOLVER-STUDY.md §7
@@ -62,6 +64,7 @@ _presets = (
     # Setup-cost campaign: Richardson smoothers and the operator snapshot
     "vlumping_inexact_rich", "vlumping_inexact_rich_lag3",
     "vlumping_hmg_rich", "vlumping_hmg_rich_lag3",
+    "vlumping_inexact_snapshot_lag3", "vlumping_hmg_snapshot_lag3",
 )
 
 
