@@ -33,7 +33,14 @@ solver_parameters = {
     # preconditioner. Standard GMRES assumes a fixed preconditioner and
     # can stagnate or diverge when the PC changes between iterations.
     "ksp_type": "fgmres",                     # ← TUNE: try "gmres" if smoother is stationary
-    "ksp_rtol": 1e-6,                          # ← TUNE: loosen to 1e-4 for inexact Newton
+    # Matched across the compared solvers for the 2026-08 fair-comparison
+    # campaign: every preset in the paper's table now uses the same inexact
+    # Newton tolerance and the same SNES block, so a difference in wall time
+    # is a difference in the preconditioner and nothing else. The VLumping
+    # presets have used 1e-4 since Round 3; these baselines used 1e-6, which
+    # bought them fewer Newton steps at the cost of much more expensive
+    # linear solves.
+    "ksp_rtol": 1e-4,
     "ksp_max_it": 200,                         # safety cap
     "ksp_gmres_restart": 30,                   # restart length for (F)GMRES
 
@@ -65,7 +72,8 @@ solver_parameters = {
     "snes_type": "newtonls",
     "snes_linesearch_type": "bt",              # backtracking line search
     "snes_rtol": 1e-8,
-    "snes_atol": 1e-8,
+    "snes_atol": 1e-12,
+    "snes_stol": 1e-8,
     "snes_max_it": 50,
 
     # === Diagnostics (uncomment as needed) ===

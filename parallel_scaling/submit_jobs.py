@@ -113,6 +113,19 @@ RICH_SOLVERS = [
 # and lag only the setup. On a dt ramp this wins where the Richardson
 # presets lose, because a spread spectrum is what a polynomial smoother is
 # for. These two are the leading candidates, not the fallback.
+# Everything compared in the 2026-08 fair-comparison campaign: the paper's
+# table plus the setup-cost presets. sor, gamg and boomeramg failed at the
+# largest basin scales on the previous mesh and tolerance; they are included
+# so the outcome table rests on one mesh throughout rather than quoting a
+# failure measured under different conditions.
+FAIR_SOLVERS = [
+    "sor", "bjacobi", "gamg", "gmg", "boomeramg",
+    "vlumping_inexact", "vlumping_hmg",
+    "vlumping_inexact_snapshot_lag3", "vlumping_hmg_snapshot_lag3",
+    "vlumping_inexact_rich", "vlumping_inexact_rich_lag3",
+    "vlumping_hmg_rich", "vlumping_hmg_rich_lag3",
+]
+
 SNAPSHOT_SOLVERS = [
     "vlumping_inexact_snapshot_lag3",
     "vlumping_hmg_snapshot_lag3",
@@ -151,6 +164,24 @@ def refinement_levels(solver_name):
     if solver_name in HMG1_SOLVERS:
         return 1
     return 0
+
+
+# One mesh per basin scale, for every solver.
+#
+# On the unstructured basin meshes the refinement level decides the mesh as
+# well as the depth of the multigrid, because the fine mesh is built by
+# refining a coarser triangulation. Solvers that asked for different depths
+# were therefore solving different discrete problems: at the vertical
+# "large" scale, bjacobi had 160,322,400 unknowns, vlumping_hmg 165,139,200
+# and gmg 183,398,400, a spread of 14%. Fixing the level at two gives every
+# solver the same mesh; the hierarchy solvers simply use as much of it as
+# they need. The depth itself stays a tuning question, answered by the
+# `hierarchy` phase.
+#
+# Cockett needs none of this. Its mesh is structured, so refining a coarse
+# mesh lands on exactly the same fine mesh, and every solver already has
+# 143,769,600 unknowns at every level.
+BASIN_REFINEMENT_LEVELS = 2
 
 
 def cockett_cases():
@@ -285,7 +316,7 @@ def generate_pbs_script(case, solver, scale, output_dir, degree=1,
         cpus = CPUS_PER_NODE if params["nodes"] > 1 else CPUS_SINGLE_NODE
         ncpus = params["nodes"] * cpus
         mem_gb = params["nodes"] * 500
-        ref_levels = refinement_levels(solver)
+        ref_levels = BASIN_REFINEMENT_LEVELS
 
         # Adaptive dt ramp-up: start small, grow to 12-hour steps,
         # run for 30 days of simulation time.
@@ -304,7 +335,7 @@ def generate_pbs_script(case, solver, scale, output_dir, degree=1,
         mem_gb = params["nodes"] * 500
         # GMG uses 2 refinement levels for horizontal scaling (not 3) to
         # keep the coarsest grid large enough for the MPI rank count.
-        ref_levels = 2 if solver in GMG_SOLVERS else 0
+        ref_levels = BASIN_REFINEMENT_LEVELS
 
         # Adaptive dt ramp-up, same as vertical scaling.
         run_cmd = (
@@ -321,7 +352,7 @@ def generate_pbs_script(case, solver, scale, output_dir, degree=1,
         cpus = CPUS_PER_NODE if params["nodes"] > 1 else CPUS_SINGLE_NODE
         ncpus = params["nodes"] * cpus
         mem_gb = params["nodes"] * 500
-        ref_levels = 2 if solver in GMG_SOLVERS else 0
+        ref_levels = BASIN_REFINEMENT_LEVELS
         run_cmd = (
             f"mpiexec -np $PBS_NCPUS python {SCALING_DIR}/murrumbidgee_3d.py "
             f"--horiz-res {params['horiz_res']} --layers {params['layers']} "
@@ -437,22 +468,23 @@ echo "=== Job completed: $(date) ==="
     return script_path
 
 
-def archive_existing_outputs(case, solver, scale, output_dir, degree,
-                             timestamp):
-    """Move an existing result set before PBS appends a replacement run."""
+def clear_existing_outputs(case, solver, scale, output_dir, degree):
+    """Delete an existing result set so the replacement run overwrites it.
+
+    PBS appends to its output file, so a stale file would concatenate two
+    runs. Every result file is tracked in git, so the previous run stays
+    recoverable from history and no archive copy is kept here.
+    """
     tag = scale if degree == 1 else f"{scale}_dq{degree}"
     result_dir = output_dir / case / solver
-    archive_dir = result_dir / "previous" / timestamp
-    moved = []
+    removed = []
     for suffix in ("out", "err", "profile", "pbs"):
         source = result_dir / f"{tag}.{suffix}"
         if not source.exists():
             continue
-        archive_dir.mkdir(parents=True, exist_ok=True)
-        destination = archive_dir / source.name
-        source.replace(destination)
-        moved.append(destination)
-    return moved
+        source.unlink()
+        removed.append(source)
+    return removed
 
 
 def get_phase_runs(phase):
@@ -578,6 +610,20 @@ def get_phase_runs(phase):
         for solver in RICH_SOLVERS:
             runs.append(("murr_horiz", solver, "h8"))
 
+    elif phase == "fair_all":
+        # The 2026-08 fair-comparison campaign. Every compared solver on
+        # every benchmark and scale, with matched tolerances and one mesh per
+        # basin scale. Restrict with --solvers to run it in stages.
+        for solver in FAIR_SOLVERS:
+            for scale in ("sweep", "medium", "large"):
+                runs.append(("cockett", solver, scale))
+            for scale in ("smoke", "sweep", "medium", "large"):
+                runs.append(("murrumbidgee", solver, scale))
+            for scale in ("h1", "h2", "h4", "h8"):
+                runs.append(("murr_horiz", solver, scale))
+            for scale in ("s1", "s2", "s4", "s8", "s16", "s32"):
+                runs.append(("murr_strong", solver, scale))
+
     elif phase == "final_h8":
         # The complete setup-cost campaign at production scale: the two
         # presets that keep Chebyshev and lag the setup, and the four that
@@ -634,7 +680,7 @@ def main():
                  "reviewer_h8", "reviewer_strong",
                  "rich_smoke", "rich_h8",
                  "snapshot_smoke", "snapshot_h8",
-                 "final_smoke", "final_h8"],
+                 "final_smoke", "final_h8", "fair_all"],
         help="Which set of jobs to generate/submit"
     )
     parser.add_argument(
@@ -708,13 +754,11 @@ def main():
     print()
 
     if not args.dry_run:
-        timestamp = datetime.now(timezone.utc).strftime("%Y%m%dT%H%M%SZ")
         for case, solver, scale, degree in runs:
-            moved = archive_existing_outputs(
-                case, solver, scale, output_dir, degree, timestamp
-            )
-            for path in moved:
-                print(f"  Archived: {path}")
+            for path in clear_existing_outputs(
+                case, solver, scale, output_dir, degree
+            ):
+                print(f"  Removed: {path.name}")
 
     scripts = []
     for case, solver, scale, degree in runs:
