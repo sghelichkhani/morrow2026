@@ -115,6 +115,105 @@ that used `solver_kwargs={'pmat': ...}` were retired — see §7).
 
 ## 4. Best-numbers summary
 
+**Superseded on 2026-08-22.** The numbers in this section now come from
+the fair-comparison campaign. The earlier table, and every conclusion
+drawn from it, compared solvers that used different Krylov tolerances,
+different residual norms and different meshes. It is preserved in §4.4
+because several claims elsewhere in this document still refer to it.
+
+Metric: **total wall-clock seconds to `t_final`**, not mean per timestep.
+The basin driver shrinks dt after a failed step, so a solver that fails
+integrates the rest of the run on easier steps and its per-step mean
+describes a different problem. Every h8 run below reached 226 Newton steps
+with zero failed steps on a byte-identical dt trajectory.
+
+Conditions, identical across every solver: `ksp_rtol 1e-4` with right
+preconditioning, `ksp_max_it 200`, `snes_rtol 1e-8`, `snes_atol 1e-12`,
+`snes_stol 1e-8`, `snes_max_it 50`, `bt` line search, and one mesh per
+basin scale at two refinement levels.
+
+### 4.1 Murrumbidgee horizontal (300 layers fixed, 1775 → 620 m, 1N → 8N)
+
+| solver | h1 | h2 | h4 | h8 | LIN/NL at h8 |
+|---|---:|---:|---:|---:|---:|
+| bjacobi | 595 | 689 | 922 | **1176** | 34.7 |
+| vlumping_hmg_rich_lag3 | 685 | 759 | 913 | 1302 | 15.2 |
+| vlumping_hmg_rich | 677 | 729 | 929 | 1330 | 14.9 |
+| vlumping_hmg_snapshot_lag3 | 775 | 840 | 1060 | 1388 | 15.8 |
+| vlumping_hmg | 905 | 967 | 1176 | 1531 | 15.5 |
+| vlumping_inexact_rich_lag3 | 824 | 941 | 1216 | 1624 | 11.6 |
+| vlumping_inexact | 915 | 1130 | 1449 | 1994 | 11.4 |
+| gmg | 1669 | 1825 | 2194 | 2591 | 16.8 |
+| boomeramg | DIVERGED | DIVERGED | DIVERGED | DIVERGED | -- |
+| gamg | OOM | OOM | OOM | OOM | -- |
+| sor | DIVERGED | DIVERGED | DIVERGED | DIVERGED | -- |
+
+### 4.2 Murrumbidgee vertical (1775 m fixed, 150 → 1200 layers, 1N → 8N)
+
+| solver | smoke | sweep | medium | large |
+|---|---:|---:|---:|---:|
+| bjacobi | 285 | 327 | 349 | **485** |
+| vlumping_inexact | 497 | 551 | 542 | 786 |
+| vlumping_hmg | 442 | 530 | 579 | 805 |
+| gmg | 810 | 933 | 996 | 1893 |
+| boomeramg | DIVERGED | DIVERGED | DIVERGED | DIVERGED |
+| gamg | OOM | OOM | OOM | OOM |
+| sor | DIVERGED | DIVERGED | DIVERGED | DIVERGED |
+
+### 4.3 Murrumbidgee strong scaling (620 m, 300 layers, 2N → 32N)
+
+| solver | s2 | s4 | s8 | s16 | s32 |
+|---|---:|---:|---:|---:|---:|
+| bjacobi | 4382 | 2207 | 1178 | 584 | **320** |
+| vlumping_hmg_rich_lag3 | **4209** | 2219 | 1303 | 1214 | 8162 |
+| vlumping_hmg | 5038 | 2680 | 1577 | 1468 | 8664 |
+| vlumping_inexact | 6137 | 3245 | 2041 | walltime | DIVERGED |
+
+### 4.4 Cockett (isotropic, 1N → 8N, 18M → 144M DOF)
+
+| solver | sweep (1N) | medium (2N) | large (8N) |
+|---|---:|---:|---:|
+| bjacobi | 478 | 573 | **872** |
+| boomeramg | 794 | 877 | 1037 |
+| vlumping_inexact | 601 | 718 | 1215 |
+| gmg | 780 | 952 | 1543 |
+| vlumping_hmg | 773 | 1003 | 1900 |
+| sor | 728 | 923 | DIVERGED |
+| gamg | 1925 | 2429 | 4319 |
+
+### Headline
+
+Block-Jacobi ILU(0) is the fastest solver on both isotropic and
+anisotropic benchmarks once it uses the same tolerance and the same
+residual norm as everything else, and it is the only solver that keeps
+scaling to 3328 ranks. Earlier versions of this document reported
+VLumping as the winner; that comparison gave the baselines a tighter
+tolerance and a different residual norm, which cost them roughly 20% and
+raised their iteration counts by half.
+
+What VLumping has is a factor of 2.2 to 3.0 in Krylov iterations, and a
+crossover. At two nodes the best VLumping preset is faster than
+block-Jacobi and at four nodes they tie; past that the vertically lumped
+coarse problem becomes the dominant cost. The two coarse-solve strategies
+then fail differently for the same reason: the direct MUMPS factorisation
+cannot complete one timestep in six hours at 1664 ranks and diverges at
+3328, while the nested geometric coarse solve reaches 3328 but turns over
+after 1664 and runs 6.7 times slower than at its best. That boundary is
+the honest limit of the method and belongs in the paper.
+
+The setup-cost work of 2026-08 is worth 16 to 19% at every scale and does
+not move the crossover: `vlumping_hmg` 1531 s to 1289 s and
+`vlumping_inexact` 1994 s to 1624 s at h8.
+
+The tolerance ablations show the fairness fix favours the baselines rather
+than the contribution: at h8, bjacobi improves from 1507 s to 1176 s, gmg
+from 3542 s to 2591 s, and vlumping from 2429 s to 1994 s when the
+tolerance is loosened from 1e-6 to 1e-4.
+
+### 4.5 Superseded table (2026-04-19 run, mixed tolerances and meshes)
+
+Kept because §5, §6 and §11 still cite these numbers. Do not quote them.
+
 Mean wall-clock seconds per timestep, averaged over steps after the
 startup step. Bold marks the per-row winner. Numbers are from the
 2026-04-19 run with all bug fixes applied (see §11).
@@ -161,6 +260,9 @@ scaling by ~18% over the baseline `vlumping_inexact` at h8. GMG-H, the
 paper's reported winner, is consistently 2× slower than VLumping in our
 setup; see §11 for why the apples-to-apples comparison with the paper is
 imperfect.
+
+---
+
 
 ---
 

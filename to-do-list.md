@@ -1,9 +1,69 @@
 # Morrow et al. 2026 — outstanding work
 
-Last updated: 2026-07-20 (solver-comparison rewrite plan below; earlier
-2026-05-15 body not yet reconciled against it).
+Last updated: 2026-08-22 (fair-comparison campaign; supersedes the
+2026-07-20 solver-comparison plan below, which was written against
+numbers that are no longer valid).
+
+**Start here:** `NOTES/2026-08-22-HANDOVER.md` explains what was done, what
+the numbers now are, and what is open. `parallel_scaling/SOLVER-STUDY.md`
+§4 carries the authoritative tables.
 
 ---
+
+## 2026-08-22 — After the fair-comparison campaign
+
+The solver comparison was rerun with matched Krylov tolerance, matched
+residual norm, matched SNES criteria and one mesh per basin scale. The
+conclusion changed: block-Jacobi ILU(0) is the fastest solver on every
+benchmark once tuned like the others, and the only one that scales to 3328
+ranks. VLumping keeps a factor of 2.2 to 3.0 in Krylov iterations and wins
+below about four nodes, then loses as the lumped coarse problem comes to
+dominate.
+
+### Blocking the manuscript
+
+- **T1. Rewrite §3.4 and §4** around the crossover and the iteration-count
+  result rather than a wall-time win. This replaces items C1 and C2 below,
+  which assumed VLumping won outright. The claim that VLumping is "the
+  only preset that scales" on the basin is still true for convergence and
+  no longer true for wall time.
+- **T2. Add the scaling limit to the manuscript.** The direct MUMPS coarse
+  solve cannot complete a timestep at 1664 ranks and diverges at 3328; the
+  nested geometric coarse solve reaches 3328 but turns over after 1664.
+  One mechanism, two expressions.
+- **T3. Add `SOLVER_STYLE` entries** in `plot_results.py` for the new
+  presets, then regenerate every figure from `parsed/`. Nothing new plots
+  until this is done.
+- **T4. Quote the tolerance ablation** in the text. Matching at 1e-4
+  favours the baselines, which pre-empts the obvious referee objection.
+- **T5. Appendix solver blocks** must be regenerated from the current
+  presets: every compared solver now carries `ksp_pc_side right`,
+  `ksp_rtol 1e-4`, `ksp_max_it 200` and an identical SNES block.
+
+### Worth doing, not blocking
+
+- **T6. Repeat runs** for any comparison resting on a margin under a few
+  percent. The s2 result (4209 against 4382) needs one; the h8 result
+  (1176 against 1289) does not.
+- **T7. Report the preallocation defect upstream** with a reproducer. Nine
+  runs died with `New nonzero caused a malloc`; it did not recur on rerun
+  and affects no number, but it is real. See handover §6.4.
+- **T8. Decide `vlumping_lag_smoother`.** The incoherent lag gains about
+  1% on the basin against 8% locally, so the safe default is probably
+  right. An older reuse-forwarding experiment that should have been
+  equivalent degraded badly and nobody has explained why.
+- **T9. `gamg_asm`, `ngmres_gmg`, `qn_gmg`** were not in the campaign and
+  remain on the old mesh and tolerance. Either rerun them or do not quote
+  them beside the new numbers.
+
+### External dependency
+
+- g-adopt PR #524 (`sghelichkhani/richards-core-04-vlumping`) carries the
+  `vlumping_lag` and `vlumping_omega_auto` options that the new presets
+  need. It must merge before the shipped presets can adopt either.
+
+---
+
 
 ## 2026-07-20 — Solver-comparison rewrite (Option B: VLumping-centric)
 
