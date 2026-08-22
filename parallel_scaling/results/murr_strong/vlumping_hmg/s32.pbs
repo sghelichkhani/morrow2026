@@ -9,8 +9,8 @@
 #PBS -l storage=scratch/xd2+gdata/fp50
 #PBS -l wd
 #PBS -W umask=0022
-#PBS -o parallel_scaling/results/murr_strong/vlumping_hmg/s32.out
-#PBS -e parallel_scaling/results/murr_strong/vlumping_hmg/s32.err
+#PBS -o /scratch/xd2/sg8812/morrow2026/parallel_scaling/results/murr_strong/vlumping_hmg/s32.out
+#PBS -e /scratch/xd2/sg8812/morrow2026/parallel_scaling/results/murr_strong/vlumping_hmg/s32.err
 
 source /etc/profile
 set -e
@@ -24,7 +24,7 @@ export OMPI_MCA_io="ompio"
 export OMP_NUM_THREADS=1
 export NCI_PROJECT=xd2
 export MPLCONFIGDIR=$PBS_JOBFS/matplotlib
-export PETSC_OPTIONS="-log_view :parallel_scaling/results/murr_strong/vlumping_hmg/s32.profile -BackwardEuler-Equation_lumped_pc_mg_log"
+export PETSC_OPTIONS="-log_view :/scratch/xd2/sg8812/morrow2026/parallel_scaling/results/murr_strong/vlumping_hmg/s32.profile -BackwardEuler-Equation_lumped_pc_mg_log"
 
 cd /scratch/xd2/sg8812/morrow2026/parallel_scaling
 
@@ -46,6 +46,6 @@ echo "================"
 
 mpiexec -np $PBS_NCPUS python /scratch/xd2/sg8812/morrow2026/parallel_scaling/murrumbidgee_3d.py --horiz-res 620 --layers 300 --solver vlumping_hmg --refinement-levels 2 --dt-init 60 --dt-max 43200 --dt-growth 1.5 --dt-shrink 0.5 --t-final 2592000 --data-dir /scratch/xd2/sg8812/morrow2026/parallel_scaling/murrumbidgee_data --profile 2>&1
 
-test -s parallel_scaling/results/murr_strong/vlumping_hmg/s32.profile
+test -s /scratch/xd2/sg8812/morrow2026/parallel_scaling/results/murr_strong/vlumping_hmg/s32.profile
 
 echo "=== Job completed: $(date) ==="

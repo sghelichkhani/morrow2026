@@ -5,16 +5,62 @@ Scale: sweep
 Degree: 1
 Nodes: 1
 CPUs: 104
-Date: Thu Aug 20 23:36:35 AEST 2026
-G-ADOPT commit: 7c88d823542349b5dfe272e69a23d79b8aca9c31
-Morrow commit: 689b192257f4e1d4dab5c673542ac05744e76260
+Date: Fri Aug 21 23:23:16 AEST 2026
+G-ADOPT commit: 3ab20fabc820d68b6d1f820b80149bc8e452a7f4
+Morrow commit: b153bd39bb0aa4da6fa4255ec076a2a14fc030fc
 Driver SHA256: ba6abf3ce3388755b35208a104650d19c9d308d9f781cba9ec25e899ad444bb4
 Solver SHA256: 4f69c6d53ca7306497536153dc31a35795eca1512655219760da2d51401ffcaf
 Firedrake module: singularity:intel-compiler-llvm/2024.2.1:petsc/main-20260815:firedrake/main-20260806
 PETSC_OPTIONS: -log_view :/scratch/xd2/sg8812/morrow2026/parallel_scaling/results/cockett/vlumping_hmg/sweep.profile -BackwardEuler-Equation_lumped_pc_mg_log
 ================
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
+Could not save font_manager cache Lock error: Matplotlib failed to acquire the following lock file:
+    /jobfs/176973801.gadi-pbs/matplotlib/fontlist-v3.11.0.json.matplotlib-lock
+This maybe due to another process holding this lock file.  If you are sure no
+other Matplotlib process is running, remove this file and try again.
+Could not save font_manager cache Lock error: Matplotlib failed to acquire the following lock file:
+    /jobfs/176973801.gadi-pbs/matplotlib/fontlist-v3.11.0.json.matplotlib-lock
+This maybe due to another process holding this lock file.  If you are sure no
+other Matplotlib process is running, remove this file and try again.
+Could not save font_manager cache Lock error: Matplotlib failed to acquire the following lock file:
+    /jobfs/176973801.gadi-pbs/matplotlib/fontlist-v3.11.0.json.matplotlib-lock
+This maybe due to another process holding this lock file.  If you are sure no
+other Matplotlib process is running, remove this file and try again.
+Could not save font_manager cache Lock error: Matplotlib failed to acquire the following lock file:
+    /jobfs/176973801.gadi-pbs/matplotlib/fontlist-v3.11.0.json.matplotlib-lock
+This maybe due to another process holding this lock file.  If you are sure no
+other Matplotlib process is running, remove this file and try again.
+Could not save font_manager cache Lock error: Matplotlib failed to acquire the following lock file:
+    /jobfs/176973801.gadi-pbs/matplotlib/fontlist-v3.11.0.json.matplotlib-lock
+This maybe due to another process holding this lock file.  If you are sure no
+other Matplotlib process is running, remove this file and try again.
+Could not save font_manager cache Lock error: Matplotlib failed to acquire the following lock file:
+    /jobfs/176973801.gadi-pbs/matplotlib/fontlist-v3.11.0.json.matplotlib-lock
+This maybe due to another process holding this lock file.  If you are sure no
+other Matplotlib process is running, remove this file and try again.
+Could not save font_manager cache Lock error: Matplotlib failed to acquire the following lock file:
+    /jobfs/176973801.gadi-pbs/matplotlib/fontlist-v3.11.0.json.matplotlib-lock
+This maybe due to another process holding this lock file.  If you are sure no
+other Matplotlib process is running, remove this file and try again.
+Could not save font_manager cache Lock error: Matplotlib failed to acquire the following lock file:
+    /jobfs/176973801.gadi-pbs/matplotlib/fontlist-v3.11.0.json.matplotlib-lock
+This maybe due to another process holding this lock file.  If you are sure no
+other Matplotlib process is running, remove this file and try again.
+Could not save font_manager cache Lock error: Matplotlib failed to acquire the following lock file:
+    /jobfs/176973801.gadi-pbs/matplotlib/fontlist-v3.11.0.json.matplotlib-lock
+This maybe due to another process holding this lock file.  If you are sure no
+other Matplotlib process is running, remove this file and try again.
+Could not save font_manager cache Lock error: Matplotlib failed to acquire the following lock file:
+    /jobfs/176973801.gadi-pbs/matplotlib/fontlist-v3.11.0.json.matplotlib-lock
+This maybe due to another process holding this lock file.  If you are sure no
+other Matplotlib process is running, remove this file and try again.
+Could not save font_manager cache Lock error: Matplotlib failed to acquire the following lock file:
+    /jobfs/176973801.gadi-pbs/matplotlib/fontlist-v3.11.0.json.matplotlib-lock
+This maybe due to another process holding this lock file.  If you are sure no
+other Matplotlib process is running, remove this file and try again.
+Could not save font_manager cache Lock error: Matplotlib failed to acquire the following lock file:
+    /jobfs/176973801.gadi-pbs/matplotlib/fontlist-v3.11.0.json.matplotlib-lock
+This maybe due to another process holding this lock file.  If you are sure no
+other Matplotlib process is running, remove this file and try again.
 Number of degrees of freedom: 17971200
 Mesh: 120x120x156, DQ1
 Time stepper: BackwardEuler, dt = 300.0 s, steps = 30
@@ -170,7 +216,7 @@ Solver parameters: {'mat_type': 'aij', 'ksp_type': 'fgmres', 'snes_linesearch_ty
           Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
     Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 35
   Nonlinear BackwardEuler-Equation_ solve converged due to CONVERGED_FNORM_ABS iterations 4
-t = 300.00 s | step 1/30 | wall 68.95 s | NL 4 | L 145
+t = 300.00 s | step 1/30 | wall 69.08 s | NL 4 | L 145
           Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
           Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
           Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
@@ -294,7 +340,7 @@ t = 300.00 s | step 1/30 | wall 68.95 s | NL 4 | L 145
           Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
     Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 40
   Nonlinear BackwardEuler-Equation_ solve converged due to CONVERGED_FNORM_ABS iterations 3
-t = 600.00 s | step 2/30 | wall 21.05 s | NL 3 | L 119
+t = 600.00 s | step 2/30 | wall 21.14 s | NL 3 | L 119
           Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
           Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
           Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
@@ -421,7 +467,7 @@ t = 600.00 s | step 2/30 | wall 21.05 s | NL 3 | L 119
           Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
     Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 41
   Nonlinear BackwardEuler-Equation_ solve converged due to CONVERGED_FNORM_ABS iterations 3
-t = 900.00 s | step 3/30 | wall 21.31 s | NL 3 | L 122
+t = 900.00 s | step 3/30 | wall 21.38 s | NL 3 | L 122
           Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
           Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
           Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
@@ -549,7 +595,7 @@ t = 900.00 s | step 3/30 | wall 21.31 s | NL 3 | L 122
           Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
     Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 42
   Nonlinear BackwardEuler-Equation_ solve converged due to CONVERGED_FNORM_ABS iterations 3
-t = 1200.00 s | step 4/30 | wall 21.35 s | NL 3 | L 123
+t = 1200.00 s | step 4/30 | wall 21.48 s | NL 3 | L 123
           Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
           Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
           Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
@@ -680,7 +726,7 @@ t = 1200.00 s | step 4/30 | wall 21.35 s | NL 3 | L 123
           Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
     Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 43
   Nonlinear BackwardEuler-Equation_ solve converged due to CONVERGED_FNORM_ABS iterations 3
-t = 1500.00 s | step 5/30 | wall 21.74 s | NL 3 | L 126
+t = 1500.00 s | step 5/30 | wall 21.84 s | NL 3 | L 126
           Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
           Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
           Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
@@ -814,7 +860,7 @@ t = 1500.00 s | step 5/30 | wall 21.74 s | NL 3 | L 126
           Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
     Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 44
   Nonlinear BackwardEuler-Equation_ solve converged due to CONVERGED_FNORM_ABS iterations 3
-t = 1800.00 s | step 6/30 | wall 22.12 s | NL 3 | L 129
+t = 1800.00 s | step 6/30 | wall 22.22 s | NL 3 | L 129
           Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
           Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
           Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
@@ -951,7 +997,7 @@ t = 1800.00 s | step 6/30 | wall 22.12 s | NL 3 | L 129
           Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
     Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 45
   Nonlinear BackwardEuler-Equation_ solve converged due to CONVERGED_FNORM_ABS iterations 3
-t = 2100.00 s | step 7/30 | wall 22.56 s | NL 3 | L 132
+t = 2100.00 s | step 7/30 | wall 22.60 s | NL 3 | L 132
           Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
           Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
           Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
@@ -1091,7 +1137,7 @@ t = 2100.00 s | step 7/30 | wall 22.56 s | NL 3 | L 132
           Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
     Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 46
   Nonlinear BackwardEuler-Equation_ solve converged due to CONVERGED_FNORM_ABS iterations 3
-t = 2400.00 s | step 8/30 | wall 22.92 s | NL 3 | L 135
+t = 2400.00 s | step 8/30 | wall 23.09 s | NL 3 | L 135
           Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
           Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
           Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
@@ -1233,7 +1279,7 @@ t = 2400.00 s | step 8/30 | wall 22.92 s | NL 3 | L 135
           Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
     Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 46
   Nonlinear BackwardEuler-Equation_ solve converged due to CONVERGED_FNORM_ABS iterations 3
-t = 2700.00 s | step 9/30 | wall 23.16 s | NL 3 | L 137
+t = 2700.00 s | step 9/30 | wall 23.26 s | NL 3 | L 137
           Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
           Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
           Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
@@ -1377,7 +1423,7 @@ t = 2700.00 s | step 9/30 | wall 23.16 s | NL 3 | L 137
           Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
     Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 47
   Nonlinear BackwardEuler-Equation_ solve converged due to CONVERGED_FNORM_ABS iterations 3
-t = 3000.00 s | step 10/30 | wall 23.42 s | NL 3 | L 139
+t = 3000.00 s | step 10/30 | wall 23.50 s | NL 3 | L 139
           Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
           Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
           Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
@@ -1523,7 +1569,7 @@ t = 3000.00 s | step 10/30 | wall 23.42 s | NL 3 | L 139
           Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
     Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 47
   Nonlinear BackwardEuler-Equation_ solve converged due to CONVERGED_FNORM_ABS iterations 3
-t = 3300.00 s | step 11/30 | wall 23.68 s | NL 3 | L 141
+t = 3300.00 s | step 11/30 | wall 23.78 s | NL 3 | L 141
           Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
           Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
           Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
@@ -1670,156 +1716,7 @@ t = 3300.00 s | step 11/30 | wall 23.68 s | NL 3 | L 141
           Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
     Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 48
   Nonlinear BackwardEuler-Equation_ solve converged due to CONVERGED_FNORM_ABS iterations 3
-t = 3600.00 s | step 12/30 | wall 23.86 s | NL 3 | L 142
-          Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
-          Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
-          Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
-          Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
-          Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
-          Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
-          Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
-          Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
-          Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
-          Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
-          Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
-          Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
-          Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
-          Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
-          Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
-          Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
-          Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
-          Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
-          Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
-          Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
-          Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
-          Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
-          Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
-          Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
-          Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
-          Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
-          Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
-          Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
-          Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
-          Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
-          Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
-          Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
-          Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
-          Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
-          Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
-          Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
-          Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
-          Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
-          Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
-          Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
-          Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
-          Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
-          Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
-          Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
-          Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
-          Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
-          Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
-          Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
-    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 48
-          Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
-          Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
-          Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
-          Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
-          Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
-          Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
-          Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
-          Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
-          Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
-          Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
-          Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
-          Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
-          Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
-          Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
-          Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
-          Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
-          Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
-          Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
-          Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
-          Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
-          Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
-          Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
-          Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
-          Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
-          Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
-          Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
-          Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
-          Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
-          Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
-          Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
-          Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
-          Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
-          Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
-          Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
-          Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
-          Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
-          Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
-          Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
-          Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
-          Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
-          Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
-          Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
-          Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
-          Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
-          Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
-          Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
-          Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
-          Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
-    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 48
-          Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
-          Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
-          Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
-          Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
-          Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
-          Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
-          Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
-          Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
-          Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
-          Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
-          Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
-          Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
-          Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
-          Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
-          Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
-          Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
-          Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
-          Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
-          Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
-          Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
-          Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
-          Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
-          Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
-          Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
-          Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
-          Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
-          Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
-          Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
-          Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
-          Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
-          Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
-          Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
-          Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
-          Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
-          Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
-          Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
-          Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
-          Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
-          Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
-          Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
-          Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
-          Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
-          Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
-          Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
-          Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
-          Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
-          Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
-          Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
-    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 48
-  Nonlinear BackwardEuler-Equation_ solve converged due to CONVERGED_FNORM_ABS iterations 3
-t = 3900.00 s | step 13/30 | wall 24.09 s | NL 3 | L 144
+t = 3600.00 s | step 12/30 | wall 23.91 s | NL 3 | L 142
           Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
           Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
           Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
@@ -1968,7 +1865,156 @@ t = 3900.00 s | step 13/30 | wall 24.09 s | NL 3 | L 144
           Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
     Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 48
   Nonlinear BackwardEuler-Equation_ solve converged due to CONVERGED_FNORM_ABS iterations 3
-t = 4200.00 s | step 14/30 | wall 24.07 s | NL 3 | L 144
+t = 3900.00 s | step 13/30 | wall 24.22 s | NL 3 | L 144
+          Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
+          Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
+          Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
+          Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
+          Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
+          Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
+          Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
+          Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
+          Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
+          Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
+          Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
+          Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
+          Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
+          Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
+          Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
+          Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
+          Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
+          Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
+          Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
+          Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
+          Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
+          Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
+          Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
+          Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
+          Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
+          Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
+          Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
+          Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
+          Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
+          Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
+          Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
+          Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
+          Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
+          Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
+          Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
+          Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
+          Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
+          Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
+          Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
+          Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
+          Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
+          Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
+          Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
+          Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
+          Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
+          Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
+          Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
+          Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 48
+          Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
+          Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
+          Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
+          Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
+          Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
+          Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
+          Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
+          Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
+          Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
+          Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
+          Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
+          Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
+          Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
+          Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
+          Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
+          Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
+          Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
+          Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
+          Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
+          Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
+          Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
+          Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
+          Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
+          Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
+          Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
+          Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
+          Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
+          Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
+          Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
+          Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
+          Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
+          Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
+          Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
+          Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
+          Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
+          Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
+          Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
+          Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
+          Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
+          Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
+          Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
+          Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
+          Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
+          Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
+          Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
+          Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
+          Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
+          Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 48
+          Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
+          Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
+          Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
+          Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
+          Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
+          Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
+          Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
+          Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
+          Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
+          Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
+          Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
+          Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
+          Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
+          Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
+          Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
+          Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
+          Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
+          Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
+          Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
+          Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
+          Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
+          Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
+          Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
+          Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
+          Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
+          Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
+          Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
+          Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
+          Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
+          Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
+          Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
+          Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
+          Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
+          Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
+          Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
+          Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
+          Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
+          Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
+          Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
+          Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
+          Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
+          Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
+          Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
+          Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
+          Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
+          Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
+          Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
+          Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 48
+  Nonlinear BackwardEuler-Equation_ solve converged due to CONVERGED_FNORM_ABS iterations 3
+t = 4200.00 s | step 14/30 | wall 24.17 s | NL 3 | L 144
           Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
           Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
           Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
@@ -2119,7 +2165,7 @@ t = 4200.00 s | step 14/30 | wall 24.07 s | NL 3 | L 144
           Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
     Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 48
   Nonlinear BackwardEuler-Equation_ solve converged due to CONVERGED_FNORM_ABS iterations 3
-t = 4500.00 s | step 15/30 | wall 24.33 s | NL 3 | L 146
+t = 4500.00 s | step 15/30 | wall 24.49 s | NL 3 | L 146
           Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
           Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
           Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
@@ -2272,7 +2318,7 @@ t = 4500.00 s | step 15/30 | wall 24.33 s | NL 3 | L 146
           Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
     Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 48
   Nonlinear BackwardEuler-Equation_ solve converged due to CONVERGED_FNORM_ABS iterations 3
-t = 4800.00 s | step 16/30 | wall 24.60 s | NL 3 | L 148
+t = 4800.00 s | step 16/30 | wall 24.70 s | NL 3 | L 148
           Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
           Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
           Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
@@ -2425,7 +2471,7 @@ t = 4800.00 s | step 16/30 | wall 24.60 s | NL 3 | L 148
           Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
     Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 48
   Nonlinear BackwardEuler-Equation_ solve converged due to CONVERGED_FNORM_ABS iterations 3
-t = 5100.00 s | step 17/30 | wall 24.65 s | NL 3 | L 148
+t = 5100.00 s | step 17/30 | wall 24.69 s | NL 3 | L 148
           Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
           Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
           Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
@@ -2579,7 +2625,7 @@ t = 5100.00 s | step 17/30 | wall 24.65 s | NL 3 | L 148
           Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
     Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 48
   Nonlinear BackwardEuler-Equation_ solve converged due to CONVERGED_FNORM_ABS iterations 3
-t = 5400.00 s | step 18/30 | wall 24.74 s | NL 3 | L 149
+t = 5400.00 s | step 18/30 | wall 24.97 s | NL 3 | L 149
           Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
           Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
           Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
@@ -2734,7 +2780,7 @@ t = 5400.00 s | step 18/30 | wall 24.74 s | NL 3 | L 149
           Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
     Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 48
   Nonlinear BackwardEuler-Equation_ solve converged due to CONVERGED_FNORM_ABS iterations 3
-t = 5700.00 s | step 19/30 | wall 24.87 s | NL 3 | L 150
+t = 5700.00 s | step 19/30 | wall 24.99 s | NL 3 | L 150
           Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
           Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
           Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
@@ -2891,7 +2937,7 @@ t = 5700.00 s | step 19/30 | wall 24.87 s | NL 3 | L 150
           Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
     Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 49
   Nonlinear BackwardEuler-Equation_ solve converged due to CONVERGED_FNORM_ABS iterations 3
-t = 6000.00 s | step 20/30 | wall 25.12 s | NL 3 | L 152
+t = 6000.00 s | step 20/30 | wall 25.24 s | NL 3 | L 152
           Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
           Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
           Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
@@ -3049,7 +3095,7 @@ t = 6000.00 s | step 20/30 | wall 25.12 s | NL 3 | L 152
           Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
     Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 49
   Nonlinear BackwardEuler-Equation_ solve converged due to CONVERGED_FNORM_ABS iterations 3
-t = 6300.00 s | step 21/30 | wall 25.26 s | NL 3 | L 153
+t = 6300.00 s | step 21/30 | wall 25.36 s | NL 3 | L 153
           Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
           Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
           Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
@@ -3207,7 +3253,7 @@ t = 6300.00 s | step 21/30 | wall 25.26 s | NL 3 | L 153
           Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
     Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 49
   Nonlinear BackwardEuler-Equation_ solve converged due to CONVERGED_FNORM_ABS iterations 3
-t = 6600.00 s | step 22/30 | wall 25.33 s | NL 3 | L 153
+t = 6600.00 s | step 22/30 | wall 25.42 s | NL 3 | L 153
           Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
           Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
           Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
@@ -3367,7 +3413,7 @@ t = 6600.00 s | step 22/30 | wall 25.33 s | NL 3 | L 153
           Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
     Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 49
   Nonlinear BackwardEuler-Equation_ solve converged due to CONVERGED_FNORM_ABS iterations 3
-t = 6900.00 s | step 23/30 | wall 25.54 s | NL 3 | L 155
+t = 6900.00 s | step 23/30 | wall 25.63 s | NL 3 | L 155
           Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
           Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
           Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
@@ -3527,7 +3573,7 @@ t = 6900.00 s | step 23/30 | wall 25.54 s | NL 3 | L 155
           Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
     Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 49
   Nonlinear BackwardEuler-Equation_ solve converged due to CONVERGED_FNORM_ABS iterations 3
-t = 7200.00 s | step 24/30 | wall 25.53 s | NL 3 | L 155
+t = 7200.00 s | step 24/30 | wall 25.63 s | NL 3 | L 155
           Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
           Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
           Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
@@ -3687,7 +3733,7 @@ t = 7200.00 s | step 24/30 | wall 25.53 s | NL 3 | L 155
           Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
     Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 49
   Nonlinear BackwardEuler-Equation_ solve converged due to CONVERGED_FNORM_ABS iterations 3
-t = 7500.00 s | step 25/30 | wall 25.56 s | NL 3 | L 155
+t = 7500.00 s | step 25/30 | wall 25.63 s | NL 3 | L 155
           Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
           Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
           Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
@@ -3848,7 +3894,7 @@ t = 7500.00 s | step 25/30 | wall 25.56 s | NL 3 | L 155
           Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
     Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 50
   Nonlinear BackwardEuler-Equation_ solve converged due to CONVERGED_FNORM_ABS iterations 3
-t = 7800.00 s | step 26/30 | wall 25.66 s | NL 3 | L 156
+t = 7800.00 s | step 26/30 | wall 25.77 s | NL 3 | L 156
           Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
           Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
           Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
@@ -4010,7 +4056,7 @@ t = 7800.00 s | step 26/30 | wall 25.66 s | NL 3 | L 156
           Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
     Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 50
   Nonlinear BackwardEuler-Equation_ solve converged due to CONVERGED_FNORM_ABS iterations 3
-t = 8100.00 s | step 27/30 | wall 25.86 s | NL 3 | L 157
+t = 8100.00 s | step 27/30 | wall 25.95 s | NL 3 | L 157
           Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
           Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
           Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
@@ -4173,7 +4219,7 @@ t = 8100.00 s | step 27/30 | wall 25.86 s | NL 3 | L 157
           Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
     Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 50
   Nonlinear BackwardEuler-Equation_ solve converged due to CONVERGED_FNORM_ABS iterations 3
-t = 8400.00 s | step 28/30 | wall 25.94 s | NL 3 | L 158
+t = 8400.00 s | step 28/30 | wall 26.03 s | NL 3 | L 158
           Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
           Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
           Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
@@ -4337,7 +4383,7 @@ t = 8400.00 s | step 28/30 | wall 25.94 s | NL 3 | L 158
           Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
     Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 51
   Nonlinear BackwardEuler-Equation_ solve converged due to CONVERGED_FNORM_ABS iterations 3
-t = 8700.00 s | step 29/30 | wall 26.08 s | NL 3 | L 159
+t = 8700.00 s | step 29/30 | wall 26.17 s | NL 3 | L 159
           Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
           Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
           Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
@@ -4502,18 +4548,18 @@ t = 8700.00 s | step 29/30 | wall 26.08 s | NL 3 | L 159
           Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
     Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 51
   Nonlinear BackwardEuler-Equation_ solve converged due to CONVERGED_FNORM_ABS iterations 3
-t = 9000.00 s | step 30/30 | wall 26.20 s | NL 3 | L 160
-Done | total NL 91 | total L 4332 | mean wall/step 25.65 s | peak RSS 1111 MB
-=== Job completed: Thu Aug 20 23:50:10 AEST 2026 ===
+t = 9000.00 s | step 30/30 | wall 26.31 s | NL 3 | L 160
+Done | total NL 91 | total L 4332 | mean wall/step 25.75 s | peak RSS 1131 MB
+=== Job completed: Fri Aug 21 23:36:43 AEST 2026 ===
 
 ======================================================================================
-                  Resource Usage on 2026-08-20 23:50:14:
-   Job Id:             176848295.gadi-pbs
+                  Resource Usage on 2026-08-21 23:36:47:
+   Job Id:             176973801.gadi-pbs
    Project:            xd2
    Exit Status:        0
-   Service Units:      47.15
-   NCPUs Requested:    104                 CPU Time Used: 23:16:32        
-   Memory Requested:   500.0GB               Memory Used: 89.88GB         
-   Walltime Requested: 03:00:00            Walltime Used: 00:13:36        
-   JobFS Requested:    400.0GB                JobFS Used: 56.93MB         
+   Service Units:      46.74
+   NCPUs Requested:    104                 CPU Time Used: 23:05:42        
+   Memory Requested:   500.0GB               Memory Used: 89.79GB         
+   Walltime Requested: 03:00:00            Walltime Used: 00:13:29        
+   JobFS Requested:    400.0GB                JobFS Used: 56.94MB         
 ======================================================================================

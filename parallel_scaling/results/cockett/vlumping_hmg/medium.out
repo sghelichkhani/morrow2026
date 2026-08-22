@@ -5,308 +5,20 @@ Scale: medium
 Degree: 1
 Nodes: 2
 CPUs: 208
-Date: Thu Aug 20 23:30:36 AEST 2026
-G-ADOPT commit: 7c88d823542349b5dfe272e69a23d79b8aca9c31
-Morrow commit: 689b192257f4e1d4dab5c673542ac05744e76260
+Date: Fri Aug 21 23:18:18 AEST 2026
+G-ADOPT commit: 3ab20fabc820d68b6d1f820b80149bc8e452a7f4
+Morrow commit: b153bd39bb0aa4da6fa4255ec076a2a14fc030fc
 Driver SHA256: ba6abf3ce3388755b35208a104650d19c9d308d9f781cba9ec25e899ad444bb4
 Solver SHA256: 4f69c6d53ca7306497536153dc31a35795eca1512655219760da2d51401ffcaf
 Firedrake module: singularity:intel-compiler-llvm/2024.2.1:petsc/main-20260815:firedrake/main-20260806
 PETSC_OPTIONS: -log_view :/scratch/xd2/sg8812/morrow2026/parallel_scaling/results/cockett/vlumping_hmg/medium.profile -BackwardEuler-Equation_lumped_pc_mg_log
 ================
 Could not save font_manager cache Lock error: Matplotlib failed to acquire the following lock file:
-    /jobfs/176848296.gadi-pbs/matplotlib/fontlist-v3.11.0.json.matplotlib-lock
+    /jobfs/176973802.gadi-pbs/matplotlib/fontlist-v3.11.0.json.matplotlib-lock
 This maybe due to another process holding this lock file.  If you are sure no
 other Matplotlib process is running, remove this file and try again.
 Could not save font_manager cache Lock error: Matplotlib failed to acquire the following lock file:
-    /jobfs/176848296.gadi-pbs/matplotlib/fontlist-v3.11.0.json.matplotlib-lock
-This maybe due to another process holding this lock file.  If you are sure no
-other Matplotlib process is running, remove this file and try again.
-Could not save font_manager cache Lock error: Matplotlib failed to acquire the following lock file:
-    /jobfs/176848296.gadi-pbs/matplotlib/fontlist-v3.11.0.json.matplotlib-lock
-This maybe due to another process holding this lock file.  If you are sure no
-other Matplotlib process is running, remove this file and try again.
-Could not save font_manager cache Lock error: Matplotlib failed to acquire the following lock file:
-    /jobfs/176848296.gadi-pbs/matplotlib/fontlist-v3.11.0.json.matplotlib-lock
-This maybe due to another process holding this lock file.  If you are sure no
-other Matplotlib process is running, remove this file and try again.
-Could not save font_manager cache Lock error: Matplotlib failed to acquire the following lock file:
-    /jobfs/176848296.gadi-pbs/matplotlib/fontlist-v3.11.0.json.matplotlib-lock
-This maybe due to another process holding this lock file.  If you are sure no
-other Matplotlib process is running, remove this file and try again.
-Could not save font_manager cache Lock error: Matplotlib failed to acquire the following lock file:
-    /jobfs/176848296.gadi-pbs/matplotlib/fontlist-v3.11.0.json.matplotlib-lock
-This maybe due to another process holding this lock file.  If you are sure no
-other Matplotlib process is running, remove this file and try again.
-Could not save font_manager cache Lock error: Matplotlib failed to acquire the following lock file:
-    /jobfs/176848296.gadi-pbs/matplotlib/fontlist-v3.11.0.json.matplotlib-lock
-This maybe due to another process holding this lock file.  If you are sure no
-other Matplotlib process is running, remove this file and try again.
-Could not save font_manager cache Lock error: Matplotlib failed to acquire the following lock file:
-    /jobfs/176848296.gadi-pbs/matplotlib/fontlist-v3.11.0.json.matplotlib-lock
-This maybe due to another process holding this lock file.  If you are sure no
-other Matplotlib process is running, remove this file and try again.
-Could not save font_manager cache Lock error: Matplotlib failed to acquire the following lock file:
-    /jobfs/176848296.gadi-pbs/matplotlib/fontlist-v3.11.0.json.matplotlib-lock
-This maybe due to another process holding this lock file.  If you are sure no
-other Matplotlib process is running, remove this file and try again.
-Could not save font_manager cache Lock error: Matplotlib failed to acquire the following lock file:
-    /jobfs/176848296.gadi-pbs/matplotlib/fontlist-v3.11.0.json.matplotlib-lock
-This maybe due to another process holding this lock file.  If you are sure no
-other Matplotlib process is running, remove this file and try again.
-Could not save font_manager cache Lock error: Matplotlib failed to acquire the following lock file:
-    /jobfs/176848296.gadi-pbs/matplotlib/fontlist-v3.11.0.json.matplotlib-lock
-This maybe due to another process holding this lock file.  If you are sure no
-other Matplotlib process is running, remove this file and try again.
-Could not save font_manager cache Lock error: Matplotlib failed to acquire the following lock file:
-    /jobfs/176848296.gadi-pbs/matplotlib/fontlist-v3.11.0.json.matplotlib-lock
-This maybe due to another process holding this lock file.  If you are sure no
-other Matplotlib process is running, remove this file and try again.
-Could not save font_manager cache Lock error: Matplotlib failed to acquire the following lock file:
-    /jobfs/176848296.gadi-pbs/matplotlib/fontlist-v3.11.0.json.matplotlib-lock
-This maybe due to another process holding this lock file.  If you are sure no
-other Matplotlib process is running, remove this file and try again.
-Could not save font_manager cache Lock error: Matplotlib failed to acquire the following lock file:
-    /jobfs/176848296.gadi-pbs/matplotlib/fontlist-v3.11.0.json.matplotlib-lock
-This maybe due to another process holding this lock file.  If you are sure no
-other Matplotlib process is running, remove this file and try again.
-Could not save font_manager cache Lock error: Matplotlib failed to acquire the following lock file:
-    /jobfs/176848296.gadi-pbs/matplotlib/fontlist-v3.11.0.json.matplotlib-lock
-This maybe due to another process holding this lock file.  If you are sure no
-other Matplotlib process is running, remove this file and try again.
-Could not save font_manager cache Lock error: Matplotlib failed to acquire the following lock file:
-    /jobfs/176848296.gadi-pbs/matplotlib/fontlist-v3.11.0.json.matplotlib-lock
-This maybe due to another process holding this lock file.  If you are sure no
-other Matplotlib process is running, remove this file and try again.
-Could not save font_manager cache Lock error: Matplotlib failed to acquire the following lock file:
-    /jobfs/176848296.gadi-pbs/matplotlib/fontlist-v3.11.0.json.matplotlib-lock
-This maybe due to another process holding this lock file.  If you are sure no
-other Matplotlib process is running, remove this file and try again.
-Could not save font_manager cache Lock error: Matplotlib failed to acquire the following lock file:
-    /jobfs/176848296.gadi-pbs/matplotlib/fontlist-v3.11.0.json.matplotlib-lock
-This maybe due to another process holding this lock file.  If you are sure no
-other Matplotlib process is running, remove this file and try again.
-Could not save font_manager cache Lock error: Matplotlib failed to acquire the following lock file:
-    /jobfs/176848296.gadi-pbs/matplotlib/fontlist-v3.11.0.json.matplotlib-lock
-This maybe due to another process holding this lock file.  If you are sure no
-other Matplotlib process is running, remove this file and try again.
-Could not save font_manager cache Lock error: Matplotlib failed to acquire the following lock file:
-    /jobfs/176848296.gadi-pbs/matplotlib/fontlist-v3.11.0.json.matplotlib-lock
-This maybe due to another process holding this lock file.  If you are sure no
-other Matplotlib process is running, remove this file and try again.
-Could not save font_manager cache Lock error: Matplotlib failed to acquire the following lock file:
-    /jobfs/176848296.gadi-pbs/matplotlib/fontlist-v3.11.0.json.matplotlib-lock
-This maybe due to another process holding this lock file.  If you are sure no
-other Matplotlib process is running, remove this file and try again.
-Could not save font_manager cache Lock error: Matplotlib failed to acquire the following lock file:
-    /jobfs/176848296.gadi-pbs/matplotlib/fontlist-v3.11.0.json.matplotlib-lock
-This maybe due to another process holding this lock file.  If you are sure no
-other Matplotlib process is running, remove this file and try again.
-Could not save font_manager cache Lock error: Matplotlib failed to acquire the following lock file:
-    /jobfs/176848296.gadi-pbs/matplotlib/fontlist-v3.11.0.json.matplotlib-lock
-This maybe due to another process holding this lock file.  If you are sure no
-other Matplotlib process is running, remove this file and try again.
-Could not save font_manager cache Lock error: Matplotlib failed to acquire the following lock file:
-    /jobfs/176848296.gadi-pbs/matplotlib/fontlist-v3.11.0.json.matplotlib-lock
-This maybe due to another process holding this lock file.  If you are sure no
-other Matplotlib process is running, remove this file and try again.
-Could not save font_manager cache Lock error: Matplotlib failed to acquire the following lock file:
-    /jobfs/176848296.gadi-pbs/matplotlib/fontlist-v3.11.0.json.matplotlib-lock
-This maybe due to another process holding this lock file.  If you are sure no
-other Matplotlib process is running, remove this file and try again.
-Could not save font_manager cache Lock error: Matplotlib failed to acquire the following lock file:
-    /jobfs/176848296.gadi-pbs/matplotlib/fontlist-v3.11.0.json.matplotlib-lock
-This maybe due to another process holding this lock file.  If you are sure no
-other Matplotlib process is running, remove this file and try again.
-Could not save font_manager cache Lock error: Matplotlib failed to acquire the following lock file:
-    /jobfs/176848296.gadi-pbs/matplotlib/fontlist-v3.11.0.json.matplotlib-lock
-This maybe due to another process holding this lock file.  If you are sure no
-other Matplotlib process is running, remove this file and try again.
-Could not save font_manager cache Lock error: Matplotlib failed to acquire the following lock file:
-    /jobfs/176848296.gadi-pbs/matplotlib/fontlist-v3.11.0.json.matplotlib-lock
-This maybe due to another process holding this lock file.  If you are sure no
-other Matplotlib process is running, remove this file and try again.
-Could not save font_manager cache Lock error: Matplotlib failed to acquire the following lock file:
-    /jobfs/176848296.gadi-pbs/matplotlib/fontlist-v3.11.0.json.matplotlib-lock
-This maybe due to another process holding this lock file.  If you are sure no
-other Matplotlib process is running, remove this file and try again.
-Could not save font_manager cache Lock error: Matplotlib failed to acquire the following lock file:
-    /jobfs/176848296.gadi-pbs/matplotlib/fontlist-v3.11.0.json.matplotlib-lock
-This maybe due to another process holding this lock file.  If you are sure no
-other Matplotlib process is running, remove this file and try again.
-Could not save font_manager cache Lock error: Matplotlib failed to acquire the following lock file:
-    /jobfs/176848296.gadi-pbs/matplotlib/fontlist-v3.11.0.json.matplotlib-lock
-This maybe due to another process holding this lock file.  If you are sure no
-other Matplotlib process is running, remove this file and try again.
-Could not save font_manager cache Lock error: Matplotlib failed to acquire the following lock file:
-    /jobfs/176848296.gadi-pbs/matplotlib/fontlist-v3.11.0.json.matplotlib-lock
-This maybe due to another process holding this lock file.  If you are sure no
-other Matplotlib process is running, remove this file and try again.
-Could not save font_manager cache Lock error: Matplotlib failed to acquire the following lock file:
-    /jobfs/176848296.gadi-pbs/matplotlib/fontlist-v3.11.0.json.matplotlib-lock
-This maybe due to another process holding this lock file.  If you are sure no
-other Matplotlib process is running, remove this file and try again.
-Could not save font_manager cache Lock error: Matplotlib failed to acquire the following lock file:
-    /jobfs/176848296.gadi-pbs/matplotlib/fontlist-v3.11.0.json.matplotlib-lock
-This maybe due to another process holding this lock file.  If you are sure no
-other Matplotlib process is running, remove this file and try again.
-Could not save font_manager cache Lock error: Matplotlib failed to acquire the following lock file:
-    /jobfs/176848296.gadi-pbs/matplotlib/fontlist-v3.11.0.json.matplotlib-lock
-This maybe due to another process holding this lock file.  If you are sure no
-other Matplotlib process is running, remove this file and try again.
-Could not save font_manager cache Lock error: Matplotlib failed to acquire the following lock file:
-    /jobfs/176848296.gadi-pbs/matplotlib/fontlist-v3.11.0.json.matplotlib-lock
-This maybe due to another process holding this lock file.  If you are sure no
-other Matplotlib process is running, remove this file and try again.
-Could not save font_manager cache Lock error: Matplotlib failed to acquire the following lock file:
-    /jobfs/176848296.gadi-pbs/matplotlib/fontlist-v3.11.0.json.matplotlib-lock
-This maybe due to another process holding this lock file.  If you are sure no
-other Matplotlib process is running, remove this file and try again.
-Could not save font_manager cache Lock error: Matplotlib failed to acquire the following lock file:
-    /jobfs/176848296.gadi-pbs/matplotlib/fontlist-v3.11.0.json.matplotlib-lock
-This maybe due to another process holding this lock file.  If you are sure no
-other Matplotlib process is running, remove this file and try again.
-Could not save font_manager cache Lock error: Matplotlib failed to acquire the following lock file:
-    /jobfs/176848296.gadi-pbs/matplotlib/fontlist-v3.11.0.json.matplotlib-lock
-This maybe due to another process holding this lock file.  If you are sure no
-other Matplotlib process is running, remove this file and try again.
-Could not save font_manager cache Lock error: Matplotlib failed to acquire the following lock file:
-    /jobfs/176848296.gadi-pbs/matplotlib/fontlist-v3.11.0.json.matplotlib-lock
-This maybe due to another process holding this lock file.  If you are sure no
-other Matplotlib process is running, remove this file and try again.
-Could not save font_manager cache Lock error: Matplotlib failed to acquire the following lock file:
-    /jobfs/176848296.gadi-pbs/matplotlib/fontlist-v3.11.0.json.matplotlib-lock
-This maybe due to another process holding this lock file.  If you are sure no
-other Matplotlib process is running, remove this file and try again.
-Could not save font_manager cache Lock error: Matplotlib failed to acquire the following lock file:
-    /jobfs/176848296.gadi-pbs/matplotlib/fontlist-v3.11.0.json.matplotlib-lock
-This maybe due to another process holding this lock file.  If you are sure no
-other Matplotlib process is running, remove this file and try again.
-Could not save font_manager cache Lock error: Matplotlib failed to acquire the following lock file:
-    /jobfs/176848296.gadi-pbs/matplotlib/fontlist-v3.11.0.json.matplotlib-lock
-This maybe due to another process holding this lock file.  If you are sure no
-other Matplotlib process is running, remove this file and try again.
-Could not save font_manager cache Lock error: Matplotlib failed to acquire the following lock file:
-    /jobfs/176848296.gadi-pbs/matplotlib/fontlist-v3.11.0.json.matplotlib-lock
-This maybe due to another process holding this lock file.  If you are sure no
-other Matplotlib process is running, remove this file and try again.
-Could not save font_manager cache Lock error: Matplotlib failed to acquire the following lock file:
-    /jobfs/176848296.gadi-pbs/matplotlib/fontlist-v3.11.0.json.matplotlib-lock
-This maybe due to another process holding this lock file.  If you are sure no
-other Matplotlib process is running, remove this file and try again.
-Could not save font_manager cache Lock error: Matplotlib failed to acquire the following lock file:
-    /jobfs/176848296.gadi-pbs/matplotlib/fontlist-v3.11.0.json.matplotlib-lock
-This maybe due to another process holding this lock file.  If you are sure no
-other Matplotlib process is running, remove this file and try again.
-Could not save font_manager cache Lock error: Matplotlib failed to acquire the following lock file:
-    /jobfs/176848296.gadi-pbs/matplotlib/fontlist-v3.11.0.json.matplotlib-lock
-This maybe due to another process holding this lock file.  If you are sure no
-other Matplotlib process is running, remove this file and try again.
-Could not save font_manager cache Lock error: Matplotlib failed to acquire the following lock file:
-    /jobfs/176848296.gadi-pbs/matplotlib/fontlist-v3.11.0.json.matplotlib-lock
-This maybe due to another process holding this lock file.  If you are sure no
-other Matplotlib process is running, remove this file and try again.
-Could not save font_manager cache Lock error: Matplotlib failed to acquire the following lock file:
-    /jobfs/176848296.gadi-pbs/matplotlib/fontlist-v3.11.0.json.matplotlib-lock
-This maybe due to another process holding this lock file.  If you are sure no
-other Matplotlib process is running, remove this file and try again.
-Could not save font_manager cache Lock error: Matplotlib failed to acquire the following lock file:
-    /jobfs/176848296.gadi-pbs/matplotlib/fontlist-v3.11.0.json.matplotlib-lock
-This maybe due to another process holding this lock file.  If you are sure no
-other Matplotlib process is running, remove this file and try again.
-Could not save font_manager cache Lock error: Matplotlib failed to acquire the following lock file:
-    /jobfs/176848296.gadi-pbs/matplotlib/fontlist-v3.11.0.json.matplotlib-lock
-This maybe due to another process holding this lock file.  If you are sure no
-other Matplotlib process is running, remove this file and try again.
-Could not save font_manager cache Lock error: Matplotlib failed to acquire the following lock file:
-    /jobfs/176848296.gadi-pbs/matplotlib/fontlist-v3.11.0.json.matplotlib-lock
-This maybe due to another process holding this lock file.  If you are sure no
-other Matplotlib process is running, remove this file and try again.
-Could not save font_manager cache Lock error: Matplotlib failed to acquire the following lock file:
-    /jobfs/176848296.gadi-pbs/matplotlib/fontlist-v3.11.0.json.matplotlib-lock
-This maybe due to another process holding this lock file.  If you are sure no
-other Matplotlib process is running, remove this file and try again.
-Could not save font_manager cache Lock error: Matplotlib failed to acquire the following lock file:
-    /jobfs/176848296.gadi-pbs/matplotlib/fontlist-v3.11.0.json.matplotlib-lock
-This maybe due to another process holding this lock file.  If you are sure no
-other Matplotlib process is running, remove this file and try again.
-Could not save font_manager cache Lock error: Matplotlib failed to acquire the following lock file:
-    /jobfs/176848296.gadi-pbs/matplotlib/fontlist-v3.11.0.json.matplotlib-lock
-This maybe due to another process holding this lock file.  If you are sure no
-other Matplotlib process is running, remove this file and try again.
-Could not save font_manager cache Lock error: Matplotlib failed to acquire the following lock file:
-    /jobfs/176848296.gadi-pbs/matplotlib/fontlist-v3.11.0.json.matplotlib-lock
-This maybe due to another process holding this lock file.  If you are sure no
-other Matplotlib process is running, remove this file and try again.
-Could not save font_manager cache Lock error: Matplotlib failed to acquire the following lock file:
-    /jobfs/176848296.gadi-pbs/matplotlib/fontlist-v3.11.0.json.matplotlib-lock
-This maybe due to another process holding this lock file.  If you are sure no
-other Matplotlib process is running, remove this file and try again.
-Could not save font_manager cache Lock error: Matplotlib failed to acquire the following lock file:
-    /jobfs/176848296.gadi-pbs/matplotlib/fontlist-v3.11.0.json.matplotlib-lock
-This maybe due to another process holding this lock file.  If you are sure no
-other Matplotlib process is running, remove this file and try again.
-Could not save font_manager cache Lock error: Matplotlib failed to acquire the following lock file:
-    /jobfs/176848296.gadi-pbs/matplotlib/fontlist-v3.11.0.json.matplotlib-lock
-This maybe due to another process holding this lock file.  If you are sure no
-other Matplotlib process is running, remove this file and try again.
-Could not save font_manager cache Lock error: Matplotlib failed to acquire the following lock file:
-    /jobfs/176848296.gadi-pbs/matplotlib/fontlist-v3.11.0.json.matplotlib-lock
-This maybe due to another process holding this lock file.  If you are sure no
-other Matplotlib process is running, remove this file and try again.
-Could not save font_manager cache Lock error: Matplotlib failed to acquire the following lock file:
-    /jobfs/176848296.gadi-pbs/matplotlib/fontlist-v3.11.0.json.matplotlib-lock
-This maybe due to another process holding this lock file.  If you are sure no
-other Matplotlib process is running, remove this file and try again.
-Could not save font_manager cache Lock error: Matplotlib failed to acquire the following lock file:
-    /jobfs/176848296.gadi-pbs/matplotlib/fontlist-v3.11.0.json.matplotlib-lock
-This maybe due to another process holding this lock file.  If you are sure no
-other Matplotlib process is running, remove this file and try again.
-Could not save font_manager cache Lock error: Matplotlib failed to acquire the following lock file:
-    /jobfs/176848296.gadi-pbs/matplotlib/fontlist-v3.11.0.json.matplotlib-lock
-This maybe due to another process holding this lock file.  If you are sure no
-other Matplotlib process is running, remove this file and try again.
-Could not save font_manager cache Lock error: Matplotlib failed to acquire the following lock file:
-    /jobfs/176848296.gadi-pbs/matplotlib/fontlist-v3.11.0.json.matplotlib-lock
-This maybe due to another process holding this lock file.  If you are sure no
-other Matplotlib process is running, remove this file and try again.
-Could not save font_manager cache Lock error: Matplotlib failed to acquire the following lock file:
-    /jobfs/176848296.gadi-pbs/matplotlib/fontlist-v3.11.0.json.matplotlib-lock
-This maybe due to another process holding this lock file.  If you are sure no
-other Matplotlib process is running, remove this file and try again.
-Could not save font_manager cache Lock error: Matplotlib failed to acquire the following lock file:
-    /jobfs/176848296.gadi-pbs/matplotlib/fontlist-v3.11.0.json.matplotlib-lock
-This maybe due to another process holding this lock file.  If you are sure no
-other Matplotlib process is running, remove this file and try again.
-Could not save font_manager cache Lock error: Matplotlib failed to acquire the following lock file:
-    /jobfs/176848296.gadi-pbs/matplotlib/fontlist-v3.11.0.json.matplotlib-lock
-This maybe due to another process holding this lock file.  If you are sure no
-other Matplotlib process is running, remove this file and try again.
-Could not save font_manager cache Lock error: Matplotlib failed to acquire the following lock file:
-    /jobfs/176848296.gadi-pbs/matplotlib/fontlist-v3.11.0.json.matplotlib-lock
-This maybe due to another process holding this lock file.  If you are sure no
-other Matplotlib process is running, remove this file and try again.
-Could not save font_manager cache Lock error: Matplotlib failed to acquire the following lock file:
-    /jobfs/176848296.gadi-pbs/matplotlib/fontlist-v3.11.0.json.matplotlib-lock
-This maybe due to another process holding this lock file.  If you are sure no
-other Matplotlib process is running, remove this file and try again.
-Could not save font_manager cache Lock error: Matplotlib failed to acquire the following lock file:
-    /jobfs/176848296.gadi-pbs/matplotlib/fontlist-v3.11.0.json.matplotlib-lock
-This maybe due to another process holding this lock file.  If you are sure no
-other Matplotlib process is running, remove this file and try again.
-Could not save font_manager cache Lock error: Matplotlib failed to acquire the following lock file:
-    /jobfs/176848296.gadi-pbs/matplotlib/fontlist-v3.11.0.json.matplotlib-lock
-This maybe due to another process holding this lock file.  If you are sure no
-other Matplotlib process is running, remove this file and try again.
-Could not save font_manager cache Lock error: Matplotlib failed to acquire the following lock file:
-    /jobfs/176848296.gadi-pbs/matplotlib/fontlist-v3.11.0.json.matplotlib-lock
-This maybe due to another process holding this lock file.  If you are sure no
-other Matplotlib process is running, remove this file and try again.
-Could not save font_manager cache Lock error: Matplotlib failed to acquire the following lock file:
-    /jobfs/176848296.gadi-pbs/matplotlib/fontlist-v3.11.0.json.matplotlib-lock
-This maybe due to another process holding this lock file.  If you are sure no
-other Matplotlib process is running, remove this file and try again.
-Could not save font_manager cache Lock error: Matplotlib failed to acquire the following lock file:
-    /jobfs/176848296.gadi-pbs/matplotlib/fontlist-v3.11.0.json.matplotlib-lock
+    /jobfs/176973802.gadi-pbs/matplotlib/fontlist-v3.11.0.json.matplotlib-lock
 This maybe due to another process holding this lock file.  If you are sure no
 other Matplotlib process is running, remove this file and try again.
 Number of degrees of freedom: 36227072
@@ -502,7 +214,7 @@ Solver parameters: {'mat_type': 'aij', 'ksp_type': 'fgmres', 'snes_linesearch_ty
           Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
     Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 43
   Nonlinear BackwardEuler-Equation_ solve converged due to CONVERGED_FNORM_ABS iterations 4
-t = 300.00 s | step 1/30 | wall 76.88 s | NL 4 | L 183
+t = 300.00 s | step 1/30 | wall 77.72 s | NL 4 | L 183
           Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
           Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
           Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
@@ -660,7 +372,7 @@ t = 300.00 s | step 1/30 | wall 76.88 s | NL 4 | L 183
           Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
     Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 51
   Nonlinear BackwardEuler-Equation_ solve converged due to CONVERGED_FNORM_ABS iterations 3
-t = 600.00 s | step 2/30 | wall 27.06 s | NL 3 | L 153
+t = 600.00 s | step 2/30 | wall 27.23 s | NL 3 | L 153
           Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
           Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
           Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
@@ -820,7 +532,7 @@ t = 600.00 s | step 2/30 | wall 27.06 s | NL 3 | L 153
           Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
     Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 51
   Nonlinear BackwardEuler-Equation_ solve converged due to CONVERGED_FNORM_ABS iterations 3
-t = 900.00 s | step 3/30 | wall 27.01 s | NL 3 | L 155
+t = 900.00 s | step 3/30 | wall 27.35 s | NL 3 | L 155
           Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
           Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
           Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
@@ -985,7 +697,7 @@ t = 900.00 s | step 3/30 | wall 27.01 s | NL 3 | L 155
           Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
     Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 53
   Nonlinear BackwardEuler-Equation_ solve converged due to CONVERGED_FNORM_ABS iterations 3
-t = 1200.00 s | step 4/30 | wall 27.84 s | NL 3 | L 160
+t = 1200.00 s | step 4/30 | wall 27.97 s | NL 3 | L 160
           Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
           Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
           Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
@@ -1154,7 +866,7 @@ t = 1200.00 s | step 4/30 | wall 27.84 s | NL 3 | L 160
           Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
     Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 55
   Nonlinear BackwardEuler-Equation_ solve converged due to CONVERGED_FNORM_ABS iterations 3
-t = 1500.00 s | step 5/30 | wall 28.17 s | NL 3 | L 164
+t = 1500.00 s | step 5/30 | wall 28.55 s | NL 3 | L 164
           Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
           Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
           Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
@@ -1327,7 +1039,7 @@ t = 1500.00 s | step 5/30 | wall 28.17 s | NL 3 | L 164
           Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
     Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 57
   Nonlinear BackwardEuler-Equation_ solve converged due to CONVERGED_FNORM_ABS iterations 3
-t = 1800.00 s | step 6/30 | wall 28.83 s | NL 3 | L 168
+t = 1800.00 s | step 6/30 | wall 29.10 s | NL 3 | L 168
           Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
           Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
           Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
@@ -1503,7 +1215,7 @@ t = 1800.00 s | step 6/30 | wall 28.83 s | NL 3 | L 168
           Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
     Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 57
   Nonlinear BackwardEuler-Equation_ solve converged due to CONVERGED_FNORM_ABS iterations 3
-t = 2100.00 s | step 7/30 | wall 29.19 s | NL 3 | L 171
+t = 2100.00 s | step 7/30 | wall 29.62 s | NL 3 | L 171
           Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
           Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
           Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
@@ -1682,7 +1394,7 @@ t = 2100.00 s | step 7/30 | wall 29.19 s | NL 3 | L 171
           Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
     Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 58
   Nonlinear BackwardEuler-Equation_ solve converged due to CONVERGED_FNORM_ABS iterations 3
-t = 2400.00 s | step 8/30 | wall 29.58 s | NL 3 | L 174
+t = 2400.00 s | step 8/30 | wall 29.99 s | NL 3 | L 174
           Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
           Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
           Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
@@ -1863,7 +1575,7 @@ t = 2400.00 s | step 8/30 | wall 29.58 s | NL 3 | L 174
           Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
     Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 58
   Nonlinear BackwardEuler-Equation_ solve converged due to CONVERGED_FNORM_ABS iterations 3
-t = 2700.00 s | step 9/30 | wall 29.90 s | NL 3 | L 176
+t = 2700.00 s | step 9/30 | wall 30.31 s | NL 3 | L 176
           Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
           Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
           Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
@@ -2047,7 +1759,7 @@ t = 2700.00 s | step 9/30 | wall 29.90 s | NL 3 | L 176
           Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
     Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 59
   Nonlinear BackwardEuler-Equation_ solve converged due to CONVERGED_FNORM_ABS iterations 3
-t = 3000.00 s | step 10/30 | wall 30.41 s | NL 3 | L 179
+t = 3000.00 s | step 10/30 | wall 30.79 s | NL 3 | L 179
           Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
           Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
           Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
@@ -2233,7 +1945,7 @@ t = 3000.00 s | step 10/30 | wall 30.41 s | NL 3 | L 179
           Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
     Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 59
   Nonlinear BackwardEuler-Equation_ solve converged due to CONVERGED_FNORM_ABS iterations 3
-t = 3300.00 s | step 11/30 | wall 30.66 s | NL 3 | L 181
+t = 3300.00 s | step 11/30 | wall 31.05 s | NL 3 | L 181
           Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
           Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
           Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
@@ -2421,7 +2133,7 @@ t = 3300.00 s | step 11/30 | wall 30.66 s | NL 3 | L 181
           Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
     Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 59
   Nonlinear BackwardEuler-Equation_ solve converged due to CONVERGED_FNORM_ABS iterations 3
-t = 3600.00 s | step 12/30 | wall 30.94 s | NL 3 | L 183
+t = 3600.00 s | step 12/30 | wall 31.30 s | NL 3 | L 183
           Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
           Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
           Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
@@ -2612,7 +2324,7 @@ t = 3600.00 s | step 12/30 | wall 30.94 s | NL 3 | L 183
           Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
     Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 60
   Nonlinear BackwardEuler-Equation_ solve converged due to CONVERGED_FNORM_ABS iterations 3
-t = 3900.00 s | step 13/30 | wall 31.29 s | NL 3 | L 186
+t = 3900.00 s | step 13/30 | wall 31.72 s | NL 3 | L 186
           Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
           Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
           Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
@@ -2804,7 +2516,7 @@ t = 3900.00 s | step 13/30 | wall 31.29 s | NL 3 | L 186
           Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
     Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 60
   Nonlinear BackwardEuler-Equation_ solve converged due to CONVERGED_FNORM_ABS iterations 3
-t = 4200.00 s | step 14/30 | wall 31.50 s | NL 3 | L 187
+t = 4200.00 s | step 14/30 | wall 31.89 s | NL 3 | L 187
           Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
           Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
           Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
@@ -2997,7 +2709,7 @@ t = 4200.00 s | step 14/30 | wall 31.50 s | NL 3 | L 187
           Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
     Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 60
   Nonlinear BackwardEuler-Equation_ solve converged due to CONVERGED_FNORM_ABS iterations 3
-t = 4500.00 s | step 15/30 | wall 31.56 s | NL 3 | L 188
+t = 4500.00 s | step 15/30 | wall 32.01 s | NL 3 | L 188
           Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
           Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
           Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
@@ -3193,7 +2905,7 @@ t = 4500.00 s | step 15/30 | wall 31.56 s | NL 3 | L 188
           Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
     Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 61
   Nonlinear BackwardEuler-Equation_ solve converged due to CONVERGED_FNORM_ABS iterations 3
-t = 4800.00 s | step 16/30 | wall 32.01 s | NL 3 | L 191
+t = 4800.00 s | step 16/30 | wall 32.39 s | NL 3 | L 191
           Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
           Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
           Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
@@ -3391,7 +3103,7 @@ t = 4800.00 s | step 16/30 | wall 32.01 s | NL 3 | L 191
           Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
     Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 61
   Nonlinear BackwardEuler-Equation_ solve converged due to CONVERGED_FNORM_ABS iterations 3
-t = 5100.00 s | step 17/30 | wall 32.27 s | NL 3 | L 193
+t = 5100.00 s | step 17/30 | wall 32.62 s | NL 3 | L 193
           Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
           Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
           Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
@@ -3589,7 +3301,7 @@ t = 5100.00 s | step 17/30 | wall 32.27 s | NL 3 | L 193
           Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
     Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 61
   Nonlinear BackwardEuler-Equation_ solve converged due to CONVERGED_FNORM_ABS iterations 3
-t = 5400.00 s | step 18/30 | wall 32.33 s | NL 3 | L 193
+t = 5400.00 s | step 18/30 | wall 32.75 s | NL 3 | L 193
           Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
           Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
           Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
@@ -3790,7 +3502,7 @@ t = 5400.00 s | step 18/30 | wall 32.33 s | NL 3 | L 193
           Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
     Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 62
   Nonlinear BackwardEuler-Equation_ solve converged due to CONVERGED_FNORM_ABS iterations 3
-t = 5700.00 s | step 19/30 | wall 32.63 s | NL 3 | L 196
+t = 5700.00 s | step 19/30 | wall 33.03 s | NL 3 | L 196
           Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
           Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
           Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
@@ -3991,7 +3703,7 @@ t = 5700.00 s | step 19/30 | wall 32.63 s | NL 3 | L 196
           Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
     Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 62
   Nonlinear BackwardEuler-Equation_ solve converged due to CONVERGED_FNORM_ABS iterations 3
-t = 6000.00 s | step 20/30 | wall 32.66 s | NL 3 | L 196
+t = 6000.00 s | step 20/30 | wall 33.03 s | NL 3 | L 196
           Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
           Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
           Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
@@ -4195,7 +3907,7 @@ t = 6000.00 s | step 20/30 | wall 32.66 s | NL 3 | L 196
           Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
     Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 63
   Nonlinear BackwardEuler-Equation_ solve converged due to CONVERGED_FNORM_ABS iterations 3
-t = 6300.00 s | step 21/30 | wall 33.04 s | NL 3 | L 199
+t = 6300.00 s | step 21/30 | wall 33.51 s | NL 3 | L 199
           Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
           Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
           Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
@@ -4400,7 +4112,7 @@ t = 6300.00 s | step 21/30 | wall 33.04 s | NL 3 | L 199
           Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
     Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 64
   Nonlinear BackwardEuler-Equation_ solve converged due to CONVERGED_FNORM_ABS iterations 3
-t = 6600.00 s | step 22/30 | wall 33.27 s | NL 3 | L 200
+t = 6600.00 s | step 22/30 | wall 33.60 s | NL 3 | L 200
           Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
           Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
           Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
@@ -4607,7 +4319,7 @@ t = 6600.00 s | step 22/30 | wall 33.27 s | NL 3 | L 200
           Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
     Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 65
   Nonlinear BackwardEuler-Equation_ solve converged due to CONVERGED_FNORM_ABS iterations 3
-t = 6900.00 s | step 23/30 | wall 33.44 s | NL 3 | L 202
+t = 6900.00 s | step 23/30 | wall 33.80 s | NL 3 | L 202
           Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
           Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
           Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
@@ -4816,7 +4528,7 @@ t = 6900.00 s | step 23/30 | wall 33.44 s | NL 3 | L 202
           Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
     Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 66
   Nonlinear BackwardEuler-Equation_ solve converged due to CONVERGED_FNORM_ABS iterations 3
-t = 7200.00 s | step 24/30 | wall 33.69 s | NL 3 | L 204
+t = 7200.00 s | step 24/30 | wall 34.06 s | NL 3 | L 204
           Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
           Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
           Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
@@ -5026,7 +4738,7 @@ t = 7200.00 s | step 24/30 | wall 33.69 s | NL 3 | L 204
           Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
     Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 67
   Nonlinear BackwardEuler-Equation_ solve converged due to CONVERGED_FNORM_ABS iterations 3
-t = 7500.00 s | step 25/30 | wall 33.92 s | NL 3 | L 205
+t = 7500.00 s | step 25/30 | wall 34.27 s | NL 3 | L 205
           Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
           Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
           Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
@@ -5236,7 +4948,7 @@ t = 7500.00 s | step 25/30 | wall 33.92 s | NL 3 | L 205
           Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
     Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 67
   Nonlinear BackwardEuler-Equation_ solve converged due to CONVERGED_FNORM_ABS iterations 3
-t = 7800.00 s | step 26/30 | wall 33.80 s | NL 3 | L 205
+t = 7800.00 s | step 26/30 | wall 34.26 s | NL 3 | L 205
           Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
           Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
           Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
@@ -5448,7 +5160,7 @@ t = 7800.00 s | step 26/30 | wall 33.80 s | NL 3 | L 205
           Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
     Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 68
   Nonlinear BackwardEuler-Equation_ solve converged due to CONVERGED_FNORM_ABS iterations 3
-t = 8100.00 s | step 27/30 | wall 34.09 s | NL 3 | L 207
+t = 8100.00 s | step 27/30 | wall 34.48 s | NL 3 | L 207
           Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
           Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
           Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
@@ -5660,7 +5372,7 @@ t = 8100.00 s | step 27/30 | wall 34.09 s | NL 3 | L 207
           Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
     Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 68
   Nonlinear BackwardEuler-Equation_ solve converged due to CONVERGED_FNORM_ABS iterations 3
-t = 8400.00 s | step 28/30 | wall 34.07 s | NL 3 | L 207
+t = 8400.00 s | step 28/30 | wall 34.53 s | NL 3 | L 207
           Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
           Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
           Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
@@ -5874,7 +5586,7 @@ t = 8400.00 s | step 28/30 | wall 34.07 s | NL 3 | L 207
           Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
     Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 69
   Nonlinear BackwardEuler-Equation_ solve converged due to CONVERGED_FNORM_ABS iterations 3
-t = 8700.00 s | step 29/30 | wall 34.43 s | NL 3 | L 209
+t = 8700.00 s | step 29/30 | wall 34.80 s | NL 3 | L 209
           Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
           Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
           Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
@@ -6088,18 +5800,18 @@ t = 8700.00 s | step 29/30 | wall 34.43 s | NL 3 | L 209
           Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
     Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 69
   Nonlinear BackwardEuler-Equation_ solve converged due to CONVERGED_FNORM_ABS iterations 3
-t = 9000.00 s | step 30/30 | wall 34.37 s | NL 3 | L 209
-Done | total NL 91 | total L 5624 | mean wall/step 33.03 s | peak RSS 1121 MB
-=== Job completed: Thu Aug 20 23:47:49 AEST 2026 ===
+t = 9000.00 s | step 30/30 | wall 34.80 s | NL 3 | L 209
+Done | total NL 91 | total L 5624 | mean wall/step 33.42 s | peak RSS 1124 MB
+=== Job completed: Fri Aug 21 23:35:38 AEST 2026 ===
 
 ======================================================================================
-                  Resource Usage on 2026-08-20 23:47:54:
-   Job Id:             176848296.gadi-pbs
+                  Resource Usage on 2026-08-21 23:35:43:
+   Job Id:             176973802.gadi-pbs
    Project:            xd2
    Exit Status:        0
-   Service Units:      119.72
-   NCPUs Requested:    208                 CPU Time Used: 58:50:07        
-   Memory Requested:   1000.0GB              Memory Used: 187.15GB        
-   Walltime Requested: 03:00:00            Walltime Used: 00:17:16        
-   JobFS Requested:    400.0GB                JobFS Used: 56.82MB         
+   Service Units:      120.52
+   NCPUs Requested:    208                 CPU Time Used: 59:26:07        
+   Memory Requested:   1000.0GB              Memory Used: 185.48GB        
+   Walltime Requested: 03:00:00            Walltime Used: 00:17:23        
+   JobFS Requested:    400.0GB                JobFS Used: 56.91MB         
 ======================================================================================

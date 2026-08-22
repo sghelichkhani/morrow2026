@@ -5,409 +5,22 @@ Scale: large
 Degree: 1
 Nodes: 8
 CPUs: 832
-Date: Thu Aug 20 23:29:07 AEST 2026
-G-ADOPT commit: 7c88d823542349b5dfe272e69a23d79b8aca9c31
-Morrow commit: 689b192257f4e1d4dab5c673542ac05744e76260
+Date: Fri Aug 21 22:57:32 AEST 2026
+G-ADOPT commit: 3ab20fabc820d68b6d1f820b80149bc8e452a7f4
+Morrow commit: b153bd39bb0aa4da6fa4255ec076a2a14fc030fc
 Driver SHA256: ba6abf3ce3388755b35208a104650d19c9d308d9f781cba9ec25e899ad444bb4
 Solver SHA256: 4f69c6d53ca7306497536153dc31a35795eca1512655219760da2d51401ffcaf
 Firedrake module: singularity:intel-compiler-llvm/2024.2.1:petsc/main-20260815:firedrake/main-20260806
 PETSC_OPTIONS: -log_view :/scratch/xd2/sg8812/morrow2026/parallel_scaling/results/cockett/vlumping_hmg/large.profile -BackwardEuler-Equation_lumped_pc_mg_log
 ================
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
+Could not save font_manager cache Lock error: Matplotlib failed to acquire the following lock file:
+    /jobfs/176973803.gadi-pbs/matplotlib/fontlist-v3.11.0.json.matplotlib-lock
+This maybe due to another process holding this lock file.  If you are sure no
+other Matplotlib process is running, remove this file and try again.
+Could not save font_manager cache Lock error: Matplotlib failed to acquire the following lock file:
+    /jobfs/176973803.gadi-pbs/matplotlib/fontlist-v3.11.0.json.matplotlib-lock
+This maybe due to another process holding this lock file.  If you are sure no
+other Matplotlib process is running, remove this file and try again.
 Matplotlib is building the font cache; this may take a moment.
 Matplotlib is building the font cache; this may take a moment.
 Matplotlib is building the font cache; this may take a moment.
@@ -816,7 +429,7 @@ Solver parameters: {'mat_type': 'aij', 'ksp_type': 'fgmres', 'snes_linesearch_ty
           Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
     Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 70
   Nonlinear BackwardEuler-Equation_ solve converged due to CONVERGED_FNORM_ABS iterations 4
-t = 300.00 s | step 1/30 | wall 114.71 s | NL 4 | L 294
+t = 300.00 s | step 1/30 | wall 114.41 s | NL 4 | L 294
           Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
           Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
           Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
@@ -1072,7 +685,7 @@ t = 300.00 s | step 1/30 | wall 114.71 s | NL 4 | L 294
           Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
     Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 83
   Nonlinear BackwardEuler-Equation_ solve converged due to CONVERGED_FNORM_ABS iterations 3
-t = 600.00 s | step 2/30 | wall 52.17 s | NL 3 | L 251
+t = 600.00 s | step 2/30 | wall 51.20 s | NL 3 | L 251
           Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
           Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
           Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
@@ -1333,7 +946,7 @@ t = 600.00 s | step 2/30 | wall 52.17 s | NL 3 | L 251
           Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
     Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 85
   Nonlinear BackwardEuler-Equation_ solve converged due to CONVERGED_FNORM_ABS iterations 3
-t = 900.00 s | step 3/30 | wall 53.08 s | NL 3 | L 256
+t = 900.00 s | step 3/30 | wall 52.29 s | NL 3 | L 256
           Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
           Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
           Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
@@ -1601,7 +1214,7 @@ t = 900.00 s | step 3/30 | wall 53.08 s | NL 3 | L 256
           Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
     Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 88
   Nonlinear BackwardEuler-Equation_ solve converged due to CONVERGED_FNORM_ABS iterations 3
-t = 1200.00 s | step 4/30 | wall 54.45 s | NL 3 | L 263
+t = 1200.00 s | step 4/30 | wall 53.58 s | NL 3 | L 263
           Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
           Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
           Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
@@ -1875,7 +1488,7 @@ t = 1200.00 s | step 4/30 | wall 54.45 s | NL 3 | L 263
           Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
     Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 90
   Nonlinear BackwardEuler-Equation_ solve converged due to CONVERGED_FNORM_ABS iterations 3
-t = 1500.00 s | step 5/30 | wall 55.62 s | NL 3 | L 269
+t = 1500.00 s | step 5/30 | wall 54.67 s | NL 3 | L 269
           Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
           Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
           Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
@@ -2158,7 +1771,7 @@ t = 1500.00 s | step 5/30 | wall 55.62 s | NL 3 | L 269
           Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
     Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 93
   Nonlinear BackwardEuler-Equation_ solve converged due to CONVERGED_FNORM_ABS iterations 3
-t = 1800.00 s | step 6/30 | wall 57.38 s | NL 3 | L 278
+t = 1800.00 s | step 6/30 | wall 56.24 s | NL 3 | L 278
           Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
           Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
           Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
@@ -2451,7 +2064,7 @@ t = 1800.00 s | step 6/30 | wall 57.38 s | NL 3 | L 278
           Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
     Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 96
   Nonlinear BackwardEuler-Equation_ solve converged due to CONVERGED_FNORM_ABS iterations 3
-t = 2100.00 s | step 7/30 | wall 59.15 s | NL 3 | L 288
+t = 2100.00 s | step 7/30 | wall 57.97 s | NL 3 | L 288
           Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
           Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
           Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
@@ -2749,7 +2362,7 @@ t = 2100.00 s | step 7/30 | wall 59.15 s | NL 3 | L 288
           Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
     Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 97
   Nonlinear BackwardEuler-Equation_ solve converged due to CONVERGED_FNORM_ABS iterations 3
-t = 2400.00 s | step 8/30 | wall 60.06 s | NL 3 | L 293
+t = 2400.00 s | step 8/30 | wall 58.84 s | NL 3 | L 293
           Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
           Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
           Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
@@ -3051,7 +2664,7 @@ t = 2400.00 s | step 8/30 | wall 60.06 s | NL 3 | L 293
           Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
     Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 98
   Nonlinear BackwardEuler-Equation_ solve converged due to CONVERGED_FNORM_ABS iterations 3
-t = 2700.00 s | step 9/30 | wall 60.84 s | NL 3 | L 297
+t = 2700.00 s | step 9/30 | wall 59.45 s | NL 3 | L 297
           Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
           Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
           Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
@@ -3356,7 +2969,7 @@ t = 2700.00 s | step 9/30 | wall 60.84 s | NL 3 | L 297
           Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
     Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 99
   Nonlinear BackwardEuler-Equation_ solve converged due to CONVERGED_FNORM_ABS iterations 3
-t = 3000.00 s | step 10/30 | wall 61.41 s | NL 3 | L 300
+t = 3000.00 s | step 10/30 | wall 60.15 s | NL 3 | L 300
           Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
           Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
           Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
@@ -3665,7 +3278,7 @@ t = 3000.00 s | step 10/30 | wall 61.41 s | NL 3 | L 300
           Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
     Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 100
   Nonlinear BackwardEuler-Equation_ solve converged due to CONVERGED_FNORM_ABS iterations 3
-t = 3300.00 s | step 11/30 | wall 62.08 s | NL 3 | L 304
+t = 3300.00 s | step 11/30 | wall 60.79 s | NL 3 | L 304
           Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
           Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
           Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
@@ -3976,7 +3589,7 @@ t = 3300.00 s | step 11/30 | wall 62.08 s | NL 3 | L 304
           Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
     Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 100
   Nonlinear BackwardEuler-Equation_ solve converged due to CONVERGED_FNORM_ABS iterations 3
-t = 3600.00 s | step 12/30 | wall 62.41 s | NL 3 | L 306
+t = 3600.00 s | step 12/30 | wall 61.14 s | NL 3 | L 306
           Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
           Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
           Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
@@ -4287,7 +3900,7 @@ t = 3600.00 s | step 12/30 | wall 62.41 s | NL 3 | L 306
           Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
     Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 100
   Nonlinear BackwardEuler-Equation_ solve converged due to CONVERGED_FNORM_ABS iterations 3
-t = 3900.00 s | step 13/30 | wall 62.30 s | NL 3 | L 306
+t = 3900.00 s | step 13/30 | wall 61.02 s | NL 3 | L 306
           Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
           Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
           Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
@@ -4601,7 +4214,7 @@ t = 3900.00 s | step 13/30 | wall 62.30 s | NL 3 | L 306
           Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
     Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 101
   Nonlinear BackwardEuler-Equation_ solve converged due to CONVERGED_FNORM_ABS iterations 3
-t = 4200.00 s | step 14/30 | wall 62.96 s | NL 3 | L 309
+t = 4200.00 s | step 14/30 | wall 61.72 s | NL 3 | L 309
           Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
           Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
           Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
@@ -4917,7 +4530,7 @@ t = 4200.00 s | step 14/30 | wall 62.96 s | NL 3 | L 309
           Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
     Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 101
   Nonlinear BackwardEuler-Equation_ solve converged due to CONVERGED_FNORM_ABS iterations 3
-t = 4500.00 s | step 15/30 | wall 63.20 s | NL 3 | L 311
+t = 4500.00 s | step 15/30 | wall 62.02 s | NL 3 | L 311
           Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
           Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
           Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
@@ -5236,7 +4849,7 @@ t = 4500.00 s | step 15/30 | wall 63.20 s | NL 3 | L 311
           Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
     Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 102
   Nonlinear BackwardEuler-Equation_ solve converged due to CONVERGED_FNORM_ABS iterations 3
-t = 4800.00 s | step 16/30 | wall 63.87 s | NL 3 | L 314
+t = 4800.00 s | step 16/30 | wall 62.65 s | NL 3 | L 314
           Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
           Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
           Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
@@ -5555,7 +5168,7 @@ t = 4800.00 s | step 16/30 | wall 63.87 s | NL 3 | L 314
           Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
     Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 102
   Nonlinear BackwardEuler-Equation_ solve converged due to CONVERGED_FNORM_ABS iterations 3
-t = 5100.00 s | step 17/30 | wall 64.03 s | NL 3 | L 314
+t = 5100.00 s | step 17/30 | wall 62.69 s | NL 3 | L 314
           Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
           Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
           Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
@@ -5876,7 +5489,7 @@ t = 5100.00 s | step 17/30 | wall 64.03 s | NL 3 | L 314
           Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
     Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 102
   Nonlinear BackwardEuler-Equation_ solve converged due to CONVERGED_FNORM_ABS iterations 3
-t = 5400.00 s | step 18/30 | wall 64.17 s | NL 3 | L 316
+t = 5400.00 s | step 18/30 | wall 62.91 s | NL 3 | L 316
           Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
           Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
           Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
@@ -6199,7 +5812,7 @@ t = 5400.00 s | step 18/30 | wall 64.17 s | NL 3 | L 316
           Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
     Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 103
   Nonlinear BackwardEuler-Equation_ solve converged due to CONVERGED_FNORM_ABS iterations 3
-t = 5700.00 s | step 19/30 | wall 64.66 s | NL 3 | L 318
+t = 5700.00 s | step 19/30 | wall 63.33 s | NL 3 | L 318
           Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
           Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
           Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
@@ -6524,7 +6137,7 @@ t = 5700.00 s | step 19/30 | wall 64.66 s | NL 3 | L 318
           Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
     Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 104
   Nonlinear BackwardEuler-Equation_ solve converged due to CONVERGED_FNORM_ABS iterations 3
-t = 6000.00 s | step 20/30 | wall 65.03 s | NL 3 | L 320
+t = 6000.00 s | step 20/30 | wall 63.74 s | NL 3 | L 320
           Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
           Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
           Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
@@ -6851,7 +6464,7 @@ t = 6000.00 s | step 20/30 | wall 65.03 s | NL 3 | L 320
           Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
     Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 105
   Nonlinear BackwardEuler-Equation_ solve converged due to CONVERGED_FNORM_ABS iterations 3
-t = 6300.00 s | step 21/30 | wall 65.36 s | NL 3 | L 322
+t = 6300.00 s | step 21/30 | wall 64.29 s | NL 3 | L 322
           Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
           Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
           Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
@@ -7181,7 +6794,7 @@ t = 6300.00 s | step 21/30 | wall 65.36 s | NL 3 | L 322
           Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
     Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 106
   Nonlinear BackwardEuler-Equation_ solve converged due to CONVERGED_FNORM_ABS iterations 3
-t = 6600.00 s | step 22/30 | wall 66.00 s | NL 3 | L 325
+t = 6600.00 s | step 22/30 | wall 64.60 s | NL 3 | L 325
           Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
           Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
           Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
@@ -7514,7 +7127,7 @@ t = 6600.00 s | step 22/30 | wall 66.00 s | NL 3 | L 325
           Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
     Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 107
   Nonlinear BackwardEuler-Equation_ solve converged due to CONVERGED_FNORM_ABS iterations 3
-t = 6900.00 s | step 23/30 | wall 66.52 s | NL 3 | L 328
+t = 6900.00 s | step 23/30 | wall 65.31 s | NL 3 | L 328
           Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
           Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
           Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
@@ -7847,7 +7460,7 @@ t = 6900.00 s | step 23/30 | wall 66.52 s | NL 3 | L 328
           Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
     Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 107
   Nonlinear BackwardEuler-Equation_ solve converged due to CONVERGED_FNORM_ABS iterations 3
-t = 7200.00 s | step 24/30 | wall 66.55 s | NL 3 | L 328
+t = 7200.00 s | step 24/30 | wall 65.16 s | NL 3 | L 328
           Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
           Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
           Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
@@ -8183,7 +7796,7 @@ t = 7200.00 s | step 24/30 | wall 66.55 s | NL 3 | L 328
           Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
     Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 108
   Nonlinear BackwardEuler-Equation_ solve converged due to CONVERGED_FNORM_ABS iterations 3
-t = 7500.00 s | step 25/30 | wall 67.25 s | NL 3 | L 331
+t = 7500.00 s | step 25/30 | wall 65.84 s | NL 3 | L 331
           Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
           Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
           Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
@@ -8520,7 +8133,7 @@ t = 7500.00 s | step 25/30 | wall 67.25 s | NL 3 | L 331
           Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
     Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 109
   Nonlinear BackwardEuler-Equation_ solve converged due to CONVERGED_FNORM_ABS iterations 3
-t = 7800.00 s | step 26/30 | wall 67.46 s | NL 3 | L 332
+t = 7800.00 s | step 26/30 | wall 65.98 s | NL 3 | L 332
           Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
           Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
           Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
@@ -8859,7 +8472,7 @@ t = 7800.00 s | step 26/30 | wall 67.46 s | NL 3 | L 332
           Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
     Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 109
   Nonlinear BackwardEuler-Equation_ solve converged due to CONVERGED_FNORM_ABS iterations 3
-t = 8100.00 s | step 27/30 | wall 67.75 s | NL 3 | L 334
+t = 8100.00 s | step 27/30 | wall 66.38 s | NL 3 | L 334
           Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
           Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
           Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
@@ -9200,7 +8813,7 @@ t = 8100.00 s | step 27/30 | wall 67.75 s | NL 3 | L 334
           Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
     Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 110
   Nonlinear BackwardEuler-Equation_ solve converged due to CONVERGED_FNORM_ABS iterations 3
-t = 8400.00 s | step 28/30 | wall 68.19 s | NL 3 | L 336
+t = 8400.00 s | step 28/30 | wall 66.64 s | NL 3 | L 336
           Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
           Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
           Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
@@ -9543,7 +9156,7 @@ t = 8400.00 s | step 28/30 | wall 68.19 s | NL 3 | L 336
           Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
     Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 111
   Nonlinear BackwardEuler-Equation_ solve converged due to CONVERGED_FNORM_ABS iterations 3
-t = 8700.00 s | step 29/30 | wall 68.88 s | NL 3 | L 338
+t = 8700.00 s | step 29/30 | wall 67.04 s | NL 3 | L 338
           Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
           Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
           Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
@@ -9889,18 +9502,18 @@ t = 8700.00 s | step 29/30 | wall 68.88 s | NL 3 | L 338
           Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
     Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 112
   Nonlinear BackwardEuler-Equation_ solve converged due to CONVERGED_FNORM_ABS iterations 3
-t = 9000.00 s | step 30/30 | wall 69.17 s | NL 3 | L 341
-Done | total NL 91 | total L 9222 | mean wall/step 64.56 s | peak RSS 1260 MB
-=== Job completed: Fri Aug 21 00:02:25 AEST 2026 ===
+t = 9000.00 s | step 30/30 | wall 67.63 s | NL 3 | L 341
+Done | total NL 91 | total L 9222 | mean wall/step 63.32 s | peak RSS 1262 MB
+=== Job completed: Fri Aug 21 23:30:53 AEST 2026 ===
 
 ======================================================================================
-                  Resource Usage on 2026-08-21 00:02:30:
-   Job Id:             176848297.gadi-pbs
+                  Resource Usage on 2026-08-21 23:30:58:
+   Job Id:             176973803.gadi-pbs
    Project:            xd2
    Exit Status:        0
-   Service Units:      924.91
-   NCPUs Requested:    832                 CPU Time Used: 455:26:21       
-   Memory Requested:   3.91TB                Memory Used: 752.29GB        
-   Walltime Requested: 03:00:00            Walltime Used: 00:33:21        
-   JobFS Requested:    400.0GB                JobFS Used: 57.09MB         
+   Service Units:      926.76
+   NCPUs Requested:    832                 CPU Time Used: 451:04:52       
+   Memory Requested:   3.91TB                Memory Used: 757.79GB        
+   Walltime Requested: 03:00:00            Walltime Used: 00:33:25        
+   JobFS Requested:    400.0GB                JobFS Used: 56.88MB         
 ======================================================================================

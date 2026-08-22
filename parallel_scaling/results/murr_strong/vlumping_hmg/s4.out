@@ -5,302 +5,106 @@ Scale: s4
 Degree: 1
 Nodes: 4
 CPUs: 416
-Date: Thu Aug 20 23:29:16 AEST 2026
-G-ADOPT commit: 7c88d823542349b5dfe272e69a23d79b8aca9c31
-Morrow commit: 689b192257f4e1d4dab5c673542ac05744e76260
+Date: Fri Aug 21 23:17:35 AEST 2026
+G-ADOPT commit: 3ab20fabc820d68b6d1f820b80149bc8e452a7f4
+Morrow commit: b153bd39bb0aa4da6fa4255ec076a2a14fc030fc
 Driver SHA256: f5182d7d32b0293d79ef7050bbc979798d87c378f1525fe27f283ad0b4e5ba41
 Solver SHA256: 4f69c6d53ca7306497536153dc31a35795eca1512655219760da2d51401ffcaf
 Firedrake module: singularity:intel-compiler-llvm/2024.2.1:petsc/main-20260815:firedrake/main-20260806
 PETSC_OPTIONS: -log_view :/scratch/xd2/sg8812/morrow2026/parallel_scaling/results/murr_strong/vlumping_hmg/s4.profile -BackwardEuler-Equation_lumped_pc_mg_log
 ================
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
+Could not save font_manager cache Lock error: Matplotlib failed to acquire the following lock file:
+    /jobfs/176973848.gadi-pbs/matplotlib/fontlist-v3.11.0.json.matplotlib-lock
+This maybe due to another process holding this lock file.  If you are sure no
+other Matplotlib process is running, remove this file and try again.
+Could not save font_manager cache Lock error: Matplotlib failed to acquire the following lock file:
+    /jobfs/176973848.gadi-pbs/matplotlib/fontlist-v3.11.0.json.matplotlib-lock
+This maybe due to another process holding this lock file.  If you are sure no
+other Matplotlib process is running, remove this file and try again.
+Could not save font_manager cache Lock error: Matplotlib failed to acquire the following lock file:
+    /jobfs/176973848.gadi-pbs/matplotlib/fontlist-v3.11.0.json.matplotlib-lock
+This maybe due to another process holding this lock file.  If you are sure no
+other Matplotlib process is running, remove this file and try again.
+Could not save font_manager cache Lock error: Matplotlib failed to acquire the following lock file:
+    /jobfs/176973848.gadi-pbs/matplotlib/fontlist-v3.11.0.json.matplotlib-lock
+This maybe due to another process holding this lock file.  If you are sure no
+other Matplotlib process is running, remove this file and try again.
+Could not save font_manager cache Lock error: Matplotlib failed to acquire the following lock file:
+    /jobfs/176973848.gadi-pbs/matplotlib/fontlist-v3.11.0.json.matplotlib-lock
+This maybe due to another process holding this lock file.  If you are sure no
+other Matplotlib process is running, remove this file and try again.
+Could not save font_manager cache Lock error: Matplotlib failed to acquire the following lock file:
+    /jobfs/176973848.gadi-pbs/matplotlib/fontlist-v3.11.0.json.matplotlib-lock
+This maybe due to another process holding this lock file.  If you are sure no
+other Matplotlib process is running, remove this file and try again.
+Could not save font_manager cache Lock error: Matplotlib failed to acquire the following lock file:
+    /jobfs/176973848.gadi-pbs/matplotlib/fontlist-v3.11.0.json.matplotlib-lock
+This maybe due to another process holding this lock file.  If you are sure no
+other Matplotlib process is running, remove this file and try again.
+Could not save font_manager cache Lock error: Matplotlib failed to acquire the following lock file:
+    /jobfs/176973848.gadi-pbs/matplotlib/fontlist-v3.11.0.json.matplotlib-lock
+This maybe due to another process holding this lock file.  If you are sure no
+other Matplotlib process is running, remove this file and try again.
+Could not save font_manager cache Lock error: Matplotlib failed to acquire the following lock file:
+    /jobfs/176973848.gadi-pbs/matplotlib/fontlist-v3.11.0.json.matplotlib-lock
+This maybe due to another process holding this lock file.  If you are sure no
+other Matplotlib process is running, remove this file and try again.
+Could not save font_manager cache Lock error: Matplotlib failed to acquire the following lock file:
+    /jobfs/176973848.gadi-pbs/matplotlib/fontlist-v3.11.0.json.matplotlib-lock
+This maybe due to another process holding this lock file.  If you are sure no
+other Matplotlib process is running, remove this file and try again.
+Could not save font_manager cache Lock error: Matplotlib failed to acquire the following lock file:
+    /jobfs/176973848.gadi-pbs/matplotlib/fontlist-v3.11.0.json.matplotlib-lock
+This maybe due to another process holding this lock file.  If you are sure no
+other Matplotlib process is running, remove this file and try again.
+Could not save font_manager cache Lock error: Matplotlib failed to acquire the following lock file:
+    /jobfs/176973848.gadi-pbs/matplotlib/fontlist-v3.11.0.json.matplotlib-lock
+This maybe due to another process holding this lock file.  If you are sure no
+other Matplotlib process is running, remove this file and try again.
+Could not save font_manager cache Lock error: Matplotlib failed to acquire the following lock file:
+    /jobfs/176973848.gadi-pbs/matplotlib/fontlist-v3.11.0.json.matplotlib-lock
+This maybe due to another process holding this lock file.  If you are sure no
+other Matplotlib process is running, remove this file and try again.
+Could not save font_manager cache Lock error: Matplotlib failed to acquire the following lock file:
+    /jobfs/176973848.gadi-pbs/matplotlib/fontlist-v3.11.0.json.matplotlib-lock
+This maybe due to another process holding this lock file.  If you are sure no
+other Matplotlib process is running, remove this file and try again.
+Could not save font_manager cache Lock error: Matplotlib failed to acquire the following lock file:
+    /jobfs/176973848.gadi-pbs/matplotlib/fontlist-v3.11.0.json.matplotlib-lock
+This maybe due to another process holding this lock file.  If you are sure no
+other Matplotlib process is running, remove this file and try again.
+Could not save font_manager cache Lock error: Matplotlib failed to acquire the following lock file:
+    /jobfs/176973848.gadi-pbs/matplotlib/fontlist-v3.11.0.json.matplotlib-lock
+This maybe due to another process holding this lock file.  If you are sure no
+other Matplotlib process is running, remove this file and try again.
+Could not save font_manager cache Lock error: Matplotlib failed to acquire the following lock file:
+    /jobfs/176973848.gadi-pbs/matplotlib/fontlist-v3.11.0.json.matplotlib-lock
+This maybe due to another process holding this lock file.  If you are sure no
+other Matplotlib process is running, remove this file and try again.
+Could not save font_manager cache Lock error: Matplotlib failed to acquire the following lock file:
+    /jobfs/176973848.gadi-pbs/matplotlib/fontlist-v3.11.0.json.matplotlib-lock
+This maybe due to another process holding this lock file.  If you are sure no
+other Matplotlib process is running, remove this file and try again.
+Could not save font_manager cache Lock error: Matplotlib failed to acquire the following lock file:
+    /jobfs/176973848.gadi-pbs/matplotlib/fontlist-v3.11.0.json.matplotlib-lock
+This maybe due to another process holding this lock file.  If you are sure no
+other Matplotlib process is running, remove this file and try again.
+Could not save font_manager cache Lock error: Matplotlib failed to acquire the following lock file:
+    /jobfs/176973848.gadi-pbs/matplotlib/fontlist-v3.11.0.json.matplotlib-lock
+This maybe due to another process holding this lock file.  If you are sure no
+other Matplotlib process is running, remove this file and try again.
+Could not save font_manager cache Lock error: Matplotlib failed to acquire the following lock file:
+    /jobfs/176973848.gadi-pbs/matplotlib/fontlist-v3.11.0.json.matplotlib-lock
+This maybe due to another process holding this lock file.  If you are sure no
+other Matplotlib process is running, remove this file and try again.
+Could not save font_manager cache Lock error: Matplotlib failed to acquire the following lock file:
+    /jobfs/176973848.gadi-pbs/matplotlib/fontlist-v3.11.0.json.matplotlib-lock
+This maybe due to another process holding this lock file.  If you are sure no
+other Matplotlib process is running, remove this file and try again.
+Could not save font_manager cache Lock error: Matplotlib failed to acquire the following lock file:
+    /jobfs/176973848.gadi-pbs/matplotlib/fontlist-v3.11.0.json.matplotlib-lock
+This maybe due to another process holding this lock file.  If you are sure no
+other Matplotlib process is running, remove this file and try again.
 Number of degrees of freedom: 334540800
 Horizontal resolution: 620.0 m, Layers: 300, DG1
 Time stepper: BackwardEuler, dt_init = 60.0 s, dt_max = 43200.0 s, growth = 1.5
@@ -361,7 +165,7 @@ Solver parameters: {'mat_type': 'aij', 'ksp_type': 'fgmres', 'snes_linesearch_ty
           Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
     Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 11
   Nonlinear BackwardEuler-Equation_ solve converged due to CONVERGED_SNORM_RELATIVE iterations 4
-t = 0.00 d | step 1/100000 | dt = 60.0 s | wall 93.08 s | NL 4 | L 50
+t = 0.00 d | step 1/100000 | dt = 60.0 s | wall 94.33 s | NL 4 | L 50
           Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
           Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
           Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
@@ -400,7 +204,7 @@ t = 0.00 d | step 1/100000 | dt = 60.0 s | wall 93.08 s | NL 4 | L 50
           Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
     Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 13
   Nonlinear BackwardEuler-Equation_ solve converged due to CONVERGED_SNORM_RELATIVE iterations 3
-t = 0.00 d | step 2/100000 | dt = 90.0 s | wall 28.88 s | NL 3 | L 34
+t = 0.00 d | step 2/100000 | dt = 90.0 s | wall 29.44 s | NL 3 | L 34
           Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
           Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
           Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
@@ -438,7 +242,7 @@ t = 0.00 d | step 2/100000 | dt = 90.0 s | wall 28.88 s | NL 3 | L 34
           Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
     Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 9
   Nonlinear BackwardEuler-Equation_ solve converged due to CONVERGED_SNORM_RELATIVE iterations 3
-t = 0.00 d | step 3/100000 | dt = 135.0 s | wall 28.42 s | NL 3 | L 33
+t = 0.00 d | step 3/100000 | dt = 135.0 s | wall 28.63 s | NL 3 | L 33
           Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
           Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
           Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
@@ -484,7 +288,7 @@ t = 0.00 d | step 3/100000 | dt = 135.0 s | wall 28.42 s | NL 3 | L 33
           Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
     Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 18
   Nonlinear BackwardEuler-Equation_ solve converged due to CONVERGED_SNORM_RELATIVE iterations 3
-t = 0.01 d | step 4/100000 | dt = 202.5 s | wall 32.46 s | NL 3 | L 41
+t = 0.01 d | step 4/100000 | dt = 202.5 s | wall 32.75 s | NL 3 | L 41
           Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
           Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
           Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
@@ -531,7 +335,7 @@ t = 0.01 d | step 4/100000 | dt = 202.5 s | wall 32.46 s | NL 3 | L 41
           Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
     Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 17
   Nonlinear BackwardEuler-Equation_ solve converged due to CONVERGED_SNORM_RELATIVE iterations 3
-t = 0.01 d | step 5/100000 | dt = 303.8 s | wall 32.94 s | NL 3 | L 42
+t = 0.01 d | step 5/100000 | dt = 303.8 s | wall 32.88 s | NL 3 | L 42
           Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
           Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
           Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
@@ -576,7 +380,7 @@ t = 0.01 d | step 5/100000 | dt = 303.8 s | wall 32.94 s | NL 3 | L 42
           Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
     Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 14
   Nonlinear BackwardEuler-Equation_ solve converged due to CONVERGED_SNORM_RELATIVE iterations 3
-t = 0.01 d | step 6/100000 | dt = 455.6 s | wall 31.72 s | NL 3 | L 40
+t = 0.01 d | step 6/100000 | dt = 455.6 s | wall 32.05 s | NL 3 | L 40
           Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
           Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
           Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
@@ -630,7 +434,7 @@ t = 0.01 d | step 6/100000 | dt = 455.6 s | wall 31.72 s | NL 3 | L 40
           Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
     Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 23
   Nonlinear BackwardEuler-Equation_ solve converged due to CONVERGED_SNORM_RELATIVE iterations 3
-t = 0.02 d | step 7/100000 | dt = 683.4 s | wall 35.98 s | NL 3 | L 49
+t = 0.02 d | step 7/100000 | dt = 683.4 s | wall 36.48 s | NL 3 | L 49
           Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
           Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
           Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
@@ -678,7 +482,7 @@ t = 0.02 d | step 7/100000 | dt = 683.4 s | wall 35.98 s | NL 3 | L 49
           Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
     Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 14
   Nonlinear BackwardEuler-Equation_ solve converged due to CONVERGED_SNORM_RELATIVE iterations 3
-t = 0.03 d | step 8/100000 | dt = 1025.2 s | wall 33.23 s | NL 3 | L 43
+t = 0.03 d | step 8/100000 | dt = 1025.2 s | wall 33.19 s | NL 3 | L 43
           Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
           Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
           Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
@@ -735,7 +539,7 @@ t = 0.03 d | step 8/100000 | dt = 1025.2 s | wall 33.23 s | NL 3 | L 43
           Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
     Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 23
   Nonlinear BackwardEuler-Equation_ solve converged due to CONVERGED_SNORM_RELATIVE iterations 3
-t = 0.05 d | step 9/100000 | dt = 1537.7 s | wall 37.73 s | NL 3 | L 52
+t = 0.05 d | step 9/100000 | dt = 1537.7 s | wall 37.72 s | NL 3 | L 52
           Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
           Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
           Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
@@ -788,7 +592,7 @@ t = 0.05 d | step 9/100000 | dt = 1537.7 s | wall 37.73 s | NL 3 | L 52
           Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
     Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 19
   Nonlinear BackwardEuler-Equation_ solve converged due to CONVERGED_SNORM_RELATIVE iterations 3
-t = 0.08 d | step 10/100000 | dt = 2306.6 s | wall 35.52 s | NL 3 | L 48
+t = 0.08 d | step 10/100000 | dt = 2306.6 s | wall 35.77 s | NL 3 | L 48
           Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
           Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
           Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
@@ -843,7 +647,7 @@ t = 0.08 d | step 10/100000 | dt = 2306.6 s | wall 35.52 s | NL 3 | L 48
           Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
     Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 21
   Nonlinear BackwardEuler-Equation_ solve converged due to CONVERGED_SNORM_RELATIVE iterations 3
-t = 0.12 d | step 11/100000 | dt = 3459.9 s | wall 36.45 s | NL 3 | L 50
+t = 0.12 d | step 11/100000 | dt = 3459.9 s | wall 36.70 s | NL 3 | L 50
           Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
           Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
           Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
@@ -900,7 +704,7 @@ t = 0.12 d | step 11/100000 | dt = 3459.9 s | wall 36.45 s | NL 3 | L 50
           Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
     Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 22
   Nonlinear BackwardEuler-Equation_ solve converged due to CONVERGED_SNORM_RELATIVE iterations 3
-t = 0.18 d | step 12/100000 | dt = 5189.9 s | wall 37.31 s | NL 3 | L 52
+t = 0.18 d | step 12/100000 | dt = 5189.9 s | wall 37.47 s | NL 3 | L 52
           Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
           Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
           Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
@@ -955,7 +759,7 @@ t = 0.18 d | step 12/100000 | dt = 5189.9 s | wall 37.31 s | NL 3 | L 52
           Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
     Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 20
   Nonlinear BackwardEuler-Equation_ solve converged due to CONVERGED_SNORM_RELATIVE iterations 3
-t = 0.27 d | step 13/100000 | dt = 7784.8 s | wall 36.55 s | NL 3 | L 50
+t = 0.27 d | step 13/100000 | dt = 7784.8 s | wall 36.34 s | NL 3 | L 50
           Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
           Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
           Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
@@ -1007,7 +811,7 @@ t = 0.27 d | step 13/100000 | dt = 7784.8 s | wall 36.55 s | NL 3 | L 50
           Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
     Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 18
   Nonlinear BackwardEuler-Equation_ solve converged due to CONVERGED_SNORM_RELATIVE iterations 3
-t = 0.40 d | step 14/100000 | dt = 11677.2 s | wall 34.93 s | NL 3 | L 47
+t = 0.40 d | step 14/100000 | dt = 11677.2 s | wall 35.06 s | NL 3 | L 47
           Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
           Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
           Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
@@ -1060,7 +864,7 @@ t = 0.40 d | step 14/100000 | dt = 11677.2 s | wall 34.93 s | NL 3 | L 47
           Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
     Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 19
   Nonlinear BackwardEuler-Equation_ solve converged due to CONVERGED_SNORM_RELATIVE iterations 3
-t = 0.61 d | step 15/100000 | dt = 17515.8 s | wall 35.17 s | NL 3 | L 48
+t = 0.61 d | step 15/100000 | dt = 17515.8 s | wall 35.48 s | NL 3 | L 48
           Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
           Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
           Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
@@ -1111,7 +915,7 @@ t = 0.61 d | step 15/100000 | dt = 17515.8 s | wall 35.17 s | NL 3 | L 48
           Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
     Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 18
   Nonlinear BackwardEuler-Equation_ solve converged due to CONVERGED_SNORM_RELATIVE iterations 3
-t = 0.91 d | step 16/100000 | dt = 26273.6 s | wall 34.32 s | NL 3 | L 46
+t = 0.91 d | step 16/100000 | dt = 26273.6 s | wall 34.54 s | NL 3 | L 46
           Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
           Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
           Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
@@ -1161,7 +965,7 @@ t = 0.91 d | step 16/100000 | dt = 26273.6 s | wall 34.32 s | NL 3 | L 46
           Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
     Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 17
   Nonlinear BackwardEuler-Equation_ solve converged due to CONVERGED_SNORM_RELATIVE iterations 3
-t = 1.37 d | step 17/100000 | dt = 39410.5 s | wall 33.82 s | NL 3 | L 45
+t = 1.37 d | step 17/100000 | dt = 39410.5 s | wall 34.07 s | NL 3 | L 45
           Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
           Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
           Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
@@ -1212,7 +1016,7 @@ t = 1.37 d | step 17/100000 | dt = 39410.5 s | wall 33.82 s | NL 3 | L 45
           Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
     Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 18
   Nonlinear BackwardEuler-Equation_ solve converged due to CONVERGED_SNORM_RELATIVE iterations 3
-t = 1.87 d | step 18/100000 | dt = 43200.0 s | wall 34.00 s | NL 3 | L 46
+t = 1.87 d | step 18/100000 | dt = 43200.0 s | wall 34.35 s | NL 3 | L 46
           Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
           Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
           Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
@@ -1263,7 +1067,7 @@ t = 1.87 d | step 18/100000 | dt = 43200.0 s | wall 34.00 s | NL 3 | L 46
           Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
     Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 20
   Nonlinear BackwardEuler-Equation_ solve converged due to CONVERGED_SNORM_RELATIVE iterations 3
-t = 2.37 d | step 19/100000 | dt = 43200.0 s | wall 34.02 s | NL 3 | L 46
+t = 2.37 d | step 19/100000 | dt = 43200.0 s | wall 34.64 s | NL 3 | L 46
           Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
           Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
           Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
@@ -1314,7 +1118,7 @@ t = 2.37 d | step 19/100000 | dt = 43200.0 s | wall 34.02 s | NL 3 | L 46
           Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
     Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 18
   Nonlinear BackwardEuler-Equation_ solve converged due to CONVERGED_SNORM_RELATIVE iterations 3
-t = 2.87 d | step 20/100000 | dt = 43200.0 s | wall 34.16 s | NL 3 | L 46
+t = 2.87 d | step 20/100000 | dt = 43200.0 s | wall 34.62 s | NL 3 | L 46
           Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
           Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
           Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
@@ -1365,7 +1169,7 @@ t = 2.87 d | step 20/100000 | dt = 43200.0 s | wall 34.16 s | NL 3 | L 46
           Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
     Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 18
   Nonlinear BackwardEuler-Equation_ solve converged due to CONVERGED_SNORM_RELATIVE iterations 3
-t = 3.37 d | step 21/100000 | dt = 43200.0 s | wall 34.20 s | NL 3 | L 46
+t = 3.37 d | step 21/100000 | dt = 43200.0 s | wall 34.53 s | NL 3 | L 46
           Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
           Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
           Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
@@ -1412,7 +1216,7 @@ t = 3.37 d | step 21/100000 | dt = 43200.0 s | wall 34.20 s | NL 3 | L 46
           Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
     Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 17
   Nonlinear BackwardEuler-Equation_ solve converged due to CONVERGED_SNORM_RELATIVE iterations 3
-t = 3.87 d | step 22/100000 | dt = 43200.0 s | wall 32.60 s | NL 3 | L 42
+t = 3.87 d | step 22/100000 | dt = 43200.0 s | wall 32.58 s | NL 3 | L 42
           Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
           Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
           Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
@@ -1464,7 +1268,7 @@ t = 3.87 d | step 22/100000 | dt = 43200.0 s | wall 32.60 s | NL 3 | L 42
           Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
     Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 20
   Nonlinear BackwardEuler-Equation_ solve converged due to CONVERGED_SNORM_RELATIVE iterations 3
-t = 4.37 d | step 23/100000 | dt = 43200.0 s | wall 34.48 s | NL 3 | L 47
+t = 4.37 d | step 23/100000 | dt = 43200.0 s | wall 35.02 s | NL 3 | L 47
           Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
           Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
           Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
@@ -1515,7 +1319,7 @@ t = 4.37 d | step 23/100000 | dt = 43200.0 s | wall 34.48 s | NL 3 | L 47
           Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
     Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 18
   Nonlinear BackwardEuler-Equation_ solve converged due to CONVERGED_SNORM_RELATIVE iterations 3
-t = 4.87 d | step 24/100000 | dt = 43200.0 s | wall 34.15 s | NL 3 | L 46
+t = 4.87 d | step 24/100000 | dt = 43200.0 s | wall 34.27 s | NL 3 | L 46
           Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
           Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
           Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
@@ -1567,7 +1371,7 @@ t = 4.87 d | step 24/100000 | dt = 43200.0 s | wall 34.15 s | NL 3 | L 46
           Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
     Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 21
   Nonlinear BackwardEuler-Equation_ solve converged due to CONVERGED_SNORM_RELATIVE iterations 3
-t = 5.37 d | step 25/100000 | dt = 43200.0 s | wall 34.99 s | NL 3 | L 47
+t = 5.37 d | step 25/100000 | dt = 43200.0 s | wall 35.08 s | NL 3 | L 47
           Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
           Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
           Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
@@ -1616,7 +1420,7 @@ t = 5.37 d | step 25/100000 | dt = 43200.0 s | wall 34.99 s | NL 3 | L 47
           Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
     Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 17
   Nonlinear BackwardEuler-Equation_ solve converged due to CONVERGED_SNORM_RELATIVE iterations 3
-t = 5.87 d | step 26/100000 | dt = 43200.0 s | wall 33.68 s | NL 3 | L 44
+t = 5.87 d | step 26/100000 | dt = 43200.0 s | wall 33.49 s | NL 3 | L 44
           Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
           Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
           Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
@@ -1663,7 +1467,7 @@ t = 5.87 d | step 26/100000 | dt = 43200.0 s | wall 33.68 s | NL 3 | L 44
           Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
     Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 15
   Nonlinear BackwardEuler-Equation_ solve converged due to CONVERGED_SNORM_RELATIVE iterations 3
-t = 6.37 d | step 27/100000 | dt = 43200.0 s | wall 31.83 s | NL 3 | L 42
+t = 6.37 d | step 27/100000 | dt = 43200.0 s | wall 32.64 s | NL 3 | L 42
           Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
           Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
           Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
@@ -1714,7 +1518,7 @@ t = 6.37 d | step 27/100000 | dt = 43200.0 s | wall 31.83 s | NL 3 | L 42
           Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
     Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 19
   Nonlinear BackwardEuler-Equation_ solve converged due to CONVERGED_SNORM_RELATIVE iterations 3
-t = 6.87 d | step 28/100000 | dt = 43200.0 s | wall 34.30 s | NL 3 | L 46
+t = 6.87 d | step 28/100000 | dt = 43200.0 s | wall 34.60 s | NL 3 | L 46
           Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
           Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
           Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
@@ -1768,7 +1572,7 @@ t = 6.87 d | step 28/100000 | dt = 43200.0 s | wall 34.30 s | NL 3 | L 46
           Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
     Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 21
   Nonlinear BackwardEuler-Equation_ solve converged due to CONVERGED_SNORM_RELATIVE iterations 3
-t = 7.37 d | step 29/100000 | dt = 43200.0 s | wall 36.15 s | NL 3 | L 49
+t = 7.37 d | step 29/100000 | dt = 43200.0 s | wall 35.85 s | NL 3 | L 49
           Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
           Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
           Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
@@ -1821,7 +1625,7 @@ t = 7.37 d | step 29/100000 | dt = 43200.0 s | wall 36.15 s | NL 3 | L 49
           Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
     Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 20
   Nonlinear BackwardEuler-Equation_ solve converged due to CONVERGED_SNORM_RELATIVE iterations 3
-t = 7.87 d | step 30/100000 | dt = 43200.0 s | wall 35.54 s | NL 3 | L 48
+t = 7.87 d | step 30/100000 | dt = 43200.0 s | wall 35.21 s | NL 3 | L 48
           Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
           Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
           Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
@@ -1874,7 +1678,7 @@ t = 7.87 d | step 30/100000 | dt = 43200.0 s | wall 35.54 s | NL 3 | L 48
           Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
     Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 20
   Nonlinear BackwardEuler-Equation_ solve converged due to CONVERGED_SNORM_RELATIVE iterations 3
-t = 8.37 d | step 31/100000 | dt = 43200.0 s | wall 35.46 s | NL 3 | L 48
+t = 8.37 d | step 31/100000 | dt = 43200.0 s | wall 35.57 s | NL 3 | L 48
           Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
           Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
           Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
@@ -1927,7 +1731,7 @@ t = 8.37 d | step 31/100000 | dt = 43200.0 s | wall 35.46 s | NL 3 | L 48
           Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
     Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 22
   Nonlinear BackwardEuler-Equation_ solve converged due to CONVERGED_SNORM_RELATIVE iterations 3
-t = 8.87 d | step 32/100000 | dt = 43200.0 s | wall 35.28 s | NL 3 | L 48
+t = 8.87 d | step 32/100000 | dt = 43200.0 s | wall 35.70 s | NL 3 | L 48
           Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
           Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
           Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
@@ -1979,7 +1783,7 @@ t = 8.87 d | step 32/100000 | dt = 43200.0 s | wall 35.28 s | NL 3 | L 48
           Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
     Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 19
   Nonlinear BackwardEuler-Equation_ solve converged due to CONVERGED_SNORM_RELATIVE iterations 3
-t = 9.37 d | step 33/100000 | dt = 43200.0 s | wall 34.94 s | NL 3 | L 47
+t = 9.37 d | step 33/100000 | dt = 43200.0 s | wall 35.04 s | NL 3 | L 47
           Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
           Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
           Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
@@ -2031,7 +1835,7 @@ t = 9.37 d | step 33/100000 | dt = 43200.0 s | wall 34.94 s | NL 3 | L 47
           Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
     Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 21
   Nonlinear BackwardEuler-Equation_ solve converged due to CONVERGED_SNORM_RELATIVE iterations 3
-t = 9.87 d | step 34/100000 | dt = 43200.0 s | wall 34.50 s | NL 3 | L 47
+t = 9.87 d | step 34/100000 | dt = 43200.0 s | wall 34.66 s | NL 3 | L 47
           Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
           Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
           Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
@@ -2084,7 +1888,7 @@ t = 9.87 d | step 34/100000 | dt = 43200.0 s | wall 34.50 s | NL 3 | L 47
           Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
     Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 22
   Nonlinear BackwardEuler-Equation_ solve converged due to CONVERGED_SNORM_RELATIVE iterations 3
-t = 10.37 d | step 35/100000 | dt = 43200.0 s | wall 35.19 s | NL 3 | L 48
+t = 10.37 d | step 35/100000 | dt = 43200.0 s | wall 35.71 s | NL 3 | L 48
           Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
           Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
           Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
@@ -2136,7 +1940,7 @@ t = 10.37 d | step 35/100000 | dt = 43200.0 s | wall 35.19 s | NL 3 | L 48
           Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
     Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 19
   Nonlinear BackwardEuler-Equation_ solve converged due to CONVERGED_SNORM_RELATIVE iterations 3
-t = 10.87 d | step 36/100000 | dt = 43200.0 s | wall 34.53 s | NL 3 | L 47
+t = 10.87 d | step 36/100000 | dt = 43200.0 s | wall 34.98 s | NL 3 | L 47
           Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
           Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
           Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
@@ -2190,7 +1994,7 @@ t = 10.87 d | step 36/100000 | dt = 43200.0 s | wall 34.53 s | NL 3 | L 47
           Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
     Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 21
   Nonlinear BackwardEuler-Equation_ solve converged due to CONVERGED_SNORM_RELATIVE iterations 3
-t = 11.37 d | step 37/100000 | dt = 43200.0 s | wall 35.60 s | NL 3 | L 49
+t = 11.37 d | step 37/100000 | dt = 43200.0 s | wall 36.11 s | NL 3 | L 49
           Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
           Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
           Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
@@ -2244,7 +2048,7 @@ t = 11.37 d | step 37/100000 | dt = 43200.0 s | wall 35.60 s | NL 3 | L 49
           Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
     Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 21
   Nonlinear BackwardEuler-Equation_ solve converged due to CONVERGED_SNORM_RELATIVE iterations 3
-t = 11.87 d | step 38/100000 | dt = 43200.0 s | wall 35.78 s | NL 3 | L 49
+t = 11.87 d | step 38/100000 | dt = 43200.0 s | wall 35.97 s | NL 3 | L 49
           Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
           Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
           Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
@@ -2296,7 +2100,7 @@ t = 11.87 d | step 38/100000 | dt = 43200.0 s | wall 35.78 s | NL 3 | L 49
           Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
     Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 22
   Nonlinear BackwardEuler-Equation_ solve converged due to CONVERGED_SNORM_RELATIVE iterations 3
-t = 12.37 d | step 39/100000 | dt = 43200.0 s | wall 35.01 s | NL 3 | L 47
+t = 12.37 d | step 39/100000 | dt = 43200.0 s | wall 35.29 s | NL 3 | L 47
           Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
           Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
           Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
@@ -2348,7 +2152,7 @@ t = 12.37 d | step 39/100000 | dt = 43200.0 s | wall 35.01 s | NL 3 | L 47
           Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
     Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 20
   Nonlinear BackwardEuler-Equation_ solve converged due to CONVERGED_SNORM_RELATIVE iterations 3
-t = 12.87 d | step 40/100000 | dt = 43200.0 s | wall 35.02 s | NL 3 | L 47
+t = 12.87 d | step 40/100000 | dt = 43200.0 s | wall 34.98 s | NL 3 | L 47
           Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
           Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
           Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
@@ -2400,7 +2204,7 @@ t = 12.87 d | step 40/100000 | dt = 43200.0 s | wall 35.02 s | NL 3 | L 47
           Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
     Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 22
   Nonlinear BackwardEuler-Equation_ solve converged due to CONVERGED_SNORM_RELATIVE iterations 3
-t = 13.37 d | step 41/100000 | dt = 43200.0 s | wall 35.04 s | NL 3 | L 47
+t = 13.37 d | step 41/100000 | dt = 43200.0 s | wall 34.76 s | NL 3 | L 47
           Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
           Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
           Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
@@ -2452,7 +2256,7 @@ t = 13.37 d | step 41/100000 | dt = 43200.0 s | wall 35.04 s | NL 3 | L 47
           Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
     Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 22
   Nonlinear BackwardEuler-Equation_ solve converged due to CONVERGED_SNORM_RELATIVE iterations 3
-t = 13.87 d | step 42/100000 | dt = 43200.0 s | wall 34.47 s | NL 3 | L 47
+t = 13.87 d | step 42/100000 | dt = 43200.0 s | wall 35.22 s | NL 3 | L 47
           Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
           Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
           Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
@@ -2503,7 +2307,7 @@ t = 13.87 d | step 42/100000 | dt = 43200.0 s | wall 34.47 s | NL 3 | L 47
           Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
     Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 19
   Nonlinear BackwardEuler-Equation_ solve converged due to CONVERGED_SNORM_RELATIVE iterations 3
-t = 14.37 d | step 43/100000 | dt = 43200.0 s | wall 34.20 s | NL 3 | L 46
+t = 14.37 d | step 43/100000 | dt = 43200.0 s | wall 34.73 s | NL 3 | L 46
           Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
           Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
           Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
@@ -2556,7 +2360,7 @@ t = 14.37 d | step 43/100000 | dt = 43200.0 s | wall 34.20 s | NL 3 | L 46
           Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
     Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 23
   Nonlinear BackwardEuler-Equation_ solve converged due to CONVERGED_SNORM_RELATIVE iterations 3
-t = 14.87 d | step 44/100000 | dt = 43200.0 s | wall 35.20 s | NL 3 | L 48
+t = 14.87 d | step 44/100000 | dt = 43200.0 s | wall 35.82 s | NL 3 | L 48
           Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
           Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
           Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
@@ -2608,7 +2412,7 @@ t = 14.87 d | step 44/100000 | dt = 43200.0 s | wall 35.20 s | NL 3 | L 48
           Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
     Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 24
   Nonlinear BackwardEuler-Equation_ solve converged due to CONVERGED_SNORM_RELATIVE iterations 3
-t = 15.37 d | step 45/100000 | dt = 43200.0 s | wall 34.97 s | NL 3 | L 47
+t = 15.37 d | step 45/100000 | dt = 43200.0 s | wall 34.94 s | NL 3 | L 47
           Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
           Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
           Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
@@ -2660,7 +2464,7 @@ t = 15.37 d | step 45/100000 | dt = 43200.0 s | wall 34.97 s | NL 3 | L 47
           Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
     Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 22
   Nonlinear BackwardEuler-Equation_ solve converged due to CONVERGED_SNORM_RELATIVE iterations 3
-t = 15.87 d | step 46/100000 | dt = 43200.0 s | wall 35.04 s | NL 3 | L 47
+t = 15.87 d | step 46/100000 | dt = 43200.0 s | wall 35.20 s | NL 3 | L 47
           Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
           Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
           Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
@@ -2713,7 +2517,7 @@ t = 15.87 d | step 46/100000 | dt = 43200.0 s | wall 35.04 s | NL 3 | L 47
           Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
     Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 23
   Nonlinear BackwardEuler-Equation_ solve converged due to CONVERGED_SNORM_RELATIVE iterations 3
-t = 16.37 d | step 47/100000 | dt = 43200.0 s | wall 35.64 s | NL 3 | L 48
+t = 16.37 d | step 47/100000 | dt = 43200.0 s | wall 35.65 s | NL 3 | L 48
           Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
           Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
           Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
@@ -2766,7 +2570,7 @@ t = 16.37 d | step 47/100000 | dt = 43200.0 s | wall 35.64 s | NL 3 | L 48
           Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
     Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 21
   Nonlinear BackwardEuler-Equation_ solve converged due to CONVERGED_SNORM_RELATIVE iterations 3
-t = 16.87 d | step 48/100000 | dt = 43200.0 s | wall 35.62 s | NL 3 | L 48
+t = 16.87 d | step 48/100000 | dt = 43200.0 s | wall 35.59 s | NL 3 | L 48
           Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
           Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
           Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
@@ -2818,7 +2622,7 @@ t = 16.87 d | step 48/100000 | dt = 43200.0 s | wall 35.62 s | NL 3 | L 48
           Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
     Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 22
   Nonlinear BackwardEuler-Equation_ solve converged due to CONVERGED_SNORM_RELATIVE iterations 3
-t = 17.37 d | step 49/100000 | dt = 43200.0 s | wall 34.96 s | NL 3 | L 47
+t = 17.37 d | step 49/100000 | dt = 43200.0 s | wall 35.09 s | NL 3 | L 47
           Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
           Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
           Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
@@ -2870,7 +2674,7 @@ t = 17.37 d | step 49/100000 | dt = 43200.0 s | wall 34.96 s | NL 3 | L 47
           Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
     Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 22
   Nonlinear BackwardEuler-Equation_ solve converged due to CONVERGED_SNORM_RELATIVE iterations 3
-t = 17.87 d | step 50/100000 | dt = 43200.0 s | wall 34.78 s | NL 3 | L 47
+t = 17.87 d | step 50/100000 | dt = 43200.0 s | wall 35.20 s | NL 3 | L 47
           Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
           Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
           Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
@@ -2921,7 +2725,7 @@ t = 17.87 d | step 50/100000 | dt = 43200.0 s | wall 34.78 s | NL 3 | L 47
           Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
     Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 19
   Nonlinear BackwardEuler-Equation_ solve converged due to CONVERGED_SNORM_RELATIVE iterations 3
-t = 18.37 d | step 51/100000 | dt = 43200.0 s | wall 34.46 s | NL 3 | L 46
+t = 18.37 d | step 51/100000 | dt = 43200.0 s | wall 34.54 s | NL 3 | L 46
           Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
           Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
           Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
@@ -2974,7 +2778,7 @@ t = 18.37 d | step 51/100000 | dt = 43200.0 s | wall 34.46 s | NL 3 | L 46
           Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
     Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 20
   Nonlinear BackwardEuler-Equation_ solve converged due to CONVERGED_SNORM_RELATIVE iterations 3
-t = 18.87 d | step 52/100000 | dt = 43200.0 s | wall 34.89 s | NL 3 | L 48
+t = 18.87 d | step 52/100000 | dt = 43200.0 s | wall 35.45 s | NL 3 | L 48
           Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
           Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
           Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
@@ -3027,7 +2831,7 @@ t = 18.87 d | step 52/100000 | dt = 43200.0 s | wall 34.89 s | NL 3 | L 48
           Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
     Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 22
   Nonlinear BackwardEuler-Equation_ solve converged due to CONVERGED_SNORM_RELATIVE iterations 3
-t = 19.37 d | step 53/100000 | dt = 43200.0 s | wall 35.21 s | NL 3 | L 48
+t = 19.37 d | step 53/100000 | dt = 43200.0 s | wall 35.66 s | NL 3 | L 48
           Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
           Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
           Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
@@ -3081,7 +2885,7 @@ t = 19.37 d | step 53/100000 | dt = 43200.0 s | wall 35.21 s | NL 3 | L 48
           Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
     Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 22
   Nonlinear BackwardEuler-Equation_ solve converged due to CONVERGED_SNORM_RELATIVE iterations 3
-t = 19.87 d | step 54/100000 | dt = 43200.0 s | wall 35.78 s | NL 3 | L 49
+t = 19.87 d | step 54/100000 | dt = 43200.0 s | wall 35.72 s | NL 3 | L 49
           Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
           Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
           Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
@@ -3131,7 +2935,7 @@ t = 19.87 d | step 54/100000 | dt = 43200.0 s | wall 35.78 s | NL 3 | L 49
           Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
     Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 20
   Nonlinear BackwardEuler-Equation_ solve converged due to CONVERGED_SNORM_RELATIVE iterations 3
-t = 20.37 d | step 55/100000 | dt = 43200.0 s | wall 33.91 s | NL 3 | L 45
+t = 20.37 d | step 55/100000 | dt = 43200.0 s | wall 34.04 s | NL 3 | L 45
           Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
           Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
           Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
@@ -3184,7 +2988,7 @@ t = 20.37 d | step 55/100000 | dt = 43200.0 s | wall 33.91 s | NL 3 | L 45
           Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
     Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 21
   Nonlinear BackwardEuler-Equation_ solve converged due to CONVERGED_SNORM_RELATIVE iterations 3
-t = 20.87 d | step 56/100000 | dt = 43200.0 s | wall 35.48 s | NL 3 | L 48
+t = 20.87 d | step 56/100000 | dt = 43200.0 s | wall 35.40 s | NL 3 | L 48
           Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
           Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
           Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
@@ -3237,7 +3041,7 @@ t = 20.87 d | step 56/100000 | dt = 43200.0 s | wall 35.48 s | NL 3 | L 48
           Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
     Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 23
   Nonlinear BackwardEuler-Equation_ solve converged due to CONVERGED_SNORM_RELATIVE iterations 3
-t = 21.37 d | step 57/100000 | dt = 43200.0 s | wall 35.66 s | NL 3 | L 48
+t = 21.37 d | step 57/100000 | dt = 43200.0 s | wall 35.69 s | NL 3 | L 48
           Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
           Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
           Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
@@ -3289,7 +3093,7 @@ t = 21.37 d | step 57/100000 | dt = 43200.0 s | wall 35.66 s | NL 3 | L 48
           Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
     Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 19
   Nonlinear BackwardEuler-Equation_ solve converged due to CONVERGED_SNORM_RELATIVE iterations 3
-t = 21.87 d | step 58/100000 | dt = 43200.0 s | wall 34.68 s | NL 3 | L 47
+t = 21.87 d | step 58/100000 | dt = 43200.0 s | wall 35.25 s | NL 3 | L 47
           Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
           Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
           Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
@@ -3342,7 +3146,7 @@ t = 21.87 d | step 58/100000 | dt = 43200.0 s | wall 34.68 s | NL 3 | L 47
           Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
     Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 22
   Nonlinear BackwardEuler-Equation_ solve converged due to CONVERGED_SNORM_RELATIVE iterations 3
-t = 22.37 d | step 59/100000 | dt = 43200.0 s | wall 35.03 s | NL 3 | L 48
+t = 22.37 d | step 59/100000 | dt = 43200.0 s | wall 35.68 s | NL 3 | L 48
           Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
           Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
           Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
@@ -3395,7 +3199,7 @@ t = 22.37 d | step 59/100000 | dt = 43200.0 s | wall 35.03 s | NL 3 | L 48
           Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
     Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 20
   Nonlinear BackwardEuler-Equation_ solve converged due to CONVERGED_SNORM_RELATIVE iterations 3
-t = 22.87 d | step 60/100000 | dt = 43200.0 s | wall 35.08 s | NL 3 | L 48
+t = 22.87 d | step 60/100000 | dt = 43200.0 s | wall 35.41 s | NL 3 | L 48
           Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
           Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
           Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
@@ -3447,7 +3251,7 @@ t = 22.87 d | step 60/100000 | dt = 43200.0 s | wall 35.08 s | NL 3 | L 48
           Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
     Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 22
   Nonlinear BackwardEuler-Equation_ solve converged due to CONVERGED_SNORM_RELATIVE iterations 3
-t = 23.37 d | step 61/100000 | dt = 43200.0 s | wall 34.51 s | NL 3 | L 47
+t = 23.37 d | step 61/100000 | dt = 43200.0 s | wall 34.57 s | NL 3 | L 47
           Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
           Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
           Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
@@ -3500,7 +3304,7 @@ t = 23.37 d | step 61/100000 | dt = 43200.0 s | wall 34.51 s | NL 3 | L 47
           Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
     Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 23
   Nonlinear BackwardEuler-Equation_ solve converged due to CONVERGED_SNORM_RELATIVE iterations 3
-t = 23.87 d | step 62/100000 | dt = 43200.0 s | wall 35.27 s | NL 3 | L 48
+t = 23.87 d | step 62/100000 | dt = 43200.0 s | wall 35.59 s | NL 3 | L 48
           Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
           Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
           Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
@@ -3552,7 +3356,7 @@ t = 23.87 d | step 62/100000 | dt = 43200.0 s | wall 35.27 s | NL 3 | L 48
           Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
     Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 20
   Nonlinear BackwardEuler-Equation_ solve converged due to CONVERGED_SNORM_RELATIVE iterations 3
-t = 24.37 d | step 63/100000 | dt = 43200.0 s | wall 34.77 s | NL 3 | L 47
+t = 24.37 d | step 63/100000 | dt = 43200.0 s | wall 35.04 s | NL 3 | L 47
           Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
           Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
           Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
@@ -3606,7 +3410,7 @@ t = 24.37 d | step 63/100000 | dt = 43200.0 s | wall 34.77 s | NL 3 | L 47
           Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
     Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 21
   Nonlinear BackwardEuler-Equation_ solve converged due to CONVERGED_SNORM_RELATIVE iterations 3
-t = 24.87 d | step 64/100000 | dt = 43200.0 s | wall 36.00 s | NL 3 | L 49
+t = 24.87 d | step 64/100000 | dt = 43200.0 s | wall 36.13 s | NL 3 | L 49
           Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
           Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
           Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
@@ -3659,7 +3463,7 @@ t = 24.87 d | step 64/100000 | dt = 43200.0 s | wall 36.00 s | NL 3 | L 49
           Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
     Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 21
   Nonlinear BackwardEuler-Equation_ solve converged due to CONVERGED_SNORM_RELATIVE iterations 3
-t = 25.37 d | step 65/100000 | dt = 43200.0 s | wall 35.33 s | NL 3 | L 48
+t = 25.37 d | step 65/100000 | dt = 43200.0 s | wall 35.19 s | NL 3 | L 48
           Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
           Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
           Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
@@ -3713,7 +3517,7 @@ t = 25.37 d | step 65/100000 | dt = 43200.0 s | wall 35.33 s | NL 3 | L 48
           Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
     Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 25
   Nonlinear BackwardEuler-Equation_ solve converged due to CONVERGED_SNORM_RELATIVE iterations 3
-t = 25.87 d | step 66/100000 | dt = 43200.0 s | wall 36.25 s | NL 3 | L 49
+t = 25.87 d | step 66/100000 | dt = 43200.0 s | wall 36.34 s | NL 3 | L 49
           Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
           Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
           Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
@@ -3767,7 +3571,7 @@ t = 25.87 d | step 66/100000 | dt = 43200.0 s | wall 36.25 s | NL 3 | L 49
           Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
     Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 24
   Nonlinear BackwardEuler-Equation_ solve converged due to CONVERGED_SNORM_RELATIVE iterations 3
-t = 26.37 d | step 67/100000 | dt = 43200.0 s | wall 36.10 s | NL 3 | L 49
+t = 26.37 d | step 67/100000 | dt = 43200.0 s | wall 35.94 s | NL 3 | L 49
           Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
           Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
           Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
@@ -3820,7 +3624,7 @@ t = 26.37 d | step 67/100000 | dt = 43200.0 s | wall 36.10 s | NL 3 | L 49
           Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
     Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 23
   Nonlinear BackwardEuler-Equation_ solve converged due to CONVERGED_SNORM_RELATIVE iterations 3
-t = 26.87 d | step 68/100000 | dt = 43200.0 s | wall 35.72 s | NL 3 | L 48
+t = 26.87 d | step 68/100000 | dt = 43200.0 s | wall 35.69 s | NL 3 | L 48
           Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
           Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
           Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
@@ -3873,7 +3677,7 @@ t = 26.87 d | step 68/100000 | dt = 43200.0 s | wall 35.72 s | NL 3 | L 48
           Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
     Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 22
   Nonlinear BackwardEuler-Equation_ solve converged due to CONVERGED_SNORM_RELATIVE iterations 3
-t = 27.37 d | step 69/100000 | dt = 43200.0 s | wall 35.74 s | NL 3 | L 48
+t = 27.37 d | step 69/100000 | dt = 43200.0 s | wall 35.46 s | NL 3 | L 48
           Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
           Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
           Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
@@ -3925,7 +3729,7 @@ t = 27.37 d | step 69/100000 | dt = 43200.0 s | wall 35.74 s | NL 3 | L 48
           Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
     Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 20
   Nonlinear BackwardEuler-Equation_ solve converged due to CONVERGED_SNORM_RELATIVE iterations 3
-t = 27.87 d | step 70/100000 | dt = 43200.0 s | wall 35.10 s | NL 3 | L 47
+t = 27.87 d | step 70/100000 | dt = 43200.0 s | wall 34.99 s | NL 3 | L 47
           Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
           Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
           Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
@@ -3977,7 +3781,7 @@ t = 27.87 d | step 70/100000 | dt = 43200.0 s | wall 35.10 s | NL 3 | L 47
           Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
     Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 26
   Nonlinear BackwardEuler-Equation_ solve converged due to CONVERGED_SNORM_RELATIVE iterations 3
-t = 28.37 d | step 71/100000 | dt = 43200.0 s | wall 34.57 s | NL 3 | L 47
+t = 28.37 d | step 71/100000 | dt = 43200.0 s | wall 34.76 s | NL 3 | L 47
           Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
           Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
           Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
@@ -4028,7 +3832,7 @@ t = 28.37 d | step 71/100000 | dt = 43200.0 s | wall 34.57 s | NL 3 | L 47
           Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
     Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 19
   Nonlinear BackwardEuler-Equation_ solve converged due to CONVERGED_SNORM_RELATIVE iterations 3
-t = 28.87 d | step 72/100000 | dt = 43200.0 s | wall 34.32 s | NL 3 | L 46
+t = 28.87 d | step 72/100000 | dt = 43200.0 s | wall 34.36 s | NL 3 | L 46
           Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
           Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
           Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
@@ -4082,7 +3886,7 @@ t = 28.87 d | step 72/100000 | dt = 43200.0 s | wall 34.32 s | NL 3 | L 46
           Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
     Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 22
   Nonlinear BackwardEuler-Equation_ solve converged due to CONVERGED_SNORM_RELATIVE iterations 3
-t = 29.37 d | step 73/100000 | dt = 43200.0 s | wall 35.59 s | NL 3 | L 49
+t = 29.37 d | step 73/100000 | dt = 43200.0 s | wall 36.11 s | NL 3 | L 49
           Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
           Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
           Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
@@ -4134,7 +3938,7 @@ t = 29.37 d | step 73/100000 | dt = 43200.0 s | wall 35.59 s | NL 3 | L 49
           Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
     Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 22
   Nonlinear BackwardEuler-Equation_ solve converged due to CONVERGED_SNORM_RELATIVE iterations 3
-t = 29.87 d | step 74/100000 | dt = 43200.0 s | wall 34.81 s | NL 3 | L 47
+t = 29.87 d | step 74/100000 | dt = 43200.0 s | wall 35.10 s | NL 3 | L 47
           Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
           Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
           Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
@@ -4188,18 +3992,18 @@ t = 29.87 d | step 74/100000 | dt = 43200.0 s | wall 34.81 s | NL 3 | L 47
           Linear BackwardEuler-Equation_lumped_mg_coarse_ solve converged due to CONVERGED_ITS iterations 1
     Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 21
   Nonlinear BackwardEuler-Equation_ solve converged due to CONVERGED_SNORM_RELATIVE iterations 3
-t = 30.37 d | step 75/100000 | dt = 43200.0 s | wall 35.97 s | NL 3 | L 49
-Done | total NL 226 | total L 3507 | mean wall/step 35.52 s | peak RSS 2580 MB | steps 75 | failed 0 | sim_time 30.37 d
-=== Job completed: Fri Aug 21 00:15:22 AEST 2026 ===
+t = 30.37 d | step 75/100000 | dt = 43200.0 s | wall 36.07 s | NL 3 | L 49
+Done | total NL 226 | total L 3507 | mean wall/step 35.74 s | peak RSS 2578 MB | steps 75 | failed 0 | sim_time 30.37 d
+=== Job completed: Sat Aug 22 00:03:42 AEST 2026 ===
 
 ======================================================================================
-                  Resource Usage on 2026-08-21 00:15:26:
-   Job Id:             176848332.gadi-pbs
+                  Resource Usage on 2026-08-22 00:03:46:
+   Job Id:             176973848.gadi-pbs
    Project:            xd2
    Exit Status:        0
    Service Units:      639.95
-   NCPUs Requested:    416                 CPU Time Used: 314:51:33       
-   Memory Requested:   1.95TB                Memory Used: 918.1GB         
+   NCPUs Requested:    416                 CPU Time Used: 316:55:58       
+   Memory Requested:   1.95TB                Memory Used: 918.46GB        
    Walltime Requested: 06:00:00            Walltime Used: 00:46:09        
-   JobFS Requested:    400.0GB                JobFS Used: 89.07MB         
+   JobFS Requested:    400.0GB                JobFS Used: 88.96MB         
 ======================================================================================

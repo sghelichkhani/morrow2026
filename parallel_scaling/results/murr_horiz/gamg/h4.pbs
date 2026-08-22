@@ -44,7 +44,7 @@ echo "Firedrake module: $LOADEDMODULES"
 echo "PETSC_OPTIONS: $PETSC_OPTIONS"
 echo "================"
 
-mpiexec -np $PBS_NCPUS python /scratch/xd2/sg8812/morrow2026/parallel_scaling/murrumbidgee_3d.py --horiz-res 880 --layers 300 --solver gamg --refinement-levels 0 --dt-init 60 --dt-max 43200 --dt-growth 1.5 --dt-shrink 0.5 --t-final 2592000 --data-dir /scratch/xd2/sg8812/morrow2026/parallel_scaling/murrumbidgee_data --profile 2>&1
+mpiexec -np $PBS_NCPUS python /scratch/xd2/sg8812/morrow2026/parallel_scaling/murrumbidgee_3d.py --horiz-res 880 --layers 300 --solver gamg --refinement-levels 2 --dt-init 60 --dt-max 43200 --dt-growth 1.5 --dt-shrink 0.5 --t-final 2592000 --data-dir /scratch/xd2/sg8812/morrow2026/parallel_scaling/murrumbidgee_data --profile 2>&1
 
 test -s /scratch/xd2/sg8812/morrow2026/parallel_scaling/results/murr_horiz/gamg/h4.profile
 

@@ -4,17 +4,17 @@
 
 ------------------------------------------------------------------ PETSc Performance Summary: ------------------------------------------------------------------
 
-/scratch/xd2/sg8812/morrow2026/parallel_scaling/cockett_3d.py on a default named gadi-cpu-spr-0181.gadi.nci.org.au with 104 processes, by sg8812 on Thu Aug 20 23:47:58 2026
+/scratch/xd2/sg8812/morrow2026/parallel_scaling/cockett_3d.py on a default named gadi-cpu-spr-0684.gadi.nci.org.au with 104 processes, by sg8812 on Fri Aug 21 23:10:58 2026
 Using PETSc Development Git Revision: ab02c5218b841d6dcf87fa7163a72e0278009638 Git Date: 2026-08-15 17:25:53 +0000
 
                          Max       Max/Min     Avg       Total
-Time (sec):           8.295e+02     1.000   8.295e+02
+Time (sec):           7.718e+02     1.000   7.718e+02
 Objects:              0.000e+00     0.000   0.000e+00
-Flops:                6.508e+11     1.125   6.159e+11  6.405e+13
-Flops/sec:            7.846e+08     1.125   7.425e+08  7.722e+10
-MPI Msg Count:        7.851e+04     2.661   5.045e+04  5.247e+06
-MPI Msg Len (bytes):  5.606e+09     2.338   8.762e+04  4.597e+11
-MPI Reductions:       1.921e+04     1.000
+Flops:                5.848e+11     1.127   5.529e+11  5.750e+13
+Flops/sec:            7.578e+08     1.127   7.163e+08  7.450e+10
+MPI Msg Count:        6.845e+04     2.661   4.399e+04  4.575e+06
+MPI Msg Len (bytes):  4.903e+09     2.339   8.786e+04  4.019e+11
+MPI Reductions:       1.676e+04     1.000
 
 Flop counting convention: 1 flop = 1 real number operation of type (multiply/divide/add/subtract)
                             e.g., VecAXPY() for real vectors of length N --> 2N flops
@@ -22,7 +22,7 @@ Flop counting convention: 1 flop = 1 real number operation of type (multiply/div
 
 Summary of Stages:   ----- Time ------  ----- Flop ------  --- Messages ---  -- Message Lengths --  -- Reductions --
                         Avg     %Total     Avg     %Total    Count   %Total     Avg         %Total    Count   %Total
- 0:      Main Stage: 8.2950e+02 100.0%  6.4055e+13 100.0%  5.247e+06 100.0%  8.762e+04      100.0%  1.920e+04  99.9%
+ 0:      Main Stage: 7.7177e+02 100.0%  5.7497e+13 100.0%  4.575e+06 100.0%  8.786e+04      100.0%  1.674e+04  99.9%
 
 ------------------------------------------------------------------------------------------------------------------------
 See the 'Profiling' chapter of the users' manual for details on interpreting output.
@@ -46,143 +46,144 @@ Event                Count      Time (sec)     Flop                             
 
 --- Event Stage 0: Main Stage
 
-BuildTwoSided        404 1.0 1.2019e+01 11.1 0.00e+00 0.0 3.7e+04 4.0e+00 4.0e+02  1  0  1  0  2   1  0  1  0  2    -0
-BuildTwoSidedF       366 1.0 1.1843e+01 10.7 0.00e+00 0.0 5.0e+04 3.7e+05 3.7e+02  1  0  1  4  2   1  0  1  4  2    -0
-SFSetGraph            41 1.0 4.1666e-03 3.2 0.00e+00 0.0 0.0e+00 0.0e+00 0.0e+00  0  0  0  0  0   0  0  0  0  0    -0
-SFSetUp               38 1.0 2.8964e-01 8.7 0.00e+00 0.0 2.4e+04 2.2e+03 3.8e+01  0  0  0  0  0   0  0  0  0  0    -0
-SFBcastBegin         338 1.0 1.0191e-01 3.1 0.00e+00 0.0 1.6e+05 6.8e+04 0.0e+00  0  0  3  2  0   0  0  3  2  0    -0
-SFBcastEnd           338 1.0 6.5457e+00 102.5 0.00e+00 0.0 0.0e+00 0.0e+00 0.0e+00  0  0  0  0  0   0  0  0  0  0    -0
-SFReduceBegin        134 1.0 2.1174e-02 2.8 0.00e+00 0.0 7.0e+04 7.9e+04 0.0e+00  0  0  1  1  0   0  0  1  1  0    -0
-SFReduceEnd          134 1.0 3.4430e+00 124.3 8.61e+06 2.4 0.0e+00 0.0e+00 0.0e+00  0  0  0  0  0   0  0  0  0  0   202
-SFFetchOpBegin         2 1.0 1.5482e-05 5.5 0.00e+00 0.0 8.2e+02 1.4e+02 0.0e+00  0  0  0  0  0   0  0  0  0  0    -0
-SFFetchOpEnd           2 1.0 2.0909e-04 8.5 0.00e+00 0.0 8.2e+02 1.4e+02 0.0e+00  0  0  0  0  0   0  0  0  0  0    -0
-SFCreateEmbed          2 1.0 8.1248e-04 1.5 0.00e+00 0.0 6.5e+02 1.3e+02 0.0e+00  0  0  0  0  0   0  0  0  0  0    -0
-SFDistSection         22 1.0 7.8091e-03 1.3 0.00e+00 0.0 2.2e+04 2.8e+02 2.5e+01  0  0  0  0  0   0  0  0  0  0    -0
-SFSectionSF           22 1.0 3.3728e-03 3.6 0.00e+00 0.0 1.0e+04 1.5e+02 2.2e+01  0  0  0  0  0   0  0  0  0  0    -0
-SFPack              9719 1.0 1.7014e+00 3.8 0.00e+00 0.0 0.0e+00 0.0e+00 0.0e+00  0  0  0  0  0   0  0  0  0  0    -0
-SFUnpack            9721 1.0 4.1048e-02 3.7 8.61e+06 2.4 0.0e+00 0.0e+00 0.0e+00  0  0  0  0  0   0  0  0  0  0 16912
-VecMDot             8982 1.0 7.7490e+01 2.8 4.75e+10 1.1 0.0e+00 0.0e+00 9.0e+03  6  7  0  0 47   6  7  0  0 47 60902
-VecNorm             9457 1.0 7.8806e+00 4.8 3.42e+09 1.1 0.0e+00 0.0e+00 9.5e+03  1  1  0  0 49   1  1  0  0 49 43132
-VecScale            9336 1.0 3.6633e-01 1.1 1.69e+09 1.1 0.0e+00 0.0e+00 0.0e+00  0  0  0  0  0   0  0  0  0  0 458005
-VecCopy              717 1.0 4.0513e-01 1.3 0.00e+00 0.0 0.0e+00 0.0e+00 0.0e+00  0  0  0  0  0   0  0  0  0  0    -0
-VecSet               445 1.0 1.4187e-01 1.1 0.00e+00 0.0 0.0e+00 0.0e+00 0.0e+00  0  0  0  0  0   0  0  0  0  0    -0
-VecAXPY              617 1.0 2.5134e-01 1.5 2.23e+08 1.1 0.0e+00 0.0e+00 0.0e+00  0  0  0  0  0   0  0  0  0  0 88233
-VecWAXPY              91 1.0 1.1400e-01 2.4 1.65e+07 1.1 0.0e+00 0.0e+00 0.0e+00  0  0  0  0  0   0  0  0  0  0 14346
-VecMAXPY            9336 1.0 4.5241e+01 1.1 5.08e+10 1.1 0.0e+00 0.0e+00 0.0e+00  5  8  0  0  0   5  8  0  0  0 111450
-VecScatterBegin     9245 1.0 1.8952e+00 3.1 0.00e+00 0.0 4.9e+06 8.6e+04 0.0e+00  0  0 94 92  0   0  0 94 92  0    -0
-VecScatterEnd       9245 1.0 1.7725e+01 27.7 0.00e+00 0.0 0.0e+00 0.0e+00 0.0e+00  1  0  0  0  0   1  0  0  0  0    -0
-VecReduceArith       182 1.0 1.0521e-01 1.2 6.59e+07 1.1 0.0e+00 0.0e+00 0.0e+00  0  0  0  0  0   0  0  0  0  0 62178
-VecReduceComm         91 1.0 1.7351e-02 6.1 0.00e+00 0.0 0.0e+00 0.0e+00 9.1e+01  0  0  0  0  0   0  0  0  0  0    -0
-VecNormalize        9336 1.0 6.5214e+00 4.8 5.07e+09 1.1 0.0e+00 0.0e+00 9.3e+03  0  1  0  0 49   0  1  0  0 49 77183
-MatMult             9245 1.0 2.3639e+02 1.1 1.85e+11 1.1 4.9e+06 8.6e+04 0.0e+00 27 29 94 92  0  27 29 94 92  0 77496
-MatSOR              9336 1.0 3.5563e+02 1.1 1.80e+11 1.1 0.0e+00 0.0e+00 0.0e+00 41 28  0  0  0  41 28  0  0  0 50002
-MatAssemblyBegin     366 1.0 1.2200e+01 7.0 0.00e+00 0.0 5.0e+04 3.7e+05 3.7e+02  1  0  1  4  2   1  0  1  4  2    -0
-MatAssemblyEnd       366 1.0 1.9878e+00 7.9 2.24e+07 0.0 1.1e+03 2.1e+04 6.0e+00  0  0  0  0  0   0  0  0  0  0   538
-MatZeroEntries        91 1.0 3.2179e+00 1.2 0.00e+00 0.0 0.0e+00 0.0e+00 0.0e+00  0  0  0  0  0   0  0  0  0  0    -0
-PCSetUp               91 1.0 3.1183e-05 1.7 0.00e+00 0.0 0.0e+00 0.0e+00 0.0e+00  0  0  0  0  0   0  0  0  0  0    -0
-PCApply             9336 1.0 3.5566e+02 1.1 1.80e+11 1.1 0.0e+00 0.0e+00 0.0e+00 41 28  0  0  0  41 28  0  0  0 49999
-KSPSetUp              91 1.0 8.8930e-03 2.8 0.00e+00 0.0 0.0e+00 0.0e+00 0.0e+00  0  0  0  0  0   0  0  0  0  0    -0
-KSPSolve              91 1.0 6.6433e+02 1.0 4.68e+11 1.1 4.9e+06 8.6e+04 1.8e+04 80 72 94 92 95  80 72 94 92 95 69828
-KSPGMRESOrthog      8982 1.0 1.1685e+02 1.7 9.50e+10 1.1 0.0e+00 0.0e+00 9.0e+03 11 15  0  0 47  11 15  0  0 47 80776
-Mesh Partition         2 1.0 8.1771e-02 1.0 0.00e+00 0.0 6.8e+03 2.8e+02 2.5e+01  0  0  0  0  0   0  0  0  0  0    -0
-Mesh Migration         2 1.0 2.2219e-02 1.1 0.00e+00 0.0 2.3e+04 3.7e+02 1.1e+02  0  0  0  0  1   0  0  0  0  1    -0
-DMPlexPartSelf         1 1.0 5.8329e-03 2428.3 0.00e+00 0.0 0.0e+00 0.0e+00 0.0e+00  0  0  0  0  0   0  0  0  0  0    -0
-DMPlexPartLblInv       2 1.0 1.0283e-02 2.4 0.00e+00 0.0 0.0e+00 0.0e+00 6.0e+00  0  0  0  0  0   0  0  0  0  0    -0
-DMPlexPartLblSF        2 1.0 3.3302e-03 1.1 0.00e+00 0.0 1.3e+03 2.7e+02 2.0e+00  0  0  0  0  0   0  0  0  0  0    -0
-DMPlexPartStrtSF       2 1.0 1.8262e-03 1.4 0.00e+00 0.0 6.5e+02 1.1e+03 0.0e+00  0  0  0  0  0   0  0  0  0  0    -0
-DMPlexPointSF          2 1.0 4.1972e-03 1.5 0.00e+00 0.0 7.6e+02 1.9e+03 0.0e+00  0  0  0  0  0   0  0  0  0  0    -0
-DMPlexDistribute       1 1.0 1.0290e-01 1.0 0.00e+00 0.0 4.2e+03 2.1e+03 6.3e+01  0  0  0  0  0   0  0  0  0  0    -0
-DMPlexDistCones        2 1.0 2.4735e-03 1.0 0.00e+00 0.0 3.9e+03 6.7e+02 4.0e+00  0  0  0  0  0   0  0  0  0  0    -0
-DMPlexDistLabels       2 1.0 1.3682e-02 1.0 0.00e+00 0.0 1.1e+04 3.9e+02 7.6e+01  0  0  0  0  0   0  0  0  0  0    -0
-DMPlexDistOvrlp        1 1.0 4.7957e-03 1.1 0.00e+00 0.0 2.7e+04 1.3e+02 8.0e+01  0  0  1  0  0   0  0  1  0  0    -0
-DMPlexDistField        3 1.0 2.9197e-03 1.2 0.00e+00 0.0 5.9e+03 1.8e+02 8.0e+00  0  0  0  0  0   0  0  0  0  0    -0
-DMPlexDistData         1 1.0 7.7799e-05 1.1 0.00e+00 0.0 2.7e+03 8.5e+01 2.0e+00  0  0  0  0  0   0  0  0  0  0    -0
-DMPlexStratify         3 1.0 5.0619e-03 2.4 0.00e+00 0.0 0.0e+00 0.0e+00 3.0e+00  0  0  0  0  0   0  0  0  0  0    -0
-DMPlexSymmetrize       3 1.0 1.2968e-03 51.8 0.00e+00 0.0 0.0e+00 0.0e+00 0.0e+00  0  0  0  0  0   0  0  0  0  0    -0
-DMPlexGenerate         1 1.0 9.9765e-03 1.1 0.00e+00 0.0 0.0e+00 0.0e+00 2.0e+00  0  0  0  0  0   0  0  0  0  0    -0
-SNESSolve             30 1.0 8.0223e+02 1.0 6.51e+11 1.1 5.2e+06 8.8e+04 1.9e+04 97 100 99 100 98  97 100 99 100 98 79845
-SNESSetUp              1 1.0 3.9963e-05 6.6 0.00e+00 0.0 0.0e+00 0.0e+00 0.0e+00  0  0  0  0  0   0  0  0  0  0    -0
-SNESFunctionEval     121 1.0 4.3350e+01 1.1 7.57e+10 1.2 1.5e+05 8.5e+04 1.0e+00  5 11  3  3  0   5 11  3  3  0 167232
-SNESJacobianEval      91 1.0 9.3945e+01 1.0 1.09e+11 1.2 9.7e+04 2.2e+05 3.6e+02 11 16  2  5  2  11 16  2  5  2 110744
-SNESLineSearch        91 1.0 2.0618e+01 1.0 5.70e+10 1.2 9.7e+04 8.6e+04 1.8e+02  2  9  2  2  1   2  9  2  2  1 264989
-firedrake              1 1.0 8.2675e+02 1.0 6.51e+11 1.1 5.2e+06 8.8e+04 1.9e+04 100 100 100 100 100 100 100 100 100 100 77478
-firedrake.__init__       1 1.0 1.1904e+01 1.8 0.00e+00 0.0 0.0e+00 0.0e+00 0.0e+00  1  0  0  0  0   1  0  0  0  0    -0
-firedrake.utility_meshes.RectangleMesh       1 1.0 5.2734e+00 31.9 0.00e+00 0.0 5.9e+04 2.7e+02 1.9e+02  0  0  1  0  1   0  0  1  0  1    -0
-CreateMesh             1 1.0 1.5454e-01 1.0 0.00e+00 0.0 5.9e+04 2.7e+02 1.9e+02  0  0  1  0  1   0  0  1  0  1    -0
-firedrake.mesh.MeshTopology._set_partitioner       1 1.0 9.6998e-04 1.4 0.00e+00 0.0 0.0e+00 0.0e+00 0.0e+00  0  0  0  0  0   0  0  0  0  0    -0
-firedrake.mesh.MeshTopology._get_partitioner       1 1.0 1.5830e-06 1.8 0.00e+00 0.0 0.0e+00 0.0e+00 0.0e+00  0  0  0  0  0   0  0  0  0  0    -0
-Mesh: numbering        1 1.0 2.6796e-03 1.1 0.00e+00 0.0 0.0e+00 0.0e+00 4.0e+00  0  0  0  0  0   0  0  0  0  0    -0
-Mesh: reorder          1 1.0 3.7432e-04 3.9 0.00e+00 0.0 0.0e+00 0.0e+00 2.0e+00  0  0  0  0  0   0  0  0  0  0    -0
-CreateFunctionSpace       4 1.0 2.3607e-02 1.1 0.00e+00 0.0 3.8e+03 1.1e+02 3.0e+00  0  0  0  0  0   0  0  0  0  0    -0
-firedrake.functionspace.make_scalar_element       5 1.0 3.8496e-04 1.1 0.00e+00 0.0 0.0e+00 0.0e+00 0.0e+00  0  0  0  0  0   0  0  0  0  0    -0
-firedrake.functionspaceimpl.FunctionSpace.__init__       4 1.0 2.3000e-02 1.1 0.00e+00 0.0 3.8e+03 1.1e+02 3.0e+00  0  0  0  0  0   0  0  0  0  0    -0
-firedrake.functionspacedata.get_shared_data       3 1.0 2.2383e-02 1.1 0.00e+00 0.0 3.8e+03 1.1e+02 3.0e+00  0  0  0  0  0   0  0  0  0  0    -0
-firedrake.functionspacedata.FunctionSpaceData.__init__       3 1.0 2.2352e-02 1.1 0.00e+00 0.0 3.8e+03 1.1e+02 3.0e+00  0  0  0  0  0   0  0  0  0  0    -0
-FunctionSpaceData: CreateElement       6 1.0 1.1656e-02 1.1 0.00e+00 0.0 0.0e+00 0.0e+00 0.0e+00  0  0  0  0  0   0  0  0  0  0    -0
-firedrake.mesh.MeshTopology._facets       2 1.0 4.3426e-03 1.1 0.00e+00 0.0 3.8e+03 1.1e+02 3.0e+00  0  0  0  0  0   0  0  0  0  0    -0
-firedrake.mesh._Facets.__init__       4 1.0 4.3902e-04 1.1 0.00e+00 0.0 0.0e+00 0.0e+00 0.0e+00  0  0  0  0  0   0  0  0  0  0    -0
-firedrake.dmhooks.set_function_space       6 1.0 1.0995e-04 1.5 0.00e+00 0.0 0.0e+00 0.0e+00 0.0e+00  0  0  0  0  0   0  0  0  0  0    -0
-firedrake.function.Function.__init__      17 1.0 9.5465e-03 2.9 0.00e+00 0.0 0.0e+00 0.0e+00 1.0e+00  0  0  0  0  0   0  0  0  0  0    -0
-CreateExtMesh          1 1.0 1.5704e+00 1.0 0.00e+00 0.0 0.0e+00 0.0e+00 3.0e+00  0  0  0  0  0   0  0  0  0  0    -0
-firedrake.mesh.ExtrudedMeshTopology.__init__       1 1.0 9.2376e-05 1.2 0.00e+00 0.0 0.0e+00 0.0e+00 0.0e+00  0  0  0  0  0   0  0  0  0  0    -0
-firedrake.functionspace.VectorFunctionSpace       1 1.0 3.8197e-03 1.1 0.00e+00 0.0 0.0e+00 0.0e+00 0.0e+00  0  0  0  0  0   0  0  0  0  0    -0
-firedrake.mesh.ExtrudedMeshTopology.node_classes       2 1.0 5.7813e-05 1.3 0.00e+00 0.0 0.0e+00 0.0e+00 0.0e+00  0  0  0  0  0   0  0  0  0  0    -0
-firedrake.extrusion_utils.make_extruded_coords       1 1.0 1.5663e+00 1.0 0.00e+00 0.0 0.0e+00 0.0e+00 3.0e+00  0  0  0  0  0   0  0  0  0  0    -0
-firedrake.functionspacedata.FunctionSpaceData.get_map     244 1.0 5.7321e-03 1.5 0.00e+00 0.0 0.0e+00 0.0e+00 0.0e+00  0  0  0  0  0   0  0  0  0  0    -0
-ParLoopExecute      1062 1.0 1.2918e+02 1.1 1.84e+11 1.2 1.3e+05 8.4e+04 6.0e+00 15 28  3  2  0  15 28  3  2  0 136640
-Parloop_Cells_wrap_pyop2_kernel_uniform_extrusion       2 1.0 1.5350e+00 1.0 0.00e+00 0.0 0.0e+00 0.0e+00 0.0e+00  0  0  0  0  0   0  0  0  0  0    -0
-pyop2.caching.parallel_cache.wrapper(compile_global_kernel)    2124 1.0 3.0797e+01 1.0 0.00e+00 0.0 0.0e+00 0.0e+00 0.0e+00  4  0  0  0  0   4  0  0  0  0    -0
-pyop2.caching.parallel_cache.wrapper(_generate_code_from_global_kernel)      12 1.0 1.8939e+01 1.0 0.00e+00 0.0 0.0e+00 0.0e+00 0.0e+00  2  0  0  0  0   2  0  0  0  0    -0
-GlobalKernel: generate loopy      12 0.0 1.6926e+00 0.0 0.00e+00 0.0 0.0e+00 0.0e+00 0.0e+00  0  0  0  0  0   0  0  0  0  0    -0
-GlobalKernel: generate device code      12 0.0 1.6952e+01 0.0 0.00e+00 0.0 0.0e+00 0.0e+00 0.0e+00  0  0  0  0  0   0  0  0  0  0    -0
-pyop2.caching.parallel_cache.wrapper(load)      12 1.0 1.1811e+01 1.0 0.00e+00 0.0 0.0e+00 0.0e+00 0.0e+00  1  0  0  0  0   1  0  0  0  0    -0
-pyop2.compilation.load      12 1.0 1.1810e+01 1.0 0.00e+00 0.0 0.0e+00 0.0e+00 0.0e+00  1  0  0  0  0   1  0  0  0  0    -0
-pyop2.caching.parallel_cache.wrapper(make_so)      12 1.0 8.0528e+00 1.0 0.00e+00 0.0 0.0e+00 0.0e+00 0.0e+00  1  0  0  0  0   1  0  0  0  0    -0
-pyop2.compilation.make_so      12 1.0 7.9366e+00 1.0 0.00e+00 0.0 0.0e+00 0.0e+00 0.0e+00  1  0  0  0  0   1  0  0  0  0    -0
-ParLoopRednBegin    1062 1.0 2.6750e-03 1.7 0.00e+00 0.0 0.0e+00 0.0e+00 0.0e+00  0  0  0  0  0   0  0  0  0  0    -0
-ParLoopRednEnd      1062 1.0 2.1878e-03 1.4 0.00e+00 0.0 0.0e+00 0.0e+00 0.0e+00  0  0  0  0  0   0  0  0  0  0    -0
-firedrake.mesh.make_mesh_from_coordinates       1 1.0 3.9203e-04 1.2 0.00e+00 0.0 0.0e+00 0.0e+00 0.0e+00  0  0  0  0  0   0  0  0  0  0    -0
-firedrake.function.Function.interpolate       1 1.0 9.3111e-01 1.0 2.71e+06 1.1 2.2e+03 1.5e+04 2.0e+00  0  0  0  0  0   0  0  0  0  0   290
-firedrake.interpolation.interpolate       1 1.0 3.6928e-04 1.1 0.00e+00 0.0 0.0e+00 0.0e+00 0.0e+00  0  0  0  0  0   0  0  0  0  0    -0
-firedrake.assemble.assemble       1 1.0 9.3073e-01 1.0 2.71e+06 1.1 2.2e+03 1.5e+04 2.0e+00  0  0  0  0  0   0  0  0  0  0   290
-firedrake.formmanipulation.split_form       3 1.0 2.1922e-03 1.1 0.00e+00 0.0 0.0e+00 0.0e+00 0.0e+00  0  0  0  0  0   0  0  0  0  0    -0
-firedrake.formmanipulation.ExtractSubBlock.split       3 1.0 5.1051e-05 1.2 0.00e+00 0.0 0.0e+00 0.0e+00 0.0e+00  0  0  0  0  0   0  0  0  0  0    -0
-pyop2.caching.parallel_cache.wrapper(compile_expression)       1 1.0 4.3116e-02 1.2 0.00e+00 0.0 0.0e+00 0.0e+00 0.0e+00  0  0  0  0  0   0  0  0  0  0    -0
-firedrake.interpolation.compile_expression       1 1.0 2.9388e-02 1.0 0.00e+00 0.0 0.0e+00 0.0e+00 0.0e+00  0  0  0  0  0   0  0  0  0  0    -0
-firedrake.halo.Halo.global_to_local_begin     243 1.0 4.0537e-01 4.6 0.00e+00 0.0 1.3e+05 8.4e+04 2.0e+00  0  0  3  2  0   0  0  3  2  0    -0
-Parloop_Cells_wrap_expression_kernel       2 1.0 8.6629e-01 1.0 2.71e+06 1.1 0.0e+00 0.0e+00 0.0e+00  0  0  0  0  0   0  0  0  0  0   311
-firedrake.halo.Halo.global_to_local_end     243 1.0 6.1244e+00 185.8 0.00e+00 0.0 0.0e+00 0.0e+00 0.0e+00  0  0  0  0  0   0  0  0  0  0    -0
-firedrake.function.Function.assign      95 1.0 2.4381e-01 1.2 0.00e+00 0.0 0.0e+00 0.0e+00 8.0e+00  0  0  0  0  0   0  0  0  0  0    -0
-firedrake.assign.Assigner.assign      94 1.0 2.2299e-01 1.2 0.00e+00 0.0 0.0e+00 0.0e+00 5.0e+00  0  0  0  0  0   0  0  0  0  0    -0
-firedrake.ufl_expr.TestFunction       2 1.0 1.5100e-04 1.5 0.00e+00 0.0 0.0e+00 0.0e+00 0.0e+00  0  0  0  0  0   0  0  0  0  0    -0
-firedrake.constant.Constant.evaluate      34 1.0 4.7856e-04 1.6 0.00e+00 0.0 0.0e+00 0.0e+00 0.0e+00  0  0  0  0  0   0  0  0  0  0    -0
-firedrake.ufl_expr.FacetNormal       1 1.0 2.9994e-05 1.4 0.00e+00 0.0 0.0e+00 0.0e+00 0.0e+00  0  0  0  0  0   0  0  0  0  0    -0
-firedrake.variational_solver.NonlinearVariationalProblem.__init__       1 1.0 8.8709e-02 1.0 0.00e+00 0.0 0.0e+00 0.0e+00 0.0e+00  0  0  0  0  0   0  0  0  0  0    -0
-firedrake.ufl_expr.derivative       2 1.0 4.2402e-03 1.1 0.00e+00 0.0 0.0e+00 0.0e+00 0.0e+00  0  0  0  0  0   0  0  0  0  0    -0
-firedrake.ufl_expr.adjoint       1 1.0 8.2801e-02 1.0 0.00e+00 0.0 0.0e+00 0.0e+00 0.0e+00  0  0  0  0  0   0  0  0  0  0    -0
-firedrake.variational_solver.NonlinearVariationalSolver.__init__       1 1.0 9.2608e+00 1.0 0.00e+00 0.0 3.2e+03 4.7e+05 2.3e+01  1  0  0  0  0   1  0  0  0  0    -0
-firedrake.solving_utils._SNESContext.__init__       1 1.0 2.0874e-03 1.1 0.00e+00 0.0 0.0e+00 0.0e+00 0.0e+00  0  0  0  0  0   0  0  0  0  0    -0
-firedrake.cofunction.Cofunction.__init__       1 1.0 2.8713e-04 2.1 0.00e+00 0.0 0.0e+00 0.0e+00 0.0e+00  0  0  0  0  0   0  0  0  0  0    -0
-firedrake.tsfc_interface.compile_form       2 1.0 1.1545e+01 1.1 0.00e+00 0.0 0.0e+00 0.0e+00 0.0e+00  1  0  0  0  0   1  0  0  0  0    -0
-pyop2.caching.parallel_cache.wrapper(compile_form)       2 1.0 1.1545e+01 1.1 0.00e+00 0.0 0.0e+00 0.0e+00 0.0e+00  1  0  0  0  0   1  0  0  0  0    -0
-CreateSparsity         1 1.0 2.3267e+00 1.2 0.00e+00 0.0 1.6e+03 4.6e+05 8.0e+00  0  0  0  0  0   0  0  0  0  0    -0
-MatZeroInitial         1 1.0 4.3268e-01 1.5 0.00e+00 0.0 0.0e+00 0.0e+00 0.0e+00  0  0  0  0  0   0  0  0  0  0    -0
-firedrake.variational_solver.NonlinearVariationalSolver.solve      30 1.0 8.0230e+02 1.0 6.51e+11 1.1 5.2e+06 8.8e+04 1.9e+04 97 100 99 100 99  97 100 99 100 99 79839
-firedrake.mesh.AbstractMeshTopology.measure_set      10 1.0 9.1906e-05 1.3 0.00e+00 0.0 0.0e+00 0.0e+00 0.0e+00  0  0  0  0  0   0  0  0  0  0    -0
-firedrake.mesh.AbstractMeshTopology.cell_subset       8 1.0 1.1342e-05 1.3 0.00e+00 0.0 0.0e+00 0.0e+00 0.0e+00  0  0  0  0  0   0  0  0  0  0    -0
-firedrake.mesh._Facets.measure_set       8 1.0 2.9793e-05 1.2 0.00e+00 0.0 0.0e+00 0.0e+00 0.0e+00  0  0  0  0  0   0  0  0  0  0    -0
-Parloop_Cells_wrap_form0_cell_integral     242 1.0 7.9649e+00 1.1 1.69e+10 1.1 0.0e+00 0.0e+00 0.0e+00  1  3  0  0  0   1  3  0  0  0 210833
-Parloop_Cells_wrap_form0_exterior_facet_bottom_integral     242 1.0 1.9070e+00 1.0 5.82e+07 1.1 0.0e+00 0.0e+00 0.0e+00  0  0  0  0  0   0  0  0  0  0  3030
-Parloop_Cells_wrap_form0_exterior_facet_top_integral     242 1.0 1.9025e+00 1.0 5.82e+07 1.1 0.0e+00 0.0e+00 0.0e+00  0  0  0  0  0   0  0  0  0  0  3037
-Parloop_Cells_wrap_form0_interior_facet_horiz_integral     242 1.0 9.6397e+00 1.1 1.73e+10 1.1 0.0e+00 0.0e+00 0.0e+00  1  3  0  0  0   1  3  0  0  0 178549
-Parloop_IntFacets_wrap_form0_interior_facet_vert_integral     242 1.0 1.6637e+01 1.3 4.18e+10 1.3 0.0e+00 0.0e+00 0.0e+00  2  6  0  0  0   2  6  0  0  0 230614
-firedrake.halo.Halo.local_to_global_begin     121 1.0 2.4299e-02 2.2 0.00e+00 0.0 6.5e+04 8.6e+04 0.0e+00  0  0  1  1  0   0  0  1  1  0    -0
-firedrake.halo.Halo.local_to_global_end     121 1.0 3.4439e+00 117.8 8.61e+06 2.4 0.0e+00 0.0e+00 0.0e+00  0  0  0  0  0   0  0  0  0  0   202
-Parloop_Cells_wrap_form00_cell_integral     182 1.0 1.5326e+01 1.1 2.32e+10 1.1 0.0e+00 0.0e+00 0.0e+00  2  4  0  0  0   2  4  0  0  0 150111
-Parloop_Cells_wrap_form00_exterior_facet_bottom_integral     182 1.0 2.2191e+00 1.0 5.31e+07 1.1 0.0e+00 0.0e+00 0.0e+00  0  0  0  0  0   0  0  0  0  0  2379
-Parloop_Cells_wrap_form00_exterior_facet_top_integral     182 1.0 2.1882e+00 1.0 5.31e+07 1.1 0.0e+00 0.0e+00 0.0e+00  0  0  0  0  0   0  0  0  0  0  2412
-Parloop_Cells_wrap_form00_interior_facet_horiz_integral     182 1.0 2.7352e+01 1.1 2.44e+10 1.1 0.0e+00 0.0e+00 0.0e+00  3  4  0  0  0   3  4  0  0  0 88443
-Parloop_IntFacets_wrap_form00_interior_facet_vert_integral     182 1.0 4.2088e+01 1.2 6.18e+10 1.3 0.0e+00 0.0e+00 0.0e+00  4  9  0  0  0   4  9  0  0  0 134779
+BuildTwoSided        404 1.0 1.0950e+01 5.8 0.00e+00 0.0 3.7e+04 4.0e+00 4.0e+02  1  0  1  0  2   1  0  1  0  2    -0
+BuildTwoSidedF       366 1.0 1.0814e+01 6.1 0.00e+00 0.0 5.0e+04 3.7e+05 3.7e+02  1  0  1  5  2   1  0  1  5  2    -0
+SFSetGraph            41 1.0 4.0738e-03 3.2 0.00e+00 0.0 0.0e+00 0.0e+00 0.0e+00  0  0  0  0  0   0  0  0  0  0    -0
+SFSetUp               38 1.0 2.4772e-01 8.1 0.00e+00 0.0 2.4e+04 2.2e+03 3.8e+01  0  0  1  0  0   0  0  1  0  0    -0
+SFBcastBegin         338 1.0 1.0401e-01 3.3 0.00e+00 0.0 1.6e+05 6.8e+04 0.0e+00  0  0  4  3  0   0  0  4  3  0    -0
+SFBcastEnd           338 1.0 6.0492e+00 138.2 0.00e+00 0.0 0.0e+00 0.0e+00 0.0e+00  0  0  0  0  0   0  0  0  0  0    -0
+SFReduceBegin        134 1.0 2.4436e-02 3.1 0.00e+00 0.0 7.0e+04 7.9e+04 0.0e+00  0  0  2  1  0   0  0  2  1  0    -0
+SFReduceEnd          134 1.0 3.2974e+00 121.9 8.61e+06 2.4 0.0e+00 0.0e+00 0.0e+00  0  0  0  0  0   0  0  0  0  0   211
+SFFetchOpBegin         2 1.0 1.5505e-05 4.0 0.00e+00 0.0 8.2e+02 1.4e+02 0.0e+00  0  0  0  0  0   0  0  0  0  0    -0
+SFFetchOpEnd           2 1.0 1.7951e-04 9.7 0.00e+00 0.0 8.2e+02 1.4e+02 0.0e+00  0  0  0  0  0   0  0  0  0  0    -0
+SFCreateEmbed          2 1.0 8.7233e-04 1.6 0.00e+00 0.0 6.5e+02 1.3e+02 0.0e+00  0  0  0  0  0   0  0  0  0  0    -0
+SFDistSection         22 1.0 8.2472e-03 1.3 0.00e+00 0.0 2.2e+04 2.8e+02 2.5e+01  0  0  0  0  0   0  0  0  0  0    -0
+SFSectionSF           22 1.0 3.3962e-03 3.2 0.00e+00 0.0 1.0e+04 1.5e+02 2.2e+01  0  0  0  0  0   0  0  0  0  0    -0
+SFPack              8461 1.0 1.9674e+00 3.3 0.00e+00 0.0 0.0e+00 0.0e+00 0.0e+00  0  0  0  0  0   0  0  0  0  0    -0
+SFUnpack            8463 1.0 4.7462e-02 4.1 8.61e+06 2.4 0.0e+00 0.0e+00 0.0e+00  0  0  0  0  0   0  0  0  0  0 14626
+VecDot                91 1.0 2.6871e-01 13.3 3.29e+07 1.1 0.0e+00 0.0e+00 9.1e+01  0  0  0  0  1   0  0  0  0  1 12172
+VecMDot             7692 1.0 7.3044e+01 2.4 4.06e+10 1.1 0.0e+00 0.0e+00 7.7e+03  6  7  0  0 46   6  7  0  0 46 55171
+VecNorm             8199 1.0 8.4434e+00 5.7 2.97e+09 1.1 0.0e+00 0.0e+00 8.2e+03  1  1  0  0 49   1  1  0  0 49 34902
+VecScale            7987 1.0 3.3178e-01 1.2 1.45e+09 1.1 0.0e+00 0.0e+00 0.0e+00  0  0  0  0  0   0  0  0  0  0 432623
+VecCopy             1430 1.0 7.1730e-01 1.3 0.00e+00 0.0 0.0e+00 0.0e+00 0.0e+00  0  0  0  0  0   0  0  0  0  0    -0
+VecSet               386 1.0 1.2794e-01 1.1 0.00e+00 0.0 0.0e+00 0.0e+00 0.0e+00  0  0  0  0  0   0  0  0  0  0    -0
+VecAXPY              499 1.0 1.9473e-01 1.6 1.81e+08 1.1 0.0e+00 0.0e+00 0.0e+00  0  0  0  0  0   0  0  0  0  0 92103
+VecWAXPY              91 1.0 6.9679e-02 1.2 1.65e+07 1.1 0.0e+00 0.0e+00 0.0e+00  0  0  0  0  0   0  0  0  0  0 23470
+VecMAXPY            7987 1.0 4.2875e+01 1.1 4.34e+10 1.1 0.0e+00 0.0e+00 0.0e+00  5  7  0  0  0   5  7  0  0  0 100441
+VecScatterBegin     7987 1.0 2.1228e+00 2.9 0.00e+00 0.0 4.3e+06 8.6e+04 0.0e+00  0  0 93 91  0   0  0 93 91  0    -0
+VecScatterEnd       7987 1.0 3.1270e+01 57.8 0.00e+00 0.0 0.0e+00 0.0e+00 0.0e+00  1  0  0  0  0   1  0  0  0  0    -0
+VecReduceArith       182 1.0 2.9024e-02 2.3 6.59e+07 1.1 0.0e+00 0.0e+00 0.0e+00  0  0  0  0  0   0  0  0  0  0 225383
+VecReduceComm         91 1.0 4.2091e-01 85.4 0.00e+00 0.0 0.0e+00 0.0e+00 9.1e+01  0  0  0  0  1   0  0  0  0  1    -0
+VecNormalize        7987 1.0 6.3298e+00 4.7 4.34e+09 1.1 0.0e+00 0.0e+00 8.0e+03  1  1  0  0 48   1  1  0  0 48 68029
+MatMult             7987 1.0 2.1678e+02 1.2 1.60e+11 1.1 4.3e+06 8.6e+04 0.0e+00 26 28 93 91  0  26 28 93 91  0 73008
+MatSOR              7987 1.0 3.1019e+02 1.1 1.54e+11 1.1 0.0e+00 0.0e+00 0.0e+00 38 26  0  0  0  38 26  0  0  0 49043
+MatAssemblyBegin     366 1.0 1.1117e+01 4.8 0.00e+00 0.0 5.0e+04 3.7e+05 3.7e+02  1  0  1  5  2   1  0  1  5  2    -0
+MatAssemblyEnd       366 1.0 2.1498e+00 8.5 2.24e+07 0.0 1.1e+03 2.1e+04 6.0e+00  0  0  0  0  0   0  0  0  0  0   498
+MatZeroEntries        91 1.0 3.1313e+00 1.1 0.00e+00 0.0 0.0e+00 0.0e+00 0.0e+00  0  0  0  0  0   0  0  0  0  0    -0
+PCSetUp               91 1.0 3.1934e-05 1.8 0.00e+00 0.0 0.0e+00 0.0e+00 0.0e+00  0  0  0  0  0   0  0  0  0  0    -0
+PCApply             7987 1.0 3.1021e+02 1.1 1.54e+11 1.1 0.0e+00 0.0e+00 0.0e+00 38 26  0  0  0  38 26  0  0  0 49040
+KSPSetUp              91 1.0 8.5466e-03 2.5 0.00e+00 0.0 0.0e+00 0.0e+00 0.0e+00  0  0  0  0  0   0  0  0  0  0    -0
+KSPSolve              91 1.0 5.8327e+02 1.0 4.00e+11 1.1 4.2e+06 8.6e+04 1.6e+04 76 69 92 90 94  76 69 92 90 94 67968
+KSPGMRESOrthog      7692 1.0 1.0935e+02 1.6 8.12e+10 1.1 0.0e+00 0.0e+00 7.7e+03 11 14  0  0 46  11 14  0  0 46 73704
+Mesh Partition         2 1.0 1.6998e-01 1.0 0.00e+00 0.0 6.8e+03 2.8e+02 2.5e+01  0  0  0  0  0   0  0  0  0  0    -0
+Mesh Migration         2 1.0 2.3163e-02 1.1 0.00e+00 0.0 2.3e+04 3.7e+02 1.1e+02  0  0  1  0  1   0  0  1  0  1    -0
+DMPlexPartSelf         1 1.0 5.9366e-03 2378.5 0.00e+00 0.0 0.0e+00 0.0e+00 0.0e+00  0  0  0  0  0   0  0  0  0  0    -0
+DMPlexPartLblInv       2 1.0 9.8101e-03 2.6 0.00e+00 0.0 0.0e+00 0.0e+00 6.0e+00  0  0  0  0  0   0  0  0  0  0    -0
+DMPlexPartLblSF        2 1.0 4.4854e-03 1.1 0.00e+00 0.0 1.3e+03 2.7e+02 2.0e+00  0  0  0  0  0   0  0  0  0  0    -0
+DMPlexPartStrtSF       2 1.0 2.1258e-03 1.4 0.00e+00 0.0 6.5e+02 1.1e+03 0.0e+00  0  0  0  0  0   0  0  0  0  0    -0
+DMPlexPointSF          2 1.0 3.9444e-03 1.6 0.00e+00 0.0 7.6e+02 1.9e+03 0.0e+00  0  0  0  0  0   0  0  0  0  0    -0
+DMPlexDistribute       1 1.0 1.9205e-01 1.0 0.00e+00 0.0 4.2e+03 2.1e+03 6.3e+01  0  0  0  0  0   0  0  0  0  0    -0
+DMPlexDistCones        2 1.0 2.9134e-03 1.1 0.00e+00 0.0 3.9e+03 6.7e+02 4.0e+00  0  0  0  0  0   0  0  0  0  0    -0
+DMPlexDistLabels       2 1.0 1.3901e-02 1.0 0.00e+00 0.0 1.1e+04 3.9e+02 7.6e+01  0  0  0  0  0   0  0  0  0  0    -0
+DMPlexDistOvrlp        1 1.0 4.5420e-03 1.1 0.00e+00 0.0 2.7e+04 1.3e+02 8.0e+01  0  0  1  0  0   0  0  1  0  0    -0
+DMPlexDistField        3 1.0 3.0273e-03 1.2 0.00e+00 0.0 5.9e+03 1.8e+02 8.0e+00  0  0  0  0  0   0  0  0  0  0    -0
+DMPlexDistData         1 1.0 7.7675e-05 1.1 0.00e+00 0.0 2.7e+03 8.5e+01 2.0e+00  0  0  0  0  0   0  0  0  0  0    -0
+DMPlexStratify         3 1.0 3.7653e-03 4.5 0.00e+00 0.0 0.0e+00 0.0e+00 3.0e+00  0  0  0  0  0   0  0  0  0  0    -0
+DMPlexSymmetrize       3 1.0 1.3724e-03 55.0 0.00e+00 0.0 0.0e+00 0.0e+00 0.0e+00  0  0  0  0  0   0  0  0  0  0    -0
+DMPlexGenerate         1 1.0 6.7545e-03 1.1 0.00e+00 0.0 0.0e+00 0.0e+00 2.0e+00  0  0  0  0  0   0  0  0  0  0    -0
+SNESSolve             30 1.0 7.2756e+02 1.0 5.85e+11 1.1 4.5e+06 8.9e+04 1.6e+04 94 100 99 100 98  94 100 99 100 98 79026
+SNESSetUp              1 1.0 3.2134e-05 4.7 0.00e+00 0.0 0.0e+00 0.0e+00 0.0e+00  0  0  0  0  0   0  0  0  0  0    -0
+SNESFunctionEval     121 1.0 4.6368e+01 1.0 7.57e+10 1.2 1.5e+05 8.5e+04 1.0e+00  6 13  3  3  0   6 13  3  3  0 156347
+SNESJacobianEval      91 1.0 9.4976e+01 1.0 1.09e+11 1.2 9.7e+04 2.2e+05 3.6e+02 12 18  2  5  2  12 18  2  5  2 109542
+SNESLineSearch        91 1.0 2.3001e+01 1.0 5.89e+10 1.2 1.5e+05 8.6e+04 3.6e+02  3 10  3  3  2   3 10  3  3  2 245655
+firedrake              1 1.0 7.6460e+02 1.0 5.85e+11 1.1 4.6e+06 8.8e+04 1.7e+04 99 100 100 100 100  99 100 100 100 100 75199
+firedrake.__init__       1 1.0 1.4694e+01 1.9 0.00e+00 0.0 0.0e+00 0.0e+00 0.0e+00  1  0  0  0  0   1  0  0  0  0    -0
+firedrake.utility_meshes.RectangleMesh       1 1.0 3.0954e+00 12.6 0.00e+00 0.0 5.9e+04 2.7e+02 1.9e+02  0  0  1  0  1   0  0  1  0  1    -0
+CreateMesh             1 1.0 2.3850e-01 1.0 0.00e+00 0.0 5.9e+04 2.7e+02 1.9e+02  0  0  1  0  1   0  0  1  0  1    -0
+firedrake.mesh.MeshTopology._set_partitioner       1 1.0 8.0579e-04 1.4 0.00e+00 0.0 0.0e+00 0.0e+00 0.0e+00  0  0  0  0  0   0  0  0  0  0    -0
+firedrake.mesh.MeshTopology._get_partitioner       1 1.0 1.6070e-06 1.8 0.00e+00 0.0 0.0e+00 0.0e+00 0.0e+00  0  0  0  0  0   0  0  0  0  0    -0
+Mesh: numbering        1 1.0 2.6802e-03 1.1 0.00e+00 0.0 0.0e+00 0.0e+00 4.0e+00  0  0  0  0  0   0  0  0  0  0    -0
+Mesh: reorder          1 1.0 3.9094e-04 4.1 0.00e+00 0.0 0.0e+00 0.0e+00 2.0e+00  0  0  0  0  0   0  0  0  0  0    -0
+CreateFunctionSpace       4 1.0 2.2830e-02 1.3 0.00e+00 0.0 3.8e+03 1.1e+02 3.0e+00  0  0  0  0  0   0  0  0  0  0    -0
+firedrake.functionspace.make_scalar_element       5 1.0 4.8079e-04 1.4 0.00e+00 0.0 0.0e+00 0.0e+00 0.0e+00  0  0  0  0  0   0  0  0  0  0    -0
+firedrake.functionspaceimpl.FunctionSpace.__init__       4 1.0 2.1976e-02 1.3 0.00e+00 0.0 3.8e+03 1.1e+02 3.0e+00  0  0  0  0  0   0  0  0  0  0    -0
+firedrake.functionspacedata.get_shared_data       3 1.0 2.1278e-02 1.3 0.00e+00 0.0 3.8e+03 1.1e+02 3.0e+00  0  0  0  0  0   0  0  0  0  0    -0
+firedrake.functionspacedata.FunctionSpaceData.__init__       3 1.0 2.1239e-02 1.3 0.00e+00 0.0 3.8e+03 1.1e+02 3.0e+00  0  0  0  0  0   0  0  0  0  0    -0
+FunctionSpaceData: CreateElement       6 1.0 8.9609e-03 1.6 0.00e+00 0.0 0.0e+00 0.0e+00 0.0e+00  0  0  0  0  0   0  0  0  0  0    -0
+firedrake.mesh.MeshTopology._facets       2 1.0 4.8655e-03 1.1 0.00e+00 0.0 3.8e+03 1.1e+02 3.0e+00  0  0  0  0  0   0  0  0  0  0    -0
+firedrake.mesh._Facets.__init__       4 1.0 3.0837e-04 1.1 0.00e+00 0.0 0.0e+00 0.0e+00 0.0e+00  0  0  0  0  0   0  0  0  0  0    -0
+firedrake.dmhooks.set_function_space       6 1.0 9.0217e-05 1.3 0.00e+00 0.0 0.0e+00 0.0e+00 0.0e+00  0  0  0  0  0   0  0  0  0  0    -0
+firedrake.function.Function.__init__      17 1.0 2.3261e-02 6.2 0.00e+00 0.0 0.0e+00 0.0e+00 1.0e+00  0  0  0  0  0   0  0  0  0  0    -0
+CreateExtMesh          1 1.0 4.7127e+00 1.0 0.00e+00 0.0 0.0e+00 0.0e+00 3.0e+00  1  0  0  0  0   1  0  0  0  0    -0
+firedrake.mesh.ExtrudedMeshTopology.__init__       1 1.0 8.3220e-05 1.2 0.00e+00 0.0 0.0e+00 0.0e+00 0.0e+00  0  0  0  0  0   0  0  0  0  0    -0
+firedrake.functionspace.VectorFunctionSpace       1 1.0 3.5427e-03 1.0 0.00e+00 0.0 0.0e+00 0.0e+00 0.0e+00  0  0  0  0  0   0  0  0  0  0    -0
+firedrake.mesh.ExtrudedMeshTopology.node_classes       2 1.0 5.8426e-05 1.3 0.00e+00 0.0 0.0e+00 0.0e+00 0.0e+00  0  0  0  0  0   0  0  0  0  0    -0
+firedrake.extrusion_utils.make_extruded_coords       1 1.0 4.7086e+00 1.0 0.00e+00 0.0 0.0e+00 0.0e+00 3.0e+00  1  0  0  0  0   1  0  0  0  0    -0
+firedrake.functionspacedata.FunctionSpaceData.get_map     244 1.0 4.8466e-03 1.3 0.00e+00 0.0 0.0e+00 0.0e+00 0.0e+00  0  0  0  0  0   0  0  0  0  0    -0
+ParLoopExecute      1062 1.0 1.4250e+02 1.1 1.84e+11 1.2 1.3e+05 8.4e+04 6.0e+00 18 31  3  3  0  18 31  3  3  0 123876
+Parloop_Cells_wrap_pyop2_kernel_uniform_extrusion       2 1.0 4.6772e+00 1.0 0.00e+00 0.0 0.0e+00 0.0e+00 0.0e+00  1  0  0  0  0   1  0  0  0  0    -0
+pyop2.caching.parallel_cache.wrapper(compile_global_kernel)    2124 1.0 4.5134e+01 1.0 0.00e+00 0.0 0.0e+00 0.0e+00 0.0e+00  6  0  0  0  0   6  0  0  0  0    -0
+pyop2.caching.parallel_cache.wrapper(_generate_code_from_global_kernel)      12 1.0 2.0219e+01 1.0 0.00e+00 0.0 0.0e+00 0.0e+00 0.0e+00  3  0  0  0  0   3  0  0  0  0    -0
+GlobalKernel: generate loopy      12 0.0 1.8541e+00 0.0 0.00e+00 0.0 0.0e+00 0.0e+00 0.0e+00  0  0  0  0  0   0  0  0  0  0    -0
+GlobalKernel: generate device code      12 0.0 1.8056e+01 0.0 0.00e+00 0.0 0.0e+00 0.0e+00 0.0e+00  0  0  0  0  0   0  0  0  0  0    -0
+pyop2.caching.parallel_cache.wrapper(load)      12 1.0 2.4865e+01 1.0 0.00e+00 0.0 0.0e+00 0.0e+00 0.0e+00  3  0  0  0  0   3  0  0  0  0    -0
+pyop2.compilation.load      12 1.0 2.4864e+01 1.0 0.00e+00 0.0 0.0e+00 0.0e+00 0.0e+00  3  0  0  0  0   3  0  0  0  0    -0
+pyop2.caching.parallel_cache.wrapper(make_so)      12 1.0 1.2842e+01 1.0 0.00e+00 0.0 0.0e+00 0.0e+00 0.0e+00  2  0  0  0  0   2  0  0  0  0    -0
+pyop2.compilation.make_so      12 1.0 1.2742e+01 1.0 0.00e+00 0.0 0.0e+00 0.0e+00 0.0e+00  2  0  0  0  0   2  0  0  0  0    -0
+ParLoopRednBegin    1062 1.0 2.9387e-03 1.8 0.00e+00 0.0 0.0e+00 0.0e+00 0.0e+00  0  0  0  0  0   0  0  0  0  0    -0
+ParLoopRednEnd      1062 1.0 2.8298e-03 1.8 0.00e+00 0.0 0.0e+00 0.0e+00 0.0e+00  0  0  0  0  0   0  0  0  0  0    -0
+firedrake.mesh.make_mesh_from_coordinates       1 1.0 8.4276e-04 2.5 0.00e+00 0.0 0.0e+00 0.0e+00 0.0e+00  0  0  0  0  0   0  0  0  0  0    -0
+firedrake.function.Function.interpolate       1 1.0 7.4039e+00 1.0 2.71e+06 1.1 2.2e+03 1.5e+04 2.0e+00  1  0  0  0  0   1  0  0  0  0    36
+firedrake.interpolation.interpolate       1 1.0 5.2027e-04 1.6 0.00e+00 0.0 0.0e+00 0.0e+00 0.0e+00  0  0  0  0  0   0  0  0  0  0    -0
+firedrake.assemble.assemble       1 1.0 7.4033e+00 1.0 2.71e+06 1.1 2.2e+03 1.5e+04 2.0e+00  1  0  0  0  0   1  0  0  0  0    36
+firedrake.formmanipulation.split_form       3 1.0 3.0903e-03 1.5 0.00e+00 0.0 0.0e+00 0.0e+00 0.0e+00  0  0  0  0  0   0  0  0  0  0    -0
+firedrake.formmanipulation.ExtractSubBlock.split       3 1.0 5.0556e-05 1.3 0.00e+00 0.0 0.0e+00 0.0e+00 0.0e+00  0  0  0  0  0   0  0  0  0  0    -0
+pyop2.caching.parallel_cache.wrapper(compile_expression)       1 1.0 4.2375e-02 1.2 0.00e+00 0.0 0.0e+00 0.0e+00 0.0e+00  0  0  0  0  0   0  0  0  0  0    -0
+firedrake.interpolation.compile_expression       1 1.0 2.9464e-02 1.1 0.00e+00 0.0 0.0e+00 0.0e+00 0.0e+00  0  0  0  0  0   0  0  0  0  0    -0
+firedrake.halo.Halo.global_to_local_begin     243 1.0 3.7336e-01 4.9 0.00e+00 0.0 1.3e+05 8.4e+04 2.0e+00  0  0  3  3  0   0  0  3  3  0    -0
+Parloop_Cells_wrap_expression_kernel       2 1.0 7.3317e+00 1.0 2.71e+06 1.1 0.0e+00 0.0e+00 0.0e+00  1  0  0  0  0   1  0  0  0  0    37
+firedrake.halo.Halo.global_to_local_end     243 1.0 5.8598e+00 159.2 0.00e+00 0.0 0.0e+00 0.0e+00 0.0e+00  0  0  0  0  0   0  0  0  0  0    -0
+firedrake.function.Function.assign      95 1.0 2.5592e-01 1.2 0.00e+00 0.0 0.0e+00 0.0e+00 8.0e+00  0  0  0  0  0   0  0  0  0  0    -0
+firedrake.assign.Assigner.assign      94 1.0 2.3422e-01 1.2 0.00e+00 0.0 0.0e+00 0.0e+00 5.0e+00  0  0  0  0  0   0  0  0  0  0    -0
+firedrake.ufl_expr.TestFunction       2 1.0 2.2184e-04 2.2 0.00e+00 0.0 0.0e+00 0.0e+00 0.0e+00  0  0  0  0  0   0  0  0  0  0    -0
+firedrake.constant.Constant.evaluate      34 1.0 4.8068e-04 1.5 0.00e+00 0.0 0.0e+00 0.0e+00 0.0e+00  0  0  0  0  0   0  0  0  0  0    -0
+firedrake.ufl_expr.FacetNormal       1 1.0 3.9159e-05 1.9 0.00e+00 0.0 0.0e+00 0.0e+00 0.0e+00  0  0  0  0  0   0  0  0  0  0    -0
+firedrake.variational_solver.NonlinearVariationalProblem.__init__       1 1.0 8.9388e-02 1.1 0.00e+00 0.0 0.0e+00 0.0e+00 0.0e+00  0  0  0  0  0   0  0  0  0  0    -0
+firedrake.ufl_expr.derivative       2 1.0 4.2494e-03 1.1 0.00e+00 0.0 0.0e+00 0.0e+00 0.0e+00  0  0  0  0  0   0  0  0  0  0    -0
+firedrake.ufl_expr.adjoint       1 1.0 8.3380e-02 1.1 0.00e+00 0.0 0.0e+00 0.0e+00 0.0e+00  0  0  0  0  0   0  0  0  0  0    -0
+firedrake.variational_solver.NonlinearVariationalSolver.__init__       1 1.0 9.2131e+00 1.0 0.00e+00 0.0 3.2e+03 4.7e+05 2.3e+01  1  0  0  0  0   1  0  0  0  0    -0
+firedrake.solving_utils._SNESContext.__init__       1 1.0 2.3356e-03 1.4 0.00e+00 0.0 0.0e+00 0.0e+00 0.0e+00  0  0  0  0  0   0  0  0  0  0    -0
+firedrake.cofunction.Cofunction.__init__       1 1.0 2.3574e-04 2.0 0.00e+00 0.0 0.0e+00 0.0e+00 0.0e+00  0  0  0  0  0   0  0  0  0  0    -0
+firedrake.tsfc_interface.compile_form       2 1.0 1.1439e+01 1.1 0.00e+00 0.0 0.0e+00 0.0e+00 0.0e+00  1  0  0  0  0   1  0  0  0  0    -0
+pyop2.caching.parallel_cache.wrapper(compile_form)       2 1.0 1.1439e+01 1.1 0.00e+00 0.0 0.0e+00 0.0e+00 0.0e+00  1  0  0  0  0   1  0  0  0  0    -0
+CreateSparsity         1 1.0 2.2920e+00 1.2 0.00e+00 0.0 1.6e+03 4.6e+05 8.0e+00  0  0  0  0  0   0  0  0  0  0    -0
+MatZeroInitial         1 1.0 4.1646e-01 1.4 0.00e+00 0.0 0.0e+00 0.0e+00 0.0e+00  0  0  0  0  0   0  0  0  0  0    -0
+firedrake.variational_solver.NonlinearVariationalSolver.solve      30 1.0 7.2763e+02 1.0 5.85e+11 1.1 4.5e+06 8.9e+04 1.6e+04 94 100 99 100 98  94 100 99 100 99 79019
+firedrake.mesh.AbstractMeshTopology.measure_set      10 1.0 8.9126e-05 1.2 0.00e+00 0.0 0.0e+00 0.0e+00 0.0e+00  0  0  0  0  0   0  0  0  0  0    -0
+firedrake.mesh.AbstractMeshTopology.cell_subset       8 1.0 1.2514e-05 1.4 0.00e+00 0.0 0.0e+00 0.0e+00 0.0e+00  0  0  0  0  0   0  0  0  0  0    -0
+firedrake.mesh._Facets.measure_set       8 1.0 2.9279e-05 1.2 0.00e+00 0.0 0.0e+00 0.0e+00 0.0e+00  0  0  0  0  0   0  0  0  0  0    -0
+Parloop_Cells_wrap_form0_cell_integral     242 1.0 1.1299e+01 1.1 1.69e+10 1.1 0.0e+00 0.0e+00 0.0e+00  1  3  0  0  0   1  3  0  0  0 148621
+Parloop_Cells_wrap_form0_exterior_facet_bottom_integral     242 1.0 1.9707e+00 1.0 5.82e+07 1.1 0.0e+00 0.0e+00 0.0e+00  0  0  0  0  0   0  0  0  0  0  2932
+Parloop_Cells_wrap_form0_exterior_facet_top_integral     242 1.0 1.7835e+00 1.0 5.82e+07 1.1 0.0e+00 0.0e+00 0.0e+00  0  0  0  0  0   0  0  0  0  0  3240
+Parloop_Cells_wrap_form0_interior_facet_horiz_integral     242 1.0 9.7727e+00 1.1 1.73e+10 1.1 0.0e+00 0.0e+00 0.0e+00  1  3  0  0  0   1  3  0  0  0 176120
+Parloop_IntFacets_wrap_form0_interior_facet_vert_integral     242 1.0 1.6218e+01 1.2 4.18e+10 1.3 0.0e+00 0.0e+00 0.0e+00  2  7  0  0  0   2  7  0  0  0 236568
+firedrake.halo.Halo.local_to_global_begin     121 1.0 2.7602e-02 2.5 0.00e+00 0.0 6.5e+04 8.6e+04 0.0e+00  0  0  1  1  0   0  0  1  1  0    -0
+firedrake.halo.Halo.local_to_global_end     121 1.0 3.2982e+00 116.0 8.61e+06 2.4 0.0e+00 0.0e+00 0.0e+00  0  0  0  0  0   0  0  0  0  0   210
+Parloop_Cells_wrap_form00_cell_integral     182 1.0 1.5573e+01 1.1 2.32e+10 1.1 0.0e+00 0.0e+00 0.0e+00  2  4  0  0  0   2  4  0  0  0 147728
+Parloop_Cells_wrap_form00_exterior_facet_bottom_integral     182 1.0 2.3509e+00 1.0 5.31e+07 1.1 0.0e+00 0.0e+00 0.0e+00  0  0  0  0  0   0  0  0  0  0  2245
+Parloop_Cells_wrap_form00_exterior_facet_top_integral     182 1.0 2.3194e+00 1.0 5.31e+07 1.1 0.0e+00 0.0e+00 0.0e+00  0  0  0  0  0   0  0  0  0  0  2276
+Parloop_Cells_wrap_form00_interior_facet_horiz_integral     182 1.0 2.7649e+01 1.1 2.44e+10 1.1 0.0e+00 0.0e+00 0.0e+00  3  4  0  0  0   3  4  0  0  0 87493
+Parloop_IntFacets_wrap_form00_interior_facet_vert_integral     182 1.0 4.1711e+01 1.2 6.18e+10 1.3 0.0e+00 0.0e+00 0.0e+00  5 10  0  0  0   5 10  0  0  0 135998
 ------------------------------------------------------------------------------------------------------------------------
 
 Object Type          Creations   Destructions. Reports information only for process 0.
@@ -209,9 +210,9 @@ Object Type          Creations   Destructions. Reports information only for proc
      Discrete System    19             19
            Weak Form    19             19
 ========================================================================================================================
-Average time to get PetscTime(): 2.6e-08
-Average time for MPI_Barrier(): 4.5084e-06
-Average time for zero size MPI_Send(): 1.98229e-06
+Average time to get PetscTime(): 2.65e-08
+Average time for MPI_Barrier(): 4.0046e-06
+Average time for zero size MPI_Send(): 1.92354e-06
 #PETSc Option Table entries:
 -log_view :/scratch/xd2/sg8812/morrow2026/parallel_scaling/results/cockett/sor/sweep.profile # (source: environment)
 #End of PETSc Option Table entries
