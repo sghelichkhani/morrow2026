@@ -3,9 +3,9 @@ Case: cockett
 Solver: bjacobi
 Scale: large
 Degree: 1
-Nodes: 8
-CPUs: 832
-Date: Fri Aug 21 22:57:30 AEST 2026
+Nodes: 4
+CPUs: 416
+Date: Tue Aug 25 22:04:25 AEST 2026
 G-ADOPT commit: 3ab20fabc820d68b6d1f820b80149bc8e452a7f4
 Morrow commit: b153bd39bb0aa4da6fa4255ec076a2a14fc030fc
 Driver SHA256: ba6abf3ce3388755b35208a104650d19c9d308d9f781cba9ec25e899ad444bb4
@@ -13,186 +13,6 @@ Solver SHA256: f57d11e7fdc91b12c1947d959bce4fbf2ed76227ee5cddeb33a2c58c24a6db9e
 Firedrake module: singularity:intel-compiler-llvm/2024.2.1:petsc/main-20260815:firedrake/main-20260806
 PETSC_OPTIONS: -log_view :/scratch/xd2/sg8812/morrow2026/parallel_scaling/results/cockett/bjacobi/large.profile
 ================
-Could not save font_manager cache Lock error: Matplotlib failed to acquire the following lock file:
-    /jobfs/176973747.gadi-pbs/matplotlib/fontlist-v3.11.0.json.matplotlib-lock
-This maybe due to another process holding this lock file.  If you are sure no
-other Matplotlib process is running, remove this file and try again.
-Could not save font_manager cache Lock error: Matplotlib failed to acquire the following lock file:
-    /jobfs/176973747.gadi-pbs/matplotlib/fontlist-v3.11.0.json.matplotlib-lock
-This maybe due to another process holding this lock file.  If you are sure no
-other Matplotlib process is running, remove this file and try again.
-Could not save font_manager cache Lock error: Matplotlib failed to acquire the following lock file:
-    /jobfs/176973747.gadi-pbs/matplotlib/fontlist-v3.11.0.json.matplotlib-lock
-This maybe due to another process holding this lock file.  If you are sure no
-other Matplotlib process is running, remove this file and try again.
-Could not save font_manager cache Lock error: Matplotlib failed to acquire the following lock file:
-    /jobfs/176973747.gadi-pbs/matplotlib/fontlist-v3.11.0.json.matplotlib-lock
-This maybe due to another process holding this lock file.  If you are sure no
-other Matplotlib process is running, remove this file and try again.
-Could not save font_manager cache Lock error: Matplotlib failed to acquire the following lock file:
-    /jobfs/176973747.gadi-pbs/matplotlib/fontlist-v3.11.0.json.matplotlib-lock
-This maybe due to another process holding this lock file.  If you are sure no
-other Matplotlib process is running, remove this file and try again.
-Could not save font_manager cache Lock error: Matplotlib failed to acquire the following lock file:
-    /jobfs/176973747.gadi-pbs/matplotlib/fontlist-v3.11.0.json.matplotlib-lock
-This maybe due to another process holding this lock file.  If you are sure no
-other Matplotlib process is running, remove this file and try again.
-Could not save font_manager cache Lock error: Matplotlib failed to acquire the following lock file:
-    /jobfs/176973747.gadi-pbs/matplotlib/fontlist-v3.11.0.json.matplotlib-lock
-This maybe due to another process holding this lock file.  If you are sure no
-other Matplotlib process is running, remove this file and try again.
-Could not save font_manager cache Lock error: Matplotlib failed to acquire the following lock file:
-    /jobfs/176973747.gadi-pbs/matplotlib/fontlist-v3.11.0.json.matplotlib-lock
-This maybe due to another process holding this lock file.  If you are sure no
-other Matplotlib process is running, remove this file and try again.
-Could not save font_manager cache Lock error: Matplotlib failed to acquire the following lock file:
-    /jobfs/176973747.gadi-pbs/matplotlib/fontlist-v3.11.0.json.matplotlib-lock
-This maybe due to another process holding this lock file.  If you are sure no
-other Matplotlib process is running, remove this file and try again.
-Could not save font_manager cache Lock error: Matplotlib failed to acquire the following lock file:
-    /jobfs/176973747.gadi-pbs/matplotlib/fontlist-v3.11.0.json.matplotlib-lock
-This maybe due to another process holding this lock file.  If you are sure no
-other Matplotlib process is running, remove this file and try again.
-Could not save font_manager cache Lock error: Matplotlib failed to acquire the following lock file:
-    /jobfs/176973747.gadi-pbs/matplotlib/fontlist-v3.11.0.json.matplotlib-lock
-This maybe due to another process holding this lock file.  If you are sure no
-other Matplotlib process is running, remove this file and try again.
-Could not save font_manager cache Lock error: Matplotlib failed to acquire the following lock file:
-    /jobfs/176973747.gadi-pbs/matplotlib/fontlist-v3.11.0.json.matplotlib-lock
-This maybe due to another process holding this lock file.  If you are sure no
-other Matplotlib process is running, remove this file and try again.
-Could not save font_manager cache Lock error: Matplotlib failed to acquire the following lock file:
-    /jobfs/176973747.gadi-pbs/matplotlib/fontlist-v3.11.0.json.matplotlib-lock
-This maybe due to another process holding this lock file.  If you are sure no
-other Matplotlib process is running, remove this file and try again.
-Could not save font_manager cache Lock error: Matplotlib failed to acquire the following lock file:
-    /jobfs/176973747.gadi-pbs/matplotlib/fontlist-v3.11.0.json.matplotlib-lock
-This maybe due to another process holding this lock file.  If you are sure no
-other Matplotlib process is running, remove this file and try again.
-Could not save font_manager cache Lock error: Matplotlib failed to acquire the following lock file:
-    /jobfs/176973747.gadi-pbs/matplotlib/fontlist-v3.11.0.json.matplotlib-lock
-This maybe due to another process holding this lock file.  If you are sure no
-other Matplotlib process is running, remove this file and try again.
-Could not save font_manager cache Lock error: Matplotlib failed to acquire the following lock file:
-    /jobfs/176973747.gadi-pbs/matplotlib/fontlist-v3.11.0.json.matplotlib-lock
-This maybe due to another process holding this lock file.  If you are sure no
-other Matplotlib process is running, remove this file and try again.
-Could not save font_manager cache Lock error: Matplotlib failed to acquire the following lock file:
-    /jobfs/176973747.gadi-pbs/matplotlib/fontlist-v3.11.0.json.matplotlib-lock
-This maybe due to another process holding this lock file.  If you are sure no
-other Matplotlib process is running, remove this file and try again.
-Could not save font_manager cache Lock error: Matplotlib failed to acquire the following lock file:
-    /jobfs/176973747.gadi-pbs/matplotlib/fontlist-v3.11.0.json.matplotlib-lock
-This maybe due to another process holding this lock file.  If you are sure no
-other Matplotlib process is running, remove this file and try again.
-Could not save font_manager cache Lock error: Matplotlib failed to acquire the following lock file:
-    /jobfs/176973747.gadi-pbs/matplotlib/fontlist-v3.11.0.json.matplotlib-lock
-This maybe due to another process holding this lock file.  If you are sure no
-other Matplotlib process is running, remove this file and try again.
-Could not save font_manager cache Lock error: Matplotlib failed to acquire the following lock file:
-    /jobfs/176973747.gadi-pbs/matplotlib/fontlist-v3.11.0.json.matplotlib-lock
-This maybe due to another process holding this lock file.  If you are sure no
-other Matplotlib process is running, remove this file and try again.
-Could not save font_manager cache Lock error: Matplotlib failed to acquire the following lock file:
-    /jobfs/176973747.gadi-pbs/matplotlib/fontlist-v3.11.0.json.matplotlib-lock
-This maybe due to another process holding this lock file.  If you are sure no
-other Matplotlib process is running, remove this file and try again.
-Could not save font_manager cache Lock error: Matplotlib failed to acquire the following lock file:
-    /jobfs/176973747.gadi-pbs/matplotlib/fontlist-v3.11.0.json.matplotlib-lock
-This maybe due to another process holding this lock file.  If you are sure no
-other Matplotlib process is running, remove this file and try again.
-Could not save font_manager cache Lock error: Matplotlib failed to acquire the following lock file:
-    /jobfs/176973747.gadi-pbs/matplotlib/fontlist-v3.11.0.json.matplotlib-lock
-This maybe due to another process holding this lock file.  If you are sure no
-other Matplotlib process is running, remove this file and try again.
-Could not save font_manager cache Lock error: Matplotlib failed to acquire the following lock file:
-    /jobfs/176973747.gadi-pbs/matplotlib/fontlist-v3.11.0.json.matplotlib-lock
-This maybe due to another process holding this lock file.  If you are sure no
-other Matplotlib process is running, remove this file and try again.
-Could not save font_manager cache Lock error: Matplotlib failed to acquire the following lock file:
-    /jobfs/176973747.gadi-pbs/matplotlib/fontlist-v3.11.0.json.matplotlib-lock
-This maybe due to another process holding this lock file.  If you are sure no
-other Matplotlib process is running, remove this file and try again.
-Could not save font_manager cache Lock error: Matplotlib failed to acquire the following lock file:
-    /jobfs/176973747.gadi-pbs/matplotlib/fontlist-v3.11.0.json.matplotlib-lock
-This maybe due to another process holding this lock file.  If you are sure no
-other Matplotlib process is running, remove this file and try again.
-Could not save font_manager cache Lock error: Matplotlib failed to acquire the following lock file:
-    /jobfs/176973747.gadi-pbs/matplotlib/fontlist-v3.11.0.json.matplotlib-lock
-This maybe due to another process holding this lock file.  If you are sure no
-other Matplotlib process is running, remove this file and try again.
-Could not save font_manager cache Lock error: Matplotlib failed to acquire the following lock file:
-    /jobfs/176973747.gadi-pbs/matplotlib/fontlist-v3.11.0.json.matplotlib-lock
-This maybe due to another process holding this lock file.  If you are sure no
-other Matplotlib process is running, remove this file and try again.
-Could not save font_manager cache Lock error: Matplotlib failed to acquire the following lock file:
-    /jobfs/176973747.gadi-pbs/matplotlib/fontlist-v3.11.0.json.matplotlib-lock
-This maybe due to another process holding this lock file.  If you are sure no
-other Matplotlib process is running, remove this file and try again.
-Could not save font_manager cache Lock error: Matplotlib failed to acquire the following lock file:
-    /jobfs/176973747.gadi-pbs/matplotlib/fontlist-v3.11.0.json.matplotlib-lock
-This maybe due to another process holding this lock file.  If you are sure no
-other Matplotlib process is running, remove this file and try again.
-Could not save font_manager cache Lock error: Matplotlib failed to acquire the following lock file:
-    /jobfs/176973747.gadi-pbs/matplotlib/fontlist-v3.11.0.json.matplotlib-lock
-This maybe due to another process holding this lock file.  If you are sure no
-other Matplotlib process is running, remove this file and try again.
-Could not save font_manager cache Lock error: Matplotlib failed to acquire the following lock file:
-    /jobfs/176973747.gadi-pbs/matplotlib/fontlist-v3.11.0.json.matplotlib-lock
-This maybe due to another process holding this lock file.  If you are sure no
-other Matplotlib process is running, remove this file and try again.
-Could not save font_manager cache Lock error: Matplotlib failed to acquire the following lock file:
-    /jobfs/176973747.gadi-pbs/matplotlib/fontlist-v3.11.0.json.matplotlib-lock
-This maybe due to another process holding this lock file.  If you are sure no
-other Matplotlib process is running, remove this file and try again.
-Could not save font_manager cache Lock error: Matplotlib failed to acquire the following lock file:
-    /jobfs/176973747.gadi-pbs/matplotlib/fontlist-v3.11.0.json.matplotlib-lock
-This maybe due to another process holding this lock file.  If you are sure no
-other Matplotlib process is running, remove this file and try again.
-Could not save font_manager cache Lock error: Matplotlib failed to acquire the following lock file:
-    /jobfs/176973747.gadi-pbs/matplotlib/fontlist-v3.11.0.json.matplotlib-lock
-This maybe due to another process holding this lock file.  If you are sure no
-other Matplotlib process is running, remove this file and try again.
-Could not save font_manager cache Lock error: Matplotlib failed to acquire the following lock file:
-    /jobfs/176973747.gadi-pbs/matplotlib/fontlist-v3.11.0.json.matplotlib-lock
-This maybe due to another process holding this lock file.  If you are sure no
-other Matplotlib process is running, remove this file and try again.
-Could not save font_manager cache Lock error: Matplotlib failed to acquire the following lock file:
-    /jobfs/176973747.gadi-pbs/matplotlib/fontlist-v3.11.0.json.matplotlib-lock
-This maybe due to another process holding this lock file.  If you are sure no
-other Matplotlib process is running, remove this file and try again.
-Could not save font_manager cache Lock error: Matplotlib failed to acquire the following lock file:
-    /jobfs/176973747.gadi-pbs/matplotlib/fontlist-v3.11.0.json.matplotlib-lock
-This maybe due to another process holding this lock file.  If you are sure no
-other Matplotlib process is running, remove this file and try again.
-Could not save font_manager cache Lock error: Matplotlib failed to acquire the following lock file:
-    /jobfs/176973747.gadi-pbs/matplotlib/fontlist-v3.11.0.json.matplotlib-lock
-This maybe due to another process holding this lock file.  If you are sure no
-other Matplotlib process is running, remove this file and try again.
-Could not save font_manager cache Lock error: Matplotlib failed to acquire the following lock file:
-    /jobfs/176973747.gadi-pbs/matplotlib/fontlist-v3.11.0.json.matplotlib-lock
-This maybe due to another process holding this lock file.  If you are sure no
-other Matplotlib process is running, remove this file and try again.
-Could not save font_manager cache Lock error: Matplotlib failed to acquire the following lock file:
-    /jobfs/176973747.gadi-pbs/matplotlib/fontlist-v3.11.0.json.matplotlib-lock
-This maybe due to another process holding this lock file.  If you are sure no
-other Matplotlib process is running, remove this file and try again.
-Could not save font_manager cache Lock error: Matplotlib failed to acquire the following lock file:
-    /jobfs/176973747.gadi-pbs/matplotlib/fontlist-v3.11.0.json.matplotlib-lock
-This maybe due to another process holding this lock file.  If you are sure no
-other Matplotlib process is running, remove this file and try again.
-Could not save font_manager cache Lock error: Matplotlib failed to acquire the following lock file:
-    /jobfs/176973747.gadi-pbs/matplotlib/fontlist-v3.11.0.json.matplotlib-lock
-This maybe due to another process holding this lock file.  If you are sure no
-other Matplotlib process is running, remove this file and try again.
-Could not save font_manager cache Lock error: Matplotlib failed to acquire the following lock file:
-    /jobfs/176973747.gadi-pbs/matplotlib/fontlist-v3.11.0.json.matplotlib-lock
-This maybe due to another process holding this lock file.  If you are sure no
-other Matplotlib process is running, remove this file and try again.
-Could not save font_manager cache Lock error: Matplotlib failed to acquire the following lock file:
-    /jobfs/176973747.gadi-pbs/matplotlib/fontlist-v3.11.0.json.matplotlib-lock
-This maybe due to another process holding this lock file.  If you are sure no
-other Matplotlib process is running, remove this file and try again.
 Matplotlib is building the font cache; this may take a moment.
 Matplotlib is building the font cache; this may take a moment.
 Matplotlib is building the font cache; this may take a moment.
@@ -505,173 +325,188 @@ Matplotlib is building the font cache; this may take a moment.
 Matplotlib is building the font cache; this may take a moment.
 Matplotlib is building the font cache; this may take a moment.
 Matplotlib is building the font cache; this may take a moment.
-Number of degrees of freedom: 143769600
-Mesh: 240x240x312, DQ1
+Matplotlib is building the font cache; this may take a moment.
+Matplotlib is building the font cache; this may take a moment.
+Matplotlib is building the font cache; this may take a moment.
+Matplotlib is building the font cache; this may take a moment.
+Matplotlib is building the font cache; this may take a moment.
+Matplotlib is building the font cache; this may take a moment.
+Matplotlib is building the font cache; this may take a moment.
+Matplotlib is building the font cache; this may take a moment.
+Matplotlib is building the font cache; this may take a moment.
+Matplotlib is building the font cache; this may take a moment.
+Matplotlib is building the font cache; this may take a moment.
+Matplotlib is building the font cache; this may take a moment.
+Matplotlib is building the font cache; this may take a moment.
+Matplotlib is building the font cache; this may take a moment.
+Matplotlib is building the font cache; this may take a moment.
+Number of degrees of freedom: 72843264
+Mesh: 192x192x247, DQ1
 Time stepper: BackwardEuler, dt = 300.0 s, steps = 30
 Solver: bjacobi
 Solver parameters: {'ksp_type': 'gmres', 'ksp_pc_side': 'right', 'ksp_rtol': 0.0001, 'ksp_max_it': 200, 'ksp_gmres_restart': 30, 'pc_type': 'bjacobi', 'sub_ksp_type': 'preonly', 'sub_pc_type': 'ilu', 'sub_pc_factor_levels': 0, 'snes_type': 'newtonls', 'snes_linesearch_type': 'bt', 'snes_rtol': 1e-08, 'snes_atol': 1e-12, 'snes_stol': 1e-08, 'snes_max_it': 50}
-    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 102
-    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 104
-    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 82
-    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 88
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 77
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 80
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 66
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 70
   Nonlinear BackwardEuler-Equation_ solve converged due to CONVERGED_FNORM_ABS iterations 4
-t = 300.00 s | step 1/30 | wall 63.32 s | NL 4 | L 376
+t = 300.00 s | step 1/30 | wall 59.30 s | NL 4 | L 293
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 81
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 85
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 82
+  Nonlinear BackwardEuler-Equation_ solve converged due to CONVERGED_FNORM_ABS iterations 3
+t = 600.00 s | step 2/30 | wall 19.34 s | NL 3 | L 248
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 83
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 87
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 86
+  Nonlinear BackwardEuler-Equation_ solve converged due to CONVERGED_FNORM_ABS iterations 3
+t = 900.00 s | step 3/30 | wall 19.86 s | NL 3 | L 256
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 85
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 89
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 88
+  Nonlinear BackwardEuler-Equation_ solve converged due to CONVERGED_FNORM_ABS iterations 3
+t = 1200.00 s | step 4/30 | wall 20.24 s | NL 3 | L 262
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 87
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 90
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 88
+  Nonlinear BackwardEuler-Equation_ solve converged due to CONVERGED_FNORM_ABS iterations 3
+t = 1500.00 s | step 5/30 | wall 20.46 s | NL 3 | L 265
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 89
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 90
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 89
+  Nonlinear BackwardEuler-Equation_ solve converged due to CONVERGED_FNORM_ABS iterations 3
+t = 1800.00 s | step 6/30 | wall 20.66 s | NL 3 | L 268
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 92
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 90
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 90
+  Nonlinear BackwardEuler-Equation_ solve converged due to CONVERGED_FNORM_ABS iterations 3
+t = 2100.00 s | step 7/30 | wall 21.09 s | NL 3 | L 272
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 94
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 92
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 92
+  Nonlinear BackwardEuler-Equation_ solve converged due to CONVERGED_FNORM_ABS iterations 3
+t = 2400.00 s | step 8/30 | wall 21.38 s | NL 3 | L 278
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 95
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 93
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 94
+  Nonlinear BackwardEuler-Equation_ solve converged due to CONVERGED_FNORM_ABS iterations 3
+t = 2700.00 s | step 9/30 | wall 21.61 s | NL 3 | L 282
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 96
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 95
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 95
+  Nonlinear BackwardEuler-Equation_ solve converged due to CONVERGED_FNORM_ABS iterations 3
+t = 3000.00 s | step 10/30 | wall 21.81 s | NL 3 | L 286
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 97
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 96
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 97
+  Nonlinear BackwardEuler-Equation_ solve converged due to CONVERGED_FNORM_ABS iterations 3
+t = 3300.00 s | step 11/30 | wall 22.04 s | NL 3 | L 290
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 98
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 97
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 99
+  Nonlinear BackwardEuler-Equation_ solve converged due to CONVERGED_FNORM_ABS iterations 3
+t = 3600.00 s | step 12/30 | wall 22.31 s | NL 3 | L 294
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 99
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 98
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 100
+  Nonlinear BackwardEuler-Equation_ solve converged due to CONVERGED_FNORM_ABS iterations 3
+t = 3900.00 s | step 13/30 | wall 22.49 s | NL 3 | L 297
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 100
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 99
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 101
+  Nonlinear BackwardEuler-Equation_ solve converged due to CONVERGED_FNORM_ABS iterations 3
+t = 4200.00 s | step 14/30 | wall 22.61 s | NL 3 | L 300
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 101
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 99
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 102
+  Nonlinear BackwardEuler-Equation_ solve converged due to CONVERGED_FNORM_ABS iterations 3
+t = 4500.00 s | step 15/30 | wall 22.70 s | NL 3 | L 302
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 102
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 99
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 103
+  Nonlinear BackwardEuler-Equation_ solve converged due to CONVERGED_FNORM_ABS iterations 3
+t = 4800.00 s | step 16/30 | wall 22.82 s | NL 3 | L 304
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 103
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 100
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 103
+  Nonlinear BackwardEuler-Equation_ solve converged due to CONVERGED_FNORM_ABS iterations 3
+t = 5100.00 s | step 17/30 | wall 22.97 s | NL 3 | L 306
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 103
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 100
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 103
+  Nonlinear BackwardEuler-Equation_ solve converged due to CONVERGED_FNORM_ABS iterations 3
+t = 5400.00 s | step 18/30 | wall 23.08 s | NL 3 | L 306
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 104
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 100
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 104
+  Nonlinear BackwardEuler-Equation_ solve converged due to CONVERGED_FNORM_ABS iterations 3
+t = 5700.00 s | step 19/30 | wall 23.06 s | NL 3 | L 308
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 104
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 100
     Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 105
-    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 112
+  Nonlinear BackwardEuler-Equation_ solve converged due to CONVERGED_FNORM_ABS iterations 3
+t = 6000.00 s | step 20/30 | wall 23.12 s | NL 3 | L 309
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 105
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 100
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 105
+  Nonlinear BackwardEuler-Equation_ solve converged due to CONVERGED_FNORM_ABS iterations 3
+t = 6300.00 s | step 21/30 | wall 23.17 s | NL 3 | L 310
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 105
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 100
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 106
+  Nonlinear BackwardEuler-Equation_ solve converged due to CONVERGED_FNORM_ABS iterations 3
+t = 6600.00 s | step 22/30 | wall 23.24 s | NL 3 | L 311
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 106
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 100
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 107
+  Nonlinear BackwardEuler-Equation_ solve converged due to CONVERGED_FNORM_ABS iterations 3
+t = 6900.00 s | step 23/30 | wall 23.52 s | NL 3 | L 313
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 106
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 101
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 107
+  Nonlinear BackwardEuler-Equation_ solve converged due to CONVERGED_FNORM_ABS iterations 3
+t = 7200.00 s | step 24/30 | wall 23.41 s | NL 3 | L 314
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 107
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 101
     Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 108
   Nonlinear BackwardEuler-Equation_ solve converged due to CONVERGED_FNORM_ABS iterations 3
-t = 600.00 s | step 2/30 | wall 24.25 s | NL 3 | L 325
+t = 7500.00 s | step 25/30 | wall 23.57 s | NL 3 | L 316
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 107
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 101
     Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 108
-    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 115
-    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 112
   Nonlinear BackwardEuler-Equation_ solve converged due to CONVERGED_FNORM_ABS iterations 3
-t = 900.00 s | step 3/30 | wall 24.81 s | NL 3 | L 335
-    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 112
-    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 116
-    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 114
+t = 7800.00 s | step 26/30 | wall 23.55 s | NL 3 | L 316
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 107
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 101
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 109
   Nonlinear BackwardEuler-Equation_ solve converged due to CONVERGED_FNORM_ABS iterations 3
-t = 1200.00 s | step 4/30 | wall 25.35 s | NL 3 | L 342
-    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 114
-    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 117
-    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 116
+t = 8100.00 s | step 27/30 | wall 23.61 s | NL 3 | L 317
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 108
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 101
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 109
   Nonlinear BackwardEuler-Equation_ solve converged due to CONVERGED_FNORM_ABS iterations 3
-t = 1500.00 s | step 5/30 | wall 25.55 s | NL 3 | L 347
-    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 116
-    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 117
-    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 117
+t = 8400.00 s | step 28/30 | wall 23.75 s | NL 3 | L 318
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 108
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 101
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 110
   Nonlinear BackwardEuler-Equation_ solve converged due to CONVERGED_FNORM_ABS iterations 3
-t = 1800.00 s | step 6/30 | wall 25.87 s | NL 3 | L 350
-    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 117
-    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 118
-    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 119
+t = 8700.00 s | step 29/30 | wall 23.80 s | NL 3 | L 319
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 109
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 101
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 110
   Nonlinear BackwardEuler-Equation_ solve converged due to CONVERGED_FNORM_ABS iterations 3
-t = 2100.00 s | step 7/30 | wall 26.17 s | NL 3 | L 354
-    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 118
-    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 119
-    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 123
-  Nonlinear BackwardEuler-Equation_ solve converged due to CONVERGED_FNORM_ABS iterations 3
-t = 2400.00 s | step 8/30 | wall 26.49 s | NL 3 | L 360
-    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 120
-    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 123
-    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 124
-  Nonlinear BackwardEuler-Equation_ solve converged due to CONVERGED_FNORM_ABS iterations 3
-t = 2700.00 s | step 9/30 | wall 26.95 s | NL 3 | L 367
-    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 123
-    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 123
-    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 126
-  Nonlinear BackwardEuler-Equation_ solve converged due to CONVERGED_FNORM_ABS iterations 3
-t = 3000.00 s | step 10/30 | wall 27.29 s | NL 3 | L 372
-    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 124
-    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 125
-    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 127
-  Nonlinear BackwardEuler-Equation_ solve converged due to CONVERGED_FNORM_ABS iterations 3
-t = 3300.00 s | step 11/30 | wall 27.52 s | NL 3 | L 376
-    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 127
-    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 126
-    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 128
-  Nonlinear BackwardEuler-Equation_ solve converged due to CONVERGED_FNORM_ABS iterations 3
-t = 3600.00 s | step 12/30 | wall 27.83 s | NL 3 | L 381
-    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 128
-    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 127
-    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 129
-  Nonlinear BackwardEuler-Equation_ solve converged due to CONVERGED_FNORM_ABS iterations 3
-t = 3900.00 s | step 13/30 | wall 27.96 s | NL 3 | L 384
-    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 130
-    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 128
-    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 130
-  Nonlinear BackwardEuler-Equation_ solve converged due to CONVERGED_FNORM_ABS iterations 3
-t = 4200.00 s | step 14/30 | wall 28.13 s | NL 3 | L 388
-    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 131
-    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 129
-    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 131
-  Nonlinear BackwardEuler-Equation_ solve converged due to CONVERGED_FNORM_ABS iterations 3
-t = 4500.00 s | step 15/30 | wall 28.36 s | NL 3 | L 391
-    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 132
-    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 129
-    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 132
-  Nonlinear BackwardEuler-Equation_ solve converged due to CONVERGED_FNORM_ABS iterations 3
-t = 4800.00 s | step 16/30 | wall 28.48 s | NL 3 | L 393
-    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 133
-    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 129
-    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 133
-  Nonlinear BackwardEuler-Equation_ solve converged due to CONVERGED_FNORM_ABS iterations 3
-t = 5100.00 s | step 17/30 | wall 28.61 s | NL 3 | L 395
-    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 133
-    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 130
-    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 134
-  Nonlinear BackwardEuler-Equation_ solve converged due to CONVERGED_FNORM_ABS iterations 3
-t = 5400.00 s | step 18/30 | wall 28.65 s | NL 3 | L 397
-    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 134
-    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 130
-    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 135
-  Nonlinear BackwardEuler-Equation_ solve converged due to CONVERGED_FNORM_ABS iterations 3
-t = 5700.00 s | step 19/30 | wall 28.88 s | NL 3 | L 399
-    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 135
-    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 130
-    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 136
-  Nonlinear BackwardEuler-Equation_ solve converged due to CONVERGED_FNORM_ABS iterations 3
-t = 6000.00 s | step 20/30 | wall 28.99 s | NL 3 | L 401
-    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 135
-    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 130
-    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 136
-  Nonlinear BackwardEuler-Equation_ solve converged due to CONVERGED_FNORM_ABS iterations 3
-t = 6300.00 s | step 21/30 | wall 28.92 s | NL 3 | L 401
-    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 136
-    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 130
-    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 137
-  Nonlinear BackwardEuler-Equation_ solve converged due to CONVERGED_FNORM_ABS iterations 3
-t = 6600.00 s | step 22/30 | wall 29.05 s | NL 3 | L 403
-    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 137
-    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 130
-    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 137
-  Nonlinear BackwardEuler-Equation_ solve converged due to CONVERGED_FNORM_ABS iterations 3
-t = 6900.00 s | step 23/30 | wall 29.16 s | NL 3 | L 404
-    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 137
-    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 130
-    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 138
-  Nonlinear BackwardEuler-Equation_ solve converged due to CONVERGED_FNORM_ABS iterations 3
-t = 7200.00 s | step 24/30 | wall 29.21 s | NL 3 | L 405
-    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 137
-    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 130
-    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 138
-  Nonlinear BackwardEuler-Equation_ solve converged due to CONVERGED_FNORM_ABS iterations 3
-t = 7500.00 s | step 25/30 | wall 29.21 s | NL 3 | L 405
-    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 138
-    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 130
-    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 138
-  Nonlinear BackwardEuler-Equation_ solve converged due to CONVERGED_FNORM_ABS iterations 3
-t = 7800.00 s | step 26/30 | wall 29.26 s | NL 3 | L 406
-    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 138
-    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 130
-    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 138
-  Nonlinear BackwardEuler-Equation_ solve converged due to CONVERGED_FNORM_ABS iterations 3
-t = 8100.00 s | step 27/30 | wall 29.25 s | NL 3 | L 406
-    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 139
-    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 130
-    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 138
-  Nonlinear BackwardEuler-Equation_ solve converged due to CONVERGED_FNORM_ABS iterations 3
-t = 8400.00 s | step 28/30 | wall 29.39 s | NL 3 | L 407
-    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 139
-    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 130
-    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 138
-  Nonlinear BackwardEuler-Equation_ solve converged due to CONVERGED_FNORM_ABS iterations 3
-t = 8700.00 s | step 29/30 | wall 29.35 s | NL 3 | L 407
-    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 139
-    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 130
-    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 138
-  Nonlinear BackwardEuler-Equation_ solve converged due to CONVERGED_FNORM_ABS iterations 3
-t = 9000.00 s | step 30/30 | wall 29.32 s | NL 3 | L 407
-Done | total NL 91 | total L 11484 | mean wall/step 29.05 s | peak RSS 1030 MB
-=== Job completed: Fri Aug 21 23:13:46 AEST 2026 ===
+t = 9000.00 s | step 30/30 | wall 23.84 s | NL 3 | L 320
+Done | total NL 91 | total L 8880 | mean wall/step 23.61 s | peak RSS 996 MB
+=== Job completed: Tue Aug 25 22:17:09 AEST 2026 ===
 
 ======================================================================================
-                  Resource Usage on 2026-08-21 23:13:59:
-   Job Id:             176973747.gadi-pbs
+                  Resource Usage on 2026-08-25 22:17:13:
+   Job Id:             177412700.gadi-pbs
    Project:            xd2
    Exit Status:        0
-   Service Units:      452.52
-   NCPUs Requested:    832                 CPU Time Used: 213:52:40       
-   Memory Requested:   3.91TB                Memory Used: 588.26GB        
-   Walltime Requested: 03:00:00            Walltime Used: 00:16:19        
-   JobFS Requested:    400.0GB                JobFS Used: 55.89MB         
+   Service Units:      177.49
+   NCPUs Requested:    416                 CPU Time Used: 85:31:21        
+   Memory Requested:   1.95TB                Memory Used: 294.56GB        
+   Walltime Requested: 03:00:00            Walltime Used: 00:12:48        
+   JobFS Requested:    400.0GB                JobFS Used: 56.14MB         
 ======================================================================================

@@ -75,6 +75,107 @@ RE_PBS_WALLTIME_KILL = re.compile(
 RE_PBS_WALLTIME = re.compile(r"Walltime Used:\s*(\S+)")
 RE_PBS_MEMORY = re.compile(r"Memory Used:\s*(\S+)")
 
+# ── PETSc -log_view profile (sibling .profile file) ──────────────────────────
+# The .profile holds the log_view timing table written by the SAME Gadi job as
+# the .out. We attach its decomposition to the same run record so wall time,
+# iteration counts (from .out) and the time breakdown (from .profile) live
+# together and cross-check each other. See parse_log_view.
+#
+# Top-level events, whose Main-Stage time already includes their nested
+# sub-stage cost, so they decompose SNESSolve directly. For multigrid solvers
+# PETSc splits work across log stages and each event prints once per stage; we
+# take the FIRST (Main Stage) occurrence, which carries the global total.
+PROFILE_EVENTS = [
+    "SNESSolve", "SNESFunctionEval", "SNESJacobianEval",
+    "KSPSolve", "KSPSetUp", "PCSetUp", "PCSetUpOnBlocks", "PCApply",
+    "MatMult", "MatAssemblyBegin", "MatAssemblyEnd",
+]
+RE_LV_NPROC = re.compile(r"with (\d+) processes")
+RE_LV_TIME = re.compile(r"^Time \(sec\):\s+([\d.eE+-]+)")
+
+
+def _lv_event_row(tokens):
+    """Parse one -log_view event row. Columns (after the event name) are
+    Count/CountRatio, Time-Max/Ratio, Flop-Max/Ratio, Mess, AvgLen, Reduct,
+    then five global percentages. All fields we read sit left of the optional
+    'Multiple stages' text, so a staged event still parses."""
+    try:
+        row = {
+            "count": int(float(tokens[1])),
+            "time_s": float(tokens[3]),
+            "time_ratio": float(tokens[4]),   # Max/Min across ranks = imbalance
+            "flop_max": float(tokens[5]),
+            "mess": float(tokens[7]),
+            "reduct": float(tokens[9]),
+            "pct_time": int(tokens[10]),      # global %T
+        }
+    except (ValueError, IndexError):
+        return None
+    try:
+        row["mflops"] = float(tokens[-1])
+    except (ValueError, IndexError):
+        row["mflops"] = None
+    return row
+
+
+def parse_log_view(path):
+    """Parse the PETSc -log_view table in a .profile file into a dict with the
+    top-level events, the total wall time, process count, and a derived
+    setup/apply/Jacobian decomposition of SNESSolve. Returns None if the file
+    is absent or holds no log_view table."""
+    if path is None or not path.exists():
+        return None
+    lines = path.read_text(errors="replace").splitlines()
+    if not any(l.startswith("SNESSolve") or l.startswith("KSPSolve")
+               for l in lines):
+        return None
+
+    prof = {"file": str(path), "events": {}}
+    wanted = set(PROFILE_EVENTS)
+    for line in lines:
+        if "nprocs" not in prof:
+            m = RE_LV_NPROC.search(line)
+            if m:
+                prof["nprocs"] = int(m.group(1))
+        if "wall_total_s" not in prof:
+            m = RE_LV_TIME.match(line)
+            if m:
+                prof["wall_total_s"] = float(m.group(1))
+        tok = line.split()
+        if tok and tok[0] in wanted and tok[0] not in prof["events"]:
+            row = _lv_event_row(tok)
+            if row:
+                prof["events"][tok[0]] = row
+    if not prof["events"]:
+        return None
+
+    # Derived decomposition, as a share of SNESSolve time (the whole solve).
+    ev = prof["events"]
+
+    def t(name):
+        return ev.get(name, {}).get("time_s")
+
+    t_snes = t("SNESSolve") or prof.get("wall_total_s")
+    if t_snes:
+        setup = (t("PCSetUp") or 0.0) + (t("PCSetUpOnBlocks") or 0.0)
+
+        def pct(name):
+            v = t(name)
+            return round(100.0 * v / t_snes, 2) if v is not None else None
+
+        prof["derived"] = {
+            "denominator": "SNESSolve" if t("SNESSolve") else "wall_total",
+            "t_snes_s": round(t_snes, 3),
+            "pc_setup_s": round(setup, 3),
+            "pc_setup_pct": round(100.0 * setup / t_snes, 2),
+            "pc_apply_pct": pct("PCApply"),
+            "ksp_total_pct": pct("KSPSolve"),
+            "jacobian_pct": pct("SNESJacobianEval"),
+            "function_pct": pct("SNESFunctionEval"),
+            "matmult_mainstage_pct": pct("MatMult"),
+        }
+    return prof
+
 
 def parse_file(path):
     """Parse a single .out file and return a structured dict."""
@@ -297,6 +398,42 @@ def parse_file(path):
         pbs["walltime_limit_seconds"] = int(walltime_kill.group(2))
     if pbs:
         result["pbs"] = pbs
+
+    # ── Attach PETSc -log_view profile from the sibling .profile ────────
+    # The two sources describe one execution, so we keep them in one record
+    # and cross-check: the event counts must match the iteration counts the
+    # .out reports, and the profiled SNESSolve time must match the .out wall
+    # time (a mismatch means the .profile came from a different run).
+    profile = parse_log_view(path.with_suffix(".profile"))
+    if profile:
+        s = result.get("summary") or {}
+        ev = profile["events"]
+        val = {}
+        if "SNESSolve" in ev and s.get("steps_completed") is not None:
+            val["snes_count"] = ev["SNESSolve"]["count"]
+            val["steps_completed"] = s["steps_completed"]
+            val["steps_match"] = ev["SNESSolve"]["count"] == s["steps_completed"]
+        if "KSPSolve" in ev and s.get("total_nl") is not None:
+            val["ksp_count"] = ev["KSPSolve"]["count"]
+            val["total_nl"] = s["total_nl"]
+            val["nl_match"] = ev["KSPSolve"]["count"] == s["total_nl"]
+        if "PCApply" in ev and s.get("total_linear"):
+            tl = s["total_linear"]
+            val["pcapply_count"] = ev["PCApply"]["count"]
+            val["total_linear"] = tl
+            # PCApply count tracks the Krylov iteration total, but not exactly:
+            # right-preconditioned GMRES applies the PC a few extra times per
+            # solve, so allow 5% before flagging a real provenance mismatch.
+            val["linear_close"] = abs(ev["PCApply"]["count"] - tl) <= max(3, 0.05 * tl)
+        t_snes = (profile.get("derived") or {}).get("t_snes_s")
+        if t_snes and s.get("mean_wall_per_step") and s.get("steps_completed"):
+            out_total = s["mean_wall_per_step"] * s["steps_completed"]
+            val["out_wall_total_s"] = round(out_total, 1)
+            val["profile_snes_s"] = round(t_snes, 1)
+            val["wall_consistent"] = abs(out_total - t_snes) <= 0.25 * max(out_total, t_snes)
+        if val:
+            profile["validation"] = val
+        result["profile"] = profile
 
     return result
 

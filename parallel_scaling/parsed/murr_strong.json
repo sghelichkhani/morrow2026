@@ -1298,6 +1298,148 @@
       "pbs": {
         "memory_used": "550.41GB",
         "walltime_used": "01:14:40"
+      },
+      "profile": {
+        "file": "/Users/sghelichkhani/Workplace/morrow2026/parallel_scaling/results/murr_strong/bjacobi/s2.profile",
+        "events": {
+          "MatMult": {
+            "count": 8188,
+            "time_s": 1381.6,
+            "time_ratio": 1.2,
+            "flop_max": 970000000000.0,
+            "mess": 9200000.0,
+            "reduct": 0.0,
+            "pct_time": 28,
+            "mflops": 140460.0
+          },
+          "MatAssemblyBegin": {
+            "count": 950,
+            "time_s": 111.04,
+            "time_ratio": 3.6,
+            "flop_max": 0.0,
+            "mess": 250000.0,
+            "reduct": 910.0,
+            "pct_time": 2,
+            "mflops": -0.0
+          },
+          "MatAssemblyEnd": {
+            "count": 950,
+            "time_s": 28.756,
+            "time_ratio": 5.3,
+            "flop_max": 469000000.0,
+            "mess": 2200.0,
+            "reduct": 6.0,
+            "pct_time": 0,
+            "mflops": 1437.0
+          },
+          "PCSetUp": {
+            "count": 226,
+            "time_s": 0.0035157,
+            "time_ratio": 2.2,
+            "flop_max": 0.0,
+            "mess": 0.0,
+            "reduct": 0.0,
+            "pct_time": 0,
+            "mflops": -0.0
+          },
+          "PCSetUpOnBlocks": {
+            "count": 226,
+            "time_s": 153.23,
+            "time_ratio": 1.3,
+            "flop_max": 242000000000.0,
+            "mess": 0.0,
+            "reduct": 0.0,
+            "pct_time": 3,
+            "mflops": 313614.0
+          },
+          "PCApply": {
+            "count": 8188,
+            "time_s": 1391.0,
+            "time_ratio": 1.2,
+            "flop_max": 956000000000.0,
+            "mess": 0.0,
+            "reduct": 0.0,
+            "pct_time": 29,
+            "mflops": 137359.0
+          },
+          "KSPSetUp": {
+            "count": 226,
+            "time_s": 0.068535,
+            "time_ratio": 1.1,
+            "flop_max": 0.0,
+            "mess": 0.0,
+            "reduct": 0.0,
+            "pct_time": 0,
+            "mflops": -0.0
+          },
+          "KSPSolve": {
+            "count": 226,
+            "time_s": 3492.9,
+            "time_ratio": 1.0,
+            "flop_max": 2680000000000.0,
+            "mess": 8900000.0,
+            "reduct": 16000.0,
+            "pct_time": 78,
+            "mflops": 153481.0
+          },
+          "SNESSolve": {
+            "count": 75,
+            "time_s": 4377.4,
+            "time_ratio": 1.0,
+            "flop_max": 5800000000000.0,
+            "mess": 10000000.0,
+            "reduct": 18000.0,
+            "pct_time": 98,
+            "mflops": 263236.0
+          },
+          "SNESFunctionEval": {
+            "count": 301,
+            "time_s": 96.538,
+            "time_ratio": 1.2,
+            "flop_max": 1110000000000.0,
+            "mess": 760000.0,
+            "reduct": 0.0,
+            "pct_time": 2,
+            "mflops": 2259867.0
+          },
+          "SNESJacobianEval": {
+            "count": 226,
+            "time_s": 619.13,
+            "time_ratio": 1.0,
+            "flop_max": 1740000000000.0,
+            "mess": 510000.0,
+            "reduct": 900.0,
+            "pct_time": 14,
+            "mflops": 555201.0
+          }
+        },
+        "nprocs": 208,
+        "wall_total_s": 4463.0,
+        "derived": {
+          "denominator": "SNESSolve",
+          "t_snes_s": 4377.4,
+          "pc_setup_s": 153.234,
+          "pc_setup_pct": 3.5,
+          "pc_apply_pct": 31.78,
+          "ksp_total_pct": 79.79,
+          "jacobian_pct": 14.14,
+          "function_pct": 2.21,
+          "matmult_mainstage_pct": 31.56
+        },
+        "validation": {
+          "snes_count": 75,
+          "steps_completed": 75,
+          "steps_match": true,
+          "ksp_count": 226,
+          "total_nl": 226,
+          "nl_match": true,
+          "pcapply_count": 8188,
+          "total_linear": 7837,
+          "linear_close": true,
+          "out_wall_total_s": 4381.5,
+          "profile_snes_s": 4377.4,
+          "wall_consistent": true
+        }
       }
     },
     {
@@ -2386,6 +2528,148 @@
       "pbs": {
         "memory_used": "640.64GB",
         "walltime_used": "00:38:16"
+      },
+      "profile": {
+        "file": "/Users/sghelichkhani/Workplace/morrow2026/parallel_scaling/results/murr_strong/bjacobi/s4.profile",
+        "events": {
+          "MatMult": {
+            "count": 8188,
+            "time_s": 707.6,
+            "time_ratio": 1.2,
+            "flop_max": 485000000000.0,
+            "mess": 19000000.0,
+            "reduct": 0.0,
+            "pct_time": 28,
+            "mflops": 274247.0
+          },
+          "MatAssemblyBegin": {
+            "count": 950,
+            "time_s": 75.877,
+            "time_ratio": 5.4,
+            "flop_max": 0.0,
+            "mess": 520000.0,
+            "reduct": 910.0,
+            "pct_time": 2,
+            "mflops": -0.0
+          },
+          "MatAssemblyEnd": {
+            "count": 950,
+            "time_s": 18.893,
+            "time_ratio": 25.2,
+            "flop_max": 371000000.0,
+            "mess": 4600.0,
+            "reduct": 6.0,
+            "pct_time": 0,
+            "mflops": 3210.0
+          },
+          "PCSetUp": {
+            "count": 226,
+            "time_s": 0.0043223,
+            "time_ratio": 2.5,
+            "flop_max": 0.0,
+            "mess": 0.0,
+            "reduct": 0.0,
+            "pct_time": 0,
+            "mflops": -0.0
+          },
+          "PCSetUpOnBlocks": {
+            "count": 226,
+            "time_s": 79.44,
+            "time_ratio": 1.3,
+            "flop_max": 120000000000.0,
+            "mess": 0.0,
+            "reduct": 0.0,
+            "pct_time": 3,
+            "mflops": 597274.0
+          },
+          "PCApply": {
+            "count": 8188,
+            "time_s": 736.04,
+            "time_ratio": 1.2,
+            "flop_max": 476000000000.0,
+            "mess": 0.0,
+            "reduct": 0.0,
+            "pct_time": 28,
+            "mflops": 257675.0
+          },
+          "KSPSetUp": {
+            "count": 226,
+            "time_s": 0.040115,
+            "time_ratio": 3.4,
+            "flop_max": 0.0,
+            "mess": 0.0,
+            "reduct": 0.0,
+            "pct_time": 0,
+            "mflops": -0.0
+          },
+          "KSPSolve": {
+            "count": 226,
+            "time_s": 1741.4,
+            "time_ratio": 1.0,
+            "flop_max": 1340000000000.0,
+            "mess": 18000000.0,
+            "reduct": 16000.0,
+            "pct_time": 76,
+            "mflops": 307034.0
+          },
+          "SNESSolve": {
+            "count": 75,
+            "time_s": 2205.0,
+            "time_ratio": 1.0,
+            "flop_max": 2900000000000.0,
+            "mess": 21000000.0,
+            "reduct": 18000.0,
+            "pct_time": 97,
+            "mflops": 521658.0
+          },
+          "SNESFunctionEval": {
+            "count": 301,
+            "time_s": 52.574,
+            "time_ratio": 1.1,
+            "flop_max": 558000000000.0,
+            "mess": 1500000.0,
+            "reduct": 0.0,
+            "pct_time": 2,
+            "mflops": 4149702.0
+          },
+          "SNESJacobianEval": {
+            "count": 226,
+            "time_s": 325.97,
+            "time_ratio": 1.0,
+            "flop_max": 878000000000.0,
+            "mess": 1000000.0,
+            "reduct": 900.0,
+            "pct_time": 14,
+            "mflops": 1054525.0
+          }
+        },
+        "nprocs": 416,
+        "wall_total_s": 2279.0,
+        "derived": {
+          "denominator": "SNESSolve",
+          "t_snes_s": 2205.0,
+          "pc_setup_s": 79.444,
+          "pc_setup_pct": 3.6,
+          "pc_apply_pct": 33.38,
+          "ksp_total_pct": 78.98,
+          "jacobian_pct": 14.78,
+          "function_pct": 2.38,
+          "matmult_mainstage_pct": 32.09
+        },
+        "validation": {
+          "snes_count": 75,
+          "steps_completed": 75,
+          "steps_match": true,
+          "ksp_count": 226,
+          "total_nl": 226,
+          "nl_match": true,
+          "pcapply_count": 8188,
+          "total_linear": 7836,
+          "linear_close": true,
+          "out_wall_total_s": 2207.2,
+          "profile_snes_s": 2205.0,
+          "wall_consistent": true
+        }
       }
     },
     {
@@ -3474,6 +3758,148 @@
       "pbs": {
         "memory_used": "843.71GB",
         "walltime_used": "00:21:06"
+      },
+      "profile": {
+        "file": "/Users/sghelichkhani/Workplace/morrow2026/parallel_scaling/results/murr_strong/bjacobi/s8.profile",
+        "events": {
+          "MatMult": {
+            "count": 8191,
+            "time_s": 397.59,
+            "time_ratio": 1.4,
+            "flop_max": 234000000000.0,
+            "mess": 39000000.0,
+            "reduct": 0.0,
+            "pct_time": 26,
+            "mflops": 488263.0
+          },
+          "MatAssemblyBegin": {
+            "count": 950,
+            "time_s": 73.605,
+            "time_ratio": 2.0,
+            "flop_max": 0.0,
+            "mess": 1100000.0,
+            "reduct": 910.0,
+            "pct_time": 5,
+            "mflops": -0.0
+          },
+          "MatAssemblyEnd": {
+            "count": 950,
+            "time_s": 29.724,
+            "time_ratio": 16.5,
+            "flop_max": 422000000.0,
+            "mess": 9600.0,
+            "reduct": 6.0,
+            "pct_time": 1,
+            "mflops": 3900.0
+          },
+          "PCSetUp": {
+            "count": 226,
+            "time_s": 0.0041354,
+            "time_ratio": 1.9,
+            "flop_max": 0.0,
+            "mess": 0.0,
+            "reduct": 0.0,
+            "pct_time": 0,
+            "mflops": -0.0
+          },
+          "PCSetUpOnBlocks": {
+            "count": 226,
+            "time_s": 37.352,
+            "time_ratio": 1.4,
+            "flop_max": 57700000000.0,
+            "mess": 0.0,
+            "reduct": 0.0,
+            "pct_time": 3,
+            "mflops": 1224307.0
+          },
+          "PCApply": {
+            "count": 8191,
+            "time_s": 371.43,
+            "time_ratio": 1.4,
+            "flop_max": 227000000000.0,
+            "mess": 0.0,
+            "reduct": 0.0,
+            "pct_time": 26,
+            "mflops": 499734.0
+          },
+          "KSPSetUp": {
+            "count": 226,
+            "time_s": 0.0080545,
+            "time_ratio": 1.2,
+            "flop_max": 0.0,
+            "mess": 0.0,
+            "reduct": 0.0,
+            "pct_time": 0,
+            "mflops": -0.0
+          },
+          "KSPSolve": {
+            "count": 226,
+            "time_s": 889.76,
+            "time_ratio": 1.0,
+            "flop_max": 643000000000.0,
+            "mess": 38000000.0,
+            "reduct": 16000.0,
+            "pct_time": 71,
+            "mflops": 596499.0
+          },
+          "SNESSolve": {
+            "count": 75,
+            "time_s": 1176.9,
+            "time_ratio": 1.0,
+            "flop_max": 1410000000000.0,
+            "mess": 45000000.0,
+            "reduct": 18000.0,
+            "pct_time": 95,
+            "mflops": 972589.0
+          },
+          "SNESFunctionEval": {
+            "count": 301,
+            "time_s": 33.898,
+            "time_ratio": 1.2,
+            "flop_max": 278000000000.0,
+            "mess": 3300000.0,
+            "reduct": 0.0,
+            "pct_time": 2,
+            "mflops": 6436344.0
+          },
+          "SNESJacobianEval": {
+            "count": 226,
+            "time_s": 211.95,
+            "time_ratio": 1.0,
+            "flop_max": 437000000000.0,
+            "mess": 2200000.0,
+            "reduct": 900.0,
+            "pct_time": 17,
+            "mflops": 1621791.0
+          }
+        },
+        "nprocs": 832,
+        "wall_total_s": 1243.0,
+        "derived": {
+          "denominator": "SNESSolve",
+          "t_snes_s": 1176.9,
+          "pc_setup_s": 37.356,
+          "pc_setup_pct": 3.17,
+          "pc_apply_pct": 31.56,
+          "ksp_total_pct": 75.6,
+          "jacobian_pct": 18.01,
+          "function_pct": 2.88,
+          "matmult_mainstage_pct": 33.78
+        },
+        "validation": {
+          "snes_count": 75,
+          "steps_completed": 75,
+          "steps_match": true,
+          "ksp_count": 226,
+          "total_nl": 226,
+          "nl_match": true,
+          "pcapply_count": 8191,
+          "total_linear": 7839,
+          "linear_close": true,
+          "out_wall_total_s": 1178.2,
+          "profile_snes_s": 1176.9,
+          "wall_consistent": true
+        }
       }
     },
     {
@@ -4562,6 +4988,148 @@
       "pbs": {
         "memory_used": "1.24TB",
         "walltime_used": "00:11:59"
+      },
+      "profile": {
+        "file": "/Users/sghelichkhani/Workplace/morrow2026/parallel_scaling/results/murr_strong/bjacobi/s16.profile",
+        "events": {
+          "MatMult": {
+            "count": 8188,
+            "time_s": 200.31,
+            "time_ratio": 1.4,
+            "flop_max": 134000000000.0,
+            "mess": 74000000.0,
+            "reduct": 0.0,
+            "pct_time": 24,
+            "mflops": 968779.0
+          },
+          "MatAssemblyBegin": {
+            "count": 950,
+            "time_s": 45.026,
+            "time_ratio": 3.5,
+            "flop_max": 0.0,
+            "mess": 1500000.0,
+            "reduct": 0.0,
+            "pct_time": 4,
+            "mflops": -0.0
+          },
+          "MatAssemblyEnd": {
+            "count": 950,
+            "time_s": 13.507,
+            "time_ratio": 62.6,
+            "flop_max": 303000000.0,
+            "mess": 14000.0,
+            "reduct": 5.0,
+            "pct_time": 1,
+            "mflops": 10744.0
+          },
+          "PCSetUp": {
+            "count": 226,
+            "time_s": 0.0042996,
+            "time_ratio": 1.5,
+            "flop_max": 0.0,
+            "mess": 0.0,
+            "reduct": 0.0,
+            "pct_time": 0,
+            "mflops": -0.0
+          },
+          "PCSetUpOnBlocks": {
+            "count": 226,
+            "time_s": 18.373,
+            "time_ratio": 1.5,
+            "flop_max": 31300000000.0,
+            "mess": 0.0,
+            "reduct": 0.0,
+            "pct_time": 2,
+            "mflops": 2439117.0
+          },
+          "PCApply": {
+            "count": 8188,
+            "time_s": 176.35,
+            "time_ratio": 1.4,
+            "flop_max": 127000000000.0,
+            "mess": 0.0,
+            "reduct": 0.0,
+            "pct_time": 23,
+            "mflops": 1040325.0
+          },
+          "KSPSetUp": {
+            "count": 226,
+            "time_s": 0.0044321,
+            "time_ratio": 1.4,
+            "flop_max": 0.0,
+            "mess": 0.0,
+            "reduct": 0.0,
+            "pct_time": 0,
+            "mflops": -0.0
+          },
+          "KSPSolve": {
+            "count": 226,
+            "time_s": 430.06,
+            "time_ratio": 1.0,
+            "flop_max": 364000000000.0,
+            "mess": 72000000.0,
+            "reduct": 16000.0,
+            "pct_time": 63,
+            "mflops": 1228758.0
+          },
+          "SNESSolve": {
+            "count": 75,
+            "time_s": 583.8,
+            "time_ratio": 1.0,
+            "flop_max": 798000000000.0,
+            "mess": 83000000.0,
+            "reduct": 17000.0,
+            "pct_time": 85,
+            "mflops": 1955169.0
+          },
+          "SNESFunctionEval": {
+            "count": 301,
+            "time_s": 22.658,
+            "time_ratio": 1.2,
+            "flop_max": 155000000000.0,
+            "mess": 6100000.0,
+            "reduct": 0.0,
+            "pct_time": 3,
+            "mflops": 9629700.0
+          },
+          "SNESJacobianEval": {
+            "count": 226,
+            "time_s": 110.19,
+            "time_ratio": 1.0,
+            "flop_max": 244000000000.0,
+            "mess": 3600000.0,
+            "reduct": 0.0,
+            "pct_time": 16,
+            "mflops": 3119511.0
+          }
+        },
+        "nprocs": 1664,
+        "wall_total_s": 684.2,
+        "derived": {
+          "denominator": "SNESSolve",
+          "t_snes_s": 583.8,
+          "pc_setup_s": 18.377,
+          "pc_setup_pct": 3.15,
+          "pc_apply_pct": 30.21,
+          "ksp_total_pct": 73.67,
+          "jacobian_pct": 18.87,
+          "function_pct": 3.88,
+          "matmult_mainstage_pct": 34.31
+        },
+        "validation": {
+          "snes_count": 75,
+          "steps_completed": 75,
+          "steps_match": true,
+          "ksp_count": 226,
+          "total_nl": 226,
+          "nl_match": true,
+          "pcapply_count": 8188,
+          "total_linear": 7836,
+          "linear_close": true,
+          "out_wall_total_s": 584.2,
+          "profile_snes_s": 583.8,
+          "wall_consistent": true
+        }
       }
     },
     {
@@ -5650,6 +6218,148 @@
       "pbs": {
         "memory_used": "2.45TB",
         "walltime_used": "00:07:37"
+      },
+      "profile": {
+        "file": "/Users/sghelichkhani/Workplace/morrow2026/parallel_scaling/results/murr_strong/bjacobi/s32.profile",
+        "events": {
+          "MatMult": {
+            "count": 8188,
+            "time_s": 115.65,
+            "time_ratio": 3998.8,
+            "flop_max": 66900000000.0,
+            "mess": 130000000.0,
+            "reduct": 0.0,
+            "pct_time": 22,
+            "mflops": 1678000.0
+          },
+          "MatAssemblyBegin": {
+            "count": 950,
+            "time_s": 58.665,
+            "time_ratio": 5.5,
+            "flop_max": 0.0,
+            "mess": 2700000.0,
+            "reduct": 0.0,
+            "pct_time": 5,
+            "mflops": -0.0
+          },
+          "MatAssemblyEnd": {
+            "count": 950,
+            "time_s": 8.1682,
+            "time_ratio": 52.4,
+            "flop_max": 195000000.0,
+            "mess": 24000.0,
+            "reduct": 5.0,
+            "pct_time": 1,
+            "mflops": 24193.0
+          },
+          "PCSetUp": {
+            "count": 226,
+            "time_s": 0.004766,
+            "time_ratio": 2.6,
+            "flop_max": 0.0,
+            "mess": 0.0,
+            "reduct": 0.0,
+            "pct_time": 0,
+            "mflops": -0.0
+          },
+          "PCSetUpOnBlocks": {
+            "count": 226,
+            "time_s": 9.8432,
+            "time_ratio": 2972.8,
+            "flop_max": 15700000000.0,
+            "mess": 0.0,
+            "reduct": 0.0,
+            "pct_time": 2,
+            "mflops": 4391846.0
+          },
+          "PCApply": {
+            "count": 8188,
+            "time_s": 88.576,
+            "time_ratio": 2386.0,
+            "flop_max": 62700000000.0,
+            "mess": 0.0,
+            "reduct": 0.0,
+            "pct_time": 18,
+            "mflops": 2028098.0
+          },
+          "KSPSetUp": {
+            "count": 226,
+            "time_s": 0.0029123,
+            "time_ratio": 26.9,
+            "flop_max": 0.0,
+            "mess": 0.0,
+            "reduct": 0.0,
+            "pct_time": 0,
+            "mflops": -0.0
+          },
+          "KSPSolve": {
+            "count": 226,
+            "time_s": 228.19,
+            "time_ratio": 1.0,
+            "flop_max": 181000000000.0,
+            "mess": 130000000.0,
+            "reduct": 16000.0,
+            "pct_time": 54,
+            "mflops": 2298558.0
+          },
+          "SNESSolve": {
+            "count": 75,
+            "time_s": 320.09,
+            "time_ratio": 1.0,
+            "flop_max": 405000000000.0,
+            "mess": 150000000.0,
+            "reduct": 17000.0,
+            "pct_time": 77,
+            "mflops": 3548707.0
+          },
+          "SNESFunctionEval": {
+            "count": 301,
+            "time_s": 17.527,
+            "time_ratio": 1.7,
+            "flop_max": 81300000000.0,
+            "mess": 11000000.0,
+            "reduct": 0.0,
+            "pct_time": 4,
+            "mflops": 12449440.0
+          },
+          "SNESJacobianEval": {
+            "count": 226,
+            "time_s": 67.267,
+            "time_ratio": 1.0,
+            "flop_max": 127000000000.0,
+            "mess": 6200000.0,
+            "reduct": 0.0,
+            "pct_time": 16,
+            "mflops": 5110111.0
+          }
+        },
+        "nprocs": 3328,
+        "wall_total_s": 417.4,
+        "derived": {
+          "denominator": "SNESSolve",
+          "t_snes_s": 320.09,
+          "pc_setup_s": 9.848,
+          "pc_setup_pct": 3.08,
+          "pc_apply_pct": 27.67,
+          "ksp_total_pct": 71.29,
+          "jacobian_pct": 21.02,
+          "function_pct": 5.48,
+          "matmult_mainstage_pct": 36.13
+        },
+        "validation": {
+          "snes_count": 75,
+          "steps_completed": 75,
+          "steps_match": true,
+          "ksp_count": 226,
+          "total_nl": 226,
+          "nl_match": true,
+          "pcapply_count": 8188,
+          "total_linear": 7836,
+          "linear_close": true,
+          "out_wall_total_s": 320.2,
+          "profile_snes_s": 320.1,
+          "wall_consistent": true
+        }
       }
     },
     {
@@ -6740,6 +7450,148 @@
       "pbs": {
         "memory_used": "811.7GB",
         "walltime_used": "01:25:38"
+      },
+      "profile": {
+        "file": "/Users/sghelichkhani/Workplace/morrow2026/parallel_scaling/results/murr_strong/vlumping_hmg/s2.profile",
+        "events": {
+          "MatMult": {
+            "count": 8179,
+            "time_s": 972.29,
+            "time_ratio": 1.1,
+            "flop_max": 709000000000.0,
+            "mess": 9100000.0,
+            "reduct": 0.0,
+            "pct_time": 18,
+            "mflops": 145917.0
+          },
+          "MatAssemblyBegin": {
+            "count": 212751,
+            "time_s": 133.8,
+            "time_ratio": 3.1,
+            "flop_max": 0.0,
+            "mess": 250000.0,
+            "reduct": 1600.0,
+            "pct_time": 2,
+            "mflops": -0.0
+          },
+          "MatAssemblyEnd": {
+            "count": 212751,
+            "time_s": 37.012,
+            "time_ratio": 5.4,
+            "flop_max": 469000000.0,
+            "mess": 8900.0,
+            "reduct": 71.0,
+            "pct_time": 0,
+            "mflops": 1117.0
+          },
+          "PCSetUp": {
+            "count": 226,
+            "time_s": 1118.2,
+            "time_ratio": 1.0,
+            "flop_max": 686000000000.0,
+            "mess": 5800000.0,
+            "reduct": 12000.0,
+            "pct_time": 22,
+            "mflops": 122759.0
+          },
+          "PCApply": {
+            "count": 3499,
+            "time_s": 2343.3,
+            "time_ratio": 1.0,
+            "flop_max": 1350000000000.0,
+            "mess": 45000000.0,
+            "reduct": 8100.0,
+            "pct_time": 45,
+            "mflops": 114891.0
+          },
+          "KSPSetUp": {
+            "count": 226,
+            "time_s": 0.11981,
+            "time_ratio": 1.1,
+            "flop_max": 0.0,
+            "mess": 0.0,
+            "reduct": 0.0,
+            "pct_time": 0,
+            "mflops": -0.0
+          },
+          "KSPSolve": {
+            "count": 226,
+            "time_s": 3149.6,
+            "time_ratio": 1.0,
+            "flop_max": 2000000000000.0,
+            "mess": 49000000.0,
+            "reduct": 15000.0,
+            "pct_time": 61,
+            "mflops": 127113.0
+          },
+          "SNESSolve": {
+            "count": 75,
+            "time_s": 5033.6,
+            "time_ratio": 1.0,
+            "flop_max": 5570000000000.0,
+            "mess": 56000000.0,
+            "reduct": 29000.0,
+            "pct_time": 98,
+            "mflops": 219679.0
+          },
+          "SNESFunctionEval": {
+            "count": 301,
+            "time_s": 95.486,
+            "time_ratio": 1.2,
+            "flop_max": 1110000000000.0,
+            "mess": 760000.0,
+            "reduct": 0.0,
+            "pct_time": 2,
+            "mflops": 2284758.0
+          },
+          "SNESJacobianEval": {
+            "count": 226,
+            "time_s": 624.87,
+            "time_ratio": 1.0,
+            "flop_max": 1740000000000.0,
+            "mess": 510000.0,
+            "reduct": 900.0,
+            "pct_time": 12,
+            "mflops": 550105.0
+          },
+          "PCSetUpOnBlocks": {
+            "count": 13996,
+            "time_s": 0.051165,
+            "time_ratio": 2.0,
+            "flop_max": 0.0,
+            "mess": 0.0,
+            "reduct": 0.0,
+            "pct_time": 0,
+            "mflops": -0.0
+          }
+        },
+        "nprocs": 208,
+        "wall_total_s": 5122.0,
+        "derived": {
+          "denominator": "SNESSolve",
+          "t_snes_s": 5033.6,
+          "pc_setup_s": 1118.251,
+          "pc_setup_pct": 22.22,
+          "pc_apply_pct": 46.55,
+          "ksp_total_pct": 62.57,
+          "jacobian_pct": 12.41,
+          "function_pct": 1.9,
+          "matmult_mainstage_pct": 19.32
+        },
+        "validation": {
+          "snes_count": 75,
+          "steps_completed": 75,
+          "steps_match": true,
+          "ksp_count": 226,
+          "total_nl": 226,
+          "nl_match": true,
+          "pcapply_count": 3499,
+          "total_linear": 3499,
+          "linear_close": true,
+          "out_wall_total_s": 5038.5,
+          "profile_snes_s": 5033.6,
+          "wall_consistent": true
+        }
       }
     },
     {
@@ -7828,6 +8680,148 @@
       "pbs": {
         "memory_used": "918.46GB",
         "walltime_used": "00:46:09"
+      },
+      "profile": {
+        "file": "/Users/sghelichkhani/Workplace/morrow2026/parallel_scaling/results/murr_strong/vlumping_hmg/s4.profile",
+        "events": {
+          "MatMult": {
+            "count": 8187,
+            "time_s": 496.03,
+            "time_ratio": 1.1,
+            "flop_max": 355000000000.0,
+            "mess": 19000000.0,
+            "reduct": 0.0,
+            "pct_time": 17,
+            "mflops": 286402.0
+          },
+          "MatAssemblyBegin": {
+            "count": 107887,
+            "time_s": 109.04,
+            "time_ratio": 2.8,
+            "flop_max": 0.0,
+            "mess": 520000.0,
+            "reduct": 1600.0,
+            "pct_time": 2,
+            "mflops": -0.0
+          },
+          "MatAssemblyEnd": {
+            "count": 107887,
+            "time_s": 24.566,
+            "time_ratio": 18.6,
+            "flop_max": 371000000.0,
+            "mess": 18000.0,
+            "reduct": 71.0,
+            "pct_time": 0,
+            "mflops": 2468.0
+          },
+          "PCSetUp": {
+            "count": 226,
+            "time_s": 605.39,
+            "time_ratio": 1.0,
+            "flop_max": 343000000000.0,
+            "mess": 12000000.0,
+            "reduct": 11000.0,
+            "pct_time": 22,
+            "mflops": 226753.0
+          },
+          "PCApply": {
+            "count": 3507,
+            "time_s": 1254.0,
+            "time_ratio": 1.1,
+            "flop_max": 675000000000.0,
+            "mess": 90000000.0,
+            "reduct": 8100.0,
+            "pct_time": 44,
+            "mflops": 215178.0
+          },
+          "KSPSetUp": {
+            "count": 226,
+            "time_s": 0.060412,
+            "time_ratio": 3.3,
+            "flop_max": 0.0,
+            "mess": 0.0,
+            "reduct": 0.0,
+            "pct_time": 0,
+            "mflops": -0.0
+          },
+          "KSPSolve": {
+            "count": 226,
+            "time_s": 1662.4,
+            "time_ratio": 1.0,
+            "flop_max": 1000000000000.0,
+            "mess": 98000000.0,
+            "reduct": 15000.0,
+            "pct_time": 60,
+            "mflops": 241412.0
+          },
+          "SNESSolve": {
+            "count": 75,
+            "time_s": 2678.0,
+            "time_ratio": 1.0,
+            "flop_max": 2800000000000.0,
+            "mess": 110000000.0,
+            "reduct": 29000.0,
+            "pct_time": 97,
+            "mflops": 413273.0
+          },
+          "SNESFunctionEval": {
+            "count": 301,
+            "time_s": 53.774,
+            "time_ratio": 1.2,
+            "flop_max": 558000000000.0,
+            "mess": 1500000.0,
+            "reduct": 0.0,
+            "pct_time": 2,
+            "mflops": 4057112.0
+          },
+          "SNESJacobianEval": {
+            "count": 226,
+            "time_s": 334.54,
+            "time_ratio": 1.0,
+            "flop_max": 878000000000.0,
+            "mess": 1000000.0,
+            "reduct": 900.0,
+            "pct_time": 12,
+            "mflops": 1027521.0
+          },
+          "PCSetUpOnBlocks": {
+            "count": 14028,
+            "time_s": 0.046263,
+            "time_ratio": 1.9,
+            "flop_max": 0.0,
+            "mess": 0.0,
+            "reduct": 0.0,
+            "pct_time": 0,
+            "mflops": -0.0
+          }
+        },
+        "nprocs": 416,
+        "wall_total_s": 2752.0,
+        "derived": {
+          "denominator": "SNESSolve",
+          "t_snes_s": 2678.0,
+          "pc_setup_s": 605.436,
+          "pc_setup_pct": 22.61,
+          "pc_apply_pct": 46.83,
+          "ksp_total_pct": 62.08,
+          "jacobian_pct": 12.49,
+          "function_pct": 2.01,
+          "matmult_mainstage_pct": 18.52
+        },
+        "validation": {
+          "snes_count": 75,
+          "steps_completed": 75,
+          "steps_match": true,
+          "ksp_count": 226,
+          "total_nl": 226,
+          "nl_match": true,
+          "pcapply_count": 3507,
+          "total_linear": 3507,
+          "linear_close": true,
+          "out_wall_total_s": 2680.5,
+          "profile_snes_s": 2678.0,
+          "wall_consistent": true
+        }
       }
     },
     {
@@ -8916,6 +9910,148 @@
       "pbs": {
         "memory_used": "1.13TB",
         "walltime_used": "00:27:47"
+      },
+      "profile": {
+        "file": "/Users/sghelichkhani/Workplace/morrow2026/parallel_scaling/results/murr_strong/vlumping_hmg/s8.profile",
+        "events": {
+          "MatMult": {
+            "count": 8188,
+            "time_s": 265.66,
+            "time_ratio": 1.2,
+            "flop_max": 172000000000.0,
+            "mess": 39000000.0,
+            "reduct": 0.0,
+            "pct_time": 14,
+            "mflops": 535383.0
+          },
+          "MatAssemblyBegin": {
+            "count": 53647,
+            "time_s": 86.364,
+            "time_ratio": 2.1,
+            "flop_max": 0.0,
+            "mess": 1100000.0,
+            "reduct": 1600.0,
+            "pct_time": 4,
+            "mflops": -0.0
+          },
+          "MatAssemblyEnd": {
+            "count": 53647,
+            "time_s": 20.218,
+            "time_ratio": 17.5,
+            "flop_max": 422000000.0,
+            "mess": 38000.0,
+            "reduct": 71.0,
+            "pct_time": 1,
+            "mflops": 5733.0
+          },
+          "PCSetUp": {
+            "count": 226,
+            "time_s": 321.73,
+            "time_ratio": 1.0,
+            "flop_max": 166000000000.0,
+            "mess": 25000000.0,
+            "reduct": 11000.0,
+            "pct_time": 20,
+            "mflops": 426674.0
+          },
+          "PCApply": {
+            "count": 3514,
+            "time_s": 811.46,
+            "time_ratio": 1.1,
+            "flop_max": 327000000000.0,
+            "mess": 190000000.0,
+            "reduct": 8200.0,
+            "pct_time": 48,
+            "mflops": 333177.0
+          },
+          "KSPSetUp": {
+            "count": 226,
+            "time_s": 0.01907,
+            "time_ratio": 1.6,
+            "flop_max": 0.0,
+            "mess": 0.0,
+            "reduct": 0.0,
+            "pct_time": 0,
+            "mflops": -0.0
+          },
+          "KSPSolve": {
+            "count": 226,
+            "time_s": 1008.6,
+            "time_ratio": 1.0,
+            "flop_max": 486000000000.0,
+            "mess": 200000000.0,
+            "reduct": 15000.0,
+            "pct_time": 61,
+            "mflops": 398731.0
+          },
+          "SNESSolve": {
+            "count": 75,
+            "time_s": 1576.2,
+            "time_ratio": 1.0,
+            "flop_max": 1370000000000.0,
+            "mess": 240000000.0,
+            "reduct": 28000.0,
+            "pct_time": 96,
+            "mflops": 702726.0
+          },
+          "SNESFunctionEval": {
+            "count": 301,
+            "time_s": 33.216,
+            "time_ratio": 1.2,
+            "flop_max": 278000000000.0,
+            "mess": 3300000.0,
+            "reduct": 0.0,
+            "pct_time": 2,
+            "mflops": 6568515.0
+          },
+          "SNESJacobianEval": {
+            "count": 226,
+            "time_s": 200.8,
+            "time_ratio": 1.0,
+            "flop_max": 437000000000.0,
+            "mess": 2200000.0,
+            "reduct": 900.0,
+            "pct_time": 12,
+            "mflops": 1711878.0
+          },
+          "PCSetUpOnBlocks": {
+            "count": 14056,
+            "time_s": 0.043955,
+            "time_ratio": 1.8,
+            "flop_max": 0.0,
+            "mess": 0.0,
+            "reduct": 0.0,
+            "pct_time": 0,
+            "mflops": -0.0
+          }
+        },
+        "nprocs": 832,
+        "wall_total_s": 1644.0,
+        "derived": {
+          "denominator": "SNESSolve",
+          "t_snes_s": 1576.2,
+          "pc_setup_s": 321.774,
+          "pc_setup_pct": 20.41,
+          "pc_apply_pct": 51.48,
+          "ksp_total_pct": 63.99,
+          "jacobian_pct": 12.74,
+          "function_pct": 2.11,
+          "matmult_mainstage_pct": 16.85
+        },
+        "validation": {
+          "snes_count": 75,
+          "steps_completed": 75,
+          "steps_match": true,
+          "ksp_count": 226,
+          "total_nl": 226,
+          "nl_match": true,
+          "pcapply_count": 3514,
+          "total_linear": 3514,
+          "linear_close": true,
+          "out_wall_total_s": 1577.2,
+          "profile_snes_s": 1576.2,
+          "wall_consistent": true
+        }
       }
     },
     {
@@ -10004,6 +11140,148 @@
       "pbs": {
         "memory_used": "1.53TB",
         "walltime_used": "00:26:53"
+      },
+      "profile": {
+        "file": "/Users/sghelichkhani/Workplace/morrow2026/parallel_scaling/results/murr_strong/vlumping_hmg/s16.profile",
+        "events": {
+          "MatMult": {
+            "count": 8194,
+            "time_s": 137.96,
+            "time_ratio": 1.2,
+            "flop_max": 98100000000.0,
+            "mess": 74000000.0,
+            "reduct": 0.0,
+            "pct_time": 8,
+            "mflops": 1030938.0
+          },
+          "MatAssemblyBegin": {
+            "count": 31951,
+            "time_s": 56.16,
+            "time_ratio": 2.4,
+            "flop_max": 0.0,
+            "mess": 1500000.0,
+            "reduct": 0.0,
+            "pct_time": 3,
+            "mflops": -0.0
+          },
+          "MatAssemblyEnd": {
+            "count": 31951,
+            "time_s": 13.653,
+            "time_ratio": 58.5,
+            "flop_max": 303000000.0,
+            "mess": 54000.0,
+            "reduct": 58.0,
+            "pct_time": 0,
+            "mflops": 10629.0
+          },
+          "PCSetUp": {
+            "count": 226,
+            "time_s": 172.52,
+            "time_ratio": 1.0,
+            "flop_max": 94600000000.0,
+            "mess": 47000000.0,
+            "reduct": 10000.0,
+            "pct_time": 11,
+            "mflops": 795670.0
+          },
+          "PCApply": {
+            "count": 3514,
+            "time_s": 1043.8,
+            "time_ratio": 1.0,
+            "flop_max": 186000000000.0,
+            "mess": 340000000.0,
+            "reduct": 7900.0,
+            "pct_time": 66,
+            "mflops": 259012.0
+          },
+          "KSPSetUp": {
+            "count": 226,
+            "time_s": 0.0078792,
+            "time_ratio": 1.4,
+            "flop_max": 0.0,
+            "mess": 0.0,
+            "reduct": 0.0,
+            "pct_time": 0,
+            "mflops": -0.0
+          },
+          "KSPSolve": {
+            "count": 226,
+            "time_s": 1154.4,
+            "time_ratio": 1.0,
+            "flop_max": 277000000000.0,
+            "mess": 370000000.0,
+            "reduct": 15000.0,
+            "pct_time": 74,
+            "mflops": 348370.0
+          },
+          "SNESSolve": {
+            "count": 75,
+            "time_s": 1467.7,
+            "time_ratio": 1.0,
+            "flop_max": 775000000000.0,
+            "mess": 430000000.0,
+            "reduct": 27000.0,
+            "pct_time": 94,
+            "mflops": 754679.0
+          },
+          "SNESFunctionEval": {
+            "count": 301,
+            "time_s": 21.964,
+            "time_ratio": 1.2,
+            "flop_max": 155000000000.0,
+            "mess": 6100000.0,
+            "reduct": 0.0,
+            "pct_time": 1,
+            "mflops": 9933770.0
+          },
+          "SNESJacobianEval": {
+            "count": 226,
+            "time_s": 112.44,
+            "time_ratio": 1.0,
+            "flop_max": 244000000000.0,
+            "mess": 3600000.0,
+            "reduct": 0.0,
+            "pct_time": 7,
+            "mflops": 3057038.0
+          },
+          "PCSetUpOnBlocks": {
+            "count": 14056,
+            "time_s": 0.05269,
+            "time_ratio": 2.0,
+            "flop_max": 0.0,
+            "mess": 0.0,
+            "reduct": 0.0,
+            "pct_time": 0,
+            "mflops": -0.0
+          }
+        },
+        "nprocs": 1664,
+        "wall_total_s": 1559.0,
+        "derived": {
+          "denominator": "SNESSolve",
+          "t_snes_s": 1467.7,
+          "pc_setup_s": 172.573,
+          "pc_setup_pct": 11.76,
+          "pc_apply_pct": 71.12,
+          "ksp_total_pct": 78.65,
+          "jacobian_pct": 7.66,
+          "function_pct": 1.5,
+          "matmult_mainstage_pct": 9.4
+        },
+        "validation": {
+          "snes_count": 75,
+          "steps_completed": 75,
+          "steps_match": true,
+          "ksp_count": 226,
+          "total_nl": 226,
+          "nl_match": true,
+          "pcapply_count": 3514,
+          "total_linear": 3514,
+          "linear_close": true,
+          "out_wall_total_s": 1468.5,
+          "profile_snes_s": 1467.7,
+          "wall_consistent": true
+        }
       }
     },
     {
@@ -11092,6 +12370,148 @@
       "pbs": {
         "memory_used": "2.56TB",
         "walltime_used": "02:26:57"
+      },
+      "profile": {
+        "file": "/Users/sghelichkhani/Workplace/morrow2026/parallel_scaling/results/murr_strong/vlumping_hmg/s32.profile",
+        "events": {
+          "MatMult": {
+            "count": 8200,
+            "time_s": 78.543,
+            "time_ratio": 3498.2,
+            "flop_max": 49100000000.0,
+            "mess": 130000000.0,
+            "reduct": 0.0,
+            "pct_time": 1,
+            "mflops": 1812639.0
+          },
+          "MatAssemblyBegin": {
+            "count": 17487,
+            "time_s": 78.098,
+            "time_ratio": 5.2,
+            "flop_max": 0.0,
+            "mess": 2700000.0,
+            "reduct": 0.0,
+            "pct_time": 0,
+            "mflops": -0.0
+          },
+          "MatAssemblyEnd": {
+            "count": 17487,
+            "time_s": 8.0302,
+            "time_ratio": 48.3,
+            "flop_max": 195000000.0,
+            "mess": 95000.0,
+            "reduct": 58.0,
+            "pct_time": 0,
+            "mflops": 24609.0
+          },
+          "PCSetUp": {
+            "count": 226,
+            "time_s": 105.6,
+            "time_ratio": 1.0,
+            "flop_max": 47300000000.0,
+            "mess": 82000000.0,
+            "reduct": 10000.0,
+            "pct_time": 1,
+            "mflops": 1299837.0
+          },
+          "PCApply": {
+            "count": 3520,
+            "time_s": 8415.6,
+            "time_ratio": 1.0,
+            "flop_max": 93600000000.0,
+            "mess": 590000000.0,
+            "reduct": 7900.0,
+            "pct_time": 96,
+            "mflops": 32180.0
+          },
+          "KSPSetUp": {
+            "count": 226,
+            "time_s": 0.0046907,
+            "time_ratio": 36.8,
+            "flop_max": 0.0,
+            "mess": 0.0,
+            "reduct": 0.0,
+            "pct_time": 0,
+            "mflops": -0.0
+          },
+          "KSPSolve": {
+            "count": 226,
+            "time_s": 8473.2,
+            "time_ratio": 1.0,
+            "flop_max": 139000000000.0,
+            "mess": 640000000.0,
+            "reduct": 15000.0,
+            "pct_time": 97,
+            "mflops": 47554.0
+          },
+          "SNESSolve": {
+            "count": 75,
+            "time_s": 8663.9,
+            "time_ratio": 1.0,
+            "flop_max": 397000000000.0,
+            "mess": 750000000.0,
+            "reduct": 26000.0,
+            "pct_time": 99,
+            "mflops": 127932.0
+          },
+          "SNESFunctionEval": {
+            "count": 301,
+            "time_s": 16.813,
+            "time_ratio": 1.6,
+            "flop_max": 81300000000.0,
+            "mess": 11000000.0,
+            "reduct": 0.0,
+            "pct_time": 0,
+            "mflops": 12977532.0
+          },
+          "SNESJacobianEval": {
+            "count": 226,
+            "time_s": 64.362,
+            "time_ratio": 1.0,
+            "flop_max": 127000000000.0,
+            "mess": 6200000.0,
+            "reduct": 0.0,
+            "pct_time": 1,
+            "mflops": 5340717.0
+          },
+          "PCSetUpOnBlocks": {
+            "count": 14080,
+            "time_s": 0.048767,
+            "time_ratio": 1.9,
+            "flop_max": 0.0,
+            "mess": 0.0,
+            "reduct": 0.0,
+            "pct_time": 0,
+            "mflops": -0.0
+          }
+        },
+        "nprocs": 3328,
+        "wall_total_s": 8747.0,
+        "derived": {
+          "denominator": "SNESSolve",
+          "t_snes_s": 8663.9,
+          "pc_setup_s": 105.649,
+          "pc_setup_pct": 1.22,
+          "pc_apply_pct": 97.13,
+          "ksp_total_pct": 97.8,
+          "jacobian_pct": 0.74,
+          "function_pct": 0.19,
+          "matmult_mainstage_pct": 0.91
+        },
+        "validation": {
+          "snes_count": 75,
+          "steps_completed": 75,
+          "steps_match": true,
+          "ksp_count": 226,
+          "total_nl": 226,
+          "nl_match": true,
+          "pcapply_count": 3520,
+          "total_linear": 3520,
+          "linear_close": true,
+          "out_wall_total_s": 8664.0,
+          "profile_snes_s": 8663.9,
+          "wall_consistent": true
+        }
       }
     },
     {
@@ -12182,6 +13602,148 @@
       "pbs": {
         "memory_used": "1.44TB",
         "walltime_used": "00:25:30"
+      },
+      "profile": {
+        "file": "/Users/sghelichkhani/Workplace/morrow2026/parallel_scaling/results/murr_strong/vlumping_hmg_bjacilu/s16.profile",
+        "events": {
+          "MatMult": {
+            "count": 8196,
+            "time_s": 137.32,
+            "time_ratio": 1.2,
+            "flop_max": 98100000000.0,
+            "mess": 74000000.0,
+            "reduct": 0.0,
+            "pct_time": 8,
+            "mflops": 1036057.0
+          },
+          "MatAssemblyBegin": {
+            "count": 3023,
+            "time_s": 55.647,
+            "time_ratio": 2.6,
+            "flop_max": 0.0,
+            "mess": 1500000.0,
+            "reduct": 0.0,
+            "pct_time": 3,
+            "mflops": -0.0
+          },
+          "MatAssemblyEnd": {
+            "count": 3023,
+            "time_s": 13.203,
+            "time_ratio": 55.2,
+            "flop_max": 303000000.0,
+            "mess": 54000.0,
+            "reduct": 58.0,
+            "pct_time": 0,
+            "mflops": 10991.0
+          },
+          "PCSetUp": {
+            "count": 226,
+            "time_s": 175.7,
+            "time_ratio": 1.0,
+            "flop_max": 136000000000.0,
+            "mess": 47000000.0,
+            "reduct": 10000.0,
+            "pct_time": 12,
+            "mflops": 1119662.0
+          },
+          "PCApply": {
+            "count": 3516,
+            "time_s": 1023.1,
+            "time_ratio": 1.0,
+            "flop_max": 239000000000.0,
+            "mess": 340000000.0,
+            "reduct": 7900.0,
+            "pct_time": 66,
+            "mflops": 338101.0
+          },
+          "KSPSetUp": {
+            "count": 226,
+            "time_s": 0.0079073,
+            "time_ratio": 1.4,
+            "flop_max": 0.0,
+            "mess": 0.0,
+            "reduct": 0.0,
+            "pct_time": 0,
+            "mflops": -0.0
+          },
+          "KSPSolve": {
+            "count": 226,
+            "time_s": 1130.1,
+            "time_ratio": 1.0,
+            "flop_max": 329000000000.0,
+            "mess": 370000000.0,
+            "reduct": 15000.0,
+            "pct_time": 75,
+            "mflops": 422658.0
+          },
+          "SNESSolve": {
+            "count": 75,
+            "time_s": 1444.1,
+            "time_ratio": 1.0,
+            "flop_max": 868000000000.0,
+            "mess": 430000000.0,
+            "reduct": 26000.0,
+            "pct_time": 95,
+            "mflops": 860404.0
+          },
+          "SNESFunctionEval": {
+            "count": 301,
+            "time_s": 22.024,
+            "time_ratio": 1.2,
+            "flop_max": 155000000000.0,
+            "mess": 6100000.0,
+            "reduct": 0.0,
+            "pct_time": 1,
+            "mflops": 9906501.0
+          },
+          "SNESJacobianEval": {
+            "count": 226,
+            "time_s": 110.08,
+            "time_ratio": 1.0,
+            "flop_max": 244000000000.0,
+            "mess": 3600000.0,
+            "reduct": 0.0,
+            "pct_time": 7,
+            "mflops": 3122633.0
+          },
+          "PCSetUpOnBlocks": {
+            "count": 21096,
+            "time_s": 0.10617,
+            "time_ratio": 1.9,
+            "flop_max": 0.0,
+            "mess": 0.0,
+            "reduct": 0.0,
+            "pct_time": 0,
+            "mflops": -0.0
+          }
+        },
+        "nprocs": 1664,
+        "wall_total_s": 1512.0,
+        "derived": {
+          "denominator": "SNESSolve",
+          "t_snes_s": 1444.1,
+          "pc_setup_s": 175.806,
+          "pc_setup_pct": 12.17,
+          "pc_apply_pct": 70.85,
+          "ksp_total_pct": 78.26,
+          "jacobian_pct": 7.62,
+          "function_pct": 1.53,
+          "matmult_mainstage_pct": 9.51
+        },
+        "validation": {
+          "snes_count": 75,
+          "steps_completed": 75,
+          "steps_match": true,
+          "ksp_count": 226,
+          "total_nl": 226,
+          "nl_match": true,
+          "pcapply_count": 3516,
+          "total_linear": 3516,
+          "linear_close": true,
+          "out_wall_total_s": 1444.5,
+          "profile_snes_s": 1444.1,
+          "wall_consistent": true
+        }
       }
     },
     {
@@ -13270,6 +14832,148 @@
       "pbs": {
         "memory_used": "2.56TB",
         "walltime_used": "02:25:49"
+      },
+      "profile": {
+        "file": "/Users/sghelichkhani/Workplace/morrow2026/parallel_scaling/results/murr_strong/vlumping_hmg_bjacilu/s32.profile",
+        "events": {
+          "MatMult": {
+            "count": 8201,
+            "time_s": 80.364,
+            "time_ratio": 2938.2,
+            "flop_max": 49100000000.0,
+            "mess": 130000000.0,
+            "reduct": 0.0,
+            "pct_time": 1,
+            "mflops": 1771875.0
+          },
+          "MatAssemblyBegin": {
+            "count": 3023,
+            "time_s": 76.985,
+            "time_ratio": 5.3,
+            "flop_max": 0.0,
+            "mess": 2700000.0,
+            "reduct": 0.0,
+            "pct_time": 0,
+            "mflops": -0.0
+          },
+          "MatAssemblyEnd": {
+            "count": 3023,
+            "time_s": 7.9628,
+            "time_ratio": 50.3,
+            "flop_max": 195000000.0,
+            "mess": 95000.0,
+            "reduct": 58.0,
+            "pct_time": 0,
+            "mflops": 24817.0
+          },
+          "PCSetUp": {
+            "count": 226,
+            "time_s": 108.73,
+            "time_ratio": 1.0,
+            "flop_max": 67900000000.0,
+            "mess": 82000000.0,
+            "reduct": 10000.0,
+            "pct_time": 1,
+            "mflops": 1783994.0
+          },
+          "PCApply": {
+            "count": 3521,
+            "time_s": 8398.0,
+            "time_ratio": 1.0,
+            "flop_max": 119000000000.0,
+            "mess": 590000000.0,
+            "reduct": 7900.0,
+            "pct_time": 96,
+            "mflops": 40857.0
+          },
+          "KSPSetUp": {
+            "count": 226,
+            "time_s": 0.0042268,
+            "time_ratio": 27.0,
+            "flop_max": 0.0,
+            "mess": 0.0,
+            "reduct": 0.0,
+            "pct_time": 0,
+            "mflops": -0.0
+          },
+          "KSPSolve": {
+            "count": 226,
+            "time_s": 8454.6,
+            "time_ratio": 1.0,
+            "flop_max": 165000000000.0,
+            "mess": 640000000.0,
+            "reduct": 15000.0,
+            "pct_time": 97,
+            "mflops": 56193.0
+          },
+          "SNESSolve": {
+            "count": 75,
+            "time_s": 8647.2,
+            "time_ratio": 1.0,
+            "flop_max": 440000000000.0,
+            "mess": 750000000.0,
+            "reduct": 26000.0,
+            "pct_time": 99,
+            "mflops": 143080.0
+          },
+          "SNESFunctionEval": {
+            "count": 301,
+            "time_s": 16.646,
+            "time_ratio": 1.6,
+            "flop_max": 81300000000.0,
+            "mess": 11000000.0,
+            "reduct": 0.0,
+            "pct_time": 0,
+            "mflops": 13107701.0
+          },
+          "SNESJacobianEval": {
+            "count": 226,
+            "time_s": 63.478,
+            "time_ratio": 1.0,
+            "flop_max": 127000000000.0,
+            "mess": 6200000.0,
+            "reduct": 0.0,
+            "pct_time": 1,
+            "mflops": 5415077.0
+          },
+          "PCSetUpOnBlocks": {
+            "count": 21126,
+            "time_s": 0.093853,
+            "time_ratio": 1.9,
+            "flop_max": 0.0,
+            "mess": 0.0,
+            "reduct": 0.0,
+            "pct_time": 0,
+            "mflops": -0.0
+          }
+        },
+        "nprocs": 3328,
+        "wall_total_s": 8715.0,
+        "derived": {
+          "denominator": "SNESSolve",
+          "t_snes_s": 8647.2,
+          "pc_setup_s": 108.824,
+          "pc_setup_pct": 1.26,
+          "pc_apply_pct": 97.12,
+          "ksp_total_pct": 97.77,
+          "jacobian_pct": 0.73,
+          "function_pct": 0.19,
+          "matmult_mainstage_pct": 0.93
+        },
+        "validation": {
+          "snes_count": 75,
+          "steps_completed": 75,
+          "steps_match": true,
+          "ksp_count": 226,
+          "total_nl": 226,
+          "nl_match": true,
+          "pcapply_count": 3521,
+          "total_linear": 3521,
+          "linear_close": true,
+          "out_wall_total_s": 8647.5,
+          "profile_snes_s": 8647.2,
+          "wall_consistent": true
+        }
       }
     },
     {
@@ -14360,6 +16064,148 @@
       "pbs": {
         "memory_used": "986.87GB",
         "walltime_used": "01:12:15"
+      },
+      "profile": {
+        "file": "/Users/sghelichkhani/Workplace/morrow2026/parallel_scaling/results/murr_strong/vlumping_hmg_rich_lag3/s2.profile",
+        "events": {
+          "MatMult": {
+            "count": 4585,
+            "time_s": 645.87,
+            "time_ratio": 1.2,
+            "flop_max": 455000000000.0,
+            "mess": 5100000.0,
+            "reduct": 0.0,
+            "pct_time": 14,
+            "mflops": 140996.0
+          },
+          "MatAssemblyBegin": {
+            "count": 10034,
+            "time_s": 153.01,
+            "time_ratio": 2.9,
+            "flop_max": 0.0,
+            "mess": 250000.0,
+            "reduct": 1200.0,
+            "pct_time": 2,
+            "mflops": -0.0
+          },
+          "MatAssemblyEnd": {
+            "count": 10034,
+            "time_s": 31.125,
+            "time_ratio": 5.0,
+            "flop_max": 469000000.0,
+            "mess": 8900.0,
+            "reduct": 71.0,
+            "pct_time": 0,
+            "mflops": 1328.0
+          },
+          "PCSetUp": {
+            "count": 226,
+            "time_s": 208.52,
+            "time_ratio": 1.0,
+            "flop_max": 88700000000.0,
+            "mess": 1400000.0,
+            "reduct": 3600.0,
+            "pct_time": 5,
+            "mflops": 85168.0
+          },
+          "PCApply": {
+            "count": 3425,
+            "time_s": 2408.9,
+            "time_ratio": 1.0,
+            "flop_max": 1370000000000.0,
+            "mess": 43000000.0,
+            "reduct": 7200.0,
+            "pct_time": 55,
+            "mflops": 114188.0
+          },
+          "KSPSetUp": {
+            "count": 226,
+            "time_s": 0.12096,
+            "time_ratio": 1.1,
+            "flop_max": 0.0,
+            "mess": 0.0,
+            "reduct": 0.0,
+            "pct_time": 0,
+            "mflops": -0.0
+          },
+          "KSPSolve": {
+            "count": 226,
+            "time_s": 3201.5,
+            "time_ratio": 1.0,
+            "flop_max": 2010000000000.0,
+            "mess": 47000000.0,
+            "reduct": 14000.0,
+            "pct_time": 74,
+            "mflops": 125739.0
+          },
+          "SNESSolve": {
+            "count": 75,
+            "time_s": 4206.2,
+            "time_ratio": 1.0,
+            "flop_max": 4980000000000.0,
+            "mess": 50000000.0,
+            "reduct": 20000.0,
+            "pct_time": 97,
+            "mflops": 235000.0
+          },
+          "SNESFunctionEval": {
+            "count": 301,
+            "time_s": 100.77,
+            "time_ratio": 1.3,
+            "flop_max": 1110000000000.0,
+            "mess": 760000.0,
+            "reduct": 0.0,
+            "pct_time": 2,
+            "mflops": 2164970.0
+          },
+          "SNESJacobianEval": {
+            "count": 226,
+            "time_s": 650.13,
+            "time_ratio": 1.0,
+            "flop_max": 1740000000000.0,
+            "mess": 510000.0,
+            "reduct": 900.0,
+            "pct_time": 15,
+            "mflops": 528725.0
+          },
+          "PCSetUpOnBlocks": {
+            "count": 13700,
+            "time_s": 0.041845,
+            "time_ratio": 1.7,
+            "flop_max": 0.0,
+            "mess": 0.0,
+            "reduct": 0.0,
+            "pct_time": 0,
+            "mflops": -0.0
+          }
+        },
+        "nprocs": 208,
+        "wall_total_s": 4314.0,
+        "derived": {
+          "denominator": "SNESSolve",
+          "t_snes_s": 4206.2,
+          "pc_setup_s": 208.562,
+          "pc_setup_pct": 4.96,
+          "pc_apply_pct": 57.27,
+          "ksp_total_pct": 76.11,
+          "jacobian_pct": 15.46,
+          "function_pct": 2.4,
+          "matmult_mainstage_pct": 15.36
+        },
+        "validation": {
+          "snes_count": 75,
+          "steps_completed": 75,
+          "steps_match": true,
+          "ksp_count": 226,
+          "total_nl": 226,
+          "nl_match": true,
+          "pcapply_count": 3425,
+          "total_linear": 3425,
+          "linear_close": true,
+          "out_wall_total_s": 4209.0,
+          "profile_snes_s": 4206.2,
+          "wall_consistent": true
+        }
       }
     },
     {
@@ -15448,6 +17294,148 @@
       "pbs": {
         "memory_used": "1.08TB",
         "walltime_used": "00:38:27"
+      },
+      "profile": {
+        "file": "/Users/sghelichkhani/Workplace/morrow2026/parallel_scaling/results/murr_strong/vlumping_hmg_rich_lag3/s4.profile",
+        "events": {
+          "MatMult": {
+            "count": 4585,
+            "time_s": 336.07,
+            "time_ratio": 1.2,
+            "flop_max": 228000000000.0,
+            "mess": 10000000.0,
+            "reduct": 0.0,
+            "pct_time": 13,
+            "mflops": 270967.0
+          },
+          "MatAssemblyBegin": {
+            "count": 5858,
+            "time_s": 100.26,
+            "time_ratio": 4.0,
+            "flop_max": 0.0,
+            "mess": 520000.0,
+            "reduct": 1200.0,
+            "pct_time": 3,
+            "mflops": -0.0
+          },
+          "MatAssemblyEnd": {
+            "count": 5858,
+            "time_s": 24.94,
+            "time_ratio": 6.5,
+            "flop_max": 371000000.0,
+            "mess": 18000.0,
+            "reduct": 71.0,
+            "pct_time": 1,
+            "mflops": 2431.0
+          },
+          "PCSetUp": {
+            "count": 226,
+            "time_s": 106.22,
+            "time_ratio": 1.0,
+            "flop_max": 44400000000.0,
+            "mess": 2800000.0,
+            "reduct": 3200.0,
+            "pct_time": 5,
+            "mflops": 167183.0
+          },
+          "PCApply": {
+            "count": 3425,
+            "time_s": 1300.8,
+            "time_ratio": 1.1,
+            "flop_max": 688000000000.0,
+            "mess": 87000000.0,
+            "reduct": 7200.0,
+            "pct_time": 55,
+            "mflops": 211453.0
+          },
+          "KSPSetUp": {
+            "count": 226,
+            "time_s": 0.057209,
+            "time_ratio": 3.1,
+            "flop_max": 0.0,
+            "mess": 0.0,
+            "reduct": 0.0,
+            "pct_time": 0,
+            "mflops": -0.0
+          },
+          "KSPSolve": {
+            "count": 226,
+            "time_s": 1691.5,
+            "time_ratio": 1.0,
+            "flop_max": 1010000000000.0,
+            "mess": 94000000.0,
+            "reduct": 14000.0,
+            "pct_time": 74,
+            "mflops": 237983.0
+          },
+          "SNESSolve": {
+            "count": 75,
+            "time_s": 2216.9,
+            "time_ratio": 1.0,
+            "flop_max": 2500000000000.0,
+            "mess": 100000000.0,
+            "reduct": 19000.0,
+            "pct_time": 97,
+            "mflops": 445876.0
+          },
+          "SNESFunctionEval": {
+            "count": 301,
+            "time_s": 56.19,
+            "time_ratio": 1.2,
+            "flop_max": 558000000000.0,
+            "mess": 1500000.0,
+            "reduct": 0.0,
+            "pct_time": 2,
+            "mflops": 3882663.0
+          },
+          "SNESJacobianEval": {
+            "count": 226,
+            "time_s": 341.03,
+            "time_ratio": 1.0,
+            "flop_max": 878000000000.0,
+            "mess": 1000000.0,
+            "reduct": 900.0,
+            "pct_time": 15,
+            "mflops": 1007958.0
+          },
+          "PCSetUpOnBlocks": {
+            "count": 13700,
+            "time_s": 0.04333,
+            "time_ratio": 1.9,
+            "flop_max": 0.0,
+            "mess": 0.0,
+            "reduct": 0.0,
+            "pct_time": 0,
+            "mflops": -0.0
+          }
+        },
+        "nprocs": 416,
+        "wall_total_s": 2291.0,
+        "derived": {
+          "denominator": "SNESSolve",
+          "t_snes_s": 2216.9,
+          "pc_setup_s": 106.263,
+          "pc_setup_pct": 4.79,
+          "pc_apply_pct": 58.68,
+          "ksp_total_pct": 76.3,
+          "jacobian_pct": 15.38,
+          "function_pct": 2.53,
+          "matmult_mainstage_pct": 15.16
+        },
+        "validation": {
+          "snes_count": 75,
+          "steps_completed": 75,
+          "steps_match": true,
+          "ksp_count": 226,
+          "total_nl": 226,
+          "nl_match": true,
+          "pcapply_count": 3425,
+          "total_linear": 3425,
+          "linear_close": true,
+          "out_wall_total_s": 2219.2,
+          "profile_snes_s": 2216.9,
+          "wall_consistent": true
+        }
       }
     },
     {
@@ -16536,6 +18524,148 @@
       "pbs": {
         "memory_used": "1.28TB",
         "walltime_used": "00:23:13"
+      },
+      "profile": {
+        "file": "/Users/sghelichkhani/Workplace/morrow2026/parallel_scaling/results/murr_strong/vlumping_hmg_rich_lag3/s8.profile",
+        "events": {
+          "MatMult": {
+            "count": 4584,
+            "time_s": 177.05,
+            "time_ratio": 1.3,
+            "flop_max": 110000000000.0,
+            "mess": 22000000.0,
+            "reduct": 0.0,
+            "pct_time": 11,
+            "mflops": 514476.0
+          },
+          "MatAssemblyBegin": {
+            "count": 3698,
+            "time_s": 77.312,
+            "time_ratio": 2.1,
+            "flop_max": 0.0,
+            "mess": 1100000.0,
+            "reduct": 1200.0,
+            "pct_time": 4,
+            "mflops": -0.0
+          },
+          "MatAssemblyEnd": {
+            "count": 3698,
+            "time_s": 20.434,
+            "time_ratio": 17.3,
+            "flop_max": 422000000.0,
+            "mess": 38000.0,
+            "reduct": 71.0,
+            "pct_time": 1,
+            "mflops": 5673.0
+          },
+          "PCSetUp": {
+            "count": 226,
+            "time_s": 65.405,
+            "time_ratio": 1.0,
+            "flop_max": 21400000000.0,
+            "mess": 5800000.0,
+            "reduct": 2900.0,
+            "pct_time": 5,
+            "mflops": 271512.0
+          },
+          "PCApply": {
+            "count": 3426,
+            "time_s": 795.88,
+            "time_ratio": 1.1,
+            "flop_max": 333000000000.0,
+            "mess": 180000000.0,
+            "reduct": 7200.0,
+            "pct_time": 56,
+            "mflops": 345699.0
+          },
+          "KSPSetUp": {
+            "count": 226,
+            "time_s": 0.018989,
+            "time_ratio": 1.6,
+            "flop_max": 0.0,
+            "mess": 0.0,
+            "reduct": 0.0,
+            "pct_time": 0,
+            "mflops": -0.0
+          },
+          "KSPSolve": {
+            "count": 226,
+            "time_s": 985.36,
+            "time_ratio": 1.0,
+            "flop_max": 487000000000.0,
+            "mess": 200000000.0,
+            "reduct": 14000.0,
+            "pct_time": 72,
+            "mflops": 408631.0
+          },
+          "SNESSolve": {
+            "count": 75,
+            "time_s": 1301.6,
+            "time_ratio": 1.0,
+            "flop_max": 1230000000000.0,
+            "mess": 210000000.0,
+            "reduct": 19000.0,
+            "pct_time": 95,
+            "mflops": 759476.0
+          },
+          "SNESFunctionEval": {
+            "count": 301,
+            "time_s": 33.983,
+            "time_ratio": 1.2,
+            "flop_max": 278000000000.0,
+            "mess": 3300000.0,
+            "reduct": 0.0,
+            "pct_time": 2,
+            "mflops": 6420212.0
+          },
+          "SNESJacobianEval": {
+            "count": 226,
+            "time_s": 205.48,
+            "time_ratio": 1.0,
+            "flop_max": 437000000000.0,
+            "mess": 2200000.0,
+            "reduct": 900.0,
+            "pct_time": 15,
+            "mflops": 1672833.0
+          },
+          "PCSetUpOnBlocks": {
+            "count": 13704,
+            "time_s": 0.043491,
+            "time_ratio": 1.9,
+            "flop_max": 0.0,
+            "mess": 0.0,
+            "reduct": 0.0,
+            "pct_time": 0,
+            "mflops": -0.0
+          }
+        },
+        "nprocs": 832,
+        "wall_total_s": 1373.0,
+        "derived": {
+          "denominator": "SNESSolve",
+          "t_snes_s": 1301.6,
+          "pc_setup_s": 65.448,
+          "pc_setup_pct": 5.03,
+          "pc_apply_pct": 61.15,
+          "ksp_total_pct": 75.7,
+          "jacobian_pct": 15.79,
+          "function_pct": 2.61,
+          "matmult_mainstage_pct": 13.6
+        },
+        "validation": {
+          "snes_count": 75,
+          "steps_completed": 75,
+          "steps_match": true,
+          "ksp_count": 226,
+          "total_nl": 226,
+          "nl_match": true,
+          "pcapply_count": 3426,
+          "total_linear": 3426,
+          "linear_close": true,
+          "out_wall_total_s": 1302.8,
+          "profile_snes_s": 1301.6,
+          "wall_consistent": true
+        }
       }
     },
     {
@@ -17624,6 +19754,148 @@
       "pbs": {
         "memory_used": "1.68TB",
         "walltime_used": "00:22:40"
+      },
+      "profile": {
+        "file": "/Users/sghelichkhani/Workplace/morrow2026/parallel_scaling/results/murr_strong/vlumping_hmg_rich_lag3/s16.profile",
+        "events": {
+          "MatMult": {
+            "count": 4585,
+            "time_s": 89.239,
+            "time_ratio": 1.2,
+            "flop_max": 62800000000.0,
+            "mess": 41000000.0,
+            "reduct": 0.0,
+            "pct_time": 6,
+            "mflops": 1020462.0
+          },
+          "MatAssemblyBegin": {
+            "count": 2834,
+            "time_s": 50.442,
+            "time_ratio": 3.1,
+            "flop_max": 0.0,
+            "mess": 1500000.0,
+            "reduct": 0.0,
+            "pct_time": 3,
+            "mflops": -0.0
+          },
+          "MatAssemblyEnd": {
+            "count": 2834,
+            "time_s": 13.544,
+            "time_ratio": 53.8,
+            "flop_max": 303000000.0,
+            "mess": 54000.0,
+            "reduct": 58.0,
+            "pct_time": 0,
+            "mflops": 10715.0
+          },
+          "PCSetUp": {
+            "count": 226,
+            "time_s": 44.789,
+            "time_ratio": 1.0,
+            "flop_max": 12200000000.0,
+            "mess": 11000000.0,
+            "reduct": 2600.0,
+            "pct_time": 3,
+            "mflops": 396480.0
+          },
+          "PCApply": {
+            "count": 3425,
+            "time_s": 929.57,
+            "time_ratio": 1.0,
+            "flop_max": 190000000000.0,
+            "mess": 330000000.0,
+            "reduct": 7200.0,
+            "pct_time": 69,
+            "mflops": 295895.0
+          },
+          "KSPSetUp": {
+            "count": 226,
+            "time_s": 0.0089576,
+            "time_ratio": 1.6,
+            "flop_max": 0.0,
+            "mess": 0.0,
+            "reduct": 0.0,
+            "pct_time": 0,
+            "mflops": -0.0
+          },
+          "KSPSolve": {
+            "count": 226,
+            "time_s": 1030.1,
+            "time_ratio": 1.0,
+            "flop_max": 277000000000.0,
+            "mess": 360000000.0,
+            "reduct": 14000.0,
+            "pct_time": 79,
+            "mflops": 390759.0
+          },
+          "SNESSolve": {
+            "count": 75,
+            "time_s": 1214.0,
+            "time_ratio": 1.0,
+            "flop_max": 693000000000.0,
+            "mess": 380000000.0,
+            "reduct": 18000.0,
+            "pct_time": 93,
+            "mflops": 814206.0
+          },
+          "SNESFunctionEval": {
+            "count": 301,
+            "time_s": 21.945,
+            "time_ratio": 1.2,
+            "flop_max": 155000000000.0,
+            "mess": 6100000.0,
+            "reduct": 0.0,
+            "pct_time": 2,
+            "mflops": 9942581.0
+          },
+          "SNESJacobianEval": {
+            "count": 226,
+            "time_s": 110.81,
+            "time_ratio": 1.0,
+            "flop_max": 244000000000.0,
+            "mess": 3600000.0,
+            "reduct": 0.0,
+            "pct_time": 8,
+            "mflops": 3101968.0
+          },
+          "PCSetUpOnBlocks": {
+            "count": 13700,
+            "time_s": 0.04812,
+            "time_ratio": 1.9,
+            "flop_max": 0.0,
+            "mess": 0.0,
+            "reduct": 0.0,
+            "pct_time": 0,
+            "mflops": -0.0
+          }
+        },
+        "nprocs": 1664,
+        "wall_total_s": 1309.0,
+        "derived": {
+          "denominator": "SNESSolve",
+          "t_snes_s": 1214.0,
+          "pc_setup_s": 44.837,
+          "pc_setup_pct": 3.69,
+          "pc_apply_pct": 76.57,
+          "ksp_total_pct": 84.85,
+          "jacobian_pct": 9.13,
+          "function_pct": 1.81,
+          "matmult_mainstage_pct": 7.35
+        },
+        "validation": {
+          "snes_count": 75,
+          "steps_completed": 75,
+          "steps_match": true,
+          "ksp_count": 226,
+          "total_nl": 226,
+          "nl_match": true,
+          "pcapply_count": 3425,
+          "total_linear": 3425,
+          "linear_close": true,
+          "out_wall_total_s": 1214.2,
+          "profile_snes_s": 1214.0,
+          "wall_consistent": true
+        }
       }
     },
     {
@@ -18712,6 +20984,148 @@
       "pbs": {
         "memory_used": "2.56TB",
         "walltime_used": "02:18:34"
+      },
+      "profile": {
+        "file": "/Users/sghelichkhani/Workplace/morrow2026/parallel_scaling/results/murr_strong/vlumping_hmg_rich_lag3/s32.profile",
+        "events": {
+          "MatMult": {
+            "count": 4587,
+            "time_s": 54.182,
+            "time_ratio": 2123.2,
+            "flop_max": 31400000000.0,
+            "mess": 72000000.0,
+            "reduct": 0.0,
+            "pct_time": 1,
+            "mflops": 1681596.0
+          },
+          "MatAssemblyBegin": {
+            "count": 2258,
+            "time_s": 65.587,
+            "time_ratio": 4.6,
+            "flop_max": 0.0,
+            "mess": 2700000.0,
+            "reduct": 0.0,
+            "pct_time": 0,
+            "mflops": -0.0
+          },
+          "MatAssemblyEnd": {
+            "count": 2258,
+            "time_s": 7.9179,
+            "time_ratio": 48.7,
+            "flop_max": 195000000.0,
+            "mess": 95000.0,
+            "reduct": 58.0,
+            "pct_time": 0,
+            "mflops": 24958.0
+          },
+          "PCSetUp": {
+            "count": 226,
+            "time_s": 34.591,
+            "time_ratio": 1.0,
+            "flop_max": 6120000000.0,
+            "mess": 19000000.0,
+            "reduct": 2500.0,
+            "pct_time": 0,
+            "mflops": 513346.0
+          },
+          "PCApply": {
+            "count": 3427,
+            "time_s": 7982.9,
+            "time_ratio": 1.0,
+            "flop_max": 95700000000.0,
+            "mess": 570000000.0,
+            "reduct": 7200.0,
+            "pct_time": 97,
+            "mflops": 34474.0
+          },
+          "KSPSetUp": {
+            "count": 226,
+            "time_s": 0.0058072,
+            "time_ratio": 38.9,
+            "flop_max": 0.0,
+            "mess": 0.0,
+            "reduct": 0.0,
+            "pct_time": 0,
+            "mflops": -0.0
+          },
+          "KSPSolve": {
+            "count": 226,
+            "time_s": 8040.4,
+            "time_ratio": 1.0,
+            "flop_max": 140000000000.0,
+            "mess": 620000000.0,
+            "reduct": 14000.0,
+            "pct_time": 97,
+            "mflops": 50093.0
+          },
+          "SNESSolve": {
+            "count": 75,
+            "time_s": 8161.9,
+            "time_ratio": 1.0,
+            "flop_max": 356000000000.0,
+            "mess": 660000000.0,
+            "reduct": 18000.0,
+            "pct_time": 99,
+            "mflops": 121135.0
+          },
+          "SNESFunctionEval": {
+            "count": 301,
+            "time_s": 16.693,
+            "time_ratio": 1.6,
+            "flop_max": 81300000000.0,
+            "mess": 11000000.0,
+            "reduct": 0.0,
+            "pct_time": 0,
+            "mflops": 13070955.0
+          },
+          "SNESJacobianEval": {
+            "count": 226,
+            "time_s": 66.588,
+            "time_ratio": 1.0,
+            "flop_max": 127000000000.0,
+            "mess": 6200000.0,
+            "reduct": 0.0,
+            "pct_time": 1,
+            "mflops": 5162173.0
+          },
+          "PCSetUpOnBlocks": {
+            "count": 13708,
+            "time_s": 0.0462,
+            "time_ratio": 1.8,
+            "flop_max": 0.0,
+            "mess": 0.0,
+            "reduct": 0.0,
+            "pct_time": 0,
+            "mflops": -0.0
+          }
+        },
+        "nprocs": 3328,
+        "wall_total_s": 8249.0,
+        "derived": {
+          "denominator": "SNESSolve",
+          "t_snes_s": 8161.9,
+          "pc_setup_s": 34.637,
+          "pc_setup_pct": 0.42,
+          "pc_apply_pct": 97.81,
+          "ksp_total_pct": 98.51,
+          "jacobian_pct": 0.82,
+          "function_pct": 0.2,
+          "matmult_mainstage_pct": 0.66
+        },
+        "validation": {
+          "snes_count": 75,
+          "steps_completed": 75,
+          "steps_match": true,
+          "ksp_count": 226,
+          "total_nl": 226,
+          "nl_match": true,
+          "pcapply_count": 3427,
+          "total_linear": 3427,
+          "linear_close": true,
+          "out_wall_total_s": 8162.2,
+          "profile_snes_s": 8161.9,
+          "wall_consistent": true
+        }
       }
     },
     {
@@ -19802,6 +22216,148 @@
       "pbs": {
         "memory_used": "974.42GB",
         "walltime_used": "01:18:16"
+      },
+      "profile": {
+        "file": "/Users/sghelichkhani/Workplace/morrow2026/parallel_scaling/results/murr_strong/vlumping_hmg_snapshot_lag3/s2.profile",
+        "events": {
+          "MatMult": {
+            "count": 5304,
+            "time_s": 751.05,
+            "time_ratio": 1.1,
+            "flop_max": 540000000000.0,
+            "mess": 5900000.0,
+            "reduct": 0.0,
+            "pct_time": 15,
+            "mflops": 143938.0
+          },
+          "MatAssemblyBegin": {
+            "count": 72210,
+            "time_s": 142.92,
+            "time_ratio": 3.6,
+            "flop_max": 0.0,
+            "mess": 250000.0,
+            "reduct": 1200.0,
+            "pct_time": 2,
+            "mflops": -0.0
+          },
+          "MatAssemblyEnd": {
+            "count": 72210,
+            "time_s": 36.102,
+            "time_ratio": 4.4,
+            "flop_max": 469000000.0,
+            "mess": 8900.0,
+            "reduct": 71.0,
+            "pct_time": 0,
+            "mflops": 1145.0
+          },
+          "PCSetUp": {
+            "count": 226,
+            "time_s": 423.09,
+            "time_ratio": 1.0,
+            "flop_max": 233000000000.0,
+            "mess": 2000000.0,
+            "reduct": 4800.0,
+            "pct_time": 9,
+            "mflops": 110421.0
+          },
+          "PCApply": {
+            "count": 3564,
+            "time_s": 2515.0,
+            "time_ratio": 1.0,
+            "flop_max": 1410000000000.0,
+            "mess": 45000000.0,
+            "reduct": 7500.0,
+            "pct_time": 53,
+            "mflops": 112207.0
+          },
+          "KSPSetUp": {
+            "count": 226,
+            "time_s": 0.12841,
+            "time_ratio": 1.7,
+            "flop_max": 0.0,
+            "mess": 0.0,
+            "reduct": 0.0,
+            "pct_time": 0,
+            "mflops": -0.0
+          },
+          "KSPSolve": {
+            "count": 226,
+            "time_s": 3348.6,
+            "time_ratio": 1.0,
+            "flop_max": 2080000000000.0,
+            "mess": 49000000.0,
+            "reduct": 15000.0,
+            "pct_time": 72,
+            "mflops": 124284.0
+          },
+          "SNESSolve": {
+            "count": 75,
+            "time_s": 4581.3,
+            "time_ratio": 1.0,
+            "flop_max": 5200000000000.0,
+            "mess": 52000000.0,
+            "reduct": 22000.0,
+            "pct_time": 98,
+            "mflops": 225056.0
+          },
+          "SNESFunctionEval": {
+            "count": 301,
+            "time_s": 104.57,
+            "time_ratio": 1.3,
+            "flop_max": 1110000000000.0,
+            "mess": 760000.0,
+            "reduct": 0.0,
+            "pct_time": 2,
+            "mflops": 2086259.0
+          },
+          "SNESJacobianEval": {
+            "count": 226,
+            "time_s": 651.31,
+            "time_ratio": 1.0,
+            "flop_max": 1740000000000.0,
+            "mess": 510000.0,
+            "reduct": 900.0,
+            "pct_time": 14,
+            "mflops": 527772.0
+          },
+          "PCSetUpOnBlocks": {
+            "count": 14256,
+            "time_s": 0.048104,
+            "time_ratio": 1.8,
+            "flop_max": 0.0,
+            "mess": 0.0,
+            "reduct": 0.0,
+            "pct_time": 0,
+            "mflops": -0.0
+          }
+        },
+        "nprocs": 208,
+        "wall_total_s": 4678.0,
+        "derived": {
+          "denominator": "SNESSolve",
+          "t_snes_s": 4581.3,
+          "pc_setup_s": 423.138,
+          "pc_setup_pct": 9.24,
+          "pc_apply_pct": 54.9,
+          "ksp_total_pct": 73.09,
+          "jacobian_pct": 14.22,
+          "function_pct": 2.28,
+          "matmult_mainstage_pct": 16.39
+        },
+        "validation": {
+          "snes_count": 75,
+          "steps_completed": 75,
+          "steps_match": true,
+          "ksp_count": 226,
+          "total_nl": 226,
+          "nl_match": true,
+          "pcapply_count": 3564,
+          "total_linear": 3564,
+          "linear_close": true,
+          "out_wall_total_s": 4583.2,
+          "profile_snes_s": 4581.3,
+          "wall_consistent": true
+        }
       }
     },
     {
@@ -20890,6 +23446,148 @@
       "pbs": {
         "memory_used": "1.07TB",
         "walltime_used": "00:41:19"
+      },
+      "profile": {
+        "file": "/Users/sghelichkhani/Workplace/morrow2026/parallel_scaling/results/murr_strong/vlumping_hmg_snapshot_lag3/s4.profile",
+        "events": {
+          "MatMult": {
+            "count": 5309,
+            "time_s": 388.16,
+            "time_ratio": 1.2,
+            "flop_max": 270000000000.0,
+            "mess": 12000000.0,
+            "reduct": 0.0,
+            "pct_time": 15,
+            "mflops": 278810.0
+          },
+          "MatAssemblyBegin": {
+            "count": 36946,
+            "time_s": 91.11,
+            "time_ratio": 3.6,
+            "flop_max": 0.0,
+            "mess": 520000.0,
+            "reduct": 1200.0,
+            "pct_time": 2,
+            "mflops": -0.0
+          },
+          "MatAssemblyEnd": {
+            "count": 36946,
+            "time_s": 20.845,
+            "time_ratio": 7.2,
+            "flop_max": 371000000.0,
+            "mess": 18000.0,
+            "reduct": 71.0,
+            "pct_time": 0,
+            "mflops": 2909.0
+          },
+          "PCSetUp": {
+            "count": 226,
+            "time_s": 232.82,
+            "time_ratio": 1.0,
+            "flop_max": 117000000000.0,
+            "mess": 4100000.0,
+            "reduct": 4300.0,
+            "pct_time": 9,
+            "mflops": 200659.0
+          },
+          "PCApply": {
+            "count": 3569,
+            "time_s": 1322.5,
+            "time_ratio": 1.1,
+            "flop_max": 706000000000.0,
+            "mess": 90000000.0,
+            "reduct": 7500.0,
+            "pct_time": 53,
+            "mflops": 213672.0
+          },
+          "KSPSetUp": {
+            "count": 226,
+            "time_s": 0.05638,
+            "time_ratio": 3.1,
+            "flop_max": 0.0,
+            "mess": 0.0,
+            "reduct": 0.0,
+            "pct_time": 0,
+            "mflops": -0.0
+          },
+          "KSPSolve": {
+            "count": 226,
+            "time_s": 1738.7,
+            "time_ratio": 1.0,
+            "flop_max": 1040000000000.0,
+            "mess": 98000000.0,
+            "reduct": 15000.0,
+            "pct_time": 71,
+            "mflops": 239689.0
+          },
+          "SNESSolve": {
+            "count": 75,
+            "time_s": 2382.8,
+            "time_ratio": 1.0,
+            "flop_max": 2610000000000.0,
+            "mess": 110000000.0,
+            "reduct": 21000.0,
+            "pct_time": 97,
+            "mflops": 432941.0
+          },
+          "SNESFunctionEval": {
+            "count": 301,
+            "time_s": 53.949,
+            "time_ratio": 1.2,
+            "flop_max": 558000000000.0,
+            "mess": 1500000.0,
+            "reduct": 0.0,
+            "pct_time": 2,
+            "mflops": 4043967.0
+          },
+          "SNESJacobianEval": {
+            "count": 226,
+            "time_s": 335.45,
+            "time_ratio": 1.0,
+            "flop_max": 878000000000.0,
+            "mess": 1000000.0,
+            "reduct": 900.0,
+            "pct_time": 14,
+            "mflops": 1024724.0
+          },
+          "PCSetUpOnBlocks": {
+            "count": 14276,
+            "time_s": 0.045234,
+            "time_ratio": 1.9,
+            "flop_max": 0.0,
+            "mess": 0.0,
+            "reduct": 0.0,
+            "pct_time": 0,
+            "mflops": -0.0
+          }
+        },
+        "nprocs": 416,
+        "wall_total_s": 2459.0,
+        "derived": {
+          "denominator": "SNESSolve",
+          "t_snes_s": 2382.8,
+          "pc_setup_s": 232.865,
+          "pc_setup_pct": 9.77,
+          "pc_apply_pct": 55.5,
+          "ksp_total_pct": 72.97,
+          "jacobian_pct": 14.08,
+          "function_pct": 2.26,
+          "matmult_mainstage_pct": 16.29
+        },
+        "validation": {
+          "snes_count": 75,
+          "steps_completed": 75,
+          "steps_match": true,
+          "ksp_count": 226,
+          "total_nl": 226,
+          "nl_match": true,
+          "pcapply_count": 3569,
+          "total_linear": 3569,
+          "linear_close": true,
+          "out_wall_total_s": 2385.0,
+          "profile_snes_s": 2382.8,
+          "wall_consistent": true
+        }
       }
     },
     {
@@ -21978,6 +24676,148 @@
       "pbs": {
         "memory_used": "1.28TB",
         "walltime_used": "00:24:46"
+      },
+      "profile": {
+        "file": "/Users/sghelichkhani/Workplace/morrow2026/parallel_scaling/results/murr_strong/vlumping_hmg_snapshot_lag3/s8.profile",
+        "events": {
+          "MatMult": {
+            "count": 5316,
+            "time_s": 209.23,
+            "time_ratio": 1.2,
+            "flop_max": 131000000000.0,
+            "mess": 26000000.0,
+            "reduct": 0.0,
+            "pct_time": 12,
+            "mflops": 518264.0
+          },
+          "MatAssemblyBegin": {
+            "count": 18706,
+            "time_s": 79.589,
+            "time_ratio": 2.1,
+            "flop_max": 0.0,
+            "mess": 1100000.0,
+            "reduct": 1200.0,
+            "pct_time": 4,
+            "mflops": -0.0
+          },
+          "MatAssemblyEnd": {
+            "count": 18706,
+            "time_s": 22.051,
+            "time_ratio": 10.6,
+            "flop_max": 422000000.0,
+            "mess": 38000.0,
+            "reduct": 71.0,
+            "pct_time": 1,
+            "mflops": 5257.0
+          },
+          "PCSetUp": {
+            "count": 226,
+            "time_s": 130.46,
+            "time_ratio": 1.0,
+            "flop_max": 56300000000.0,
+            "mess": 8600000.0,
+            "reduct": 4100.0,
+            "pct_time": 9,
+            "mflops": 358100.0
+          },
+          "PCApply": {
+            "count": 3578,
+            "time_s": 813.47,
+            "time_ratio": 1.1,
+            "flop_max": 343000000000.0,
+            "mess": 190000000.0,
+            "reduct": 7500.0,
+            "pct_time": 54,
+            "mflops": 348219.0
+          },
+          "KSPSetUp": {
+            "count": 226,
+            "time_s": 0.020009,
+            "time_ratio": 1.7,
+            "flop_max": 0.0,
+            "mess": 0.0,
+            "reduct": 0.0,
+            "pct_time": 0,
+            "mflops": -0.0
+          },
+          "KSPSolve": {
+            "count": 226,
+            "time_s": 1019.1,
+            "time_ratio": 1.0,
+            "flop_max": 505000000000.0,
+            "mess": 200000000.0,
+            "reduct": 15000.0,
+            "pct_time": 69,
+            "mflops": 410037.0
+          },
+          "SNESSolve": {
+            "count": 75,
+            "time_s": 1401.8,
+            "time_ratio": 1.0,
+            "flop_max": 1280000000000.0,
+            "mess": 220000000.0,
+            "reduct": 21000.0,
+            "pct_time": 95,
+            "mflops": 736697.0
+          },
+          "SNESFunctionEval": {
+            "count": 301,
+            "time_s": 33.824,
+            "time_ratio": 1.2,
+            "flop_max": 278000000000.0,
+            "mess": 3300000.0,
+            "reduct": 0.0,
+            "pct_time": 2,
+            "mflops": 6450512.0
+          },
+          "SNESJacobianEval": {
+            "count": 226,
+            "time_s": 206.93,
+            "time_ratio": 1.0,
+            "flop_max": 437000000000.0,
+            "mess": 2200000.0,
+            "reduct": 900.0,
+            "pct_time": 14,
+            "mflops": 1661116.0
+          },
+          "PCSetUpOnBlocks": {
+            "count": 14312,
+            "time_s": 0.041441,
+            "time_ratio": 1.7,
+            "flop_max": 0.0,
+            "mess": 0.0,
+            "reduct": 0.0,
+            "pct_time": 0,
+            "mflops": -0.0
+          }
+        },
+        "nprocs": 832,
+        "wall_total_s": 1469.0,
+        "derived": {
+          "denominator": "SNESSolve",
+          "t_snes_s": 1401.8,
+          "pc_setup_s": 130.501,
+          "pc_setup_pct": 9.31,
+          "pc_apply_pct": 58.03,
+          "ksp_total_pct": 72.7,
+          "jacobian_pct": 14.76,
+          "function_pct": 2.41,
+          "matmult_mainstage_pct": 14.93
+        },
+        "validation": {
+          "snes_count": 75,
+          "steps_completed": 75,
+          "steps_match": true,
+          "ksp_count": 226,
+          "total_nl": 226,
+          "nl_match": true,
+          "pcapply_count": 3578,
+          "total_linear": 3578,
+          "linear_close": true,
+          "out_wall_total_s": 1403.2,
+          "profile_snes_s": 1401.8,
+          "wall_consistent": true
+        }
       }
     },
     {
@@ -23066,6 +25906,148 @@
       "pbs": {
         "memory_used": "1.69TB",
         "walltime_used": "00:24:14"
+      },
+      "profile": {
+        "file": "/Users/sghelichkhani/Workplace/morrow2026/parallel_scaling/results/murr_strong/vlumping_hmg_snapshot_lag3/s16.profile",
+        "events": {
+          "MatMult": {
+            "count": 5318,
+            "time_s": 104.78,
+            "time_ratio": 1.2,
+            "flop_max": 74800000000.0,
+            "mess": 48000000.0,
+            "reduct": 0.0,
+            "pct_time": 7,
+            "mflops": 1034860.0
+          },
+          "MatAssemblyBegin": {
+            "count": 11410,
+            "time_s": 52.4,
+            "time_ratio": 2.6,
+            "flop_max": 0.0,
+            "mess": 1500000.0,
+            "reduct": 0.0,
+            "pct_time": 3,
+            "mflops": -0.0
+          },
+          "MatAssemblyEnd": {
+            "count": 11410,
+            "time_s": 13.542,
+            "time_ratio": 59.9,
+            "flop_max": 303000000.0,
+            "mess": 54000.0,
+            "reduct": 58.0,
+            "pct_time": 0,
+            "mflops": 10716.0
+          },
+          "PCSetUp": {
+            "count": 226,
+            "time_s": 76.13,
+            "time_ratio": 1.0,
+            "flop_max": 32200000000.0,
+            "mess": 16000000.0,
+            "reduct": 3700.0,
+            "pct_time": 5,
+            "mflops": 613653.0
+          },
+          "PCApply": {
+            "count": 3578,
+            "time_s": 979.35,
+            "time_ratio": 1.0,
+            "flop_max": 195000000000.0,
+            "mess": 340000000.0,
+            "reduct": 7500.0,
+            "pct_time": 68,
+            "mflops": 289232.0
+          },
+          "KSPSetUp": {
+            "count": 226,
+            "time_s": 0.0087984,
+            "time_ratio": 1.6,
+            "flop_max": 0.0,
+            "mess": 0.0,
+            "reduct": 0.0,
+            "pct_time": 0,
+            "mflops": -0.0
+          },
+          "KSPSolve": {
+            "count": 226,
+            "time_s": 1086.7,
+            "time_ratio": 1.0,
+            "flop_max": 288000000000.0,
+            "mess": 370000000.0,
+            "reduct": 15000.0,
+            "pct_time": 78,
+            "mflops": 384518.0
+          },
+          "SNESSolve": {
+            "count": 75,
+            "time_s": 1306.5,
+            "time_ratio": 1.0,
+            "flop_max": 723000000000.0,
+            "mess": 400000000.0,
+            "reduct": 20000.0,
+            "pct_time": 93,
+            "mflops": 790436.0
+          },
+          "SNESFunctionEval": {
+            "count": 301,
+            "time_s": 22.903,
+            "time_ratio": 1.2,
+            "flop_max": 155000000000.0,
+            "mess": 6100000.0,
+            "reduct": 0.0,
+            "pct_time": 1,
+            "mflops": 9526590.0
+          },
+          "SNESJacobianEval": {
+            "count": 226,
+            "time_s": 114.34,
+            "time_ratio": 1.0,
+            "flop_max": 244000000000.0,
+            "mess": 3600000.0,
+            "reduct": 0.0,
+            "pct_time": 8,
+            "mflops": 3006302.0
+          },
+          "PCSetUpOnBlocks": {
+            "count": 14312,
+            "time_s": 0.052274,
+            "time_ratio": 2.0,
+            "flop_max": 0.0,
+            "mess": 0.0,
+            "reduct": 0.0,
+            "pct_time": 0,
+            "mflops": -0.0
+          }
+        },
+        "nprocs": 1664,
+        "wall_total_s": 1398.0,
+        "derived": {
+          "denominator": "SNESSolve",
+          "t_snes_s": 1306.5,
+          "pc_setup_s": 76.182,
+          "pc_setup_pct": 5.83,
+          "pc_apply_pct": 74.96,
+          "ksp_total_pct": 83.18,
+          "jacobian_pct": 8.75,
+          "function_pct": 1.75,
+          "matmult_mainstage_pct": 8.02
+        },
+        "validation": {
+          "snes_count": 75,
+          "steps_completed": 75,
+          "steps_match": true,
+          "ksp_count": 226,
+          "total_nl": 226,
+          "nl_match": true,
+          "pcapply_count": 3578,
+          "total_linear": 3578,
+          "linear_close": true,
+          "out_wall_total_s": 1307.2,
+          "profile_snes_s": 1306.5,
+          "wall_consistent": true
+        }
       }
     },
     {
@@ -24154,6 +27136,148 @@
       "pbs": {
         "memory_used": "2.56TB",
         "walltime_used": "02:24:21"
+      },
+      "profile": {
+        "file": "/Users/sghelichkhani/Workplace/morrow2026/parallel_scaling/results/murr_strong/vlumping_hmg_snapshot_lag3/s32.profile",
+        "events": {
+          "MatMult": {
+            "count": 5321,
+            "time_s": 62.725,
+            "time_ratio": 2366.2,
+            "flop_max": 37400000000.0,
+            "mess": 84000000.0,
+            "reduct": 0.0,
+            "pct_time": 1,
+            "mflops": 1729896.0
+          },
+          "MatAssemblyBegin": {
+            "count": 6546,
+            "time_s": 68.049,
+            "time_ratio": 4.7,
+            "flop_max": 0.0,
+            "mess": 2700000.0,
+            "reduct": 0.0,
+            "pct_time": 0,
+            "mflops": -0.0
+          },
+          "MatAssemblyEnd": {
+            "count": 6546,
+            "time_s": 9.2253,
+            "time_ratio": 56.0,
+            "flop_max": 195000000.0,
+            "mess": 95000.0,
+            "reduct": 58.0,
+            "pct_time": 0,
+            "mflops": 21421.0
+          },
+          "PCSetUp": {
+            "count": 226,
+            "time_s": 51.353,
+            "time_ratio": 1.0,
+            "flop_max": 16100000000.0,
+            "mess": 28000000.0,
+            "reduct": 3700.0,
+            "pct_time": 1,
+            "mflops": 909717.0
+          },
+          "PCApply": {
+            "count": 3581,
+            "time_s": 8309.7,
+            "time_ratio": 1.0,
+            "flop_max": 98600000000.0,
+            "mess": 590000000.0,
+            "reduct": 7500.0,
+            "pct_time": 96,
+            "mflops": 34115.0
+          },
+          "KSPSetUp": {
+            "count": 226,
+            "time_s": 0.0044166,
+            "time_ratio": 26.1,
+            "flop_max": 0.0,
+            "mess": 0.0,
+            "reduct": 0.0,
+            "pct_time": 0,
+            "mflops": -0.0
+          },
+          "KSPSolve": {
+            "count": 226,
+            "time_s": 8371.5,
+            "time_ratio": 1.0,
+            "flop_max": 145000000000.0,
+            "mess": 650000000.0,
+            "reduct": 15000.0,
+            "pct_time": 97,
+            "mflops": 49959.0
+          },
+          "SNESSolve": {
+            "count": 75,
+            "time_s": 8511.6,
+            "time_ratio": 1.0,
+            "flop_max": 371000000000.0,
+            "mess": 700000000.0,
+            "reduct": 19000.0,
+            "pct_time": 99,
+            "mflops": 121379.0
+          },
+          "SNESFunctionEval": {
+            "count": 301,
+            "time_s": 16.754,
+            "time_ratio": 1.6,
+            "flop_max": 81300000000.0,
+            "mess": 11000000.0,
+            "reduct": 0.0,
+            "pct_time": 0,
+            "mflops": 13023610.0
+          },
+          "SNESJacobianEval": {
+            "count": 226,
+            "time_s": 67.585,
+            "time_ratio": 1.0,
+            "flop_max": 127000000000.0,
+            "mess": 6200000.0,
+            "reduct": 0.0,
+            "pct_time": 1,
+            "mflops": 5086029.0
+          },
+          "PCSetUpOnBlocks": {
+            "count": 14324,
+            "time_s": 0.049878,
+            "time_ratio": 1.8,
+            "flop_max": 0.0,
+            "mess": 0.0,
+            "reduct": 0.0,
+            "pct_time": 0,
+            "mflops": -0.0
+          }
+        },
+        "nprocs": 3328,
+        "wall_total_s": 8607.0,
+        "derived": {
+          "denominator": "SNESSolve",
+          "t_snes_s": 8511.6,
+          "pc_setup_s": 51.403,
+          "pc_setup_pct": 0.6,
+          "pc_apply_pct": 97.63,
+          "ksp_total_pct": 98.35,
+          "jacobian_pct": 0.79,
+          "function_pct": 0.2,
+          "matmult_mainstage_pct": 0.74
+        },
+        "validation": {
+          "snes_count": 75,
+          "steps_completed": 75,
+          "steps_match": true,
+          "ksp_count": 226,
+          "total_nl": 226,
+          "nl_match": true,
+          "pcapply_count": 3581,
+          "total_linear": 3581,
+          "linear_close": true,
+          "out_wall_total_s": 8511.8,
+          "profile_snes_s": 8511.6,
+          "wall_consistent": true
+        }
       }
     },
     {
@@ -25265,6 +28389,148 @@
       "pbs": {
         "memory_used": "774.17GB",
         "walltime_used": "01:43:59"
+      },
+      "profile": {
+        "file": "/Users/sghelichkhani/Workplace/morrow2026/parallel_scaling/results/murr_strong/vlumping_inexact/s2.profile",
+        "events": {
+          "MatMult": {
+            "count": 5034,
+            "time_s": 821.03,
+            "time_ratio": 1.1,
+            "flop_max": 596000000000.0,
+            "mess": 5600000.0,
+            "reduct": 0.0,
+            "pct_time": 12,
+            "mflops": 145313.0
+          },
+          "MatAssemblyBegin": {
+            "count": 1630,
+            "time_s": 127.53,
+            "time_ratio": 3.6,
+            "flop_max": 0.0,
+            "mess": 250000.0,
+            "reduct": 1100.0,
+            "pct_time": 1,
+            "mflops": -0.0
+          },
+          "MatAssemblyEnd": {
+            "count": 1630,
+            "time_s": 29.881,
+            "time_ratio": 3.9,
+            "flop_max": 467000000.0,
+            "mess": 4500.0,
+            "reduct": 17.0,
+            "pct_time": 0,
+            "mflops": 1377.0
+          },
+          "PCSetUp": {
+            "count": 225,
+            "time_s": 1215.0,
+            "time_ratio": 1.0,
+            "flop_max": 1010000000000.0,
+            "mess": 2800000.0,
+            "reduct": 5200.0,
+            "pct_time": 20,
+            "mflops": 165674.0
+          },
+          "PCApply": {
+            "count": 2559,
+            "time_s": 3616.3,
+            "time_ratio": 1.0,
+            "flop_max": 2540000000000.0,
+            "mess": 16000000.0,
+            "reduct": 3700.0,
+            "pct_time": 57,
+            "mflops": 140354.0
+          },
+          "KSPSetUp": {
+            "count": 225,
+            "time_s": 0.1206,
+            "time_ratio": 1.6,
+            "flop_max": 0.0,
+            "mess": 0.0,
+            "reduct": 0.0,
+            "pct_time": 0,
+            "mflops": -0.0
+          },
+          "KSPSolve": {
+            "count": 225,
+            "time_s": 4165.4,
+            "time_ratio": 1.0,
+            "flop_max": 2970000000000.0,
+            "mess": 19000000.0,
+            "reduct": 9000.0,
+            "pct_time": 67,
+            "mflops": 142843.0
+          },
+          "SNESSolve": {
+            "count": 75,
+            "time_s": 6132.6,
+            "time_ratio": 1.0,
+            "flop_max": 6850000000000.0,
+            "mess": 24000000.0,
+            "reduct": 16000.0,
+            "pct_time": 99,
+            "mflops": 222117.0
+          },
+          "SNESFunctionEval": {
+            "count": 300,
+            "time_s": 95.514,
+            "time_ratio": 1.2,
+            "flop_max": 1100000000000.0,
+            "mess": 760000.0,
+            "reduct": 0.0,
+            "pct_time": 1,
+            "mflops": 2276502.0
+          },
+          "SNESJacobianEval": {
+            "count": 225,
+            "time_s": 612.03,
+            "time_ratio": 1.0,
+            "flop_max": 1740000000000.0,
+            "mess": 500000.0,
+            "reduct": 900.0,
+            "pct_time": 10,
+            "mflops": 559159.0
+          },
+          "PCSetUpOnBlocks": {
+            "count": 5118,
+            "time_s": 0.067755,
+            "time_ratio": 1.4,
+            "flop_max": 0.0,
+            "mess": 0.0,
+            "reduct": 0.0,
+            "pct_time": 0,
+            "mflops": -0.0
+          }
+        },
+        "nprocs": 208,
+        "wall_total_s": 6222.0,
+        "derived": {
+          "denominator": "SNESSolve",
+          "t_snes_s": 6132.6,
+          "pc_setup_s": 1215.068,
+          "pc_setup_pct": 19.81,
+          "pc_apply_pct": 58.97,
+          "ksp_total_pct": 67.92,
+          "jacobian_pct": 9.98,
+          "function_pct": 1.56,
+          "matmult_mainstage_pct": 13.39
+        },
+        "validation": {
+          "snes_count": 75,
+          "steps_completed": 75,
+          "steps_match": true,
+          "ksp_count": 225,
+          "total_nl": 225,
+          "nl_match": true,
+          "pcapply_count": 2559,
+          "total_linear": 2559,
+          "linear_close": true,
+          "out_wall_total_s": 6136.5,
+          "profile_snes_s": 6132.6,
+          "wall_consistent": true
+        }
       }
     },
     {
@@ -26353,6 +29619,148 @@
       "pbs": {
         "memory_used": "882.36GB",
         "walltime_used": "00:55:33"
+      },
+      "profile": {
+        "file": "/Users/sghelichkhani/Workplace/morrow2026/parallel_scaling/results/murr_strong/vlumping_inexact/s4.profile",
+        "events": {
+          "MatMult": {
+            "count": 5034,
+            "time_s": 421.82,
+            "time_ratio": 1.2,
+            "flop_max": 298000000000.0,
+            "mess": 11000000.0,
+            "reduct": 0.0,
+            "pct_time": 12,
+            "mflops": 282838.0
+          },
+          "MatAssemblyBegin": {
+            "count": 1630,
+            "time_s": 101.32,
+            "time_ratio": 3.4,
+            "flop_max": 0.0,
+            "mess": 520000.0,
+            "reduct": 1100.0,
+            "pct_time": 2,
+            "mflops": -0.0
+          },
+          "MatAssemblyEnd": {
+            "count": 1630,
+            "time_s": 19.152,
+            "time_ratio": 19.6,
+            "flop_max": 369000000.0,
+            "mess": 9100.0,
+            "reduct": 17.0,
+            "pct_time": 0,
+            "mflops": 3152.0
+          },
+          "PCSetUp": {
+            "count": 225,
+            "time_s": 687.68,
+            "time_ratio": 1.0,
+            "flop_max": 502000000000.0,
+            "mess": 5700000.0,
+            "reduct": 5200.0,
+            "pct_time": 21,
+            "mflops": 291207.0
+          },
+          "PCApply": {
+            "count": 2559,
+            "time_s": 1875.2,
+            "time_ratio": 1.0,
+            "flop_max": 1270000000000.0,
+            "mess": 34000000.0,
+            "reduct": 3700.0,
+            "pct_time": 56,
+            "mflops": 269739.0
+          },
+          "KSPSetUp": {
+            "count": 225,
+            "time_s": 0.057763,
+            "time_ratio": 3.2,
+            "flop_max": 0.0,
+            "mess": 0.0,
+            "reduct": 0.0,
+            "pct_time": 0,
+            "mflops": -0.0
+          },
+          "KSPSolve": {
+            "count": 225,
+            "time_s": 2153.2,
+            "time_ratio": 1.0,
+            "flop_max": 1480000000000.0,
+            "mess": 39000000.0,
+            "reduct": 9000.0,
+            "pct_time": 65,
+            "mflops": 275526.0
+          },
+          "SNESSolve": {
+            "count": 75,
+            "time_s": 3242.2,
+            "time_ratio": 1.0,
+            "flop_max": 3430000000000.0,
+            "mess": 48000000.0,
+            "reduct": 16000.0,
+            "pct_time": 98,
+            "mflops": 419272.0
+          },
+          "SNESFunctionEval": {
+            "count": 300,
+            "time_s": 52.804,
+            "time_ratio": 1.2,
+            "flop_max": 556000000000.0,
+            "mess": 1500000.0,
+            "reduct": 0.0,
+            "pct_time": 1,
+            "mflops": 4117894.0
+          },
+          "SNESJacobianEval": {
+            "count": 225,
+            "time_s": 326.58,
+            "time_ratio": 1.0,
+            "flop_max": 874000000000.0,
+            "mess": 1000000.0,
+            "reduct": 900.0,
+            "pct_time": 10,
+            "mflops": 1047890.0
+          },
+          "PCSetUpOnBlocks": {
+            "count": 5118,
+            "time_s": 0.063626,
+            "time_ratio": 1.6,
+            "flop_max": 0.0,
+            "mess": 0.0,
+            "reduct": 0.0,
+            "pct_time": 0,
+            "mflops": -0.0
+          }
+        },
+        "nprocs": 416,
+        "wall_total_s": 3317.0,
+        "derived": {
+          "denominator": "SNESSolve",
+          "t_snes_s": 3242.2,
+          "pc_setup_s": 687.744,
+          "pc_setup_pct": 21.21,
+          "pc_apply_pct": 57.84,
+          "ksp_total_pct": 66.41,
+          "jacobian_pct": 10.07,
+          "function_pct": 1.63,
+          "matmult_mainstage_pct": 13.01
+        },
+        "validation": {
+          "snes_count": 75,
+          "steps_completed": 75,
+          "steps_match": true,
+          "ksp_count": 225,
+          "total_nl": 225,
+          "nl_match": true,
+          "pcapply_count": 2559,
+          "total_linear": 2559,
+          "linear_close": true,
+          "out_wall_total_s": 3244.5,
+          "profile_snes_s": 3242.2,
+          "wall_consistent": true
+        }
       }
     },
     {
@@ -27441,6 +30849,148 @@
       "pbs": {
         "memory_used": "1.08TB",
         "walltime_used": "00:35:30"
+      },
+      "profile": {
+        "file": "/Users/sghelichkhani/Workplace/morrow2026/parallel_scaling/results/murr_strong/vlumping_inexact/s8.profile",
+        "events": {
+          "MatMult": {
+            "count": 5035,
+            "time_s": 224.49,
+            "time_ratio": 1.3,
+            "flop_max": 144000000000.0,
+            "mess": 24000000.0,
+            "reduct": 0.0,
+            "pct_time": 10,
+            "mflops": 531566.0
+          },
+          "MatAssemblyBegin": {
+            "count": 1630,
+            "time_s": 83.261,
+            "time_ratio": 2.2,
+            "flop_max": 0.0,
+            "mess": 1100000.0,
+            "reduct": 1100.0,
+            "pct_time": 3,
+            "mflops": -0.0
+          },
+          "MatAssemblyEnd": {
+            "count": 1630,
+            "time_s": 21.868,
+            "time_ratio": 20.4,
+            "flop_max": 420000000.0,
+            "mess": 19000.0,
+            "reduct": 17.0,
+            "pct_time": 0,
+            "mflops": 5278.0
+          },
+          "PCSetUp": {
+            "count": 225,
+            "time_s": 519.74,
+            "time_ratio": 1.0,
+            "flop_max": 242000000000.0,
+            "mess": 12000000.0,
+            "reduct": 5200.0,
+            "pct_time": 25,
+            "mflops": 379622.0
+          },
+          "PCApply": {
+            "count": 2560,
+            "time_s": 1161.7,
+            "time_ratio": 1.1,
+            "flop_max": 613000000000.0,
+            "mess": 72000000.0,
+            "reduct": 3700.0,
+            "pct_time": 53,
+            "mflops": 431143.0
+          },
+          "KSPSetUp": {
+            "count": 225,
+            "time_s": 0.019507,
+            "time_ratio": 1.6,
+            "flop_max": 0.0,
+            "mess": 0.0,
+            "reduct": 0.0,
+            "pct_time": 0,
+            "mflops": -0.0
+          },
+          "KSPSolve": {
+            "count": 225,
+            "time_s": 1274.7,
+            "time_ratio": 1.0,
+            "flop_max": 719000000000.0,
+            "mess": 84000000.0,
+            "reduct": 9000.0,
+            "pct_time": 60,
+            "mflops": 461549.0
+          },
+          "SNESSolve": {
+            "count": 75,
+            "time_s": 2040.2,
+            "time_ratio": 1.0,
+            "flop_max": 1660000000000.0,
+            "mess": 100000000.0,
+            "reduct": 16000.0,
+            "pct_time": 97,
+            "mflops": 662471.0
+          },
+          "SNESFunctionEval": {
+            "count": 300,
+            "time_s": 35.159,
+            "time_ratio": 1.3,
+            "flop_max": 277000000000.0,
+            "mess": 3300000.0,
+            "reduct": 0.0,
+            "pct_time": 1,
+            "mflops": 6184833.0
+          },
+          "SNESJacobianEval": {
+            "count": 225,
+            "time_s": 198.79,
+            "time_ratio": 1.0,
+            "flop_max": 435000000000.0,
+            "mess": 2200000.0,
+            "reduct": 900.0,
+            "pct_time": 9,
+            "mflops": 1721554.0
+          },
+          "PCSetUpOnBlocks": {
+            "count": 5120,
+            "time_s": 0.06552,
+            "time_ratio": 1.9,
+            "flop_max": 0.0,
+            "mess": 0.0,
+            "reduct": 0.0,
+            "pct_time": 0,
+            "mflops": -0.0
+          }
+        },
+        "nprocs": 832,
+        "wall_total_s": 2107.0,
+        "derived": {
+          "denominator": "SNESSolve",
+          "t_snes_s": 2040.2,
+          "pc_setup_s": 519.806,
+          "pc_setup_pct": 25.48,
+          "pc_apply_pct": 56.94,
+          "ksp_total_pct": 62.48,
+          "jacobian_pct": 9.74,
+          "function_pct": 1.72,
+          "matmult_mainstage_pct": 11.0
+        },
+        "validation": {
+          "snes_count": 75,
+          "steps_completed": 75,
+          "steps_match": true,
+          "ksp_count": 225,
+          "total_nl": 225,
+          "nl_match": true,
+          "pcapply_count": 2560,
+          "total_linear": 2560,
+          "linear_close": true,
+          "out_wall_total_s": 2041.5,
+          "profile_snes_s": 2040.2,
+          "wall_consistent": true
+        }
       }
     },
     {
@@ -27487,6 +31037,134 @@
       "pbs": {
         "memory_used": "2.55TB",
         "walltime_used": "00:03:50"
+      },
+      "profile": {
+        "file": "/Users/sghelichkhani/Workplace/morrow2026/parallel_scaling/results/murr_strong/vlumping_inexact/s32.profile",
+        "events": {
+          "MatMult": {
+            "count": 66,
+            "time_s": 0.77661,
+            "time_ratio": 2032.4,
+            "flop_max": 539000000.0,
+            "mess": 1000000.0,
+            "reduct": 0.0,
+            "pct_time": 0,
+            "mflops": 2014132.0
+          },
+          "MatAssemblyBegin": {
+            "count": 97,
+            "time_s": 3.0723,
+            "time_ratio": 3.8,
+            "flop_max": 0.0,
+            "mess": 95000.0,
+            "reduct": 0.0,
+            "pct_time": 1,
+            "mflops": -0.0
+          },
+          "MatAssemblyEnd": {
+            "count": 97,
+            "time_s": 0.46443,
+            "time_ratio": 2.8,
+            "flop_max": 5180000.0,
+            "mess": 47000.0,
+            "reduct": 14.0,
+            "pct_time": 0,
+            "mflops": 11296.0
+          },
+          "PCSetUp": {
+            "count": 6,
+            "time_s": 49.635,
+            "time_ratio": 1.0,
+            "flop_max": 1800000000.0,
+            "mess": 1100000.0,
+            "reduct": 160.0,
+            "pct_time": 31,
+            "mflops": 103733.0
+          },
+          "PCApply": {
+            "count": 6,
+            "time_s": 0.6005,
+            "time_ratio": 2.0,
+            "flop_max": 400000000.0,
+            "mess": 380000.0,
+            "reduct": 6.0,
+            "pct_time": 0,
+            "mflops": 1924340.0
+          },
+          "KSPSetUp": {
+            "count": 6,
+            "time_s": 0.0047266,
+            "time_ratio": 58.7,
+            "flop_max": 0.0,
+            "mess": 0.0,
+            "reduct": 0.0,
+            "pct_time": 0,
+            "mflops": -0.0
+          },
+          "KSPSolve": {
+            "count": 6,
+            "time_s": 0.69054,
+            "time_ratio": 1.0,
+            "flop_max": 454000000.0,
+            "mess": 470000.0,
+            "reduct": 36.0,
+            "pct_time": 0,
+            "mflops": 1899694.0
+          },
+          "SNESSolve": {
+            "count": 6,
+            "time_s": 72.345,
+            "time_ratio": 1.0,
+            "flop_max": 7210000000.0,
+            "mess": 2100000.0,
+            "reduct": 210.0,
+            "pct_time": 44,
+            "mflops": 275621.0
+          },
+          "SNESFunctionEval": {
+            "count": 6,
+            "time_s": 10.47,
+            "time_ratio": 1.0,
+            "flop_max": 1620000000.0,
+            "mess": 320000.0,
+            "reduct": 0.0,
+            "pct_time": 6,
+            "mflops": 415431.0
+          },
+          "SNESJacobianEval": {
+            "count": 6,
+            "time_s": 11.52,
+            "time_ratio": 1.0,
+            "flop_max": 3380000000.0,
+            "mess": 170000.0,
+            "reduct": 0.0,
+            "pct_time": 7,
+            "mflops": 792150.0
+          },
+          "PCSetUpOnBlocks": {
+            "count": 12,
+            "time_s": 0.00010094,
+            "time_ratio": 2.2,
+            "flop_max": 0.0,
+            "mess": 0.0,
+            "reduct": 0.0,
+            "pct_time": 0,
+            "mflops": -0.0
+          }
+        },
+        "nprocs": 3328,
+        "wall_total_s": 162.7,
+        "derived": {
+          "denominator": "SNESSolve",
+          "t_snes_s": 72.345,
+          "pc_setup_s": 49.635,
+          "pc_setup_pct": 68.61,
+          "pc_apply_pct": 0.83,
+          "ksp_total_pct": 0.95,
+          "jacobian_pct": 15.92,
+          "function_pct": 14.47,
+          "matmult_mainstage_pct": 1.07
+        }
       }
     },
     {
@@ -28577,6 +32255,148 @@
       "pbs": {
         "memory_used": "942.21GB",
         "walltime_used": "01:37:20"
+      },
+      "profile": {
+        "file": "/Users/sghelichkhani/Workplace/morrow2026/parallel_scaling/results/murr_strong/vlumping_inexact_snapshot_lag3/s2.profile",
+        "events": {
+          "MatMult": {
+            "count": 3725,
+            "time_s": 641.8,
+            "time_ratio": 1.2,
+            "flop_max": 441000000000.0,
+            "mess": 4200000.0,
+            "reduct": 0.0,
+            "pct_time": 10,
+            "mflops": 137554.0
+          },
+          "MatAssemblyBegin": {
+            "count": 1186,
+            "time_s": 116.82,
+            "time_ratio": 2.9,
+            "flop_max": 0.0,
+            "mess": 250000.0,
+            "reduct": 980.0,
+            "pct_time": 1,
+            "mflops": -0.0
+          },
+          "MatAssemblyEnd": {
+            "count": 1186,
+            "time_s": 27.749,
+            "time_ratio": 4.1,
+            "flop_max": 467000000.0,
+            "mess": 4500.0,
+            "reduct": 17.0,
+            "pct_time": 0,
+            "mflops": 1483.0
+          },
+          "PCSetUp": {
+            "count": 225,
+            "time_s": 443.68,
+            "time_ratio": 1.0,
+            "flop_max": 345000000000.0,
+            "mess": 950000.0,
+            "reduct": 1800.0,
+            "pct_time": 8,
+            "mflops": 155261.0
+          },
+          "PCApply": {
+            "count": 2729,
+            "time_s": 3936.0,
+            "time_ratio": 1.1,
+            "flop_max": 2710000000000.0,
+            "mess": 16000000.0,
+            "reduct": 3100.0,
+            "pct_time": 66,
+            "mflops": 137522.0
+          },
+          "KSPSetUp": {
+            "count": 225,
+            "time_s": 0.11994,
+            "time_ratio": 1.6,
+            "flop_max": 0.0,
+            "mess": 0.0,
+            "reduct": 0.0,
+            "pct_time": 0,
+            "mflops": -0.0
+          },
+          "KSPSolve": {
+            "count": 225,
+            "time_s": 4524.7,
+            "time_ratio": 1.0,
+            "flop_max": 3180000000000.0,
+            "mess": 19000000.0,
+            "reduct": 8800.0,
+            "pct_time": 78,
+            "mflops": 140525.0
+          },
+          "SNESSolve": {
+            "count": 75,
+            "time_s": 5730.8,
+            "time_ratio": 1.0,
+            "flop_max": 6390000000000.0,
+            "mess": 22000000.0,
+            "reduct": 12000.0,
+            "pct_time": 98,
+            "mflops": 221711.0
+          },
+          "SNESFunctionEval": {
+            "count": 300,
+            "time_s": 96.635,
+            "time_ratio": 1.2,
+            "flop_max": 1100000000000.0,
+            "mess": 760000.0,
+            "reduct": 0.0,
+            "pct_time": 2,
+            "mflops": 2250090.0
+          },
+          "SNESJacobianEval": {
+            "count": 225,
+            "time_s": 619.22,
+            "time_ratio": 1.0,
+            "flop_max": 1740000000000.0,
+            "mess": 500000.0,
+            "reduct": 900.0,
+            "pct_time": 11,
+            "mflops": 552665.0
+          },
+          "PCSetUpOnBlocks": {
+            "count": 5458,
+            "time_s": 0.072538,
+            "time_ratio": 1.6,
+            "flop_max": 0.0,
+            "mess": 0.0,
+            "reduct": 0.0,
+            "pct_time": 0,
+            "mflops": -0.0
+          }
+        },
+        "nprocs": 208,
+        "wall_total_s": 5823.0,
+        "derived": {
+          "denominator": "SNESSolve",
+          "t_snes_s": 5730.8,
+          "pc_setup_s": 443.753,
+          "pc_setup_pct": 7.74,
+          "pc_apply_pct": 68.68,
+          "ksp_total_pct": 78.95,
+          "jacobian_pct": 10.81,
+          "function_pct": 1.69,
+          "matmult_mainstage_pct": 11.2
+        },
+        "validation": {
+          "snes_count": 75,
+          "steps_completed": 75,
+          "steps_match": true,
+          "ksp_count": 225,
+          "total_nl": 225,
+          "nl_match": true,
+          "pcapply_count": 2729,
+          "total_linear": 2729,
+          "linear_close": true,
+          "out_wall_total_s": 5735.2,
+          "profile_snes_s": 5730.8,
+          "wall_consistent": true
+        }
       }
     },
     {
@@ -29665,6 +33485,148 @@
       "pbs": {
         "memory_used": "1.03TB",
         "walltime_used": "00:50:44"
+      },
+      "profile": {
+        "file": "/Users/sghelichkhani/Workplace/morrow2026/parallel_scaling/results/murr_strong/vlumping_inexact_snapshot_lag3/s4.profile",
+        "events": {
+          "MatMult": {
+            "count": 3724,
+            "time_s": 327.31,
+            "time_ratio": 1.2,
+            "flop_max": 221000000000.0,
+            "mess": 8500000.0,
+            "reduct": 0.0,
+            "pct_time": 10,
+            "mflops": 269653.0
+          },
+          "MatAssemblyBegin": {
+            "count": 1186,
+            "time_s": 77.562,
+            "time_ratio": 3.3,
+            "flop_max": 0.0,
+            "mess": 520000.0,
+            "reduct": 980.0,
+            "pct_time": 2,
+            "mflops": -0.0
+          },
+          "MatAssemblyEnd": {
+            "count": 1186,
+            "time_s": 18.571,
+            "time_ratio": 20.6,
+            "flop_max": 369000000.0,
+            "mess": 9100.0,
+            "reduct": 17.0,
+            "pct_time": 0,
+            "mflops": 3251.0
+          },
+          "PCSetUp": {
+            "count": 225,
+            "time_s": 241.95,
+            "time_ratio": 1.0,
+            "flop_max": 172000000000.0,
+            "mess": 1900000.0,
+            "reduct": 1800.0,
+            "pct_time": 8,
+            "mflops": 283254.0
+          },
+          "PCApply": {
+            "count": 2728,
+            "time_s": 2015.1,
+            "time_ratio": 1.1,
+            "flop_max": 1350000000000.0,
+            "mess": 33000000.0,
+            "reduct": 3100.0,
+            "pct_time": 65,
+            "mflops": 267584.0
+          },
+          "KSPSetUp": {
+            "count": 225,
+            "time_s": 0.057681,
+            "time_ratio": 3.1,
+            "flop_max": 0.0,
+            "mess": 0.0,
+            "reduct": 0.0,
+            "pct_time": 0,
+            "mflops": -0.0
+          },
+          "KSPSolve": {
+            "count": 225,
+            "time_s": 2309.5,
+            "time_ratio": 1.0,
+            "flop_max": 1590000000000.0,
+            "mess": 40000000.0,
+            "reduct": 8800.0,
+            "pct_time": 76,
+            "mflops": 274397.0
+          },
+          "SNESSolve": {
+            "count": 75,
+            "time_s": 2949.8,
+            "time_ratio": 1.0,
+            "flop_max": 3200000000000.0,
+            "mess": 45000000.0,
+            "reduct": 12000.0,
+            "pct_time": 97,
+            "mflops": 429906.0
+          },
+          "SNESFunctionEval": {
+            "count": 300,
+            "time_s": 52.404,
+            "time_ratio": 1.1,
+            "flop_max": 556000000000.0,
+            "mess": 1500000.0,
+            "reduct": 0.0,
+            "pct_time": 2,
+            "mflops": 4149366.0
+          },
+          "SNESJacobianEval": {
+            "count": 225,
+            "time_s": 323.83,
+            "time_ratio": 1.0,
+            "flop_max": 874000000000.0,
+            "mess": 1000000.0,
+            "reduct": 900.0,
+            "pct_time": 11,
+            "mflops": 1056777.0
+          },
+          "PCSetUpOnBlocks": {
+            "count": 5456,
+            "time_s": 0.070184,
+            "time_ratio": 1.6,
+            "flop_max": 0.0,
+            "mess": 0.0,
+            "reduct": 0.0,
+            "pct_time": 0,
+            "mflops": -0.0
+          }
+        },
+        "nprocs": 416,
+        "wall_total_s": 3026.0,
+        "derived": {
+          "denominator": "SNESSolve",
+          "t_snes_s": 2949.8,
+          "pc_setup_s": 242.02,
+          "pc_setup_pct": 8.2,
+          "pc_apply_pct": 68.31,
+          "ksp_total_pct": 78.29,
+          "jacobian_pct": 10.98,
+          "function_pct": 1.78,
+          "matmult_mainstage_pct": 11.1
+        },
+        "validation": {
+          "snes_count": 75,
+          "steps_completed": 75,
+          "steps_match": true,
+          "ksp_count": 225,
+          "total_nl": 225,
+          "nl_match": true,
+          "pcapply_count": 2728,
+          "total_linear": 2728,
+          "linear_close": true,
+          "out_wall_total_s": 2952.0,
+          "profile_snes_s": 2949.8,
+          "wall_consistent": true
+        }
       }
     },
     {
@@ -30753,6 +34715,148 @@
       "pbs": {
         "memory_used": "1.26TB",
         "walltime_used": "00:31:07"
+      },
+      "profile": {
+        "file": "/Users/sghelichkhani/Workplace/morrow2026/parallel_scaling/results/murr_strong/vlumping_inexact_snapshot_lag3/s8.profile",
+        "events": {
+          "MatMult": {
+            "count": 3726,
+            "time_s": 169.64,
+            "time_ratio": 1.3,
+            "flop_max": 107000000000.0,
+            "mess": 18000000.0,
+            "reduct": 0.0,
+            "pct_time": 8,
+            "mflops": 520559.0
+          },
+          "MatAssemblyBegin": {
+            "count": 1186,
+            "time_s": 73.343,
+            "time_ratio": 2.2,
+            "flop_max": 0.0,
+            "mess": 1100000.0,
+            "reduct": 980.0,
+            "pct_time": 3,
+            "mflops": -0.0
+          },
+          "MatAssemblyEnd": {
+            "count": 1186,
+            "time_s": 20.188,
+            "time_ratio": 13.8,
+            "flop_max": 420000000.0,
+            "mess": 19000.0,
+            "reduct": 17.0,
+            "pct_time": 1,
+            "mflops": 5717.0
+          },
+          "PCSetUp": {
+            "count": 225,
+            "time_s": 188.34,
+            "time_ratio": 1.0,
+            "flop_max": 82700000000.0,
+            "mess": 4100000.0,
+            "reduct": 1800.0,
+            "pct_time": 10,
+            "mflops": 358524.0
+          },
+          "PCApply": {
+            "count": 2730,
+            "time_s": 1185.1,
+            "time_ratio": 1.0,
+            "flop_max": 658000000000.0,
+            "mess": 72000000.0,
+            "reduct": 3100.0,
+            "pct_time": 63,
+            "mflops": 450724.0
+          },
+          "KSPSetUp": {
+            "count": 225,
+            "time_s": 0.019069,
+            "time_ratio": 1.6,
+            "flop_max": 0.0,
+            "mess": 0.0,
+            "reduct": 0.0,
+            "pct_time": 0,
+            "mflops": -0.0
+          },
+          "KSPSolve": {
+            "count": 225,
+            "time_s": 1331.9,
+            "time_ratio": 1.0,
+            "flop_max": 772000000000.0,
+            "mess": 85000000.0,
+            "reduct": 8800.0,
+            "pct_time": 72,
+            "mflops": 472032.0
+          },
+          "SNESSolve": {
+            "count": 75,
+            "time_s": 1768.3,
+            "time_ratio": 1.0,
+            "flop_max": 1550000000000.0,
+            "mess": 96000000.0,
+            "reduct": 12000.0,
+            "pct_time": 96,
+            "mflops": 713760.0
+          },
+          "SNESFunctionEval": {
+            "count": 300,
+            "time_s": 33.9,
+            "time_ratio": 1.2,
+            "flop_max": 277000000000.0,
+            "mess": 3300000.0,
+            "reduct": 0.0,
+            "pct_time": 2,
+            "mflops": 6414534.0
+          },
+          "SNESJacobianEval": {
+            "count": 225,
+            "time_s": 202.4,
+            "time_ratio": 1.0,
+            "flop_max": 435000000000.0,
+            "mess": 2200000.0,
+            "reduct": 900.0,
+            "pct_time": 11,
+            "mflops": 1690805.0
+          },
+          "PCSetUpOnBlocks": {
+            "count": 5460,
+            "time_s": 0.067353,
+            "time_ratio": 1.8,
+            "flop_max": 0.0,
+            "mess": 0.0,
+            "reduct": 0.0,
+            "pct_time": 0,
+            "mflops": -0.0
+          }
+        },
+        "nprocs": 832,
+        "wall_total_s": 1841.0,
+        "derived": {
+          "denominator": "SNESSolve",
+          "t_snes_s": 1768.3,
+          "pc_setup_s": 188.407,
+          "pc_setup_pct": 10.65,
+          "pc_apply_pct": 67.02,
+          "ksp_total_pct": 75.32,
+          "jacobian_pct": 11.45,
+          "function_pct": 1.92,
+          "matmult_mainstage_pct": 9.59
+        },
+        "validation": {
+          "snes_count": 75,
+          "steps_completed": 75,
+          "steps_match": true,
+          "ksp_count": 225,
+          "total_nl": 225,
+          "nl_match": true,
+          "pcapply_count": 2730,
+          "total_linear": 2730,
+          "linear_close": true,
+          "out_wall_total_s": 1769.2,
+          "profile_snes_s": 1768.3,
+          "wall_consistent": true
+        }
       }
     },
     {

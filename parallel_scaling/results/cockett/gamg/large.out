@@ -3,9 +3,9 @@ Case: cockett
 Solver: gamg
 Scale: large
 Degree: 1
-Nodes: 8
-CPUs: 832
-Date: Fri Aug 21 22:57:30 AEST 2026
+Nodes: 4
+CPUs: 416
+Date: Tue Aug 25 22:04:25 AEST 2026
 G-ADOPT commit: 3ab20fabc820d68b6d1f820b80149bc8e452a7f4
 Morrow commit: b153bd39bb0aa4da6fa4255ec076a2a14fc030fc
 Driver SHA256: ba6abf3ce3388755b35208a104650d19c9d308d9f781cba9ec25e899ad444bb4
@@ -13,194 +13,6 @@ Solver SHA256: 0fae5ccb0c585016f61e4feecd9cd967f5a8c692c278ca3772963440bddc11b7
 Firedrake module: singularity:intel-compiler-llvm/2024.2.1:petsc/main-20260815:firedrake/main-20260806
 PETSC_OPTIONS: -log_view :/scratch/xd2/sg8812/morrow2026/parallel_scaling/results/cockett/gamg/large.profile
 ================
-Could not save font_manager cache Lock error: Matplotlib failed to acquire the following lock file:
-    /jobfs/176973758.gadi-pbs/matplotlib/fontlist-v3.11.0.json.matplotlib-lock
-This maybe due to another process holding this lock file.  If you are sure no
-other Matplotlib process is running, remove this file and try again.
-Could not save font_manager cache Lock error: Matplotlib failed to acquire the following lock file:
-    /jobfs/176973758.gadi-pbs/matplotlib/fontlist-v3.11.0.json.matplotlib-lock
-This maybe due to another process holding this lock file.  If you are sure no
-other Matplotlib process is running, remove this file and try again.
-Could not save font_manager cache Lock error: Matplotlib failed to acquire the following lock file:
-    /jobfs/176973758.gadi-pbs/matplotlib/fontlist-v3.11.0.json.matplotlib-lock
-This maybe due to another process holding this lock file.  If you are sure no
-other Matplotlib process is running, remove this file and try again.
-Could not save font_manager cache Lock error: Matplotlib failed to acquire the following lock file:
-    /jobfs/176973758.gadi-pbs/matplotlib/fontlist-v3.11.0.json.matplotlib-lock
-This maybe due to another process holding this lock file.  If you are sure no
-other Matplotlib process is running, remove this file and try again.
-Could not save font_manager cache Lock error: Matplotlib failed to acquire the following lock file:
-    /jobfs/176973758.gadi-pbs/matplotlib/fontlist-v3.11.0.json.matplotlib-lock
-This maybe due to another process holding this lock file.  If you are sure no
-other Matplotlib process is running, remove this file and try again.
-Could not save font_manager cache Lock error: Matplotlib failed to acquire the following lock file:
-    /jobfs/176973758.gadi-pbs/matplotlib/fontlist-v3.11.0.json.matplotlib-lock
-This maybe due to another process holding this lock file.  If you are sure no
-other Matplotlib process is running, remove this file and try again.
-Could not save font_manager cache Lock error: Matplotlib failed to acquire the following lock file:
-    /jobfs/176973758.gadi-pbs/matplotlib/fontlist-v3.11.0.json.matplotlib-lock
-This maybe due to another process holding this lock file.  If you are sure no
-other Matplotlib process is running, remove this file and try again.
-Could not save font_manager cache Lock error: Matplotlib failed to acquire the following lock file:
-    /jobfs/176973758.gadi-pbs/matplotlib/fontlist-v3.11.0.json.matplotlib-lock
-This maybe due to another process holding this lock file.  If you are sure no
-other Matplotlib process is running, remove this file and try again.
-Could not save font_manager cache Lock error: Matplotlib failed to acquire the following lock file:
-    /jobfs/176973758.gadi-pbs/matplotlib/fontlist-v3.11.0.json.matplotlib-lock
-This maybe due to another process holding this lock file.  If you are sure no
-other Matplotlib process is running, remove this file and try again.
-Could not save font_manager cache Lock error: Matplotlib failed to acquire the following lock file:
-    /jobfs/176973758.gadi-pbs/matplotlib/fontlist-v3.11.0.json.matplotlib-lock
-This maybe due to another process holding this lock file.  If you are sure no
-other Matplotlib process is running, remove this file and try again.
-Could not save font_manager cache Lock error: Matplotlib failed to acquire the following lock file:
-    /jobfs/176973758.gadi-pbs/matplotlib/fontlist-v3.11.0.json.matplotlib-lock
-This maybe due to another process holding this lock file.  If you are sure no
-other Matplotlib process is running, remove this file and try again.
-Could not save font_manager cache Lock error: Matplotlib failed to acquire the following lock file:
-    /jobfs/176973758.gadi-pbs/matplotlib/fontlist-v3.11.0.json.matplotlib-lock
-This maybe due to another process holding this lock file.  If you are sure no
-other Matplotlib process is running, remove this file and try again.
-Could not save font_manager cache Lock error: Matplotlib failed to acquire the following lock file:
-    /jobfs/176973758.gadi-pbs/matplotlib/fontlist-v3.11.0.json.matplotlib-lock
-This maybe due to another process holding this lock file.  If you are sure no
-other Matplotlib process is running, remove this file and try again.
-Could not save font_manager cache Lock error: Matplotlib failed to acquire the following lock file:
-    /jobfs/176973758.gadi-pbs/matplotlib/fontlist-v3.11.0.json.matplotlib-lock
-This maybe due to another process holding this lock file.  If you are sure no
-other Matplotlib process is running, remove this file and try again.
-Could not save font_manager cache Lock error: Matplotlib failed to acquire the following lock file:
-    /jobfs/176973758.gadi-pbs/matplotlib/fontlist-v3.11.0.json.matplotlib-lock
-This maybe due to another process holding this lock file.  If you are sure no
-other Matplotlib process is running, remove this file and try again.
-Could not save font_manager cache Lock error: Matplotlib failed to acquire the following lock file:
-    /jobfs/176973758.gadi-pbs/matplotlib/fontlist-v3.11.0.json.matplotlib-lock
-This maybe due to another process holding this lock file.  If you are sure no
-other Matplotlib process is running, remove this file and try again.
-Could not save font_manager cache Lock error: Matplotlib failed to acquire the following lock file:
-    /jobfs/176973758.gadi-pbs/matplotlib/fontlist-v3.11.0.json.matplotlib-lock
-This maybe due to another process holding this lock file.  If you are sure no
-other Matplotlib process is running, remove this file and try again.
-Could not save font_manager cache Lock error: Matplotlib failed to acquire the following lock file:
-    /jobfs/176973758.gadi-pbs/matplotlib/fontlist-v3.11.0.json.matplotlib-lock
-This maybe due to another process holding this lock file.  If you are sure no
-other Matplotlib process is running, remove this file and try again.
-Could not save font_manager cache Lock error: Matplotlib failed to acquire the following lock file:
-    /jobfs/176973758.gadi-pbs/matplotlib/fontlist-v3.11.0.json.matplotlib-lock
-This maybe due to another process holding this lock file.  If you are sure no
-other Matplotlib process is running, remove this file and try again.
-Could not save font_manager cache Lock error: Matplotlib failed to acquire the following lock file:
-    /jobfs/176973758.gadi-pbs/matplotlib/fontlist-v3.11.0.json.matplotlib-lock
-This maybe due to another process holding this lock file.  If you are sure no
-other Matplotlib process is running, remove this file and try again.
-Could not save font_manager cache Lock error: Matplotlib failed to acquire the following lock file:
-    /jobfs/176973758.gadi-pbs/matplotlib/fontlist-v3.11.0.json.matplotlib-lock
-This maybe due to another process holding this lock file.  If you are sure no
-other Matplotlib process is running, remove this file and try again.
-Could not save font_manager cache Lock error: Matplotlib failed to acquire the following lock file:
-    /jobfs/176973758.gadi-pbs/matplotlib/fontlist-v3.11.0.json.matplotlib-lock
-This maybe due to another process holding this lock file.  If you are sure no
-other Matplotlib process is running, remove this file and try again.
-Could not save font_manager cache Lock error: Matplotlib failed to acquire the following lock file:
-    /jobfs/176973758.gadi-pbs/matplotlib/fontlist-v3.11.0.json.matplotlib-lock
-This maybe due to another process holding this lock file.  If you are sure no
-other Matplotlib process is running, remove this file and try again.
-Could not save font_manager cache Lock error: Matplotlib failed to acquire the following lock file:
-    /jobfs/176973758.gadi-pbs/matplotlib/fontlist-v3.11.0.json.matplotlib-lock
-This maybe due to another process holding this lock file.  If you are sure no
-other Matplotlib process is running, remove this file and try again.
-Could not save font_manager cache Lock error: Matplotlib failed to acquire the following lock file:
-    /jobfs/176973758.gadi-pbs/matplotlib/fontlist-v3.11.0.json.matplotlib-lock
-This maybe due to another process holding this lock file.  If you are sure no
-other Matplotlib process is running, remove this file and try again.
-Could not save font_manager cache Lock error: Matplotlib failed to acquire the following lock file:
-    /jobfs/176973758.gadi-pbs/matplotlib/fontlist-v3.11.0.json.matplotlib-lock
-This maybe due to another process holding this lock file.  If you are sure no
-other Matplotlib process is running, remove this file and try again.
-Could not save font_manager cache Lock error: Matplotlib failed to acquire the following lock file:
-    /jobfs/176973758.gadi-pbs/matplotlib/fontlist-v3.11.0.json.matplotlib-lock
-This maybe due to another process holding this lock file.  If you are sure no
-other Matplotlib process is running, remove this file and try again.
-Could not save font_manager cache Lock error: Matplotlib failed to acquire the following lock file:
-    /jobfs/176973758.gadi-pbs/matplotlib/fontlist-v3.11.0.json.matplotlib-lock
-This maybe due to another process holding this lock file.  If you are sure no
-other Matplotlib process is running, remove this file and try again.
-Could not save font_manager cache Lock error: Matplotlib failed to acquire the following lock file:
-    /jobfs/176973758.gadi-pbs/matplotlib/fontlist-v3.11.0.json.matplotlib-lock
-This maybe due to another process holding this lock file.  If you are sure no
-other Matplotlib process is running, remove this file and try again.
-Could not save font_manager cache Lock error: Matplotlib failed to acquire the following lock file:
-    /jobfs/176973758.gadi-pbs/matplotlib/fontlist-v3.11.0.json.matplotlib-lock
-This maybe due to another process holding this lock file.  If you are sure no
-other Matplotlib process is running, remove this file and try again.
-Could not save font_manager cache Lock error: Matplotlib failed to acquire the following lock file:
-    /jobfs/176973758.gadi-pbs/matplotlib/fontlist-v3.11.0.json.matplotlib-lock
-This maybe due to another process holding this lock file.  If you are sure no
-other Matplotlib process is running, remove this file and try again.
-Could not save font_manager cache Lock error: Matplotlib failed to acquire the following lock file:
-    /jobfs/176973758.gadi-pbs/matplotlib/fontlist-v3.11.0.json.matplotlib-lock
-This maybe due to another process holding this lock file.  If you are sure no
-other Matplotlib process is running, remove this file and try again.
-Could not save font_manager cache Lock error: Matplotlib failed to acquire the following lock file:
-    /jobfs/176973758.gadi-pbs/matplotlib/fontlist-v3.11.0.json.matplotlib-lock
-This maybe due to another process holding this lock file.  If you are sure no
-other Matplotlib process is running, remove this file and try again.
-Could not save font_manager cache Lock error: Matplotlib failed to acquire the following lock file:
-    /jobfs/176973758.gadi-pbs/matplotlib/fontlist-v3.11.0.json.matplotlib-lock
-This maybe due to another process holding this lock file.  If you are sure no
-other Matplotlib process is running, remove this file and try again.
-Could not save font_manager cache Lock error: Matplotlib failed to acquire the following lock file:
-    /jobfs/176973758.gadi-pbs/matplotlib/fontlist-v3.11.0.json.matplotlib-lock
-This maybe due to another process holding this lock file.  If you are sure no
-other Matplotlib process is running, remove this file and try again.
-Could not save font_manager cache Lock error: Matplotlib failed to acquire the following lock file:
-    /jobfs/176973758.gadi-pbs/matplotlib/fontlist-v3.11.0.json.matplotlib-lock
-This maybe due to another process holding this lock file.  If you are sure no
-other Matplotlib process is running, remove this file and try again.
-Could not save font_manager cache Lock error: Matplotlib failed to acquire the following lock file:
-    /jobfs/176973758.gadi-pbs/matplotlib/fontlist-v3.11.0.json.matplotlib-lock
-This maybe due to another process holding this lock file.  If you are sure no
-other Matplotlib process is running, remove this file and try again.
-Could not save font_manager cache Lock error: Matplotlib failed to acquire the following lock file:
-    /jobfs/176973758.gadi-pbs/matplotlib/fontlist-v3.11.0.json.matplotlib-lock
-This maybe due to another process holding this lock file.  If you are sure no
-other Matplotlib process is running, remove this file and try again.
-Could not save font_manager cache Lock error: Matplotlib failed to acquire the following lock file:
-    /jobfs/176973758.gadi-pbs/matplotlib/fontlist-v3.11.0.json.matplotlib-lock
-This maybe due to another process holding this lock file.  If you are sure no
-other Matplotlib process is running, remove this file and try again.
-Could not save font_manager cache Lock error: Matplotlib failed to acquire the following lock file:
-    /jobfs/176973758.gadi-pbs/matplotlib/fontlist-v3.11.0.json.matplotlib-lock
-This maybe due to another process holding this lock file.  If you are sure no
-other Matplotlib process is running, remove this file and try again.
-Could not save font_manager cache Lock error: Matplotlib failed to acquire the following lock file:
-    /jobfs/176973758.gadi-pbs/matplotlib/fontlist-v3.11.0.json.matplotlib-lock
-This maybe due to another process holding this lock file.  If you are sure no
-other Matplotlib process is running, remove this file and try again.
-Could not save font_manager cache Lock error: Matplotlib failed to acquire the following lock file:
-    /jobfs/176973758.gadi-pbs/matplotlib/fontlist-v3.11.0.json.matplotlib-lock
-This maybe due to another process holding this lock file.  If you are sure no
-other Matplotlib process is running, remove this file and try again.
-Could not save font_manager cache Lock error: Matplotlib failed to acquire the following lock file:
-    /jobfs/176973758.gadi-pbs/matplotlib/fontlist-v3.11.0.json.matplotlib-lock
-This maybe due to another process holding this lock file.  If you are sure no
-other Matplotlib process is running, remove this file and try again.
-Could not save font_manager cache Lock error: Matplotlib failed to acquire the following lock file:
-    /jobfs/176973758.gadi-pbs/matplotlib/fontlist-v3.11.0.json.matplotlib-lock
-This maybe due to another process holding this lock file.  If you are sure no
-other Matplotlib process is running, remove this file and try again.
-Could not save font_manager cache Lock error: Matplotlib failed to acquire the following lock file:
-    /jobfs/176973758.gadi-pbs/matplotlib/fontlist-v3.11.0.json.matplotlib-lock
-This maybe due to another process holding this lock file.  If you are sure no
-other Matplotlib process is running, remove this file and try again.
-Could not save font_manager cache Lock error: Matplotlib failed to acquire the following lock file:
-    /jobfs/176973758.gadi-pbs/matplotlib/fontlist-v3.11.0.json.matplotlib-lock
-This maybe due to another process holding this lock file.  If you are sure no
-other Matplotlib process is running, remove this file and try again.
-Could not save font_manager cache Lock error: Matplotlib failed to acquire the following lock file:
-    /jobfs/176973758.gadi-pbs/matplotlib/fontlist-v3.11.0.json.matplotlib-lock
-This maybe due to another process holding this lock file.  If you are sure no
-other Matplotlib process is running, remove this file and try again.
 Matplotlib is building the font cache; this may take a moment.
 Matplotlib is building the font cache; this may take a moment.
 Matplotlib is building the font cache; this may take a moment.
@@ -502,66 +314,11 @@ Matplotlib is building the font cache; this may take a moment.
 Matplotlib is building the font cache; this may take a moment.
 Matplotlib is building the font cache; this may take a moment.
 Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Matplotlib is building the font cache; this may take a moment.
-Number of degrees of freedom: 143769600
-Mesh: 240x240x312, DQ1
+Number of degrees of freedom: 72843264
+Mesh: 192x192x247, DQ1
 Time stepper: BackwardEuler, dt = 300.0 s, steps = 30
 Solver: gamg
 Solver parameters: {'ksp_type': 'gmres', 'ksp_pc_side': 'right', 'ksp_rtol': 0.0001, 'ksp_max_it': 200, 'ksp_gmres_restart': 30, 'pc_type': 'gamg', 'pc_gamg_type': 'agg', 'pc_gamg_threshold': 0.02, 'pc_gamg_aggressive_coarsening': 1, 'pc_gamg_coarse_eq_limit': 1000, 'pc_gamg_process_eq_limit': 50, 'pc_gamg_agg_nsmooths': 1, 'pc_gamg_reuse_interpolation': True, 'mg_levels_ksp_type': 'chebyshev', 'mg_levels_ksp_max_it': 2, 'mg_levels_ksp_convergence_test': 'skip', 'mg_levels_pc_type': 'bjacobi', 'mg_levels_sub_pc_type': 'ilu', 'mg_levels_sub_pc_factor_levels': 0, 'mg_coarse_ksp_type': 'gmres', 'mg_coarse_ksp_max_it': 30, 'mg_coarse_pc_type': 'bjacobi', 'mg_coarse_sub_pc_type': 'ilu', 'snes_type': 'newtonls', 'snes_linesearch_type': 'bt', 'snes_rtol': 1e-08, 'snes_atol': 1e-12, 'snes_stol': 1e-08, 'snes_max_it': 50}
-                  Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
-                  Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
-                  Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
-                  Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
-                  Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
-                  Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
-                  Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
-                  Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
-                  Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
-                  Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
-                  Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
-                  Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
-                  Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
-                  Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
-                  Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
-                  Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
-                  Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
-                  Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
-                  Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
-                  Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
-                  Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
-    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 20
-                  Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
-                  Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
-                  Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
-                  Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
-                  Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
-                  Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
-                  Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
-                  Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
-                  Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
-                  Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
-                  Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
-                  Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
-                  Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
-                  Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
-                  Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
-                  Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
-                  Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
-                  Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
-                  Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
-                  Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
-                  Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
-    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 20
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
@@ -600,9 +357,45 @@ Solver parameters: {'ksp_type': 'gmres', 'ksp_pc_side': 'right', 'ksp_rtol': 0.0
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
-    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 17
+                  Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 18
+                  Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
+                  Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
+                  Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
+                  Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
+                  Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
+                  Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
+                  Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
+                  Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
+                  Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
+                  Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
+                  Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
+                  Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
+                  Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
+                  Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
+                  Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
+                  Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
+                  Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 16
+                  Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
+                  Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
+                  Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
+                  Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
+                  Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
+                  Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
+                  Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
+                  Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
+                  Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
+                  Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
+                  Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
+                  Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
+                  Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
+                  Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
+                  Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
+                  Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 15
   Nonlinear BackwardEuler-Equation_ solve converged due to CONVERGED_FNORM_ABS iterations 4
-t = 300.00 s | step 1/30 | wall 237.13 s | NL 4 | L 75
+t = 300.00 s | step 1/30 | wall 202.18 s | NL 4 | L 67
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
@@ -623,10 +416,10 @@ t = 300.00 s | step 1/30 | wall 237.13 s | NL 4 | L 75
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 19
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
-    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 22
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
@@ -644,13 +437,13 @@ t = 300.00 s | step 1/30 | wall 237.13 s | NL 4 | L 75
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 19
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
-    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 22
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
@@ -665,18 +458,9 @@ t = 300.00 s | step 1/30 | wall 237.13 s | NL 4 | L 75
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
-                  Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
-                  Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
-                  Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
-                  Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
-                  Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
-                  Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
-                  Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
-                  Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
-                  Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
-    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 22
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 19
   Nonlinear BackwardEuler-Equation_ solve converged due to CONVERGED_FNORM_ABS iterations 3
-t = 600.00 s | step 2/30 | wall 138.98 s | NL 3 | L 66
+t = 600.00 s | step 2/30 | wall 112.28 s | NL 3 | L 57
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
@@ -697,10 +481,10 @@ t = 600.00 s | step 2/30 | wall 138.98 s | NL 3 | L 66
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 19
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
-    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 22
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
@@ -718,6 +502,7 @@ t = 600.00 s | step 2/30 | wall 138.98 s | NL 3 | L 66
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 19
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
@@ -725,7 +510,6 @@ t = 600.00 s | step 2/30 | wall 138.98 s | NL 3 | L 66
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
-    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 23
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
@@ -739,19 +523,9 @@ t = 600.00 s | step 2/30 | wall 138.98 s | NL 3 | L 66
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
-                  Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
-                  Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
-                  Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
-                  Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
-                  Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
-                  Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
-                  Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
-                  Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
-                  Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
-                  Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
-    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 22
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 19
   Nonlinear BackwardEuler-Equation_ solve converged due to CONVERGED_FNORM_ABS iterations 3
-t = 900.00 s | step 3/30 | wall 140.45 s | NL 3 | L 67
+t = 900.00 s | step 3/30 | wall 112.78 s | NL 3 | L 57
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
@@ -772,10 +546,10 @@ t = 900.00 s | step 3/30 | wall 140.45 s | NL 3 | L 67
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 19
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
-    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 22
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
@@ -794,13 +568,13 @@ t = 900.00 s | step 3/30 | wall 140.45 s | NL 3 | L 67
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 20
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
-    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 23
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
@@ -816,18 +590,9 @@ t = 900.00 s | step 3/30 | wall 140.45 s | NL 3 | L 67
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
-                  Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
-                  Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
-                  Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
-                  Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
-                  Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
-                  Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
-                  Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
-                  Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
-                  Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
-    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 23
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 20
   Nonlinear BackwardEuler-Equation_ solve converged due to CONVERGED_FNORM_ABS iterations 3
-t = 1200.00 s | step 4/30 | wall 140.49 s | NL 3 | L 68
+t = 1200.00 s | step 4/30 | wall 113.86 s | NL 3 | L 59
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
@@ -848,11 +613,11 @@ t = 1200.00 s | step 4/30 | wall 140.49 s | NL 3 | L 68
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 19
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
-    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 23
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
@@ -870,6 +635,7 @@ t = 1200.00 s | step 4/30 | wall 140.49 s | NL 3 | L 68
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 20
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
@@ -877,7 +643,6 @@ t = 1200.00 s | step 4/30 | wall 140.49 s | NL 3 | L 68
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
-    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 23
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
@@ -892,19 +657,9 @@ t = 1200.00 s | step 4/30 | wall 140.49 s | NL 3 | L 68
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
-                  Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
-                  Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
-                  Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
-                  Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
-                  Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
-                  Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
-                  Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
-                  Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
-                  Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
-                  Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
-    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 23
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 20
   Nonlinear BackwardEuler-Equation_ solve converged due to CONVERGED_FNORM_ABS iterations 3
-t = 1500.00 s | step 5/30 | wall 140.67 s | NL 3 | L 69
+t = 1500.00 s | step 5/30 | wall 113.49 s | NL 3 | L 59
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
@@ -925,11 +680,11 @@ t = 1500.00 s | step 5/30 | wall 140.67 s | NL 3 | L 69
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 19
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
-    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 23
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
@@ -947,6 +702,7 @@ t = 1500.00 s | step 5/30 | wall 140.67 s | NL 3 | L 69
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 20
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
@@ -954,7 +710,6 @@ t = 1500.00 s | step 5/30 | wall 140.67 s | NL 3 | L 69
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
-    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 23
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
@@ -969,19 +724,9 @@ t = 1500.00 s | step 5/30 | wall 140.67 s | NL 3 | L 69
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
-                  Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
-                  Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
-                  Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
-                  Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
-                  Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
-                  Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
-                  Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
-                  Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
-                  Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
-                  Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
-    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 23
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 20
   Nonlinear BackwardEuler-Equation_ solve converged due to CONVERGED_FNORM_ABS iterations 3
-t = 1800.00 s | step 6/30 | wall 140.62 s | NL 3 | L 69
+t = 1800.00 s | step 6/30 | wall 112.25 s | NL 3 | L 59
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
@@ -1002,11 +747,11 @@ t = 1800.00 s | step 6/30 | wall 140.62 s | NL 3 | L 69
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 19
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
-    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 23
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
@@ -1024,6 +769,7 @@ t = 1800.00 s | step 6/30 | wall 140.62 s | NL 3 | L 69
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 20
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
@@ -1032,7 +778,6 @@ t = 1800.00 s | step 6/30 | wall 140.62 s | NL 3 | L 69
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
-    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 24
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
@@ -1046,20 +791,9 @@ t = 1800.00 s | step 6/30 | wall 140.62 s | NL 3 | L 69
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
-                  Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
-                  Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
-                  Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
-                  Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
-                  Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
-                  Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
-                  Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
-                  Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
-                  Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
-                  Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
-                  Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
-    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 23
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 20
   Nonlinear BackwardEuler-Equation_ solve converged due to CONVERGED_FNORM_ABS iterations 3
-t = 2100.00 s | step 7/30 | wall 140.74 s | NL 3 | L 70
+t = 2100.00 s | step 7/30 | wall 113.80 s | NL 3 | L 59
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
@@ -1080,11 +814,11 @@ t = 2100.00 s | step 7/30 | wall 140.74 s | NL 3 | L 70
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 19
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
-    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 23
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
@@ -1102,6 +836,7 @@ t = 2100.00 s | step 7/30 | wall 140.74 s | NL 3 | L 70
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 20
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
@@ -1110,7 +845,6 @@ t = 2100.00 s | step 7/30 | wall 140.74 s | NL 3 | L 70
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
-    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 24
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
@@ -1124,20 +858,9 @@ t = 2100.00 s | step 7/30 | wall 140.74 s | NL 3 | L 70
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
-                  Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
-                  Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
-                  Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
-                  Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
-                  Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
-                  Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
-                  Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
-                  Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
-                  Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
-                  Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
-                  Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
-    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 23
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 20
   Nonlinear BackwardEuler-Equation_ solve converged due to CONVERGED_FNORM_ABS iterations 3
-t = 2400.00 s | step 8/30 | wall 140.72 s | NL 3 | L 70
+t = 2400.00 s | step 8/30 | wall 112.05 s | NL 3 | L 59
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
@@ -1158,11 +881,11 @@ t = 2400.00 s | step 8/30 | wall 140.72 s | NL 3 | L 70
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 19
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
-    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 23
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
@@ -1180,6 +903,7 @@ t = 2400.00 s | step 8/30 | wall 140.72 s | NL 3 | L 70
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 20
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
@@ -1188,7 +912,6 @@ t = 2400.00 s | step 8/30 | wall 140.72 s | NL 3 | L 70
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
-    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 24
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
@@ -1202,21 +925,9 @@ t = 2400.00 s | step 8/30 | wall 140.72 s | NL 3 | L 70
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
-                  Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
-                  Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
-                  Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
-                  Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
-                  Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
-                  Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
-                  Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
-                  Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
-                  Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
-                  Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
-                  Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
-                  Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
-    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 24
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 20
   Nonlinear BackwardEuler-Equation_ solve converged due to CONVERGED_FNORM_ABS iterations 3
-t = 2700.00 s | step 9/30 | wall 140.92 s | NL 3 | L 71
+t = 2700.00 s | step 9/30 | wall 113.47 s | NL 3 | L 59
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
@@ -1237,11 +948,11 @@ t = 2700.00 s | step 9/30 | wall 140.92 s | NL 3 | L 71
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 19
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
-    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 23
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
@@ -1259,6 +970,7 @@ t = 2700.00 s | step 9/30 | wall 140.92 s | NL 3 | L 71
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 20
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
@@ -1267,7 +979,6 @@ t = 2700.00 s | step 9/30 | wall 140.92 s | NL 3 | L 71
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
-    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 24
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
@@ -1281,21 +992,9 @@ t = 2700.00 s | step 9/30 | wall 140.92 s | NL 3 | L 71
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
-                  Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
-                  Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
-                  Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
-                  Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
-                  Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
-                  Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
-                  Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
-                  Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
-                  Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
-                  Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
-                  Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
-                  Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
-    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 24
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 20
   Nonlinear BackwardEuler-Equation_ solve converged due to CONVERGED_FNORM_ABS iterations 3
-t = 3000.00 s | step 10/30 | wall 141.18 s | NL 3 | L 71
+t = 3000.00 s | step 10/30 | wall 112.51 s | NL 3 | L 59
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
@@ -1316,11 +1015,11 @@ t = 3000.00 s | step 10/30 | wall 141.18 s | NL 3 | L 71
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 19
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
-    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 23
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
@@ -1338,6 +1037,7 @@ t = 3000.00 s | step 10/30 | wall 141.18 s | NL 3 | L 71
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 20
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
@@ -1346,7 +1046,6 @@ t = 3000.00 s | step 10/30 | wall 141.18 s | NL 3 | L 71
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
-    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 24
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
@@ -1360,21 +1059,9 @@ t = 3000.00 s | step 10/30 | wall 141.18 s | NL 3 | L 71
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
-                  Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
-                  Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
-                  Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
-                  Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
-                  Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
-                  Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
-                  Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
-                  Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
-                  Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
-                  Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
-                  Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
-                  Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
-    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 24
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 20
   Nonlinear BackwardEuler-Equation_ solve converged due to CONVERGED_FNORM_ABS iterations 3
-t = 3300.00 s | step 11/30 | wall 140.53 s | NL 3 | L 71
+t = 3300.00 s | step 11/30 | wall 113.26 s | NL 3 | L 59
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
@@ -1395,11 +1082,11 @@ t = 3300.00 s | step 11/30 | wall 140.53 s | NL 3 | L 71
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 19
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
-    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 23
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
@@ -1417,6 +1104,7 @@ t = 3300.00 s | step 11/30 | wall 140.53 s | NL 3 | L 71
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 20
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
@@ -1425,7 +1113,6 @@ t = 3300.00 s | step 11/30 | wall 140.53 s | NL 3 | L 71
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
-    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 24
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
@@ -1439,21 +1126,9 @@ t = 3300.00 s | step 11/30 | wall 140.53 s | NL 3 | L 71
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
-                  Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
-                  Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
-                  Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
-                  Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
-                  Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
-                  Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
-                  Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
-                  Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
-                  Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
-                  Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
-                  Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
-                  Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
-    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 24
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 20
   Nonlinear BackwardEuler-Equation_ solve converged due to CONVERGED_FNORM_ABS iterations 3
-t = 3600.00 s | step 12/30 | wall 141.20 s | NL 3 | L 71
+t = 3600.00 s | step 12/30 | wall 112.53 s | NL 3 | L 59
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
@@ -1474,11 +1149,11 @@ t = 3600.00 s | step 12/30 | wall 141.20 s | NL 3 | L 71
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 19
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
-    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 23
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
@@ -1496,6 +1171,7 @@ t = 3600.00 s | step 12/30 | wall 141.20 s | NL 3 | L 71
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 20
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
@@ -1504,7 +1180,6 @@ t = 3600.00 s | step 12/30 | wall 141.20 s | NL 3 | L 71
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
-    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 24
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
@@ -1518,21 +1193,9 @@ t = 3600.00 s | step 12/30 | wall 141.20 s | NL 3 | L 71
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
-                  Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
-                  Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
-                  Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
-                  Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
-                  Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
-                  Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
-                  Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
-                  Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
-                  Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
-                  Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
-                  Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
-                  Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
-    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 24
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 20
   Nonlinear BackwardEuler-Equation_ solve converged due to CONVERGED_FNORM_ABS iterations 3
-t = 3900.00 s | step 13/30 | wall 141.22 s | NL 3 | L 71
+t = 3900.00 s | step 13/30 | wall 113.44 s | NL 3 | L 59
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
@@ -1553,11 +1216,11 @@ t = 3900.00 s | step 13/30 | wall 141.22 s | NL 3 | L 71
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 19
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
-    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 23
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
@@ -1575,6 +1238,7 @@ t = 3900.00 s | step 13/30 | wall 141.22 s | NL 3 | L 71
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 20
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
@@ -1583,7 +1247,6 @@ t = 3900.00 s | step 13/30 | wall 141.22 s | NL 3 | L 71
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
-    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 24
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
@@ -1597,21 +1260,9 @@ t = 3900.00 s | step 13/30 | wall 141.22 s | NL 3 | L 71
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
-                  Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
-                  Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
-                  Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
-                  Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
-                  Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
-                  Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
-                  Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
-                  Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
-                  Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
-                  Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
-                  Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
-                  Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
-    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 24
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 20
   Nonlinear BackwardEuler-Equation_ solve converged due to CONVERGED_FNORM_ABS iterations 3
-t = 4200.00 s | step 14/30 | wall 140.46 s | NL 3 | L 71
+t = 4200.00 s | step 14/30 | wall 112.40 s | NL 3 | L 59
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
@@ -1632,11 +1283,11 @@ t = 4200.00 s | step 14/30 | wall 140.46 s | NL 3 | L 71
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 19
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
-    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 23
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
@@ -1654,6 +1305,7 @@ t = 4200.00 s | step 14/30 | wall 140.46 s | NL 3 | L 71
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 20
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
@@ -1662,7 +1314,6 @@ t = 4200.00 s | step 14/30 | wall 140.46 s | NL 3 | L 71
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
-    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 24
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
@@ -1677,20 +1328,9 @@ t = 4200.00 s | step 14/30 | wall 140.46 s | NL 3 | L 71
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
-                  Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
-                  Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
-                  Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
-                  Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
-                  Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
-                  Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
-                  Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
-                  Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
-                  Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
-                  Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
-                  Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
-    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 24
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 21
   Nonlinear BackwardEuler-Equation_ solve converged due to CONVERGED_FNORM_ABS iterations 3
-t = 4500.00 s | step 15/30 | wall 141.39 s | NL 3 | L 71
+t = 4500.00 s | step 15/30 | wall 113.56 s | NL 3 | L 60
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
@@ -1711,11 +1351,11 @@ t = 4500.00 s | step 15/30 | wall 141.39 s | NL 3 | L 71
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 19
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
-    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 23
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
@@ -1733,6 +1373,7 @@ t = 4500.00 s | step 15/30 | wall 141.39 s | NL 3 | L 71
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 20
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
@@ -1741,7 +1382,6 @@ t = 4500.00 s | step 15/30 | wall 141.39 s | NL 3 | L 71
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
-    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 24
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
@@ -1756,20 +1396,9 @@ t = 4500.00 s | step 15/30 | wall 141.39 s | NL 3 | L 71
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
-                  Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
-                  Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
-                  Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
-                  Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
-                  Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
-                  Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
-                  Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
-                  Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
-                  Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
-                  Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
-                  Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
-    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 24
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 21
   Nonlinear BackwardEuler-Equation_ solve converged due to CONVERGED_FNORM_ABS iterations 3
-t = 4800.00 s | step 16/30 | wall 140.27 s | NL 3 | L 71
+t = 4800.00 s | step 16/30 | wall 112.10 s | NL 3 | L 60
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
@@ -1790,11 +1419,11 @@ t = 4800.00 s | step 16/30 | wall 140.27 s | NL 3 | L 71
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 19
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
-    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 23
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
@@ -1812,6 +1441,7 @@ t = 4800.00 s | step 16/30 | wall 140.27 s | NL 3 | L 71
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 20
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
@@ -1820,7 +1450,6 @@ t = 4800.00 s | step 16/30 | wall 140.27 s | NL 3 | L 71
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
-    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 24
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
@@ -1835,20 +1464,9 @@ t = 4800.00 s | step 16/30 | wall 140.27 s | NL 3 | L 71
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
-                  Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
-                  Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
-                  Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
-                  Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
-                  Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
-                  Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
-                  Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
-                  Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
-                  Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
-                  Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
-                  Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
-    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 24
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 21
   Nonlinear BackwardEuler-Equation_ solve converged due to CONVERGED_FNORM_ABS iterations 3
-t = 5100.00 s | step 17/30 | wall 140.45 s | NL 3 | L 71
+t = 5100.00 s | step 17/30 | wall 113.66 s | NL 3 | L 60
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
@@ -1869,11 +1487,11 @@ t = 5100.00 s | step 17/30 | wall 140.45 s | NL 3 | L 71
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 19
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
-    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 23
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
@@ -1891,6 +1509,7 @@ t = 5100.00 s | step 17/30 | wall 140.45 s | NL 3 | L 71
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 20
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
@@ -1899,7 +1518,6 @@ t = 5100.00 s | step 17/30 | wall 140.45 s | NL 3 | L 71
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
-    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 24
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
@@ -1914,20 +1532,9 @@ t = 5100.00 s | step 17/30 | wall 140.45 s | NL 3 | L 71
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
-                  Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
-                  Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
-                  Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
-                  Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
-                  Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
-                  Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
-                  Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
-                  Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
-                  Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
-                  Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
-                  Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
-    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 24
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 21
   Nonlinear BackwardEuler-Equation_ solve converged due to CONVERGED_FNORM_ABS iterations 3
-t = 5400.00 s | step 18/30 | wall 141.50 s | NL 3 | L 71
+t = 5400.00 s | step 18/30 | wall 112.13 s | NL 3 | L 60
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
@@ -1948,11 +1555,11 @@ t = 5400.00 s | step 18/30 | wall 141.50 s | NL 3 | L 71
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 19
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
-    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 23
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
@@ -1970,6 +1577,7 @@ t = 5400.00 s | step 18/30 | wall 141.50 s | NL 3 | L 71
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 20
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
@@ -1978,7 +1586,6 @@ t = 5400.00 s | step 18/30 | wall 141.50 s | NL 3 | L 71
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
-    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 24
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
@@ -1993,20 +1600,9 @@ t = 5400.00 s | step 18/30 | wall 141.50 s | NL 3 | L 71
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
-                  Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
-                  Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
-                  Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
-                  Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
-                  Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
-                  Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
-                  Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
-                  Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
-                  Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
-                  Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
-                  Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
-    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 24
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 21
   Nonlinear BackwardEuler-Equation_ solve converged due to CONVERGED_FNORM_ABS iterations 3
-t = 5700.00 s | step 19/30 | wall 140.30 s | NL 3 | L 71
+t = 5700.00 s | step 19/30 | wall 113.64 s | NL 3 | L 60
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
@@ -2027,10 +1623,10 @@ t = 5700.00 s | step 19/30 | wall 140.30 s | NL 3 | L 71
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 19
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
-    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 22
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
@@ -2049,6 +1645,7 @@ t = 5700.00 s | step 19/30 | wall 140.30 s | NL 3 | L 71
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 20
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
@@ -2056,7 +1653,6 @@ t = 5700.00 s | step 19/30 | wall 140.30 s | NL 3 | L 71
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
-    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 24
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
@@ -2072,19 +1668,9 @@ t = 5700.00 s | step 19/30 | wall 140.30 s | NL 3 | L 71
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
-                  Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
-                  Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
-                  Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
-                  Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
-                  Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
-                  Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
-                  Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
-                  Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
-                  Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
-                  Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
-    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 24
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 21
   Nonlinear BackwardEuler-Equation_ solve converged due to CONVERGED_FNORM_ABS iterations 3
-t = 6000.00 s | step 20/30 | wall 140.98 s | NL 3 | L 70
+t = 6000.00 s | step 20/30 | wall 112.85 s | NL 3 | L 60
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
@@ -2105,10 +1691,10 @@ t = 6000.00 s | step 20/30 | wall 140.98 s | NL 3 | L 70
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 19
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
-    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 22
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
@@ -2127,6 +1713,7 @@ t = 6000.00 s | step 20/30 | wall 140.98 s | NL 3 | L 70
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 20
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
@@ -2134,7 +1721,6 @@ t = 6000.00 s | step 20/30 | wall 140.98 s | NL 3 | L 70
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
-    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 24
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
@@ -2150,19 +1736,9 @@ t = 6000.00 s | step 20/30 | wall 140.98 s | NL 3 | L 70
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
-                  Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
-                  Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
-                  Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
-                  Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
-                  Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
-                  Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
-                  Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
-                  Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
-                  Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
-                  Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
-    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 24
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 21
   Nonlinear BackwardEuler-Equation_ solve converged due to CONVERGED_FNORM_ABS iterations 3
-t = 6300.00 s | step 21/30 | wall 139.98 s | NL 3 | L 70
+t = 6300.00 s | step 21/30 | wall 113.36 s | NL 3 | L 60
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
@@ -2183,10 +1759,10 @@ t = 6300.00 s | step 21/30 | wall 139.98 s | NL 3 | L 70
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 19
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
-    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 22
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
@@ -2205,6 +1781,7 @@ t = 6300.00 s | step 21/30 | wall 139.98 s | NL 3 | L 70
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 20
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
@@ -2212,7 +1789,6 @@ t = 6300.00 s | step 21/30 | wall 139.98 s | NL 3 | L 70
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
-    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 24
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
@@ -2228,19 +1804,9 @@ t = 6300.00 s | step 21/30 | wall 139.98 s | NL 3 | L 70
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
-                  Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
-                  Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
-                  Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
-                  Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
-                  Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
-                  Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
-                  Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
-                  Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
-                  Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
-                  Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
-    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 24
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 21
   Nonlinear BackwardEuler-Equation_ solve converged due to CONVERGED_FNORM_ABS iterations 3
-t = 6600.00 s | step 22/30 | wall 140.40 s | NL 3 | L 70
+t = 6600.00 s | step 22/30 | wall 113.46 s | NL 3 | L 60
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
@@ -2261,10 +1827,10 @@ t = 6600.00 s | step 22/30 | wall 140.40 s | NL 3 | L 70
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 19
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
-    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 22
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
@@ -2283,6 +1849,7 @@ t = 6600.00 s | step 22/30 | wall 140.40 s | NL 3 | L 70
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 20
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
@@ -2290,7 +1857,6 @@ t = 6600.00 s | step 22/30 | wall 140.40 s | NL 3 | L 70
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
-    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 24
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
@@ -2306,19 +1872,9 @@ t = 6600.00 s | step 22/30 | wall 140.40 s | NL 3 | L 70
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
-                  Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
-                  Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
-                  Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
-                  Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
-                  Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
-                  Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
-                  Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
-                  Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
-                  Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
-                  Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
-    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 24
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 21
   Nonlinear BackwardEuler-Equation_ solve converged due to CONVERGED_FNORM_ABS iterations 3
-t = 6900.00 s | step 23/30 | wall 141.22 s | NL 3 | L 70
+t = 6900.00 s | step 23/30 | wall 113.08 s | NL 3 | L 60
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
@@ -2339,10 +1895,10 @@ t = 6900.00 s | step 23/30 | wall 141.22 s | NL 3 | L 70
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 19
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
-    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 22
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
@@ -2361,6 +1917,7 @@ t = 6900.00 s | step 23/30 | wall 141.22 s | NL 3 | L 70
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 20
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
@@ -2368,7 +1925,6 @@ t = 6900.00 s | step 23/30 | wall 141.22 s | NL 3 | L 70
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
-    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 24
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
@@ -2384,20 +1940,9 @@ t = 6900.00 s | step 23/30 | wall 141.22 s | NL 3 | L 70
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
-                  Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
-                  Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
-                  Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
-                  Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
-                  Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
-                  Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
-                  Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
-                  Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
-                  Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
-                  Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
-                  Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
-    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 25
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 21
   Nonlinear BackwardEuler-Equation_ solve converged due to CONVERGED_FNORM_ABS iterations 3
-t = 7200.00 s | step 24/30 | wall 141.33 s | NL 3 | L 71
+t = 7200.00 s | step 24/30 | wall 112.89 s | NL 3 | L 60
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
@@ -2418,10 +1963,10 @@ t = 7200.00 s | step 24/30 | wall 141.33 s | NL 3 | L 71
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 19
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
-    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 22
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
@@ -2440,6 +1985,7 @@ t = 7200.00 s | step 24/30 | wall 141.33 s | NL 3 | L 71
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 20
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
@@ -2447,7 +1993,6 @@ t = 7200.00 s | step 24/30 | wall 141.33 s | NL 3 | L 71
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
-    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 24
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
@@ -2463,20 +2008,9 @@ t = 7200.00 s | step 24/30 | wall 141.33 s | NL 3 | L 71
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
-                  Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
-                  Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
-                  Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
-                  Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
-                  Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
-                  Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
-                  Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
-                  Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
-                  Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
-                  Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
-                  Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
-    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 25
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 21
   Nonlinear BackwardEuler-Equation_ solve converged due to CONVERGED_FNORM_ABS iterations 3
-t = 7500.00 s | step 25/30 | wall 141.40 s | NL 3 | L 71
+t = 7500.00 s | step 25/30 | wall 113.04 s | NL 3 | L 60
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
@@ -2497,10 +2031,10 @@ t = 7500.00 s | step 25/30 | wall 141.40 s | NL 3 | L 71
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 19
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
-    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 22
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
@@ -2519,6 +2053,7 @@ t = 7500.00 s | step 25/30 | wall 141.40 s | NL 3 | L 71
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 20
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
@@ -2526,7 +2061,6 @@ t = 7500.00 s | step 25/30 | wall 141.40 s | NL 3 | L 71
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
-    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 24
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
@@ -2542,20 +2076,9 @@ t = 7500.00 s | step 25/30 | wall 141.40 s | NL 3 | L 71
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
-                  Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
-                  Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
-                  Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
-                  Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
-                  Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
-                  Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
-                  Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
-                  Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
-                  Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
-                  Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
-                  Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
-    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 25
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 21
   Nonlinear BackwardEuler-Equation_ solve converged due to CONVERGED_FNORM_ABS iterations 3
-t = 7800.00 s | step 26/30 | wall 141.26 s | NL 3 | L 71
+t = 7800.00 s | step 26/30 | wall 113.09 s | NL 3 | L 60
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
@@ -2576,10 +2099,10 @@ t = 7800.00 s | step 26/30 | wall 141.26 s | NL 3 | L 71
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 19
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
-    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 22
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
@@ -2597,6 +2120,7 @@ t = 7800.00 s | step 26/30 | wall 141.26 s | NL 3 | L 71
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 19
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
@@ -2605,7 +2129,6 @@ t = 7800.00 s | step 26/30 | wall 141.26 s | NL 3 | L 71
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
-    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 24
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
@@ -2620,21 +2143,9 @@ t = 7800.00 s | step 26/30 | wall 141.26 s | NL 3 | L 71
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
-                  Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
-                  Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
-                  Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
-                  Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
-                  Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
-                  Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
-                  Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
-                  Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
-                  Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
-                  Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
-                  Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
-                  Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
-    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 25
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 21
   Nonlinear BackwardEuler-Equation_ solve converged due to CONVERGED_FNORM_ABS iterations 3
-t = 8100.00 s | step 27/30 | wall 140.60 s | NL 3 | L 71
+t = 8100.00 s | step 27/30 | wall 112.93 s | NL 3 | L 59
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
@@ -2655,10 +2166,10 @@ t = 8100.00 s | step 27/30 | wall 140.60 s | NL 3 | L 71
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 19
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
-    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 22
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
@@ -2676,6 +2187,7 @@ t = 8100.00 s | step 27/30 | wall 140.60 s | NL 3 | L 71
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 19
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
@@ -2684,7 +2196,6 @@ t = 8100.00 s | step 27/30 | wall 140.60 s | NL 3 | L 71
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
-    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 24
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
@@ -2699,21 +2210,9 @@ t = 8100.00 s | step 27/30 | wall 140.60 s | NL 3 | L 71
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
-                  Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
-                  Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
-                  Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
-                  Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
-                  Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
-                  Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
-                  Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
-                  Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
-                  Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
-                  Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
-                  Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
-                  Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
-    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 25
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 21
   Nonlinear BackwardEuler-Equation_ solve converged due to CONVERGED_FNORM_ABS iterations 3
-t = 8400.00 s | step 28/30 | wall 140.96 s | NL 3 | L 71
+t = 8400.00 s | step 28/30 | wall 112.50 s | NL 3 | L 59
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
@@ -2734,10 +2233,10 @@ t = 8400.00 s | step 28/30 | wall 140.96 s | NL 3 | L 71
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 19
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
-    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 22
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
@@ -2755,6 +2254,7 @@ t = 8400.00 s | step 28/30 | wall 140.96 s | NL 3 | L 71
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 19
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
@@ -2763,7 +2263,6 @@ t = 8400.00 s | step 28/30 | wall 140.96 s | NL 3 | L 71
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
-    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 24
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
@@ -2778,21 +2277,9 @@ t = 8400.00 s | step 28/30 | wall 140.96 s | NL 3 | L 71
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
-                  Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
-                  Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
-                  Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
-                  Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
-                  Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
-                  Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
-                  Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
-                  Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
-                  Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
-                  Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
-                  Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
-                  Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
-    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 25
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 21
   Nonlinear BackwardEuler-Equation_ solve converged due to CONVERGED_FNORM_ABS iterations 3
-t = 8700.00 s | step 29/30 | wall 140.20 s | NL 3 | L 71
+t = 8700.00 s | step 29/30 | wall 113.02 s | NL 3 | L 59
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
@@ -2813,10 +2300,10 @@ t = 8700.00 s | step 29/30 | wall 140.20 s | NL 3 | L 71
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 19
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
-    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 22
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
@@ -2834,6 +2321,7 @@ t = 8700.00 s | step 29/30 | wall 140.20 s | NL 3 | L 71
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 19
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
@@ -2842,7 +2330,6 @@ t = 8700.00 s | step 29/30 | wall 140.20 s | NL 3 | L 71
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
-    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 24
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
@@ -2857,32 +2344,20 @@ t = 8700.00 s | step 29/30 | wall 140.20 s | NL 3 | L 71
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
                   Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
-                  Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
-                  Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
-                  Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
-                  Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
-                  Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
-                  Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
-                  Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
-                  Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
-                  Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
-                  Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
-                  Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
-                  Linear BackwardEuler-Equation_mg_coarse_ solve did not converge due to DIVERGED_ITS iterations 30
-    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 25
+    Linear BackwardEuler-Equation_ solve converged due to CONVERGED_RTOL iterations 21
   Nonlinear BackwardEuler-Equation_ solve converged due to CONVERGED_FNORM_ABS iterations 3
-t = 9000.00 s | step 30/30 | wall 141.30 s | NL 3 | L 71
-Done | total NL 91 | total L 2112 | mean wall/step 143.96 s | peak RSS 2507 MB
-=== Job completed: Sat Aug 22 00:11:15 AEST 2026 ===
+t = 9000.00 s | step 30/30 | wall 112.61 s | NL 3 | L 59
+Done | total NL 91 | total L 1786 | mean wall/step 115.94 s | peak RSS 3127 MB
+=== Job completed: Tue Aug 25 23:03:18 AEST 2026 ===
 
 ======================================================================================
-                  Resource Usage on 2026-08-22 00:11:20:
-   Job Id:             176973758.gadi-pbs
+                  Resource Usage on 2026-08-25 23:03:22:
+   Job Id:             177412702.gadi-pbs
    Project:            xd2
    Exit Status:        0
-   Service Units:      2046.72
-   NCPUs Requested:    832                 CPU Time Used: 1009:29:26      
-   Memory Requested:   3.91TB                Memory Used: 2.11TB          
-   Walltime Requested: 03:00:00            Walltime Used: 01:13:48        
-   JobFS Requested:    400.0GB                JobFS Used: 56.03MB         
+   Service Units:      817.44
+   NCPUs Requested:    416                 CPU Time Used: 405:07:52       
+   Memory Requested:   1.95TB                Memory Used: 951.61GB        
+   Walltime Requested: 03:00:00            Walltime Used: 00:58:57        
+   JobFS Requested:    400.0GB                JobFS Used: 56.02MB         
 ======================================================================================

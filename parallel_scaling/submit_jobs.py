@@ -216,12 +216,16 @@ def cockett_cases():
     """Return Cockett case definitions for each scale."""
     return {
         "smoke": {"nodes": 1, "nx": 64, "nz": 78, "steps": 10},
-        "sweep": {"nodes": 1, "nx": 120, "nz": 156, "steps": 30},
-        "medium": {"nodes": 2, "nx": 152, "nz": 196, "steps": 30},
-        "large": {"nodes": 8, "nx": 240, "nz": 312, "steps": 30},
-        # Alias for the DQ2 rerun, matching parse_results.py's post-relabel
-        # "huge" (8N/144M DQ1 mesh) — see COCKETT_DQ2_SOLVERS below.
-        "huge": {"nodes": 8, "nx": 240, "nz": 312, "steps": 30},
+        "sweep": {"nodes": 1, "nx": 120, "nz": 156, "steps": 30},   # 1 node, 18M
+        "medium": {"nodes": 2, "nx": 152, "nz": 196, "steps": 30},  # 2 nodes, 36M
+        # Weak-scaling node-doubling curve at a fixed ~175k DOF/core:
+        # 1/2/4/8 nodes = 18M/36M/72M/144M. "large" is the genuine 4-node
+        # 72M point (192x192x247). It used to duplicate "huge" (both defined
+        # as 8-node/144M), which left the fair Cockett curve at 1/2/8 nodes
+        # with no 4-node run, and made "huge" hold stale pre-fair data.
+        # Fixed 2026-08-25; re-run by the fair_gap_fix phase.
+        "large": {"nodes": 4, "nx": 192, "nz": 247, "steps": 30},   # 4 nodes, 72M
+        "huge": {"nodes": 8, "nx": 240, "nz": 312, "steps": 30},    # 8 nodes, 144M
     }
 
 
@@ -659,6 +663,41 @@ def get_phase_runs(phase):
         # Does the incoherent lag keep its advantage on the basin?
         runs.append(("murr_horiz", "vlumping_hmg_rich_lag3_live", "h8"))
 
+    elif phase == "fair_gap_fix":
+        # Complete the fair campaign correctly. This supersedes the old
+        # fair_improved_gap phase, which only added the two improved presets
+        # onto a broken Cockett scale set. Two fixes:
+        #
+        #   (1) Cockett weak scaling now has a genuine 4-node/72M "large"
+        #       point. cockett_cases() previously defined "large" and "huge"
+        #       as the same 8-node/144M mesh, so the fair curve was really
+        #       1/2/8 nodes and "huge" carried stale pre-fair data (mixed
+        #       step counts per solver). "large" is now 4 nodes (72M) and
+        #       "huge" is 8 nodes (144M).
+        #   (2) Every fair-core solver — not just the improved presets — is
+        #       re-run at the two corrected scales, so each Cockett column is
+        #       one mesh on one 30-step trajectory. sweep (1 node) and medium
+        #       (2 nodes) keep their existing fair runs; their meshes did not
+        #       change.
+        #
+        # The Murrumbidgee vertical sweep was always clean (distinct meshes at
+        # 1/2/4/8 nodes); it only lacked the two improved presets. Those are
+        # added here. See NOTES/MUST-RUN.md.
+        improved = ["vlumping_inexact_rich_lag3", "vlumping_hmg_rich_lag3"]
+        # Cockett: re-run the fair-core baselines at the corrected large+huge.
+        for solver in FAIR_CORE_SOLVERS:
+            for scale in ("large", "huge"):
+                runs.append(("cockett", solver, scale))
+        # Cockett: the improved presets have no Cockett data yet — run all four
+        # weak-scaling points.
+        for solver in improved:
+            for scale in ("sweep", "medium", "large", "huge"):
+                runs.append(("cockett", solver, scale))
+        # Murrumbidgee vertical: improved presets at 1/2/4/8 nodes.
+        for solver in improved:
+            for scale in ("smoke", "sweep", "medium", "large"):
+                runs.append(("murrumbidgee", solver, scale))
+
     elif phase == "final_h8":
         # The complete setup-cost campaign at production scale: the two
         # presets that keep Chebyshev and lag the setup, and the four that
@@ -715,7 +754,8 @@ def main():
                  "reviewer_h8", "reviewer_strong",
                  "rich_smoke", "rich_h8",
                  "snapshot_smoke", "snapshot_h8",
-                 "final_smoke", "final_h8", "fair_all"],
+                 "final_smoke", "final_h8", "fair_all",
+                 "fair_gap_fix"],
         help="Which set of jobs to generate/submit"
     )
     parser.add_argument(

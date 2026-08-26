@@ -3,8 +3,8 @@
 #PBS -P xd2
 #PBS -q normalsr
 #PBS -l walltime=03:00:00
-#PBS -l mem=4000GB
-#PBS -l ncpus=832
+#PBS -l mem=2000GB
+#PBS -l ncpus=416
 #PBS -l jobfs=400GB
 #PBS -l storage=scratch/xd2+gdata/fp50
 #PBS -l wd
@@ -33,8 +33,8 @@ echo "Case: cockett"
 echo "Solver: gmg"
 echo "Scale: large"
 echo "Degree: 1"
-echo "Nodes: 8"
-echo "CPUs: 832"
+echo "Nodes: 4"
+echo "CPUs: 416"
 echo "Date: $(date)"
 echo "G-ADOPT commit: $(git -C /scratch/xd2/sg8812/g-adopt-worktrees/sghelichkhani/richardson rev-parse HEAD)"
 echo "Morrow commit: $(git -C /scratch/xd2/sg8812/morrow2026 rev-parse HEAD)"
@@ -44,7 +44,7 @@ echo "Firedrake module: $LOADEDMODULES"
 echo "PETSC_OPTIONS: $PETSC_OPTIONS"
 echo "================"
 
-mpiexec -np $PBS_NCPUS python /scratch/xd2/sg8812/morrow2026/parallel_scaling/cockett_3d.py --nx 240 --nz 312 --degree 1 --steps 30 --solver gmg --refinement-levels 3 --profile 2>&1
+mpiexec -np $PBS_NCPUS python /scratch/xd2/sg8812/morrow2026/parallel_scaling/cockett_3d.py --nx 192 --nz 247 --degree 1 --steps 30 --solver gmg --refinement-levels 3 --profile 2>&1
 
 test -s /scratch/xd2/sg8812/morrow2026/parallel_scaling/results/cockett/gmg/large.profile
 
