@@ -115,11 +115,38 @@ that used `solver_kwargs={'pmat': ...}` were retired — see §7).
 
 ## 4. Best-numbers summary
 
-**Superseded on 2026-08-22.** The numbers in this section now come from
-the fair-comparison campaign. The earlier table, and every conclusion
-drawn from it, compared solvers that used different Krylov tolerances,
-different residual norms and different meshes. It is preserved in §4.4
-because several claims elsewhere in this document still refer to it.
+> **HEADLINE (2026-08-28) — the result is regime-dependent.** The tables in
+> this section are the **ordinary (daily) regime**, where block-Jacobi
+> ILU(0) is fastest on the basin because a column-aligned partition lets its
+> ILU act as a free vertical line solver. That finding is real but
+> *regime-specific*. The paper's **main scaling result is now the seasonal
+> campaign** — full report in `SEASONAL-REPORT-2026-08-28.md`, mechanism and
+> math in `NOTES/2026-08-27-MONTHLY-MURRUMBIDGEE.md`. In short:
+>
+> The discriminant is the **column-integrated diffusion number**
+> `D_col = Δt·T/(S_col·L²)` (`T=∫K dz`, `S_col=∫(Ss·S+C) dz`), the
+> conditioning of the 2-D collapsed operator block-Jacobi has no coarse
+> correction for — **not** the mesh aspect ratio (the daily runs already
+> carry extreme aspect ratio and block-Jacobi still wins). At seasonal time
+> steps on a near-saturated basin `D_col` is large, and:
+> - block-Jacobi's admissible time step **collapses with resolution** (full
+>   3-month step at h1 down to ~39 d at h8 — a ceiling that scales as `1/L²`)
+>   and it **fails outright** on the more saturated regime (cannot take a
+>   single step at any scale);
+> - the **direct-coarse** vertical-lumping presets `vlumping` and
+>   `vlumping_linesmooth` take full 3-month steps at 5–11 iterations/Newton
+>   at every scale;
+> - `vlumping_hmg` (iterative coarse) is **not reliable** here (thrashes);
+>   the recommended pair is the two direct-coarse presets.
+>
+> Discussion framing: block-Jacobi is the fastest solver, but only in the
+> ordinary regime; as the time step and saturation grow toward what a basin
+> model needs, only vertical lumping stays both robust and cheap.
+
+**The daily fair-comparison numbers below (superseded 2026-08-22 by the
+fair-comparison campaign; matched tolerances/norms/meshes).** They remain
+the authoritative *ordinary-regime* record and several claims elsewhere in
+this document refer to them. §4.4/§4.5 preserve the pre-fair tables.
 
 Metric: **total wall-clock seconds to `t_final`**, not mean per timestep.
 The basin driver shrinks dt after a failed step, so a solver that fails

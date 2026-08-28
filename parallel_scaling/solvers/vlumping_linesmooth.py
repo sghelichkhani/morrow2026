@@ -45,9 +45,16 @@ solver_parameters = {
     "lumped_mg_coarse_pc_type": "lu",
     "lumped_mg_coarse_pc_factor_mat_solver_type": "mumps",
 
+    # SNES block matched to gadopt's _newton_common (and the other compared
+    # presets) for the monthly-Murrumbidgee fair comparison. The former loose
+    # snes_atol 1e-8 with no snes_stol let this preset declare convergence up
+    # to four orders earlier than the others on the quasi-steady plateau, where
+    # warm-started residuals fall below rtol*R0 — a fairness break. Aligned
+    # 2026-08-27 (Fable review B2).
     "snes_type": "newtonls",
     "snes_linesearch_type": "bt",
     "snes_rtol": 1e-8,
-    "snes_atol": 1e-8,
+    "snes_atol": 1e-12,
+    "snes_stol": 1e-8,
     "snes_max_it": 50,
 }

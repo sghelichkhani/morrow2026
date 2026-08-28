@@ -37555,7 +37555,7 @@
         }
       ],
       "summary": null,
-      "outcome": "incomplete",
+      "outcome": "diverged",
       "steady_state": {
         "mean_wall_per_step": 45.93625,
         "min_wall": 42.66,

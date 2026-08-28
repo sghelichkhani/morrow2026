@@ -54,10 +54,22 @@ RE_NL_CONVERGED = re.compile(
     r"due to (\S+) iterations (\d+)"
 )
 
-# Final summary lines
+# Stopping criterion (transient basin runs with --t-final): lets the parser
+# decide whether a run actually reached the target simulation time.
+RE_TFINAL = re.compile(r"Stopping criterion: t_final = ([\d.]+) s")
+
+# Driver gave up: dt shrank below 1 s after repeated solver failures. This is
+# the predicted bjacobi failure mode in the monthly campaign. The driver still
+# prints a `Done` line afterwards (wall_times is non-empty), so this flag must
+# win over the `success` that the Done line would otherwise set.
+RE_GIVEUP = re.compile(r"dt shrunk below 1 s.*giving up")
+
+# Final summary lines. The optional sim_time tail was added 2026-08-27 so a run
+# that stops early (dt collapse) records how far it got.
 RE_DONE_MURR = re.compile(
     r"^Done \| total NL (\d+) \| total L (\d+) \| mean wall/step ([\d.]+) s "
     r"\| peak RSS (\d+) MB \| steps (\d+) \| failed (\d+)"
+    r"(?: \| sim_time ([\d.]+) d)?"
 )
 RE_DONE_COCKETT = re.compile(
     r"^Done \| total NL (\d+) \| total L (\d+) \| mean wall/step ([\d.]+) s "
@@ -74,6 +86,34 @@ RE_PBS_WALLTIME_KILL = re.compile(
 # PBS resource usage
 RE_PBS_WALLTIME = re.compile(r"Walltime Used:\s*(\S+)")
 RE_PBS_MEMORY = re.compile(r"Memory Used:\s*(\S+)")
+RE_PBS_EXIT = re.compile(r"Exit Status:\s*(\d+)")
+RE_PBS_MEM_REQ = re.compile(r"Memory Requested:\s*(\S+)")
+RE_PBS_WALL_REQ = re.compile(r"Walltime Requested:\s*(\S+)")
+
+
+def _mem_to_gb(s):
+    """Convert a PBS memory string like '490.01GB', '3.91TB', '512.0MB' to GB."""
+    if not s:
+        return None
+    m = re.match(r"([\d.]+)\s*([KMGT]?B)", s.strip(), re.I)
+    if not m:
+        return None
+    val = float(m.group(1))
+    return val * {"KB": 1e-6, "MB": 1e-3, "GB": 1.0, "TB": 1e3, "B": 1e-9}[m.group(2).upper()]
+
+
+def _hms_to_sec(s):
+    """Convert 'HH:MM:SS' to seconds."""
+    if not s or ":" not in s:
+        return None
+    try:
+        parts = [int(p) for p in s.split(":")]
+    except ValueError:
+        return None
+    sec = 0
+    for p in parts:
+        sec = sec * 60 + p
+    return sec
 
 # ── PETSc -log_view profile (sibling .profile file) ──────────────────────────
 # The .profile holds the log_view timing table written by the SAME Gadi job as
@@ -194,6 +234,9 @@ def parse_file(path):
         "newton_detail": [],  # per-time-step Newton/KSP detail
         "summary": None,
         "outcome": "incomplete",
+        "t_final_s": None,      # target sim time from --t-final, if logged
+        "dt_collapse": False,   # driver gave up after dt fell below 1 s
+        "reached_t_final": None,  # set below once t_final and steps are known
     }
 
     # ── Parse header ────────────────────────────────────────────────────
@@ -314,6 +357,19 @@ def parse_file(path):
             current_ksp_iters = []
             continue
 
+        # Stopping criterion (target sim time)
+        m = RE_TFINAL.search(line)
+        if m:
+            result["t_final_s"] = float(m.group(1))
+            continue
+
+        # Driver gave up (dt collapsed below 1 s). Flag it; the Done line that
+        # follows must not overwrite this with "success".
+        if RE_GIVEUP.search(line):
+            result["dt_collapse"] = True
+            result["outcome"] = "dt_collapse"
+            continue
+
         # Done summary (Murrumbidgee format — check first, it's more specific)
         m = RE_DONE_MURR.match(line)
         if m:
@@ -324,8 +380,11 @@ def parse_file(path):
                 "peak_rss_mb": int(m.group(4)),
                 "steps_completed": int(m.group(5)),
                 "failed_steps": int(m.group(6)),
+                "sim_time_d": float(m.group(7)) if m.group(7) else None,
             }
-            result["outcome"] = "success"
+            # A run that gave up on dt still prints this line; keep the failure.
+            if not result["dt_collapse"]:
+                result["outcome"] = "success"
             continue
 
         # Done summary (Cockett format)
@@ -359,6 +418,23 @@ def parse_file(path):
     walltime_kill = RE_PBS_WALLTIME_KILL.search(error_text)
     if walltime_kill:
         result["outcome"] = "walltime"
+
+    # ── Did the run reach its target simulation time? ───────────────────
+    # Primary metric for the monthly campaign: a solver that thrashes on dt
+    # never reaches t_final, whether it gives up (dt_collapse) or is killed
+    # on walltime. Prefer the Done line's sim_time, fall back to the last step.
+    if result["t_final_s"] is not None:
+        final_sim_d = None
+        if result["summary"] and result["summary"].get("sim_time_d") is not None:
+            final_sim_d = result["summary"]["sim_time_d"]
+        elif result["steps"]:
+            final_sim_d = result["steps"][-1]["sim_time_d"]
+        if final_sim_d is not None:
+            target_d = result["t_final_s"] / 86400.0
+            # 0.5 % tolerance covers rounding in the logged day count.
+            result["reached_t_final"] = final_sim_d >= target_d * 0.995
+        else:
+            result["reached_t_final"] = False
 
     # ── Compute derived steady-state metrics ────────────────────────────
     if result["steps"] and len(result["steps"]) > 1:
@@ -398,6 +474,29 @@ def parse_file(path):
         pbs["walltime_limit_seconds"] = int(walltime_kill.group(2))
     if pbs:
         result["pbs"] = pbs
+
+    # ── Classify a no-output run from its PBS exit footer ───────────────
+    # A run that produced no parseable Done/FAILED line is still "incomplete".
+    # The PBS footer disambiguates the real cause: a SIGTERM/SIGKILL at the
+    # memory ceiling is an OOM; a run that used its whole walltime is a
+    # walltime kill; any other non-zero exit is a solver divergence.
+    if result["outcome"] == "incomplete":
+        footer = "\n".join(lines[-25:])
+        exit_m = RE_PBS_EXIT.search(footer)
+        memreq_m = RE_PBS_MEM_REQ.search(footer)
+        wallreq_m = RE_PBS_WALL_REQ.search(footer)
+        exit_code = int(exit_m.group(1)) if exit_m else None
+        mem_used = _mem_to_gb(pbs.get("memory_used"))
+        mem_req = _mem_to_gb(memreq_m.group(1)) if memreq_m else None
+        wall_used = _hms_to_sec(pbs.get("walltime_used"))
+        wall_req = _hms_to_sec(wallreq_m.group(1)) if wallreq_m else None
+        signalled = exit_code is not None and exit_code > 128
+        if mem_used and mem_req and mem_used / mem_req >= 0.9 and signalled:
+            result["outcome"] = "oom"
+        elif wall_used and wall_req and wall_req > 0 and wall_used / wall_req >= 0.95:
+            result["outcome"] = "walltime"
+        elif exit_code not in (None, 0):
+            result["outcome"] = "diverged"
 
     # ── Attach PETSc -log_view profile from the sibling .profile ────────
     # The two sources describe one execution, so we keep them in one record
@@ -513,6 +612,44 @@ EXPERIMENTS = {
             f"L{lev}": {"nodes": 8, "cpus": 832, "horiz_res": 620,
                         "layers": 300, "refinement_levels": lev}
             for lev in (1, 2, 3, 4)
+        },
+    },
+    # Monthly-Murrumbidgee campaign (2026-08-27): same basin meshes as
+    # murr_horizontal at h1/h4/h8, run with a monthly dt ramp. Tests where
+    # BJac-ILU fails and vertical lumping stays robust. The per-step ramp
+    # records (dt, NL, L per step) already parse; this only registers the
+    # case walk. See NOTES/2026-08-27-MONTHLY-MURRUMBIDGEE.md.
+    "murr_monthly": {
+        "dir": "murr_monthly",
+        "scales": ["h1", "h2", "h4", "h8"],
+        "scale_meta": {
+            "h1": {"nodes": 1, "cpus": 104, "horiz_res": 1775, "layers": 300, "dof_approx": "40M"},
+            "h2": {"nodes": 2, "cpus": 208, "horiz_res": 1250, "layers": 300, "dof_approx": "80M"},
+            "h4": {"nodes": 4, "cpus": 416, "horiz_res": 880, "layers": 300, "dof_approx": "160M"},
+            "h8": {"nodes": 8, "cpus": 832, "horiz_res": 620, "layers": 300, "dof_approx": "320M"},
+        },
+    },
+    # Seasonal (paper's main result): 3-month dt on a near-saturated basin.
+    # Two regimes, same meshes as murr_horiz. graded = the headline (BJac
+    # degrades, dt-ceiling ~ 1/L^2); saturated = the companion (BJac fails).
+    "murr_seasonal": {
+        "dir": "murr_seasonal",
+        "scales": ["h1", "h2", "h4", "h8"],
+        "scale_meta": {
+            "h1": {"nodes": 1, "cpus": 104, "horiz_res": 1775, "layers": 300, "dof_approx": "40M"},
+            "h2": {"nodes": 2, "cpus": 208, "horiz_res": 1250, "layers": 300, "dof_approx": "80M"},
+            "h4": {"nodes": 4, "cpus": 416, "horiz_res": 880, "layers": 300, "dof_approx": "160M"},
+            "h8": {"nodes": 8, "cpus": 832, "horiz_res": 620, "layers": 300, "dof_approx": "320M"},
+        },
+    },
+    "murr_seasonal_saturated": {
+        "dir": "murr_seasonal_saturated",
+        "scales": ["h1", "h2", "h4", "h8"],
+        "scale_meta": {
+            "h1": {"nodes": 1, "cpus": 104, "horiz_res": 1775, "layers": 300, "dof_approx": "40M"},
+            "h2": {"nodes": 2, "cpus": 208, "horiz_res": 1250, "layers": 300, "dof_approx": "80M"},
+            "h4": {"nodes": 4, "cpus": 416, "horiz_res": 880, "layers": 300, "dof_approx": "160M"},
+            "h8": {"nodes": 8, "cpus": 832, "horiz_res": 620, "layers": 300, "dof_approx": "320M"},
         },
     },
 }

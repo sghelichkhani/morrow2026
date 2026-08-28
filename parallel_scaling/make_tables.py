@@ -33,6 +33,7 @@ GLYPH = {
     "success": r"$\bullet$",
     "diverged": r"D",
     "oom": r"M",
+    "walltime": r"T",
     "incomplete": r"T",
 }
 NOT_RUN = r"--"  # core LaTeX only (no xcolor in the Copernicus preamble)
@@ -50,6 +51,21 @@ SOLVER_LABEL = {
 # Fixed row order (union across experiments); blank where not attempted.
 SOLVER_ORDER = ["sor", "bjacobi", "gamg", "boomeramg", "gmg",
                 "vlumping_inexact", "vlumping_hmg"]
+
+# Actual parsed run key(s) behind each display row, in preference order. The
+# two VLumping rows report the improved "_rich_lag3" presets where they exist
+# (Cockett and both weak-scaling experiments, matching tab:solver_performance),
+# and fall back to the base preset where no rich_lag3 run was made (the
+# direct-coarse VLumping in the strong-scaling block).
+SOLVER_KEYS = {
+    "sor": ["sor"],
+    "bjacobi": ["bjacobi"],
+    "gamg": ["gamg"],
+    "boomeramg": ["boomeramg"],
+    "gmg": ["gmg"],
+    "vlumping_inexact": ["vlumping_inexact_rich_lag3", "vlumping_inexact"],
+    "vlumping_hmg": ["vlumping_hmg_rich_lag3", "vlumping_hmg"],
+}
 
 
 def load(name):
@@ -80,7 +96,7 @@ def peak_mem_gb(runs):
 # Each experiment block: (title, json name, [(node_count, scale_key), ...]).
 BLOCKS = [
     ("Cockett 3D --- isotropic box, cell AR $\\approx$ 1:1", "cockett",
-     [(1, "sweep"), (2, "medium"), (8, "large")]),
+     [(1, "sweep"), (2, "medium"), (4, "large"), (8, "huge")]),
     ("Lower Murrumbidgee --- horizontal weak scaling "
      "(300 layers; $\\Delta x$ 1775$\\to$620\\,m, AR 1000:1$\\to$350:1)",
      "murr_horizontal",
@@ -112,8 +128,8 @@ def build_outcomes_table():
                  r"runs in that row. SOR and the black-box algebraic "
                  r"multigrids (GAMG, BoomerAMG) survive the isotropic Cockett "
                  r"box but are culled by the anisotropy of the basin mesh, "
-                 r"whereas the two vertically lumped presets carry every "
-                 r"experiment.}")
+                 r"whereas block-Jacobi and the two vertically lumped presets "
+                 r"are the only strategies that survive it.}")
     lines.append(r"\label{tab:solver_outcomes}")
     ncol = 1 + len(NODE_COLS) + 1
     colspec = "l" + "c" * len(NODE_COLS) + "r"
@@ -133,13 +149,16 @@ def build_outcomes_table():
                      r"}{l}{\textit{" + title + r"}} \\")
         present = {s for (s, _) in idx}
         for solver in SOLVER_ORDER:
-            if solver not in present:
+            # Resolve the actual run key for this experiment: the reported
+            # rich_lag3 preset where it exists, else the base preset.
+            key = next((k for k in SOLVER_KEYS[solver] if k in present), None)
+            if key is None:
                 continue
             cells = [SOLVER_LABEL[solver]]
             row_runs = []
             for n in NODE_COLS:
                 sc = dict(scale_map).get(n)
-                r = idx.get((solver, sc)) if sc else None
+                r = idx.get((key, sc)) if sc else None
                 if sc is None or r is None:
                     cells.append(NOT_RUN)
                 else:

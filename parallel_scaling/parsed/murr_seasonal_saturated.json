@@ -1,0 +1,6789 @@
+{
+  "experiment": "murr_seasonal_saturated",
+  "scale_meta": {
+    "h1": {
+      "nodes": 1,
+      "cpus": 104,
+      "horiz_res": 1775,
+      "layers": 300,
+      "dof_approx": "40M"
+    },
+    "h2": {
+      "nodes": 2,
+      "cpus": 208,
+      "horiz_res": 1250,
+      "layers": 300,
+      "dof_approx": "80M"
+    },
+    "h4": {
+      "nodes": 4,
+      "cpus": 416,
+      "horiz_res": 880,
+      "layers": 300,
+      "dof_approx": "160M"
+    },
+    "h8": {
+      "nodes": 8,
+      "cpus": 832,
+      "horiz_res": 620,
+      "layers": 300,
+      "dof_approx": "320M"
+    }
+  },
+  "scales": [
+    "h1",
+    "h2",
+    "h4",
+    "h8"
+  ],
+  "runs": [
+    {
+      "file": "/Users/sghelichkhani/Workplace/morrow2026/parallel_scaling/results/murr_seasonal_saturated/bjacobi/h1.out",
+      "header": {
+        "case": "murr_monthly3",
+        "solver": "bjacobi",
+        "scale": "h1",
+        "nodes": 1,
+        "cpus": 104,
+        "dof": 43315200,
+        "timestepper": "BackwardEuler, dt_init = 60.0 s, dt_max = 8035200.0 s, growth = 2.0",
+        "horiz_res": 1775,
+        "layers": 300,
+        "dof_approx": "40M"
+      },
+      "steps": [],
+      "newton_detail": [],
+      "summary": {
+        "failed_steps": 6
+      },
+      "outcome": "diverged",
+      "t_final_s": 40000000.0,
+      "dt_collapse": true,
+      "reached_t_final": false,
+      "pbs": {
+        "memory_used": "105.02GB",
+        "walltime_used": "00:06:25"
+      },
+      "profile": {
+        "file": "/Users/sghelichkhani/Workplace/morrow2026/parallel_scaling/results/murr_seasonal_saturated/bjacobi/h1.profile",
+        "events": {
+          "MatMult": {
+            "count": 2180,
+            "time_s": 100.18,
+            "time_ratio": 1.2,
+            "flop_max": 66800000000.0,
+            "mess": 1100000.0,
+            "reduct": 0.0,
+            "pct_time": 24,
+            "mflops": 66650.0
+          },
+          "MatAssemblyBegin": {
+            "count": 206,
+            "time_s": 9.2684,
+            "time_ratio": 2.6,
+            "flop_max": 0.0,
+            "mess": 22000.0,
+            "reduct": 160.0,
+            "pct_time": 2,
+            "mflops": -0.0
+          },
+          "MatAssemblyEnd": {
+            "count": 206,
+            "time_s": 2.7059,
+            "time_ratio": 4.3,
+            "flop_max": 44900000.0,
+            "mess": 1000.0,
+            "reduct": 6.0,
+            "pct_time": 0,
+            "mflops": 703.0
+          },
+          "PCSetUp": {
+            "count": 40,
+            "time_s": 0.0029399,
+            "time_ratio": 3.6,
+            "flop_max": 0.0,
+            "mess": 0.0,
+            "reduct": 0.0,
+            "pct_time": 0,
+            "mflops": -0.0
+          },
+          "PCSetUpOnBlocks": {
+            "count": 40,
+            "time_s": 6.5593,
+            "time_ratio": 1.2,
+            "flop_max": 10900000000.0,
+            "mess": 0.0,
+            "reduct": 0.0,
+            "pct_time": 2,
+            "mflops": 162755.0
+          },
+          "PCApply": {
+            "count": 2186,
+            "time_s": 93.984,
+            "time_ratio": 1.2,
+            "flop_max": 65300000000.0,
+            "mess": 0.0,
+            "reduct": 0.0,
+            "pct_time": 24,
+            "mflops": 69023.0
+          },
+          "KSPSetUp": {
+            "count": 40,
+            "time_s": 0.0087467,
+            "time_ratio": 1.3,
+            "flop_max": 0.0,
+            "mess": 0.0,
+            "reduct": 0.0,
+            "pct_time": 0,
+            "mflops": -0.0
+          },
+          "KSPSolve": {
+            "count": 40,
+            "time_s": 238.08,
+            "time_ratio": 1.0,
+            "flop_max": 188000000000.0,
+            "mess": 1100000.0,
+            "reduct": 4300.0,
+            "pct_time": 65,
+            "mflops": 78784.0
+          },
+          "SNESSolve": {
+            "count": 6,
+            "time_s": 298.89,
+            "time_ratio": 1.0,
+            "flop_max": 323000000000.0,
+            "mess": 1200000.0,
+            "reduct": 4600.0,
+            "pct_time": 81,
+            "mflops": 106915.0
+          },
+          "SNESFunctionEval": {
+            "count": 44,
+            "time_s": 13.266,
+            "time_ratio": 1.0,
+            "flop_max": 42800000000.0,
+            "mess": 50000.0,
+            "reduct": 0.0,
+            "pct_time": 4,
+            "mflops": 311651.0
+          },
+          "SNESJacobianEval": {
+            "count": 40,
+            "time_s": 40.203,
+            "time_ratio": 1.0,
+            "flop_max": 81300000000.0,
+            "mess": 42000.0,
+            "reduct": 160.0,
+            "pct_time": 11,
+            "mflops": 195886.0
+          }
+        },
+        "nprocs": 104,
+        "wall_total_s": 367.4,
+        "derived": {
+          "denominator": "SNESSolve",
+          "t_snes_s": 298.89,
+          "pc_setup_s": 6.562,
+          "pc_setup_pct": 2.2,
+          "pc_apply_pct": 31.44,
+          "ksp_total_pct": 79.65,
+          "jacobian_pct": 13.45,
+          "function_pct": 4.44,
+          "matmult_mainstage_pct": 33.52
+        }
+      }
+    },
+    {
+      "file": "/Users/sghelichkhani/Workplace/morrow2026/parallel_scaling/results/murr_seasonal_saturated/bjacobi/h2.out",
+      "header": {
+        "case": "murr_monthly3",
+        "solver": "bjacobi",
+        "scale": "h2",
+        "nodes": 2,
+        "cpus": 208,
+        "dof": 81964800,
+        "timestepper": "BackwardEuler, dt_init = 60.0 s, dt_max = 8035200.0 s, growth = 2.0",
+        "horiz_res": 1250,
+        "layers": 300,
+        "dof_approx": "80M"
+      },
+      "steps": [],
+      "newton_detail": [],
+      "summary": {
+        "failed_steps": 6
+      },
+      "outcome": "diverged",
+      "t_final_s": 40000000.0,
+      "dt_collapse": true,
+      "reached_t_final": false,
+      "pbs": {
+        "memory_used": "211.66GB",
+        "walltime_used": "00:04:55"
+      },
+      "profile": {
+        "file": "/Users/sghelichkhani/Workplace/morrow2026/parallel_scaling/results/murr_seasonal_saturated/bjacobi/h2.profile",
+        "events": {
+          "MatMult": {
+            "count": 1597,
+            "time_s": 67.012,
+            "time_ratio": 1.2,
+            "flop_max": 45700000000.0,
+            "mess": 1700000.0,
+            "reduct": 0.0,
+            "pct_time": 22,
+            "mflops": 138231.0
+          },
+          "MatAssemblyBegin": {
+            "count": 126,
+            "time_s": 4.6989,
+            "time_ratio": 2.1,
+            "flop_max": 0.0,
+            "mess": 24000.0,
+            "reduct": 82.0,
+            "pct_time": 1,
+            "mflops": -0.0
+          },
+          "MatAssemblyEnd": {
+            "count": 126,
+            "time_s": 1.6124,
+            "time_ratio": 2.3,
+            "flop_max": 22200000.0,
+            "mess": 2200.0,
+            "reduct": 6.0,
+            "pct_time": 0,
+            "mflops": 1180.0
+          },
+          "PCSetUp": {
+            "count": 20,
+            "time_s": 0.0024476,
+            "time_ratio": 1.9,
+            "flop_max": 0.0,
+            "mess": 0.0,
+            "reduct": 0.0,
+            "pct_time": 0,
+            "mflops": -0.0
+          },
+          "PCSetUpOnBlocks": {
+            "count": 20,
+            "time_s": 3.3689,
+            "time_ratio": 1.3,
+            "flop_max": 5110000000.0,
+            "mess": 0.0,
+            "reduct": 0.0,
+            "pct_time": 1,
+            "mflops": 299133.0
+          },
+          "PCApply": {
+            "count": 1603,
+            "time_s": 65.544,
+            "time_ratio": 1.2,
+            "flop_max": 44500000000.0,
+            "mess": 0.0,
+            "reduct": 0.0,
+            "pct_time": 23,
+            "mflops": 137192.0
+          },
+          "KSPSetUp": {
+            "count": 20,
+            "time_s": 0.0076578,
+            "time_ratio": 1.1,
+            "flop_max": 0.0,
+            "mess": 0.0,
+            "reduct": 0.0,
+            "pct_time": 0,
+            "mflops": -0.0
+          },
+          "KSPSolve": {
+            "count": 20,
+            "time_s": 166.95,
+            "time_ratio": 1.0,
+            "flop_max": 129000000000.0,
+            "mess": 1700000.0,
+            "reduct": 3100.0,
+            "pct_time": 61,
+            "mflops": 157197.0
+          },
+          "SNESSolve": {
+            "count": 6,
+            "time_s": 206.77,
+            "time_ratio": 1.0,
+            "flop_max": 191000000000.0,
+            "mess": 1800000.0,
+            "reduct": 3300.0,
+            "pct_time": 76,
+            "mflops": 185527.0
+          },
+          "SNESFunctionEval": {
+            "count": 20,
+            "time_s": 11.675,
+            "time_ratio": 1.0,
+            "flop_max": 18100000000.0,
+            "mess": 52000.0,
+            "reduct": 0.0,
+            "pct_time": 4,
+            "mflops": 304805.0
+          },
+          "SNESJacobianEval": {
+            "count": 20,
+            "time_s": 24.657,
+            "time_ratio": 1.0,
+            "flop_max": 37900000000.0,
+            "mess": 44000.0,
+            "reduct": 80.0,
+            "pct_time": 9,
+            "mflops": 302387.0
+          }
+        },
+        "nprocs": 208,
+        "wall_total_s": 272.6,
+        "derived": {
+          "denominator": "SNESSolve",
+          "t_snes_s": 206.77,
+          "pc_setup_s": 3.371,
+          "pc_setup_pct": 1.63,
+          "pc_apply_pct": 31.7,
+          "ksp_total_pct": 80.74,
+          "jacobian_pct": 11.92,
+          "function_pct": 5.65,
+          "matmult_mainstage_pct": 32.41
+        }
+      }
+    },
+    {
+      "file": "/Users/sghelichkhani/Workplace/morrow2026/parallel_scaling/results/murr_seasonal_saturated/bjacobi/h4.out",
+      "header": {
+        "case": "murr_monthly3",
+        "solver": "bjacobi",
+        "scale": "h4",
+        "nodes": 4,
+        "cpus": 416,
+        "dof": 165139200,
+        "timestepper": "BackwardEuler, dt_init = 60.0 s, dt_max = 8035200.0 s, growth = 2.0",
+        "horiz_res": 880,
+        "layers": 300,
+        "dof_approx": "160M"
+      },
+      "steps": [],
+      "newton_detail": [],
+      "summary": {
+        "failed_steps": 6
+      },
+      "outcome": "diverged",
+      "t_final_s": 40000000.0,
+      "dt_collapse": true,
+      "reached_t_final": false,
+      "pbs": {
+        "memory_used": "423.92GB",
+        "walltime_used": "00:04:40"
+      },
+      "profile": {
+        "file": "/Users/sghelichkhani/Workplace/morrow2026/parallel_scaling/results/murr_seasonal_saturated/bjacobi/h4.profile",
+        "events": {
+          "MatMult": {
+            "count": 1491,
+            "time_s": 64.011,
+            "time_ratio": 1.2,
+            "flop_max": 42600000000.0,
+            "mess": 3300000.0,
+            "reduct": 0.0,
+            "pct_time": 22,
+            "mflops": 272380.0
+          },
+          "MatAssemblyBegin": {
+            "count": 94,
+            "time_s": 3.5532,
+            "time_ratio": 2.5,
+            "flop_max": 0.0,
+            "mess": 31000.0,
+            "reduct": 50.0,
+            "pct_time": 1,
+            "mflops": -0.0
+          },
+          "MatAssemblyEnd": {
+            "count": 94,
+            "time_s": 1.4567,
+            "time_ratio": 2.1,
+            "flop_max": 14500000.0,
+            "mess": 4500.0,
+            "reduct": 6.0,
+            "pct_time": 0,
+            "mflops": 1666.0
+          },
+          "PCSetUp": {
+            "count": 12,
+            "time_s": 0.0023669,
+            "time_ratio": 4.1,
+            "flop_max": 0.0,
+            "mess": 0.0,
+            "reduct": 0.0,
+            "pct_time": 0,
+            "mflops": -0.0
+          },
+          "PCSetUpOnBlocks": {
+            "count": 12,
+            "time_s": 2.1297,
+            "time_ratio": 1.4,
+            "flop_max": 3060000000.0,
+            "mess": 0.0,
+            "reduct": 0.0,
+            "pct_time": 1,
+            "mflops": 571133.0
+          },
+          "PCApply": {
+            "count": 1497,
+            "time_s": 61.481,
+            "time_ratio": 1.2,
+            "flop_max": 41500000000.0,
+            "mess": 0.0,
+            "reduct": 0.0,
+            "pct_time": 23,
+            "mflops": 274843.0
+          },
+          "KSPSetUp": {
+            "count": 12,
+            "time_s": 0.0079433,
+            "time_ratio": 1.2,
+            "flop_max": 0.0,
+            "mess": 0.0,
+            "reduct": 0.0,
+            "pct_time": 0,
+            "mflops": -0.0
+          },
+          "KSPSolve": {
+            "count": 12,
+            "time_s": 158.33,
+            "time_ratio": 1.0,
+            "flop_max": 122000000000.0,
+            "mess": 3300000.0,
+            "reduct": 2900.0,
+            "pct_time": 62,
+            "mflops": 313613.0
+          },
+          "SNESSolve": {
+            "count": 6,
+            "time_s": 189.77,
+            "time_ratio": 1.0,
+            "flop_max": 158000000000.0,
+            "mess": 3500000.0,
+            "reduct": 3000.0,
+            "pct_time": 74,
+            "mflops": 338705.0
+          },
+          "SNESFunctionEval": {
+            "count": 12,
+            "time_s": 11.087,
+            "time_ratio": 1.0,
+            "flop_max": 10900000000.0,
+            "mess": 72000.0,
+            "reduct": 0.0,
+            "pct_time": 4,
+            "mflops": 388195.0
+          },
+          "SNESJacobianEval": {
+            "count": 12,
+            "time_s": 18.403,
+            "time_ratio": 1.0,
+            "flop_max": 22900000000.0,
+            "mess": 54000.0,
+            "reduct": 48.0,
+            "pct_time": 7,
+            "mflops": 490046.0
+          }
+        },
+        "nprocs": 416,
+        "wall_total_s": 256.9,
+        "derived": {
+          "denominator": "SNESSolve",
+          "t_snes_s": 189.77,
+          "pc_setup_s": 2.132,
+          "pc_setup_pct": 1.12,
+          "pc_apply_pct": 32.4,
+          "ksp_total_pct": 83.43,
+          "jacobian_pct": 9.7,
+          "function_pct": 5.84,
+          "matmult_mainstage_pct": 33.73
+        }
+      }
+    },
+    {
+      "file": "/Users/sghelichkhani/Workplace/morrow2026/parallel_scaling/results/murr_seasonal_saturated/bjacobi/h8.out",
+      "header": {
+        "case": "murr_monthly3",
+        "solver": "bjacobi",
+        "scale": "h8",
+        "nodes": 8,
+        "cpus": 832,
+        "horiz_res": 620,
+        "layers": 300,
+        "dof_approx": "320M"
+      },
+      "steps": [],
+      "newton_detail": [],
+      "summary": {
+        "failed_steps": 6
+      },
+      "outcome": "diverged",
+      "t_final_s": 40000000.0,
+      "dt_collapse": true,
+      "reached_t_final": false,
+      "pbs": {
+        "memory_used": "850.77GB",
+        "walltime_used": "00:04:27"
+      },
+      "profile": {
+        "file": "/Users/sghelichkhani/Workplace/morrow2026/parallel_scaling/results/murr_seasonal_saturated/bjacobi/h8.profile",
+        "events": {
+          "MatMult": {
+            "count": 1287,
+            "time_s": 57.431,
+            "time_ratio": 1.2,
+            "flop_max": 36800000000.0,
+            "mess": 6200000.0,
+            "reduct": 0.0,
+            "pct_time": 21,
+            "mflops": 531109.0
+          },
+          "MatAssemblyBegin": {
+            "count": 78,
+            "time_s": 3.2238,
+            "time_ratio": 2.0,
+            "flop_max": 0.0,
+            "mess": 48000.0,
+            "reduct": 34.0,
+            "pct_time": 1,
+            "mflops": -0.0
+          },
+          "MatAssemblyEnd": {
+            "count": 78,
+            "time_s": 1.7147,
+            "time_ratio": 2.2,
+            "flop_max": 14900000.0,
+            "mess": 9600.0,
+            "reduct": 6.0,
+            "pct_time": 0,
+            "mflops": 2393.0
+          },
+          "PCSetUp": {
+            "count": 8,
+            "time_s": 0.0028232,
+            "time_ratio": 3.3,
+            "flop_max": 0.0,
+            "mess": 0.0,
+            "reduct": 0.0,
+            "pct_time": 0,
+            "mflops": -0.0
+          },
+          "PCSetUpOnBlocks": {
+            "count": 8,
+            "time_s": 1.4384,
+            "time_ratio": 1.3,
+            "flop_max": 2040000000.0,
+            "mess": 0.0,
+            "reduct": 0.0,
+            "pct_time": 1,
+            "mflops": 1125368.0
+          },
+          "PCApply": {
+            "count": 1293,
+            "time_s": 52.798,
+            "time_ratio": 1.2,
+            "flop_max": 35900000000.0,
+            "mess": 0.0,
+            "reduct": 0.0,
+            "pct_time": 21,
+            "mflops": 554965.0
+          },
+          "KSPSetUp": {
+            "count": 8,
+            "time_s": 0.0084064,
+            "time_ratio": 1.4,
+            "flop_max": 0.0,
+            "mess": 0.0,
+            "reduct": 0.0,
+            "pct_time": 0,
+            "mflops": -0.0
+          },
+          "KSPSolve": {
+            "count": 8,
+            "time_s": 138.65,
+            "time_ratio": 1.0,
+            "flop_max": 105000000000.0,
+            "mess": 6200000.0,
+            "reduct": 2500.0,
+            "pct_time": 59,
+            "mflops": 625909.0
+          },
+          "SNESSolve": {
+            "count": 6,
+            "time_s": 166.89,
+            "time_ratio": 1.0,
+            "flop_max": 130000000000.0,
+            "mess": 6400000.0,
+            "reduct": 2600.0,
+            "pct_time": 71,
+            "mflops": 637917.0
+          },
+          "SNESFunctionEval": {
+            "count": 8,
+            "time_s": 10.962,
+            "time_ratio": 1.0,
+            "flop_max": 7420000000.0,
+            "mess": 120000.0,
+            "reduct": 0.0,
+            "pct_time": 5,
+            "mflops": 530443.0
+          },
+          "SNESJacobianEval": {
+            "count": 8,
+            "time_s": 16.033,
+            "time_ratio": 1.0,
+            "flop_max": 15500000000.0,
+            "mess": 77000.0,
+            "reduct": 32.0,
+            "pct_time": 7,
+            "mflops": 759942.0
+          }
+        },
+        "nprocs": 832,
+        "wall_total_s": 236.5,
+        "derived": {
+          "denominator": "SNESSolve",
+          "t_snes_s": 166.89,
+          "pc_setup_s": 1.441,
+          "pc_setup_pct": 0.86,
+          "pc_apply_pct": 31.64,
+          "ksp_total_pct": 83.08,
+          "jacobian_pct": 9.61,
+          "function_pct": 6.57,
+          "matmult_mainstage_pct": 34.41
+        }
+      }
+    },
+    {
+      "file": "/Users/sghelichkhani/Workplace/morrow2026/parallel_scaling/results/murr_seasonal_saturated/gmg/h1.out",
+      "header": {
+        "case": "murr_monthly3",
+        "solver": "gmg",
+        "scale": "h1",
+        "nodes": 1,
+        "cpus": 104,
+        "dof": 43315200,
+        "timestepper": "BackwardEuler, dt_init = 60.0 s, dt_max = 8035200.0 s, growth = 2.0",
+        "horiz_res": 1775,
+        "layers": 300,
+        "dof_approx": "40M"
+      },
+      "steps": [
+        {
+          "sim_time_d": 0.0,
+          "step": 1,
+          "total_steps": 100000,
+          "dt_s": 60.0,
+          "wall_s": 162.86,
+          "nl": 8,
+          "linear": 147
+        },
+        {
+          "sim_time_d": 0.0,
+          "step": 2,
+          "total_steps": 100000,
+          "dt_s": 120.0,
+          "wall_s": 72.59,
+          "nl": 5,
+          "linear": 94
+        },
+        {
+          "sim_time_d": 0.0,
+          "step": 3,
+          "total_steps": 100000,
+          "dt_s": 240.0,
+          "wall_s": 69.41,
+          "nl": 5,
+          "linear": 89
+        },
+        {
+          "sim_time_d": 0.01,
+          "step": 4,
+          "total_steps": 100000,
+          "dt_s": 480.0,
+          "wall_s": 78.29,
+          "nl": 6,
+          "linear": 98
+        },
+        {
+          "sim_time_d": 0.02,
+          "step": 5,
+          "total_steps": 100000,
+          "dt_s": 960.0,
+          "wall_s": 67.9,
+          "nl": 6,
+          "linear": 82
+        },
+        {
+          "sim_time_d": 0.04,
+          "step": 6,
+          "total_steps": 100000,
+          "dt_s": 1920.0,
+          "wall_s": 74.98,
+          "nl": 6,
+          "linear": 93
+        },
+        {
+          "sim_time_d": 0.09,
+          "step": 7,
+          "total_steps": 100000,
+          "dt_s": 3840.0,
+          "wall_s": 74.9,
+          "nl": 6,
+          "linear": 93
+        },
+        {
+          "sim_time_d": 0.18,
+          "step": 8,
+          "total_steps": 100000,
+          "dt_s": 7680.0,
+          "wall_s": 58.98,
+          "nl": 4,
+          "linear": 76
+        },
+        {
+          "sim_time_d": 0.35,
+          "step": 9,
+          "total_steps": 100000,
+          "dt_s": 15360.0,
+          "wall_s": 64.38,
+          "nl": 4,
+          "linear": 85
+        },
+        {
+          "sim_time_d": 0.71,
+          "step": 10,
+          "total_steps": 100000,
+          "dt_s": 30720.0,
+          "wall_s": 67.16,
+          "nl": 4,
+          "linear": 89
+        },
+        {
+          "sim_time_d": 1.42,
+          "step": 11,
+          "total_steps": 100000,
+          "dt_s": 61440.0,
+          "wall_s": 78.74,
+          "nl": 4,
+          "linear": 108
+        },
+        {
+          "sim_time_d": 2.84,
+          "step": 12,
+          "total_steps": 100000,
+          "dt_s": 122880.0,
+          "wall_s": 104.62,
+          "nl": 5,
+          "linear": 145
+        },
+        {
+          "sim_time_d": 5.69,
+          "step": 13,
+          "total_steps": 100000,
+          "dt_s": 245760.0,
+          "wall_s": 113.21,
+          "nl": 5,
+          "linear": 158
+        },
+        {
+          "sim_time_d": 11.38,
+          "step": 14,
+          "total_steps": 100000,
+          "dt_s": 491520.0,
+          "wall_s": 404.58,
+          "nl": 16,
+          "linear": 575
+        },
+        {
+          "sim_time_d": 22.75,
+          "step": 15,
+          "total_steps": 100000,
+          "dt_s": 983040.0,
+          "wall_s": 289.15,
+          "nl": 11,
+          "linear": 413
+        },
+        {
+          "sim_time_d": 45.51,
+          "step": 16,
+          "total_steps": 100000,
+          "dt_s": 1966080.0,
+          "wall_s": 1338.63,
+          "nl": 44,
+          "linear": 1944
+        },
+        {
+          "sim_time_d": 68.27,
+          "step": 17,
+          "total_steps": 100000,
+          "dt_s": 1966080.0,
+          "wall_s": 664.82,
+          "nl": 23,
+          "linear": 962
+        },
+        {
+          "sim_time_d": 113.78,
+          "step": 18,
+          "total_steps": 100000,
+          "dt_s": 3932160.0,
+          "wall_s": 2405.97,
+          "nl": 38,
+          "linear": 3681
+        },
+        {
+          "sim_time_d": 159.29,
+          "step": 19,
+          "total_steps": 100000,
+          "dt_s": 3932160.0,
+          "wall_s": 213.84,
+          "nl": 5,
+          "linear": 320
+        },
+        {
+          "sim_time_d": 204.8,
+          "step": 20,
+          "total_steps": 100000,
+          "dt_s": 3932160.0,
+          "wall_s": 135.21,
+          "nl": 4,
+          "linear": 199
+        },
+        {
+          "sim_time_d": 250.31,
+          "step": 21,
+          "total_steps": 100000,
+          "dt_s": 3932160.0,
+          "wall_s": 152.2,
+          "nl": 4,
+          "linear": 226
+        },
+        {
+          "sim_time_d": 295.82,
+          "step": 22,
+          "total_steps": 100000,
+          "dt_s": 3932160.0,
+          "wall_s": 161.22,
+          "nl": 4,
+          "linear": 240
+        },
+        {
+          "sim_time_d": 341.33,
+          "step": 23,
+          "total_steps": 100000,
+          "dt_s": 3932160.0,
+          "wall_s": 333.47,
+          "nl": 7,
+          "linear": 502
+        }
+      ],
+      "newton_detail": [
+        {
+          "step": 1,
+          "snes_norms": [],
+          "newton_steps": []
+        },
+        {
+          "step": 2,
+          "snes_norms": [],
+          "newton_steps": []
+        },
+        {
+          "step": 3,
+          "snes_norms": [],
+          "newton_steps": []
+        },
+        {
+          "step": 4,
+          "snes_norms": [],
+          "newton_steps": []
+        },
+        {
+          "step": 5,
+          "snes_norms": [],
+          "newton_steps": []
+        },
+        {
+          "step": 6,
+          "snes_norms": [],
+          "newton_steps": []
+        },
+        {
+          "step": 7,
+          "snes_norms": [],
+          "newton_steps": []
+        },
+        {
+          "step": 8,
+          "snes_norms": [],
+          "newton_steps": []
+        },
+        {
+          "step": 9,
+          "snes_norms": [],
+          "newton_steps": []
+        },
+        {
+          "step": 10,
+          "snes_norms": [],
+          "newton_steps": []
+        },
+        {
+          "step": 11,
+          "snes_norms": [],
+          "newton_steps": []
+        },
+        {
+          "step": 12,
+          "snes_norms": [],
+          "newton_steps": []
+        },
+        {
+          "step": 13,
+          "snes_norms": [],
+          "newton_steps": []
+        },
+        {
+          "step": 14,
+          "snes_norms": [],
+          "newton_steps": []
+        },
+        {
+          "step": 15,
+          "snes_norms": [],
+          "newton_steps": []
+        },
+        {
+          "step": 16,
+          "snes_norms": [],
+          "newton_steps": []
+        },
+        {
+          "step": 17,
+          "snes_norms": [],
+          "newton_steps": []
+        },
+        {
+          "step": 18,
+          "snes_norms": [],
+          "newton_steps": []
+        },
+        {
+          "step": 19,
+          "snes_norms": [],
+          "newton_steps": []
+        },
+        {
+          "step": 20,
+          "snes_norms": [],
+          "newton_steps": []
+        },
+        {
+          "step": 21,
+          "snes_norms": [],
+          "newton_steps": []
+        },
+        {
+          "step": 22,
+          "snes_norms": [],
+          "newton_steps": []
+        },
+        {
+          "step": 23,
+          "snes_norms": [],
+          "newton_steps": []
+        }
+      ],
+      "summary": null,
+      "outcome": "walltime",
+      "t_final_s": 40000000.0,
+      "dt_collapse": false,
+      "reached_t_final": false,
+      "steady_state": {
+        "mean_wall_per_step": 319.28409090909093,
+        "min_wall": 58.98,
+        "max_wall": 2405.97,
+        "total_nl": 216,
+        "total_linear": 10272,
+        "num_steps": 22
+      },
+      "pbs": {
+        "memory_used": "147.85GB",
+        "walltime_used": "06:01:45",
+        "walltime_used_seconds": 21694,
+        "walltime_limit_seconds": 21600
+      }
+    },
+    {
+      "file": "/Users/sghelichkhani/Workplace/morrow2026/parallel_scaling/results/murr_seasonal_saturated/gmg/h2.out",
+      "header": {
+        "case": "murr_monthly3",
+        "solver": "gmg",
+        "scale": "h2",
+        "nodes": 2,
+        "cpus": 208,
+        "horiz_res": 1250,
+        "layers": 300,
+        "dof_approx": "80M"
+      },
+      "steps": [
+        {
+          "sim_time_d": 0.0,
+          "step": 1,
+          "total_steps": 100000,
+          "dt_s": 60.0,
+          "wall_s": 142.43,
+          "nl": 6,
+          "linear": 131
+        },
+        {
+          "sim_time_d": 0.0,
+          "step": 2,
+          "total_steps": 100000,
+          "dt_s": 120.0,
+          "wall_s": 60.84,
+          "nl": 4,
+          "linear": 85
+        },
+        {
+          "sim_time_d": 0.0,
+          "step": 3,
+          "total_steps": 100000,
+          "dt_s": 240.0,
+          "wall_s": 63.16,
+          "nl": 4,
+          "linear": 90
+        },
+        {
+          "sim_time_d": 0.01,
+          "step": 4,
+          "total_steps": 100000,
+          "dt_s": 480.0,
+          "wall_s": 50.36,
+          "nl": 4,
+          "linear": 68
+        },
+        {
+          "sim_time_d": 0.02,
+          "step": 5,
+          "total_steps": 100000,
+          "dt_s": 960.0,
+          "wall_s": 45.6,
+          "nl": 4,
+          "linear": 60
+        },
+        {
+          "sim_time_d": 0.04,
+          "step": 6,
+          "total_steps": 100000,
+          "dt_s": 1920.0,
+          "wall_s": 43.67,
+          "nl": 4,
+          "linear": 57
+        },
+        {
+          "sim_time_d": 0.09,
+          "step": 7,
+          "total_steps": 100000,
+          "dt_s": 3840.0,
+          "wall_s": 48.07,
+          "nl": 4,
+          "linear": 64
+        },
+        {
+          "sim_time_d": 0.18,
+          "step": 8,
+          "total_steps": 100000,
+          "dt_s": 7680.0,
+          "wall_s": 61.66,
+          "nl": 4,
+          "linear": 87
+        },
+        {
+          "sim_time_d": 0.35,
+          "step": 9,
+          "total_steps": 100000,
+          "dt_s": 15360.0,
+          "wall_s": 62.19,
+          "nl": 4,
+          "linear": 88
+        },
+        {
+          "sim_time_d": 0.71,
+          "step": 10,
+          "total_steps": 100000,
+          "dt_s": 30720.0,
+          "wall_s": 72.43,
+          "nl": 4,
+          "linear": 105
+        },
+        {
+          "sim_time_d": 1.42,
+          "step": 11,
+          "total_steps": 100000,
+          "dt_s": 61440.0,
+          "wall_s": 73.51,
+          "nl": 4,
+          "linear": 107
+        },
+        {
+          "sim_time_d": 2.84,
+          "step": 12,
+          "total_steps": 100000,
+          "dt_s": 122880.0,
+          "wall_s": 81.22,
+          "nl": 4,
+          "linear": 120
+        },
+        {
+          "sim_time_d": 5.69,
+          "step": 13,
+          "total_steps": 100000,
+          "dt_s": 245760.0,
+          "wall_s": 83.8,
+          "nl": 4,
+          "linear": 124
+        },
+        {
+          "sim_time_d": 11.38,
+          "step": 14,
+          "total_steps": 100000,
+          "dt_s": 491520.0,
+          "wall_s": 129.5,
+          "nl": 6,
+          "linear": 193
+        },
+        {
+          "sim_time_d": 22.75,
+          "step": 15,
+          "total_steps": 100000,
+          "dt_s": 983040.0,
+          "wall_s": 282.11,
+          "nl": 12,
+          "linear": 426
+        },
+        {
+          "sim_time_d": 45.51,
+          "step": 16,
+          "total_steps": 100000,
+          "dt_s": 1966080.0,
+          "wall_s": 541.76,
+          "nl": 21,
+          "linear": 829
+        },
+        {
+          "sim_time_d": 68.27,
+          "step": 17,
+          "total_steps": 100000,
+          "dt_s": 1966080.0,
+          "wall_s": 651.84,
+          "nl": 25,
+          "linear": 996
+        },
+        {
+          "sim_time_d": 113.78,
+          "step": 18,
+          "total_steps": 100000,
+          "dt_s": 3932160.0,
+          "wall_s": 1305.08,
+          "nl": 46,
+          "linear": 2016
+        },
+        {
+          "sim_time_d": 159.29,
+          "step": 19,
+          "total_steps": 100000,
+          "dt_s": 3932160.0,
+          "wall_s": 707.03,
+          "nl": 26,
+          "linear": 1088
+        },
+        {
+          "sim_time_d": 204.8,
+          "step": 20,
+          "total_steps": 100000,
+          "dt_s": 3932160.0,
+          "wall_s": 611.26,
+          "nl": 23,
+          "linear": 939
+        },
+        {
+          "sim_time_d": 250.31,
+          "step": 21,
+          "total_steps": 100000,
+          "dt_s": 3932160.0,
+          "wall_s": 679.69,
+          "nl": 25,
+          "linear": 1045
+        },
+        {
+          "sim_time_d": 295.82,
+          "step": 22,
+          "total_steps": 100000,
+          "dt_s": 3932160.0,
+          "wall_s": 787.0,
+          "nl": 29,
+          "linear": 1211
+        },
+        {
+          "sim_time_d": 341.33,
+          "step": 23,
+          "total_steps": 100000,
+          "dt_s": 3932160.0,
+          "wall_s": 637.5,
+          "nl": 23,
+          "linear": 982
+        },
+        {
+          "sim_time_d": 386.84,
+          "step": 24,
+          "total_steps": 100000,
+          "dt_s": 3932160.0,
+          "wall_s": 649.78,
+          "nl": 24,
+          "linear": 1000
+        },
+        {
+          "sim_time_d": 477.87,
+          "step": 25,
+          "total_steps": 100000,
+          "dt_s": 7864320.0,
+          "wall_s": 1182.35,
+          "nl": 39,
+          "linear": 1837
+        }
+      ],
+      "newton_detail": [
+        {
+          "step": 1,
+          "snes_norms": [],
+          "newton_steps": []
+        },
+        {
+          "step": 2,
+          "snes_norms": [],
+          "newton_steps": []
+        },
+        {
+          "step": 3,
+          "snes_norms": [],
+          "newton_steps": []
+        },
+        {
+          "step": 4,
+          "snes_norms": [],
+          "newton_steps": []
+        },
+        {
+          "step": 5,
+          "snes_norms": [],
+          "newton_steps": []
+        },
+        {
+          "step": 6,
+          "snes_norms": [],
+          "newton_steps": []
+        },
+        {
+          "step": 7,
+          "snes_norms": [],
+          "newton_steps": []
+        },
+        {
+          "step": 8,
+          "snes_norms": [],
+          "newton_steps": []
+        },
+        {
+          "step": 9,
+          "snes_norms": [],
+          "newton_steps": []
+        },
+        {
+          "step": 10,
+          "snes_norms": [],
+          "newton_steps": []
+        },
+        {
+          "step": 11,
+          "snes_norms": [],
+          "newton_steps": []
+        },
+        {
+          "step": 12,
+          "snes_norms": [],
+          "newton_steps": []
+        },
+        {
+          "step": 13,
+          "snes_norms": [],
+          "newton_steps": []
+        },
+        {
+          "step": 14,
+          "snes_norms": [],
+          "newton_steps": []
+        },
+        {
+          "step": 15,
+          "snes_norms": [],
+          "newton_steps": []
+        },
+        {
+          "step": 16,
+          "snes_norms": [],
+          "newton_steps": []
+        },
+        {
+          "step": 17,
+          "snes_norms": [],
+          "newton_steps": []
+        },
+        {
+          "step": 18,
+          "snes_norms": [],
+          "newton_steps": []
+        },
+        {
+          "step": 19,
+          "snes_norms": [],
+          "newton_steps": []
+        },
+        {
+          "step": 20,
+          "snes_norms": [],
+          "newton_steps": []
+        },
+        {
+          "step": 21,
+          "snes_norms": [],
+          "newton_steps": []
+        },
+        {
+          "step": 22,
+          "snes_norms": [],
+          "newton_steps": []
+        },
+        {
+          "step": 23,
+          "snes_norms": [],
+          "newton_steps": []
+        },
+        {
+          "step": 24,
+          "snes_norms": [],
+          "newton_steps": []
+        },
+        {
+          "step": 25,
+          "snes_norms": [],
+          "newton_steps": []
+        }
+      ],
+      "summary": {
+        "total_nl": 353,
+        "total_linear": 13748,
+        "mean_wall_per_step": 362.15,
+        "peak_rss_mb": 1686,
+        "steps_completed": 25,
+        "failed_steps": 7,
+        "sim_time_d": 477.87
+      },
+      "outcome": "success",
+      "t_final_s": 40000000.0,
+      "dt_collapse": false,
+      "reached_t_final": true,
+      "steady_state": {
+        "mean_wall_per_step": 371.30875,
+        "min_wall": 43.67,
+        "max_wall": 1305.08,
+        "total_nl": 347,
+        "total_linear": 13617,
+        "num_steps": 24
+      },
+      "pbs": {
+        "memory_used": "287.18GB",
+        "walltime_used": "05:32:07"
+      },
+      "profile": {
+        "file": "/Users/sghelichkhani/Workplace/morrow2026/parallel_scaling/results/murr_seasonal_saturated/gmg/h2.profile",
+        "events": {
+          "MatMult": {
+            "count": 1084908,
+            "time_s": 7336.5,
+            "time_ratio": 1.2,
+            "flop_max": 4980000000000.0,
+            "mess": 1200000000.0,
+            "reduct": 4.0,
+            "pct_time": 34,
+            "mflops": 137372.0
+          },
+          "MatAssemblyBegin": {
+            "count": 8486,
+            "time_s": 222.8,
+            "time_ratio": 2.3,
+            "flop_max": 0.0,
+            "mess": 2300000.0,
+            "reduct": 8400.0,
+            "pct_time": 1,
+            "mflops": -0.0
+          },
+          "MatAssemblyEnd": {
+            "count": 8486,
+            "time_s": 65.45,
+            "time_ratio": 23.0,
+            "flop_max": 1360000000.0,
+            "mess": 6500.0,
+            "reduct": 18.0,
+            "pct_time": 0,
+            "mflops": 1785.0
+          },
+          "PCSetUp": {
+            "count": 703,
+            "time_s": 1288.6,
+            "time_ratio": 1.0,
+            "flop_max": 1260000000000.0,
+            "mess": 23000000.0,
+            "reduct": 35000.0,
+            "pct_time": 6,
+            "mflops": 194023.0
+          },
+          "PCSetUpOnBlocks": {
+            "count": 152585,
+            "time_s": 6.4838,
+            "time_ratio": 1.5,
+            "flop_max": 9790000000.0,
+            "mess": 0.0,
+            "reduct": 0.0,
+            "pct_time": 0,
+            "mflops": 276993.0
+          },
+          "PCApply": {
+            "count": 30517,
+            "time_s": 16020.0,
+            "time_ratio": 1.0,
+            "flop_max": 9090000000000.0,
+            "mess": 1300000000.0,
+            "reduct": 1900000.0,
+            "pct_time": 80,
+            "mflops": 114523.0
+          },
+          "KSPSetUp": {
+            "count": 703,
+            "time_s": 0.019838,
+            "time_ratio": 1.6,
+            "flop_max": 0.0,
+            "mess": 0.0,
+            "reduct": 0.0,
+            "pct_time": 0,
+            "mflops": -0.0
+          },
+          "KSPSolve": {
+            "count": 703,
+            "time_s": 17885.0,
+            "time_ratio": 1.0,
+            "flop_max": 10700000000000.0,
+            "mess": 1300000000.0,
+            "reduct": 1900000.0,
+            "pct_time": 90,
+            "mflops": 120786.0
+          },
+          "SNESSolve": {
+            "count": 32,
+            "time_s": 19838.0,
+            "time_ratio": 1.0,
+            "flop_max": 14700000000000.0,
+            "mess": 1300000000.0,
+            "reduct": 2000000.0,
+            "pct_time": 100,
+            "mflops": 149223.0
+          },
+          "SNESFunctionEval": {
+            "count": 1590,
+            "time_s": 122.96,
+            "time_ratio": 1.2,
+            "flop_max": 1440000000000.0,
+            "mess": 3500000.0,
+            "reduct": 0.0,
+            "pct_time": 1,
+            "mflops": 2300799.0
+          },
+          "SNESJacobianEval": {
+            "count": 703,
+            "time_s": 506.17,
+            "time_ratio": 1.0,
+            "flop_max": 1330000000000.0,
+            "mess": 1500000.0,
+            "reduct": 2800.0,
+            "pct_time": 3,
+            "mflops": 517778.0
+          }
+        },
+        "nprocs": 208,
+        "wall_total_s": 19900.0,
+        "derived": {
+          "denominator": "SNESSolve",
+          "t_snes_s": 19838.0,
+          "pc_setup_s": 1295.084,
+          "pc_setup_pct": 6.53,
+          "pc_apply_pct": 80.75,
+          "ksp_total_pct": 90.16,
+          "jacobian_pct": 2.55,
+          "function_pct": 0.62,
+          "matmult_mainstage_pct": 36.98
+        },
+        "validation": {
+          "snes_count": 32,
+          "steps_completed": 25,
+          "steps_match": false,
+          "ksp_count": 703,
+          "total_nl": 353,
+          "nl_match": false,
+          "pcapply_count": 30517,
+          "total_linear": 13748,
+          "linear_close": false,
+          "out_wall_total_s": 9053.8,
+          "profile_snes_s": 19838.0,
+          "wall_consistent": false
+        }
+      }
+    },
+    {
+      "file": "/Users/sghelichkhani/Workplace/morrow2026/parallel_scaling/results/murr_seasonal_saturated/gmg/h4.out",
+      "header": {
+        "case": "murr_monthly3",
+        "solver": "gmg",
+        "scale": "h4",
+        "nodes": 4,
+        "cpus": 416,
+        "dof": 165139200,
+        "timestepper": "BackwardEuler, dt_init = 60.0 s, dt_max = 8035200.0 s, growth = 2.0",
+        "horiz_res": 880,
+        "layers": 300,
+        "dof_approx": "160M"
+      },
+      "steps": [
+        {
+          "sim_time_d": 0.0,
+          "step": 1,
+          "total_steps": 100000,
+          "dt_s": 60.0,
+          "wall_s": 148.19,
+          "nl": 5,
+          "linear": 141
+        },
+        {
+          "sim_time_d": 0.0,
+          "step": 2,
+          "total_steps": 100000,
+          "dt_s": 120.0,
+          "wall_s": 85.58,
+          "nl": 4,
+          "linear": 124
+        },
+        {
+          "sim_time_d": 0.0,
+          "step": 3,
+          "total_steps": 100000,
+          "dt_s": 240.0,
+          "wall_s": 52.05,
+          "nl": 3,
+          "linear": 73
+        },
+        {
+          "sim_time_d": 0.01,
+          "step": 4,
+          "total_steps": 100000,
+          "dt_s": 480.0,
+          "wall_s": 45.17,
+          "nl": 3,
+          "linear": 62
+        },
+        {
+          "sim_time_d": 0.02,
+          "step": 5,
+          "total_steps": 100000,
+          "dt_s": 960.0,
+          "wall_s": 45.2,
+          "nl": 3,
+          "linear": 62
+        },
+        {
+          "sim_time_d": 0.04,
+          "step": 6,
+          "total_steps": 100000,
+          "dt_s": 1920.0,
+          "wall_s": 59.76,
+          "nl": 4,
+          "linear": 82
+        },
+        {
+          "sim_time_d": 0.09,
+          "step": 7,
+          "total_steps": 100000,
+          "dt_s": 3840.0,
+          "wall_s": 65.63,
+          "nl": 4,
+          "linear": 91
+        },
+        {
+          "sim_time_d": 0.18,
+          "step": 8,
+          "total_steps": 100000,
+          "dt_s": 7680.0,
+          "wall_s": 67.04,
+          "nl": 4,
+          "linear": 94
+        },
+        {
+          "sim_time_d": 0.35,
+          "step": 9,
+          "total_steps": 100000,
+          "dt_s": 15360.0,
+          "wall_s": 72.66,
+          "nl": 4,
+          "linear": 103
+        },
+        {
+          "sim_time_d": 0.71,
+          "step": 10,
+          "total_steps": 100000,
+          "dt_s": 30720.0,
+          "wall_s": 74.94,
+          "nl": 4,
+          "linear": 107
+        },
+        {
+          "sim_time_d": 1.42,
+          "step": 11,
+          "total_steps": 100000,
+          "dt_s": 61440.0,
+          "wall_s": 78.41,
+          "nl": 4,
+          "linear": 112
+        },
+        {
+          "sim_time_d": 2.84,
+          "step": 12,
+          "total_steps": 100000,
+          "dt_s": 122880.0,
+          "wall_s": 97.55,
+          "nl": 5,
+          "linear": 140
+        },
+        {
+          "sim_time_d": 5.69,
+          "step": 13,
+          "total_steps": 100000,
+          "dt_s": 245760.0,
+          "wall_s": 78.1,
+          "nl": 4,
+          "linear": 112
+        },
+        {
+          "sim_time_d": 11.38,
+          "step": 14,
+          "total_steps": 100000,
+          "dt_s": 491520.0,
+          "wall_s": 101.37,
+          "nl": 5,
+          "linear": 146
+        },
+        {
+          "sim_time_d": 22.75,
+          "step": 15,
+          "total_steps": 100000,
+          "dt_s": 983040.0,
+          "wall_s": 236.29,
+          "nl": 10,
+          "linear": 348
+        },
+        {
+          "sim_time_d": 45.51,
+          "step": 16,
+          "total_steps": 100000,
+          "dt_s": 1966080.0,
+          "wall_s": 421.36,
+          "nl": 16,
+          "linear": 630
+        },
+        {
+          "sim_time_d": 91.02,
+          "step": 17,
+          "total_steps": 100000,
+          "dt_s": 3932160.0,
+          "wall_s": 735.65,
+          "nl": 25,
+          "linear": 1110
+        },
+        {
+          "sim_time_d": 136.53,
+          "step": 18,
+          "total_steps": 100000,
+          "dt_s": 3932160.0,
+          "wall_s": 87.61,
+          "nl": 4,
+          "linear": 128
+        },
+        {
+          "sim_time_d": 182.04,
+          "step": 19,
+          "total_steps": 100000,
+          "dt_s": 3932160.0,
+          "wall_s": 580.64,
+          "nl": 22,
+          "linear": 867
+        },
+        {
+          "sim_time_d": 227.55,
+          "step": 20,
+          "total_steps": 100000,
+          "dt_s": 3932160.0,
+          "wall_s": 770.5,
+          "nl": 27,
+          "linear": 1161
+        },
+        {
+          "sim_time_d": 273.07,
+          "step": 21,
+          "total_steps": 100000,
+          "dt_s": 3932160.0,
+          "wall_s": 772.35,
+          "nl": 27,
+          "linear": 1164
+        },
+        {
+          "sim_time_d": 364.09,
+          "step": 22,
+          "total_steps": 100000,
+          "dt_s": 7864320.0,
+          "wall_s": 1590.5,
+          "nl": 49,
+          "linear": 2403
+        },
+        {
+          "sim_time_d": 457.09,
+          "step": 23,
+          "total_steps": 100000,
+          "dt_s": 8035200.0,
+          "wall_s": 947.4,
+          "nl": 30,
+          "linear": 1439
+        },
+        {
+          "sim_time_d": 550.09,
+          "step": 24,
+          "total_steps": 100000,
+          "dt_s": 8035200.0,
+          "wall_s": 957.74,
+          "nl": 29,
+          "linear": 1443
+        }
+      ],
+      "newton_detail": [
+        {
+          "step": 1,
+          "snes_norms": [],
+          "newton_steps": []
+        },
+        {
+          "step": 2,
+          "snes_norms": [],
+          "newton_steps": []
+        },
+        {
+          "step": 3,
+          "snes_norms": [],
+          "newton_steps": []
+        },
+        {
+          "step": 4,
+          "snes_norms": [],
+          "newton_steps": []
+        },
+        {
+          "step": 5,
+          "snes_norms": [],
+          "newton_steps": []
+        },
+        {
+          "step": 6,
+          "snes_norms": [],
+          "newton_steps": []
+        },
+        {
+          "step": 7,
+          "snes_norms": [],
+          "newton_steps": []
+        },
+        {
+          "step": 8,
+          "snes_norms": [],
+          "newton_steps": []
+        },
+        {
+          "step": 9,
+          "snes_norms": [],
+          "newton_steps": []
+        },
+        {
+          "step": 10,
+          "snes_norms": [],
+          "newton_steps": []
+        },
+        {
+          "step": 11,
+          "snes_norms": [],
+          "newton_steps": []
+        },
+        {
+          "step": 12,
+          "snes_norms": [],
+          "newton_steps": []
+        },
+        {
+          "step": 13,
+          "snes_norms": [],
+          "newton_steps": []
+        },
+        {
+          "step": 14,
+          "snes_norms": [],
+          "newton_steps": []
+        },
+        {
+          "step": 15,
+          "snes_norms": [],
+          "newton_steps": []
+        },
+        {
+          "step": 16,
+          "snes_norms": [],
+          "newton_steps": []
+        },
+        {
+          "step": 17,
+          "snes_norms": [],
+          "newton_steps": []
+        },
+        {
+          "step": 18,
+          "snes_norms": [],
+          "newton_steps": []
+        },
+        {
+          "step": 19,
+          "snes_norms": [],
+          "newton_steps": []
+        },
+        {
+          "step": 20,
+          "snes_norms": [],
+          "newton_steps": []
+        },
+        {
+          "step": 21,
+          "snes_norms": [],
+          "newton_steps": []
+        },
+        {
+          "step": 22,
+          "snes_norms": [],
+          "newton_steps": []
+        },
+        {
+          "step": 23,
+          "snes_norms": [],
+          "newton_steps": []
+        },
+        {
+          "step": 24,
+          "snes_norms": [],
+          "newton_steps": []
+        }
+      ],
+      "summary": {
+        "total_nl": 295,
+        "total_linear": 12142,
+        "mean_wall_per_step": 340.49,
+        "peak_rss_mb": 1682,
+        "steps_completed": 24,
+        "failed_steps": 4,
+        "sim_time_d": 550.09
+      },
+      "outcome": "success",
+      "t_final_s": 40000000.0,
+      "dt_collapse": false,
+      "reached_t_final": true,
+      "steady_state": {
+        "mean_wall_per_step": 348.8478260869565,
+        "min_wall": 45.17,
+        "max_wall": 1590.5,
+        "total_nl": 290,
+        "total_linear": 12001,
+        "num_steps": 23
+      },
+      "pbs": {
+        "memory_used": "577.67GB",
+        "walltime_used": "04:05:33"
+      },
+      "profile": {
+        "file": "/Users/sghelichkhani/Workplace/morrow2026/parallel_scaling/results/murr_seasonal_saturated/gmg/h4.profile",
+        "events": {
+          "MatMult": {
+            "count": 780243,
+            "time_s": 5366.4,
+            "time_ratio": 1.2,
+            "flop_max": 3580000000000.0,
+            "mess": 1700000000.0,
+            "reduct": 4.0,
+            "pct_time": 34,
+            "mflops": 272198.0
+          },
+          "MatAssemblyBegin": {
+            "count": 5990,
+            "time_s": 171.8,
+            "time_ratio": 2.0,
+            "flop_max": 0.0,
+            "mess": 3300000.0,
+            "reduct": 5900.0,
+            "pct_time": 1,
+            "mflops": -0.0
+          },
+          "MatAssemblyEnd": {
+            "count": 5990,
+            "time_s": 48.409,
+            "time_ratio": 21.8,
+            "flop_max": 1050000000.0,
+            "mess": 13000.0,
+            "reduct": 18.0,
+            "pct_time": 0,
+            "mflops": 3610.0
+          },
+          "PCSetUp": {
+            "count": 495,
+            "time_s": 926.46,
+            "time_ratio": 1.0,
+            "flop_max": 888000000000.0,
+            "mess": 33000000.0,
+            "reduct": 25000.0,
+            "pct_time": 6,
+            "mflops": 382806.0
+          },
+          "PCSetUpOnBlocks": {
+            "count": 109775,
+            "time_s": 4.4685,
+            "time_ratio": 1.5,
+            "flop_max": 6900000000.0,
+            "mess": 0.0,
+            "reduct": 0.0,
+            "pct_time": 0,
+            "mflops": 562787.0
+          },
+          "PCApply": {
+            "count": 21955,
+            "time_s": 11796.0,
+            "time_ratio": 1.0,
+            "flop_max": 6540000000000.0,
+            "mess": 1900000000.0,
+            "reduct": 1300000.0,
+            "pct_time": 80,
+            "mflops": 225308.0
+          },
+          "KSPSetUp": {
+            "count": 495,
+            "time_s": 0.020222,
+            "time_ratio": 1.7,
+            "flop_max": 0.0,
+            "mess": 0.0,
+            "reduct": 0.0,
+            "pct_time": 0,
+            "mflops": -0.0
+          },
+          "KSPSolve": {
+            "count": 495,
+            "time_s": 13226.0,
+            "time_ratio": 1.0,
+            "flop_max": 7700000000000.0,
+            "mess": 1900000000.0,
+            "reduct": 1400000.0,
+            "pct_time": 90,
+            "mflops": 236827.0
+          },
+          "SNESSolve": {
+            "count": 28,
+            "time_s": 14643.0,
+            "time_ratio": 1.0,
+            "flop_max": 10500000000000.0,
+            "mess": 2000000000.0,
+            "reduct": 1400000.0,
+            "pct_time": 100,
+            "mflops": 291408.0
+          },
+          "SNESFunctionEval": {
+            "count": 1118,
+            "time_s": 93.738,
+            "time_ratio": 1.2,
+            "flop_max": 1020000000000.0,
+            "mess": 5100000.0,
+            "reduct": 0.0,
+            "pct_time": 1,
+            "mflops": 4277639.0
+          },
+          "SNESJacobianEval": {
+            "count": 495,
+            "time_s": 370.83,
+            "time_ratio": 1.0,
+            "flop_max": 944000000000.0,
+            "mess": 2200000.0,
+            "reduct": 2000.0,
+            "pct_time": 3,
+            "mflops": 1003154.0
+          }
+        },
+        "nprocs": 416,
+        "wall_total_s": 14710.0,
+        "derived": {
+          "denominator": "SNESSolve",
+          "t_snes_s": 14643.0,
+          "pc_setup_s": 930.928,
+          "pc_setup_pct": 6.36,
+          "pc_apply_pct": 80.56,
+          "ksp_total_pct": 90.32,
+          "jacobian_pct": 2.53,
+          "function_pct": 0.64,
+          "matmult_mainstage_pct": 36.65
+        },
+        "validation": {
+          "snes_count": 28,
+          "steps_completed": 24,
+          "steps_match": false,
+          "ksp_count": 495,
+          "total_nl": 295,
+          "nl_match": false,
+          "pcapply_count": 21955,
+          "total_linear": 12142,
+          "linear_close": false,
+          "out_wall_total_s": 8171.8,
+          "profile_snes_s": 14643.0,
+          "wall_consistent": false
+        }
+      }
+    },
+    {
+      "file": "/Users/sghelichkhani/Workplace/morrow2026/parallel_scaling/results/murr_seasonal_saturated/gmg/h8.out",
+      "header": {
+        "case": "murr_monthly3",
+        "solver": "gmg",
+        "scale": "h8",
+        "nodes": 8,
+        "cpus": 832,
+        "horiz_res": 620,
+        "layers": 300,
+        "dof_approx": "320M"
+      },
+      "steps": [
+        {
+          "sim_time_d": 0.0,
+          "step": 1,
+          "total_steps": 100000,
+          "dt_s": 60.0,
+          "wall_s": 135.27,
+          "nl": 4,
+          "linear": 119
+        },
+        {
+          "sim_time_d": 0.0,
+          "step": 2,
+          "total_steps": 100000,
+          "dt_s": 120.0,
+          "wall_s": 92.18,
+          "nl": 5,
+          "linear": 128
+        },
+        {
+          "sim_time_d": 0.0,
+          "step": 3,
+          "total_steps": 100000,
+          "dt_s": 240.0,
+          "wall_s": 87.8,
+          "nl": 4,
+          "linear": 125
+        },
+        {
+          "sim_time_d": 0.01,
+          "step": 4,
+          "total_steps": 100000,
+          "dt_s": 480.0,
+          "wall_s": 73.61,
+          "nl": 4,
+          "linear": 102
+        },
+        {
+          "sim_time_d": 0.02,
+          "step": 5,
+          "total_steps": 100000,
+          "dt_s": 960.0,
+          "wall_s": 67.33,
+          "nl": 4,
+          "linear": 92
+        },
+        {
+          "sim_time_d": 0.04,
+          "step": 6,
+          "total_steps": 100000,
+          "dt_s": 1920.0,
+          "wall_s": 74.83,
+          "nl": 4,
+          "linear": 104
+        },
+        {
+          "sim_time_d": 0.09,
+          "step": 7,
+          "total_steps": 100000,
+          "dt_s": 3840.0,
+          "wall_s": 70.77,
+          "nl": 4,
+          "linear": 97
+        },
+        {
+          "sim_time_d": 0.18,
+          "step": 8,
+          "total_steps": 100000,
+          "dt_s": 7680.0,
+          "wall_s": 95.67,
+          "nl": 5,
+          "linear": 133
+        },
+        {
+          "sim_time_d": 0.35,
+          "step": 9,
+          "total_steps": 100000,
+          "dt_s": 15360.0,
+          "wall_s": 79.41,
+          "nl": 4,
+          "linear": 111
+        },
+        {
+          "sim_time_d": 0.71,
+          "step": 10,
+          "total_steps": 100000,
+          "dt_s": 30720.0,
+          "wall_s": 79.45,
+          "nl": 4,
+          "linear": 111
+        },
+        {
+          "sim_time_d": 1.42,
+          "step": 11,
+          "total_steps": 100000,
+          "dt_s": 61440.0,
+          "wall_s": 84.99,
+          "nl": 4,
+          "linear": 120
+        },
+        {
+          "sim_time_d": 2.84,
+          "step": 12,
+          "total_steps": 100000,
+          "dt_s": 122880.0,
+          "wall_s": 82.88,
+          "nl": 4,
+          "linear": 117
+        },
+        {
+          "sim_time_d": 5.69,
+          "step": 13,
+          "total_steps": 100000,
+          "dt_s": 245760.0,
+          "wall_s": 101.04,
+          "nl": 5,
+          "linear": 142
+        },
+        {
+          "sim_time_d": 11.38,
+          "step": 14,
+          "total_steps": 100000,
+          "dt_s": 491520.0,
+          "wall_s": 107.25,
+          "nl": 5,
+          "linear": 152
+        },
+        {
+          "sim_time_d": 22.75,
+          "step": 15,
+          "total_steps": 100000,
+          "dt_s": 983040.0,
+          "wall_s": 215.23,
+          "nl": 9,
+          "linear": 311
+        },
+        {
+          "sim_time_d": 45.51,
+          "step": 16,
+          "total_steps": 100000,
+          "dt_s": 1966080.0,
+          "wall_s": 482.53,
+          "nl": 18,
+          "linear": 707
+        },
+        {
+          "sim_time_d": 91.02,
+          "step": 17,
+          "total_steps": 100000,
+          "dt_s": 3932160.0,
+          "wall_s": 1211.64,
+          "nl": 40,
+          "linear": 1799
+        },
+        {
+          "sim_time_d": 136.53,
+          "step": 18,
+          "total_steps": 100000,
+          "dt_s": 3932160.0,
+          "wall_s": 99.06,
+          "nl": 4,
+          "linear": 144
+        },
+        {
+          "sim_time_d": 182.04,
+          "step": 19,
+          "total_steps": 100000,
+          "dt_s": 3932160.0,
+          "wall_s": 423.77,
+          "nl": 17,
+          "linear": 614
+        },
+        {
+          "sim_time_d": 227.55,
+          "step": 20,
+          "total_steps": 100000,
+          "dt_s": 3932160.0,
+          "wall_s": 727.25,
+          "nl": 25,
+          "linear": 1077
+        },
+        {
+          "sim_time_d": 273.07,
+          "step": 21,
+          "total_steps": 100000,
+          "dt_s": 3932160.0,
+          "wall_s": 716.01,
+          "nl": 25,
+          "linear": 1058
+        },
+        {
+          "sim_time_d": 364.09,
+          "step": 22,
+          "total_steps": 100000,
+          "dt_s": 7864320.0,
+          "wall_s": 1410.25,
+          "nl": 44,
+          "linear": 2107
+        },
+        {
+          "sim_time_d": 457.09,
+          "step": 23,
+          "total_steps": 100000,
+          "dt_s": 8035200.0,
+          "wall_s": 1367.88,
+          "nl": 41,
+          "linear": 2052
+        },
+        {
+          "sim_time_d": 550.09,
+          "step": 24,
+          "total_steps": 100000,
+          "dt_s": 8035200.0,
+          "wall_s": 1070.96,
+          "nl": 31,
+          "linear": 1612
+        }
+      ],
+      "newton_detail": [
+        {
+          "step": 1,
+          "snes_norms": [],
+          "newton_steps": []
+        },
+        {
+          "step": 2,
+          "snes_norms": [],
+          "newton_steps": []
+        },
+        {
+          "step": 3,
+          "snes_norms": [],
+          "newton_steps": []
+        },
+        {
+          "step": 4,
+          "snes_norms": [],
+          "newton_steps": []
+        },
+        {
+          "step": 5,
+          "snes_norms": [],
+          "newton_steps": []
+        },
+        {
+          "step": 6,
+          "snes_norms": [],
+          "newton_steps": []
+        },
+        {
+          "step": 7,
+          "snes_norms": [],
+          "newton_steps": []
+        },
+        {
+          "step": 8,
+          "snes_norms": [],
+          "newton_steps": []
+        },
+        {
+          "step": 9,
+          "snes_norms": [],
+          "newton_steps": []
+        },
+        {
+          "step": 10,
+          "snes_norms": [],
+          "newton_steps": []
+        },
+        {
+          "step": 11,
+          "snes_norms": [],
+          "newton_steps": []
+        },
+        {
+          "step": 12,
+          "snes_norms": [],
+          "newton_steps": []
+        },
+        {
+          "step": 13,
+          "snes_norms": [],
+          "newton_steps": []
+        },
+        {
+          "step": 14,
+          "snes_norms": [],
+          "newton_steps": []
+        },
+        {
+          "step": 15,
+          "snes_norms": [],
+          "newton_steps": []
+        },
+        {
+          "step": 16,
+          "snes_norms": [],
+          "newton_steps": []
+        },
+        {
+          "step": 17,
+          "snes_norms": [],
+          "newton_steps": []
+        },
+        {
+          "step": 18,
+          "snes_norms": [],
+          "newton_steps": []
+        },
+        {
+          "step": 19,
+          "snes_norms": [],
+          "newton_steps": []
+        },
+        {
+          "step": 20,
+          "snes_norms": [],
+          "newton_steps": []
+        },
+        {
+          "step": 21,
+          "snes_norms": [],
+          "newton_steps": []
+        },
+        {
+          "step": 22,
+          "snes_norms": [],
+          "newton_steps": []
+        },
+        {
+          "step": 23,
+          "snes_norms": [],
+          "newton_steps": []
+        },
+        {
+          "step": 24,
+          "snes_norms": [],
+          "newton_steps": []
+        }
+      ],
+      "summary": {
+        "total_nl": 314,
+        "total_linear": 13134,
+        "mean_wall_per_step": 373.21,
+        "peak_rss_mb": 1751,
+        "steps_completed": 24,
+        "failed_steps": 4,
+        "sim_time_d": 550.09
+      },
+      "outcome": "success",
+      "t_final_s": 40000000.0,
+      "dt_collapse": false,
+      "reached_t_final": true,
+      "steady_state": {
+        "mean_wall_per_step": 383.55608695652177,
+        "min_wall": 67.33,
+        "max_wall": 1410.25,
+        "total_nl": 310,
+        "total_linear": 13015,
+        "num_steps": 23
+      },
+      "pbs": {
+        "memory_used": "1.15TB",
+        "walltime_used": "04:23:45"
+      },
+      "profile": {
+        "file": "/Users/sghelichkhani/Workplace/morrow2026/parallel_scaling/results/murr_seasonal_saturated/gmg/h8.profile",
+        "events": {
+          "MatMult": {
+            "count": 827162,
+            "time_s": 5951.0,
+            "time_ratio": 1.2,
+            "flop_max": 3790000000000.0,
+            "mess": 4000000000.0,
+            "reduct": 4.0,
+            "pct_time": 34,
+            "mflops": 527274.0
+          },
+          "MatAssemblyBegin": {
+            "count": 6218,
+            "time_s": 254.3,
+            "time_ratio": 2.0,
+            "flop_max": 0.0,
+            "mess": 7400000.0,
+            "reduct": 6200.0,
+            "pct_time": 1,
+            "mflops": -0.0
+          },
+          "MatAssemblyEnd": {
+            "count": 6218,
+            "time_s": 100.87,
+            "time_ratio": 30.3,
+            "flop_max": 1660000000.0,
+            "mess": 29000.0,
+            "reduct": 18.0,
+            "pct_time": 0,
+            "mflops": 4533.0
+          },
+          "PCSetUp": {
+            "count": 514,
+            "time_s": 1015.0,
+            "time_ratio": 1.0,
+            "flop_max": 923000000000.0,
+            "mess": 75000000.0,
+            "reduct": 26000.0,
+            "pct_time": 6,
+            "mflops": 731275.0
+          },
+          "PCSetUpOnBlocks": {
+            "count": 116410,
+            "time_s": 4.6912,
+            "time_ratio": 1.5,
+            "flop_max": 7160000000.0,
+            "mess": 0.0,
+            "reduct": 0.0,
+            "pct_time": 0,
+            "mflops": 1040923.0
+          },
+          "PCApply": {
+            "count": 23282,
+            "time_s": 12626.0,
+            "time_ratio": 1.0,
+            "flop_max": 6940000000000.0,
+            "mess": 4300000000.0,
+            "reduct": 1400000.0,
+            "pct_time": 79,
+            "mflops": 448294.0
+          },
+          "KSPSetUp": {
+            "count": 514,
+            "time_s": 0.020161,
+            "time_ratio": 1.6,
+            "flop_max": 0.0,
+            "mess": 0.0,
+            "reduct": 0.0,
+            "pct_time": 0,
+            "mflops": -0.0
+          },
+          "KSPSolve": {
+            "count": 514,
+            "time_s": 14159.0,
+            "time_ratio": 1.0,
+            "flop_max": 8170000000000.0,
+            "mess": 4400000000.0,
+            "reduct": 1500000.0,
+            "pct_time": 90,
+            "mflops": 472169.0
+          },
+          "SNESSolve": {
+            "count": 28,
+            "time_s": 15725.0,
+            "time_ratio": 1.0,
+            "flop_max": 11100000000000.0,
+            "mess": 4500000000.0,
+            "reduct": 1500000.0,
+            "pct_time": 100,
+            "mflops": 577850.0
+          },
+          "SNESFunctionEval": {
+            "count": 1185,
+            "time_s": 97.192,
+            "time_ratio": 1.2,
+            "flop_max": 1100000000000.0,
+            "mess": 12000000.0,
+            "reduct": 0.0,
+            "pct_time": 1,
+            "mflops": 8862052.0
+          },
+          "SNESJacobianEval": {
+            "count": 514,
+            "time_s": 426.35,
+            "time_ratio": 1.0,
+            "flop_max": 995000000000.0,
+            "mess": 4900000.0,
+            "reduct": 2100.0,
+            "pct_time": 3,
+            "mflops": 1836089.0
+          }
+        },
+        "nprocs": 832,
+        "wall_total_s": 15790.0,
+        "derived": {
+          "denominator": "SNESSolve",
+          "t_snes_s": 15725.0,
+          "pc_setup_s": 1019.691,
+          "pc_setup_pct": 6.48,
+          "pc_apply_pct": 80.29,
+          "ksp_total_pct": 90.04,
+          "jacobian_pct": 2.71,
+          "function_pct": 0.62,
+          "matmult_mainstage_pct": 37.84
+        },
+        "validation": {
+          "snes_count": 28,
+          "steps_completed": 24,
+          "steps_match": false,
+          "ksp_count": 514,
+          "total_nl": 314,
+          "nl_match": false,
+          "pcapply_count": 23282,
+          "total_linear": 13134,
+          "linear_close": false,
+          "out_wall_total_s": 8957.0,
+          "profile_snes_s": 15725.0,
+          "wall_consistent": false
+        }
+      }
+    },
+    {
+      "file": "/Users/sghelichkhani/Workplace/morrow2026/parallel_scaling/results/murr_seasonal_saturated/vlumping_inexact_rich_lag3/h1.out",
+      "header": {
+        "case": "murr_monthly3",
+        "solver": "vlumping_inexact_rich_lag3",
+        "scale": "h1",
+        "nodes": 1,
+        "cpus": 104,
+        "dof": 43315200,
+        "timestepper": "BackwardEuler, dt_init = 60.0 s, dt_max = 8035200.0 s, growth = 2.0",
+        "horiz_res": 1775,
+        "layers": 300,
+        "dof_approx": "40M"
+      },
+      "steps": [
+        {
+          "sim_time_d": 0.0,
+          "step": 1,
+          "total_steps": 100000,
+          "dt_s": 60.0,
+          "wall_s": 53.17,
+          "nl": 6,
+          "linear": 50
+        },
+        {
+          "sim_time_d": 0.0,
+          "step": 2,
+          "total_steps": 100000,
+          "dt_s": 120.0,
+          "wall_s": 18.06,
+          "nl": 5,
+          "linear": 31
+        },
+        {
+          "sim_time_d": 0.0,
+          "step": 3,
+          "total_steps": 100000,
+          "dt_s": 240.0,
+          "wall_s": 22.54,
+          "nl": 5,
+          "linear": 36
+        },
+        {
+          "sim_time_d": 0.01,
+          "step": 4,
+          "total_steps": 100000,
+          "dt_s": 480.0,
+          "wall_s": 18.92,
+          "nl": 5,
+          "linear": 33
+        },
+        {
+          "sim_time_d": 0.02,
+          "step": 5,
+          "total_steps": 100000,
+          "dt_s": 960.0,
+          "wall_s": 21.05,
+          "nl": 5,
+          "linear": 34
+        },
+        {
+          "sim_time_d": 0.04,
+          "step": 6,
+          "total_steps": 100000,
+          "dt_s": 1920.0,
+          "wall_s": 22.4,
+          "nl": 6,
+          "linear": 39
+        },
+        {
+          "sim_time_d": 0.09,
+          "step": 7,
+          "total_steps": 100000,
+          "dt_s": 3840.0,
+          "wall_s": 21.35,
+          "nl": 5,
+          "linear": 34
+        },
+        {
+          "sim_time_d": 0.18,
+          "step": 8,
+          "total_steps": 100000,
+          "dt_s": 7680.0,
+          "wall_s": 12.79,
+          "nl": 4,
+          "linear": 22
+        },
+        {
+          "sim_time_d": 0.35,
+          "step": 9,
+          "total_steps": 100000,
+          "dt_s": 15360.0,
+          "wall_s": 13.34,
+          "nl": 3,
+          "linear": 20
+        },
+        {
+          "sim_time_d": 0.71,
+          "step": 10,
+          "total_steps": 100000,
+          "dt_s": 30720.0,
+          "wall_s": 18.12,
+          "nl": 4,
+          "linear": 28
+        },
+        {
+          "sim_time_d": 1.42,
+          "step": 11,
+          "total_steps": 100000,
+          "dt_s": 61440.0,
+          "wall_s": 18.82,
+          "nl": 4,
+          "linear": 31
+        },
+        {
+          "sim_time_d": 2.84,
+          "step": 12,
+          "total_steps": 100000,
+          "dt_s": 122880.0,
+          "wall_s": 17.11,
+          "nl": 5,
+          "linear": 24
+        },
+        {
+          "sim_time_d": 5.69,
+          "step": 13,
+          "total_steps": 100000,
+          "dt_s": 245760.0,
+          "wall_s": 20.46,
+          "nl": 5,
+          "linear": 33
+        },
+        {
+          "sim_time_d": 11.38,
+          "step": 14,
+          "total_steps": 100000,
+          "dt_s": 491520.0,
+          "wall_s": 52.96,
+          "nl": 16,
+          "linear": 83
+        },
+        {
+          "sim_time_d": 22.75,
+          "step": 15,
+          "total_steps": 100000,
+          "dt_s": 983040.0,
+          "wall_s": 44.96,
+          "nl": 11,
+          "linear": 77
+        },
+        {
+          "sim_time_d": 45.51,
+          "step": 16,
+          "total_steps": 100000,
+          "dt_s": 1966080.0,
+          "wall_s": 157.64,
+          "nl": 47,
+          "linear": 249
+        },
+        {
+          "sim_time_d": 68.27,
+          "step": 17,
+          "total_steps": 100000,
+          "dt_s": 1966080.0,
+          "wall_s": 81.41,
+          "nl": 24,
+          "linear": 133
+        },
+        {
+          "sim_time_d": 113.78,
+          "step": 18,
+          "total_steps": 100000,
+          "dt_s": 3932160.0,
+          "wall_s": 139.43,
+          "nl": 37,
+          "linear": 240
+        },
+        {
+          "sim_time_d": 159.29,
+          "step": 19,
+          "total_steps": 100000,
+          "dt_s": 3932160.0,
+          "wall_s": 16.23,
+          "nl": 5,
+          "linear": 28
+        },
+        {
+          "sim_time_d": 204.8,
+          "step": 20,
+          "total_steps": 100000,
+          "dt_s": 3932160.0,
+          "wall_s": 15.82,
+          "nl": 5,
+          "linear": 26
+        },
+        {
+          "sim_time_d": 250.31,
+          "step": 21,
+          "total_steps": 100000,
+          "dt_s": 3932160.0,
+          "wall_s": 11.65,
+          "nl": 4,
+          "linear": 18
+        },
+        {
+          "sim_time_d": 295.82,
+          "step": 22,
+          "total_steps": 100000,
+          "dt_s": 3932160.0,
+          "wall_s": 10.75,
+          "nl": 3,
+          "linear": 19
+        },
+        {
+          "sim_time_d": 341.33,
+          "step": 23,
+          "total_steps": 100000,
+          "dt_s": 3932160.0,
+          "wall_s": 14.86,
+          "nl": 5,
+          "linear": 24
+        },
+        {
+          "sim_time_d": 386.84,
+          "step": 24,
+          "total_steps": 100000,
+          "dt_s": 3932160.0,
+          "wall_s": 26.34,
+          "nl": 9,
+          "linear": 42
+        },
+        {
+          "sim_time_d": 432.35,
+          "step": 25,
+          "total_steps": 100000,
+          "dt_s": 3932160.0,
+          "wall_s": 7.88,
+          "nl": 3,
+          "linear": 12
+        },
+        {
+          "sim_time_d": 477.87,
+          "step": 26,
+          "total_steps": 100000,
+          "dt_s": 3932160.0,
+          "wall_s": 9.1,
+          "nl": 3,
+          "linear": 15
+        }
+      ],
+      "newton_detail": [
+        {
+          "step": 1,
+          "snes_norms": [],
+          "newton_steps": []
+        },
+        {
+          "step": 2,
+          "snes_norms": [],
+          "newton_steps": []
+        },
+        {
+          "step": 3,
+          "snes_norms": [],
+          "newton_steps": []
+        },
+        {
+          "step": 4,
+          "snes_norms": [],
+          "newton_steps": []
+        },
+        {
+          "step": 5,
+          "snes_norms": [],
+          "newton_steps": []
+        },
+        {
+          "step": 6,
+          "snes_norms": [],
+          "newton_steps": []
+        },
+        {
+          "step": 7,
+          "snes_norms": [],
+          "newton_steps": []
+        },
+        {
+          "step": 8,
+          "snes_norms": [],
+          "newton_steps": []
+        },
+        {
+          "step": 9,
+          "snes_norms": [],
+          "newton_steps": []
+        },
+        {
+          "step": 10,
+          "snes_norms": [],
+          "newton_steps": []
+        },
+        {
+          "step": 11,
+          "snes_norms": [],
+          "newton_steps": []
+        },
+        {
+          "step": 12,
+          "snes_norms": [],
+          "newton_steps": []
+        },
+        {
+          "step": 13,
+          "snes_norms": [],
+          "newton_steps": []
+        },
+        {
+          "step": 14,
+          "snes_norms": [],
+          "newton_steps": []
+        },
+        {
+          "step": 15,
+          "snes_norms": [],
+          "newton_steps": []
+        },
+        {
+          "step": 16,
+          "snes_norms": [],
+          "newton_steps": []
+        },
+        {
+          "step": 17,
+          "snes_norms": [],
+          "newton_steps": []
+        },
+        {
+          "step": 18,
+          "snes_norms": [],
+          "newton_steps": []
+        },
+        {
+          "step": 19,
+          "snes_norms": [],
+          "newton_steps": []
+        },
+        {
+          "step": 20,
+          "snes_norms": [],
+          "newton_steps": []
+        },
+        {
+          "step": 21,
+          "snes_norms": [],
+          "newton_steps": []
+        },
+        {
+          "step": 22,
+          "snes_norms": [],
+          "newton_steps": []
+        },
+        {
+          "step": 23,
+          "snes_norms": [],
+          "newton_steps": []
+        },
+        {
+          "step": 24,
+          "snes_norms": [],
+          "newton_steps": []
+        },
+        {
+          "step": 25,
+          "snes_norms": [],
+          "newton_steps": []
+        },
+        {
+          "step": 26,
+          "snes_norms": [],
+          "newton_steps": []
+        }
+      ],
+      "summary": {
+        "total_nl": 234,
+        "total_linear": 1381,
+        "mean_wall_per_step": 33.35,
+        "peak_rss_mb": 1813,
+        "steps_completed": 26,
+        "failed_steps": 9,
+        "sim_time_d": 477.87
+      },
+      "outcome": "success",
+      "t_final_s": 40000000.0,
+      "dt_collapse": false,
+      "reached_t_final": true,
+      "steady_state": {
+        "mean_wall_per_step": 32.5596,
+        "min_wall": 7.88,
+        "max_wall": 157.64,
+        "total_nl": 228,
+        "total_linear": 1331,
+        "num_steps": 25
+      },
+      "pbs": {
+        "memory_used": "154.43GB",
+        "walltime_used": "00:41:11"
+      },
+      "profile": {
+        "file": "/Users/sghelichkhani/Workplace/morrow2026/parallel_scaling/results/murr_seasonal_saturated/vlumping_inexact_rich_lag3/h1.profile",
+        "events": {
+          "MatMult": {
+            "count": 4922,
+            "time_s": 219.92,
+            "time_ratio": 1.2,
+            "flop_max": 151000000000.0,
+            "mess": 2600000.0,
+            "reduct": 0.0,
+            "pct_time": 8,
+            "mflops": 68549.0
+          },
+          "MatAssemblyBegin": {
+            "count": 3481,
+            "time_s": 130.36,
+            "time_ratio": 3.6,
+            "flop_max": 0.0,
+            "mess": 360000.0,
+            "reduct": 3000.0,
+            "pct_time": 3,
+            "mflops": -0.0
+          },
+          "MatAssemblyEnd": {
+            "count": 3481,
+            "time_s": 33.796,
+            "time_ratio": 11.4,
+            "flop_max": 768000000.0,
+            "mess": 2100.0,
+            "reduct": 17.0,
+            "pct_time": 1,
+            "mflops": 963.0
+          },
+          "PCSetUp": {
+            "count": 684,
+            "time_s": 100.0,
+            "time_ratio": 1.0,
+            "flop_max": 70200000000.0,
+            "mess": 350000.0,
+            "reduct": 1600.0,
+            "pct_time": 4,
+            "mflops": 69988.0
+          },
+          "PCApply": {
+            "count": 3808,
+            "time_s": 1381.7,
+            "time_ratio": 1.0,
+            "flop_max": 1020000000000.0,
+            "mess": 11000000.0,
+            "reduct": 5000.0,
+            "pct_time": 56,
+            "mflops": 73410.0
+          },
+          "KSPSetUp": {
+            "count": 684,
+            "time_s": 0.021327,
+            "time_ratio": 1.8,
+            "flop_max": 0.0,
+            "mess": 0.0,
+            "reduct": 0.0,
+            "pct_time": 0,
+            "mflops": -0.0
+          },
+          "KSPSolve": {
+            "count": 684,
+            "time_s": 1573.0,
+            "time_ratio": 1.0,
+            "flop_max": 1170000000000.0,
+            "mess": 13000000.0,
+            "reduct": 13000.0,
+            "pct_time": 64,
+            "mflops": 74073.0
+          },
+          "SNESSolve": {
+            "count": 35,
+            "time_s": 2383.9,
+            "time_ratio": 1.0,
+            "flop_max": 4470000000000.0,
+            "mess": 17000000.0,
+            "reduct": 22000.0,
+            "pct_time": 97,
+            "mflops": 183350.0
+          },
+          "SNESFunctionEval": {
+            "count": 1876,
+            "time_s": 155.59,
+            "time_ratio": 1.2,
+            "flop_max": 1820000000000.0,
+            "mess": 2000000.0,
+            "reduct": 0.0,
+            "pct_time": 6,
+            "mflops": 1132987.0
+          },
+          "SNESJacobianEval": {
+            "count": 684,
+            "time_s": 518.46,
+            "time_ratio": 1.0,
+            "flop_max": 1390000000000.0,
+            "mess": 720000.0,
+            "reduct": 2700.0,
+            "pct_time": 21,
+            "mflops": 259742.0
+          },
+          "PCSetUpOnBlocks": {
+            "count": 7616,
+            "time_s": 33.376,
+            "time_ratio": 1.2,
+            "flop_max": 56800000000.0,
+            "mess": 0.0,
+            "reduct": 0.0,
+            "pct_time": 1,
+            "mflops": 166324.0
+          }
+        },
+        "nprocs": 104,
+        "wall_total_s": 2449.0,
+        "derived": {
+          "denominator": "SNESSolve",
+          "t_snes_s": 2383.9,
+          "pc_setup_s": 133.376,
+          "pc_setup_pct": 5.59,
+          "pc_apply_pct": 57.96,
+          "ksp_total_pct": 65.98,
+          "jacobian_pct": 21.75,
+          "function_pct": 6.53,
+          "matmult_mainstage_pct": 9.23
+        },
+        "validation": {
+          "snes_count": 35,
+          "steps_completed": 26,
+          "steps_match": false,
+          "ksp_count": 684,
+          "total_nl": 234,
+          "nl_match": false,
+          "pcapply_count": 3808,
+          "total_linear": 1381,
+          "linear_close": false,
+          "out_wall_total_s": 867.1,
+          "profile_snes_s": 2383.9,
+          "wall_consistent": false
+        }
+      }
+    },
+    {
+      "file": "/Users/sghelichkhani/Workplace/morrow2026/parallel_scaling/results/murr_seasonal_saturated/vlumping_inexact_rich_lag3/h2.out",
+      "header": {
+        "case": "murr_monthly3",
+        "solver": "vlumping_inexact_rich_lag3",
+        "scale": "h2",
+        "nodes": 2,
+        "cpus": 208,
+        "dof": 81964800,
+        "timestepper": "BackwardEuler, dt_init = 60.0 s, dt_max = 8035200.0 s, growth = 2.0",
+        "horiz_res": 1250,
+        "layers": 300,
+        "dof_approx": "80M"
+      },
+      "steps": [
+        {
+          "sim_time_d": 0.0,
+          "step": 1,
+          "total_steps": 100000,
+          "dt_s": 60.0,
+          "wall_s": 50.81,
+          "nl": 6,
+          "linear": 45
+        },
+        {
+          "sim_time_d": 0.0,
+          "step": 2,
+          "total_steps": 100000,
+          "dt_s": 120.0,
+          "wall_s": 15.92,
+          "nl": 4,
+          "linear": 29
+        },
+        {
+          "sim_time_d": 0.0,
+          "step": 3,
+          "total_steps": 100000,
+          "dt_s": 240.0,
+          "wall_s": 15.77,
+          "nl": 4,
+          "linear": 24
+        },
+        {
+          "sim_time_d": 0.01,
+          "step": 4,
+          "total_steps": 100000,
+          "dt_s": 480.0,
+          "wall_s": 14.29,
+          "nl": 4,
+          "linear": 25
+        },
+        {
+          "sim_time_d": 0.02,
+          "step": 5,
+          "total_steps": 100000,
+          "dt_s": 960.0,
+          "wall_s": 20.82,
+          "nl": 4,
+          "linear": 37
+        },
+        {
+          "sim_time_d": 0.04,
+          "step": 6,
+          "total_steps": 100000,
+          "dt_s": 1920.0,
+          "wall_s": 12.89,
+          "nl": 4,
+          "linear": 22
+        },
+        {
+          "sim_time_d": 0.09,
+          "step": 7,
+          "total_steps": 100000,
+          "dt_s": 3840.0,
+          "wall_s": 19.36,
+          "nl": 4,
+          "linear": 33
+        },
+        {
+          "sim_time_d": 0.18,
+          "step": 8,
+          "total_steps": 100000,
+          "dt_s": 7680.0,
+          "wall_s": 16.75,
+          "nl": 4,
+          "linear": 32
+        },
+        {
+          "sim_time_d": 0.35,
+          "step": 9,
+          "total_steps": 100000,
+          "dt_s": 15360.0,
+          "wall_s": 16.97,
+          "nl": 4,
+          "linear": 28
+        },
+        {
+          "sim_time_d": 0.71,
+          "step": 10,
+          "total_steps": 100000,
+          "dt_s": 30720.0,
+          "wall_s": 18.27,
+          "nl": 4,
+          "linear": 30
+        },
+        {
+          "sim_time_d": 1.42,
+          "step": 11,
+          "total_steps": 100000,
+          "dt_s": 61440.0,
+          "wall_s": 16.88,
+          "nl": 4,
+          "linear": 28
+        },
+        {
+          "sim_time_d": 2.84,
+          "step": 12,
+          "total_steps": 100000,
+          "dt_s": 122880.0,
+          "wall_s": 15.4,
+          "nl": 4,
+          "linear": 24
+        },
+        {
+          "sim_time_d": 5.69,
+          "step": 13,
+          "total_steps": 100000,
+          "dt_s": 245760.0,
+          "wall_s": 19.57,
+          "nl": 4,
+          "linear": 34
+        },
+        {
+          "sim_time_d": 11.38,
+          "step": 14,
+          "total_steps": 100000,
+          "dt_s": 491520.0,
+          "wall_s": 27.1,
+          "nl": 6,
+          "linear": 48
+        },
+        {
+          "sim_time_d": 22.75,
+          "step": 15,
+          "total_steps": 100000,
+          "dt_s": 983040.0,
+          "wall_s": 47.27,
+          "nl": 12,
+          "linear": 83
+        },
+        {
+          "sim_time_d": 45.51,
+          "step": 16,
+          "total_steps": 100000,
+          "dt_s": 1966080.0,
+          "wall_s": 88.03,
+          "nl": 23,
+          "linear": 158
+        },
+        {
+          "sim_time_d": 68.27,
+          "step": 17,
+          "total_steps": 100000,
+          "dt_s": 1966080.0,
+          "wall_s": 88.37,
+          "nl": 25,
+          "linear": 159
+        },
+        {
+          "sim_time_d": 113.78,
+          "step": 18,
+          "total_steps": 100000,
+          "dt_s": 3932160.0,
+          "wall_s": 165.85,
+          "nl": 45,
+          "linear": 295
+        },
+        {
+          "sim_time_d": 159.29,
+          "step": 19,
+          "total_steps": 100000,
+          "dt_s": 3932160.0,
+          "wall_s": 92.22,
+          "nl": 26,
+          "linear": 163
+        },
+        {
+          "sim_time_d": 204.8,
+          "step": 20,
+          "total_steps": 100000,
+          "dt_s": 3932160.0,
+          "wall_s": 77.91,
+          "nl": 22,
+          "linear": 139
+        },
+        {
+          "sim_time_d": 250.31,
+          "step": 21,
+          "total_steps": 100000,
+          "dt_s": 3932160.0,
+          "wall_s": 99.05,
+          "nl": 27,
+          "linear": 174
+        },
+        {
+          "sim_time_d": 295.82,
+          "step": 22,
+          "total_steps": 100000,
+          "dt_s": 3932160.0,
+          "wall_s": 112.82,
+          "nl": 32,
+          "linear": 194
+        },
+        {
+          "sim_time_d": 341.33,
+          "step": 23,
+          "total_steps": 100000,
+          "dt_s": 3932160.0,
+          "wall_s": 78.68,
+          "nl": 22,
+          "linear": 140
+        },
+        {
+          "sim_time_d": 432.35,
+          "step": 24,
+          "total_steps": 100000,
+          "dt_s": 7864320.0,
+          "wall_s": 179.9,
+          "nl": 49,
+          "linear": 319
+        },
+        {
+          "sim_time_d": 525.35,
+          "step": 25,
+          "total_steps": 100000,
+          "dt_s": 8035200.0,
+          "wall_s": 125.34,
+          "nl": 30,
+          "linear": 231
+        }
+      ],
+      "newton_detail": [
+        {
+          "step": 1,
+          "snes_norms": [],
+          "newton_steps": []
+        },
+        {
+          "step": 2,
+          "snes_norms": [],
+          "newton_steps": []
+        },
+        {
+          "step": 3,
+          "snes_norms": [],
+          "newton_steps": []
+        },
+        {
+          "step": 4,
+          "snes_norms": [],
+          "newton_steps": []
+        },
+        {
+          "step": 5,
+          "snes_norms": [],
+          "newton_steps": []
+        },
+        {
+          "step": 6,
+          "snes_norms": [],
+          "newton_steps": []
+        },
+        {
+          "step": 7,
+          "snes_norms": [],
+          "newton_steps": []
+        },
+        {
+          "step": 8,
+          "snes_norms": [],
+          "newton_steps": []
+        },
+        {
+          "step": 9,
+          "snes_norms": [],
+          "newton_steps": []
+        },
+        {
+          "step": 10,
+          "snes_norms": [],
+          "newton_steps": []
+        },
+        {
+          "step": 11,
+          "snes_norms": [],
+          "newton_steps": []
+        },
+        {
+          "step": 12,
+          "snes_norms": [],
+          "newton_steps": []
+        },
+        {
+          "step": 13,
+          "snes_norms": [],
+          "newton_steps": []
+        },
+        {
+          "step": 14,
+          "snes_norms": [],
+          "newton_steps": []
+        },
+        {
+          "step": 15,
+          "snes_norms": [],
+          "newton_steps": []
+        },
+        {
+          "step": 16,
+          "snes_norms": [],
+          "newton_steps": []
+        },
+        {
+          "step": 17,
+          "snes_norms": [],
+          "newton_steps": []
+        },
+        {
+          "step": 18,
+          "snes_norms": [],
+          "newton_steps": []
+        },
+        {
+          "step": 19,
+          "snes_norms": [],
+          "newton_steps": []
+        },
+        {
+          "step": 20,
+          "snes_norms": [],
+          "newton_steps": []
+        },
+        {
+          "step": 21,
+          "snes_norms": [],
+          "newton_steps": []
+        },
+        {
+          "step": 22,
+          "snes_norms": [],
+          "newton_steps": []
+        },
+        {
+          "step": 23,
+          "snes_norms": [],
+          "newton_steps": []
+        },
+        {
+          "step": 24,
+          "snes_norms": [],
+          "newton_steps": []
+        },
+        {
+          "step": 25,
+          "snes_norms": [],
+          "newton_steps": []
+        }
+      ],
+      "summary": {
+        "total_nl": 373,
+        "total_linear": 2494,
+        "mean_wall_per_step": 57.45,
+        "peak_rss_mb": 1781,
+        "steps_completed": 25,
+        "failed_steps": 6,
+        "sim_time_d": 525.35
+      },
+      "outcome": "success",
+      "t_final_s": 40000000.0,
+      "dt_collapse": false,
+      "reached_t_final": true,
+      "steady_state": {
+        "mean_wall_per_step": 57.72625,
+        "min_wall": 12.89,
+        "max_wall": 179.9,
+        "total_nl": 367,
+        "total_linear": 2449,
+        "num_steps": 24
+      },
+      "pbs": {
+        "memory_used": "304.4GB",
+        "walltime_used": "00:44:23"
+      },
+      "profile": {
+        "file": "/Users/sghelichkhani/Workplace/morrow2026/parallel_scaling/results/murr_seasonal_saturated/vlumping_inexact_rich_lag3/h2.profile",
+        "events": {
+          "MatMult": {
+            "count": 5584,
+            "time_s": 237.06,
+            "time_ratio": 1.2,
+            "flop_max": 160000000000.0,
+            "mess": 6100000.0,
+            "reduct": 0.0,
+            "pct_time": 8,
+            "mflops": 136627.0
+          },
+          "MatAssemblyBegin": {
+            "count": 3425,
+            "time_s": 127.22,
+            "time_ratio": 2.2,
+            "flop_max": 0.0,
+            "mess": 740000.0,
+            "reduct": 2900.0,
+            "pct_time": 4,
+            "mflops": -0.0
+          },
+          "MatAssemblyEnd": {
+            "count": 3425,
+            "time_s": 34.359,
+            "time_ratio": 19.2,
+            "flop_max": 749000000.0,
+            "mess": 4400.0,
+            "reduct": 17.0,
+            "pct_time": 1,
+            "mflops": 1864.0
+          },
+          "PCSetUp": {
+            "count": 673,
+            "time_s": 103.83,
+            "time_ratio": 1.0,
+            "flop_max": 61500000000.0,
+            "mess": 680000.0,
+            "reduct": 1500.0,
+            "pct_time": 4,
+            "mflops": 119691.0
+          },
+          "PCApply": {
+            "count": 4521,
+            "time_s": 1606.2,
+            "time_ratio": 1.0,
+            "flop_max": 1120000000000.0,
+            "mess": 27000000.0,
+            "reduct": 5600.0,
+            "pct_time": 60,
+            "mflops": 140562.0
+          },
+          "KSPSetUp": {
+            "count": 673,
+            "time_s": 0.019811,
+            "time_ratio": 1.6,
+            "flop_max": 0.0,
+            "mess": 0.0,
+            "reduct": 0.0,
+            "pct_time": 0,
+            "mflops": -0.0
+          },
+          "KSPSolve": {
+            "count": 673,
+            "time_s": 1827.2,
+            "time_ratio": 1.0,
+            "flop_max": 1290000000000.0,
+            "mess": 32000000.0,
+            "reduct": 15000.0,
+            "pct_time": 69,
+            "mflops": 142577.0
+          },
+          "SNESSolve": {
+            "count": 31,
+            "time_s": 2573.7,
+            "time_ratio": 1.0,
+            "flop_max": 4020000000000.0,
+            "mess": 38000000.0,
+            "reduct": 23000.0,
+            "pct_time": 97,
+            "mflops": 310061.0
+          },
+          "SNESFunctionEval": {
+            "count": 1514,
+            "time_s": 114.1,
+            "time_ratio": 1.2,
+            "flop_max": 1370000000000.0,
+            "mess": 3300000.0,
+            "reduct": 0.0,
+            "pct_time": 4,
+            "mflops": 2360941.0
+          },
+          "SNESJacobianEval": {
+            "count": 673,
+            "time_s": 495.09,
+            "time_ratio": 1.0,
+            "flop_max": 1280000000000.0,
+            "mess": 1500000.0,
+            "reduct": 2700.0,
+            "pct_time": 19,
+            "mflops": 506773.0
+          },
+          "PCSetUpOnBlocks": {
+            "count": 9042,
+            "time_s": 34.943,
+            "time_ratio": 1.4,
+            "flop_max": 52600000000.0,
+            "mess": 0.0,
+            "reduct": 0.0,
+            "pct_time": 1,
+            "mflops": 297053.0
+          }
+        },
+        "nprocs": 208,
+        "wall_total_s": 2641.0,
+        "derived": {
+          "denominator": "SNESSolve",
+          "t_snes_s": 2573.7,
+          "pc_setup_s": 138.773,
+          "pc_setup_pct": 5.39,
+          "pc_apply_pct": 62.41,
+          "ksp_total_pct": 71.0,
+          "jacobian_pct": 19.24,
+          "function_pct": 4.43,
+          "matmult_mainstage_pct": 9.21
+        },
+        "validation": {
+          "snes_count": 31,
+          "steps_completed": 25,
+          "steps_match": false,
+          "ksp_count": 673,
+          "total_nl": 373,
+          "nl_match": false,
+          "pcapply_count": 4521,
+          "total_linear": 2494,
+          "linear_close": false,
+          "out_wall_total_s": 1436.2,
+          "profile_snes_s": 2573.7,
+          "wall_consistent": false
+        }
+      }
+    },
+    {
+      "file": "/Users/sghelichkhani/Workplace/morrow2026/parallel_scaling/results/murr_seasonal_saturated/vlumping_inexact_rich_lag3/h4.out",
+      "header": {
+        "case": "murr_monthly3",
+        "solver": "vlumping_inexact_rich_lag3",
+        "scale": "h4",
+        "nodes": 4,
+        "cpus": 416,
+        "dof": 165139200,
+        "timestepper": "BackwardEuler, dt_init = 60.0 s, dt_max = 8035200.0 s, growth = 2.0",
+        "horiz_res": 880,
+        "layers": 300,
+        "dof_approx": "160M"
+      },
+      "steps": [
+        {
+          "sim_time_d": 0.0,
+          "step": 1,
+          "total_steps": 100000,
+          "dt_s": 60.0,
+          "wall_s": 53.59,
+          "nl": 5,
+          "linear": 49
+        },
+        {
+          "sim_time_d": 0.0,
+          "step": 2,
+          "total_steps": 100000,
+          "dt_s": 120.0,
+          "wall_s": 20.05,
+          "nl": 4,
+          "linear": 35
+        },
+        {
+          "sim_time_d": 0.0,
+          "step": 3,
+          "total_steps": 100000,
+          "dt_s": 240.0,
+          "wall_s": 19.16,
+          "nl": 3,
+          "linear": 32
+        },
+        {
+          "sim_time_d": 0.01,
+          "step": 4,
+          "total_steps": 100000,
+          "dt_s": 480.0,
+          "wall_s": 16.67,
+          "nl": 3,
+          "linear": 31
+        },
+        {
+          "sim_time_d": 0.02,
+          "step": 5,
+          "total_steps": 100000,
+          "dt_s": 960.0,
+          "wall_s": 20.51,
+          "nl": 3,
+          "linear": 35
+        },
+        {
+          "sim_time_d": 0.04,
+          "step": 6,
+          "total_steps": 100000,
+          "dt_s": 1920.0,
+          "wall_s": 21.27,
+          "nl": 4,
+          "linear": 40
+        },
+        {
+          "sim_time_d": 0.09,
+          "step": 7,
+          "total_steps": 100000,
+          "dt_s": 3840.0,
+          "wall_s": 21.82,
+          "nl": 4,
+          "linear": 37
+        },
+        {
+          "sim_time_d": 0.18,
+          "step": 8,
+          "total_steps": 100000,
+          "dt_s": 7680.0,
+          "wall_s": 20.92,
+          "nl": 4,
+          "linear": 39
+        },
+        {
+          "sim_time_d": 0.35,
+          "step": 9,
+          "total_steps": 100000,
+          "dt_s": 15360.0,
+          "wall_s": 23.05,
+          "nl": 4,
+          "linear": 40
+        },
+        {
+          "sim_time_d": 0.71,
+          "step": 10,
+          "total_steps": 100000,
+          "dt_s": 30720.0,
+          "wall_s": 20.12,
+          "nl": 4,
+          "linear": 33
+        },
+        {
+          "sim_time_d": 1.42,
+          "step": 11,
+          "total_steps": 100000,
+          "dt_s": 61440.0,
+          "wall_s": 19.93,
+          "nl": 4,
+          "linear": 31
+        },
+        {
+          "sim_time_d": 2.84,
+          "step": 12,
+          "total_steps": 100000,
+          "dt_s": 122880.0,
+          "wall_s": 23.58,
+          "nl": 5,
+          "linear": 39
+        },
+        {
+          "sim_time_d": 5.69,
+          "step": 13,
+          "total_steps": 100000,
+          "dt_s": 245760.0,
+          "wall_s": 22.38,
+          "nl": 4,
+          "linear": 37
+        },
+        {
+          "sim_time_d": 11.38,
+          "step": 14,
+          "total_steps": 100000,
+          "dt_s": 491520.0,
+          "wall_s": 29.64,
+          "nl": 5,
+          "linear": 53
+        },
+        {
+          "sim_time_d": 22.75,
+          "step": 15,
+          "total_steps": 100000,
+          "dt_s": 983040.0,
+          "wall_s": 47.07,
+          "nl": 9,
+          "linear": 83
+        },
+        {
+          "sim_time_d": 45.51,
+          "step": 16,
+          "total_steps": 100000,
+          "dt_s": 1966080.0,
+          "wall_s": 83.02,
+          "nl": 16,
+          "linear": 149
+        },
+        {
+          "sim_time_d": 91.02,
+          "step": 17,
+          "total_steps": 100000,
+          "dt_s": 3932160.0,
+          "wall_s": 164.54,
+          "nl": 34,
+          "linear": 293
+        },
+        {
+          "sim_time_d": 136.53,
+          "step": 18,
+          "total_steps": 100000,
+          "dt_s": 3932160.0,
+          "wall_s": 21.55,
+          "nl": 5,
+          "linear": 39
+        },
+        {
+          "sim_time_d": 182.04,
+          "step": 19,
+          "total_steps": 100000,
+          "dt_s": 3932160.0,
+          "wall_s": 96.59,
+          "nl": 23,
+          "linear": 168
+        },
+        {
+          "sim_time_d": 273.07,
+          "step": 20,
+          "total_steps": 100000,
+          "dt_s": 7864320.0,
+          "wall_s": 231.65,
+          "nl": 50,
+          "linear": 414
+        },
+        {
+          "sim_time_d": 319.57,
+          "step": 21,
+          "total_steps": 100000,
+          "dt_s": 4017600.0,
+          "wall_s": 109.97,
+          "nl": 26,
+          "linear": 191
+        },
+        {
+          "sim_time_d": 412.57,
+          "step": 22,
+          "total_steps": 100000,
+          "dt_s": 8035200.0,
+          "wall_s": 183.55,
+          "nl": 38,
+          "linear": 329
+        },
+        {
+          "sim_time_d": 505.57,
+          "step": 23,
+          "total_steps": 100000,
+          "dt_s": 8035200.0,
+          "wall_s": 141.64,
+          "nl": 28,
+          "linear": 261
+        }
+      ],
+      "newton_detail": [
+        {
+          "step": 1,
+          "snes_norms": [],
+          "newton_steps": []
+        },
+        {
+          "step": 2,
+          "snes_norms": [],
+          "newton_steps": []
+        },
+        {
+          "step": 3,
+          "snes_norms": [],
+          "newton_steps": []
+        },
+        {
+          "step": 4,
+          "snes_norms": [],
+          "newton_steps": []
+        },
+        {
+          "step": 5,
+          "snes_norms": [],
+          "newton_steps": []
+        },
+        {
+          "step": 6,
+          "snes_norms": [],
+          "newton_steps": []
+        },
+        {
+          "step": 7,
+          "snes_norms": [],
+          "newton_steps": []
+        },
+        {
+          "step": 8,
+          "snes_norms": [],
+          "newton_steps": []
+        },
+        {
+          "step": 9,
+          "snes_norms": [],
+          "newton_steps": []
+        },
+        {
+          "step": 10,
+          "snes_norms": [],
+          "newton_steps": []
+        },
+        {
+          "step": 11,
+          "snes_norms": [],
+          "newton_steps": []
+        },
+        {
+          "step": 12,
+          "snes_norms": [],
+          "newton_steps": []
+        },
+        {
+          "step": 13,
+          "snes_norms": [],
+          "newton_steps": []
+        },
+        {
+          "step": 14,
+          "snes_norms": [],
+          "newton_steps": []
+        },
+        {
+          "step": 15,
+          "snes_norms": [],
+          "newton_steps": []
+        },
+        {
+          "step": 16,
+          "snes_norms": [],
+          "newton_steps": []
+        },
+        {
+          "step": 17,
+          "snes_norms": [],
+          "newton_steps": []
+        },
+        {
+          "step": 18,
+          "snes_norms": [],
+          "newton_steps": []
+        },
+        {
+          "step": 19,
+          "snes_norms": [],
+          "newton_steps": []
+        },
+        {
+          "step": 20,
+          "snes_norms": [],
+          "newton_steps": []
+        },
+        {
+          "step": 21,
+          "snes_norms": [],
+          "newton_steps": []
+        },
+        {
+          "step": 22,
+          "snes_norms": [],
+          "newton_steps": []
+        },
+        {
+          "step": 23,
+          "snes_norms": [],
+          "newton_steps": []
+        }
+      ],
+      "summary": {
+        "total_nl": 285,
+        "total_linear": 2458,
+        "mean_wall_per_step": 61.4,
+        "peak_rss_mb": 1870,
+        "steps_completed": 23,
+        "failed_steps": 3,
+        "sim_time_d": 505.57
+      },
+      "outcome": "success",
+      "t_final_s": 40000000.0,
+      "dt_collapse": false,
+      "reached_t_final": true,
+      "steady_state": {
+        "mean_wall_per_step": 61.75818181818182,
+        "min_wall": 16.67,
+        "max_wall": 231.65,
+        "total_nl": 280,
+        "total_linear": 2409,
+        "num_steps": 22
+      },
+      "pbs": {
+        "memory_used": "621.92GB",
+        "walltime_used": "00:36:45"
+      },
+      "profile": {
+        "file": "/Users/sghelichkhani/Workplace/morrow2026/parallel_scaling/results/murr_seasonal_saturated/vlumping_inexact_rich_lag3/h4.profile",
+        "events": {
+          "MatMult": {
+            "count": 4461,
+            "time_s": 195.55,
+            "time_ratio": 1.2,
+            "flop_max": 128000000000.0,
+            "mess": 10000000.0,
+            "reduct": 0.0,
+            "pct_time": 8,
+            "mflops": 266764.0
+          },
+          "MatAssemblyBegin": {
+            "count": 2236,
+            "time_s": 102.77,
+            "time_ratio": 2.3,
+            "flop_max": 0.0,
+            "mess": 980000.0,
+            "reduct": 1900.0,
+            "pct_time": 3,
+            "mflops": -0.0
+          },
+          "MatAssemblyEnd": {
+            "count": 2236,
+            "time_s": 25.608,
+            "time_ratio": 8.0,
+            "flop_max": 526000000.0,
+            "mess": 8900.0,
+            "reduct": 17.0,
+            "pct_time": 1,
+            "mflops": 3436.0
+          },
+          "PCSetUp": {
+            "count": 435,
+            "time_s": 97.958,
+            "time_ratio": 1.0,
+            "flop_max": 46900000000.0,
+            "mess": 1100000.0,
+            "reduct": 1200.0,
+            "pct_time": 4,
+            "mflops": 194750.0
+          },
+          "PCApply": {
+            "count": 3696,
+            "time_s": 1383.6,
+            "time_ratio": 1.0,
+            "flop_max": 911000000000.0,
+            "mess": 46000000.0,
+            "reduct": 4400.0,
+            "pct_time": 62,
+            "mflops": 265874.0
+          },
+          "KSPSetUp": {
+            "count": 435,
+            "time_s": 0.014447,
+            "time_ratio": 1.2,
+            "flop_max": 0.0,
+            "mess": 0.0,
+            "reduct": 0.0,
+            "pct_time": 0,
+            "mflops": -0.0
+          },
+          "KSPSolve": {
+            "count": 435,
+            "time_s": 1579.3,
+            "time_ratio": 1.0,
+            "flop_max": 1060000000000.0,
+            "mess": 54000000.0,
+            "reduct": 12000.0,
+            "pct_time": 72,
+            "mflops": 270508.0
+          },
+          "SNESSolve": {
+            "count": 26,
+            "time_s": 2115.4,
+            "time_ratio": 1.0,
+            "flop_max": 2840000000000.0,
+            "mess": 62000000.0,
+            "reduct": 17000.0,
+            "pct_time": 97,
+            "mflops": 537503.0
+          },
+          "SNESFunctionEval": {
+            "count": 997,
+            "time_s": 80.242,
+            "time_ratio": 1.2,
+            "flop_max": 909000000000.0,
+            "mess": 4500000.0,
+            "reduct": 0.0,
+            "pct_time": 3,
+            "mflops": 4456313.0
+          },
+          "SNESJacobianEval": {
+            "count": 435,
+            "time_s": 335.67,
+            "time_ratio": 1.0,
+            "flop_max": 829000000000.0,
+            "mess": 1900000.0,
+            "reduct": 1700.0,
+            "pct_time": 15,
+            "mflops": 973888.0
+          },
+          "PCSetUpOnBlocks": {
+            "count": 7392,
+            "time_s": 21.503,
+            "time_ratio": 1.3,
+            "flop_max": 33200000000.0,
+            "mess": 0.0,
+            "reduct": 0.0,
+            "pct_time": 1,
+            "mflops": 612796.0
+          }
+        },
+        "nprocs": 416,
+        "wall_total_s": 2181.0,
+        "derived": {
+          "denominator": "SNESSolve",
+          "t_snes_s": 2115.4,
+          "pc_setup_s": 119.461,
+          "pc_setup_pct": 5.65,
+          "pc_apply_pct": 65.41,
+          "ksp_total_pct": 74.66,
+          "jacobian_pct": 15.87,
+          "function_pct": 3.79,
+          "matmult_mainstage_pct": 9.24
+        },
+        "validation": {
+          "snes_count": 26,
+          "steps_completed": 23,
+          "steps_match": false,
+          "ksp_count": 435,
+          "total_nl": 285,
+          "nl_match": false,
+          "pcapply_count": 3696,
+          "total_linear": 2458,
+          "linear_close": false,
+          "out_wall_total_s": 1412.2,
+          "profile_snes_s": 2115.4,
+          "wall_consistent": false
+        }
+      }
+    },
+    {
+      "file": "/Users/sghelichkhani/Workplace/morrow2026/parallel_scaling/results/murr_seasonal_saturated/vlumping_inexact_rich_lag3/h8.out",
+      "header": {
+        "case": "murr_monthly3",
+        "solver": "vlumping_inexact_rich_lag3",
+        "scale": "h8",
+        "nodes": 8,
+        "cpus": 832,
+        "horiz_res": 620,
+        "layers": 300,
+        "dof_approx": "320M"
+      },
+      "steps": [
+        {
+          "sim_time_d": 0.0,
+          "step": 1,
+          "total_steps": 100000,
+          "dt_s": 60.0,
+          "wall_s": 68.27,
+          "nl": 4,
+          "linear": 65
+        },
+        {
+          "sim_time_d": 0.0,
+          "step": 2,
+          "total_steps": 100000,
+          "dt_s": 120.0,
+          "wall_s": 27.65,
+          "nl": 5,
+          "linear": 43
+        },
+        {
+          "sim_time_d": 0.0,
+          "step": 3,
+          "total_steps": 100000,
+          "dt_s": 240.0,
+          "wall_s": 36.46,
+          "nl": 4,
+          "linear": 61
+        },
+        {
+          "sim_time_d": 0.01,
+          "step": 4,
+          "total_steps": 100000,
+          "dt_s": 480.0,
+          "wall_s": 26.57,
+          "nl": 4,
+          "linear": 45
+        },
+        {
+          "sim_time_d": 0.02,
+          "step": 5,
+          "total_steps": 100000,
+          "dt_s": 960.0,
+          "wall_s": 33.55,
+          "nl": 4,
+          "linear": 52
+        },
+        {
+          "sim_time_d": 0.04,
+          "step": 6,
+          "total_steps": 100000,
+          "dt_s": 1920.0,
+          "wall_s": 32.25,
+          "nl": 4,
+          "linear": 57
+        },
+        {
+          "sim_time_d": 0.09,
+          "step": 7,
+          "total_steps": 100000,
+          "dt_s": 3840.0,
+          "wall_s": 29.76,
+          "nl": 4,
+          "linear": 48
+        },
+        {
+          "sim_time_d": 0.18,
+          "step": 8,
+          "total_steps": 100000,
+          "dt_s": 7680.0,
+          "wall_s": 36.49,
+          "nl": 5,
+          "linear": 63
+        },
+        {
+          "sim_time_d": 0.35,
+          "step": 9,
+          "total_steps": 100000,
+          "dt_s": 15360.0,
+          "wall_s": 27.27,
+          "nl": 4,
+          "linear": 43
+        },
+        {
+          "sim_time_d": 0.71,
+          "step": 10,
+          "total_steps": 100000,
+          "dt_s": 30720.0,
+          "wall_s": 26.6,
+          "nl": 4,
+          "linear": 39
+        },
+        {
+          "sim_time_d": 1.42,
+          "step": 11,
+          "total_steps": 100000,
+          "dt_s": 61440.0,
+          "wall_s": 25.97,
+          "nl": 4,
+          "linear": 40
+        },
+        {
+          "sim_time_d": 2.84,
+          "step": 12,
+          "total_steps": 100000,
+          "dt_s": 122880.0,
+          "wall_s": 24.1,
+          "nl": 4,
+          "linear": 36
+        },
+        {
+          "sim_time_d": 5.69,
+          "step": 13,
+          "total_steps": 100000,
+          "dt_s": 245760.0,
+          "wall_s": 36.17,
+          "nl": 5,
+          "linear": 57
+        },
+        {
+          "sim_time_d": 11.38,
+          "step": 14,
+          "total_steps": 100000,
+          "dt_s": 491520.0,
+          "wall_s": 38.03,
+          "nl": 5,
+          "linear": 61
+        },
+        {
+          "sim_time_d": 22.75,
+          "step": 15,
+          "total_steps": 100000,
+          "dt_s": 983040.0,
+          "wall_s": 66.6,
+          "nl": 10,
+          "linear": 109
+        },
+        {
+          "sim_time_d": 45.51,
+          "step": 16,
+          "total_steps": 100000,
+          "dt_s": 1966080.0,
+          "wall_s": 121.39,
+          "nl": 19,
+          "linear": 200
+        },
+        {
+          "sim_time_d": 91.02,
+          "step": 17,
+          "total_steps": 100000,
+          "dt_s": 3932160.0,
+          "wall_s": 223.53,
+          "nl": 36,
+          "linear": 365
+        },
+        {
+          "sim_time_d": 136.53,
+          "step": 18,
+          "total_steps": 100000,
+          "dt_s": 3932160.0,
+          "wall_s": 31.47,
+          "nl": 5,
+          "linear": 52
+        },
+        {
+          "sim_time_d": 182.04,
+          "step": 19,
+          "total_steps": 100000,
+          "dt_s": 3932160.0,
+          "wall_s": 92.62,
+          "nl": 17,
+          "linear": 146
+        },
+        {
+          "sim_time_d": 227.55,
+          "step": 20,
+          "total_steps": 100000,
+          "dt_s": 3932160.0,
+          "wall_s": 155.45,
+          "nl": 27,
+          "linear": 247
+        },
+        {
+          "sim_time_d": 273.07,
+          "step": 21,
+          "total_steps": 100000,
+          "dt_s": 3932160.0,
+          "wall_s": 156.25,
+          "nl": 27,
+          "linear": 247
+        },
+        {
+          "sim_time_d": 364.09,
+          "step": 22,
+          "total_steps": 100000,
+          "dt_s": 7864320.0,
+          "wall_s": 293.05,
+          "nl": 46,
+          "linear": 471
+        },
+        {
+          "sim_time_d": 457.09,
+          "step": 23,
+          "total_steps": 100000,
+          "dt_s": 8035200.0,
+          "wall_s": 265.55,
+          "nl": 40,
+          "linear": 433
+        },
+        {
+          "sim_time_d": 550.09,
+          "step": 24,
+          "total_steps": 100000,
+          "dt_s": 8035200.0,
+          "wall_s": 198.26,
+          "nl": 28,
+          "linear": 324
+        }
+      ],
+      "newton_detail": [
+        {
+          "step": 1,
+          "snes_norms": [],
+          "newton_steps": []
+        },
+        {
+          "step": 2,
+          "snes_norms": [],
+          "newton_steps": []
+        },
+        {
+          "step": 3,
+          "snes_norms": [],
+          "newton_steps": []
+        },
+        {
+          "step": 4,
+          "snes_norms": [],
+          "newton_steps": []
+        },
+        {
+          "step": 5,
+          "snes_norms": [],
+          "newton_steps": []
+        },
+        {
+          "step": 6,
+          "snes_norms": [],
+          "newton_steps": []
+        },
+        {
+          "step": 7,
+          "snes_norms": [],
+          "newton_steps": []
+        },
+        {
+          "step": 8,
+          "snes_norms": [],
+          "newton_steps": []
+        },
+        {
+          "step": 9,
+          "snes_norms": [],
+          "newton_steps": []
+        },
+        {
+          "step": 10,
+          "snes_norms": [],
+          "newton_steps": []
+        },
+        {
+          "step": 11,
+          "snes_norms": [],
+          "newton_steps": []
+        },
+        {
+          "step": 12,
+          "snes_norms": [],
+          "newton_steps": []
+        },
+        {
+          "step": 13,
+          "snes_norms": [],
+          "newton_steps": []
+        },
+        {
+          "step": 14,
+          "snes_norms": [],
+          "newton_steps": []
+        },
+        {
+          "step": 15,
+          "snes_norms": [],
+          "newton_steps": []
+        },
+        {
+          "step": 16,
+          "snes_norms": [],
+          "newton_steps": []
+        },
+        {
+          "step": 17,
+          "snes_norms": [],
+          "newton_steps": []
+        },
+        {
+          "step": 18,
+          "snes_norms": [],
+          "newton_steps": []
+        },
+        {
+          "step": 19,
+          "snes_norms": [],
+          "newton_steps": []
+        },
+        {
+          "step": 20,
+          "snes_norms": [],
+          "newton_steps": []
+        },
+        {
+          "step": 21,
+          "snes_norms": [],
+          "newton_steps": []
+        },
+        {
+          "step": 22,
+          "snes_norms": [],
+          "newton_steps": []
+        },
+        {
+          "step": 23,
+          "snes_norms": [],
+          "newton_steps": []
+        },
+        {
+          "step": 24,
+          "snes_norms": [],
+          "newton_steps": []
+        }
+      ],
+      "summary": {
+        "total_nl": 315,
+        "total_linear": 3304,
+        "mean_wall_per_step": 86.39,
+        "peak_rss_mb": 1927,
+        "steps_completed": 24,
+        "failed_steps": 4,
+        "sim_time_d": 550.09
+      },
+      "outcome": "success",
+      "t_final_s": 40000000.0,
+      "dt_collapse": false,
+      "reached_t_final": true,
+      "steady_state": {
+        "mean_wall_per_step": 87.17565217391304,
+        "min_wall": 24.1,
+        "max_wall": 293.05,
+        "total_nl": 311,
+        "total_linear": 3239,
+        "num_steps": 23
+      },
+      "pbs": {
+        "memory_used": "1.25TB",
+        "walltime_used": "00:57:26"
+      },
+      "profile": {
+        "file": "/Users/sghelichkhani/Workplace/morrow2026/parallel_scaling/results/murr_seasonal_saturated/vlumping_inexact_rich_lag3/h8.profile",
+        "events": {
+          "MatMult": {
+            "count": 6225,
+            "time_s": 278.63,
+            "time_ratio": 1.3,
+            "flop_max": 178000000000.0,
+            "mess": 30000000.0,
+            "reduct": 0.0,
+            "pct_time": 7,
+            "mflops": 529496.0
+          },
+          "MatAssemblyBegin": {
+            "count": 2634,
+            "time_s": 149.24,
+            "time_ratio": 2.1,
+            "flop_max": 0.0,
+            "mess": 2500000.0,
+            "reduct": 2200.0,
+            "pct_time": 3,
+            "mflops": -0.0
+          },
+          "MatAssemblyEnd": {
+            "count": 2634,
+            "time_s": 44.085,
+            "time_ratio": 24.8,
+            "flop_max": 962000000.0,
+            "mess": 19000.0,
+            "reduct": 17.0,
+            "pct_time": 1,
+            "mflops": 5992.0
+          },
+          "PCSetUp": {
+            "count": 515,
+            "time_s": 184.55,
+            "time_ratio": 1.0,
+            "flop_max": 49900000000.0,
+            "mess": 2500000.0,
+            "reduct": 1200.0,
+            "pct_time": 5,
+            "mflops": 222489.0
+          },
+          "PCApply": {
+            "count": 5379,
+            "time_s": 2331.8,
+            "time_ratio": 1.0,
+            "flop_max": 1310000000000.0,
+            "mess": 140000000.0,
+            "reduct": 6200.0,
+            "pct_time": 66,
+            "mflops": 460234.0
+          },
+          "KSPSetUp": {
+            "count": 515,
+            "time_s": 0.013859,
+            "time_ratio": 1.2,
+            "flop_max": 0.0,
+            "mess": 0.0,
+            "reduct": 0.0,
+            "pct_time": 0,
+            "mflops": -0.0
+          },
+          "KSPSolve": {
+            "count": 515,
+            "time_s": 2608.2,
+            "time_ratio": 1.0,
+            "flop_max": 1530000000000.0,
+            "mess": 170000000.0,
+            "reduct": 18000.0,
+            "pct_time": 76,
+            "mflops": 481007.0
+          },
+          "SNESSolve": {
+            "count": 28,
+            "time_s": 3353.2,
+            "time_ratio": 1.0,
+            "flop_max": 3670000000000.0,
+            "mess": 190000000.0,
+            "reduct": 24000.0,
+            "pct_time": 98,
+            "mflops": 882929.0
+          },
+          "SNESFunctionEval": {
+            "count": 1191,
+            "time_s": 97.756,
+            "time_ratio": 1.2,
+            "flop_max": 1100000000000.0,
+            "mess": 12000000.0,
+            "reduct": 0.0,
+            "pct_time": 3,
+            "mflops": 8855554.0
+          },
+          "SNESJacobianEval": {
+            "count": 515,
+            "time_s": 433.85,
+            "time_ratio": 1.0,
+            "flop_max": 997000000000.0,
+            "mess": 5000000.0,
+            "reduct": 2100.0,
+            "pct_time": 13,
+            "mflops": 1807851.0
+          },
+          "PCSetUpOnBlocks": {
+            "count": 10758,
+            "time_s": 27.035,
+            "time_ratio": 1.4,
+            "flop_max": 39800000000.0,
+            "mess": 0.0,
+            "reduct": 0.0,
+            "pct_time": 1,
+            "mflops": 1167602.0
+          }
+        },
+        "nprocs": 832,
+        "wall_total_s": 3422.0,
+        "derived": {
+          "denominator": "SNESSolve",
+          "t_snes_s": 3353.2,
+          "pc_setup_s": 211.585,
+          "pc_setup_pct": 6.31,
+          "pc_apply_pct": 69.54,
+          "ksp_total_pct": 77.78,
+          "jacobian_pct": 12.94,
+          "function_pct": 2.92,
+          "matmult_mainstage_pct": 8.31
+        },
+        "validation": {
+          "snes_count": 28,
+          "steps_completed": 24,
+          "steps_match": false,
+          "ksp_count": 515,
+          "total_nl": 315,
+          "nl_match": false,
+          "pcapply_count": 5379,
+          "total_linear": 3304,
+          "linear_close": false,
+          "out_wall_total_s": 2073.4,
+          "profile_snes_s": 3353.2,
+          "wall_consistent": false
+        }
+      }
+    },
+    {
+      "file": "/Users/sghelichkhani/Workplace/morrow2026/parallel_scaling/results/murr_seasonal_saturated/vlumping_linesmooth/h1.out",
+      "header": {
+        "case": "murr_monthly3",
+        "solver": "vlumping_linesmooth",
+        "scale": "h1",
+        "nodes": 1,
+        "cpus": 104,
+        "dof": 43315200,
+        "timestepper": "BackwardEuler, dt_init = 60.0 s, dt_max = 8035200.0 s, growth = 2.0",
+        "horiz_res": 1775,
+        "layers": 300,
+        "dof_approx": "40M"
+      },
+      "steps": [
+        {
+          "sim_time_d": 0.0,
+          "step": 1,
+          "total_steps": 100000,
+          "dt_s": 60.0,
+          "wall_s": 43.11,
+          "nl": 7,
+          "linear": 25
+        },
+        {
+          "sim_time_d": 0.0,
+          "step": 2,
+          "total_steps": 100000,
+          "dt_s": 120.0,
+          "wall_s": 17.51,
+          "nl": 5,
+          "linear": 26
+        },
+        {
+          "sim_time_d": 0.0,
+          "step": 3,
+          "total_steps": 100000,
+          "dt_s": 240.0,
+          "wall_s": 17.05,
+          "nl": 5,
+          "linear": 25
+        },
+        {
+          "sim_time_d": 0.01,
+          "step": 4,
+          "total_steps": 100000,
+          "dt_s": 480.0,
+          "wall_s": 16.9,
+          "nl": 5,
+          "linear": 24
+        },
+        {
+          "sim_time_d": 0.02,
+          "step": 5,
+          "total_steps": 100000,
+          "dt_s": 960.0,
+          "wall_s": 16.34,
+          "nl": 5,
+          "linear": 23
+        },
+        {
+          "sim_time_d": 0.04,
+          "step": 6,
+          "total_steps": 100000,
+          "dt_s": 1920.0,
+          "wall_s": 20.98,
+          "nl": 6,
+          "linear": 34
+        },
+        {
+          "sim_time_d": 0.09,
+          "step": 7,
+          "total_steps": 100000,
+          "dt_s": 3840.0,
+          "wall_s": 17.24,
+          "nl": 5,
+          "linear": 27
+        },
+        {
+          "sim_time_d": 0.18,
+          "step": 8,
+          "total_steps": 100000,
+          "dt_s": 7680.0,
+          "wall_s": 14.93,
+          "nl": 4,
+          "linear": 26
+        },
+        {
+          "sim_time_d": 0.35,
+          "step": 9,
+          "total_steps": 100000,
+          "dt_s": 15360.0,
+          "wall_s": 15.2,
+          "nl": 4,
+          "linear": 27
+        },
+        {
+          "sim_time_d": 0.71,
+          "step": 10,
+          "total_steps": 100000,
+          "dt_s": 30720.0,
+          "wall_s": 14.86,
+          "nl": 4,
+          "linear": 26
+        },
+        {
+          "sim_time_d": 1.42,
+          "step": 11,
+          "total_steps": 100000,
+          "dt_s": 61440.0,
+          "wall_s": 14.68,
+          "nl": 4,
+          "linear": 25
+        },
+        {
+          "sim_time_d": 2.84,
+          "step": 12,
+          "total_steps": 100000,
+          "dt_s": 122880.0,
+          "wall_s": 17.75,
+          "nl": 5,
+          "linear": 29
+        },
+        {
+          "sim_time_d": 5.69,
+          "step": 13,
+          "total_steps": 100000,
+          "dt_s": 245760.0,
+          "wall_s": 17.16,
+          "nl": 5,
+          "linear": 27
+        },
+        {
+          "sim_time_d": 11.38,
+          "step": 14,
+          "total_steps": 100000,
+          "dt_s": 491520.0,
+          "wall_s": 57.41,
+          "nl": 16,
+          "linear": 94
+        },
+        {
+          "sim_time_d": 22.75,
+          "step": 15,
+          "total_steps": 100000,
+          "dt_s": 983040.0,
+          "wall_s": 43.18,
+          "nl": 12,
+          "linear": 69
+        },
+        {
+          "sim_time_d": 45.51,
+          "step": 16,
+          "total_steps": 100000,
+          "dt_s": 1966080.0,
+          "wall_s": 160.91,
+          "nl": 44,
+          "linear": 255
+        },
+        {
+          "sim_time_d": 68.27,
+          "step": 17,
+          "total_steps": 100000,
+          "dt_s": 1966080.0,
+          "wall_s": 87.31,
+          "nl": 25,
+          "linear": 135
+        },
+        {
+          "sim_time_d": 113.78,
+          "step": 18,
+          "total_steps": 100000,
+          "dt_s": 3932160.0,
+          "wall_s": 122.01,
+          "nl": 35,
+          "linear": 186
+        },
+        {
+          "sim_time_d": 159.29,
+          "step": 19,
+          "total_steps": 100000,
+          "dt_s": 3932160.0,
+          "wall_s": 17.1,
+          "nl": 5,
+          "linear": 26
+        },
+        {
+          "sim_time_d": 204.8,
+          "step": 20,
+          "total_steps": 100000,
+          "dt_s": 3932160.0,
+          "wall_s": 19.58,
+          "nl": 6,
+          "linear": 27
+        },
+        {
+          "sim_time_d": 250.31,
+          "step": 21,
+          "total_steps": 100000,
+          "dt_s": 3932160.0,
+          "wall_s": 9.77,
+          "nl": 3,
+          "linear": 14
+        },
+        {
+          "sim_time_d": 295.82,
+          "step": 22,
+          "total_steps": 100000,
+          "dt_s": 3932160.0,
+          "wall_s": 13.17,
+          "nl": 4,
+          "linear": 18
+        },
+        {
+          "sim_time_d": 341.33,
+          "step": 23,
+          "total_steps": 100000,
+          "dt_s": 3932160.0,
+          "wall_s": 24.05,
+          "nl": 7,
+          "linear": 36
+        },
+        {
+          "sim_time_d": 386.84,
+          "step": 24,
+          "total_steps": 100000,
+          "dt_s": 3932160.0,
+          "wall_s": 20.02,
+          "nl": 6,
+          "linear": 28
+        },
+        {
+          "sim_time_d": 432.35,
+          "step": 25,
+          "total_steps": 100000,
+          "dt_s": 3932160.0,
+          "wall_s": 23.99,
+          "nl": 7,
+          "linear": 36
+        },
+        {
+          "sim_time_d": 477.87,
+          "step": 26,
+          "total_steps": 100000,
+          "dt_s": 3932160.0,
+          "wall_s": 13.81,
+          "nl": 4,
+          "linear": 21
+        }
+      ],
+      "newton_detail": [
+        {
+          "step": 1,
+          "snes_norms": [],
+          "newton_steps": []
+        },
+        {
+          "step": 2,
+          "snes_norms": [],
+          "newton_steps": []
+        },
+        {
+          "step": 3,
+          "snes_norms": [],
+          "newton_steps": []
+        },
+        {
+          "step": 4,
+          "snes_norms": [],
+          "newton_steps": []
+        },
+        {
+          "step": 5,
+          "snes_norms": [],
+          "newton_steps": []
+        },
+        {
+          "step": 6,
+          "snes_norms": [],
+          "newton_steps": []
+        },
+        {
+          "step": 7,
+          "snes_norms": [],
+          "newton_steps": []
+        },
+        {
+          "step": 8,
+          "snes_norms": [],
+          "newton_steps": []
+        },
+        {
+          "step": 9,
+          "snes_norms": [],
+          "newton_steps": []
+        },
+        {
+          "step": 10,
+          "snes_norms": [],
+          "newton_steps": []
+        },
+        {
+          "step": 11,
+          "snes_norms": [],
+          "newton_steps": []
+        },
+        {
+          "step": 12,
+          "snes_norms": [],
+          "newton_steps": []
+        },
+        {
+          "step": 13,
+          "snes_norms": [],
+          "newton_steps": []
+        },
+        {
+          "step": 14,
+          "snes_norms": [],
+          "newton_steps": []
+        },
+        {
+          "step": 15,
+          "snes_norms": [],
+          "newton_steps": []
+        },
+        {
+          "step": 16,
+          "snes_norms": [],
+          "newton_steps": []
+        },
+        {
+          "step": 17,
+          "snes_norms": [],
+          "newton_steps": []
+        },
+        {
+          "step": 18,
+          "snes_norms": [],
+          "newton_steps": []
+        },
+        {
+          "step": 19,
+          "snes_norms": [],
+          "newton_steps": []
+        },
+        {
+          "step": 20,
+          "snes_norms": [],
+          "newton_steps": []
+        },
+        {
+          "step": 21,
+          "snes_norms": [],
+          "newton_steps": []
+        },
+        {
+          "step": 22,
+          "snes_norms": [],
+          "newton_steps": []
+        },
+        {
+          "step": 23,
+          "snes_norms": [],
+          "newton_steps": []
+        },
+        {
+          "step": 24,
+          "snes_norms": [],
+          "newton_steps": []
+        },
+        {
+          "step": 25,
+          "snes_norms": [],
+          "newton_steps": []
+        },
+        {
+          "step": 26,
+          "snes_norms": [],
+          "newton_steps": []
+        }
+      ],
+      "summary": {
+        "total_nl": 238,
+        "total_linear": 1289,
+        "mean_wall_per_step": 32.92,
+        "peak_rss_mb": 1592,
+        "steps_completed": 26,
+        "failed_steps": 9,
+        "sim_time_d": 477.87
+      },
+      "outcome": "success",
+      "t_final_s": 40000000.0,
+      "dt_collapse": false,
+      "reached_t_final": true,
+      "steady_state": {
+        "mean_wall_per_step": 32.5164,
+        "min_wall": 9.77,
+        "max_wall": 160.91,
+        "total_nl": 231,
+        "total_linear": 1264,
+        "num_steps": 25
+      },
+      "pbs": {
+        "memory_used": "133.7GB",
+        "walltime_used": "00:43:37"
+      },
+      "profile": {
+        "file": "/Users/sghelichkhani/Workplace/morrow2026/parallel_scaling/results/murr_seasonal_saturated/vlumping_linesmooth/h1.profile",
+        "events": {
+          "MatMult": {
+            "count": 11540,
+            "time_s": 494.37,
+            "time_ratio": 1.1,
+            "flop_max": 354000000000.0,
+            "mess": 6000000.0,
+            "reduct": 0.0,
+            "pct_time": 18,
+            "mflops": 71493.0
+          },
+          "MatAssemblyBegin": {
+            "count": 169991,
+            "time_s": 177.74,
+            "time_ratio": 2.7,
+            "flop_max": 0.0,
+            "mess": 360000.0,
+            "reduct": 3400.0,
+            "pct_time": 5,
+            "mflops": -0.0
+          },
+          "MatAssemblyEnd": {
+            "count": 169991,
+            "time_s": 37.009,
+            "time_ratio": 22.6,
+            "flop_max": 773000000.0,
+            "mess": 2100.0,
+            "reduct": 17.0,
+            "pct_time": 1,
+            "mflops": 884.0
+          },
+          "PCSetUp": {
+            "count": 688,
+            "time_s": 890.65,
+            "time_ratio": 1.0,
+            "flop_max": 540000000000.0,
+            "mess": 4000000.0,
+            "reduct": 16000.0,
+            "pct_time": 34,
+            "mflops": 60640.0
+          },
+          "PCApply": {
+            "count": 3972,
+            "time_s": 722.06,
+            "time_ratio": 1.1,
+            "flop_max": 397000000000.0,
+            "mess": 9000000.0,
+            "reduct": 7400.0,
+            "pct_time": 27,
+            "mflops": 54724.0
+          },
+          "KSPSetUp": {
+            "count": 688,
+            "time_s": 0.02213,
+            "time_ratio": 1.7,
+            "flop_max": 0.0,
+            "mess": 0.0,
+            "reduct": 0.0,
+            "pct_time": 0,
+            "mflops": -0.0
+          },
+          "KSPSolve": {
+            "count": 688,
+            "time_s": 910.3,
+            "time_ratio": 1.0,
+            "flop_max": 552000000000.0,
+            "mess": 11000000.0,
+            "reduct": 16000.0,
+            "pct_time": 35,
+            "mflops": 60491.0
+          },
+          "SNESSolve": {
+            "count": 35,
+            "time_s": 2532.8,
+            "time_ratio": 1.0,
+            "flop_max": 4340000000000.0,
+            "mess": 18000000.0,
+            "reduct": 39000.0,
+            "pct_time": 98,
+            "mflops": 167260.0
+          },
+          "SNESFunctionEval": {
+            "count": 1878,
+            "time_s": 145.21,
+            "time_ratio": 1.2,
+            "flop_max": 1830000000000.0,
+            "mess": 2000000.0,
+            "reduct": 0.0,
+            "pct_time": 5,
+            "mflops": 1215241.0
+          },
+          "SNESJacobianEval": {
+            "count": 688,
+            "time_s": 549.39,
+            "time_ratio": 1.0,
+            "flop_max": 1400000000000.0,
+            "mess": 720000.0,
+            "reduct": 2800.0,
+            "pct_time": 21,
+            "mflops": 246552.0
+          }
+        },
+        "nprocs": 104,
+        "wall_total_s": 2597.0,
+        "derived": {
+          "denominator": "SNESSolve",
+          "t_snes_s": 2532.8,
+          "pc_setup_s": 890.65,
+          "pc_setup_pct": 35.16,
+          "pc_apply_pct": 28.51,
+          "ksp_total_pct": 35.94,
+          "jacobian_pct": 21.69,
+          "function_pct": 5.73,
+          "matmult_mainstage_pct": 19.52
+        },
+        "validation": {
+          "snes_count": 35,
+          "steps_completed": 26,
+          "steps_match": false,
+          "ksp_count": 688,
+          "total_nl": 238,
+          "nl_match": false,
+          "pcapply_count": 3972,
+          "total_linear": 1289,
+          "linear_close": false,
+          "out_wall_total_s": 855.9,
+          "profile_snes_s": 2532.8,
+          "wall_consistent": false
+        }
+      }
+    },
+    {
+      "file": "/Users/sghelichkhani/Workplace/morrow2026/parallel_scaling/results/murr_seasonal_saturated/vlumping_linesmooth/h2.out",
+      "header": {
+        "case": "murr_monthly3",
+        "solver": "vlumping_linesmooth",
+        "scale": "h2",
+        "nodes": 2,
+        "cpus": 208,
+        "dof": 81964800,
+        "timestepper": "BackwardEuler, dt_init = 60.0 s, dt_max = 8035200.0 s, growth = 2.0",
+        "horiz_res": 1250,
+        "layers": 300,
+        "dof_approx": "80M"
+      },
+      "steps": [
+        {
+          "sim_time_d": 0.0,
+          "step": 1,
+          "total_steps": 100000,
+          "dt_s": 60.0,
+          "wall_s": 46.87,
+          "nl": 7,
+          "linear": 36
+        },
+        {
+          "sim_time_d": 0.0,
+          "step": 2,
+          "total_steps": 100000,
+          "dt_s": 120.0,
+          "wall_s": 15.72,
+          "nl": 4,
+          "linear": 27
+        },
+        {
+          "sim_time_d": 0.0,
+          "step": 3,
+          "total_steps": 100000,
+          "dt_s": 240.0,
+          "wall_s": 16.41,
+          "nl": 4,
+          "linear": 30
+        },
+        {
+          "sim_time_d": 0.01,
+          "step": 4,
+          "total_steps": 100000,
+          "dt_s": 480.0,
+          "wall_s": 15.81,
+          "nl": 4,
+          "linear": 28
+        },
+        {
+          "sim_time_d": 0.02,
+          "step": 5,
+          "total_steps": 100000,
+          "dt_s": 960.0,
+          "wall_s": 15.61,
+          "nl": 4,
+          "linear": 28
+        },
+        {
+          "sim_time_d": 0.04,
+          "step": 6,
+          "total_steps": 100000,
+          "dt_s": 1920.0,
+          "wall_s": 14.56,
+          "nl": 4,
+          "linear": 25
+        },
+        {
+          "sim_time_d": 0.09,
+          "step": 7,
+          "total_steps": 100000,
+          "dt_s": 3840.0,
+          "wall_s": 15.33,
+          "nl": 4,
+          "linear": 29
+        },
+        {
+          "sim_time_d": 0.18,
+          "step": 8,
+          "total_steps": 100000,
+          "dt_s": 7680.0,
+          "wall_s": 16.59,
+          "nl": 4,
+          "linear": 35
+        },
+        {
+          "sim_time_d": 0.35,
+          "step": 9,
+          "total_steps": 100000,
+          "dt_s": 15360.0,
+          "wall_s": 15.71,
+          "nl": 4,
+          "linear": 31
+        },
+        {
+          "sim_time_d": 0.71,
+          "step": 10,
+          "total_steps": 100000,
+          "dt_s": 30720.0,
+          "wall_s": 16.3,
+          "nl": 4,
+          "linear": 33
+        },
+        {
+          "sim_time_d": 1.42,
+          "step": 11,
+          "total_steps": 100000,
+          "dt_s": 61440.0,
+          "wall_s": 15.71,
+          "nl": 4,
+          "linear": 31
+        },
+        {
+          "sim_time_d": 2.84,
+          "step": 12,
+          "total_steps": 100000,
+          "dt_s": 122880.0,
+          "wall_s": 15.32,
+          "nl": 4,
+          "linear": 29
+        },
+        {
+          "sim_time_d": 5.69,
+          "step": 13,
+          "total_steps": 100000,
+          "dt_s": 245760.0,
+          "wall_s": 14.82,
+          "nl": 4,
+          "linear": 27
+        },
+        {
+          "sim_time_d": 11.38,
+          "step": 14,
+          "total_steps": 100000,
+          "dt_s": 491520.0,
+          "wall_s": 22.69,
+          "nl": 6,
+          "linear": 42
+        },
+        {
+          "sim_time_d": 22.75,
+          "step": 15,
+          "total_steps": 100000,
+          "dt_s": 983040.0,
+          "wall_s": 52.4,
+          "nl": 14,
+          "linear": 95
+        },
+        {
+          "sim_time_d": 45.51,
+          "step": 16,
+          "total_steps": 100000,
+          "dt_s": 1966080.0,
+          "wall_s": 75.13,
+          "nl": 20,
+          "linear": 136
+        },
+        {
+          "sim_time_d": 68.27,
+          "step": 17,
+          "total_steps": 100000,
+          "dt_s": 1966080.0,
+          "wall_s": 92.59,
+          "nl": 25,
+          "linear": 162
+        },
+        {
+          "sim_time_d": 113.78,
+          "step": 18,
+          "total_steps": 100000,
+          "dt_s": 3932160.0,
+          "wall_s": 163.41,
+          "nl": 43,
+          "linear": 290
+        },
+        {
+          "sim_time_d": 159.29,
+          "step": 19,
+          "total_steps": 100000,
+          "dt_s": 3932160.0,
+          "wall_s": 101.13,
+          "nl": 28,
+          "linear": 170
+        },
+        {
+          "sim_time_d": 204.8,
+          "step": 20,
+          "total_steps": 100000,
+          "dt_s": 3932160.0,
+          "wall_s": 107.1,
+          "nl": 29,
+          "linear": 185
+        },
+        {
+          "sim_time_d": 295.82,
+          "step": 21,
+          "total_steps": 100000,
+          "dt_s": 7864320.0,
+          "wall_s": 187.28,
+          "nl": 50,
+          "linear": 326
+        },
+        {
+          "sim_time_d": 342.32,
+          "step": 22,
+          "total_steps": 100000,
+          "dt_s": 4017600.0,
+          "wall_s": 65.77,
+          "nl": 18,
+          "linear": 113
+        },
+        {
+          "sim_time_d": 435.32,
+          "step": 23,
+          "total_steps": 100000,
+          "dt_s": 8035200.0,
+          "wall_s": 180.1,
+          "nl": 48,
+          "linear": 315
+        },
+        {
+          "sim_time_d": 528.32,
+          "step": 24,
+          "total_steps": 100000,
+          "dt_s": 8035200.0,
+          "wall_s": 124.96,
+          "nl": 33,
+          "linear": 224
+        }
+      ],
+      "newton_detail": [
+        {
+          "step": 1,
+          "snes_norms": [],
+          "newton_steps": []
+        },
+        {
+          "step": 2,
+          "snes_norms": [],
+          "newton_steps": []
+        },
+        {
+          "step": 3,
+          "snes_norms": [],
+          "newton_steps": []
+        },
+        {
+          "step": 4,
+          "snes_norms": [],
+          "newton_steps": []
+        },
+        {
+          "step": 5,
+          "snes_norms": [],
+          "newton_steps": []
+        },
+        {
+          "step": 6,
+          "snes_norms": [],
+          "newton_steps": []
+        },
+        {
+          "step": 7,
+          "snes_norms": [],
+          "newton_steps": []
+        },
+        {
+          "step": 8,
+          "snes_norms": [],
+          "newton_steps": []
+        },
+        {
+          "step": 9,
+          "snes_norms": [],
+          "newton_steps": []
+        },
+        {
+          "step": 10,
+          "snes_norms": [],
+          "newton_steps": []
+        },
+        {
+          "step": 11,
+          "snes_norms": [],
+          "newton_steps": []
+        },
+        {
+          "step": 12,
+          "snes_norms": [],
+          "newton_steps": []
+        },
+        {
+          "step": 13,
+          "snes_norms": [],
+          "newton_steps": []
+        },
+        {
+          "step": 14,
+          "snes_norms": [],
+          "newton_steps": []
+        },
+        {
+          "step": 15,
+          "snes_norms": [],
+          "newton_steps": []
+        },
+        {
+          "step": 16,
+          "snes_norms": [],
+          "newton_steps": []
+        },
+        {
+          "step": 17,
+          "snes_norms": [],
+          "newton_steps": []
+        },
+        {
+          "step": 18,
+          "snes_norms": [],
+          "newton_steps": []
+        },
+        {
+          "step": 19,
+          "snes_norms": [],
+          "newton_steps": []
+        },
+        {
+          "step": 20,
+          "snes_norms": [],
+          "newton_steps": []
+        },
+        {
+          "step": 21,
+          "snes_norms": [],
+          "newton_steps": []
+        },
+        {
+          "step": 22,
+          "snes_norms": [],
+          "newton_steps": []
+        },
+        {
+          "step": 23,
+          "snes_norms": [],
+          "newton_steps": []
+        },
+        {
+          "step": 24,
+          "snes_norms": [],
+          "newton_steps": []
+        }
+      ],
+      "summary": {
+        "total_nl": 369,
+        "total_linear": 2447,
+        "mean_wall_per_step": 58.64,
+        "peak_rss_mb": 1575,
+        "steps_completed": 24,
+        "failed_steps": 4,
+        "sim_time_d": 528.32
+      },
+      "outcome": "success",
+      "t_final_s": 40000000.0,
+      "dt_collapse": false,
+      "reached_t_final": true,
+      "steady_state": {
+        "mean_wall_per_step": 59.15,
+        "min_wall": 14.56,
+        "max_wall": 187.28,
+        "total_nl": 362,
+        "total_linear": 2411,
+        "num_steps": 23
+      },
+      "pbs": {
+        "memory_used": "263.65GB",
+        "walltime_used": "00:37:39"
+      },
+      "profile": {
+        "file": "/Users/sghelichkhani/Workplace/morrow2026/parallel_scaling/results/murr_seasonal_saturated/vlumping_linesmooth/h2.profile",
+        "events": {
+          "MatMult": {
+            "count": 10058,
+            "time_s": 412.79,
+            "time_ratio": 1.1,
+            "flop_max": 288000000000.0,
+            "mess": 11000000.0,
+            "reduct": 0.0,
+            "pct_time": 17,
+            "mflops": 141332.0
+          },
+          "MatAssemblyBegin": {
+            "count": 131494,
+            "time_s": 166.15,
+            "time_ratio": 2.3,
+            "flop_max": 0.0,
+            "mess": 620000.0,
+            "reduct": 2900.0,
+            "pct_time": 5,
+            "mflops": -0.0
+          },
+          "MatAssemblyEnd": {
+            "count": 131494,
+            "time_s": 43.328,
+            "time_ratio": 4.8,
+            "flop_max": 633000000.0,
+            "mess": 4400.0,
+            "reduct": 17.0,
+            "pct_time": 1,
+            "mflops": 1250.0
+          },
+          "PCSetUp": {
+            "count": 569,
+            "time_s": 726.34,
+            "time_ratio": 1.0,
+            "flop_max": 417000000000.0,
+            "mess": 6800000.0,
+            "reduct": 13000.0,
+            "pct_time": 32,
+            "mflops": 116425.0
+          },
+          "PCApply": {
+            "count": 3799,
+            "time_s": 674.8,
+            "time_ratio": 1.1,
+            "flop_max": 356000000000.0,
+            "mess": 17000000.0,
+            "reduct": 6600.0,
+            "pct_time": 29,
+            "mflops": 106047.0
+          },
+          "KSPSetUp": {
+            "count": 569,
+            "time_s": 0.014042,
+            "time_ratio": 1.2,
+            "flop_max": 0.0,
+            "mess": 0.0,
+            "reduct": 0.0,
+            "pct_time": 0,
+            "mflops": -0.0
+          },
+          "KSPSolve": {
+            "count": 569,
+            "time_s": 855.64,
+            "time_ratio": 1.0,
+            "flop_max": 498000000000.0,
+            "mess": 21000000.0,
+            "reduct": 15000.0,
+            "pct_time": 38,
+            "mflops": 117221.0
+          },
+          "SNESSolve": {
+            "count": 28,
+            "time_s": 2171.9,
+            "time_ratio": 1.0,
+            "flop_max": 3190000000000.0,
+            "mess": 33000000.0,
+            "reduct": 33000.0,
+            "pct_time": 97,
+            "mflops": 291058.0
+          },
+          "SNESFunctionEval": {
+            "count": 1299,
+            "time_s": 99.454,
+            "time_ratio": 1.2,
+            "flop_max": 1180000000000.0,
+            "mess": 2900000.0,
+            "reduct": 0.0,
+            "pct_time": 4,
+            "mflops": 2323924.0
+          },
+          "SNESJacobianEval": {
+            "count": 569,
+            "time_s": 462.1,
+            "time_ratio": 1.0,
+            "flop_max": 1080000000000.0,
+            "mess": 1200000.0,
+            "reduct": 2300.0,
+            "pct_time": 21,
+            "mflops": 459052.0
+          }
+        },
+        "nprocs": 208,
+        "wall_total_s": 2237.0,
+        "derived": {
+          "denominator": "SNESSolve",
+          "t_snes_s": 2171.9,
+          "pc_setup_s": 726.34,
+          "pc_setup_pct": 33.44,
+          "pc_apply_pct": 31.07,
+          "ksp_total_pct": 39.4,
+          "jacobian_pct": 21.28,
+          "function_pct": 4.58,
+          "matmult_mainstage_pct": 19.01
+        },
+        "validation": {
+          "snes_count": 28,
+          "steps_completed": 24,
+          "steps_match": false,
+          "ksp_count": 569,
+          "total_nl": 369,
+          "nl_match": false,
+          "pcapply_count": 3799,
+          "total_linear": 2447,
+          "linear_close": false,
+          "out_wall_total_s": 1407.4,
+          "profile_snes_s": 2171.9,
+          "wall_consistent": false
+        }
+      }
+    },
+    {
+      "file": "/Users/sghelichkhani/Workplace/morrow2026/parallel_scaling/results/murr_seasonal_saturated/vlumping_linesmooth/h4.out",
+      "header": {
+        "case": "murr_monthly3",
+        "solver": "vlumping_linesmooth",
+        "scale": "h4",
+        "nodes": 4,
+        "cpus": 416,
+        "dof": 165139200,
+        "timestepper": "BackwardEuler, dt_init = 60.0 s, dt_max = 8035200.0 s, growth = 2.0",
+        "horiz_res": 880,
+        "layers": 300,
+        "dof_approx": "160M"
+      },
+      "steps": [
+        {
+          "sim_time_d": 0.0,
+          "step": 1,
+          "total_steps": 100000,
+          "dt_s": 60.0,
+          "wall_s": 46.85,
+          "nl": 5,
+          "linear": 45
+        },
+        {
+          "sim_time_d": 0.0,
+          "step": 2,
+          "total_steps": 100000,
+          "dt_s": 120.0,
+          "wall_s": 15.06,
+          "nl": 3,
+          "linear": 28
+        },
+        {
+          "sim_time_d": 0.0,
+          "step": 3,
+          "total_steps": 100000,
+          "dt_s": 240.0,
+          "wall_s": 15.73,
+          "nl": 3,
+          "linear": 31
+        },
+        {
+          "sim_time_d": 0.01,
+          "step": 4,
+          "total_steps": 100000,
+          "dt_s": 480.0,
+          "wall_s": 15.22,
+          "nl": 3,
+          "linear": 30
+        },
+        {
+          "sim_time_d": 0.02,
+          "step": 5,
+          "total_steps": 100000,
+          "dt_s": 960.0,
+          "wall_s": 16.42,
+          "nl": 3,
+          "linear": 34
+        },
+        {
+          "sim_time_d": 0.04,
+          "step": 6,
+          "total_steps": 100000,
+          "dt_s": 1920.0,
+          "wall_s": 21.09,
+          "nl": 4,
+          "linear": 45
+        },
+        {
+          "sim_time_d": 0.09,
+          "step": 7,
+          "total_steps": 100000,
+          "dt_s": 3840.0,
+          "wall_s": 21.48,
+          "nl": 4,
+          "linear": 47
+        },
+        {
+          "sim_time_d": 0.18,
+          "step": 8,
+          "total_steps": 100000,
+          "dt_s": 7680.0,
+          "wall_s": 20.17,
+          "nl": 4,
+          "linear": 43
+        },
+        {
+          "sim_time_d": 0.35,
+          "step": 9,
+          "total_steps": 100000,
+          "dt_s": 15360.0,
+          "wall_s": 20.61,
+          "nl": 4,
+          "linear": 44
+        },
+        {
+          "sim_time_d": 0.71,
+          "step": 10,
+          "total_steps": 100000,
+          "dt_s": 30720.0,
+          "wall_s": 18.39,
+          "nl": 4,
+          "linear": 36
+        },
+        {
+          "sim_time_d": 1.42,
+          "step": 11,
+          "total_steps": 100000,
+          "dt_s": 61440.0,
+          "wall_s": 17.97,
+          "nl": 4,
+          "linear": 35
+        },
+        {
+          "sim_time_d": 2.84,
+          "step": 12,
+          "total_steps": 100000,
+          "dt_s": 122880.0,
+          "wall_s": 22.34,
+          "nl": 5,
+          "linear": 43
+        },
+        {
+          "sim_time_d": 5.69,
+          "step": 13,
+          "total_steps": 100000,
+          "dt_s": 245760.0,
+          "wall_s": 17.63,
+          "nl": 4,
+          "linear": 33
+        },
+        {
+          "sim_time_d": 11.38,
+          "step": 14,
+          "total_steps": 100000,
+          "dt_s": 491520.0,
+          "wall_s": 22.32,
+          "nl": 5,
+          "linear": 42
+        },
+        {
+          "sim_time_d": 22.75,
+          "step": 15,
+          "total_steps": 100000,
+          "dt_s": 983040.0,
+          "wall_s": 44.13,
+          "nl": 10,
+          "linear": 82
+        },
+        {
+          "sim_time_d": 45.51,
+          "step": 16,
+          "total_steps": 100000,
+          "dt_s": 1966080.0,
+          "wall_s": 75.5,
+          "nl": 17,
+          "linear": 140
+        },
+        {
+          "sim_time_d": 91.02,
+          "step": 17,
+          "total_steps": 100000,
+          "dt_s": 3932160.0,
+          "wall_s": 110.61,
+          "nl": 25,
+          "linear": 204
+        },
+        {
+          "sim_time_d": 136.53,
+          "step": 18,
+          "total_steps": 100000,
+          "dt_s": 3932160.0,
+          "wall_s": 18.18,
+          "nl": 4,
+          "linear": 35
+        },
+        {
+          "sim_time_d": 182.04,
+          "step": 19,
+          "total_steps": 100000,
+          "dt_s": 3932160.0,
+          "wall_s": 109.11,
+          "nl": 25,
+          "linear": 196
+        },
+        {
+          "sim_time_d": 227.55,
+          "step": 20,
+          "total_steps": 100000,
+          "dt_s": 3932160.0,
+          "wall_s": 123.51,
+          "nl": 28,
+          "linear": 226
+        },
+        {
+          "sim_time_d": 273.07,
+          "step": 21,
+          "total_steps": 100000,
+          "dt_s": 3932160.0,
+          "wall_s": 115.19,
+          "nl": 26,
+          "linear": 209
+        },
+        {
+          "sim_time_d": 364.09,
+          "step": 22,
+          "total_steps": 100000,
+          "dt_s": 7864320.0,
+          "wall_s": 204.92,
+          "nl": 45,
+          "linear": 379
+        },
+        {
+          "sim_time_d": 457.09,
+          "step": 23,
+          "total_steps": 100000,
+          "dt_s": 8035200.0,
+          "wall_s": 149.89,
+          "nl": 33,
+          "linear": 279
+        },
+        {
+          "sim_time_d": 550.09,
+          "step": 24,
+          "total_steps": 100000,
+          "dt_s": 8035200.0,
+          "wall_s": 127.73,
+          "nl": 28,
+          "linear": 241
+        }
+      ],
+      "newton_detail": [
+        {
+          "step": 1,
+          "snes_norms": [],
+          "newton_steps": []
+        },
+        {
+          "step": 2,
+          "snes_norms": [],
+          "newton_steps": []
+        },
+        {
+          "step": 3,
+          "snes_norms": [],
+          "newton_steps": []
+        },
+        {
+          "step": 4,
+          "snes_norms": [],
+          "newton_steps": []
+        },
+        {
+          "step": 5,
+          "snes_norms": [],
+          "newton_steps": []
+        },
+        {
+          "step": 6,
+          "snes_norms": [],
+          "newton_steps": []
+        },
+        {
+          "step": 7,
+          "snes_norms": [],
+          "newton_steps": []
+        },
+        {
+          "step": 8,
+          "snes_norms": [],
+          "newton_steps": []
+        },
+        {
+          "step": 9,
+          "snes_norms": [],
+          "newton_steps": []
+        },
+        {
+          "step": 10,
+          "snes_norms": [],
+          "newton_steps": []
+        },
+        {
+          "step": 11,
+          "snes_norms": [],
+          "newton_steps": []
+        },
+        {
+          "step": 12,
+          "snes_norms": [],
+          "newton_steps": []
+        },
+        {
+          "step": 13,
+          "snes_norms": [],
+          "newton_steps": []
+        },
+        {
+          "step": 14,
+          "snes_norms": [],
+          "newton_steps": []
+        },
+        {
+          "step": 15,
+          "snes_norms": [],
+          "newton_steps": []
+        },
+        {
+          "step": 16,
+          "snes_norms": [],
+          "newton_steps": []
+        },
+        {
+          "step": 17,
+          "snes_norms": [],
+          "newton_steps": []
+        },
+        {
+          "step": 18,
+          "snes_norms": [],
+          "newton_steps": []
+        },
+        {
+          "step": 19,
+          "snes_norms": [],
+          "newton_steps": []
+        },
+        {
+          "step": 20,
+          "snes_norms": [],
+          "newton_steps": []
+        },
+        {
+          "step": 21,
+          "snes_norms": [],
+          "newton_steps": []
+        },
+        {
+          "step": 22,
+          "snes_norms": [],
+          "newton_steps": []
+        },
+        {
+          "step": 23,
+          "snes_norms": [],
+          "newton_steps": []
+        },
+        {
+          "step": 24,
+          "snes_norms": [],
+          "newton_steps": []
+        }
+      ],
+      "summary": {
+        "total_nl": 296,
+        "total_linear": 2527,
+        "mean_wall_per_step": 57.09,
+        "peak_rss_mb": 1638,
+        "steps_completed": 24,
+        "failed_steps": 4,
+        "sim_time_d": 550.09
+      },
+      "outcome": "success",
+      "t_final_s": 40000000.0,
+      "dt_collapse": false,
+      "reached_t_final": true,
+      "steady_state": {
+        "mean_wall_per_step": 57.5304347826087,
+        "min_wall": 15.06,
+        "max_wall": 204.92,
+        "total_nl": 291,
+        "total_linear": 2482,
+        "num_steps": 23
+      },
+      "pbs": {
+        "memory_used": "536.44GB",
+        "walltime_used": "00:39:49"
+      },
+      "profile": {
+        "file": "/Users/sghelichkhani/Workplace/morrow2026/parallel_scaling/results/murr_seasonal_saturated/vlumping_linesmooth/h4.profile",
+        "events": {
+          "MatMult": {
+            "count": 9731,
+            "time_s": 409.33,
+            "time_ratio": 1.2,
+            "flop_max": 278000000000.0,
+            "mess": 22000000.0,
+            "reduct": 0.0,
+            "pct_time": 16,
+            "mflops": 277996.0
+          },
+          "MatAssemblyBegin": {
+            "count": 114631,
+            "time_s": 153.21,
+            "time_ratio": 2.1,
+            "flop_max": 0.0,
+            "mess": 1100000.0,
+            "reduct": 2500.0,
+            "pct_time": 5,
+            "mflops": -0.0
+          },
+          "MatAssemblyEnd": {
+            "count": 114631,
+            "time_s": 41.158,
+            "time_ratio": 6.6,
+            "flop_max": 600000000.0,
+            "mess": 8900.0,
+            "reduct": 17.0,
+            "pct_time": 1,
+            "mflops": 2438.0
+          },
+          "PCSetUp": {
+            "count": 496,
+            "time_s": 699.65,
+            "time_ratio": 1.0,
+            "flop_max": 364000000000.0,
+            "mess": 12000000.0,
+            "reduct": 12000.0,
+            "pct_time": 30,
+            "mflops": 212357.0
+          },
+          "PCApply": {
+            "count": 4275,
+            "time_s": 861.12,
+            "time_ratio": 1.1,
+            "flop_max": 407000000000.0,
+            "mess": 38000000.0,
+            "reduct": 6800.0,
+            "pct_time": 35,
+            "mflops": 188510.0
+          },
+          "KSPSetUp": {
+            "count": 496,
+            "time_s": 0.013759,
+            "time_ratio": 1.2,
+            "flop_max": 0.0,
+            "mess": 0.0,
+            "reduct": 0.0,
+            "pct_time": 0,
+            "mflops": -0.0
+          },
+          "KSPSolve": {
+            "count": 496,
+            "time_s": 1067.7,
+            "time_ratio": 1.0,
+            "flop_max": 573000000000.0,
+            "mess": 48000000.0,
+            "reduct": 16000.0,
+            "pct_time": 45,
+            "mflops": 215620.0
+          },
+          "SNESSolve": {
+            "count": 28,
+            "time_s": 2297.6,
+            "time_ratio": 1.0,
+            "flop_max": 2900000000000.0,
+            "mess": 69000000.0,
+            "reduct": 32000.0,
+            "pct_time": 97,
+            "mflops": 504072.0
+          },
+          "SNESFunctionEval": {
+            "count": 1114,
+            "time_s": 88.632,
+            "time_ratio": 1.2,
+            "flop_max": 1020000000000.0,
+            "mess": 5000000.0,
+            "reduct": 0.0,
+            "pct_time": 3,
+            "mflops": 4507907.0
+          },
+          "SNESJacobianEval": {
+            "count": 496,
+            "time_s": 416.29,
+            "time_ratio": 1.0,
+            "flop_max": 945000000000.0,
+            "mess": 2200000.0,
+            "reduct": 2000.0,
+            "pct_time": 18,
+            "mflops": 895411.0
+          }
+        },
+        "nprocs": 416,
+        "wall_total_s": 2365.0,
+        "derived": {
+          "denominator": "SNESSolve",
+          "t_snes_s": 2297.6,
+          "pc_setup_s": 699.65,
+          "pc_setup_pct": 30.45,
+          "pc_apply_pct": 37.48,
+          "ksp_total_pct": 46.47,
+          "jacobian_pct": 18.12,
+          "function_pct": 3.86,
+          "matmult_mainstage_pct": 17.82
+        },
+        "validation": {
+          "snes_count": 28,
+          "steps_completed": 24,
+          "steps_match": false,
+          "ksp_count": 496,
+          "total_nl": 296,
+          "nl_match": false,
+          "pcapply_count": 4275,
+          "total_linear": 2527,
+          "linear_close": false,
+          "out_wall_total_s": 1370.2,
+          "profile_snes_s": 2297.6,
+          "wall_consistent": false
+        }
+      }
+    },
+    {
+      "file": "/Users/sghelichkhani/Workplace/morrow2026/parallel_scaling/results/murr_seasonal_saturated/vlumping_linesmooth/h8.out",
+      "header": {
+        "case": "murr_monthly3",
+        "solver": "vlumping_linesmooth",
+        "scale": "h8",
+        "nodes": 8,
+        "cpus": 832,
+        "dof": 334540800,
+        "timestepper": "BackwardEuler, dt_init = 60.0 s, dt_max = 8035200.0 s, growth = 2.0",
+        "horiz_res": 620,
+        "layers": 300,
+        "dof_approx": "320M"
+      },
+      "steps": [
+        {
+          "sim_time_d": 0.0,
+          "step": 1,
+          "total_steps": 100000,
+          "dt_s": 60.0,
+          "wall_s": 54.28,
+          "nl": 4,
+          "linear": 50
+        },
+        {
+          "sim_time_d": 0.0,
+          "step": 2,
+          "total_steps": 100000,
+          "dt_s": 120.0,
+          "wall_s": 33.18,
+          "nl": 5,
+          "linear": 55
+        },
+        {
+          "sim_time_d": 0.0,
+          "step": 3,
+          "total_steps": 100000,
+          "dt_s": 240.0,
+          "wall_s": 34.84,
+          "nl": 4,
+          "linear": 69
+        },
+        {
+          "sim_time_d": 0.01,
+          "step": 4,
+          "total_steps": 100000,
+          "dt_s": 480.0,
+          "wall_s": 33.45,
+          "nl": 4,
+          "linear": 65
+        },
+        {
+          "sim_time_d": 0.02,
+          "step": 5,
+          "total_steps": 100000,
+          "dt_s": 960.0,
+          "wall_s": 33.33,
+          "nl": 4,
+          "linear": 63
+        },
+        {
+          "sim_time_d": 0.04,
+          "step": 6,
+          "total_steps": 100000,
+          "dt_s": 1920.0,
+          "wall_s": 35.65,
+          "nl": 4,
+          "linear": 71
+        },
+        {
+          "sim_time_d": 0.09,
+          "step": 7,
+          "total_steps": 100000,
+          "dt_s": 3840.0,
+          "wall_s": 30.56,
+          "nl": 4,
+          "linear": 58
+        },
+        {
+          "sim_time_d": 0.18,
+          "step": 8,
+          "total_steps": 100000,
+          "dt_s": 7680.0,
+          "wall_s": 35.65,
+          "nl": 5,
+          "linear": 68
+        },
+        {
+          "sim_time_d": 0.35,
+          "step": 9,
+          "total_steps": 100000,
+          "dt_s": 15360.0,
+          "wall_s": 27.33,
+          "nl": 4,
+          "linear": 49
+        },
+        {
+          "sim_time_d": 0.71,
+          "step": 10,
+          "total_steps": 100000,
+          "dt_s": 30720.0,
+          "wall_s": 26.06,
+          "nl": 4,
+          "linear": 46
+        },
+        {
+          "sim_time_d": 1.42,
+          "step": 11,
+          "total_steps": 100000,
+          "dt_s": 61440.0,
+          "wall_s": 25.91,
+          "nl": 4,
+          "linear": 46
+        },
+        {
+          "sim_time_d": 2.84,
+          "step": 12,
+          "total_steps": 100000,
+          "dt_s": 122880.0,
+          "wall_s": 25.66,
+          "nl": 4,
+          "linear": 45
+        },
+        {
+          "sim_time_d": 5.69,
+          "step": 13,
+          "total_steps": 100000,
+          "dt_s": 245760.0,
+          "wall_s": 32.71,
+          "nl": 5,
+          "linear": 58
+        },
+        {
+          "sim_time_d": 11.38,
+          "step": 14,
+          "total_steps": 100000,
+          "dt_s": 491520.0,
+          "wall_s": 32.04,
+          "nl": 5,
+          "linear": 55
+        },
+        {
+          "sim_time_d": 22.75,
+          "step": 15,
+          "total_steps": 100000,
+          "dt_s": 983040.0,
+          "wall_s": 56.71,
+          "nl": 9,
+          "linear": 99
+        },
+        {
+          "sim_time_d": 45.51,
+          "step": 16,
+          "total_steps": 100000,
+          "dt_s": 1966080.0,
+          "wall_s": 113.83,
+          "nl": 18,
+          "linear": 199
+        },
+        {
+          "sim_time_d": 91.02,
+          "step": 17,
+          "total_steps": 100000,
+          "dt_s": 3932160.0,
+          "wall_s": 250.36,
+          "nl": 41,
+          "linear": 418
+        },
+        {
+          "sim_time_d": 136.53,
+          "step": 18,
+          "total_steps": 100000,
+          "dt_s": 3932160.0,
+          "wall_s": 27.2,
+          "nl": 4,
+          "linear": 49
+        },
+        {
+          "sim_time_d": 182.04,
+          "step": 19,
+          "total_steps": 100000,
+          "dt_s": 3932160.0,
+          "wall_s": 111.97,
+          "nl": 19,
+          "linear": 175
+        },
+        {
+          "sim_time_d": 227.55,
+          "step": 20,
+          "total_steps": 100000,
+          "dt_s": 3932160.0,
+          "wall_s": 177.53,
+          "nl": 28,
+          "linear": 290
+        },
+        {
+          "sim_time_d": 273.07,
+          "step": 21,
+          "total_steps": 100000,
+          "dt_s": 3932160.0,
+          "wall_s": 177.13,
+          "nl": 28,
+          "linear": 287
+        },
+        {
+          "sim_time_d": 364.09,
+          "step": 22,
+          "total_steps": 100000,
+          "dt_s": 7864320.0,
+          "wall_s": 280.49,
+          "nl": 42,
+          "linear": 467
+        },
+        {
+          "sim_time_d": 457.09,
+          "step": 23,
+          "total_steps": 100000,
+          "dt_s": 8035200.0,
+          "wall_s": 309.92,
+          "nl": 46,
+          "linear": 518
+        },
+        {
+          "sim_time_d": 550.09,
+          "step": 24,
+          "total_steps": 100000,
+          "dt_s": 8035200.0,
+          "wall_s": 231.83,
+          "nl": 34,
+          "linear": 390
+        }
+      ],
+      "newton_detail": [
+        {
+          "step": 1,
+          "snes_norms": [],
+          "newton_steps": []
+        },
+        {
+          "step": 2,
+          "snes_norms": [],
+          "newton_steps": []
+        },
+        {
+          "step": 3,
+          "snes_norms": [],
+          "newton_steps": []
+        },
+        {
+          "step": 4,
+          "snes_norms": [],
+          "newton_steps": []
+        },
+        {
+          "step": 5,
+          "snes_norms": [],
+          "newton_steps": []
+        },
+        {
+          "step": 6,
+          "snes_norms": [],
+          "newton_steps": []
+        },
+        {
+          "step": 7,
+          "snes_norms": [],
+          "newton_steps": []
+        },
+        {
+          "step": 8,
+          "snes_norms": [],
+          "newton_steps": []
+        },
+        {
+          "step": 9,
+          "snes_norms": [],
+          "newton_steps": []
+        },
+        {
+          "step": 10,
+          "snes_norms": [],
+          "newton_steps": []
+        },
+        {
+          "step": 11,
+          "snes_norms": [],
+          "newton_steps": []
+        },
+        {
+          "step": 12,
+          "snes_norms": [],
+          "newton_steps": []
+        },
+        {
+          "step": 13,
+          "snes_norms": [],
+          "newton_steps": []
+        },
+        {
+          "step": 14,
+          "snes_norms": [],
+          "newton_steps": []
+        },
+        {
+          "step": 15,
+          "snes_norms": [],
+          "newton_steps": []
+        },
+        {
+          "step": 16,
+          "snes_norms": [],
+          "newton_steps": []
+        },
+        {
+          "step": 17,
+          "snes_norms": [],
+          "newton_steps": []
+        },
+        {
+          "step": 18,
+          "snes_norms": [],
+          "newton_steps": []
+        },
+        {
+          "step": 19,
+          "snes_norms": [],
+          "newton_steps": []
+        },
+        {
+          "step": 20,
+          "snes_norms": [],
+          "newton_steps": []
+        },
+        {
+          "step": 21,
+          "snes_norms": [],
+          "newton_steps": []
+        },
+        {
+          "step": 22,
+          "snes_norms": [],
+          "newton_steps": []
+        },
+        {
+          "step": 23,
+          "snes_norms": [],
+          "newton_steps": []
+        },
+        {
+          "step": 24,
+          "snes_norms": [],
+          "newton_steps": []
+        }
+      ],
+      "summary": {
+        "total_nl": 329,
+        "total_linear": 3690,
+        "mean_wall_per_step": 91.57,
+        "peak_rss_mb": 1782,
+        "steps_completed": 24,
+        "failed_steps": 4,
+        "sim_time_d": 550.09
+      },
+      "outcome": "success",
+      "t_final_s": 40000000.0,
+      "dt_collapse": false,
+      "reached_t_final": true,
+      "steady_state": {
+        "mean_wall_per_step": 93.18869565217392,
+        "min_wall": 25.66,
+        "max_wall": 309.92,
+        "total_nl": 325,
+        "total_linear": 3640,
+        "num_steps": 23
+      },
+      "pbs": {
+        "memory_used": "1.14TB",
+        "walltime_used": "01:00:52"
+      },
+      "profile": {
+        "file": "/Users/sghelichkhani/Workplace/morrow2026/parallel_scaling/results/murr_seasonal_saturated/vlumping_linesmooth/h8.profile",
+        "events": {
+          "MatMult": {
+            "count": 11845,
+            "time_s": 523.18,
+            "time_ratio": 1.3,
+            "flop_max": 339000000000.0,
+            "mess": 57000000.0,
+            "reduct": 0.0,
+            "pct_time": 13,
+            "mflops": 536576.0
+          },
+          "MatAssemblyBegin": {
+            "count": 122254,
+            "time_s": 200.36,
+            "time_ratio": 2.1,
+            "flop_max": 0.0,
+            "mess": 2600000.0,
+            "reduct": 2700.0,
+            "pct_time": 4,
+            "mflops": -0.0
+          },
+          "MatAssemblyEnd": {
+            "count": 122254,
+            "time_s": 49.889,
+            "time_ratio": 30.6,
+            "flop_max": 988000000.0,
+            "mess": 19000.0,
+            "reduct": 17.0,
+            "pct_time": 1,
+            "mflops": 5439.0
+          },
+          "PCSetUp": {
+            "count": 529,
+            "time_s": 1006.8,
+            "time_ratio": 1.0,
+            "flop_max": 389000000000.0,
+            "mess": 28000000.0,
+            "reduct": 12000.0,
+            "pct_time": 28,
+            "mflops": 318944.0
+          },
+          "PCApply": {
+            "count": 6026,
+            "time_s": 1669.3,
+            "time_ratio": 1.1,
+            "flop_max": 590000000000.0,
+            "mess": 110000000.0,
+            "reduct": 8700.0,
+            "pct_time": 44,
+            "mflops": 277813.0
+          },
+          "KSPSetUp": {
+            "count": 529,
+            "time_s": 0.021887,
+            "time_ratio": 1.9,
+            "flop_max": 0.0,
+            "mess": 0.0,
+            "reduct": 0.0,
+            "pct_time": 0,
+            "mflops": -0.0
+          },
+          "KSPSolve": {
+            "count": 529,
+            "time_s": 1961.7,
+            "time_ratio": 1.0,
+            "flop_max": 838000000000.0,
+            "mess": 140000000.0,
+            "reduct": 21000.0,
+            "pct_time": 54,
+            "mflops": 341283.0
+          },
+          "SNESSolve": {
+            "count": 28,
+            "time_s": 3551.8,
+            "time_ratio": 1.0,
+            "flop_max": 3360000000000.0,
+            "mess": 190000000.0,
+            "reduct": 39000.0,
+            "pct_time": 98,
+            "mflops": 758489.0
+          },
+          "SNESFunctionEval": {
+            "count": 1214,
+            "time_s": 98.334,
+            "time_ratio": 1.2,
+            "flop_max": 1130000000000.0,
+            "mess": 12000000.0,
+            "reduct": 0.0,
+            "pct_time": 2,
+            "mflops": 8973509.0
+          },
+          "SNESJacobianEval": {
+            "count": 529,
+            "time_s": 455.63,
+            "time_ratio": 1.0,
+            "flop_max": 1020000000000.0,
+            "mess": 5100000.0,
+            "reduct": 2100.0,
+            "pct_time": 13,
+            "mflops": 1768212.0
+          }
+        },
+        "nprocs": 832,
+        "wall_total_s": 3623.0,
+        "derived": {
+          "denominator": "SNESSolve",
+          "t_snes_s": 3551.8,
+          "pc_setup_s": 1006.8,
+          "pc_setup_pct": 28.35,
+          "pc_apply_pct": 47.0,
+          "ksp_total_pct": 55.23,
+          "jacobian_pct": 12.83,
+          "function_pct": 2.77,
+          "matmult_mainstage_pct": 14.73
+        },
+        "validation": {
+          "snes_count": 28,
+          "steps_completed": 24,
+          "steps_match": false,
+          "ksp_count": 529,
+          "total_nl": 329,
+          "nl_match": false,
+          "pcapply_count": 6026,
+          "total_linear": 3690,
+          "linear_close": false,
+          "out_wall_total_s": 2197.7,
+          "profile_snes_s": 3551.8,
+          "wall_consistent": false
+        }
+      }
+    }
+  ]
+}

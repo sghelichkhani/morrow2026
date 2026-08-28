@@ -198,7 +198,7 @@
         }
       ],
       "summary": null,
-      "outcome": "incomplete",
+      "outcome": "oom",
       "steady_state": {
         "mean_wall_per_step": 86.4,
         "min_wall": 72.83,

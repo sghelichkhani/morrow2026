@@ -211,6 +211,67 @@ def refinement_levels(solver_name):
 # 143,769,600 unknowns at every level.
 BASIN_REFINEMENT_LEVELS = 2
 
+# Monthly-Murrumbidgee campaign (2026-08-27). Same basin meshes as
+# murr_horiz, but the dt ramp climbs from 60 s to a 31-day (monthly) cap.
+# This raises the column-integrated horizontal diffusion number
+# D_col = dt*T / (S_col*L^2)  (T = int K dz, S_col = int (Ss*S + C) dz)
+# into the elliptic regime, where BJac-ILU (no horizontal coarse correction)
+# is predicted to fail while the coarse-corrected presets (gmg,
+# vlumping_inexact, vlumping_hmg) do not. Because D_col ~ dt/L^2, failure is
+# expected to onset first at the fine scales (h4/h8). GMG-H is the mechanism
+# control: if it survives (slow) while BJac fails, the cause is "needs a
+# horizontal coarse solve", not vlumping-specific. See
+# NOTES/2026-08-27-MONTHLY-MURRUMBIDGEE.md (esp. §0 and §2.3).
+MONTHLY_DT_INIT = 60          # s
+MONTHLY_DT_MAX = 2678400      # s = 31 days (one month)
+MONTHLY_DT_GROWTH = 2.0       # ramp quickly; drop to 1.5 if healthy solvers thrash
+MONTHLY_DT_SHRINK = 0.5
+MONTHLY_T_FINAL = 15000000    # s ~= 174 days: ~16 ramp steps + a few monthly steps
+MONTHLY_MURR_SOLVERS = ["bjacobi", "gmg", "vlumping_inexact", "vlumping_hmg"]
+
+# ---- Seasonal-Murrumbidgee campaign (2026-08) — the paper's main result ----
+# A 3-month dt ramp on a near-saturated basin (raised water table + flattened
+# retention) drives the column-integrated diffusion number
+# D_col = dt*T / (S_col*L^2) into the regime where block-Jacobi can no longer
+# keep up, while vertical lumping takes 3-month steps at a low, flat iteration
+# count. Two regimes bracket the effect:
+#   graded    (case murr_seasonal)           wt+5,  flatten/3, growth 1.5.
+#       BJac degrades and hits an L-dependent dt ceiling (~1/L^2) but still
+#       reaches t_final by thrashing; vlumping healthy. The nuanced headline.
+#   saturated (case murr_seasonal_saturated) wt+10, flatten/10, growth 2.0.
+#       BJac cannot take a single step at any scale (near the C=0 end-member);
+#       vlumping solves it to t_final. The clean binary companion.
+# Ss stays 0 (Fable review B1): the Ss*S*Dt(h) mass term crashes Irksome's
+# stage-value splitter, contributes nothing to the mechanism, and BackwardEuler
+# stays well-posed at Ss=0 (SIPG diffusion + side Robin BC anchor the saturated
+# cells). See the dated report SEASONAL-REPORT-2026-08-28.md (this directory).
+SEASONAL_DT_INIT = 60
+SEASONAL_DT_MAX = 8035200      # 3 * 31 days (three months) -- keep dt large
+SEASONAL_DT_SHRINK = 0.5
+SEASONAL_T_FINAL = 40000000    # ~463 days
+SEASONAL_SS = 0.0
+
+# graded regime (headline)
+SEASONAL_GROWTH = 1.5
+SEASONAL_WT_OFFSET = 5.0
+SEASONAL_FLATTEN = 3.0
+
+# saturated regime (companion, BJac fails outright)
+SEASONAL_SAT_GROWTH = 2.0
+SEASONAL_SAT_WT_OFFSET = 10.0
+SEASONAL_SAT_FLATTEN = 10.0
+
+# Presets shown in the paper: BJac + GMG-H baselines, and the two SHIPPED
+# vertical-lumping presets (Richardson smoother + lag-3 snapshot).
+# vlumping_linesmooth (line smoother + direct coarse) was also run in both
+# regimes as a reliability control, but hmg — not linesmooth — is the shown and
+# shipped second series.
+SEASONAL_MURR_SOLVERS = [
+    "bjacobi", "gmg",
+    "vlumping_inexact_rich_lag3",  # shipped "VLumping"     (direct MUMPS coarse)
+    "vlumping_hmg_rich_lag3",      # shipped "VLumping-HMG"  (iterative MG coarse, scales)
+]
+
 
 def cockett_cases():
     """Return Cockett case definitions for each scale."""
@@ -379,6 +440,57 @@ def generate_pbs_script(case, solver, scale, output_dir, degree=1,
             f"--data-dir {DATA_DIR}"
         )
 
+    elif case == "murr_monthly":
+        # Same basin meshes as murr_horiz, but a monthly dt ramp (see the
+        # MONTHLY_* constants and NOTES/2026-08-27-MONTHLY-MURRUMBIDGEE.md).
+        params = murr_horiz_cases()[scale]
+        cpus = CPUS_PER_NODE if params["nodes"] > 1 else CPUS_SINGLE_NODE
+        ncpus = params["nodes"] * cpus
+        mem_gb = params["nodes"] * 500
+        ref_levels = BASIN_REFINEMENT_LEVELS
+
+        # Climb quickly from 60 s to a 31-day cap and run to ~174 days, so a
+        # healthy solver takes ~16 ramp steps + a few monthly plateau steps.
+        # The ramp itself traces the D_col crossover: BJac starts cheap in the
+        # reaction-dominated corner and its lin/NL climbs as dt doubles.
+        run_cmd = (
+            f"mpiexec -np $PBS_NCPUS python {SCALING_DIR}/murrumbidgee_3d.py "
+            f"--horiz-res {params['horiz_res']} --layers {params['layers']} "
+            f"--solver {solver} --refinement-levels {ref_levels} "
+            f"--dt-init {MONTHLY_DT_INIT} --dt-max {MONTHLY_DT_MAX} "
+            f"--dt-growth {MONTHLY_DT_GROWTH} --dt-shrink {MONTHLY_DT_SHRINK} "
+            f"--t-final {MONTHLY_T_FINAL} "
+            f"--data-dir {DATA_DIR}"
+        )
+    elif case in ("murr_seasonal", "murr_seasonal_saturated"):
+        # The paper's main scaling result: a 3-month dt ramp on a near-saturated
+        # basin. Two regimes share the mesh, dt cap and t_final; they differ only
+        # in the three soil/ramp levers. See the SEASONAL_* constants and the
+        # dated report.
+        if case == "murr_seasonal":
+            growth, wt_off, flatten = (
+                SEASONAL_GROWTH, SEASONAL_WT_OFFSET, SEASONAL_FLATTEN)
+        else:
+            growth, wt_off, flatten = (
+                SEASONAL_SAT_GROWTH, SEASONAL_SAT_WT_OFFSET, SEASONAL_SAT_FLATTEN)
+        params = murr_horiz_cases()[scale]
+        cpus = CPUS_PER_NODE if params["nodes"] > 1 else CPUS_SINGLE_NODE
+        ncpus = params["nodes"] * cpus
+        mem_gb = params["nodes"] * 500
+        ref_levels = BASIN_REFINEMENT_LEVELS
+
+        run_cmd = (
+            f"mpiexec -np $PBS_NCPUS python {SCALING_DIR}/murrumbidgee_3d.py "
+            f"--horiz-res {params['horiz_res']} --layers {params['layers']} "
+            f"--solver {solver} --refinement-levels {ref_levels} "
+            f"--dt-init {SEASONAL_DT_INIT} --dt-max {SEASONAL_DT_MAX} "
+            f"--dt-growth {growth} --dt-shrink {SEASONAL_DT_SHRINK} "
+            f"--t-final {SEASONAL_T_FINAL} "
+            f"--watertable-offset {wt_off} "
+            f"--retention-flatten {flatten} "
+            f"--ss {SEASONAL_SS} "
+            f"--data-dir {DATA_DIR}"
+        )
     elif case == "murr_strong":
         params = murr_strong_cases()[scale]
         cpus = CPUS_PER_NODE if params["nodes"] > 1 else CPUS_SINGLE_NODE
@@ -421,7 +533,8 @@ def generate_pbs_script(case, solver, scale, output_dir, degree=1,
         run_cmd += " --profile"
 
     job_name = f"rs-{case[:4]}-{solver}-{tag}"
-    if case in ("murrumbidgee", "murr_horiz", "murr_strong"):
+    if case in ("murrumbidgee", "murr_horiz", "murr_strong", "murr_monthly",
+                "murr_seasonal", "murr_seasonal_saturated"):
         walltime = "06:00:00"
     elif case == "cockett" and degree > 1:
         walltime = "06:00:00"
@@ -585,6 +698,42 @@ def get_phase_runs(phase):
         # Paper horizontal solvers at one node and 1775 m resolution.
         for solver in ROUND3_MURR_HORIZ_SOLVERS:
             runs.append(("murr_horiz", solver, "h1"))
+
+    elif phase == "monthly_murr":
+        # Monthly-Murrumbidgee weak-scaling regime sweep: same basin meshes
+        # as murr_horiz at h1/h2/h4/h8, but the monthly dt ramp. Four solvers,
+        # four scales = 16 jobs. The full L ladder (1775/1250/880/620 m) traces
+        # the D_col ~ 1/L^2 failure onset for BJac. See
+        # NOTES/2026-08-27-MONTHLY-MURRUMBIDGEE.md.
+        for solver in MONTHLY_MURR_SOLVERS:
+            for scale in ("h1", "h2", "h4", "h8"):
+                runs.append(("murr_monthly", solver, scale))
+
+    elif phase == "monthly_murr_smoke":
+        # One 1-node smoke to validate the ramp reaches 31 d, the run reaches
+        # t_final within walltime, and the profile parses, before the matrix.
+        runs.append(("murr_monthly", "vlumping_inexact", "h1"))
+
+    elif phase == "seasonal":
+        # Graded seasonal regime (headline): 4 shown presets x 4 scales.
+        for solver in SEASONAL_MURR_SOLVERS:
+            for scale in ("h1", "h2", "h4", "h8"):
+                runs.append(("murr_seasonal", solver, scale))
+
+    elif phase == "seasonal_saturated":
+        # Near-saturated companion (BJac fails outright): 4 presets x 4 scales.
+        for solver in SEASONAL_MURR_SOLVERS:
+            for scale in ("h1", "h2", "h4", "h8"):
+                runs.append(("murr_seasonal_saturated", solver, scale))
+
+    elif phase == "seasonal_hmg":
+        # Add the shipped VLumping-HMG (rich+lag3) series to BOTH regimes. The
+        # first seasonal runs used vlumping_linesmooth as a reliability control;
+        # hmg is the shown/shipped second series, so it needs its own runs.
+        # 1 preset x 4 scales x 2 regimes = 8 jobs.
+        for case in ("murr_seasonal", "murr_seasonal_saturated"):
+            for scale in ("h1", "h2", "h4", "h8"):
+                runs.append((case, "vlumping_hmg_rich_lag3", scale))
 
     elif phase == "strong":
         # Murrumbidgee strong scaling: fixed Δx=620m, 300 layers,
@@ -755,7 +904,9 @@ def main():
                  "rich_smoke", "rich_h8",
                  "snapshot_smoke", "snapshot_h8",
                  "final_smoke", "final_h8", "fair_all",
-                 "fair_gap_fix"],
+                 "fair_gap_fix",
+                 "monthly_murr", "monthly_murr_smoke",
+                 "seasonal", "seasonal_saturated", "seasonal_hmg"],
         help="Which set of jobs to generate/submit"
     )
     parser.add_argument(
@@ -786,7 +937,8 @@ def main():
     parser.add_argument(
         "--cases", nargs="+", default=None,
         choices=["cockett", "murrumbidgee", "murr_horiz",
-                 "murr_strong", "murr_hierarchy"],
+                 "murr_strong", "murr_hierarchy", "murr_monthly",
+                 "murr_seasonal", "murr_seasonal_saturated"],
         help="Override case list (default: both)"
     )
     args = parser.parse_args()

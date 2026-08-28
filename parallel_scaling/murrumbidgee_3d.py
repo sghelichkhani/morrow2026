@@ -49,6 +49,20 @@ if __name__ == "__main__":
     parser.add_argument("--data-dir", type=str, default="./murrumbidgee_data")
     parser.add_argument("--profile", action="store_true",
                         help="Reduce PETSc text output during a profile run")
+    # Low-storage / high-D_col regime knobs (monthly-Murrumbidgee campaign,
+    # NOTES/2026-08-27-MONTHLY-MURRUMBIDGEE.md). Defaults reproduce the
+    # original basin setup exactly.
+    parser.add_argument("--watertable-offset", type=float, default=0.0,
+                        help="Metres to raise the water table (0 = unchanged). "
+                             "Raising it saturates more of each column.")
+    parser.add_argument("--retention-flatten", type=float, default=1.0,
+                        help="Factor to flatten the retention curve: scales the "
+                             "specific moisture capacity C=dtheta/dh by "
+                             "1/factor while holding theta_s fixed (1 = "
+                             "unchanged). Larger = soil stays near saturation.")
+    parser.add_argument("--ss", type=float, default=0.0,
+                        help="Specific storage Ss [1/m] (0 = unchanged). A small "
+                             "value regularises saturated cells where C=0.")
     _ARGS = parser.parse_args()
     sys.argv = sys.argv[:1]
 
@@ -117,7 +131,8 @@ def load_spatial_field(V, V_cg, mesh_xy, csv_path, name):
 def model(horiz_res, n_layers, degree=1, dt_value=43200.0, steps=20,
           solver="vlumping", refinement_levels=0, data_dir="./murrumbidgee_data",
           dt_init=None, dt_max=43200.0, dt_growth=1.5, dt_shrink=0.5,
-          t_final=None, profile=False):
+          t_final=None, profile=False, watertable_offset=0.0,
+          retention_flatten=1.0, ss=0.0):
     """Run Lower Murrumbidgee scaling benchmark.
 
     Args:
@@ -226,19 +241,31 @@ def model(horiz_res, n_layers, degree=1, dt_value=43200.0, steps=20,
         K_depth * (Ks_layer1 * I1 + Ks_layer2 * (1 - I1) * I2 + Ks_layer3 * (1 - I2))
     )
 
+    theta_s_expr = 0.40 * S_depth
+    theta_r_base = 0.025
+    # Retention flattening. Haverkamp C = dtheta/dh is proportional to
+    # (theta_s - theta_r), so raising theta_r toward theta_s by the same factor
+    # scales C by exactly 1/retention_flatten while leaving theta_s and K(h)
+    # untouched. retention_flatten = 1 reproduces the original curve; a large
+    # value is a soil that stays near saturation (low specific yield), which
+    # shrinks the column storativity S_col and raises D_col.
+    theta_r_eff = theta_s_expr - (theta_s_expr - theta_r_base) / retention_flatten
+
     soil_curves = HaverkampCurve(
-        theta_r=0.025,
-        theta_s=0.40 * S_depth,
+        theta_r=theta_r_eff,
+        theta_s=theta_s_expr,
         Ks=Ks,
         alpha=0.44,
         beta=1.2924,
         A=0.0104,
         gamma=1.5722,
-        Ss=0,
+        Ss=ss,
     )
 
-    # Initial condition: hydrostatic from water table
-    watertable = spatial["water_table"]
+    # Initial condition: hydrostatic from water table. Raising the water table
+    # by watertable_offset metres (subtracting from the depth-to-water-table
+    # field) saturates more of each column.
+    watertable = spatial["water_table"] - watertable_offset
     h = Function(V, name="PressureHead")
     h.interpolate(depth - watertable)
 
@@ -263,6 +290,11 @@ def model(horiz_res, n_layers, degree=1, dt_value=43200.0, steps=20,
             f"dt_max = {dt_max} s, growth = {dt_growth}")
     else:
         log(f"Time stepper: BackwardEuler, dt = {dt_value} s, steps = {steps}")
+    if t_final is not None:
+        log(f"Stopping criterion: t_final = {t_final} s "
+            f"({t_final / 86400:.2f} d)")
+    log(f"Soil regime: watertable_offset = {watertable_offset} m, "
+        f"retention_flatten = {retention_flatten}, Ss = {ss} /m")
     log(f"Solver: {solver}")
     log(f"Solver parameters: {solver_parameters}")
     if solver_kwargs:
@@ -374,4 +406,6 @@ if __name__ == "__main__":
         dt_init=_ARGS.dt_init, dt_max=_ARGS.dt_max,
         dt_growth=_ARGS.dt_growth, dt_shrink=_ARGS.dt_shrink,
         t_final=_ARGS.t_final, profile=_ARGS.profile,
+        watertable_offset=_ARGS.watertable_offset,
+        retention_flatten=_ARGS.retention_flatten, ss=_ARGS.ss,
     )

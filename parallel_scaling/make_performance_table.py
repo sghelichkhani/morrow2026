@@ -6,7 +6,7 @@ which preset survives which regime; this one shows how well the survivors do.
 For each preset that completes an experiment at the eight-node reference point
 (the largest common weak-scaling scale), we report:
 
-    it/Newton   linear (GMRES) iterations per Newton step  (conditioning)
+    it/Newton   linear (Krylov) iterations per Newton step  (conditioning)
     s/Newton    wall-clock time per Newton step            (speed)
     Setup %     share of SNESSolve time forming the PC     (setup overhead)
     Apply %     share of SNESSolve time applying the PC
@@ -85,7 +85,7 @@ def build():
         r"\begin{table*}[t]",
         r"\caption{Performance of the preconditioners that complete each "
         r"experiment, evaluated at the eight-node point (the largest common "
-        r"weak-scaling scale). For each run we report the linear (GMRES) "
+        r"weak-scaling scale). For each run we report the linear (Krylov) "
         r"iterations per Newton step, the wall-clock time per Newton step, the "
         r"share of the solve time spent forming the preconditioner (setup) and "
         r"applying it (apply), and the peak resident memory per process. The "
