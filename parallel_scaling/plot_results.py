@@ -23,6 +23,7 @@ from pathlib import Path
 import matplotlib
 import matplotlib.pyplot as plt
 import numpy as np
+from figstyle import save
 
 
 PAPER_FIGURE_ROOT = Path(__file__).resolve().parent.parent / "figures"
@@ -219,7 +220,7 @@ def save_single_panel(data, solvers, scales, x, xticklabels, xlabel,
                    ncol=min(4, len(labels)), fontsize=8,
                    bbox_to_anchor=(0.5, -0.02))
     fig.subplots_adjust(left=0.16, right=0.97, top=0.92, bottom=0.32)
-    fig.savefig(outfile, bbox_inches="tight")
+    save(fig, outfile)
     plt.close(fig)
     print(f"  Saved {outfile}")
 
@@ -308,7 +309,7 @@ def fig_cockett(data, outdir, paper_outdir=None):
     fig = make_figure(data, solvers, scales, x, xlabels,
                       "Scale (nodes / DOF)",
                       "Cockett 3D — isotropic box, cell AR \u2248 1:1")
-    fig.savefig(outdir / "cockett_solvers.png", bbox_inches="tight")
+    save(fig, outdir / "cockett_solvers.png")
     print(f"  Saved {outdir / 'cockett_solvers.png'}")
     return fig
 
@@ -339,7 +340,7 @@ def fig_cockett_vlumping(data, outdir):
     fig = make_figure(data, solvers, scales, x, xlabels,
                       "Scale (nodes / DOF)",
                       "Cockett 3D — VLumping variants, cell AR \u2248 1:1")
-    fig.savefig(outdir / "cockett_vlumping.png", bbox_inches="tight")
+    save(fig, outdir / "cockett_vlumping.png")
     print(f"  Saved {outdir / 'cockett_vlumping.png'}")
     return fig
 
@@ -370,7 +371,7 @@ def fig_murr_vertical(data, outdir, paper_outdir=None):
     fig = make_figure(data, solvers, scales, x, xlabels,
                       "Nodes / Layers / Cell aspect ratio",
                       "Murrumbidgee — vertical weak scaling, \u0394x = 1775 m fixed")
-    fig.savefig(outdir / "murr_vertical.png", bbox_inches="tight")
+    save(fig, outdir / "murr_vertical.png")
     print(f"  Saved {outdir / 'murr_vertical.png'}")
     return fig
 
@@ -409,7 +410,7 @@ def fig_murr_strong(data, outdir, paper_outdir=None):
         if handles:
             ax.legend(handles, labels, fontsize=9)
         fig.tight_layout()
-        fig.savefig(outpath, bbox_inches="tight")
+        save(fig, outpath)
         plt.close(fig)
         print(f"  Saved {outpath}")
     if outdir is None:
@@ -454,7 +455,7 @@ def fig_murr_hierarchy(data, outdir, paper_outdir=None):
         fig.legend(handles, labels, loc="lower center", ncol=2,
                    fontsize=10, bbox_to_anchor=(0.5, -0.04))
         fig.tight_layout()
-        fig.savefig(outpath, bbox_inches="tight")
+        save(fig, outpath)
         plt.close(fig)
         print(f"  Saved {outpath}")
     if outdir is None:
@@ -491,7 +492,7 @@ def fig_murr_horizontal(data, outdir, paper_outdir=None):
     fig = make_figure(data, solvers, scales, x, xlabels,
                       "Nodes / \u0394x / Cell aspect ratio",
                       "Murrumbidgee — horizontal weak scaling, 300 layers fixed")
-    fig.savefig(outdir / "murr_horizontal.png", bbox_inches="tight")
+    save(fig, outdir / "murr_horizontal.png")
     print(f"  Saved {outdir / 'murr_horizontal.png'}")
     return fig
 

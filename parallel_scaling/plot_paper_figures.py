@@ -43,6 +43,7 @@ from pathlib import Path
 import matplotlib
 import matplotlib.pyplot as plt
 import numpy as np
+from figstyle import save
 
 FIG_ROOT = Path(__file__).resolve().parent.parent / "figures"
 PARSED = Path(__file__).resolve().parent / "parsed"
@@ -60,6 +61,7 @@ STYLE = {
     "boomeramg":                  dict(color="#1f77b4", marker="D", label="BoomerAMG"),
     "vlumping_inexact_rich_lag3": dict(color="#d62728", marker="o", label="VLumping"),
     "vlumping_hmg_rich_lag3":     dict(color="#3182bd", marker="X", label="VLumping-HMG"),
+    "vlumping_linesmooth":        dict(color="#9467bd", marker="s", label="VLumping-linesmooth"),
 }
 LW, MS = 1.9, 8.5
 
@@ -249,7 +251,7 @@ def fig_cockett(outdir):
     fig.subplots_adjust(left=0.08, right=0.92, top=0.9, bottom=0.1, wspace=0.06)
     out = outdir / "Cockett2018" / "cockett_scaling.pdf"
     out.parent.mkdir(parents=True, exist_ok=True)
-    fig.savefig(out, bbox_inches="tight", pad_inches=0.25)
+    save(fig, out, pad_inches=0.25)
     plt.close(fig)
     print(f"  saved {out}")
 
@@ -258,8 +260,12 @@ def fig_cockett(outdir):
 def fig_murr_weak(outdir):
     ih = index(load("murr_horizontal"))
     iv = index(load("murr_vertical"))
+    # The two reported lumped presets are the DIRECT-coarse pair. The
+    # iterative-coarse `vlumping_hmg_rich_lag3` appears only in the
+    # strong-scaling figure, where its reach past the direct factorisation
+    # is the point; §4.2 shows it is not a safe default.
     solvers = ["bjacobi", "gmg",
-               "vlumping_inexact_rich_lag3", "vlumping_hmg_rich_lag3"]
+               "vlumping_inexact_rich_lag3", "vlumping_linesmooth"]
 
     hscales = ["h1", "h2", "h4", "h8"]
     hlabels = ["1N\n1775 m\n1000:1", "2N\n1250 m\n700:1",
@@ -326,7 +332,7 @@ def fig_murr_weak(outdir):
                bbox_to_anchor=(0.5425, 1.015))
     out = outdir / "Murrumbidgee" / "weak_scaling.pdf"
     out.parent.mkdir(parents=True, exist_ok=True)
-    fig.savefig(out, bbox_inches="tight", pad_inches=0.2)
+    save(fig, out, pad_inches=0.2)
     plt.close(fig)
     print(f"  saved {out}")
 
@@ -351,34 +357,34 @@ def fig_murr_strong(outdir):
                     ys.append(w)
         return xs, ys
 
-    # Block-Jacobi is the strong-scaling hero: it scales near-ideally all the
-    # way to 3328 cores (s32), so it carries the line and anchors the ideal
-    # reference. Plotted first so "Ideal 1/N" and BJacobi head the legend.
-    stb = STYLE["bjacobi"]
-    xb, yb = pts("bjacobi")
-    if xb:
-        xr = np.array(xb)
-        ideal = yb[0] * 2.0 ** -(xr - xr[0])
-        ax.plot(xr, ideal, ls="--", color="gray", lw=1.1, alpha=0.6, zorder=1,
-                label="Ideal $1/N$")
-        ax.plot(xb, yb, color=stb["color"], marker=stb["marker"], lw=LW,
-                markersize=MS, zorder=4, label=stb["label"])
+    # Scope: this experiment asks how far the VERTICALLY LUMPED construction
+    # can be decomposed, and what separates its two coarse-solve strategies.
+    # Block-Jacobi is deliberately not drawn — it carries no coarse problem,
+    # so it has no stake in that question, and the seasonal regime (§4.2) has
+    # already settled the head-to-head. The §4 text says so explicitly and
+    # states that block-Jacobi was run on this mesh and scales well here.
 
-    # VLumping-HMG (reported `_rich_lag3`): edges BJacobi at s2 (the genuine
-    # crossover), tracks it to s16, then turns over sharply at s32 as the
-    # collapsed 2-D coarse operator comes to dominate. The turnover is real
-    # and stays visible — the line is drawn through every success point.
+    # VLumping-HMG (reported `_rich_lag3`): the nested geometric-MG coarse
+    # solve carries the sweep past the point where the direct factorisation
+    # stops. Drawn to 16 nodes; the 32-node point exists and turns over
+    # sharply (108.8 s), which the caption states rather than plots.
     sth = STYLE["vlumping_hmg_rich_lag3"]
     xh, yh = pts("vlumping_hmg_rich_lag3")
+    xh, yh = zip(*[(x, y) for x, y in zip(xh, yh) if x <= np.log2(16)]) \
+        if xh else ([], [])
     if xh:
+        xr = np.array(xh)
+        ideal = yh[0] * 2.0 ** -(xr - xr[0])
+        ax.plot(xr, ideal, ls="--", color="gray", lw=1.1, alpha=0.6, zorder=1,
+                label="Ideal $1/N$")
         ax.plot(xh, yh, color=sth["color"], marker=sth["marker"], lw=LW,
                 markersize=MS, zorder=3, label=sth["label"])
 
     # VLumping with the DIRECT MUMPS coarse solve (base `vlumping_inexact` —
-    # no `_rich_lag3` run exists at the strong scales). Shown only to expose
-    # the direct-coarse limit: it tracks to s8, then hits the walltime cap at
-    # s16 and diverges at s32, so the line simply stops at s8 (the failure is
-    # explained in the caption). Explicitly NOT the headline VLumping preset.
+    # no `_rich_lag3` run exists at the strong scales). It tracks to s8, then
+    # hits the walltime cap at s16 and diverges at s32, so the line stops at
+    # s8: that stop is the direct-coarse limit the nested variant exists to
+    # push past.
     xd, yd = pts("vlumping_inexact")
     if xd:
         ax.plot(xd, yd, color="#d62728", marker="o", lw=LW, ls=":",
@@ -386,12 +392,13 @@ def fig_murr_strong(outdir):
                 label="VLumping (direct coarse)")
 
     ax.set_yscale("log")
-    ax.set_xticks([np.log2(n) for n, _ in node_scale])
-    ax.set_xticklabels([str(n) for n, _ in node_scale])
+    shown = [(n, sc) for n, sc in node_scale if n <= 16]
+    ax.set_xticks([np.log2(n) for n, _ in shown])
+    ax.set_xticklabels([str(n) for n, _ in shown])
     ax.set_xlabel("Compute nodes (104 cores each)", fontsize=14)
     ax.set_ylabel("Wall time / step (s)", fontsize=14)
     ax.tick_params(labelsize=12)
-    ax.set_title("Strong scaling — anisotropic Lower Murrumbidgee basin",
+    ax.set_title("Strong scaling — vertically lumped presets",
                  fontsize=13,
                  bbox=dict(boxstyle="round,pad=0.5",
                            facecolor="lightyellow", edgecolor="black"),
@@ -401,7 +408,7 @@ def fig_murr_strong(outdir):
     fig.tight_layout()
     out = outdir / "Murrumbidgee" / "strong_scaling.pdf"
     out.parent.mkdir(parents=True, exist_ok=True)
-    fig.savefig(out, bbox_inches="tight")
+    save(fig, out)
     plt.close(fig)
     print(f"  saved {out}")
 
@@ -529,7 +536,7 @@ def fig_time_breakdown(outdir):
 
     out = outdir / "Murrumbidgee" / "time_breakdown.pdf"
     out.parent.mkdir(parents=True, exist_ok=True)
-    fig.savefig(out, bbox_inches="tight", pad_inches=0.2)
+    save(fig, out, pad_inches=0.2)
     plt.close(fig)
     print(f"  saved {out}")
 
