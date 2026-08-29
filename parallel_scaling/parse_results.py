@@ -703,7 +703,18 @@ def build_experiment_json(name, spec):
         # Override header with scale metadata where available
         meta = spec["scale_meta"].get(scale, {})
         r["header"]["scale"] = scale
-        r["header"].setdefault("solver", solver)
+        # The directory is the authority for which preset produced a run:
+        # submit_jobs.py writes results/<case>/<solver>/<scale>.*, so the path
+        # is what the campaign asked for. The "Solver:" line inside the .out
+        # records what that preset was CALLED at the time, which is not the
+        # same thing once a preset is renamed. When `vlumping` became
+        # `vlumping_rtol6` on 2026-08-29, the older runs kept saying
+        # "Solver: vlumping" in their headers, and preferring that line made
+        # them masquerade as the reported preset of the same name.
+        stated = r["header"].get("solver")
+        r["header"]["solver"] = solver
+        if stated and stated != solver:
+            r["header"]["solver_as_run"] = stated
         for k, v in meta.items():
             r["header"].setdefault(k, v)
         print(f"{r['outcome']}, {len(r['steps'])} steps")
