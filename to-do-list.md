@@ -3,6 +3,9 @@
 Last updated: 2026-08-29 (solver configuration frozen; submission prep).
 
 **Start here:**
+- `NOTES/2026-08-29-HANDOVER.md` — session handover: what the
+  frozen solver configuration is, the traps found on the way, and what is
+  open. Read before touching the manuscript.
 - `parallel_scaling/SOLVER-STUDY.md` §0 — the reported solver configuration
   and the two measurements that fixed it. Read before anything else in that
   document, which was written while the configuration was still moving.
