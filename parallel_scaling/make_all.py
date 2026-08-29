@@ -177,6 +177,25 @@ def main():
             continue
         run(script)
 
+    # The plotters write into figures/; the manuscript reads Figures/. Copying
+    # is part of the rebuild, not a separate thing to remember. Leaving it
+    # manual is how the paper tree ended up holding pre-campaign figures while
+    # the repository held the new ones.
+    if not args.no_paper:
+        copied = 0
+        for _, outputs in STEPS:
+            for rel in outputs:
+                if not rel.endswith(".pdf"):
+                    continue
+                src, dst = FIGURES / rel, PAPER / "Figures" / rel
+                if not src.exists():
+                    raise SystemExit(f"{src} was not produced")
+                dst.parent.mkdir(parents=True, exist_ok=True)
+                if not dst.exists() or dst.read_bytes() != src.read_bytes():
+                    dst.write_bytes(src.read_bytes())
+                    copied += 1
+        print(f"\ncopied {copied} figure(s) into {PAPER / 'Figures'}")
+
     target = HERE / "PROVENANCE.md"
     target.write_text(provenance())
     print(f"\nWrote {target}")
