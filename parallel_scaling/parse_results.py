@@ -479,7 +479,9 @@ def parse_file(path):
     # A run that produced no parseable Done/FAILED line is still "incomplete".
     # The PBS footer disambiguates the real cause: a SIGTERM/SIGKILL at the
     # memory ceiling is an OOM; a run that used its whole walltime is a
-    # walltime kill; any other non-zero exit is a solver divergence.
+    # walltime kill; a signal well inside both limits is an external
+    # cancellation ("killed" -- the job was stopped, it did not fail); any
+    # other non-zero exit is a solver divergence.
     if result["outcome"] == "incomplete":
         footer = "\n".join(lines[-25:])
         exit_m = RE_PBS_EXIT.search(footer)
@@ -495,6 +497,11 @@ def parse_file(path):
             result["outcome"] = "oom"
         elif wall_used and wall_req and wall_req > 0 and wall_used / wall_req >= 0.95:
             result["outcome"] = "walltime"
+        elif signalled:
+            # Signalled while comfortably inside the memory and walltime
+            # limits: the job was cancelled from outside. Reporting this as
+            # "diverged" would credit the solver with a failure it never had.
+            result["outcome"] = "killed"
         elif exit_code not in (None, 0):
             result["outcome"] = "diverged"
 
@@ -509,13 +516,29 @@ def parse_file(path):
         ev = profile["events"]
         val = {}
         if "SNESSolve" in ev and s.get("steps_completed") is not None:
+            failed = s.get("failed_steps") or 0
             val["snes_count"] = ev["SNESSolve"]["count"]
             val["steps_completed"] = s["steps_completed"]
-            val["steps_match"] = ev["SNESSolve"]["count"] == s["steps_completed"]
+            # The profile counts every SNES solve the driver attempted; the
+            # stdout summary counts only the timesteps that were accepted. On
+            # an adaptive ramp a failed solve halves the step and retries, so
+            # the two agree only when nothing failed.
+            val["failed_steps"] = failed
+            val["steps_match"] = (
+                ev["SNESSolve"]["count"] == s["steps_completed"] + failed
+            )
         if "KSPSolve" in ev and s.get("total_nl") is not None:
             val["ksp_count"] = ev["KSPSolve"]["count"]
             val["total_nl"] = s["total_nl"]
-            val["nl_match"] = ev["KSPSolve"]["count"] == s["total_nl"]
+            # Same asymmetry: total_nl counts the Newton iterations of the
+            # accepted steps, while the profile also counts those spent on
+            # attempts that were thrown away. Equality is required only when
+            # no step failed; otherwise the profile must simply account for at
+            # least the accepted work.
+            val["nl_match"] = (
+                ev["KSPSolve"]["count"] == s["total_nl"] if not failed
+                else ev["KSPSolve"]["count"] >= s["total_nl"]
+            )
         if "PCApply" in ev and s.get("total_linear"):
             tl = s["total_linear"]
             val["pcapply_count"] = ev["PCApply"]["count"]
@@ -529,7 +552,17 @@ def parse_file(path):
             out_total = s["mean_wall_per_step"] * s["steps_completed"]
             val["out_wall_total_s"] = round(out_total, 1)
             val["profile_snes_s"] = round(t_snes, 1)
-            val["wall_consistent"] = abs(out_total - t_snes) <= 0.25 * max(out_total, t_snes)
+            if failed:
+                # out_total is the time in accepted steps only, so it is a
+                # lower bound on the profile's SNES time. How much the
+                # discarded attempts cost is not in the stdout summary, so the
+                # upper side cannot be checked here.
+                val["wall_consistent"] = t_snes >= 0.75 * out_total
+                val["wall_bound_only"] = True
+            else:
+                val["wall_consistent"] = (
+                    abs(out_total - t_snes) <= 0.25 * max(out_total, t_snes)
+                )
         if val:
             profile["validation"] = val
         result["profile"] = profile
