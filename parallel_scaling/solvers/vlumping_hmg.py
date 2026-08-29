@@ -1,3 +1,4 @@
+# STATUS: reported. The paper computes numbers from runs of this preset.
 # VLumping + geometric MG on the 2D base — scaling-study shim.
 #
 # Identical to g-adopt's shipped `vlumping_hmg` preset (from

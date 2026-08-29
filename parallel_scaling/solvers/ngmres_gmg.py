@@ -1,3 +1,4 @@
+# STATUS: ablation. Not a recommended default; run to answer one narrow question.
 # ---------------------------------------------------------------------------
 # SNES Variant: NGMRES (Anderson Acceleration) + GMG Preconditioner
 # ---------------------------------------------------------------------------

@@ -1,3 +1,4 @@
+# STATUS: ablation. Not a recommended default; run to answer one narrow question.
 """VLumping-HMG with BJacobi-ILU(0) as the fine smoother."""
 
 from gadopt.preconditioners import VerticallyLumpedHMGPC  # noqa: F401

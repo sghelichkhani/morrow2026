@@ -1,3 +1,4 @@
+# STATUS: reported. The paper computes numbers from runs of this preset.
 # ---------------------------------------------------------------------------
 # Strategy 5 (Baseline AMG): GAMG with Corrected Options
 # ---------------------------------------------------------------------------

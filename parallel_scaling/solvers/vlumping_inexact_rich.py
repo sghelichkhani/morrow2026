@@ -1,3 +1,4 @@
+# STATUS: ablation. Not a recommended default; run to answer one narrow question.
 # Inexact-Newton VLumping with a Richardson fine smoother, damping derived.
 #
 # Same preset as `vlumping_inexact` (g-adopt's shipped `vlumping`) with one

@@ -1,3 +1,4 @@
+# STATUS: reported. The paper computes numbers from runs of this preset.
 # ---------------------------------------------------------------------------
 # Strategy 2: Hypre BoomerAMG with Anisotropy-Aware Settings
 # ---------------------------------------------------------------------------

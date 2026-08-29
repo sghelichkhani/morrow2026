@@ -1,9 +1,10 @@
+# STATUS: ablation. Not a recommended default; run to answer one narrow question.
 # VLumping variant: Chebyshev + SOR, 2 sweeps.
 # This matches Thwaites' default smoother (PETSc PCMG default is
 # Chebyshev + SOR). Comparing against our BJacobi/ILU smoother
 # isolates the effect of the sub-PC choice.
 
-from .vlumping import VerticallyLumpedPC  # noqa: F401 (needed for pc_python_type)
+from .vlumping_rtol6 import VerticallyLumpedPC  # noqa: F401 (needed for pc_python_type)
 
 solver_parameters = {
     "ksp_type": "fgmres",
@@ -12,7 +13,7 @@ solver_parameters = {
     "ksp_gmres_restart": 30,
 
     "pc_type": "python",
-    "pc_python_type": "solvers.vlumping.VerticallyLumpedPC",
+    "pc_python_type": "solvers.vlumping_rtol6.VerticallyLumpedPC",
 
     "lumped_mg_levels_ksp_type": "chebyshev",
     "lumped_mg_levels_ksp_max_it": 2,

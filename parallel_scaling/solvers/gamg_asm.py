@@ -1,3 +1,4 @@
+# STATUS: reported. The paper computes numbers from runs of this preset.
 # ---------------------------------------------------------------------------
 # Strategy 3: GAMG with DG-Aware ASM Smoother (GAMG-ASM)
 # ---------------------------------------------------------------------------

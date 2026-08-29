@@ -1,52 +1,58 @@
 """Solver parameter presets for Richards equation scaling tests.
 
-Each module exports a `solver_parameters` dictionary suitable for passing
-to RichardsSolver.  Modules may also export a `solver_kwargs` dictionary
-with additional constructor arguments (e.g. pmat='diffusion').
+Each module exports a `solver_parameters` dictionary suitable for passing to
+RichardsSolver. Modules may also export a `solver_kwargs` dictionary with
+additional constructor arguments. Import by name, or use `get_solver` to load
+from a string.
 
-Import by name or use `get_solver` to load from a string (e.g. a
-command-line argument).
+Every module carries a `STATUS:` line in its header:
 
-Available presets:
+  reported   the paper computes a number from runs of this preset
+  ablation   run to answer a narrower question; not a recommended default
+  retired    superseded; kept so the record stays readable
 
-  Preconditioner strategies (Amat = Pmat):
-    gmg        — Geometric multigrid (horizontal coarsening, MUMPS coarse)
-    boomeramg  — Hypre BoomerAMG (paper's anisotropy-aware tuning, see module)
-    gamg_asm   — GAMG with DG-aware ASM smoother (aggregate-based)
-    vlumping   — Vertically lumped 2-level MG (extreme aspect ratio)
-    gamg       — PETSc GAMG with corrected options (general-purpose)
-    bjacobi    — Block-Jacobi with ILU(0) (baseline)
-    sor        — SOR (baseline, poor scaling)
+Reported presets. These three are shims: the parameters are imported from
+g-adopt rather than restated here, so the library is the single source of
+truth and the paper's listings can be checked against it by inspection. All
+three use the fine-level Richardson smoother with a damping factor measured
+at run time (`vlumping_omega_auto`), and none lags the operator.
 
-  SNES variants (nonlinear solver + preconditioner):
-    ngmres_gmg — NGMRES (Anderson acceleration) + GMG
-    qn_gmg     — Quasi-Newton (L-BFGS) + GMG
+    bjacobi              Block-Jacobi with ILU(0). The baseline that wins in
+                         the short-step regime.
+    gmg                  Geometric multigrid, horizontal coarsening only,
+                         MUMPS coarse solve.
+    sor, gamg, boomeramg Baselines culled by the basin anisotropy; reported
+                         in the outcome table.
+    gamg_asm             GAMG with a DG-aware ASM smoother.
+    vlumping             g-adopt's shipped `vlumping`. Two-level MG whose
+                         coarse space is the vertically constant space.
+    vlumping_linesmooth  g-adopt's shipped `vlumping_linesmooth`. As above
+                         with a column-exact ASM smoother. Differs from
+                         `vlumping` in the fine-level smoother alone.
+    vlumping_hmg         g-adopt's shipped `vlumping_hmg`. Nested geometric
+                         multigrid on the 2-D base hierarchy instead of a
+                         monolithic coarse factorisation. Reported only for
+                         the extreme strong-scaling decompositions.
 
-  VLumping parameter variants:
-    vlumping_1sweep     — 1 smoother sweep (vs default 2)
-    vlumping_4sweep     — 4 smoother sweeps
-    vlumping_richardson — Richardson(0.5) smoother (no eigenvalue estimation)
-    vlumping_sor        — SOR smoother (Thwaites default)
-    vlumping_inexact    — Inexact Newton (ksp_rtol=1e-4) — shipped as g-adopt's `vlumping`
-    vlumping_linesmooth — Vertical-line ASM smoother, LU coarse
-    vlumping_hmg        — Line smoother + geometric MG on 2D base hierarchy — shipped as g-adopt's `vlumping_hmg`
-    vlumping_inexact_lag3       — VLumping with preconditioner lag three
-    vlumping_hmg_lag3           — VLumping-HMG with preconditioner lag three
-    vlumping_hmg_bjacilu        — VLumping-HMG with BJacobi-ILU fine smoothing
-    vlumping_hmg_bjacilu_lag3   — BJacobi-ILU HMG with preconditioner lag three
-    vlumping_inexact_rich       — Richardson(0.9) fine smoother, no eigenvalue estimation
-    vlumping_inexact_rich_lag3  — as above, plus a snapshot lag of three
-    vlumping_hmg_rich           — Richardson smoothers on both HMG hierarchies
-    vlumping_hmg_rich_lag3      — as above, plus a snapshot lag of three
-    vlumping_inexact_snapshot_lag3 — Chebyshev kept, snapshot lag of three
-    vlumping_hmg_snapshot_lag3     — HMG with Chebyshev kept, snapshot lag of three
-    bjacobi_rtol6               — bjacobi at ksp_rtol 1e-6 (tolerance ablation)
-    gmg_rtol6                   — GMG-H at ksp_rtol 1e-6 (tolerance ablation)
-    vlumping_hmg_rich_lag3_live — as vlumping_hmg_rich_lag3, live fine smoother
+Ablations. Smoother sweeps (`vlumping_1sweep`, `vlumping_4sweep`,
+`vlumping_richardson`, `vlumping_sor`); the linear-tolerance arm
+(`vlumping_rtol6`, `bjacobi_rtol6`, `gmg_rtol6`); the SNES accelerators
+(`ngmres_gmg`, `qn_gmg`); and the lagged-snapshot family
+(`vlumping_inexact_rich_lag3`, `vlumping_hmg_rich_lag3`,
+`vlumping_*_snapshot_lag3`, `vlumping_hmg_rich_lag3_live`,
+`vlumping_linesmooth_rich`, `vlumping_linesmooth_lag3`), which measured the
+operator snapshot that was removed from g-adopt on 2026-08-29. Those presets
+now take their preconditioner from `solvers/lagged_pc.py`.
 
-The Pmat strategies `gamg_diffpmat`, `gamg_lipnikov`, and
-`boomeramg_lipnikov` were retired in April 2026. See SOLVER-STUDY.md §7
-for the archived description of what they did and why they were dropped.
+Superseded names. `vlumping_inexact` is an alias of `vlumping`; its run
+directories predate the shipped preset gaining the measured damping and hold
+Chebyshev results. `vlumping` itself was the ksp_rtol 1e-6 variant until
+2026-08-29 and is now `vlumping_rtol6`.
+
+Retired. The Pmat strategies `gamg_diffpmat`, `gamg_lipnikov` and
+`boomeramg_lipnikov` were dropped in April 2026; SOLVER-STUDY.md §7 records
+what they did. Their runs are archived off-repository — see
+`archive/README.md`.
 """
 
 import importlib
@@ -54,7 +60,7 @@ import importlib
 _presets = (
     # PC strategies
     "gmg", "boomeramg", "gamg_asm", "vlumping", "gamg",
-    "bjacobi", "sor",
+    "bjacobi", "sor", "vlumping_rtol6",
     # SNES variants
     "ngmres_gmg", "qn_gmg",
     # VLumping parameter variants
@@ -70,6 +76,8 @@ _presets = (
     "vlumping_inexact_snapshot_lag3", "vlumping_hmg_snapshot_lag3",
     # Fair-comparison campaign: tolerance pairs and the incoherent lag
     "bjacobi_rtol6", "gmg_rtol6", "vlumping_hmg_rich_lag3_live",
+    # Attribution of the 2026-08-29 linesmooth rebuild: smoother vs setup lag
+    "vlumping_linesmooth_rich", "vlumping_linesmooth_lag3",
 )
 
 

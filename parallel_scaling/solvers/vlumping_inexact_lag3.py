@@ -1,3 +1,4 @@
+# STATUS: ablation. Not a recommended default; run to answer one narrow question.
 """VLumping with one preconditioner setup per three Newton iterations."""
 
 from gadopt.preconditioners import VerticallyLumpedPC  # noqa: F401

@@ -1,3 +1,4 @@
+# STATUS: reported. The paper computes numbers from runs of this preset.
 # Successive over-relaxation. Worst scaling behaviour in the paper:
 # iteration counts and wall time roughly double with each doubling of
 # problem size. Included as a baseline for comparison.

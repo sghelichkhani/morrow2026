@@ -1,3 +1,4 @@
+# STATUS: ablation. Not a recommended default; run to answer one narrow question.
 # Tolerance ablation for the 2026-08 fair-comparison campaign.
 #
 # Identical to `gmg` except for `ksp_rtol`. The campaign matches every

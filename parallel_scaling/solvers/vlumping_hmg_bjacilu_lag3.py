@@ -1,3 +1,4 @@
+# STATUS: ablation. Not a recommended default; run to answer one narrow question.
 """VLumping-HMG with BJacobi-ILU(0) smoothing and setup lag three."""
 
 from .vlumping_hmg_bjacilu import solver_parameters as _bjacilu_parameters

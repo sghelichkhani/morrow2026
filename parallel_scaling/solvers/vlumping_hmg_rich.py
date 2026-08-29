@@ -1,3 +1,4 @@
+# STATUS: ablation. Not a recommended default; run to answer one narrow question.
 # VLumping-HMG with a Richardson fine smoother, damping derived.
 #
 # Same preset as `vlumping_hmg` with the fine-level Chebyshev smoother

@@ -1,5 +1,5 @@
 #!/bin/bash
-#PBS -N r2-vll-h1
+#PBS -N rs-murr-vlumping_linesmooth-h1
 #PBS -P xd2
 #PBS -q normalsr
 #PBS -l walltime=06:00:00
@@ -9,47 +9,43 @@
 #PBS -l storage=scratch/xd2+gdata/fp50
 #PBS -l wd
 #PBS -W umask=0022
-#PBS -o /scratch/xd2/sg8812/morrow2026-profile-stage2-20260820T053301Z/stage2/results/vlumping_linesmooth/h1.out
-#PBS -e /scratch/xd2/sg8812/morrow2026-profile-stage2-20260820T053301Z/stage2/results/vlumping_linesmooth/h1.err
+#PBS -o /scratch/xd2/sg8812/morrow2026/parallel_scaling/results/murr_horiz/vlumping_linesmooth/h1.out
+#PBS -e /scratch/xd2/sg8812/morrow2026/parallel_scaling/results/murr_horiz/vlumping_linesmooth/h1.err
 
 source /etc/profile
-set -euo pipefail
-
+set -e
 module use /g/data/fp50/modules
 module load firedrake/main-20260806
 
-export PYTHONPATH=/scratch/xd2/sg8812/morrow2026-profile-stage2-20260820T053301Z/source/g-adopt:/scratch/xd2/sg8812/gwassess:/scratch/xd2/sg8812/omega:${PYTHONPATH:-}
+export PYTHONPATH="/scratch/xd2/sg8812/g-adopt-worktrees/sghelichkhani/richardson":"/scratch/xd2/sg8812/gwassess":"/scratch/xd2/sg8812/omega":${PYTHONPATH}
 export PYTHONDONTWRITEBYTECODE=1
-export OMPI_MCA_io=ompio
+
+export OMPI_MCA_io="ompio"
 export OMP_NUM_THREADS=1
 export NCI_PROJECT=xd2
+export MPLCONFIGDIR=$PBS_JOBFS/matplotlib
+export PETSC_OPTIONS="-log_view :/scratch/xd2/sg8812/morrow2026/parallel_scaling/results/murr_horiz/vlumping_linesmooth/h1.profile -BackwardEuler-Equation_lumped_pc_mg_log"
 
-mkdir -p "$PBS_JOBFS/pyop2" "$PBS_JOBFS/tsfc" "$PBS_JOBFS/xdg"
-export PYOP2_CACHE_DIR="$PBS_JOBFS/pyop2"
-export FIREDRAKE_TSFC_KERNEL_CACHE_DIR="$PBS_JOBFS/tsfc"
-export XDG_CACHE_HOME="$PBS_JOBFS/xdg"
-export PETSC_OPTIONS='-log_view :/scratch/xd2/sg8812/morrow2026-profile-stage2-20260820T053301Z/stage2/results/vlumping_linesmooth/h1.profile -BackwardEuler-Equation_lumped_pc_mg_log'
-
-cd /scratch/xd2/sg8812/morrow2026-profile-stage2-20260820T053301Z/source/morrow/parallel_scaling
+cd /scratch/xd2/sg8812/morrow2026/parallel_scaling
 
 echo "=== Job info ==="
-echo "Phase: stage2"
+echo "Case: murr_horiz"
 echo "Solver: vlumping_linesmooth"
 echo "Scale: h1"
+echo "Degree: 1"
 echo "Nodes: 1"
-echo "CPUs: $PBS_NCPUS"
-echo "Firedrake module: firedrake/main-20260806"
-echo "G-ADOPT source: /scratch/xd2/sg8812/morrow2026-profile-stage2-20260820T053301Z/source/g-adopt"
+echo "CPUs: 104"
+echo "Date: $(date)"
+echo "G-ADOPT commit: $(git -C /scratch/xd2/sg8812/g-adopt-worktrees/sghelichkhani/richardson rev-parse HEAD)"
+echo "Morrow commit: $(git -C /scratch/xd2/sg8812/morrow2026 rev-parse HEAD)"
+echo "Driver SHA256: $(sha256sum /scratch/xd2/sg8812/morrow2026/parallel_scaling/murrumbidgee_3d.py | cut -d' ' -f1)"
+echo "Solver SHA256: $(sha256sum /scratch/xd2/sg8812/morrow2026/parallel_scaling/solvers/vlumping_linesmooth.py | cut -d' ' -f1)"
+echo "Firedrake module: $LOADEDMODULES"
 echo "PETSC_OPTIONS: $PETSC_OPTIONS"
-echo "Date: $(date -u +%Y-%m-%dT%H:%M:%SZ)"
-echo "Command: python /scratch/xd2/sg8812/morrow2026-profile-stage2-20260820T053301Z/source/morrow/parallel_scaling/murrumbidgee_3d.py --horiz-res 1775 --layers 300 --solver vlumping_linesmooth --refinement-levels 0 --dt-init 60 --dt-max 43200 --dt-growth 1.5 --dt-shrink 0.5 --t-final 2592000 --data-dir /scratch/xd2/sg8812/morrow2026-profile-stage2-20260820T053301Z/source/morrow/parallel_scaling/murrumbidgee_data --profile"
 echo "================"
 
-mpiexec -np "$PBS_NCPUS" bash -c '
-  export MPLCONFIGDIR="$PBS_JOBFS/mpl.${OMPI_COMM_WORLD_RANK:-0}"
-  mkdir -p "$MPLCONFIGDIR"
-  exec "$@"
-' _ python /scratch/xd2/sg8812/morrow2026-profile-stage2-20260820T053301Z/source/morrow/parallel_scaling/murrumbidgee_3d.py --horiz-res 1775 --layers 300 --solver vlumping_linesmooth --refinement-levels 0 --dt-init 60 --dt-max 43200 --dt-growth 1.5 --dt-shrink 0.5 --t-final 2592000 --data-dir /scratch/xd2/sg8812/morrow2026-profile-stage2-20260820T053301Z/source/morrow/parallel_scaling/murrumbidgee_data --profile
+mpiexec -np $PBS_NCPUS python /scratch/xd2/sg8812/morrow2026/parallel_scaling/murrumbidgee_3d.py --horiz-res 1775 --layers 300 --solver vlumping_linesmooth --refinement-levels 2 --dt-init 60 --dt-max 43200 --dt-growth 1.5 --dt-shrink 0.5 --t-final 2592000 --data-dir /scratch/xd2/sg8812/morrow2026/parallel_scaling/murrumbidgee_data --profile 2>&1
 
-test -s /scratch/xd2/sg8812/morrow2026-profile-stage2-20260820T053301Z/stage2/results/vlumping_linesmooth/h1.profile
-echo "=== Job completed: $(date -u +%Y-%m-%dT%H:%M:%SZ) ==="
+test -s /scratch/xd2/sg8812/morrow2026/parallel_scaling/results/murr_horiz/vlumping_linesmooth/h1.profile
+
+echo "=== Job completed: $(date) ==="

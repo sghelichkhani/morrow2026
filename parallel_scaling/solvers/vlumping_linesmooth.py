@@ -1,60 +1,66 @@
+# STATUS: reported. The paper computes numbers from runs of this preset.
 # VLumping variant: vertical-line smoother at the fine level.
 #
-# Replaces the fine-level Chebyshev + BJacobi/ILU point smoother with a
-# Firedrake ASMLinesmoothPC patch solver: one patch per vertical column
-# (codim 0 on the base mesh), each patch factorised by LU. This eats the
-# anisotropic vertical coupling exactly, so a single sweep is usually
-# enough. The coarse solve (2D R-space projection) is left unchanged at
-# LU/MUMPS. Inexact Newton (ksp_rtol=1e-4) carried over from the
-# vlumping_inexact baseline since it consistently won in Round 3.
+# Configured as `vlumping_inexact_rich_lag3` — g-adopt's shipped `vlumping`
+# preset plus the auto-damped Richardson smoother (`vlumping_omega_auto`) —
+# but WITHOUT the lag-3 operator snapshot, and with one further change: the
+# fine-level preconditioner becomes a
+# Firedrake ASMLinesmoothPC patch solver, one patch per vertical column, each
+# factorised by LU, in place of the rank-local block-Jacobi ILU(0). Exact
+# column solves eat the anisotropic vertical coupling in one sweep. The coarse
+# solve (2D R-space projection, MUMPS LU) is untouched.
 #
-# Hypothesis: exact column solves damp vertical error modes in one
-# application, so outer Krylov iteration counts drop below the
-# vlumping_inexact baseline (1152 at the large Murrumbidgee scale).
+# Rebuilt 2026-08-29. The earlier version kept the Chebyshev smoother and
+# rebuilt the preconditioner on every Newton step, while the other reported
+# lumped preset carried Richardson + lag-3, so the two differed in more than
+# the smoother the paper says distinguishes them. Aligning them fully was
+# tried and rejected on evidence: see the table below. They now differ in the
+# fine-level smoother and in the setup lag, for a measured reason.
+#
+# Why the lag is dropped, measured 2026-08-29 in the saturated seasonal
+# regime at h2 and h4, one knob at a time:
+#
+#   configuration            h2 it/fail/(h/yr)      h4 it/fail/(h/yr)
+#   Chebyshev, no lag         6.6 /  4 / 0.43        8.5 /  4 / 0.44
+#   Richardson, no lag        6.4 /  6 / 0.40        8.2 /  3 / 0.33
+#   Chebyshev + lag 3        10.2 / 44 / 1.01       13.1 / 89 / 1.66
+#   Richardson + lag 3       10.1 / 55 / 1.00       12.4 /108 / 1.85
+#
+# The lag carries the whole effect and the smoother carries none of it. With
+# the lag the adaptive ramp thrashes: 89 to 108 failed steps against 3 to 6.
+# The reason is specific to this preset. The snapshot lags the smoother setup
+# as well as the coarse operator, so the column LU factorisations go stale,
+# and solving a stale column operator *exactly* is worse than solving it
+# approximately, which is why the same lag is harmless for the point-smoother
+# preset (`vlumping_inexact_rich_lag3` reaches 3 to 9 failed steps in the same
+# runs). The saturated regime is where columns cross into saturation between
+# Newton steps, so it is where the snapshot ages fastest.
+#
+# This matters more than the setup saving it costs, because the regime where
+# the lag hurts is the regime where the lumped presets are the only viable
+# option at all: block-Jacobi completes no timestep there.
+#
+# Richardson is kept. It is a pure gain here, beating the original Chebyshev
+# configuration on wall time at both scales, and it removes the per-Newton
+# Chebyshev eigenvalue estimation without introducing any staleness.
+#
+# One parameter is deliberately NOT inherited: `lumped_mg_levels_ksp_max_it`
+# stays at 1 rather than the base preset's 2. The sweep count is a property of
+# the smoother, not of the setup strategy — an exact per-column solve does in
+# one sweep what the point smoother needs two for, and the previous linesmooth
+# runs used 1. Holding it at 1 keeps this rerun a one-variable change against
+# those runs, so any difference is attributable to Richardson + lag-3.
+#
+# See NOTES/2026-08-21-RICHARDSON-LAG-GADI-CAMPAIGN.md for the damping
+# measurement and the snapshot lag, and NOTES/archive/linesmooth-pre-lag3-20260829/
+# for the superseded outputs.
 
-from .vlumping import VerticallyLumpedPC  # noqa: F401 (needed for pc_python_type)
+from gadopt.preconditioners import VerticallyLumpedPC  # noqa: F401 (pc_python_type)
+from gadopt.richards_solver import (
+    vlumping_linesmooth_richards_solver_parameters as _shipped,
+)
 
-solver_parameters = {
-    "ksp_type": "fgmres",
-    "ksp_rtol": 1e-4,
-    "ksp_max_it": 200,
-    "ksp_gmres_restart": 30,
-
-    "pc_type": "python",
-    "pc_python_type": "solvers.vlumping.VerticallyLumpedPC",
-
-    # --- Fine-level smoother: Chebyshev wrapping a column-exact ASM ---
-    "lumped_mg_levels_ksp_type": "chebyshev",
-    "lumped_mg_levels_ksp_max_it": 1,
-    "lumped_mg_levels_ksp_convergence_test": "skip",
-    "lumped_mg_levels_pc_type": "python",
-    "lumped_mg_levels_pc_python_type": "firedrake.ASMLinesmoothPC",
-    # codims="0": one patch per base cell (column above each base cell).
-    # Try "0,1" if iteration counts are too high (adds facet-column overlap
-    # at roughly 2x the smoother cost).
-    "lumped_mg_levels_pc_linesmooth_codims": "0",
-    # Inner ASM's sub-KSP PC. The outer ASM PC has prefix "..._sub_", so the
-    # patch-local sub-PC lives under "..._sub_sub_". Using "..._sub_pc_type"
-    # (single sub_) hits the ASM PC's own type and downgrades it to LU on
-    # the full rank-local matrix -- an instant OOM.
-    "lumped_mg_levels_pc_linesmooth_sub_sub_pc_type": "lu",
-    "lumped_mg_levels_pc_linesmooth_sub_sub_pc_factor_mat_ordering_type": "natural",
-
-    # --- Coarse solver: unchanged from vlumping_inexact baseline ---
-    "lumped_mg_coarse_ksp_type": "preonly",
-    "lumped_mg_coarse_pc_type": "lu",
-    "lumped_mg_coarse_pc_factor_mat_solver_type": "mumps",
-
-    # SNES block matched to gadopt's _newton_common (and the other compared
-    # presets) for the monthly-Murrumbidgee fair comparison. The former loose
-    # snes_atol 1e-8 with no snes_stol let this preset declare convergence up
-    # to four orders earlier than the others on the quasi-steady plateau, where
-    # warm-started residuals fall below rtol*R0 — a fairness break. Aligned
-    # 2026-08-27 (Fable review B2).
-    "snes_type": "newtonls",
-    "snes_linesearch_type": "bt",
-    "snes_rtol": 1e-8,
-    "snes_atol": 1e-12,
-    "snes_stol": 1e-8,
-    "snes_max_it": 50,
-}
+# Shim. The parameters are g-adopt's shipped `vlumping_linesmooth` preset,
+# imported rather than restated so there is one source of truth and the
+# paper's listing can be checked against the library by inspection.
+solver_parameters = dict(_shipped)

@@ -1,3 +1,13 @@
+# STATUS: superseded alias. Use `vlumping`.
+#
+# This name predates 2026-08-29, when g-adopt's shipped `vlumping` preset
+# gained the measured Richardson damping and this repository took the name
+# `vlumping` for the shim of it. Both now resolve to the same parameters.
+#
+# WARNING: the run directories under this name do NOT. They were produced
+# before the shipped preset changed, with a Chebyshev smoother and no
+# damping measurement. Treat results/*/vlumping_inexact/ as the historical
+# Chebyshev record and results/*/vlumping/ as the reported one.
 # Inexact-Newton VLumping — scaling-study shim.
 #
 # Identical to g-adopt's shipped `vlumping` preset (from

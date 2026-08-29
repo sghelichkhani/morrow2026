@@ -1,3 +1,4 @@
+# STATUS: reported. The paper computes numbers from runs of this preset.
 # ---------------------------------------------------------------------------
 # Strategy 1: Geometric Multigrid with Horizontal-Only Coarsening (GMG-H)
 # ---------------------------------------------------------------------------

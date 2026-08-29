@@ -1,3 +1,4 @@
+# STATUS: reported. The paper computes numbers from runs of this preset.
 # ---------------------------------------------------------------------------
 # Baseline: Block-Jacobi with ILU(0)
 # ---------------------------------------------------------------------------

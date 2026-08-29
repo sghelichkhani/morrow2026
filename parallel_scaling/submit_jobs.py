@@ -67,7 +67,7 @@ ROUND3_SOLVERS = list(PAPER_SOLVERS)
 # existing DQ1 record is left untouched.
 COCKETT_DQ2_SOLVERS = [
     "vlumping_inexact",  # production preset (g-adopt's shipped `vlumping`)
-    "vlumping",          # baseline VLumping
+    "vlumping_rtol6",    # baseline VLumping at ksp_rtol 1e-6
     "boomeramg",         # paper's tuned BoomerAMG
     "gmg",               # geometric multigrid, horizontal coarsening
 ]
@@ -152,7 +152,7 @@ FAIR_STRONG_SOLVERS = [
 # Tolerance ablation: the same preconditioner at 1e-6 and 1e-4 on the same
 # mesh, for three solver families, so the effect of the tolerance is
 # separable from the effect of the preconditioner.
-FAIR_TOLERANCE_SOLVERS = ["vlumping", "bjacobi_rtol6", "gmg_rtol6"]
+FAIR_TOLERANCE_SOLVERS = ["vlumping_rtol6", "bjacobi_rtol6", "gmg_rtol6"]
 
 SNAPSHOT_SOLVERS = [
     "vlumping_inexact_snapshot_lag3",
@@ -261,15 +261,20 @@ SEASONAL_SAT_GROWTH = 2.0
 SEASONAL_SAT_WT_OFFSET = 10.0
 SEASONAL_SAT_FLATTEN = 10.0
 
-# Presets shown in the paper: BJac + GMG-H baselines, and the two SHIPPED
-# vertical-lumping presets (Richardson smoother + lag-3 snapshot).
-# vlumping_linesmooth (line smoother + direct coarse) was also run in both
-# regimes as a reliability control, but hmg — not linesmooth — is the shown and
-# shipped second series.
+# Presets shown in the paper: BJac + GMG-H baselines, and the two DIRECT-COARSE
+# vertical-lumping presets, which are the recommended pair. Both carry the
+# Richardson smoother and the lag-3 snapshot; they differ in the fine-level
+# smoother alone.
+#
+# Superseded 2026-08-29: this list previously named vlumping_hmg_rich_lag3 as
+# the second shown series and treated vlumping_linesmooth as a control. The
+# seasonal campaign reversed that — hmg's iterative coarse solve thrashes the
+# adaptive step in this regime — so linesmooth is the shown second series and
+# hmg is reported only for the strong-scaling decompositions.
 SEASONAL_MURR_SOLVERS = [
     "bjacobi", "gmg",
-    "vlumping_inexact_rich_lag3",  # shipped "VLumping"     (direct MUMPS coarse)
-    "vlumping_hmg_rich_lag3",      # shipped "VLumping-HMG"  (iterative MG coarse, scales)
+    "vlumping_inexact_rich_lag3",  # "VLumping"            (point smoother)
+    "vlumping_linesmooth",         # "VLumping-linesmooth" (column-exact smoother)
 ]
 
 
@@ -735,6 +740,67 @@ def get_phase_runs(phase):
             for scale in ("h1", "h2", "h4", "h8"):
                 runs.append((case, "vlumping_hmg_rich_lag3", scale))
 
+    elif phase == "linesmooth_lag3":
+        # Rerun every reported vlumping_linesmooth point after the preset was
+        # rebuilt on 2026-08-29 to carry the Richardson smoother and the lag-3
+        # snapshot, so that it differs from vlumping_inexact_rich_lag3 in the
+        # fine-level smoother alone. The old runs rebuilt the preconditioner
+        # every Newton step and spent 28-35% of the solve in setup against
+        # 5-8% for its partner, which the paper reports as a matched pair.
+        # 4 experiments x 4 scales = 16 jobs.
+        for scale in ("h1", "h2", "h4", "h8"):
+            runs.append(("murr_seasonal", "vlumping_linesmooth", scale))
+            runs.append(("murr_seasonal_saturated", "vlumping_linesmooth", scale))
+            runs.append(("murr_horiz", "vlumping_linesmooth", scale))
+        for scale in ("smoke", "sweep", "medium", "large"):
+            runs.append(("murrumbidgee", "vlumping_linesmooth", scale))
+
+    elif phase == "linesmooth_lag3_smoke":
+        # One cheap 1-node point first. The auto-damped Richardson smoother had
+        # never been combined with the ASM line smoother, because omega_auto
+        # strips the level prefix's pc_python_type before it rewrites the
+        # smoother's ksp_type. Verified locally on a 12x12x16 Cockett box
+        # (richardson, damping 0.998, ASMLinesmoothPC intact); this repeats the
+        # check at rank counts where the spectrum spreads.
+        runs.append(("murr_horiz", "vlumping_linesmooth", "h1"))
+
+    elif phase == "linesmooth_attribution":
+        # The 2026-08-29 rebuild changed two things at once and the result
+        # split by regime: in the ordinary regime it saved 14-30% of wall time
+        # at an unchanged iteration count, while in the saturated seasonal
+        # regime the failed-step count rose from 4 to 108 at h4. These two
+        # variants carry one change each, on the two scales where the effect
+        # is largest, so the smoother and the setup lag can be separated.
+        for solver in ("vlumping_linesmooth_rich", "vlumping_linesmooth_lag3"):
+            for scale in ("h2", "h4"):
+                runs.append(("murr_seasonal_saturated", solver, scale))
+
+    elif phase == "final_richardson":
+        # The submission campaign. Every preset the paper reports, on every
+        # experiment, in one configuration: the measured Richardson damping and
+        # no operator snapshot. Run under the names the paper and g-adopt use,
+        # so that paper name, library preset and run directory agree.
+        #
+        # vlumping_linesmooth already has all four Murrumbidgee experiments from
+        # the 2026-08-29 reruns, which used parameters identical to the shipped
+        # preset; only its Cockett points are missing.
+        for scale in ("sweep", "medium", "large", "huge"):
+            runs.append(("cockett", "vlumping", scale))
+            runs.append(("cockett", "vlumping_linesmooth", scale))
+            runs.append(("cockett", "vlumping_hmg", scale))
+        for scale in ("h1", "h2", "h4", "h8"):
+            runs.append(("murr_horiz", "vlumping", scale))
+            runs.append(("murr_horiz", "vlumping_hmg", scale))
+            runs.append(("murr_seasonal", "vlumping", scale))
+            runs.append(("murr_seasonal_saturated", "vlumping", scale))
+        for scale in ("smoke", "sweep", "medium", "large"):
+            runs.append(("murrumbidgee", "vlumping", scale))
+            runs.append(("murrumbidgee", "vlumping_hmg", scale))
+        for scale in ("s1", "s2", "s4", "s8", "s16", "s32"):
+            runs.append(("murr_strong", "vlumping", scale))
+        for scale in ("s2", "s4", "s8", "s16", "s32"):
+            runs.append(("murr_strong", "vlumping_hmg", scale))
+
     elif phase == "strong":
         # Murrumbidgee strong scaling: fixed Δx=620m, 300 layers,
         # sweep nodes 1->32. vlumping_inexact carries the curve up to
@@ -742,7 +808,7 @@ def get_phase_runs(phase):
         # nodes only vlumping_hmg's nested geometric MG coarse path is
         # well-conditioned enough to converge.
         for scale in ("s1", "s2", "s4", "s8", "s16", "s32"):
-            runs.append(("murr_strong", "vlumping_inexact", scale))
+            runs.append(("murr_strong", "vlumping", scale))
         # Full vlumping_hmg strong-scaling curve (2026-07 rerun extra): carry
         # the nested-coarse-solve variant across the whole sweep, not just the
         # extreme s32 point, so it fills the 8->32 gap where vlumping_inexact's
@@ -906,7 +972,9 @@ def main():
                  "final_smoke", "final_h8", "fair_all",
                  "fair_gap_fix",
                  "monthly_murr", "monthly_murr_smoke",
-                 "seasonal", "seasonal_saturated", "seasonal_hmg"],
+                 "seasonal", "seasonal_saturated", "seasonal_hmg",
+                 "linesmooth_lag3", "linesmooth_lag3_smoke",
+                 "linesmooth_attribution", "final_richardson"],
         help="Which set of jobs to generate/submit"
     )
     parser.add_argument(

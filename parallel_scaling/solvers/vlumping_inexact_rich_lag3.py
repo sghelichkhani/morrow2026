@@ -1,3 +1,6 @@
+# STATUS: ablation. The operator snapshot this preset enables was removed
+# from g-adopt on 2026-08-29 after it was measured to cost a factor of four
+# in the near-saturated seasonal regime. See solvers/lagged_pc.py.
 # Inexact-Newton VLumping, Richardson fine smoother, setup lagged by three.
 #
 # Adds the private operator snapshot to `vlumping_inexact_rich`. The inner
@@ -24,3 +27,9 @@ LAG = 3
 
 solver_parameters = dict(_base)
 solver_parameters["vlumping_lag"] = LAG
+
+# The snapshot now lives here rather than in g-adopt, so this preset must
+# point at the local class. See solvers/lagged_pc.py.
+from .lagged_pc import LaggedVerticallyLumpedPC  # noqa: E402,F401
+
+solver_parameters["pc_python_type"] = "solvers.lagged_pc.LaggedVerticallyLumpedPC"
