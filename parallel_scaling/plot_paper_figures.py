@@ -40,6 +40,8 @@ import argparse
 import json
 from pathlib import Path
 
+import reported
+
 import matplotlib
 import matplotlib.pyplot as plt
 import numpy as np
@@ -55,14 +57,19 @@ PARSED = Path(__file__).resolve().parent / "parsed"
 # base `vlumping_inexact` / `vlumping_hmg` presets are never plotted as the
 # headline. The reader does not need the `_rich_lag3` detail in the legend; the
 # setup-cost variant is explained in the §4 text.
-STYLE = {
-    "bjacobi":                    dict(color="#000000", marker="d", label="BJacobi"),
-    "gmg":                        dict(color="#2ca02c", marker="P", label="GMG-H"),
-    "boomeramg":                  dict(color="#1f77b4", marker="D", label="BoomerAMG"),
-    "vlumping_inexact_rich_lag3": dict(color="#d62728", marker="o", label="VLumping"),
-    "vlumping_hmg_rich_lag3":     dict(color="#3182bd", marker="X", label="VLumping-HMG"),
-    "vlumping_linesmooth":        dict(color="#9467bd", marker="s", label="VLumping-linesmooth"),
-}
+# Colours, markers and labels come from `reported.py`, the single definition
+# of what the paper reports; the values there are the ones these figures
+# already used, so routing through it does not change any figure. Historical
+# run keys alias onto the preset they became, so a figure still draws from an
+# older parsed record.
+STYLE = {p.key: reported.style(p.key) for p in reported.ALL_REPORTED}
+STYLE.update({
+    "vlumping_inexact": STYLE["vlumping"],
+    "vlumping_inexact_rich": STYLE["vlumping"],
+    "vlumping_inexact_rich_lag3": STYLE["vlumping"],
+    "vlumping_hmg_rich": STYLE["vlumping_hmg"],
+    "vlumping_hmg_rich_lag3": STYLE["vlumping_hmg"],
+})
 LW, MS = 1.9, 8.5
 
 # Component colours for the time-breakdown figure (stacked, one shared legend).

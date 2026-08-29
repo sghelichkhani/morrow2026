@@ -19,38 +19,31 @@ stay in the outcomes table. Run after parse_results.py.
 import json
 from pathlib import Path
 
+import reported
+
 HERE = Path(__file__).resolve().parent
 PARSED = HERE / "parsed"
 
 # Paper display name -> parsed solver key. The presented VLumping rows are the
 # improved "best per idea" presets (Richardson smoother + lag-3 snapshot).
-# The isotropic survey compares the whole slate, VLumping-HMG included,
-# because that is the section that reports it as the extreme-decomposition
-# variant. The basin blocks report the pair the paper recommends: the two
-# direct-coarse lumped presets, which differ in the fine-level smoother alone.
-SURVEY_SOLVERS = [
-    ("BJacobi", "bjacobi"),
-    ("GAMG", "gamg"),
-    ("BoomerAMG", "boomeramg"),
-    ("GMG-H", "gmg"),
-    ("VLumping", "vlumping_inexact_rich_lag3"),
-    ("VLumping-HMG", "vlumping_hmg_rich_lag3"),
-]
-BASIN_SOLVERS = [
-    ("BJacobi", "bjacobi"),
-    ("GMG-H", "gmg"),
-    ("VLumping", "vlumping_inexact_rich_lag3"),
-    ("VLumping-linesmooth", "vlumping_linesmooth"),
-]
+# Row order and display names come from `reported.py`, which is the single
+# definition of what the paper reports. The isotropic survey compares the whole
+# slate, VLumping-HMG included, because that is the section that reports it as
+# the extreme-decomposition variant. The basin blocks report the pair the paper
+# recommends, which differ in the fine-level smoother alone.
+SURVEY_SOLVERS = [(p.label, p.key) for p in reported.presets_for("cockett")]
+BASIN_SOLVERS = [(p.label, p.key)
+                 for p in reported.presets_for("murr_horizontal")
+                 if p.key != "vlumping_hmg"]
 
 # Experiment label, parsed file, reference scale (8 nodes), solver rows.
 EXPERIMENTS = [
-    ("Cockett 3D --- isotropic box", "cockett", "huge", SURVEY_SOLVERS),
-    ("Lower Murrumbidgee --- horizontal weak scaling, ordinary regime",
+    (reported.EXPERIMENTS["cockett"].label, "cockett", "huge", SURVEY_SOLVERS),
+    (reported.EXPERIMENTS["murr_horizontal"].label,
      "murr_horizontal", "h8", BASIN_SOLVERS),
-    ("Lower Murrumbidgee --- vertical weak scaling, ordinary regime",
+    (reported.EXPERIMENTS["murr_vertical"].label,
      "murr_vertical", "large", BASIN_SOLVERS),
-    ("Lower Murrumbidgee --- horizontal weak scaling, seasonal regime",
+    (reported.EXPERIMENTS["murr_seasonal"].label,
      "murr_seasonal", "h8", BASIN_SOLVERS),
 ]
 

@@ -112,7 +112,7 @@ def main():
             missing_docs.append(experiment.key)
             continue
         runs = index(doc)
-        for preset in reported.presets_for(exp_key, outcome_table=True):
+        for preset in reported.presets_for(exp_key):
             for scale in experiment.scales:
                 if not reported.attempted(exp_key, preset.key, scale):
                     continue

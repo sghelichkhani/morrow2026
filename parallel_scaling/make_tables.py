@@ -28,6 +28,8 @@ import argparse
 import json
 from pathlib import Path
 
+import reported
+
 PARSED = Path(__file__).resolve().parent / "parsed"
 PAPER_TABLES = Path.home() / "Workplace/papers/richards-morrow-2026/Tables"
 
@@ -46,45 +48,27 @@ GLYPH = {
 GLYPH_REDUCED = r"$\circ$"
 NOT_RUN = r"--"  # core LaTeX only (no xcolor in the Copernicus preamble)
 
-# Human labels + colour/marker-free display names, matching the figures.
-SOLVER_LABEL = {
-    "sor": "SOR",
-    "bjacobi": "BJacobi",
-    "gamg": "GAMG",
-    "boomeramg": "BoomerAMG",
-    "gmg": "GMG-H",
-    "vlumping_inexact": "VLumping",
-    "vlumping_linesmooth": "VLumping-linesmooth",
-    "vlumping_hmg": "VLumping-HMG",
-}
-# Fixed row order (union across experiments); blank where not attempted.
-SOLVER_ORDER = ["sor", "bjacobi", "gamg", "boomeramg", "gmg",
-                "vlumping_inexact", "vlumping_linesmooth", "vlumping_hmg"]
+# Display names, row order and per-experiment coverage come from
+# `reported.py`, the single definition of what the paper reports.
+SOLVER_ORDER = [p.key for p in reported.ALL_REPORTED]
+SOLVER_LABEL = {p.key: p.label for p in reported.ALL_REPORTED}
 
-# Actual parsed run key(s) behind each display row, in preference order. The
-# two VLumping rows report the improved "_rich_lag3" presets where they exist
-# (Cockett and both weak-scaling experiments, matching tab:solver_performance),
-# and fall back to the base preset where no rich_lag3 run was made (the
-# direct-coarse VLumping in the strong-scaling block).
+# The run key behind each row. Identity now that the reported runs live under
+# the names the paper and g-adopt use; the fallbacks let the table still build
+# from the historical directories if a reported run is missing.
 SOLVER_KEYS = {
-    "sor": ["sor"],
-    "bjacobi": ["bjacobi"],
-    "gamg": ["gamg"],
-    "boomeramg": ["boomeramg"],
-    "gmg": ["gmg"],
-    "vlumping_inexact": ["vlumping_inexact_rich_lag3", "vlumping_inexact"],
-    "vlumping_linesmooth": ["vlumping_linesmooth"],
-    "vlumping_hmg": ["vlumping_hmg_rich_lag3", "vlumping_hmg"],
+    "vlumping": ["vlumping", "vlumping_inexact_rich_lag3", "vlumping_inexact"],
+    "vlumping_hmg": ["vlumping_hmg", "vlumping_hmg_rich_lag3"],
 }
 
-# The seasonal blocks report the four presets the section compares. HMG is
-# excluded there by the same decision that keeps it out of Fig. seasonal_weak:
-# its iterative coarse solve thrashes the adaptive step in this regime, it is
-# not offered as a default, and several of its runs were stopped by hand
-# rather than by the solver, which no outcome glyph can honestly represent.
-SEASONAL_ROWS = ["bjacobi", "gmg", "vlumping_inexact", "vlumping_linesmooth"]
+# The seasonal blocks report the presets that section compares. HMG is
+# excluded by the same decision that keeps it out of Fig. seasonal_weak: its
+# iterative coarse solve thrashes the adaptive step in this regime, it is not
+# offered as a default, and several of its runs were stopped by hand rather
+# than by the solver, which no outcome glyph can honestly represent.
+SEASONAL_ROWS = [p.key for p in reported.presets_for("murr_seasonal")]
 
-DT_CEILING_S = 8035200.0        # SEASONAL_DT_MAX in submit_jobs.py
+DT_CEILING_S = reported.SEASONAL_DT_CEILING_S
 
 
 def load(name):
@@ -206,7 +190,8 @@ def build_outcomes_table():
         for solver in rows:
             # Resolve the actual run key for this experiment: the reported
             # rich_lag3 preset where it exists, else the base preset.
-            key = next((k for k in SOLVER_KEYS[solver] if k in present), None)
+            key = next((k for k in SOLVER_KEYS.get(solver, [solver])
+                        if k in present), None)
             if key is None:
                 continue
             cells = [SOLVER_LABEL[solver]]

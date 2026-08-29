@@ -31,24 +31,26 @@ import subprocess
 import sys
 from pathlib import Path
 
+import reported
+
 HERE = Path(__file__).resolve().parent
 PARSED = HERE / "parsed"
 PAPER_TABLES = Path.home() / "Workplace/papers/richards-morrow-2026/Tables"
 
 CASE = "murr_seasonal"
-DT_CEILING_S = 8035200.0        # SEASONAL_DT_MAX in submit_jobs.py
+DT_CEILING_S = reported.SEASONAL_DT_CEILING_S
 DAY = 86400.0
 
-SCALES = [("h1", 1775, "4.0"), ("h2", 1250, "8.0"),
-          ("h4", 880, "1.6"), ("h8", 620, "3.2")]
+SCALES = [(k, reported.HORIZONTAL_SPACING_M[k], m)
+          for k, m in (("h1", "4.0"), ("h2", "8.0"),
+                       ("h4", "1.6"), ("h8", "3.2"))]
 DOF_EXP = {"h1": 7, "h2": 7, "h4": 8, "h8": 8}
 
-# Display name -> parsed solver key.
-COLUMNS = [
-    ("BJacobi", "bjacobi"),
-    ("VLumping", "vlumping_inexact_rich_lag3"),
-    ("VLumping-linesmooth", "vlumping_linesmooth"),
-]
+# Columns: the presets this experiment compares, less GMG-H, which holds the
+# full step everywhere and is a caption sentence rather than three columns.
+COLUMNS = [(p.label, p.key)
+           for p in reported.presets_for("murr_seasonal", curves_only=True)
+           if p.key != "gmg"]
 FOOTNOTE_SOLVER = ("GMG-H", "gmg")
 
 

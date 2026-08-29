@@ -59,6 +59,13 @@ HORIZONTAL_SPACING_M = {"h1": 1775, "h2": 1250, "h4": 880, "h8": 620}
 
 
 class Preset(NamedTuple):
+    """One preset as the paper reports it.
+
+    Colours and markers are those the figures already used; they are recorded
+    here so that routing the plotters through this module cannot change how a
+    published figure looks.
+    """
+
     key: str                 # directory name under results/<case>/
     label: str               # name used in the paper
     colour: str
@@ -71,33 +78,46 @@ class Preset(NamedTuple):
 # paper's contribution. The black-box baselines below are reported only in the
 # outcome table, because they do not complete enough runs to plot.
 REPORTED = (
-    Preset("bjacobi", "BJacobi", "#1f77b4", "o",
+    Preset("bjacobi", "BJacobi", "#000000", "d",
            ("cockett", "murr_horizontal", "murr_vertical",
             "murr_seasonal", "murr_seasonal_saturated", "murr_strong")),
-    Preset("gmg", "GMG-H", "#ff7f0e", "^",
+    Preset("gmg", "GMG-H", "#2ca02c", "P",
            ("cockett", "murr_horizontal", "murr_vertical",
             "murr_seasonal", "murr_seasonal_saturated")),
-    Preset("vlumping", "VLumping", "#2ca02c", "D",
+    Preset("vlumping", "VLumping", "#d62728", "o",
            ("cockett", "murr_horizontal", "murr_vertical",
             "murr_seasonal", "murr_seasonal_saturated", "murr_strong")),
     Preset("vlumping_linesmooth", "VLumping-linesmooth", "#9467bd", "s",
            ("cockett", "murr_horizontal", "murr_vertical",
             "murr_seasonal", "murr_seasonal_saturated")),
-    Preset("vlumping_hmg", "VLumping-HMG", "#8c564b", "v",
+    Preset("vlumping_hmg", "VLumping-HMG", "#3182bd", "X",
            ("cockett", "murr_horizontal", "murr_vertical", "murr_strong")),
 )
 
-# Outcome-table only: culled by the basin anisotropy, so they carry no curve.
-OUTCOME_ONLY = (
+# No scaling curve of their own: culled by the basin anisotropy, so they appear
+# in the outcome table everywhere and in the performance table only where they
+# actually complete, which in practice is the isotropic Cockett box. The
+# performance table filters on the run outcome rather than on this list, so a
+# preset that completes at the reference scale is reported there either way.
+NO_CURVE = (
     Preset("sor", "SOR", "#7f7f7f", "x",
            ("cockett", "murr_horizontal", "murr_vertical")),
-    Preset("gamg", "GAMG", "#d62728", "P",
+    Preset("gamg", "GAMG", "#8c564b", "^",
            ("cockett", "murr_horizontal", "murr_vertical")),
-    Preset("boomeramg", "BoomerAMG", "#e377c2", "*",
+    Preset("boomeramg", "BoomerAMG", "#1f77b4", "D",
            ("cockett", "murr_horizontal", "murr_vertical")),
 )
 
-ALL_REPORTED = REPORTED + OUTCOME_ONLY
+# Table row order, unchanged from the manuscript: increasing structure, with
+# the paper's own presets last. Kept explicit so that reordering the
+# definitions above cannot silently reorder the tables.
+ROW_ORDER = ("sor", "bjacobi", "gamg", "boomeramg", "gmg",
+             "vlumping", "vlumping_linesmooth", "vlumping_hmg")
+
+_unordered = REPORTED + NO_CURVE
+assert {p.key for p in _unordered} == set(ROW_ORDER), "ROW_ORDER is stale"
+ALL_REPORTED = tuple(next(p for p in _unordered if p.key == k)
+                     for k in ROW_ORDER)
 
 BY_KEY = {p.key: p for p in ALL_REPORTED}
 BY_LABEL = {p.label: p for p in ALL_REPORTED}
@@ -119,9 +139,14 @@ def attempted(experiment: str, preset_key: str, scale: str) -> bool:
     return (experiment, preset_key, scale) not in NOT_ATTEMPTED
 
 
-def presets_for(experiment: str, outcome_table: bool = False) -> tuple:
-    """Presets reported in one experiment, in table order."""
-    source = ALL_REPORTED if outcome_table else REPORTED
+def presets_for(experiment: str, curves_only: bool = False) -> tuple:
+    """Presets reported in one experiment, in table order.
+
+    `curves_only` restricts to the presets that carry a scaling curve, which
+    is what the figures plot. Tables use the full list and drop whatever did
+    not complete.
+    """
+    source = REPORTED if curves_only else ALL_REPORTED
     return tuple(p for p in source if experiment in p.experiments)
 
 
