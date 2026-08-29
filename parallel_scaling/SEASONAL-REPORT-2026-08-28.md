@@ -7,10 +7,23 @@ weak/strong-scaling figures (decision confirmed by Sia 2026-08-28).
 The two **direct-coarse** vertical-lumping presets — `vlumping` (inexact)
 and `vlumping_linesmooth` — are the recommended pair. `vlumping_hmg` was
 tested here and found **unreliable** in this regime (severe dt-shrink
-thrashing, see the recommendation section); its graded `h1` run
-(`f55 dt8` — 55 failed steps, never took a step past ~8 days) established
-the fragility, so the remaining hmg jobs (graded `h2/h4/h8` and all four
-saturated) were cancelled rather than burn allocation replaying it.
+thrashing, see the recommendation section).
+
+> **Correction, 2026-08-28.** An earlier version of this report said the
+> remaining hmg jobs were cancelled with no data. They were not: all eight
+> ran, and their output was left unfetched on Gadi. It has since been pulled
+> and reparsed. Graded `h1` and saturated `h2` completed; the other six were
+> SIGTERM-killed part way, which `parse_results.py` previously mislabelled as
+> `diverged` (now `killed`). The complete picture strengthens the exclusion
+> rather than weakening it — hmg's maximum sustained step collapses with
+> resolution *faster* than block-Jacobi's:
+>
+> | graded | h1 | h2 | h4 | h8 |
+> |---|---|---|---|---|
+> | max sustained dt (d) | 9.9 | 6.4 | 2.1 | 0.8 |
+>
+> (saturated: 45.5 / 45.5 / 11.4 / 5.7 d). Graded `h1` reached `t_final` only
+> by taking 118 steps of which 55 failed, at 4.3x VLumping's wall time.
 
 ---
 
@@ -91,7 +104,7 @@ Cell = iterations/Newton, `f`=failed ramp steps, `dt`=max sustained step
 | gmg (GMG-H) | 32.4  f0  dt93 | 31.0  f0  dt93 | 28.9  f1  dt93 | 27.4  f2  dt93 |
 | **vlumping** (inexact) | 5.5  f0  dt93 | 6.2  f0  dt93 | 7.5  f1  dt93 | 9.2  f1  dt93 |
 | **vlumping-linesmooth** | 5.5  f0  dt93 | 6.8  f0  dt93 | 8.5  f1  dt93 | 10.7  f2  dt93 |
-| ~~vlumping-hmg~~ (fragile) | **f55  dt8** | *cancelled* | *cancelled* | *cancelled* |
+| ~~vlumping-hmg~~ (fragile) | **f55  dt9.9** | killed, dt6.4 | killed, dt2.1 | killed, dt0.8 |
 
 - **Vertical lumping is clean and flat.** 5–9 iterations/Newton, 0–1 failed
   ramp steps, and it takes the full three-month step at every scale.
@@ -116,7 +129,7 @@ Same layout. `FAIL` = zero successful steps; `WALL` = hit the 6 h limit.
 | gmg (GMG-H) | FAIL (WALL) | 38.9  f7  dt91 | 41.2  f4  dt93 | 41.8  f4  dt93 |
 | **vlumping** (inexact) | 5.9  f9  dt46 | 6.7  f6  dt93 | 8.6  f3  dt93 | 10.5  f4  dt93 |
 | **vlumping-linesmooth** | 5.4  f9  dt46 | 6.6  f4  dt93 | 8.5  f4  dt93 | 11.2  f4  dt93 |
-| ~~vlumping-hmg~~ | *not run — cancelled; see graded thrash* | | | |
+| ~~vlumping-hmg~~ | killed, dt45.5 | f62  dt45.5 | killed, dt11.4 | killed, dt5.7 |
 
 - **Block-Jacobi cannot take a single step at any scale.** With the water
   table +10 m and `Ss = 0` the saturated bulk is a pure elliptic Poisson
