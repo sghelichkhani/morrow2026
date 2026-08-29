@@ -1109,9 +1109,13 @@
         "mean_wall_per_step": 75.18,
         "peak_rss_mb": 1681,
         "steps_completed": 75,
-        "failed_steps": 0
+        "failed_steps": 0,
+        "sim_time_d": 30.37
       },
       "outcome": "success",
+      "t_final_s": null,
+      "dt_collapse": false,
+      "reached_t_final": null,
       "steady_state": {
         "mean_wall_per_step": 74.09472972972974,
         "min_wall": 41.8,
@@ -1254,6 +1258,7 @@
         "validation": {
           "snes_count": 75,
           "steps_completed": 75,
+          "failed_steps": 0,
           "steps_match": true,
           "ksp_count": 204,
           "total_nl": 204,
@@ -1283,6 +1288,9 @@
       "newton_detail": [],
       "summary": null,
       "outcome": "walltime",
+      "t_final_s": null,
+      "dt_collapse": false,
+      "reached_t_final": null,
       "pbs": {
         "memory_used": "843.24GB",
         "walltime_used": "03:01:25",
@@ -2362,9 +2370,13 @@
         "mean_wall_per_step": 51.58,
         "peak_rss_mb": 1904,
         "steps_completed": 75,
-        "failed_steps": 0
+        "failed_steps": 0,
+        "sim_time_d": 30.37
       },
       "outcome": "success",
+      "t_final_s": null,
+      "dt_collapse": false,
+      "reached_t_final": null,
       "steady_state": {
         "mean_wall_per_step": 50.765,
         "min_wall": 28.98,
@@ -2507,6 +2519,7 @@
         "validation": {
           "snes_count": 75,
           "steps_completed": 75,
+          "failed_steps": 0,
           "steps_match": true,
           "ksp_count": 204,
           "total_nl": 204,
@@ -2536,6 +2549,9 @@
       "newton_detail": [],
       "summary": null,
       "outcome": "walltime",
+      "t_final_s": null,
+      "dt_collapse": false,
+      "reached_t_final": null,
       "pbs": {
         "memory_used": "776.62GB",
         "walltime_used": "03:01:36",
@@ -3615,9 +3631,13 @@
         "mean_wall_per_step": 21.07,
         "peak_rss_mb": 1686,
         "steps_completed": 75,
-        "failed_steps": 0
+        "failed_steps": 0,
+        "sim_time_d": 30.37
       },
       "outcome": "success",
+      "t_final_s": null,
+      "dt_collapse": false,
+      "reached_t_final": null,
       "steady_state": {
         "mean_wall_per_step": 20.52054054054054,
         "min_wall": 16.79,
@@ -3760,6 +3780,7 @@
         "validation": {
           "snes_count": 75,
           "steps_completed": 75,
+          "failed_steps": 0,
           "steps_match": true,
           "ksp_count": 225,
           "total_nl": 225,
@@ -4845,9 +4866,13 @@
         "mean_wall_per_step": 20.92,
         "peak_rss_mb": 1743,
         "steps_completed": 75,
-        "failed_steps": 0
+        "failed_steps": 0,
+        "sim_time_d": 30.37
       },
       "outcome": "success",
+      "t_final_s": null,
+      "dt_collapse": false,
+      "reached_t_final": null,
       "steady_state": {
         "mean_wall_per_step": 20.285675675675677,
         "min_wall": 16.58,
@@ -4990,6 +5015,7 @@
         "validation": {
           "snes_count": 75,
           "steps_completed": 75,
+          "failed_steps": 0,
           "steps_match": true,
           "ksp_count": 226,
           "total_nl": 226,
@@ -6075,9 +6101,13 @@
         "mean_wall_per_step": 37.83,
         "peak_rss_mb": 1870,
         "steps_completed": 75,
-        "failed_steps": 0
+        "failed_steps": 0,
+        "sim_time_d": 30.37
       },
       "outcome": "success",
+      "t_final_s": null,
+      "dt_collapse": false,
+      "reached_t_final": null,
       "steady_state": {
         "mean_wall_per_step": 37.50391891891892,
         "min_wall": 19.07,
@@ -6220,6 +6250,7 @@
         "validation": {
           "snes_count": 75,
           "steps_completed": 75,
+          "failed_steps": 0,
           "steps_match": true,
           "ksp_count": 225,
           "total_nl": 225,
@@ -6249,6 +6280,9 @@
       "newton_detail": [],
       "summary": null,
       "outcome": "walltime",
+      "t_final_s": null,
+      "dt_collapse": false,
+      "reached_t_final": null,
       "pbs": {
         "memory_used": "777.09GB",
         "walltime_used": "03:01:39",
