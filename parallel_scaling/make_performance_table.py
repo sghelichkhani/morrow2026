@@ -24,7 +24,11 @@ PARSED = HERE / "parsed"
 
 # Paper display name -> parsed solver key. The presented VLumping rows are the
 # improved "best per idea" presets (Richardson smoother + lag-3 snapshot).
-SOLVERS = [
+# The isotropic survey compares the whole slate, VLumping-HMG included,
+# because that is the section that reports it as the extreme-decomposition
+# variant. The basin blocks report the pair the paper recommends: the two
+# direct-coarse lumped presets, which differ in the fine-level smoother alone.
+SURVEY_SOLVERS = [
     ("BJacobi", "bjacobi"),
     ("GAMG", "gamg"),
     ("BoomerAMG", "boomeramg"),
@@ -32,12 +36,22 @@ SOLVERS = [
     ("VLumping", "vlumping_inexact_rich_lag3"),
     ("VLumping-HMG", "vlumping_hmg_rich_lag3"),
 ]
+BASIN_SOLVERS = [
+    ("BJacobi", "bjacobi"),
+    ("GMG-H", "gmg"),
+    ("VLumping", "vlumping_inexact_rich_lag3"),
+    ("VLumping-linesmooth", "vlumping_linesmooth"),
+]
 
-# Experiment label, parsed file, reference scale (8 nodes), block-header text.
+# Experiment label, parsed file, reference scale (8 nodes), solver rows.
 EXPERIMENTS = [
-    ("Cockett 3D --- isotropic box", "cockett", "huge"),
-    ("Lower Murrumbidgee --- horizontal weak scaling", "murr_horizontal", "h8"),
-    ("Lower Murrumbidgee --- vertical weak scaling", "murr_vertical", "large"),
+    ("Cockett 3D --- isotropic box", "cockett", "huge", SURVEY_SOLVERS),
+    ("Lower Murrumbidgee --- horizontal weak scaling, ordinary regime",
+     "murr_horizontal", "h8", BASIN_SOLVERS),
+    ("Lower Murrumbidgee --- vertical weak scaling, ordinary regime",
+     "murr_vertical", "large", BASIN_SOLVERS),
+    ("Lower Murrumbidgee --- horizontal weak scaling, seasonal regime",
+     "murr_seasonal", "h8", BASIN_SOLVERS),
 ]
 
 
@@ -92,9 +106,16 @@ def build():
         r"iteration count measures the conditioning the preconditioner "
         r"achieves; the small setup share of the vertically lumped presets "
         r"shows that their lagged, snapshot-based coarse setup is a minor part "
-        r"of the cost. Presets that diverge, exhaust memory, or exceed the "
-        r"wall-clock limit at this scale carry no entry here and are recorded "
-        r"in Table~\ref{tab:solver_outcomes}.}",
+        r"of the cost. The last block repeats the measurement in the seasonal "
+        r"regime of \S\ref{sec:seasonal} on the same mesh, where the ranking "
+        r"of the first basin block inverts. Presets that diverge, exhaust "
+        r"memory, or exceed the wall-clock limit at this scale carry no entry "
+        r"here and are recorded in Table~\ref{tab:solver_outcomes}; "
+        r"block-Jacobi therefore has no seasonal saturated entry anywhere. "
+        r"The isotropic survey compares the full slate of presets, while the "
+        r"basin blocks compare the two direct-coarse lumped presets that "
+        r"\S\ref{sec:contest} recommends, which are configured identically "
+        r"apart from the fine-level smoother.}",
         r"\label{tab:solver_performance}",
         r"\begin{tabular}{lrrrrr}",
         r"\hline",
@@ -103,13 +124,13 @@ def build():
         r" & & (s) & (\%) & (\%) & (GB) \\",
         r"\hline",
     ]
-    for label, fname, scale in EXPERIMENTS:
+    for label, fname, scale, solvers in EXPERIMENTS:
         doc = load(fname)
         lines.append(r"\multicolumn{6}{l}{\textit{" + label + r"}} \\")
         if not doc:
             lines.append(r"\multicolumn{6}{l}{(no data)} \\")
             continue
-        for name, key in SOLVERS:
+        for name, key in solvers:
             run = find(doc, key, scale)
             m = metrics(run) if run else None
             if not m:

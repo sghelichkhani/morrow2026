@@ -10,8 +10,11 @@ Two LaTeX tables are emitted into the paper tree
   scaling), with a peak-memory summary column. This absorbs the old
   per-experiment memory panels and the status information that used to
   be drawn as slanted DIVERGED/OOM markers on the figures.
-* ``hierarchy_depth.tex`` — the GMG-H vs VLumping-HMG hierarchy-depth
-  sweep, demoted from a figure to a table because it is light.
+The hierarchy-depth sweep that this script also used to emit
+(``hierarchy_depth.tex``) is no longer written: the manuscript does not
+include that table, and the runs behind it are archived (see
+``archive/README.md``). ``build_hierarchy_table`` is kept so the table can
+still be produced on demand.
 
 Everything is read from ``parsed/*.json``; nothing is hard-coded. Uses
 only core LaTeX (tabular / multicolumn / hline) so it compiles under the
@@ -36,6 +39,11 @@ GLYPH = {
     "walltime": r"T",
     "incomplete": r"T",
 }
+# Seasonal-only. A run that reaches the final time but never sustains the
+# requested step has not simply been slower; its admissible step was set by
+# the preconditioner. "$\bullet$" would hide exactly the result the seasonal
+# experiment exists to report.
+GLYPH_REDUCED = r"$\circ$"
 NOT_RUN = r"--"  # core LaTeX only (no xcolor in the Copernicus preamble)
 
 # Human labels + colour/marker-free display names, matching the figures.
@@ -46,11 +54,12 @@ SOLVER_LABEL = {
     "boomeramg": "BoomerAMG",
     "gmg": "GMG-H",
     "vlumping_inexact": "VLumping",
+    "vlumping_linesmooth": "VLumping-linesmooth",
     "vlumping_hmg": "VLumping-HMG",
 }
 # Fixed row order (union across experiments); blank where not attempted.
 SOLVER_ORDER = ["sor", "bjacobi", "gamg", "boomeramg", "gmg",
-                "vlumping_inexact", "vlumping_hmg"]
+                "vlumping_inexact", "vlumping_linesmooth", "vlumping_hmg"]
 
 # Actual parsed run key(s) behind each display row, in preference order. The
 # two VLumping rows report the improved "_rich_lag3" presets where they exist
@@ -64,8 +73,18 @@ SOLVER_KEYS = {
     "boomeramg": ["boomeramg"],
     "gmg": ["gmg"],
     "vlumping_inexact": ["vlumping_inexact_rich_lag3", "vlumping_inexact"],
+    "vlumping_linesmooth": ["vlumping_linesmooth"],
     "vlumping_hmg": ["vlumping_hmg_rich_lag3", "vlumping_hmg"],
 }
+
+# The seasonal blocks report the four presets the section compares. HMG is
+# excluded there by the same decision that keeps it out of Fig. seasonal_weak:
+# its iterative coarse solve thrashes the adaptive step in this regime, it is
+# not offered as a default, and several of its runs were stopped by hand
+# rather than by the solver, which no outcome glyph can honestly represent.
+SEASONAL_ROWS = ["bjacobi", "gmg", "vlumping_inexact", "vlumping_linesmooth"]
+
+DT_CEILING_S = 8035200.0        # SEASONAL_DT_MAX in submit_jobs.py
 
 
 def load(name):
@@ -77,6 +96,17 @@ def index(data):
     """(solver, scale) -> run dict."""
     return {(r["header"].get("solver"), r["header"].get("scale")): r
             for r in data["runs"]}
+
+
+def glyph_for(run, seasonal):
+    """Outcome glyph, distinguishing a solver-limited step in the seasonal runs."""
+    outcome = run["outcome"]
+    if seasonal and outcome == "success":
+        steps = run.get("steps") or []
+        sustained = max([s.get("dt_s") or 0.0 for s in steps] or [0.0])
+        if sustained < DT_CEILING_S - 1.0:
+            return GLYPH_REDUCED
+    return GLYPH.get(outcome, "?")
 
 
 def peak_mem_gb(runs):
@@ -105,11 +135,22 @@ BLOCKS = [
      "($\\Delta x=1775$\\,m; 150$\\to$1200 layers, AR 500:1$\\to$4000:1)",
      "murr_vertical",
      [(1, "smoke"), (2, "sweep"), (4, "medium"), (8, "large")]),
+    ("Lower Murrumbidgee --- seasonal weak scaling, graded "
+     "(as horizontal, three-month step, water table $+5$\\,m, "
+     "retention $/3$)",
+     "murr_seasonal",
+     [(1, "h1"), (2, "h2"), (4, "h4"), (8, "h8")]),
+    ("Lower Murrumbidgee --- seasonal weak scaling, saturated "
+     "(water table $+10$\\,m, retention $/10$)",
+     "murr_seasonal_saturated",
+     [(1, "h1"), (2, "h2"), (4, "h4"), (8, "h8")]),
     ("Lower Murrumbidgee --- strong scaling "
      "(fixed $3.2\\times10^{8}$ DOF, $\\Delta x=620$\\,m, 300 layers)",
      "murr_strong",
      [(1, "s1"), (2, "s2"), (4, "s4"), (8, "s8"), (16, "s16"), (32, "s32")]),
 ]
+
+SEASONAL_CASES = {"murr_seasonal", "murr_seasonal_saturated"}
 
 NODE_COLS = [1, 2, 4, 8, 16, 32]
 
@@ -117,19 +158,31 @@ NODE_COLS = [1, 2, 4, 8, 16, 32]
 def build_outcomes_table():
     lines = []
     lines.append(r"\begin{table*}[t]")
-    lines.append(r"\caption{Solver robustness across the four scaling "
+    lines.append(r"\caption{Solver robustness across the six scaling "
                  r"experiments. Each cell reports the outcome of one run at "
                  r"the indicated node count: $\bullet$ converged and "
-                 r"completed the run; \textrm{D} diverged; \textrm{M} failed "
+                 r"completed the run at the requested timestep; $\circ$ "
+                 r"completed the run, but only at a smaller timestep than "
+                 r"was requested, so its admissible step was set by the "
+                 r"preconditioner; \textrm{D} diverged; \textrm{M} failed "
                  r"on an out-of-memory error; \textrm{T} did not reach the "
                  r"final time within the wall-clock limit; a dash marks a "
                  r"configuration that was not attempted. The final column is "
                  r"the peak resident memory per process over the successful "
                  r"runs in that row. SOR and the black-box algebraic "
                  r"multigrids (GAMG, BoomerAMG) survive the isotropic Cockett "
-                 r"box but are culled by the anisotropy of the basin mesh, "
-                 r"whereas block-Jacobi and the two vertically lumped presets "
-                 r"are the only strategies that survive it.}")
+                 r"box but are culled by the anisotropy of the basin mesh. Of "
+                 r"the strategies that survive the anisotropy, which are "
+                 r"viable depends on the regime: at the short steps of the "
+                 r"two ordinary weak-scaling experiments block-Jacobi and "
+                 r"both lumped presets complete every run, whereas at "
+                 r"seasonal steps block-Jacobi's admissible step falls below "
+                 r"the requested one on the two finest meshes and, on the "
+                 r"saturated profile, it completes no timestep at any scale "
+                 r"while both lumped presets complete all four. The seasonal "
+                 r"blocks report the presets compared in "
+                 r"\S\ref{sec:seasonal}; VLumping-HMG is reported there only "
+                 r"for the strong-scaling decompositions.}")
     lines.append(r"\label{tab:solver_outcomes}")
     ncol = 1 + len(NODE_COLS) + 1
     colspec = "l" + "c" * len(NODE_COLS) + "r"
@@ -145,10 +198,12 @@ def build_outcomes_table():
     for title, name, scale_map in BLOCKS:
         data = load(name)
         idx = index(data)
+        seasonal = name in SEASONAL_CASES
+        rows = SEASONAL_ROWS if seasonal else SOLVER_ORDER
         lines.append(r"\multicolumn{" + str(ncol) +
                      r"}{l}{\textit{" + title + r"}} \\")
         present = {s for (s, _) in idx}
-        for solver in SOLVER_ORDER:
+        for solver in rows:
             # Resolve the actual run key for this experiment: the reported
             # rich_lag3 preset where it exists, else the base preset.
             key = next((k for k in SOLVER_KEYS[solver] if k in present), None)
@@ -162,7 +217,7 @@ def build_outcomes_table():
                 if sc is None or r is None:
                     cells.append(NOT_RUN)
                 else:
-                    cells.append(GLYPH.get(r["outcome"], "?"))
+                    cells.append(glyph_for(r, seasonal))
                     row_runs.append(r)
             mem = peak_mem_gb(row_runs)
             cells.append(f"{mem:.1f}" if mem is not None else NOT_RUN)
@@ -253,7 +308,6 @@ def main():
 
     tables = {
         "solver_outcomes.tex": build_outcomes_table(),
-        "hierarchy_depth.tex": build_hierarchy_table(),
     }
     for fname, tex in tables.items():
         (outdir / fname).write_text(tex)

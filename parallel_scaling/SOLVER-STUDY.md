@@ -10,11 +10,76 @@ investigation and contain overlapping and partially stale material.
 for paper / supplementary-information sections. Sections are written so
 each can be lifted into a longer write-up with minimal editing.
 
-**Scope.** Every preset in `solvers/__init__.py` (currently 19 entries),
+**Scope.** Every preset in `solvers/__init__.py` (currently 32 entries),
 the underlying mathematics where it differs from textbook MG, the bugs
 encountered during the investigation, and the headline performance
 numbers. Detailed run logs and intermediate iteration counts are not
 reproduced here; pull them from `parsed/*.json` if needed.
+
+---
+
+## 0. The reported configuration (frozen 2026-08-29)
+
+Read this before anything below it. Much of this document was written while
+the configuration was still moving, and it records options that the final
+runs do not use.
+
+Every number the paper reports comes from one solver configuration. The
+three lumped presets are g-adopt's shipped `vlumping`,
+`vlumping_linesmooth` and `vlumping_hmg`, imported here as shims so the
+library is the single source of truth. All three use:
+
+- inexact Newton, `ksp_rtol` 1e-4, right-preconditioned FGMRES;
+- a fine-level Richardson smoother whose damping factor is **measured** at
+  run time (`vlumping_omega_auto`) rather than fixed;
+- **no operator snapshot.** `vlumping_lag` is gone.
+
+Two changes from the pre-2026-08-29 state, both on evidence.
+
+**Richardson replaces Chebyshev, and it is measured, not fixed.** PETSc
+re-estimates the Chebyshev spectral bounds whenever the operator state
+changes, and Firedrake reassembles the Jacobian in place, so the estimate
+ran once per Newton step for an entire simulation. Removing it is worth
+10-20% of wall time at an unchanged iteration count (ordinary horizontal
+ladder, h1 to h8: 4.44 to 3.53, 5.05 to 4.06, 6.44 to 5.54, 8.86 to
+7.97 s per Newton step). A *fixed* damping factor does not transfer: the
+optimum fell from 1.407 on one rank to 0.989 on four, and by a further
+third as the adaptive step ramped. The preset that hard-codes 0.5,
+`vlumping_richardson`, is an ablation and is not reported.
+
+**The operator snapshot is removed.** Lagging the preconditioner setup
+against a private copy of the Jacobian earns very little where it was meant
+to help and is destructive where the lumped presets are the only viable
+option. In the ordinary regime it is *slower* than no lag at the two coarse
+scales (3.53 to 3.68 and 4.06 to 4.20 s per Newton step), wins 2.5% and 10%
+at the two fine ones, and raises the linear iteration count by up to 20%
+everywhere. In the near-saturated seasonal regime, holding everything else
+fixed and varying only the lag:
+
+| configuration | h2 it / failed / (h per sim. yr) | h4 it / failed / (h per sim. yr) |
+|---|---|---|
+| Chebyshev, no lag | 6.6 / 4 / 0.43 | 8.5 / 4 / 0.44 |
+| **Richardson, no lag** | **6.4 / 6 / 0.40** | **8.2 / 3 / 0.33** |
+| Chebyshev + lag 3 | 10.2 / 44 / 1.01 | 13.1 / 89 / 1.66 |
+| Richardson + lag 3 | 10.1 / 55 / 1.00 | 12.4 / 108 / 1.85 |
+
+"failed" is the adaptive controller halving the step and retrying. The lag
+carries the whole effect; the smoother carries none of it. The damage is
+worst for the column-exact smoother, because the snapshot lags the smoother
+setup as well as the coarse operator, so solving a stale column operator
+*exactly* is worse than solving it approximately — which is why the same lag
+is tolerable for the point-smoother preset. That regime is also where
+block-Jacobi completes no timestep at all, so it is exactly where the lumped
+presets have to be at their best.
+
+`_LaggedOperatorMixin` was therefore removed from g-adopt and kept here as
+`solvers/lagged_pc.py`, so the measurement above stays reproducible.
+
+**Naming.** Reported runs live under `vlumping`, `vlumping_linesmooth` and
+`vlumping_hmg`, matching the paper and the library. The `_inexact`,
+`_rich` and `_rich_lag3` directories are the historical record of how the
+configuration was arrived at, not the reported result. `vlumping` was the
+`ksp_rtol` 1e-6 variant until 2026-08-29 and is now `vlumping_rtol6`.
 
 ---
 
