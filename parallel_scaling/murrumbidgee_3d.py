@@ -5,7 +5,10 @@ basin-scale domain (~300 x 120 km). Terrain-following extruded mesh
 with depth-dependent Haverkamp soil curves and three geological layers.
 
 Requires:
-    - omega package (mesh generation and terrain-following hierarchy)
+    - omega package (mesh generation and terrain-following hierarchy), at a
+      revision that provides the Surface API: build_mesh_hierarchy taking
+      top_surface and thickness_surface, and GridSurface. Older revisions took
+      four coordinate/value arrays instead and will fail on the call below.
     - CSV data files in the directory specified by --data-dir:
         elevation_data.csv, bedrock_data.csv, shallow_layer.csv,
         lower_layer.csv, water_table.csv, rainfall_data.csv
@@ -151,7 +154,7 @@ def model(horiz_res, n_layers, degree=1, dt_value=43200.0, steps=20,
         t_final: Target simulation time. If set, overrides steps.
         profile: Reduce PETSc text output during a profile run.
     """
-    from omega import SurfaceMesh, Polygon
+    from omega import GridSurface, SurfaceMesh, Polygon
     from omega.mesh.builder import build_mesh_hierarchy
 
     data_dir = Path(data_dir)
@@ -168,17 +171,31 @@ def model(horiz_res, n_layers, degree=1, dt_value=43200.0, steps=20,
     sm.generate()
     mesh2d = sm.to_firedrake_mesh()
 
-    # Load terrain data
+    # Load terrain data and wrap it as omega Surfaces. Both CSVs are dense
+    # regular 500 m grids covering the whole domain, which is what GridSurface is
+    # for: it interpolates (piecewise-linear over a Delaunay triangulation, with
+    # a nearest fill outside the convex hull) rather than smoothing. On a lattice
+    # finer than the mesh there is nothing to decluster, and omega's kernel
+    # surface would flatten real relief, because a weighted mean is bounded by
+    # its inputs and cannot reach a ridge crest.
+    #
+    # This is also the interpolation omega's extrusion performed internally
+    # before it took Surfaces, so the mesh is unchanged: rebuilt through
+    # GridSurface it matches the meshes behind the reported runs to the bit.
     elev_coords, elev_values = load_csv(data_dir / "elevation_data.csv")
     bed_coords, bed_values = load_csv(data_dir / "bedrock_data.csv")
+
+    # "Thickness" here is depth to bedrock (positive, metres below ground), not
+    # the bedrock elevation. The extrusion maps normalised z in [0, 1] to
+    # thickness * z + top - thickness, so z=0 lands on bedrock and z=1 on ground.
+    top_surface = GridSurface(elev_coords, elev_values)
+    thickness_surface = GridSurface(bed_coords, bed_values)
 
     # Build terrain-following extruded mesh (with or without hierarchy)
     mh3d = build_mesh_hierarchy(
         mesh2d,
-        elevation_coords=elev_coords,
-        elevation_values=elev_values,
-        depth_coords=bed_coords,
-        depth_values=bed_values,
+        top_surface=top_surface,
+        thickness_surface=thickness_surface,
         n_layers=n_layers,
         refinement_levels=refinement_levels,
         refinement_ratio=1,  # horizontal-only coarsening
