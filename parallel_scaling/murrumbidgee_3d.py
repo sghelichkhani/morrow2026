@@ -73,9 +73,7 @@ import resource
 import time as time_mod
 from pathlib import Path
 
-import numpy as np
 import pandas as pd
-from scipy.interpolate import griddata
 
 from gadopt import *
 from solvers import get_solver
@@ -107,9 +105,15 @@ def load_csv(filepath):
 def load_spatial_field(V, V_cg, mesh_xy, csv_path, name):
     """Load a CSV field and interpolate it into the DG solution space.
 
-    Follows the original Murrumbidgee demo: CSV → CG1 (via griddata) → DG
-    (via interpolation). All fields must live in the same DG space as the
-    solution to avoid function-space mismatches in the nonlinear forms.
+    Follows the original Murrumbidgee demo: CSV → CG1 → DG (via interpolation).
+    All fields must live in the same DG space as the solution to avoid
+    function-space mismatches in the nonlinear forms.
+
+    The CSV is sampled through an omega GridSurface, the same primitive the mesh
+    extrusion uses, so every field in the run is interpolated by one code path
+    instead of two. GridSurface performs exactly the linear-plus-nearest-fill
+    sequence this function used to spell out inline, so the sampled values are
+    unchanged.
 
     Args:
         V: DG FunctionSpace (solution space).
@@ -118,13 +122,10 @@ def load_spatial_field(V, V_cg, mesh_xy, csv_path, name):
         csv_path: Path to CSV file with columns x, y, z.
         name: Name for the returned Function.
     """
+    from omega import GridSurface
+
     src_coords, src_values = load_csv(csv_path)
-    interp = griddata(src_coords, src_values, mesh_xy, method="linear")
-    nan_mask = np.isnan(interp)
-    if np.any(nan_mask):
-        interp[nan_mask] = griddata(
-            src_coords, src_values, mesh_xy[nan_mask], method="nearest"
-        )
+    interp = GridSurface(src_coords, src_values)(mesh_xy)
 
     cg_field = Function(V_cg)
     cg_field.dat.data[:] = interp
@@ -215,7 +216,7 @@ def model(horiz_res, n_layers, degree=1, dt_value=43200.0, steps=20,
     log(f"Number of degrees of freedom: {V.dim()}")
     log(f"Horizontal resolution: {horiz_res} m, Layers: {n_layers}, DG{degree}")
 
-    # CG1 space for initial griddata interpolation, then project into DG V
+    # CG1 space for the initial interpolation, then project into DG V
     V_cg = FunctionSpace(mesh, "CG", 1)
     coords_cg = Function(VectorFunctionSpace(mesh, "CG", 1))
     coords_cg.interpolate(SpatialCoordinate(mesh))
