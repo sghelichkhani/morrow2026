@@ -78,7 +78,7 @@ class Preset(NamedTuple):
 # paper's contribution. The black-box baselines below are reported only in the
 # outcome table, because they do not complete enough runs to plot.
 REPORTED = (
-    Preset("bjacobi", "BJacobi", "#000000", "d",
+    Preset("bjacobi", "BJac-ILU", "#000000", "d",
            ("cockett", "murr_horizontal", "murr_vertical",
             "murr_seasonal", "murr_seasonal_saturated", "murr_strong")),
     Preset("gmg", "GMG-H", "#2ca02c", "P",
@@ -100,7 +100,7 @@ REPORTED = (
 # performance table filters on the run outcome rather than on this list, so a
 # preset that completes at the reference scale is reported there either way.
 NO_CURVE = (
-    Preset("sor", "SOR", "#7f7f7f", "x",
+    Preset("sor", "BJac-SOR", "#7f7f7f", "x",
            ("cockett", "murr_horizontal", "murr_vertical")),
     Preset("gamg", "GAMG", "#8c564b", "^",
            ("cockett", "murr_horizontal", "murr_vertical")),

@@ -140,13 +140,13 @@ def build():
         r"measure because the runs terminate between 468 and 545 simulated "
         r"days. A dagger marks a step limited by the imposed three-month "
         r"ceiling rather than by the solver, so that entry is a lower bound "
-        r"on what the preconditioner would sustain. Block-Jacobi's admissible "
+        r"on what the preconditioner would sustain. BJac-ILU's admissible "
         r"step is the only one that moves, and it collapses across the same "
         r"two meshes over which $D_{\mathrm{col}}$ passes unity. GMG-H is "
-        r"omitted for width: it holds the full step at all four meshes, at "
+        r"omitted for width, and it holds the full step at all four meshes, at "
         + gmg_cost +
-        r"~hours per simulated year, roughly four times the cost of the "
-        r"lumped presets per solve.}")
+        r"~hours per simulated year, between three and six times the cost of "
+        r"VLumping, the ratio falling as the mesh is refined.}")
     lines.append(r"\label{tab:seasonal_scaling}")
     lines.append(r"\begin{tabular}{rrr" + "rrr" * len(COLUMNS) + "}")
     lines.append(r"\hline")

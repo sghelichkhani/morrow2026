@@ -153,7 +153,7 @@ def build_outcomes_table():
                  r"final time within the wall-clock limit; a dash marks a "
                  r"configuration that was not attempted. The final column is "
                  r"the peak resident memory per process over the successful "
-                 r"runs in that row. SOR and the black-box algebraic "
+                 r"runs in that row. BJac-SOR and the black-box algebraic "
                  r"multigrids (GAMG, BoomerAMG) survive the isotropic Cockett "
                  r"box but are culled by the anisotropy of the basin mesh. Of "
                  r"the strategies that survive the anisotropy, which are "

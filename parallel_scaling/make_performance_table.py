@@ -24,8 +24,9 @@ import reported
 HERE = Path(__file__).resolve().parent
 PARSED = HERE / "parsed"
 
-# Paper display name -> parsed solver key. The presented VLumping rows are the
-# improved "best per idea" presets (Richardson smoother + lag-3 snapshot).
+# Paper display name -> parsed solver key. The presented VLumping rows carry
+# the measured Richardson damping (`vlumping_omega_auto`) and no operator lag;
+# the lagged snapshot was tested and rejected, see SOLVER-STUDY.md section 0.
 # Row order and display names come from `reported.py`, which is the single
 # definition of what the paper reports. The isotropic survey compares the whole
 # slate, VLumping-HMG included, because that is the section that reports it as
@@ -97,9 +98,10 @@ def build():
         r"share of the solve time spent forming the preconditioner (setup) and "
         r"applying it (apply), and the peak resident memory per process. The "
         r"iteration count measures the conditioning the preconditioner "
-        r"achieves; the small setup share of the vertically lumped presets "
-        r"shows that their lagged, snapshot-based coarse setup is a minor part "
-        r"of the cost. The last block repeats the measurement in the seasonal "
+        r"achieves, while the setup and apply shares show where each preset "
+        r"spends its solve, the vertically lumped presets carrying most of "
+        r"theirs in the coarse solve they apply rather than in forming it. "
+        r"The last block repeats the measurement in the seasonal "
         r"regime of \S\ref{sec:seasonal} on the same mesh, where the ranking "
         r"of the first basin block inverts. Presets that diverge, exhaust "
         r"memory, or exceed the wall-clock limit at this scale carry no entry "

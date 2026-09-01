@@ -2,8 +2,9 @@
 """Paper scaling figures for Morrow et al. 2026 (fair-comparison redesign).
 
 Four figures, one shared visual grammar (same solver colours/markers,
-same fonts), but separate stories. The reported vertically-lumped presets
-are the ``_rich_lag3`` variants everywhere (see the STYLE note below).
+same fonts), but separate stories. The reported vertically-lumped presets are
+the shipped ones everywhere (see the STYLE note below), and their run keys come
+from ``reported.py`` so that no figure can draw on a run a table does not.
 
 * ``Cockett2018/cockett_scaling.pdf`` — the ISOTROPIC survey. Two panels
   (wall time, linear iterations) versus nodes/DOF over a genuine 1/2/4/8
@@ -51,25 +52,24 @@ FIG_ROOT = Path(__file__).resolve().parent.parent / "figures"
 PARSED = Path(__file__).resolve().parent / "parsed"
 
 # ── Shared grammar: solver colour / marker / label ──────────────────────────
-# The reported vertically-lumped presets are the setup-cost-reduced variants
-# (`_rich_lag3`: derived-Richardson smoother + lag-3 operator snapshot). They
-# are the canonical "VLumping" / "VLumping-HMG" everywhere in the paper — the
-# base `vlumping_inexact` / `vlumping_hmg` presets are never plotted as the
-# headline. The reader does not need the `_rich_lag3` detail in the legend; the
-# setup-cost variant is explained in the §4 text.
+# The reported vertically-lumped presets are the shipped ones, `vlumping`,
+# `vlumping_linesmooth` and `vlumping_hmg`, each carrying the measured
+# Richardson damping and no operator lag. The `_rich_lag3` directories are the
+# rejected lagged configuration and must never be plotted as the headline: the
+# lag earns nothing in the ordinary regime and costs a factor of four in the
+# near-saturated seasonal one (SOLVER-STUDY.md section 0). Plotting them here
+# is how the figures came to disagree with the tables, which read the shipped
+# directories through `reported.py`.
 # Colours, markers and labels come from `reported.py`, the single definition
-# of what the paper reports; the values there are the ones these figures
-# already used, so routing through it does not change any figure. Historical
-# run keys alias onto the preset they became, so a figure still draws from an
-# older parsed record.
+# of what the paper reports. Run keys come from there too, so a figure and a
+# table cannot draw on different runs.
 STYLE = {p.key: reported.style(p.key) for p in reported.ALL_REPORTED}
-STYLE.update({
-    "vlumping_inexact": STYLE["vlumping"],
-    "vlumping_inexact_rich": STYLE["vlumping"],
-    "vlumping_inexact_rich_lag3": STYLE["vlumping"],
-    "vlumping_hmg_rich": STYLE["vlumping_hmg"],
-    "vlumping_hmg_rich_lag3": STYLE["vlumping_hmg"],
-})
+# VLumping-linesmooth is drawn dashed. On the isotropic box its iteration count
+# sits within 1 % of VLumping-HMG at every scale, because the two share the
+# line smoother and differ only in the coarse solve, so a solid line would hide
+# one series completely underneath the other. That agreement is a result worth
+# seeing rather than an artefact worth hiding.
+STYLE["vlumping_linesmooth"] = dict(STYLE["vlumping_linesmooth"], ls="--")
 LW, MS = 1.9, 8.5
 
 # Component colours for the time-breakdown figure (stacked, one shared legend).
@@ -186,7 +186,8 @@ def draw(ax, idx, solvers, scales, metric, *, log=False):
         xs, ys = series(idx, s, scales, metric)
         if xs:
             ax.plot(xs, ys, color=st["color"], marker=st["marker"],
-                    label=st["label"], lw=LW, markersize=MS, zorder=3)
+                    label=st["label"], lw=LW, markersize=MS, zorder=3,
+                    ls=st.get("ls", "-"))
     if log:
         ax.set_yscale("log")
     ax.grid(True, which="both", alpha=0.3, zorder=0)
@@ -223,7 +224,7 @@ def fig_cockett(outdir):
     scales = ["sweep", "medium", "large", "huge"]
     xlabels = ["1N\n18M", "2N\n36M", "4N\n72M", "8N\n144M"]
     solvers = ["bjacobi", "gmg", "boomeramg",
-               "vlumping_inexact_rich_lag3", "vlumping_hmg_rich_lag3"]
+               "vlumping", "vlumping_linesmooth", "vlumping_hmg"]
 
     fig, axes = plt.subplots(1, 2, figsize=(12.0, 5.4))
     draw(axes[0], idx, solvers, scales, wall_per_newton, log=True)
@@ -268,11 +269,11 @@ def fig_murr_weak(outdir):
     ih = index(load("murr_horizontal"))
     iv = index(load("murr_vertical"))
     # The two reported lumped presets are the DIRECT-coarse pair. The
-    # iterative-coarse `vlumping_hmg_rich_lag3` appears only in the
+    # iterative-coarse `vlumping_hmg` appears only in the
     # strong-scaling figure, where its reach past the direct factorisation
     # is the point; §4.2 shows it is not a safe default.
     solvers = ["bjacobi", "gmg",
-               "vlumping_inexact_rich_lag3", "vlumping_linesmooth"]
+               "vlumping", "vlumping_linesmooth"]
 
     hscales = ["h1", "h2", "h4", "h8"]
     hlabels = ["1N\n1775 m\n1000:1", "2N\n1250 m\n700:1",
@@ -366,7 +367,7 @@ def fig_murr_strong(outdir):
 
     # Scope: this experiment asks how far the VERTICALLY LUMPED construction
     # can be decomposed, and what separates its two coarse-solve strategies.
-    # Block-Jacobi is deliberately not drawn — it carries no coarse problem,
+    # BJac-ILU is deliberately not drawn — it carries no coarse problem,
     # so it has no stake in that question, and the seasonal regime (§4.2) has
     # already settled the head-to-head. The §4 text says so explicitly and
     # states that block-Jacobi was run on this mesh and scales well here.
@@ -375,8 +376,8 @@ def fig_murr_strong(outdir):
     # solve carries the sweep past the point where the direct factorisation
     # stops. Drawn to 16 nodes; the 32-node point exists and turns over
     # sharply (108.8 s), which the caption states rather than plots.
-    sth = STYLE["vlumping_hmg_rich_lag3"]
-    xh, yh = pts("vlumping_hmg_rich_lag3")
+    sth = STYLE["vlumping_hmg"]
+    xh, yh = pts("vlumping_hmg")
     xh, yh = zip(*[(x, y) for x, y in zip(xh, yh) if x <= np.log2(16)]) \
         if xh else ([], [])
     if xh:
@@ -387,12 +388,10 @@ def fig_murr_strong(outdir):
         ax.plot(xh, yh, color=sth["color"], marker=sth["marker"], lw=LW,
                 markersize=MS, zorder=3, label=sth["label"])
 
-    # VLumping with the DIRECT MUMPS coarse solve (base `vlumping_inexact` —
-    # no `_rich_lag3` run exists at the strong scales). It tracks to s8, then
-    # hits the walltime cap at s16 and diverges at s32, so the line stops at
-    # s8: that stop is the direct-coarse limit the nested variant exists to
-    # push past.
-    xd, yd = pts("vlumping_inexact")
+    # VLumping with the DIRECT MUMPS coarse solve. It tracks to s8, then
+    # diverges at both s16 and s32, so the line stops at s8. That stop is the
+    # direct-coarse limit the nested variant exists to push past.
+    xd, yd = pts("vlumping")
     if xd:
         ax.plot(xd, yd, color="#d62728", marker="o", lw=LW, ls=":",
                 markersize=MS, markerfacecolor="none", zorder=2,
@@ -424,17 +423,17 @@ def fig_murr_strong(outdir):
 def fig_time_breakdown(outdir):
     """Per-solve wall-time decomposition versus nodes/DOF, weak scaling.
 
-    Rows = solver (BJacobi / VLumping-HMG); columns = refinement direction
+    Rows = solver (BJac-ILU / VLumping-HMG); columns = refinement direction
     (horizontal / vertical). Each column carries its own y-scale (shared down
     the column so the two solvers are directly comparable for that experiment)
     — the vertical solves are much cheaper, so a common scale would flatten
     them. Each panel stacks the five cost bands so the reader sees *where* the time
-    goes as the problem weak-scales: BJacobi's Krylov/MatMult band balloons
+    goes as the problem weak-scales: BJac-ILU's Krylov/MatMult band balloons
     (many cheap iterations), while VLumping's PC-apply band (the coarse solve)
     dominates at a near-flat iteration count. The bands sum to SNESSolve/solve
     (~93 % of wall)."""
-    solvers = [("bjacobi", "BJacobi"),
-               ("vlumping_hmg_rich_lag3", "VLumping-HMG")]
+    solvers = [("bjacobi", "BJac-ILU"),
+               ("vlumping", "VLumping")]
     experiments = [
         ("murr_horizontal", ["h1", "h2", "h4", "h8"],
          ["1N\n40M", "2N\n80M", "4N\n160M", "8N\n320M"], "Horizontal refinement"),

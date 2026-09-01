@@ -1,5 +1,5 @@
 \begin{table*}[t]
-\caption{Performance of the preconditioners that complete each experiment, evaluated at the eight-node point (the largest common weak-scaling scale). For each run we report the linear (Krylov) iterations per Newton step, the wall-clock time per Newton step, the share of the solve time spent forming the preconditioner (setup) and applying it (apply), and the peak resident memory per process. The iteration count measures the conditioning the preconditioner achieves; the small setup share of the vertically lumped presets shows that their lagged, snapshot-based coarse setup is a minor part of the cost. Presets that diverge, exhaust memory, or exceed the wall-clock limit at this scale carry no entry here and are recorded in Table~\ref{tab:solver_outcomes}.}
+\caption{Performance of the preconditioners that complete each experiment, evaluated at the eight-node point (the largest common weak-scaling scale). For each run we report the linear (Krylov) iterations per Newton step, the wall-clock time per Newton step, the share of the solve time spent forming the preconditioner (setup) and applying it (apply), and the peak resident memory per process. The iteration count measures the conditioning the preconditioner achieves, while the setup and apply shares show where each preset spends its solve, the vertically lumped presets carrying most of theirs in the coarse solve they apply rather than in forming it. The last block repeats the measurement in the seasonal regime of \S\ref{sec:seasonal} on the same mesh, where the ranking of the first basin block inverts. Presets that diverge, exhaust memory, or exceed the wall-clock limit at this scale carry no entry here and are recorded in Table~\ref{tab:solver_outcomes}; block-Jacobi therefore has no seasonal saturated entry anywhere. The isotropic survey compares the full slate of presets, while the basin blocks compare the two direct-coarse lumped presets that \S\ref{sec:contest} recommends, which are configured identically apart from the fine-level smoother.}
 \label{tab:solver_performance}
 \begin{tabular}{lrrrrr}
 \hline
@@ -11,20 +11,27 @@ BJacobi & 126.2 & 9.56 & 1.2 & 32.5 & 1.0 \\
 GAMG & 23.2 & 47.13 & 77.7 & 16.1 & 2.4 \\
 BoomerAMG & 28.5 & 11.35 & 14.3 & 62.0 & 1.3 \\
 GMG-H & 19.9 & 16.95 & 19.8 & 48.8 & 0.7 \\
-VLumping & 40.7 & 14.42 & 2.2 & 77.2 & 1.3 \\
-VLumping-HMG & 97.8 & 20.57 & 1.3 & 72.8 & 1.3 \\
+VLumping & 40.6 & 14.95 & 4.9 & 74.9 & 1.3 \\
+VLumping-linesmooth & 97.5 & 21.44 & 2.6 & 72.8 & 1.3 \\
+VLumping-HMG & 97.6 & 19.77 & 1.6 & 71.2 & 1.2 \\
 \hline
-\multicolumn{6}{l}{\textit{Lower Murrumbidgee --- horizontal weak scaling}} \\
+\multicolumn{6}{l}{\textit{Lower Murrumbidgee --- horizontal weak scaling, ordinary regime}} \\
 BJacobi & 34.7 & 5.20 & 3.2 & 31.1 & 1.3 \\
 GMG-H & 16.8 & 11.89 & 17.4 & 65.1 & 1.7 \\
-VLumping & 11.6 & 7.19 & 7.7 & 69.1 & 1.9 \\
-VLumping-HMG & 15.2 & 5.76 & 5.1 & 61.2 & 1.9 \\
+VLumping & 11.3 & 7.87 & 17.6 & 63.0 & 1.7 \\
+VLumping-linesmooth & 14.8 & 6.98 & 17.0 & 55.4 & 1.7 \\
 \hline
-\multicolumn{6}{l}{\textit{Lower Murrumbidgee --- vertical weak scaling}} \\
+\multicolumn{6}{l}{\textit{Lower Murrumbidgee --- vertical weak scaling, ordinary regime}} \\
 BJacobi & 13.3 & 2.15 & 6.1 & 25.7 & 0.9 \\
 GMG-H & 16.9 & 8.64 & 18.8 & 62.0 & 1.0 \\
-VLumping & 5.1 & 3.05 & 7.5 & 55.0 & 1.0 \\
-VLumping-HMG & 7.0 & 2.83 & 5.8 & 50.5 & 1.0 \\
+VLumping & 4.9 & 3.16 & 13.8 & 52.4 & 1.0 \\
+VLumping-linesmooth & 6.6 & 2.90 & 10.6 & 45.5 & 1.0 \\
+\hline
+\multicolumn{6}{l}{\textit{Lower Murrumbidgee --- seasonal weak scaling, graded}} \\
+BJacobi & 108.3 & 13.46 & 1.1 & 35.4 & 1.3 \\
+GMG-H & 27.4 & 19.49 & 9.8 & 75.6 & 1.7 \\
+VLumping & 8.1 & 6.11 & 17.6 & 59.9 & 1.7 \\
+VLumping-linesmooth & 10.2 & 5.43 & 17.4 & 52.3 & 1.8 \\
 \hline
 \end{tabular}
 \end{table*}

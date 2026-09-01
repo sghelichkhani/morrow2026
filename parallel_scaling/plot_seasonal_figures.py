@@ -7,7 +7,7 @@ Three figures, sharing the visual grammar of ``plot_paper_figures.py``:
   The graded seasonal regime (3-month dt cap, water table +5 m, retention
   flattened by 3) over the horizontal weak-scaling ladder h1..h8. Three
   panels: linear iterations per Newton step, the maximum sustained
-  timestep, and the wall time per simulated year. Block-Jacobi's
+  timestep, and the wall time per simulated year. BJac-ILU's
   admissible step collapses with horizontal refinement; the two
   direct-coarse vertically lumped presets hold the full three-month step
   at a flat, low iteration count and are the fastest in wall clock.
@@ -43,11 +43,10 @@ from plot_paper_figures import (
 FIG_ROOT = Path(__file__).resolve().parent.parent / "figures"
 
 # The seasonal campaign reports the two DIRECT-coarse lumped presets. The
-# iterative-coarse `vlumping_hmg_rich_lag3` is excluded: it thrashes here
+# iterative-coarse `vlumping_hmg` is excluded, because it thrashes here
 # (graded h1 never sustains a step past 9.9 d) and is not a recommended
 # default. It survives in the paper only in the strong-scaling experiment.
-SOLVERS = ["bjacobi", "gmg",
-           "vlumping_inexact_rich_lag3", "vlumping_linesmooth"]
+SOLVERS = ["bjacobi", "gmg", "vlumping", "vlumping_linesmooth"]
 SCALES = ["h1", "h2", "h4", "h8"]
 DT_CAP_D = 8035200 / 86400.0          # the imposed 3-month ceiling, in days
 FAIL_COLOUR = "#b2182b"
@@ -121,7 +120,7 @@ def draw_metric(ax, idx, metric, *, cap=None, stagger=0.0):
         if not xs:
             continue
         ax.plot(xs, ys, color=st["color"], lw=LW, zorder=3,
-                label=st["label"], marker="None")
+                label=st["label"], marker="None", ls=st.get("ls", "-"))
         if cap is None:
             ax.plot(xs, ys, color=st["color"], marker=st["marker"],
                     markersize=MS, lw=0, zorder=4)
@@ -225,7 +224,7 @@ def fig_seasonal_saturated(outdir):
 def fig_seasonal_breakdown(outdir):
     """Stacked per-nonlinear-solve cost in the saturated regime.
 
-    Block-Jacobi completes no step at any scale, so it carries no bar.
+    BJac-ILU completes no step at any scale, so it carries no bar.
     That empty column is the point of the figure, and it is labelled
     rather than left blank.
     """
