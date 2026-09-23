@@ -8,9 +8,10 @@
 #                    Merges into verification/tracy/results/spatial_2d.json.
 #   tracy_3d         Tracy 3D full sweep (DG0 + DG1 + DG2).
 #                    Merges into spatial_3d.json.
-#   vauclin_paper    Vauclin convergence with the paper-spec 121x81
-#                    DQ2 reference + extended coarse sweep. Overwrites
-#                    convergence.json.
+#   vauclin_paper    Vauclin convergence: nested sweep (DQ0/1/2 on
+#                    12..120 cells across) against a 240x160 DQ2
+#                    reference, errors assembled in Firedrake.
+#                    Overwrites convergence.json.
 #
 # Usage on Gadi:
 #   cd /scratch/xd2/sg8812/morrow2026
@@ -72,13 +73,14 @@ case "${CASE:-}" in
     mpiexec -n "${NCPUS}" python3 verification/tracy/run_spatial_3d.py
     ;;
   vauclin_paper)
-    # MPI run: vauclin_2d.run() gathers rank-local coordinate and
-    # field arrays to rank 0, and run_convergence.py rank-0-guards the
-    # downstream scipy.griddata comparison. So Firedrake parallelism
-    # speeds up the underlying solves while the L^2-on-grid step
-    # stays single-threaded but global.
+    # Two stages. The solve stage checkpoints every level (and skips
+    # levels whose checkpoint already exists, so a resubmit after a
+    # walltime kill resumes). The errors stage loads the checkpoints
+    # and assembles the L^2 errors on the reference mesh in Firedrake.
     mpiexec -n "${NCPUS}" python3 verification/vauclin/run_convergence.py \
-        --paper-reference
+        --stage solve
+    mpiexec -n "${NCPUS}" python3 verification/vauclin/run_convergence.py \
+        --stage errors
     ;;
   *)
     echo "Unknown CASE='${CASE:-}'. Valid: tracy_2d_dg2, tracy_3d, vauclin_paper." >&2

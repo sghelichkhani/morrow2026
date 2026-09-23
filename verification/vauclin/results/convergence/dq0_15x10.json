@@ -1,0 +1,8 @@
+{
+  "degree": 0,
+  "mass_balance": -0.053788862975764413,
+  "nodes_x": 15,
+  "nodes_y": 10,
+  "t_final": 28800.0,
+  "wall_seconds": 85.22162437438965
+}

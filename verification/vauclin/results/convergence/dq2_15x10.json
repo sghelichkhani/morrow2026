@@ -1,0 +1,7 @@
+{
+  "degree": 2,
+  "failed": "Nonlinear solve failed to converge after 13 nonlinear iterations.",
+  "nodes_x": 15,
+  "nodes_y": 10,
+  "wall_seconds": 18.073565006256104
+}

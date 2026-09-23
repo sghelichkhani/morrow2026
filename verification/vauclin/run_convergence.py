@@ -1,14 +1,42 @@
 """Vauclin spatial convergence at t = 28 800 s.
 
-Paper Fig. 5: the reference solution is DQ2 on a 121×81 grid; the error
-is then the L² norm of the difference between DQ{p} solutions on coarser
-meshes and the reference, evaluated at t = 28 800 s (the paper figure).
+Paper Fig. 5: the error is the L² norm of the difference between a DQ{p}
+solution on a coarse mesh and a DQ2 reference solution on the finest
+mesh, evaluated at t = 28 800 s.
 
-Because the reference and the coarse solutions live on different
-quadrilateral grids, we interpolate onto a common tensor-product grid
-via scipy.interpolate.griddata and compute the L² error by Simpson's
-rule on that grid. This avoids the fragility of building Firedrake
-cross-mesh projection in a throwaway convergence driver.
+The driver has two stages so that a long sweep survives a walltime kill
+and the error assembly can be redone without re-solving:
+
+``solve``
+    Runs every entry of ``LEVELS`` plus ``REFERENCE`` and writes each
+    final pressure head to ``results/convergence/dq{p}_{nx}x{ny}.h5``
+    as a Firedrake ``CheckpointFile`` (mesh + field). A run whose
+    checkpoint already exists is skipped unless ``--force`` is given.
+
+``errors``
+    Loads the reference and every coarse checkpoint, interpolates the
+    coarse field onto the reference mesh, and assembles the L² error
+    with Firedrake quadrature. Writes ``results/convergence.json`` in
+    the schema ``plot_convergence.py`` expects.
+
+Why the mesh levels nest. Every coarse cell count divides the reference
+cell count (240 × 160), so each coarse cell is a union of reference
+cells. A DQ{p} function restricted to a reference cell is then a single
+polynomial of degree p, and the DQ2 interpolant on the reference mesh
+reproduces it exactly for p ≤ 2. The error we assemble is therefore the
+exact L² distance between the two discrete solutions, up to quadrature,
+with no interpolation floor. That floor is what a scattered-point linear
+interpolation would introduce: it is second order in the dof spacing and
+would cap the measured DQ2 rate at 2.
+
+Why the reference is the same degree. A DQ2 reference on a mesh twice as
+fine as the finest coarse level has an error of roughly (1/2)^r of that
+level, with r the true rate. For r ≈ 2.5 the finest pairwise rate carries
+a bias of order 0.1 to 0.2 from this. The interior levels are unaffected.
+
+All runs share the same time step (``dt_value`` in ``vauclin_2d.run``),
+so the temporal discretisation error is common to coarse and reference
+solutions and cancels to leading order in the difference.
 """
 from __future__ import annotations
 
@@ -16,166 +44,232 @@ import sys
 import time
 from pathlib import Path
 
-import numpy as np
-from scipy.integrate import simpson
-from scipy.interpolate import griddata
-
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent.parent))
 from verification.common import save_json  # noqa: E402
 sys.path.insert(0, str(Path(__file__).resolve().parent))
-from vauclin_2d import run  # noqa: E402
 
 
 T_TARGET = 28_800.0  # 8 h — paper's convergence target
-# Laptop-friendly default reference (61x41 DQ2 ~ 40 min). The paper
-# figure uses 121x81 DQ2; pass --paper-reference (or set
-# REFERENCE_OVERRIDE) for Gadi runs.
-REFERENCE = {"nodes_x": 61, "nodes_y": 41, "degree": 2}
-PAPER_REFERENCE = {"nodes_x": 121, "nodes_y": 81, "degree": 2}
 
-# Coarse spec used by the laptop demonstration.
-COARSE_LAPTOP = [
-    {"nodes_x": 16,  "nodes_y": 11,  "degree": 0},
-    {"nodes_x": 23,  "nodes_y": 16,  "degree": 0},
-    {"nodes_x": 31,  "nodes_y": 21,  "degree": 0},
-    {"nodes_x": 46,  "nodes_y": 31,  "degree": 0},
-    {"nodes_x": 16,  "nodes_y": 11,  "degree": 1},
-    {"nodes_x": 23,  "nodes_y": 16,  "degree": 1},
-    {"nodes_x": 31,  "nodes_y": 21,  "degree": 1},
-    {"nodes_x": 46,  "nodes_y": 31,  "degree": 1},
-]
+# Finest DQ2 level; every coarse level must divide these cell counts.
+REFERENCE = {"nodes_x": 240, "nodes_y": 160, "degree": 2}
 
-# Coarse spec used by the paper figure (Gadi). Adds DQ2 coarse curves
-# and several finer intermediate levels that are too slow for a
-# laptop.
-COARSE_PAPER = [
-    *COARSE_LAPTOP,
-    {"nodes_x": 61,  "nodes_y": 41,  "degree": 0},
-    {"nodes_x": 91,  "nodes_y": 61,  "degree": 0},
-    {"nodes_x": 61,  "nodes_y": 41,  "degree": 1},
-    {"nodes_x": 91,  "nodes_y": 61,  "degree": 1},
-    {"nodes_x": 23,  "nodes_y": 16,  "degree": 2},
-    {"nodes_x": 31,  "nodes_y": 21,  "degree": 2},
-    {"nodes_x": 46,  "nodes_y": 31,  "degree": 2},
-    {"nodes_x": 61,  "nodes_y": 41,  "degree": 2},
-    {"nodes_x": 91,  "nodes_y": 61,  "degree": 2},
-]
+# Cell counts across (x). With Lx:Ly = 3:2 the cell count down (y) is
+# 2/3 of this, and both must divide the reference counts. These are
+# the seven admissible values between dx = 0.25 m and dx = 0.025 m.
+NESTED_NX = (12, 15, 24, 30, 48, 60, 120)
+DEGREES = (0, 1, 2)
 
-# Selected by `main()` from CLI flags; kept module-level so the
-# existing import path (``from run_convergence import REFERENCE``) is
-# unaffected.
-COARSE = COARSE_LAPTOP
+# Quick local sweep for testing the two-stage pipeline: reference
+# 60 × 40 and the three coarse levels that divide it.
+QUICK_REFERENCE = {"nodes_x": 60, "nodes_y": 40, "degree": 2}
+QUICK_NX = (12, 15, 30)
 
 
-def _l2_on_grid(x1, y1, z1, x2, y2, z2, Lx, Ly, n=241,
-                z1_method="linear", z2_method="linear"):
-    """L² norm of z1 − z2 on a regular grid.
+def _levels(nx_values, degrees):
+    """Expand cell counts × degrees into run specs, coarsest first."""
+    return [{"nodes_x": nx, "nodes_y": (2 * nx) // 3, "degree": p}
+            for p in degrees for nx in nx_values]
 
-    z1_method/z2_method is the scipy.griddata interpolator; "linear" is
-    fine for DQ≥1, but DQ0 (piecewise-constant) fields should use
-    "nearest" to avoid spuriously smoothing the step structure.
+
+LEVELS = _levels(NESTED_NX, DEGREES)
+
+RESULTS = Path(__file__).parent / "results"
+CHECKPOINT_DIR = RESULTS / "convergence"
+FIELD_NAME = "PressureHead"
+MESH_NAME = "mesh"
+
+
+def _tag(spec) -> str:
+    return f"dq{spec['degree']}_{spec['nodes_x']}x{spec['nodes_y']}"
+
+
+def _checkpoint_path(spec) -> Path:
+    return CHECKPOINT_DIR / f"{_tag(spec)}.h5"
+
+
+def _meta_path(spec) -> Path:
+    return CHECKPOINT_DIR / f"{_tag(spec)}.json"
+
+
+def _rank() -> int:
+    from mpi4py import MPI
+    return MPI.COMM_WORLD.Get_rank()
+
+
+def _log(msg: str):
+    if _rank() == 0:
+        print(msg, flush=True)
+
+
+def _check_nesting(reference, levels):
+    """Refuse a sweep whose coarse levels do not nest in the reference.
+
+    Non-nested levels would silently reintroduce an interpolation error
+    in the ``errors`` stage, which is the whole thing this driver exists
+    to avoid.
     """
-    xi = np.linspace(0, Lx, n)
-    yi = np.linspace(0, Ly, int(n * Ly / Lx))
-    XI, YI = np.meshgrid(xi, yi)
-    Z1 = griddata((x1, y1), z1, (XI, YI), method=z1_method)
-    Z2 = griddata((x2, y2), z2, (XI, YI), method=z2_method)
-    diff = Z1 - Z2
-    mask = np.isfinite(diff)
-    diff = np.where(mask, diff, 0.0)
-    ref_sq = np.where(mask, Z2 ** 2, 0.0)
-    err_sq = simpson(simpson(diff ** 2, x=xi, axis=1), x=yi)
-    ref    = simpson(simpson(ref_sq,    x=xi, axis=1), x=yi)
-    return float(np.sqrt(max(err_sq, 0.0))), float(np.sqrt(max(ref, 0.0)))
+    for spec in levels:
+        for key in ("nodes_x", "nodes_y"):
+            if reference[key] % spec[key] != 0:
+                raise ValueError(
+                    f"level {spec} does not nest in reference {reference}: "
+                    f"{reference[key]} is not a multiple of {spec[key]} ({key})")
 
 
-def _run(spec):
-    t0 = time.time()
-    res = run(nodes_x=spec["nodes_x"], nodes_y=spec["nodes_y"],
-              degree=spec["degree"], t_final=T_TARGET,
-              snapshot_times=())
-    wall = time.time() - t0
-    return res, wall
+def stage_solve(reference, levels, t_final, force: bool):
+    """Solve every spec and checkpoint the final pressure head."""
+    from firedrake import CheckpointFile
+    from firedrake.exceptions import ConvergenceError
+    from vauclin_2d import run
 
-
-def main():
-    import argparse
-    p = argparse.ArgumentParser()
-    p.add_argument("--paper-reference", action="store_true",
-                   help="Use the paper's 121x81 DQ2 reference and the "
-                        "extended coarse sweep including DQ2 curves "
-                        "(intended for Gadi).")
-    p.add_argument("--ref-nx", type=int, default=None,
-                   help="Override reference nodes_x (advanced).")
-    p.add_argument("--ref-ny", type=int, default=None,
-                   help="Override reference nodes_y (advanced).")
-    p.add_argument("--ref-degree", type=int, default=None,
-                   help="Override reference polynomial degree.")
-    args = p.parse_args()
-
-    global REFERENCE, COARSE
-    if args.paper_reference:
-        REFERENCE = dict(PAPER_REFERENCE)
-        COARSE = COARSE_PAPER
-    if args.ref_nx is not None:
-        REFERENCE["nodes_x"] = args.ref_nx
-    if args.ref_ny is not None:
-        REFERENCE["nodes_y"] = args.ref_ny
-    if args.ref_degree is not None:
-        REFERENCE["degree"] = args.ref_degree
-
-    # Under MPI, vauclin_2d.run() gathers coordinate and field arrays
-    # to rank 0. The scipy.griddata comparison below is therefore only
-    # meaningful on rank 0; other ranks see empty arrays and would
-    # raise "No points given" if they tried to interpolate.
-    try:
-        from mpi4py import MPI
-        rank = MPI.COMM_WORLD.Get_rank()
-    except ImportError:
-        rank = 0
-
-    if rank == 0:
-        print(f"reference solution: {REFERENCE}")
-    ref_result, ref_wall = _run(REFERENCE)
-    if rank == 0:
-        print(f"  wall = {ref_wall:.1f}s")
-
-    ref_final = ref_result["final"]
-    entries = []
-    Lx, Ly = ref_result["mesh"]["Lx"], ref_result["mesh"]["Ly"]
-
-    for spec in COARSE:
-        if rank == 0:
-            print(f"coarse: {spec}")
-        res, wall = _run(spec)
-        if rank != 0:
+    CHECKPOINT_DIR.mkdir(parents=True, exist_ok=True)
+    for spec in [reference, *levels]:
+        path = _checkpoint_path(spec)
+        if path.exists() and not force:
+            _log(f"skip {spec}: {path.name} exists")
             continue
-        fx, fy, fh = res["final"]["x"], res["final"]["y"], res["final"]["h"]
-        # DQ0 is piecewise-constant; linear interpolation smears the
-        # step structure and flatters the convergence rate. Nearest-
-        # neighbour reproduces the cell-wise constant honestly.
-        coarse_method = "nearest" if spec["degree"] == 0 else "linear"
-        err, ref_norm = _l2_on_grid(
-            fx, fy, fh, ref_final["x"], ref_final["y"], ref_final["h"],
-            Lx, Ly, z1_method=coarse_method, z2_method="linear",
-        )
+        _log(f"solve {spec}")
+        t0 = time.time()
+        try:
+            res = run(nodes_x=spec["nodes_x"], nodes_y=spec["nodes_y"],
+                      degree=spec["degree"], t_final=t_final,
+                      snapshot_times=())
+        except ConvergenceError as exc:
+            # A level whose Newton iteration diverges (seen for DQ2 on
+            # the coarsest mesh) must not take the rest of the sweep
+            # down with it. Record the failure and carry on; the
+            # errors stage skips levels without a checkpoint. The
+            # exception is raised collectively on every rank, so
+            # catching it here keeps the ranks in step.
+            wall = time.time() - t0
+            _log(f"  DIVERGED after {wall:.1f}s: {str(exc).splitlines()[0]}")
+            if _rank() == 0:
+                save_json(_meta_path(spec), {
+                    **spec, "failed": str(exc).splitlines()[0],
+                    "wall_seconds": wall,
+                })
+            continue
+        wall = time.time() - t0
+        h = res["h_function"]
+        # The mesh is created with name "mesh" inside run(); the field
+        # is written under a fixed name so the errors stage can load it
+        # without knowing anything about the run.
+        with CheckpointFile(str(path), "w") as f:
+            f.save_mesh(res["mesh_object"])
+            f.save_function(h, name=FIELD_NAME)
+        if _rank() == 0:
+            save_json(_meta_path(spec), {
+                **spec, "t_final": float(res["final"]["t"]),
+                "wall_seconds": wall,
+                "mass_balance": res["mass_balance"],
+            })
+        _log(f"  wall = {wall:.1f}s  -> {path.name}")
+
+
+def _load(spec):
+    """Load (mesh, h) from a checkpoint, on COMM_WORLD."""
+    from firedrake import CheckpointFile
+    with CheckpointFile(str(_checkpoint_path(spec)), "r") as f:
+        mesh = f.load_mesh(MESH_NAME)
+        h = f.load_function(mesh, FIELD_NAME)
+    return mesh, h
+
+
+def stage_errors(reference, levels):
+    """Assemble the L² error of each level against the reference."""
+    import json
+    from firedrake import Function, errornorm, norm
+
+    _check_nesting(reference, levels)
+    _log(f"reference: {reference}")
+    ref_mesh, h_ref = _load(reference)
+    V_ref = h_ref.function_space()
+    ref_norm = norm(h_ref)
+    ref_meta = json.loads(_meta_path(reference).read_text())
+    # Domain width from the benchmark definition, for dx = Lx / nx.
+    import gwassess
+    Lx = float(gwassess.VauclinRichardsSolution2D().Lx)
+
+    entries = []
+    for spec in levels:
+        path = _checkpoint_path(spec)
+        if not path.exists():
+            _log(f"missing {path.name}; skipping {spec} "
+                 f"(diverged or not yet solved)")
+            continue
+        _, h_c = _load(spec)
+        # Cross-mesh interpolation: evaluate the coarse field at the
+        # reference dof points and build the DQ2 interpolant there.
+        # Because the meshes nest, the coarse field is a single
+        # polynomial of degree ≤ 2 on every reference cell, so this
+        # interpolant equals the coarse field exactly.
+        h_on_ref = Function(V_ref).interpolate(h_c)
+        # Exactness check: the L² norm of the coarse field must be the
+        # same on its own mesh and after interpolation. A mismatch
+        # beyond round-off means the levels do not nest or the
+        # interpolation was not exact, and the error below would be
+        # contaminated.
+        coarse_norm = norm(h_c)
+        interp_rel = abs(norm(h_on_ref) - coarse_norm) / coarse_norm
+        if interp_rel > 1e-10:
+            raise RuntimeError(
+                f"{_tag(spec)}: interpolation onto the reference mesh "
+                f"changed the norm by {interp_rel:.2e}; not exact")
+        err = errornorm(h_ref, h_on_ref)
+        meta = json.loads(_meta_path(spec).read_text())
         dx = Lx / spec["nodes_x"]
-        print(f"  dx={dx:.4f}  l2_err={err:.3e}  wall={wall:.1f}s")
+        _log(f"  {_tag(spec):>14}  dx={dx:.4f}  l2_err={err:.3e}  "
+             f"rel={err / ref_norm:.3e}  wall={meta['wall_seconds']:.0f}s")
         entries.append({
             **spec,
             "dx": float(dx),
-            "l2_error": err, "l2_reference": ref_norm,
-            "wall_seconds": wall,
+            "l2_error": float(err),
+            "l2_reference": float(ref_norm),
+            "wall_seconds": meta["wall_seconds"],
+            "mass_balance": meta.get("mass_balance"),
+            "interpolation_norm_mismatch": float(interp_rel),
         })
 
     payload = {
         "t_target": T_TARGET,
-        "reference": {**REFERENCE, "wall_seconds": ref_wall},
+        "error_method": "firedrake cross-mesh interpolation onto the "
+                        "reference mesh (nested levels, exact) + errornorm",
+        "reference": {**reference, "wall_seconds": ref_meta["wall_seconds"]},
         "entries": entries,
     }
-    out = Path(__file__).parent / "results" / "convergence.json"
-    save_json(out, payload)
-    print(f"wrote {out}")
+    if _rank() == 0:
+        out = RESULTS / "convergence.json"
+        save_json(out, payload)
+        print(f"wrote {out}")
+
+
+def main():
+    import argparse
+    p = argparse.ArgumentParser(description=__doc__.split("\n\n")[0])
+    p.add_argument("--stage", choices=("solve", "errors", "all"),
+                   default="all")
+    p.add_argument("--quick", action="store_true",
+                   help="Small nested sweep (reference 60x40) for testing "
+                        "the pipeline on a laptop.")
+    p.add_argument("--t-final", type=float, default=T_TARGET,
+                   help="Override the end time (testing only; the paper "
+                        "figure uses 28800 s).")
+    p.add_argument("--degrees", type=int, nargs="+", default=list(DEGREES))
+    p.add_argument("--force", action="store_true",
+                   help="Re-solve even if a checkpoint exists.")
+    args = p.parse_args()
+
+    if args.quick:
+        reference, levels = QUICK_REFERENCE, _levels(QUICK_NX, args.degrees)
+    else:
+        reference, levels = REFERENCE, _levels(NESTED_NX, args.degrees)
+    _check_nesting(reference, levels)
+
+    if args.stage in ("solve", "all"):
+        stage_solve(reference, levels, args.t_final, args.force)
+    if args.stage in ("errors", "all"):
+        stage_errors(reference, levels)
 
 
 if __name__ == "__main__":

@@ -28,14 +28,14 @@ OUT = FIGURE_ROOT / "Vauclin1979"
 OUT.mkdir(parents=True, exist_ok=True)
 
 
-# Only p=1 is plotted. p=0 is excluded from the paper because the
-# interior-penalty form degenerates to a two-point-flux finite-volume scheme
-# there. p=2 is excluded on this benchmark specifically: the infiltration flux
-# is prescribed over part of the upper boundary only, so the solution loses the
-# regularity a third-order rate would need, and the reference solution is itself
-# of degree 2. The high-order verification is carried by Tracy, which has an
-# exact solution. All degrees remain in results/convergence.json.
-PLOT_DEGREES = (1,)
+# p=0 is excluded from the paper because the interior-penalty form
+# degenerates to a two-point-flux finite-volume scheme there. p=1 and p=2 are
+# plotted and both reach the textbook p+1 rate against the nested DQ2
+# reference (Gadi sweep of 2026-09-02: DQ1 1.97, DQ2 3.02 on the finest
+# interval). DQ2 has no points coarser than 24 cells across because the Newton
+# iteration diverges there at the common dt = 10 s. All degrees remain in
+# results/convergence.json.
+PLOT_DEGREES = (1, 2)
 
 
 def _gather(entries) -> dict[int, tuple[np.ndarray, np.ndarray]]:

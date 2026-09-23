@@ -151,10 +151,12 @@ def run(nodes_x: int, nodes_y: int, degree: int = 2,
     mass_balance = (final_mass - initial_mass) / external_flux \
         if external_flux != 0 else 0.0
 
-    # Gather rank-local coordinate and field arrays to rank 0 so the
-    # downstream scipy.griddata interpolation in run_convergence sees
-    # the whole domain. Other ranks return empty arrays and don't
-    # contribute to the comparison.
+    # Gather rank-local coordinate and field arrays to rank 0 for
+    # callers that want plain numpy arrays of the final field (the
+    # snapshot/plotting path). Error norms are not computed from these
+    # arrays: run_convergence checkpoints the Function returned below
+    # and assembles the L² error in Firedrake. Other ranks return empty
+    # arrays.
     try:
         from mpi4py import MPI
         comm = MPI.COMM_WORLD
@@ -184,6 +186,13 @@ def run(nodes_x: int, nodes_y: int, degree: int = 2,
         "final": {"x": final_x, "y": final_y,
                   "h": final_h, "theta": final_theta,
                   "t": t},
+        # The live Firedrake objects, so a caller can checkpoint the
+        # field or assemble norms against it without going through
+        # the gathered numpy arrays above. The convergence driver uses
+        # these; the snapshot/plot path uses the arrays.
+        "h_function": h,
+        "theta_function": theta,
+        "mesh_object": mesh,
         "mass_balance": float(mass_balance),
         "external_flux": float(external_flux),
         "mesh": {"nodes_x": nodes_x, "nodes_y": nodes_y,
