@@ -69,6 +69,15 @@ class Preset(NamedTuple):
     key: str                 # directory name under results/<case>/
     label: str               # name used in the paper
     colour: str
+    # A marker that can appear in the sustained-timestep panels of the seasonal
+    # figures must stay legible when it is drawn UNFILLED, because those panels
+    # hollow a marker to say that the run sat on the imposed timestep ceiling
+    # rather than on a limit the solver itself set. Hollowing removes only the
+    # interior and keeps the edge stroke, so a glyph with a thin interior
+    # (matplotlib's `P`, `X`, `x`, `+`) loses that distinction at the paper's
+    # marker size. Use a glyph with an open middle there: `o`, `s`, `^`, `v`,
+    # `D`, `d`. A preset that never appears in those panels, such as
+    # `vlumping_hmg`, is not bound by this.
     marker: str
     experiments: tuple       # experiments in which this preset is reported
 
@@ -81,7 +90,7 @@ REPORTED = (
     Preset("bjacobi", "BJac-ILU", "#000000", "d",
            ("cockett", "murr_horizontal", "murr_vertical",
             "murr_seasonal", "murr_seasonal_saturated", "murr_strong")),
-    Preset("gmg", "GMG-H", "#2ca02c", "P",
+    Preset("gmg", "GMG-H", "#2ca02c", "^",
            ("cockett", "murr_horizontal", "murr_vertical",
             "murr_seasonal", "murr_seasonal_saturated")),
     Preset("vlumping", "VLumping", "#d62728", "o",

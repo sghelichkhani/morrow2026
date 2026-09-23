@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Paper scaling figures for Morrow et al. 2026 (fair-comparison redesign).
 
-Four figures, one shared visual grammar (same solver colours/markers,
+Three figures, one shared visual grammar (same solver colours/markers,
 same fonts), but separate stories. The reported vertically-lumped presets are
 the shipped ones everywhere (see the STYLE note below), and their run keys come
 from ``reported.py`` so that no figure can draw on a run a table does not.
@@ -23,11 +23,11 @@ from ``reported.py`` so that no figure can draw on a run a table does not.
   at 32 as the fixed 2-D coarse solve goes communication-bound; the
   direct-coarse VLumping variant stops at 8 nodes (walltime at 16,
   diverged at 32).
-* ``Murrumbidgee/time_breakdown.pdf`` — WHERE the time goes. A 2x2 stacked
-  breakdown of the per-nonlinear-solve cost (rows = solver, columns =
-  weak-scaling experiment) from the -log_view profile: block-Jacobi's
-  Krylov/MatMult band balloons (cheap iterations, but many), VLumping's
-  PC-apply band (the coarse solve) dominates at a flat iteration count.
+
+The per-nonlinear-solve cost breakdown lives in
+``plot_seasonal_figures.py``, which draws it for the seasonal regime.
+``BREAKDOWN_BANDS`` and ``breakdown_per_solve`` below are kept here as the
+shared definition of the cost decomposition and are imported from there.
 
 Non-converging solvers (SOR, GAMG, BoomerAMG, and timed-out runs) are
 NOT drawn as floor markers any more; their outcomes are in
@@ -72,7 +72,9 @@ STYLE = {p.key: reported.style(p.key) for p in reported.ALL_REPORTED}
 STYLE["vlumping_linesmooth"] = dict(STYLE["vlumping_linesmooth"], ls="--")
 LW, MS = 1.9, 8.5
 
-# Component colours for the time-breakdown figure (stacked, one shared legend).
+# Component colours for the cost-breakdown figure (stacked, one shared legend).
+# The five bands partition the per-nonlinear-solve cost and are drawn in this
+# order from the bottom of each stack.
 BREAKDOWN_BANDS = [
     ("pcsetup",  "PC setup",          "#9ecae1"),
     ("pcapply",  "PC apply",          "#3182bd"),
@@ -119,13 +121,18 @@ def _nl_per_step(r):
 def wall_per_newton(r):
     """Wall time per Newton (nonlinear) step.
 
-    The raw per-timestep cost is quantised by the number of Newton steps
-    a timestep takes, which is gated by the absolute SNES tolerance and
-    so lands an extra whole Newton iteration on the coarsest (1-node)
-    mesh in every weak-scaling sweep (start-of-step residual ~1.4x
-    larger -> after one Newton step it sits just above snes_atol=1e-8 and
-    a second step fires). Dividing by the Newton count removes that
-    tolerance artefact and exposes the true per-solve scaling."""
+    A timestep costs one Newton iteration's work times however many Newton
+    iterations it takes, so dividing by the Newton count gives the cost of
+    the linear solve the preconditioner is responsible for.
+
+    For the presets the paper reports that count does not move with
+    resolution: 91 Newton iterations over the 30 isotropic timesteps at
+    every node count, and 2.9 to 3.0 per timestep on the basin. (Some
+    ablation-only presets do vary, `gamg_asm` among them.) The
+    normalisation therefore rescales the curves without changing their
+    shape, and per-timestep and per-Newton comparisons rank the presets
+    identically. It is kept because the quantity it produces is the one
+    the preconditioner controls, not because it corrects for anything."""
     w = mean_wall(r)
     nlps = _nl_per_step(r)
     return w / nlps if (w is not None and nlps) else None
@@ -141,9 +148,17 @@ def linear_per_newton(r):
 def breakdown_per_solve(r):
     """Decompose one run's cost into per-SNES-solve seconds from the profile.
 
-    Returns a dict with the five bands that sum to ~SNESSolve/solve (which is
-    ~93 % of wall): PC setup, PC apply, the remaining Krylov work (MatMult +
-    orthogonalisation = KSPSolve - PCApply), Jacobian assembly, residual eval.
+    Returns a dict with the five bands that account for SNESSolve/solve to
+    within about one per cent: PC setup, PC apply, the remaining Krylov work
+    (MatMult + orthogonalisation = KSPSolve - PCApply), Jacobian assembly,
+    residual eval.
+
+    One "solve" is one SNESSolve call, which is one attempted timestep. A
+    timestep that fails is retried at half the step, so the average is taken
+    over attempts and not only over the attempts that succeeded. That is the
+    honest denominator for a cost-per-solve comparison, because the failed
+    attempts are work the run really did.
+
     ``None`` when the run carries no ``-log_view`` profile."""
     p = r.get("profile")
     if not p:
@@ -156,7 +171,18 @@ def breakdown_per_solve(r):
     def t(k):
         return ev.get(k, {}).get("time_s", 0.0)
 
-    pcsetup = t("PCSetUp") + t("PCSetUpOnBlocks")
+    # PCSetUpOnBlocks is the factorisation of the per-process blocks, and where
+    # it belongs depends on the preconditioner. Plain block Jacobi factorises
+    # once per preconditioner setup, and PETSc then logs almost nothing under
+    # PCSetUp itself, so the event IS the setup and must be counted. A
+    # multigrid smoother that rebuilds its blocks on every application logs the
+    # event inside the nested MG stage, where it is already part of PCApply;
+    # counting it again would put the band sum above SNESSolve. The call count
+    # separates the two cases: one call per setup, against many per setup.
+    on_blocks = ev.get("PCSetUpOnBlocks", {}).get("count") or 0
+    setup_calls = ev.get("PCSetUp", {}).get("count") or 0
+    nested_in_apply = on_blocks > 1.5 * setup_calls
+    pcsetup = t("PCSetUp") + (0.0 if nested_in_apply else t("PCSetUpOnBlocks"))
     pcapply = t("PCApply")
     kspother = max(t("KSPSolve") - pcapply, 0.0)
     jac = t("SNESJacobianEval")
@@ -204,10 +230,14 @@ def legend_handles(axes):
 
 
 # ── Figure A: Cockett isotropic survey ──────────────────────────────────────
-def panel_letter(ax, letter):
-    """Grey-circle panel letter, top-left, matching the Vauclin figure."""
+def panel_letter(ax, letter, y=0.92):
+    """Grey-circle panel letter, top-left, matching the Vauclin figure.
+
+    ``y`` is the height in axes coordinates. It is raised by figures whose
+    panels carry a curve or an annotation close under the top spine.
+    """
     ax.text(
-        0.055, 0.92, letter,
+        0.055, y, letter,
         transform=ax.transAxes, ha="center", va="center",
         fontsize=16, zorder=5,
         bbox=dict(boxstyle="circle,pad=0.3",
@@ -346,12 +376,30 @@ def fig_murr_weak(outdir):
 
 
 # ── Figure C: Murrumbidgee strong scaling (extreme reach) ────────────────────
+def _dof_per_rank(dof_approx, ranks):
+    """Degrees of freedom carried by one MPI rank, as a short label.
+
+    The problem size is fixed in a strong-scaling sweep, so what changes
+    with the node count is the share each rank holds. That share, not the
+    global count, is what sets whether a rank still has enough local work
+    to hide its communication.
+    """
+    total = float(dof_approx.rstrip("M")) * 1e6
+    per = total / ranks
+    return f"{per / 1e6:.1f}M" if per >= 1e6 else f"{per / 1e3:.0f}k"
+
+
 def fig_murr_strong(outdir):
-    idx = index(load("murr_strong"))
+    data = load("murr_strong")
+    idx = index(data)
+    meta = data["scale_meta"]
     node_scale = [(1, "s1"), (2, "s2"), (4, "s4"), (8, "s8"),
                   (16, "s16"), (32, "s32")]
 
-    fig, ax = plt.subplots(figsize=(6.6, 4.8))
+    # Smaller canvas at larger point sizes. The figure is placed at a
+    # fixed fraction of the text width, so a bigger canvas is scaled down
+    # further on the page and its text ends up smaller, not larger.
+    fig, ax = plt.subplots(figsize=(6.0, 4.4))
 
     def pts(solver):
         """(log2 node, wall/step) for the successfully-completed points."""
@@ -398,151 +446,39 @@ def fig_murr_strong(outdir):
                 label="VLumping (direct coarse)")
 
     ax.set_yscale("log")
-    shown = [(n, sc) for n, sc in node_scale if n <= 16]
+    # The sweep starts at two nodes: the case does not fit in one node's
+    # memory, so a one-node column would be an empty quarter of the axis.
+    # The caption states that outcome instead.
+    shown = [(n, sc) for n, sc in node_scale if 2 <= n <= 16]
     ax.set_xticks([np.log2(n) for n, _ in shown])
-    ax.set_xticklabels([str(n) for n, _ in shown])
-    ax.set_xlabel("Compute nodes (104 cores each)", fontsize=14)
-    ax.set_ylabel("Wall time / step (s)", fontsize=14)
-    ax.tick_params(labelsize=12)
+    # Three lines per tick: nodes, the ranks they carry, and the share of the
+    # fixed problem each rank then holds. The per-rank share is the quantity
+    # that decides whether a rank still has enough local work to hide its
+    # communication, which is what the turnover at the right-hand end is.
+    ax.set_xticklabels([
+        f"{n}\n{meta[sc]['cpus']}\n"
+        f"{_dof_per_rank(meta[sc]['dof_approx'], meta[sc]['cpus'])}"
+        for n, sc in shown])
+    # Immediately behind the first tick and past the last, rather than the
+    # autoscaled margin.
+    ax.set_xlim(np.log2(2) - 0.18, np.log2(16) + 0.18)
+    ax.set_xlabel("Compute nodes / MPI ranks / DOF per rank", fontsize=16)
+    ax.set_ylabel("Wall time / step (s)", fontsize=16)
+    ax.tick_params(labelsize=13.5)
     ax.set_title("Strong scaling — vertically lumped presets",
-                 fontsize=13,
+                 fontsize=15,
                  bbox=dict(boxstyle="round,pad=0.5",
                            facecolor="lightyellow", edgecolor="black"),
-                 pad=12)
+                 pad=20)
     ax.grid(True, which="both", alpha=0.3, zorder=0)
-    ax.legend(fontsize=11)
+    # Pinned: the curves fall from upper left to lower right, so the upper
+    # right is the one corner no series passes through. Left to choose for
+    # itself, the legend lands on the ideal-scaling line.
+    ax.legend(fontsize=13, loc="upper right")
     fig.tight_layout()
     out = outdir / "Murrumbidgee" / "strong_scaling.pdf"
     out.parent.mkdir(parents=True, exist_ok=True)
     save(fig, out)
-    plt.close(fig)
-    print(f"  saved {out}")
-
-
-# ── Figure D: where the time goes (stacked cost breakdown) ───────────────────
-def fig_time_breakdown(outdir):
-    """Per-solve wall-time decomposition versus nodes/DOF, weak scaling.
-
-    Rows = solver (BJac-ILU / VLumping-HMG); columns = refinement direction
-    (horizontal / vertical). Each column carries its own y-scale (shared down
-    the column so the two solvers are directly comparable for that experiment)
-    — the vertical solves are much cheaper, so a common scale would flatten
-    them. Each panel stacks the five cost bands so the reader sees *where* the time
-    goes as the problem weak-scales: BJac-ILU's Krylov/MatMult band balloons
-    (many cheap iterations), while VLumping's PC-apply band (the coarse solve)
-    dominates at a near-flat iteration count. The bands sum to SNESSolve/solve
-    (~93 % of wall)."""
-    solvers = [("bjacobi", "BJac-ILU"),
-               ("vlumping", "VLumping")]
-    experiments = [
-        ("murr_horizontal", ["h1", "h2", "h4", "h8"],
-         ["1N\n40M", "2N\n80M", "4N\n160M", "8N\n320M"], "Horizontal refinement"),
-        ("murr_vertical", ["smoke", "sweep", "medium", "large"],
-         ["1N\n20M", "2N\n40M", "4N\n80M", "8N\n160M"], "Vertical refinement"),
-    ]
-    data = {exp: index(load(exp)) for exp, *_ in experiments}
-
-    # Share x down each column; y is shared per column (set explicitly below)
-    # so the left and right columns keep independent scales.
-    fig, axes = plt.subplots(2, 2, figsize=(10.4, 8.4), sharex="col")
-    title_box = dict(boxstyle="round,pad=0.4",
-                     facecolor="lightyellow", edgecolor="black")
-    letters = [["A", "B"], ["C", "D"]]
-
-    for ri, (solver, sname) in enumerate(solvers):
-        for ci, (exp, scales, xlabels, etitle) in enumerate(experiments):
-            ax = axes[ri, ci]
-            idx = data[exp]
-            xs = np.arange(len(scales))
-            stacks = []
-            for sc in scales:
-                r = idx.get((solver, sc))
-                bd = breakdown_per_solve(r) if (r and r["outcome"] == "success") else None
-                stacks.append(bd)
-            # Filled stacked areas across the node axis (one band per cost).
-            band_series = [np.array([(bd[key] if bd else 0.0) for bd in stacks])
-                           for key, _, _ in BREAKDOWN_BANDS]
-            colours = [c for _, _, c in BREAKDOWN_BANDS]
-            ax.stackplot(xs, *band_series, colors=colours, edgecolor="white",
-                         linewidth=0.6, zorder=3)
-            # Thin line for the true SNESSolve total (the ~7 % over the band
-            # sum is the wall outside the nonlinear solve: I/O, checkpoint).
-            tot = np.array([bd["snes"] if bd else np.nan for bd in stacks])
-            ax.plot(xs, tot, color="black", lw=1.2, ls="--", zorder=6)
-
-            if ri == 0:
-                ax.set_title(f"{etitle}", bbox=title_box, pad=10)
-            panel_letter(ax, letters[ri][ci])
-            ax.set_xticks(xs)
-            ax.set_xticklabels(xlabels)
-            ax.set_xlim(xs[0], xs[-1])
-            ax.margins(x=0)
-            if ci == 0:
-                ax.set_ylabel("Time / nonlinear solve (s)")
-            else:
-                # Right column carries its own (larger) scale, so put its
-                # axis and label on the right-hand side.
-                ax.yaxis.set_label_position("right")
-                ax.yaxis.tick_right()
-                ax.set_ylabel("Time / nonlinear solve (s)",
-                              rotation=270, labelpad=20)
-
-    for ax in axes[1, :]:
-        ax.set_xlabel("Nodes / degrees of freedom")
-
-    # Per-column y-scale: both solvers in a column share one limit (so they
-    # are comparable), but the two columns differ (the vertical column is
-    # much cheaper and gets its own, expanded scale). Right column keeps its
-    # own tick labels since the scale is not the left one's.
-    for ci in range(2):
-        top = max(axes[0, ci].get_ylim()[1], axes[1, ci].get_ylim()[1])
-        for ri in range(2):
-            axes[ri, ci].set_ylim(0, top)
-
-    # Grid overlaid ON TOP of the filled stacks. ax.grid()'s zorder is not
-    # honoured against a stackplot PolyCollection, so draw the lines as
-    # explicit axvline/axhline artists at the tick positions instead. Done
-    # after a draw() so the y tick locations are final.
-    fig.canvas.draw()
-    for ax in axes.flat:
-        y0, y1 = ax.get_ylim()
-        for yt in ax.get_yticks():
-            if y0 <= yt <= y1:
-                ax.axhline(yt, color="0.4", lw=0.7, alpha=0.6, zorder=5)
-        for xt in ax.get_xticks():
-            ax.axvline(xt, color="0.4", lw=0.7, alpha=0.6, zorder=5)
-
-    fig.subplots_adjust(left=0.15, right=0.92, top=0.76, bottom=0.08,
-                        hspace=0.06, wspace=0.19)
-
-    # Solver (the "simulation") named in a light-blue box down the left side,
-    # one per row — mirrors the yellow experiment titles across the top.
-    row_box = dict(boxstyle="round,pad=0.4",
-                   facecolor="lightblue", edgecolor="black")
-    for ri, (solver, sname) in enumerate(solvers):
-        pos = axes[ri, 0].get_position()
-        fig.text(0.048, pos.y0 + pos.height / 2, sname, rotation=90,
-                 ha="center", va="center", fontsize=15, bbox=row_box)
-
-    fig.text(0.535, 0.985,
-             "Cost breakdown per nonlinear solve — weak scaling",
-             ha="center", va="center", fontsize=17, zorder=5,
-             bbox=dict(boxstyle="round,pad=0.5",
-                       facecolor="lightyellow", edgecolor="black"))
-    from matplotlib.patches import Patch
-    from matplotlib.lines import Line2D
-    handles = [Patch(facecolor=c, edgecolor="white", label=lab)
-               for _, lab, c in BREAKDOWN_BANDS]
-    handles.append(Line2D([0], [0], color="black", lw=1.2, ls="--",
-                          label="SNESSolve total"))
-    fig.legend(handles=handles, loc="upper center", ncol=3,
-               bbox_to_anchor=(0.535, 0.925), columnspacing=1.6,
-               handletextpad=0.5, frameon=True, fancybox=False,
-               edgecolor="black", framealpha=1.0)
-
-    out = outdir / "Murrumbidgee" / "time_breakdown.pdf"
-    out.parent.mkdir(parents=True, exist_ok=True)
-    save(fig, out, pad_inches=0.2)
     plt.close(fig)
     print(f"  saved {out}")
 
@@ -559,8 +495,6 @@ def main():
     fig_murr_weak(outdir)
     print("=== Murrumbidgee (strong scaling) ===")
     fig_murr_strong(outdir)
-    print("=== Murrumbidgee (cost breakdown) ===")
-    fig_time_breakdown(outdir)
 
 
 if __name__ == "__main__":

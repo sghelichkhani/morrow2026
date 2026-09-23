@@ -35,7 +35,6 @@ STEPS = [
         "Cockett2018/cockett_scaling.pdf",
         "Murrumbidgee/weak_scaling.pdf",
         "Murrumbidgee/strong_scaling.pdf",
-        "Murrumbidgee/time_breakdown.pdf",
     ]),
     ("plot_seasonal_figures.py", [
         "Murrumbidgee/seasonal_weak.pdf",
@@ -53,10 +52,9 @@ SOURCES = {
     "Cockett2018/cockett_scaling.pdf": ["cockett"],
     "Murrumbidgee/weak_scaling.pdf": ["murr_horizontal", "murr_vertical"],
     "Murrumbidgee/strong_scaling.pdf": ["murr_strong"],
-    "Murrumbidgee/time_breakdown.pdf": ["murr_horizontal", "murr_vertical"],
     "Murrumbidgee/seasonal_weak.pdf": ["murr_seasonal"],
     "Murrumbidgee/seasonal_saturated.pdf": ["murr_seasonal_saturated"],
-    "Murrumbidgee/seasonal_breakdown.pdf": ["murr_seasonal_saturated"],
+    "Murrumbidgee/seasonal_breakdown.pdf": ["murr_seasonal"],
     "Tables/solver_outcomes.tex": list(reported.EXPERIMENTS),
     "Tables/solver_performance.tex": [
         "cockett", "murr_horizontal", "murr_vertical", "murr_seasonal"],

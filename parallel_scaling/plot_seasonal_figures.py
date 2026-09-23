@@ -5,17 +5,20 @@ Three figures, sharing the visual grammar of ``plot_paper_figures.py``:
 
 * ``Murrumbidgee/seasonal_weak.pdf`` — the paper's main scaling figure.
   The graded seasonal regime (3-month dt cap, water table +5 m, retention
-  flattened by 3) over the horizontal weak-scaling ladder h1..h8. Three
-  panels: linear iterations per Newton step, the maximum sustained
-  timestep, and the wall time per simulated year. BJac-ILU's
-  admissible step collapses with horizontal refinement; the two
-  direct-coarse vertically lumped presets hold the full three-month step
-  at a flat, low iteration count and are the fastest in wall clock.
+  flattened by 3) over the horizontal weak-scaling ladder h1..h8. Two
+  panels: linear iterations per Newton step, and the wall time per
+  simulated year. The two invert. GMG-H iterates a quarter as often as
+  BJac-ILU and is slower than it at every scale, while the direct-coarse
+  vertically lumped preset is lowest on both. The sustained timestep is
+  left to the table, which reports it against the diffusion number.
 * ``Murrumbidgee/seasonal_saturated.pdf`` — the companion regime (water
   table +10 m, retention flattened by 10), where block-Jacobi takes no
-  successful step at any scale.
+  successful step at any scale. Two panels only, iterations and sustained
+  timestep, with the block-Jacobi outcome stated in the figure.
 * ``Murrumbidgee/seasonal_breakdown.pdf`` — where the time goes in the
-  regime block-Jacobi cannot solve, from the -log_view profiles.
+  graded regime, from the -log_view profiles. One panel per preset on a
+  shared vertical scale, each annotated with the timestep that preset
+  sustained, so a cheap solve bought by a short step cannot read as speed.
 
 Points drawn with an OPEN marker in the timestep panels sit on the
 3-month cap: those runs are limited by the cap we imposed, not by the
@@ -33,6 +36,9 @@ import matplotlib
 matplotlib.use("Agg")
 import matplotlib.pyplot as plt
 import numpy as np
+from matplotlib.lines import Line2D
+from matplotlib.patches import Patch
+from matplotlib.transforms import blended_transform_factory
 
 from figstyle import save
 from plot_paper_figures import (
@@ -42,19 +48,18 @@ from plot_paper_figures import (
 
 FIG_ROOT = Path(__file__).resolve().parent.parent / "figures"
 
-# The seasonal campaign reports the two DIRECT-coarse lumped presets. The
-# iterative-coarse `vlumping_hmg` is excluded, because it thrashes here
-# (graded h1 never sustains a step past 9.9 d) and is not a recommended
-# default. It survives in the paper only in the strong-scaling experiment.
-SOLVERS = ["bjacobi", "gmg", "vlumping", "vlumping_linesmooth"]
+# The seasonal figures report three presets, one per family: the block-Jacobi
+# baseline, the geometric-multigrid baseline, and the direct-coarse vertically
+# lumped method. Two further presets are deliberately absent.
+# `vlumping_linesmooth` tracks `vlumping` closely enough here that a fourth
+# series adds no information; it is reported in the tables and in the
+# strong-scaling figure instead. The iterative-coarse `vlumping_hmg` is
+# excluded because it thrashes in this regime (graded h1 never sustains a step
+# past 9.9 d) and is not a recommended default.
+SOLVERS = ["bjacobi", "gmg", "vlumping"]
 SCALES = ["h1", "h2", "h4", "h8"]
 DT_CAP_D = 8035200 / 86400.0          # the imposed 3-month ceiling, in days
 FAIL_COLOUR = "#b2182b"
-
-STYLE.setdefault(
-    "vlumping_linesmooth",
-    dict(color="#9467bd", marker="s", label="VLumping-linesmooth"),
-)
 
 
 # ── Metrics ─────────────────────────────────────────────────────────────────
@@ -135,78 +140,171 @@ def draw_metric(ax, idx, metric, *, cap=None, stagger=0.0):
 
 
 # Outcomes that mean "this preset produced no usable result at this scale",
-# and how each is drawn. A failed run must never be a missing point: the
-# absence is the result, so it gets its own marker below the data.
+# and the marker each is drawn with. A failed run must never be a missing
+# point: the absence is the result, so it gets its own marker below the data.
+# What each shape means is stated in the caption rather than in the legend,
+# which keeps the legend to one line per preset.
 FAIL_KINDS = {
-    "diverged":    ("X", FAIL_COLOUR, "no successful step"),
-    "dt_collapse": ("X", FAIL_COLOUR, "no successful step"),
-    "oom":         ("P", FAIL_COLOUR, "out of memory"),
-    "walltime":    ("v", "#4d4d4d", "exceeded the wall-clock limit"),
+    "diverged":    "X",
+    "dt_collapse": "X",
+    "oom":         "P",
+    "walltime":    "v",
 }
 
 
 def mark_failures(ax, idx, solvers):
-    """Draw the non-result markers in a reserved strip below the data."""
+    """Draw the non-result markers in a reserved strip below the data.
+
+    Each marker takes its preset's own colour rather than a shared failure
+    colour, so it identifies the preset it belongs to on sight. A shared
+    red would sit next to VLumping's red curve and read as VLumping's.
+
+    A legend entry is added only for a preset that produced no result
+    anywhere, because that preset has no curve to carry its name. It is
+    named alone, with no qualifier: the band it sits in is labelled, so
+    the marker's position already says the outcome. A preset that failed
+    at some scales and not others is in the legend through its curve, and
+    a second entry would say the same name twice.
+    """
+    # Two presets that fail at the same scale would be drawn on the same
+    # point, hiding one outcome behind the other. Offset each preset's
+    # markers by a fraction of the tick spacing, the same device the
+    # timestep panel uses for series that sit on the imposed cap.
     marks = {}
-    for solver in solvers:
+    for si, solver in enumerate(solvers):
+        off = 0.15 * (si - (len(solvers) - 1) / 2)
         for i, sc in enumerate(SCALES):
             outcome = (idx.get((solver, sc)) or {}).get("outcome")
             if outcome in FAIL_KINDS:
-                marks.setdefault((solver, outcome), []).append(i)
+                marks.setdefault((solver, outcome), []).append(i + off)
     if not marks:
         return
     # Reserve a strip under the data so a failure marker never collides
     # with a real curve.
-    ymin, ymax = ax.get_ylim()
+    ymin, ymax = ax.get_ylim()   # ymin is zero: every panel is zero-based
     span = ymax - ymin
-    ax.set_ylim(ymin - 0.16 * span, ymax)
-    y = ymin - 0.09 * span
+    ax.set_ylim(ymin - 0.18 * span, ymax)
+    y = ymin - 0.10 * span
+    # Hatch the strip. It sits below the data range and holds outcomes, not
+    # values, so a reader must not measure its markers against the y axis.
+    # The label names the outcome rather than a single failure mode,
+    # because the strip carries more than one: a preset that diverges and a
+    # preset that exhausts its wall clock both land here.
+    ax.axhspan(ymin - 0.18 * span, ymin, facecolor="white", edgecolor="black",
+               hatch="////", linewidth=0.8, zorder=1)
+    ax.text(0.5, y, "failure", transform=blended_transform_factory(
+                ax.transAxes, ax.transData),
+            ha="center", va="center", fontsize=12, color="0.35", zorder=6,
+            bbox=dict(boxstyle="square,pad=0.25", facecolor="white",
+                      edgecolor="none"))
     for (solver, outcome), xs in marks.items():
-        marker, colour, note = FAIL_KINDS[outcome]
-        ax.plot(xs, [y] * len(xs), linestyle="none", marker=marker,
-                markersize=MS + 2.5, color=colour, zorder=5,
-                label=f"{STYLE[solver]['label']} \u2014 {note}")
+        has_curve = any((idx.get((solver, sc)) or {}).get("outcome") == "success"
+                        for sc in SCALES)
+        ax.plot(xs, [y] * len(xs), linestyle="none", marker=FAIL_KINDS[outcome],
+                markersize=MS + 2.5, color=STYLE[solver]["color"], zorder=5,
+                label=None if has_curve else STYLE[solver]["label"])
 
 
 def finish(fig, axes, data, ylabels, letters):
     labels = scale_labels(data)
-    for ax, yl, letter in zip(axes, ylabels, letters):
+    for i, (ax, yl, letter) in enumerate(zip(axes, ylabels, letters)):
         ax.set_xticks(range(len(SCALES)))
         ax.set_xticklabels(labels)
         ax.set_xlabel("horizontal resolution / nodes / DOF")
-        ax.set_ylabel(yl)
         ax.set_xlim(-0.35, len(SCALES) - 0.65)
-        panel_letter(ax, letter)
+        panel_letter(ax, letter, y=0.945)
+        # The last panel carries its y axis on the right. The two panels
+        # measure unrelated quantities on unrelated scales, so nothing is
+        # lost by separating their axes, and it lets them sit side by side
+        # without a column of tick labels between them.
+        if i == len(axes) - 1 and len(axes) > 1:
+            ax.yaxis.set_label_position("right")
+            ax.yaxis.tick_right()
+            ax.set_ylabel(yl, rotation=270, labelpad=24)
+        else:
+            ax.set_ylabel(yl)
     h, l = legend_handles(axes)
+    # Order by preset, not by the order the artists happened to be drawn in.
+    # A preset that produced no result is labelled by mark_failures, which
+    # runs after every curve, so it would otherwise trail the legend instead
+    # of holding its place in the solver order the figures share.
+    rank = {STYLE[s]["label"]: i for i, s in enumerate(SOLVERS)}
+    order = sorted(range(len(l)), key=lambda i: rank.get(l[i], len(SOLVERS)))
+    h, l = [h[i] for i in order], [l[i] for i in order]
+    # Boxed and close under the axis labels, matching the breakdown figure so
+    # the three seasonal figures carry one legend style.
     fig.legend(h, l, loc="lower center", ncol=min(len(l), 5),
-               frameon=False, bbox_to_anchor=(0.5, -0.20))
+               bbox_to_anchor=(0.5, -0.145), frameon=True, fancybox=False,
+               edgecolor="black", framealpha=1.0)
+    fig.subplots_adjust(wspace=0.06)
 
 
 # ── Figure 1: graded seasonal weak scaling ──────────────────────────────────
-def fig_seasonal_weak(outdir, case="murr_seasonal",
-                      fname="seasonal_weak.pdf"):
+def _panel_iters(ax, idx):
+    """Linear iterations per Newton step."""
+    draw_metric(ax, idx, linear_per_newton)
+    # Zero-based, like the other panels. An iteration count has a meaningful
+    # zero, and the failure band is drawn from the axis lower limit downwards,
+    # so that limit must be zero in every panel. Left autoscaled it sits above
+    # zero, and the band then hatches part of the valid range and swallows the
+    # zero tick, while the neighbouring panel's band starts exactly at zero.
+    ax.set_ylim(bottom=0)
+
+
+def _panel_dt(ax, idx):
+    """Largest timestep the run actually completed, against the imposed cap."""
+    draw_metric(ax, idx, max_sustained_dt_d, cap=DT_CAP_D, stagger=1.7)
+    ax.axhline(DT_CAP_D, color="0.35", ls="--", lw=1.4, zorder=1)
+    ax.text(len(SCALES) - 1.02, DT_CAP_D * 0.955, "imposed 3-month cap",
+            color="0.35", fontsize=13, va="top", ha="right")
+    ax.set_ylim(0, DT_CAP_D * 1.16)      # mark_failures reserves the strip
+
+
+def _panel_wall(ax, idx):
+    """Wall time per simulated year, the comparable cost measure."""
+    draw_metric(ax, idx, wall_h_per_sim_year)
+    ax.set_ylim(bottom=0)
+
+
+# The panels each seasonal figure can carry: how to draw one, and its y label.
+PANELS = {
+    "iters": (_panel_iters, "linear iterations per Newton step"),
+    "dt":    (_panel_dt, "maximum sustained timestep (days)"),
+    "wall":  (_panel_wall, "wall time per simulated year (h)"),
+}
+
+
+def fig_seasonal_scaling(outdir, case, fname, *, panels):
+    """Weak-scaling panels for one seasonal regime.
+
+    ``panels`` names the panels to draw, in order, as keys of ``PANELS``.
+    The two regimes do not carry the same ones. Wall time is meaningless
+    for a preset that completes no timestep, and a panel with a
+    permanently missing series invites the reader to compare the presets
+    that remain as if the missing one had merely been slow. The sustained
+    timestep, in the regime where only one preset loses the imposed
+    ceiling, is two numbers that Table 3 already reports mesh by mesh
+    beside the column-integrated diffusion number that explains them.
+
+    A preset that completes nothing anywhere carries no curve. It appears
+    in the hatched failure band below the axis and in the legend as
+    "(failure)", and
+    the caption says what went wrong; the figure states the outcome
+    without a block of prose inside the axes.
+    """
     data = load(case)
     idx = index(data)
-    fig, axes = plt.subplots(1, 3, figsize=(16.5, 5.2))
+    fig, axes = plt.subplots(1, len(panels), figsize=(5.5 * len(panels), 5.2))
 
-    draw_metric(axes[0], idx, linear_per_newton)
-    draw_metric(axes[1], idx, max_sustained_dt_d, cap=DT_CAP_D, stagger=1.7)
-    axes[1].axhline(DT_CAP_D, color="0.35", ls="--", lw=1.4, zorder=1)
-    axes[1].text(len(SCALES) - 1.02, DT_CAP_D * 0.955,
-                 "imposed 3-month cap", color="0.35", fontsize=13,
-                 va="top", ha="right")
-    axes[1].set_ylim(0, DT_CAP_D * 1.16)   # mark_failures reserves the strip
-    draw_metric(axes[2], idx, wall_h_per_sim_year)
-    axes[2].set_ylim(bottom=0)
+    for key, ax in zip(panels, axes):
+        PANELS[key][0](ax, idx)
+    ylabels = [PANELS[key][1] for key in panels]
+    letters = list("ABC"[:len(panels)])
 
     for ax in axes:
         mark_failures(ax, idx, SOLVERS)
 
-    finish(fig, axes, data,
-           ["linear iterations per Newton step",
-            "maximum sustained timestep (days)",
-            "wall time per simulated year (h)"],
-           ["A", "B", "C"])
+    finish(fig, axes, data, ylabels, letters)
     out = outdir / "Murrumbidgee" / fname
     out.parent.mkdir(parents=True, exist_ok=True)
     save(fig, out, pad_inches=0.2)
@@ -214,68 +312,147 @@ def fig_seasonal_weak(outdir, case="murr_seasonal",
     print(f"wrote {out}")
 
 
+def fig_seasonal_weak(outdir):
+    """Graded seasonal regime: every reported preset takes steps here.
+
+    Iterations against cost, which is where the regime's result lies: the
+    preset with the fewest iterations is not the fastest, and the preset
+    with the most is not the slowest. The sustained timestep is left to
+    Table 3, which reports it against the diffusion number.
+    """
+    fig_seasonal_scaling(outdir, "murr_seasonal", "seasonal_weak.pdf",
+                         panels=("iters", "wall"))
+
+
 # ── Figure 2: saturated companion ───────────────────────────────────────────
 def fig_seasonal_saturated(outdir):
-    fig_seasonal_weak(outdir, case="murr_seasonal_saturated",
-                      fname="seasonal_saturated.pdf")
+    """Wetter seasonal regime, where block-Jacobi takes no step at all.
 
-
-# ── Figure 3: per-solve cost breakdown where block-Jacobi fails ─────────────
-def fig_seasonal_breakdown(outdir):
-    """Stacked per-nonlinear-solve cost in the saturated regime.
-
-    BJac-ILU completes no step at any scale, so it carries no bar.
-    That empty column is the point of the figure, and it is labelled
-    rather than left blank.
+    The sustained timestep replaces wall time here: block-Jacobi has no
+    wall time to compare, and the timestep is where VLumping's one
+    nonlinear failure on the coarsest mesh shows.
     """
-    data = load("murr_seasonal_saturated")
+    fig_seasonal_scaling(
+        outdir, "murr_seasonal_saturated", "seasonal_saturated.pdf",
+        panels=("iters", "dt"))
+
+
+# ── Figure 3: per-solve cost breakdown in the graded seasonal regime ────────
+def fig_seasonal_breakdown(outdir):
+    """Stacked per-nonlinear-solve cost, one panel per preset.
+
+    The graded regime is used rather than the saturated one, because every
+    reported preset takes steps there and so every panel carries a real
+    profile. The three panels share one vertical scale, so the height of a
+    stack is directly comparable between presets, and each stack is
+    decomposed into the five bands of ``BREAKDOWN_BANDS``. The dashed line
+    is the true ``SNESSolve`` time per solve; the roughly 7 per cent by
+    which it exceeds the band sum is the wall time outside the nonlinear
+    solve.
+
+    Each x position also carries the largest timestep that preset actually
+    sustained there. Without it the figure flatters block-Jacobi: its cost
+    per nonlinear solve falls from the 880 m mesh to the 620 m mesh, but
+    only because its admissible timestep has collapsed from 70 to 39 days,
+    which makes each individual solve an easier problem. Cost per solve and
+    cost per simulated year are different quantities, and this figure shows
+    the first.
+    """
+    data = load("murr_seasonal")
     idx = index(data)
-    scales = ["h2", "h4", "h8"]          # h1: GMG-H hit the walltime, no profile
-    order = SOLVERS
-    fig, ax = plt.subplots(figsize=(11.5, 5.6))
+    fig, axes = plt.subplots(1, len(SOLVERS), figsize=(5.2 * len(SOLVERS), 5.6),
+                             sharey=True)
+    xs = np.arange(len(SCALES))
+    labels = scale_labels(data)
+    title_box = dict(boxstyle="round,pad=0.4",
+                     facecolor="lightblue", edgecolor="black")
 
-    group_w, bar_w = 1.0, 0.20
-    xticks, xlabels = [], []
-    labelled = False
     tallest = 0.0
-    for gi, sc in enumerate(scales):
-        base = gi * (group_w + 0.35)
-        xticks.append(base + (len(order) - 1) * bar_w / 2)
-        m = data["scale_meta"][sc]
-        xlabels.append(f"{m['horiz_res']} m\n{m['nodes']}N / {m['dof_approx']}")
-        for si, s in enumerate(order):
-            x = base + si * bar_w
+    for si, (s, ax) in enumerate(zip(SOLVERS, axes)):
+        stacks = []
+        for sc in SCALES:
             r = idx.get((s, sc))
-            bd = breakdown_per_solve(r) if (
-                r and r["outcome"] == "success") else None
-            if not bd:
-                ax.text(x, 0.4, "FAIL" if s == "bjacobi" else "n/a",
-                        rotation=90, ha="center", va="bottom",
-                        fontsize=12, color=FAIL_COLOUR
-                        if s == "bjacobi" else "0.45")
-                continue
-            bottom = 0.0
-            for key, label, colour in BREAKDOWN_BANDS:
-                v = bd[key]
-                ax.bar(x, v, bar_w * 0.92, bottom=bottom, color=colour,
-                       edgecolor="white", linewidth=0.5,
-                       label=None if labelled else label, zorder=3)
-                bottom += v
-            labelled = True
-            tallest = max(tallest, bottom)
-            ax.text(x, bottom * 1.02, STYLE[s]["label"].replace("VLumping", "VL"),
-                    rotation=90, ha="center", va="bottom", fontsize=11,
-                    color=STYLE[s]["color"])
+            ok = r is not None and r["outcome"] == "success"
+            stacks.append(breakdown_per_solve(r) if ok else None)
+        # One filled series per cost band, stacked in the order they are
+        # defined, so the reader sees where the time goes as the problem
+        # weak-scales rather than only how much of it there is.
+        band_series = [np.array([(bd[key] if bd else 0.0) for bd in stacks])
+                       for key, _, _ in BREAKDOWN_BANDS]
+        ax.stackplot(xs, *band_series, colors=[c for _, _, c in BREAKDOWN_BANDS],
+                     edgecolor="white", linewidth=0.6, zorder=3)
+        total = np.array([bd["snes"] if bd else np.nan for bd in stacks])
+        ax.plot(xs, total, color="black", lw=1.2, ls="--", zorder=6)
+        tallest = max(tallest, np.nanmax(total))
 
-    ax.set_xticks(xticks)
-    ax.set_xticklabels(xlabels)
-    ax.set_xlabel("horizontal resolution / nodes / DOF")
-    ax.set_ylabel("time per nonlinear solve (s)")
-    ax.grid(True, axis="y", alpha=0.3, zorder=0)
-    # Headroom for the rotated per-bar labels, which sit above each stack.
-    ax.set_ylim(0, tallest * 1.32)
-    ax.legend(loc="lower center", frameon=False, ncol=5,
-              bbox_to_anchor=(0.5, -0.30))
+        # Padded clear of the axis frame: at pad=10 the box sits on the
+        # top spine and reads as part of the plot area.
+        ax.set_title(STYLE[s]["label"], bbox=title_box, pad=18)
+        panel_letter(ax, "ABC"[si])
+        ax.set_xticks(xs)
+        ax.set_xticklabels(labels)
+        ax.set_xlim(xs[0], xs[-1])
+        ax.margins(x=0)
+        # All three panels share one x axis meaning, and the label is wider
+        # than a single panel, so it is written once under the middle one.
+        # The pad clears the sustained-timestep row added below the ticks,
+        # which the last field of the label names.
+        if si == 1:
+            ax.set_xlabel(
+                "horizontal resolution / nodes / DOF / max sustained "
+                "$\\Delta t$", labelpad=30)
+        # The filled stacks run to the axis edge, so the outer tick labels
+        # would hang over the neighbouring panel. Anchor them inwards.
+        ax.get_xticklabels()[0].set_horizontalalignment("left")
+        ax.get_xticklabels()[-1].set_horizontalalignment("right")
+        if si == 0:
+            ax.set_ylabel("time per nonlinear solve (s)")
+
+    top = tallest * 1.12          # headroom for the panel letter only
+    # The sustained timestep belongs with the run it describes, so it goes
+    # under the tick label naming that run rather than floating in the plot
+    # area. A blended transform puts it at the tick in x and at a fixed
+    # distance below the axis in y, so the row stays put whatever the data do.
+    for s, ax in zip(SOLVERS, axes):
+        ax.set_ylim(0, top)
+        trans = blended_transform_factory(ax.transData, ax.transAxes)
+        for x, sc in zip(xs, SCALES):
+            r = idx.get((s, sc))
+            if r is None or r["outcome"] != "success":
+                continue
+            dt = max_sustained_dt_d(r)
+            if dt is None:
+                continue
+            # Red where the preset has lost the imposed ceiling, because a
+            # cheaper solve bought by a shorter step is not a cheaper year.
+            capped = abs(dt - DT_CAP_D) < 0.5
+            ha = "left" if x == xs[0] else "right" if x == xs[-1] else "center"
+            ax.text(x, -0.125, f"$\\Delta t$ {dt:.0f} d", transform=trans,
+                    ha=ha, va="top", fontsize=14.5, zorder=7, clip_on=False,
+                    color="0.3" if capped else FAIL_COLOUR)
+
+    # Grid drawn as explicit lines over the stacks: ax.grid()'s zorder is not
+    # honoured against a stackplot PolyCollection.
+    fig.canvas.draw()
+    for ax in axes:
+        for yt in ax.get_yticks():
+            if 0 <= yt <= top:
+                ax.axhline(yt, color="0.4", lw=0.7, alpha=0.6, zorder=5)
+        for xt in xs:
+            ax.axvline(xt, color="0.4", lw=0.7, alpha=0.6, zorder=5)
+
+    handles = [Patch(facecolor=c, edgecolor="white", label=lab)
+               for _, lab, c in BREAKDOWN_BANDS]
+    handles.append(Line2D([0], [0], color="black", lw=1.2, ls="--",
+                          label="SNESSolve total"))
+    # Anchored just below the axis label, which itself sits lower than usual
+    # because each panel carries the sustained-timestep row under its ticks.
+    fig.legend(handles=handles, loc="lower center", ncol=6,
+               bbox_to_anchor=(0.5, -0.205), columnspacing=1.6,
+               handletextpad=0.5, frameon=True, fancybox=False,
+               edgecolor="black", framealpha=1.0)
+    fig.subplots_adjust(wspace=0.09)
+
     out = outdir / "Murrumbidgee" / "seasonal_breakdown.pdf"
     out.parent.mkdir(parents=True, exist_ok=True)
     save(fig, out, pad_inches=0.2)
