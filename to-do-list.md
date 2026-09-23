@@ -135,7 +135,7 @@ Detail for each is in `NOTES/archive/to-do-list-pre-seasonal-20260828.md`
 - **M4. Murrumbidgee mesh figure** — `plot_murr_mesh.py` uses a `Delaunay`
   stand-in, not the production omega mesh. Accept, or rerun in the Firedrake env.
 - **M5. ICBC panel (c)** — placeholder until the extraction-sites CSV lands (ties to the deferred extraction figure).
-- **M7. Vauclin DQ2 rate** — fitted 2.24 vs textbook 3; soften the caption if it claims O(Δx³).
+- **M7. Vauclin DQ2 rate** — resolved 2026-09-02. The 2.24 was the scipy griddata error measurement (O(Δx²) floor). Errors are now assembled in Firedrake on a nested 240×160 DQ2 reference: DQ1 1.97, DQ2 3.02. Figure regenerated; caption can keep O(Δx³).
 - **M8. Tracy 2D DG2** — only 3 successful levels; a 4th coarse level would firm the fit.
 - **P1. ImplicitMidpoint mixed-form mass conservation** — zero-pivot in saturated cells at `Ss=0`; parked for a follow-up. (Note: BackwardEuler at `Ss=0` is fine — confirmed this session.)
 - **P2. Tracy 2D temporal at 301² DQ2** — current figure is 201² DQ1; paper-spec mesh is a small Gadi follow-up.
@@ -157,3 +157,188 @@ point): **M2** (s16 hang), **M3** (hierarchy L4), **M6** (3-point strong-scaling
 | `NOTES/archive/` | Full pre-seasonal campaign notes + old to-do (trimmed 2026-08-28). |
 | `/g/data/xd2/sg8812/morrow2026-archive/` | Bulk output of superseded campaigns; manifest and note in `parallel_scaling/archive/`. |
 </content>
+
+---
+
+## D. Figure rework: ordinary breakdown out, seasonal breakdown in — DONE 2026-09-03
+
+Decision: the ordinary-regime cost breakdown is dropped and the seasonal
+block is renumbered. Target state of the manuscript's figure sequence:
+
+| new | label | content |
+|---|---|---|
+| 11 | `fig:seasonal_weak` | graded seasonal, horizontal weak scaling. 3 panels: linear iterations / max sustained dt / wall per simulated year |
+| 12 | `fig:seasonal_saturated` | saturated seasonal. 2 panels: linear iterations / max sustained dt, plus an in-figure note that BJac-ILU did not converge |
+| 13 | `fig:seasonal_breakdown` | graded seasonal, 3 columns (VLumping, GMG-H, BJac-ILU), stacked cost bands against nodes/DOF |
+| 14 | `fig:strong_scaling` | unchanged |
+
+Reported presets in all three: **BJac-ILU, VLumping, GMG-H**.
+VLumping-linesmooth is removed from the seasonal figures; it stays in the
+tables and in the strong-scaling figure.
+
+- **D1 (done). Drop the ordinary breakdown.** Remove `fig_time_breakdown` from
+  `parallel_scaling/plot_paper_figures.py`, its entry in `make_all.py`
+  (target list and the `murr_horizontal`/`murr_vertical` dependency), and
+  `figures/Murrumbidgee/time_breakdown.pdf`. Keep `breakdown_per_solve`
+  and `BREAKDOWN_BANDS` — the seasonal figure imports them.
+- **D2 (done). Rewrite `fig_seasonal_breakdown`** in `plot_seasonal_figures.py`.
+  Dataset changes from `murr_seasonal_saturated` to `murr_seasonal`, so
+  every column carries real data and h1 is back in. Layout changes from
+  one grouped bar axis to a 1x3 stackplot panel row, one panel per preset,
+  x = h1..h8 as nodes/DOF, y shared across the three panels so the presets
+  are directly comparable. Keep the dashed SNESSolve total line.
+- **D3 (done). Restrict the seasonal preset set** to `["bjacobi", "gmg",
+  "vlumping"]` in `plot_seasonal_figures.py`.
+- **D4 (done). Two-panel saturated figure.** Split `fig_seasonal_weak` so the
+  saturated call drops the wall-time-per-year panel, and add an in-axes
+  annotation reading that BJac-ILU completed no timestep at any scale.
+  The existing `mark_failures` strip stays; the note names the outcome in
+  words rather than relying on the legend alone.
+- **D5 (done). Caption and prose.** In the paper tree:
+  - delete the `time_breakdown` figure environment and rewrite line ~911
+    of `main.tex`, which currently defers the BJac-ILU/VLumping cost
+    argument to that figure;
+  - move the `seasonal_breakdown` environment after `seasonal_saturated`
+    and rewrite its caption for the graded regime;
+  - rewrite the `seasonal_saturated` caption for two panels;
+  - re-check every `Fig.~\ref` in section 4 and section 5.3 after the
+    renumbering.
+- **D6 (done). `make_all.py`** — update the target list and the dependency map,
+  then run it end to end so the code-availability claim holds.
+
+**Settled while drawing D2.** In the graded regime BJac-ILU survives by
+collapsing its timestep, so its cost per nonlinear solve falls from the
+880 m mesh to the 620 m mesh (135 to 113 s) while its cost per simulated
+year keeps rising. Each x position in the breakdown therefore carries the
+timestep that preset sustained there, red where the preset has lost the
+three-month ceiling, and the caption says the comparison at 620 m is not
+like for like.
+
+**Closed 2026-09-04.** GMG-H's marker was `P` (plus_filled). Hollowing a
+marker removes only its interior and keeps the edge stroke, so at the paper's
+marker size an unfilled `P` is indistinguishable from a filled one, and the
+open-marker convention of the sustained-timestep panels — open means the run
+sat on the imposed ceiling rather than on a limit the solver set — did not read
+for GMG-H at any point. GMG-H is now `^`. The square `s` was considered and
+rejected: it belongs to VLumping-linesmooth, and the two are drawn together in
+the Cockett and ordinary-regime figures. `^` was free, because GAMG, which also
+carries it, is reported only in the outcome table and is never drawn as a
+curve. `Preset.marker` in `reported.py` now records the constraint.
+
+### D7. Review round, 2026-09-03 — findings and what was done
+
+Handoff: `NOTES/team/figure-rework-2026-09-03/reviewer.md`. Six findings, all
+verified against the record before acting on them.
+
+- **`PCSetUpOnBlocks` was double counted (fixed).** `breakdown_per_solve` added
+  it to PC setup unconditionally. For plain block Jacobi that is right: PETSc
+  logs almost nothing under `PCSetUp` and the block factorisation IS the setup.
+  For the lumped presets the smoother rebuilds its blocks on every application,
+  so PETSc logs the event inside the nested `MG Apply` stage, where it is
+  already inside `PCApply`. The band sum therefore ran 1.7 to 3.3 per cent
+  ABOVE `SNESSolve` for VLumping and the dashed total line was drawn below the
+  stack. The two cases are now separated by the call count. Band sums now sit
+  0.1 to 1.7 per cent below `SNESSolve` for every preset in both regimes.
+- **"The lumped methods spend most of their time applying the coarse
+  correction" was false (fixed).** The nested `MG Apply` stage splits the apply
+  into `MGSmooth Level 0` (coarse) and `Level 1` (fine block-ILU smoother).
+  The smoother dominates throughout: ordinary h8 is 20 per cent coarse against
+  71 per cent smoother, graded seasonal runs from 3/86 at h1 to 21/70 at h8.
+  This was pre-existing prose that the deleted figure had cited. The same
+  conflation was also in the caption of `Tables/solver_performance.tex`
+  and was fixed on 2026-09-04 in `make_performance_table.py`: the caption
+  now claims only what the table's columns show (apply, not setup) and
+  points at section 4 for the split inside the apply. A blanket claim that
+  the smoother always dominates would itself be wrong: on the Cockett box
+  `vlumping_linesmooth` spends 42.6 per cent of its apply in the coarse
+  solve against 41.2 per cent in the smoother.
+- **"Per nonlinear solve" was undefined (fixed by defining it).** The
+  denominator is the `SNESSolve` count, which is one per attempted timestep and
+  so includes attempts that failed and were retried at half the step (0 to 10
+  of 33 to 54 attempts per run). The denominator was kept, because the failed
+  attempts are work the run really did and the same convention applies to every
+  preset. It reconciles with Table 2: 66.5 s per solve over 11.0 Newton steps
+  per solve is 6.03 s per Newton step against the table's 6.11. The caption and
+  the docstring now say so.
+- **Two "at every scale" superlatives (fixed).** VLumping-linesmooth beats
+  VLumping on both wall time per year and cost per solve at all four scales, so
+  both claims are now qualified as "of the three drawn".
+- **Ordinary-regime profile claims had no figure left to check them against
+  (fixed).** They now cite the setup and apply shares that
+  Table~\ref{tab:solver_performance} carries.
+- **Comments (fixed).** A false reason for a drawing order, "40 days" where the
+  record says 39, and a dead local.
+
+Not accepted: the reviewer read the figure as irreconcilable with Table 2. It
+reconciles once the Newton count per attempt is used rather than per completed
+step.
+
+### D8. Paper fact-check, 2026-09-04 — findings and what was done
+
+Handoff: `NOTES/team/paper-factcheck-2026-09-04/reviewer.md`. The
+cross-reference sweep came back clean: every `\ref` resolves, every panel
+letter cited exists, and no reference to the deleted `fig:time_breakdown`
+survives anywhere in the paper tree. Six statements the record does not
+support were found. Five are fixed.
+
+- **The wetter seasonal runs grow the step by two, not 1.5 (fixed).** All 28
+  `results/murr_seasonal_saturated/*/*.out` print `growth = 2.0`; the graded
+  and ordinary runs print 1.5. `submit_jobs.py:260` sets
+  `SEASONAL_SAT_GROWTH = 2.0`. The factor is now stated where the wetter
+  profile is introduced, in the Fig 12 caption, and as an exception in the
+  two places that asserted 1.5 for every run.
+- **"1.9 to 3.1 times lower" is VLumping's range, not the pair's (fixed).**
+  VLumping gives 1.88/3.01/3.15/2.40 against BJac-ILU;
+  VLumping-linesmooth reaches 3.69 at 880 m. Now 1.9 to 3.7, in both the
+  section 4 sentence and the conclusion.
+- **The cost bands account for `SNESSolve` to two per cent, not one
+  (fixed).** VLumping's panel runs 1.7, 1.4, 1.2, 0.9 per cent below the
+  dashed total. The Fig 13 caption said one per cent.
+- **The conclusion conflated the two seasonal profiles (fixed).** It claimed
+  the full three-month step "at every scale" in a sentence covering the
+  wetter profile, where VLumping manages 45.5 d at 1775 m. It also carried
+  the graded regime's speed-up ratio into a saturated-regime clause, where
+  BJac-ILU has no wall time at all.
+- **`vlumping_omega_auto` does not save time everywhere (fixed).** The
+  printed parameter dicts of `vlumping` and `vlumping_inexact` differ by
+  exactly one key, `'vlumping_omega_auto': True`, so the pair isolates the
+  option. It is 11 to 24 per cent faster per Newton step on the basin
+  (horizontal 11.3-20.3, vertical 16.7-23.5) but 5 to 12 per cent SLOWER on
+  the isotropic Cockett box, where it also needs about a fifth more
+  iterations. Section 3 claimed 10-20 per cent "in the experiments below".
+  The claim is now scoped to the basin and the box behaviour is stated.
+
+**The false Newton-count mechanism — fixed 2026-09-04.** Section 4.1 and the
+Fig 8 caption claimed the coarsest one-node mesh always takes a second Newton
+step while finer meshes converge in one, and gave that as the reason for
+normalising per Newton step. No such effect exists. The six presets drawn in
+Fig 8 each complete the 30 isotropic timesteps in exactly 91 Newton iterations
+at all four node counts (three per timestep, four on the first), and the
+reported basin presets run 217 to 226 over 75 timesteps, that is 2.9 to 3.0
+throughout. The mechanism is deleted from the text, the caption and the
+docstring of `wall_per_newton`, and each now states the measured count
+instead, noting that the normalisation rescales the curves without changing
+their shape.
+
+One trap found while writing the replacement: the constancy holds for the
+REPORTED presets, not for every preset that completes. `gamg_asm`,
+`vlumping_1sweep`, `vlumping_4sweep`, `vlumping_sor`, `vlumping_richardson`
+and the SNES variants take 60, 48, 35, 35 Newton iterations over the same 30
+timesteps, which IS resolution-dependent. Any restatement of this claim must
+be scoped to the presets drawn.
+
+**Non-blocking, not yet actioned.** Table 2's caption mentions a seasonal
+saturated entry the table does not have and calls the basin blocks a
+comparison of two presets where they carry four rows; "graded" is used before
+it is defined; the wetter case has five different names across the paper;
+"block-Jacobi" is used for BJac-ILU in captions while section 4 defines two
+block-Jacobi presets; Fig 14's ideal-scaling line is never mentioned in the
+text and its open circles clash with the open-marker convention of Fig 12.
+The full list with line numbers is in the handoff.
+
+**Provenance gap.** The reported `vlumping` `.out` files that
+`parsed/murr_horizontal.json` and `parsed/murr_vertical.json` were built from
+are neither on disk nor tracked; they were removed in `1c43671` and are
+recoverable from git. `results/cockett/vlumping/huge.out` and the
+`murr_seasonal` ones survive, which is how the parameter-dict diff above was
+possible.
