@@ -1,8 +1,9 @@
 cff-version: 1.2.0
 message: "If you use this repository, please cite both the archived software (below) and the accompanying paper (preferred-citation)."
 title: >-
-  morrow2026: reproducibility repository for "Scalable simulation of
-  variably saturated groundwater flow: solving the forward problem"
+  morrow2026: reproducibility repository for "Scalable and locally
+  mass-conservative simulation of basin-scale variably saturated
+  groundwater flow"
 type: software
 license: MIT
 repository-code: "https://github.com/sghelichkhani/morrow2026"
@@ -33,7 +34,7 @@ keywords:
   - Firedrake
 preferred-citation:
   type: article
-  title: "Scalable simulation of variably saturated groundwater flow: solving the forward problem"
+  title: "Scalable and locally mass-conservative simulation of basin-scale variably saturated groundwater flow"
   year: 2026
   # doi: "10.xxxx/xxxxx"   # add the journal DOI once assigned
   authors:

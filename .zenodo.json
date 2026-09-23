@@ -1,6 +1,6 @@
 {
-    "title": "morrow2026: reproducibility repository for \"Scalable simulation of variably saturated groundwater flow: solving the forward problem\"",
-    "description": "Driver scripts, solver-parameter presets, parsed run records, and plotting routines that reproduce every figure and number reported in Morrow, Ghelichkhan and Kramer (2026), \"Scalable simulation of variably saturated groundwater flow: solving the forward problem\". Covers the verification benchmarks (Tracy, Vauclin, mass conservation) and the parallel-scaling study (Cockett 3D and the Lower Murrumbidgee basin case) built on the G-ADOPT framework and Firedrake.",
+    "title": "morrow2026: reproducibility repository for \"Scalable and locally mass-conservative simulation of basin-scale variably saturated groundwater flow\"",
+    "description": "Driver scripts, solver-parameter presets, parsed run records, and plotting routines that reproduce every figure and number reported in Morrow, Ghelichkhan and Kramer (2026), \"Scalable and locally mass-conservative simulation of basin-scale variably saturated groundwater flow\". Covers the verification benchmarks (Tracy, Vauclin, mass conservation) and the parallel-scaling study (Cockett 3D and the Lower Murrumbidgee basin case) built on the G-ADOPT framework and Firedrake.",
     "upload_type": "software",
     "access_right": "open",
     "license": {"id": "mit"},
