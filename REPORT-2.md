@@ -79,11 +79,11 @@ Shared CSV loaders and the domain polygon live in
 
 1. The mesh figure uses a `scipy.spatial.Delaunay` triangulation of
    polygon-interior seed points as a stand-in for the production
-   `omega.SurfaceMesh`-generated mesh — `omega` is not in the default
+   `gomega.SurfaceMesh`-generated mesh — `gomega` is not in the default
    plotting env. The visual triangle count matches the production
    mesh closely enough for a methods figure; if the paper needs
    pixel-accurate provenance the script can be rerun inside the
-   Firedrake venv with `omega` and the substitute triangulation
+   Firedrake venv with `gomega` and the substitute triangulation
    replaced.
 2. The ICBC figure's panel (c) (extraction-site map) is a placeholder
    pending an `extraction_sites.csv` that is not yet in

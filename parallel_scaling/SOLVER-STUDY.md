@@ -845,7 +845,7 @@ mh3d = ExtrudedMeshHierarchy(mh2d, height=h, base_layer=n_layers,
 mesh = mh3d[-1]                                     # finest level
 ```
 
-This is exactly the pattern documented in `omega/mesh/builder.py`
+This is exactly the pattern documented in `gomega/mesh/builder.py`
 (`build_extruded_mesh_hierarchy`). `vlumping_hmg` reaches into
 `mesh._base_mesh` to get back to the 2D base hierarchy when constructing
 its coarse space.

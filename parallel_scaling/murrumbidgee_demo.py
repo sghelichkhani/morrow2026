@@ -3,7 +3,7 @@
 This is the §4 example-solution driver for the *new* mesh workflow: instead of
 rebuilding the mesh and stratigraphy inline from gridded CSVs (as the frozen
 scaling driver ``murrumbidgee_3d.py`` does), it loads a Firedrake checkpoint
-produced by ``lower_murrumbidgee_mesh.py`` (copied into this directory from omega
+produced by ``lower_murrumbidgee_mesh.py`` (copied into this directory from gomega
 for provenance; see lower_murrumbidgee_README.md). That
 checkpoint carries the terrain-following extruded mesh (real GA SRTM DEM on top,
 NGIS-borehole bedrock below) plus two CG1 fields: ``SaturatedConductivity`` (the
@@ -102,7 +102,7 @@ from gadopt import *
 from firedrake.exceptions import ConvergenceError
 from solvers import get_solver
 
-# Side boundary id from omega's SurfaceMesh (the polygon edge, physical group 1).
+# Side boundary id from gomega's SurfaceMesh (the polygon edge, physical group 1).
 SIDE_BC_ID = 1
 
 

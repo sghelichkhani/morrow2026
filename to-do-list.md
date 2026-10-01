@@ -133,7 +133,7 @@ Detail for each is in `NOTES/archive/to-do-list-pre-seasonal-20260828.md`
 - **M1. Tracy 3D DG1 rate** — caption claims textbook p+1; sweep fits ~O(h^1.8)
   (coarse end pre-asymptotic). Soften the caption or run a finer DG1 mesh.
 - **M4. Murrumbidgee mesh figure** — `plot_murr_mesh.py` uses a `Delaunay`
-  stand-in, not the production omega mesh. Accept, or rerun in the Firedrake env.
+  stand-in, not the production gomega mesh. Accept, or rerun in the Firedrake env.
 - **M5. ICBC panel (c)** — placeholder until the extraction-sites CSV lands (ties to the deferred extraction figure).
 - **M7. Vauclin DQ2 rate** — resolved 2026-09-02. The 2.24 was the scipy griddata error measurement (O(Δx²) floor). Errors are now assembled in Firedrake on a nested 240×160 DQ2 reference: DQ1 1.97, DQ2 3.02. Figure regenerated; caption can keep O(Δx³).
 - **M8. Tracy 2D DG2** — only 3 successful levels; a 4th coarse level would firm the fit.

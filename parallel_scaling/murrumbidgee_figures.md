@@ -13,7 +13,7 @@ place: the Murrumbidgee model builder.
 Everything in §4 except the scaling figures comes from the function that
 builds the Murrumbidgee model — today that is `model()` in
 `murrumbidgee_3d.py`. It already generates the real surface mesh via
-`omega` (`SurfaceMesh` / `Polygon`), extrudes it terrain-following to
+`gomega` (`SurfaceMesh` / `Polygon`), extrudes it terrain-following to
 bedrock, assigns the three-aquifer stratigraphy with depth-decaying `K`
 and `θ_s`, sets the hydrostatic initial condition from the water table,
 and applies rainfall recharge (the `0.14` ≈ 15 % factor in the driver
@@ -22,7 +22,7 @@ and any way to emit either its setup or its results for plotting.
 
 ```
             murrumbidgee_3d.py : build_model()
-            (real omega mesh + stratigraphy + IC/BC + extraction)
+            (real gomega mesh + stratigraphy + IC/BC + extraction)
                           │
      ┌────────────────────┼────────────────────┐
      ▼                    ▼                     ▼
@@ -37,7 +37,7 @@ and any way to emit either its setup or its results for plotting.
 
 The point of routing Group A through the driver rather than the
 standalone plot scripts is consistency: the mesh figure becomes the
-actual omega mesh (retires the `scipy.Delaunay` stand-in, to-do item
+actual gomega mesh (retires the `scipy.Delaunay` stand-in, to-do item
 M4), the extraction panel becomes real (retires the ICBC placeholder,
 M5), and the empty stratigraphy panel (d) gets filled — all because the
 figures are drawn from the same object the simulation runs on.
@@ -65,7 +65,7 @@ plotter (e.g. `plot_murr_setup.py`) reads the dump and renders the two
 figures, superseding `plot_murr_elevation.py`, `plot_murr_mesh.py`,
 `plot_murr_stratigraphy.py`, and `plot_murr_icbc.py`.
 
-The dump must be produced inside the Firedrake venv (it needs `omega`
+The dump must be produced inside the Firedrake venv (it needs `gomega`
 for the real mesh). The plotter itself is pure matplotlib and can run in
 the default env once the dump exists.
 
@@ -143,7 +143,7 @@ they are resolved.
 
 ## Loose ends this retires
 
-- M4 — Murrumbidgee mesh figure stand-in (real omega mesh via the dump).
+- M4 — Murrumbidgee mesh figure stand-in (real gomega mesh via the dump).
 - M5 — ICBC extraction-site placeholder (real scatter from the CSV).
 - Empty stratigraphy panel (d) in `main.tex:413`.
 - The `[X]` Newton-iteration placeholder in the §4.1 caption.

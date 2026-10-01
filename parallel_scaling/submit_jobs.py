@@ -174,7 +174,7 @@ STORAGE = "scratch/xd2+gdata/fp50"
 # Paths on Gadi
 GADOPT_PATH = "/scratch/xd2/sg8812/g-adopt-worktrees/sghelichkhani/richardson"
 GWASSESS_PATH = "/scratch/xd2/sg8812/gwassess"
-# omega provides the Murrumbidgee mesh builder (SurfaceMesh / build_mesh_hierarchy).
+# gomega provides the Murrumbidgee mesh builder (SurfaceMesh / build_mesh_hierarchy).
 # Flat-layout checkout: putting the repo root on PYTHONPATH is enough.
 OMEGA_PATH = "/scratch/xd2/sg8812/omega"
 # The scaling drivers (with the full solver-preset inventory under

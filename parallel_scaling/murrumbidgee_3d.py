@@ -5,7 +5,7 @@ basin-scale domain (~300 x 120 km). Terrain-following extruded mesh
 with depth-dependent Haverkamp soil curves and three geological layers.
 
 Requires:
-    - omega package (mesh generation and terrain-following hierarchy), at a
+    - gomega package (mesh generation and terrain-following hierarchy), at a
       revision that provides the Surface API: build_mesh_hierarchy taking
       top_surface and thickness_surface, and GridSurface. Older revisions took
       four coordinate/value arrays instead and will fail on the call below.
@@ -90,7 +90,7 @@ DOMAIN_VERTICES = [
     (0, 100000),
 ]
 
-# Side boundary ID from omega's SurfaceMesh (physical group tag)
+# Side boundary ID from gomega's SurfaceMesh (physical group tag)
 SIDE_BC_ID = 1
 
 
@@ -109,7 +109,7 @@ def load_spatial_field(V, V_cg, mesh_xy, csv_path, name):
     All fields must live in the same DG space as the solution to avoid
     function-space mismatches in the nonlinear forms.
 
-    The CSV is sampled through an omega GridSurface, the same primitive the mesh
+    The CSV is sampled through a gomega GridSurface, the same primitive the mesh
     extrusion uses, so every field in the run is interpolated by one code path
     instead of two. GridSurface performs exactly the linear-plus-nearest-fill
     sequence this function used to spell out inline, so the sampled values are
@@ -122,7 +122,7 @@ def load_spatial_field(V, V_cg, mesh_xy, csv_path, name):
         csv_path: Path to CSV file with columns x, y, z.
         name: Name for the returned Function.
     """
-    from omega import GridSurface
+    from gomega import GridSurface
 
     src_coords, src_values = load_csv(csv_path)
     interp = GridSurface(src_coords, src_values)(mesh_xy)
@@ -155,8 +155,8 @@ def model(horiz_res, n_layers, degree=1, dt_value=43200.0, steps=20,
         t_final: Target simulation time. If set, overrides steps.
         profile: Reduce PETSc text output during a profile run.
     """
-    from omega import GridSurface, SurfaceMesh, Polygon
-    from omega.mesh.builder import build_mesh_hierarchy
+    from gomega import GridSurface, SurfaceMesh, Polygon
+    from gomega.mesh.builder import build_mesh_hierarchy
 
     data_dir = Path(data_dir)
 
@@ -172,15 +172,15 @@ def model(horiz_res, n_layers, degree=1, dt_value=43200.0, steps=20,
     sm.generate()
     mesh2d = sm.to_firedrake_mesh()
 
-    # Load terrain data and wrap it as omega Surfaces. Both CSVs are dense
+    # Load terrain data and wrap it as gomega Surfaces. Both CSVs are dense
     # regular 500 m grids covering the whole domain, which is what GridSurface is
     # for: it interpolates (piecewise-linear over a Delaunay triangulation, with
     # a nearest fill outside the convex hull) rather than smoothing. On a lattice
-    # finer than the mesh there is nothing to decluster, and omega's kernel
+    # finer than the mesh there is nothing to decluster, and gomega's kernel
     # surface would flatten real relief, because a weighted mean is bounded by
     # its inputs and cannot reach a ridge crest.
     #
-    # This is also the interpolation omega's extrusion performed internally
+    # This is also the interpolation gomega's extrusion performed internally
     # before it took Surfaces, so the mesh is unchanged: rebuilt through
     # GridSurface it matches the meshes behind the reported runs to the bit.
     elev_coords, elev_values = load_csv(data_dir / "elevation_data.csv")

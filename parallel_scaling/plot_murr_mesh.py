@@ -1,6 +1,6 @@
 """Surface mesh + vertical-slice schematic for Lower Murrumbidgee.
 
-The actual mesh is built by ``murrumbidgee_3d.py`` via omega's
+The actual mesh is built by ``murrumbidgee_3d.py`` via gomega's
 constrained Delaunay routine, which is not available in the default
 plotting env. The surface panel here therefore uses an unstructured
 Delaunay triangulation of points seeded inside the same polygon at a
